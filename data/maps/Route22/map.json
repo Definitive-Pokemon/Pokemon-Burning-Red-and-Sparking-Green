@@ -15,20 +15,20 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_ROUTE23",
       "offset": 0,
-      "map": "MAP_ROUTE23"
+      "direction": "up"
     },
     {
-      "direction": "right",
+      "map": "MAP_VIRIDIAN_CITY",
       "offset": -10,
-      "map": "MAP_VIRIDIAN_CITY"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "in_connection": false,
       "x": 25,
       "y": 4,
       "elevation": 3,
@@ -38,7 +38,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_22_RIVAL"
+      "flag": "FLAG_HIDE_ROUTE_22_RIVAL",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -47,14 +48,14 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE22_NORTH_ENTRANCE",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 9,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE22_NORTH_ENTRANCE",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [
