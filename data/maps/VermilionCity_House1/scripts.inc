@@ -34,7 +34,7 @@ VermilionCity_House1_EventScript_NoRoomForOldRod:: @ 816B41A
 	release
 	end
 
-FuchsiaCity_House2_EventScript_FishingGurusBrother:: @ 816D817
+Vermilion_House1_EventScript_FishingGurusBrother:: @ 816D817
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_GOOD_ROD, FuchsiaCity_House2_EventScript_AlreadyGotGoodRod
@@ -45,12 +45,12 @@ FuchsiaCity_House2_EventScript_FishingGurusBrother:: @ 816D817
 	release
 	end
 
-FuchsiaCity_House2_EventScript_AlreadyGotGoodRod:: @ 816D83F
+Vermilion_House1_EventScript_AlreadyGotGoodRod:: @ 816D83F
 	msgbox FuchsiaCity_House2_Text_HowAreTheFishBiting
 	release
 	end
 
-FuchsiaCity_House2_EventScript_GiveGoodRod:: @ 816D849
+Vermilion_House1_EventScript_GiveGoodRod:: @ 816D849
 	msgbox FuchsiaCity_House2_Text_LikeYourStyleTakeThis
 	checkitemspace ITEM_GOOD_ROD, 1
 	compare VAR_RESULT, FALSE
@@ -61,7 +61,7 @@ FuchsiaCity_House2_EventScript_GiveGoodRod:: @ 816D849
 	release
 	end
 
-FuchsiaCity_House2_EventScript_NoRoomForGoodRod:: @ 816D88A
+Vermilion_House1_EventScript_NoRoomForGoodRod:: @ 816D88A
 	msgbox FuchsiaCity_House2_Text_YouHaveNoRoomForGift
 	release
 	end
