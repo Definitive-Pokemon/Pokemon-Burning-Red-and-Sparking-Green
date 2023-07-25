@@ -16,8 +16,8 @@
   "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKE_MANIAC",
-      "in_connection": false,
       "x": 7,
       "y": 4,
       "elevation": 3,
@@ -27,11 +27,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "VictoryRoad_2F_EventScript_Dawson",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
-      "in_connection": false,
       "x": 20,
       "y": 11,
       "elevation": 4,
@@ -41,11 +42,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "VictoryRoad_2F_EventScript_Daisuke",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-      "in_connection": false,
       "x": 31,
       "y": 16,
       "elevation": 4,
@@ -55,11 +57,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "VictoryRoad_2F_EventScript_Nelson",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TAMER",
-      "in_connection": false,
       "x": 26,
       "y": 6,
       "elevation": 3,
@@ -69,11 +72,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "VictoryRoad_2F_EventScript_Vincent",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-      "in_connection": false,
       "x": 36,
       "y": 5,
       "elevation": 3,
@@ -83,11 +87,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "VictoryRoad_2F_EventScript_Gregory",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "in_connection": false,
       "x": 17,
       "y": 6,
       "elevation": 3,
@@ -97,11 +102,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_2F_EventScript_ItemGuardSpec",
-      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_GUARD_SPEC"
+      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_GUARD_SPEC",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "in_connection": false,
       "x": 40,
       "y": 7,
       "elevation": 3,
@@ -111,11 +117,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_2F_EventScript_ItemTM07",
-      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_TM07"
+      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_TM07",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "in_connection": false,
       "x": 25,
       "y": 13,
       "elevation": 3,
@@ -125,11 +132,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_2F_EventScript_ItemFullHeal",
-      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_FULL_HEAL"
+      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_FULL_HEAL",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "in_connection": false,
       "x": 14,
       "y": 13,
       "elevation": 3,
@@ -139,11 +147,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_2F_EventScript_ItemTM37",
-      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_TM37"
+      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_TM37",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "in_connection": false,
       "x": 8,
       "y": 7,
       "elevation": 3,
@@ -153,11 +162,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "in_connection": false,
       "x": 6,
       "y": 17,
       "elevation": 3,
@@ -167,11 +177,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "in_connection": false,
       "x": 33,
       "y": 19,
       "elevation": 3,
@@ -181,11 +192,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_BOULDER"
+      "flag": "FLAG_HIDE_VICTORY_ROAD_2F_BOULDER",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "in_connection": false,
       "x": 40,
       "y": 9,
       "elevation": 3,
@@ -195,11 +207,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_2F_EventScript_DoubleEdgeTutor",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_SCIENTIST",
-      "in_connection": false,
       "x": 27,
       "y": 17,
       "elevation": 4,
@@ -209,7 +222,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Moltres",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -218,63 +232,63 @@
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
       "y": 3,
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_3F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 34,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_3F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 38,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_3F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 36,
       "y": 17,
       "elevation": 4,
       "dest_map": "MAP_VICTORY_ROAD_3F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 49,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE23",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 48,
       "y": 12,
       "elevation": 3,
       "dest_map": "MAP_ROUTE23",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 47,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE23",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 34,
       "y": 19,
       "elevation": 3,
       "dest_map": "MAP_VICTORY_ROAD_3F",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [

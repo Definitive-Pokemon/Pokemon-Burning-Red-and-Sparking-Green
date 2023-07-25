@@ -15,20 +15,20 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_ROUTE3",
       "offset": -60,
-      "map": "MAP_ROUTE3"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_CERULEAN_CITY",
       "offset": -10,
-      "map": "MAP_CERULEAN_CITY"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
-      "in_connection": false,
       "x": 9,
       "y": 8,
       "elevation": 3,
@@ -38,11 +38,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_Woman",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "in_connection": false,
       "x": 75,
       "y": 3,
       "elevation": 3,
@@ -52,11 +53,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route4_EventScript_Crissy",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "in_connection": false,
       "x": 67,
       "y": 5,
       "elevation": 3,
@@ -66,11 +68,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_ItemTM05",
-      "flag": "FLAG_HIDE_ROUTE4_TM05"
+      "flag": "FLAG_HIDE_ROUTE4_TM05",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY",
-      "in_connection": false,
       "x": 15,
       "y": 14,
       "elevation": 3,
@@ -80,11 +83,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_Boy",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
-      "in_connection": false,
       "x": 47,
       "y": 3,
       "elevation": 3,
@@ -94,11 +98,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_MegaPunchTutor",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
-      "in_connection": false,
       "x": 50,
       "y": 3,
       "elevation": 3,
@@ -108,11 +113,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route4_EventScript_MegaKickTutor",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "in_connection": true,
       "x": 109,
       "y": 3,
       "elevation": 12,
@@ -122,11 +128,12 @@
       "trainer_type": "3",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "0x0",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_LASS",
-      "in_connection": false,
       "x": 58,
       "y": 3,
       "elevation": 3,
@@ -136,11 +143,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Bulbasaur",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_COOLTRAINER_M",
-      "in_connection": false,
       "x": 20,
       "y": 14,
       "elevation": 3,
@@ -150,11 +158,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_NidoranM",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_SCIENTIST",
-      "in_connection": false,
       "x": 85,
       "y": 9,
       "elevation": 3,
@@ -164,11 +173,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Ekans",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
-      "in_connection": false,
       "x": 98,
       "y": 7,
       "elevation": 3,
@@ -178,7 +188,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Golduck",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -187,21 +198,21 @@
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_MT_MOON_1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 32,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MT_MOON_B1F",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     },
     {
       "x": 12,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
