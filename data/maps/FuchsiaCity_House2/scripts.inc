@@ -63,7 +63,7 @@ FuchsiaCity_House2_EventScript_ReceiveLaprasPC:: @ 8161B45
 	goto_if_eq CeladonCity_Condominiums_RoofRoom_EventScript_NicknameLaprasPC
 	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq FuchsiaCity_House2_LaprasTransferredToPC
+	goto_if_eq FuchsiaCity_House2_EventScript_LaprasTransferredToPC
 CeladonCity_Condominiums_RoofRoom_EventScript_NicknameLaprasPC::
 	call EventScript_NameReceivedBoxMon
 	goto FuchsiaCity_House2_EventScript_LaprasTransferredToPC

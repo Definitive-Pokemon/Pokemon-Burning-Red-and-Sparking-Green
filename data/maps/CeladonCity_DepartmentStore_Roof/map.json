@@ -16,8 +16,8 @@
   "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "in_connection": false,
       "x": 9,
       "y": 5,
       "elevation": 3,
@@ -27,11 +27,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_DepartmentStore_Roof_EventScript_CooltrainerM",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "in_connection": false,
       "x": 5,
       "y": 4,
       "elevation": 3,
@@ -41,7 +42,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_DepartmentStore_Roof_EventScript_ThirstyGirl",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -50,7 +52,7 @@
       "y": 6,
       "elevation": 3,
       "dest_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_5F",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

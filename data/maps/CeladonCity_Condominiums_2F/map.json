@@ -16,8 +16,8 @@
   "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "0",
-      "in_connection": false,
       "x": 6,
       "y": 6,
       "elevation": 0,
@@ -27,11 +27,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_Condominiums_2F_EventScript_PokemonJournalErika",
-      "flag": "FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS"
+      "flag": "FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "0",
-      "in_connection": false,
       "x": 5,
       "y": 6,
       "elevation": 0,
@@ -41,11 +42,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeladonCity_Condominiums_2F_EventScript_PokemonJournalErika",
-      "flag": "FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS"
+      "flag": "FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_PSYCHIC_M",
-      "in_connection": false,
       "x": 2,
       "y": 17,
       "elevation": 3,
@@ -55,7 +57,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_MrMime",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -64,28 +67,28 @@
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 2,
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_3F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 11,
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_3F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 12,
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_CELADON_CITY_CONDOMINIUMS_1F",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [

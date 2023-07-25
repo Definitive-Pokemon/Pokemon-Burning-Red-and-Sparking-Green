@@ -4,7 +4,7 @@ VermilionCity_House1_MapScripts:: @ 816B3A6
 VermilionCity_House1_EventScript_FishingGurusBrother:: @ 816D817
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_GOOD_ROD, ViridianCity_NewHouse_EventScript_AlreadyGotGoodRod
+	goto_if_set FLAG_GOT_GOOD_ROD, VermilionCity_House1_EventScript_AlreadyGotGoodRod
 	msgbox VermilionCity_House1_Text_DoYouLikeToFish, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq VermilionCity_House1_EventScript_GiveGoodRod
