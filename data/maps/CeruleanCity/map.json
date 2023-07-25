@@ -15,30 +15,30 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_ROUTE24",
       "offset": 12,
-      "map": "MAP_ROUTE24"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE5",
       "offset": 0,
-      "map": "MAP_ROUTE5"
+      "direction": "down"
     },
     {
-      "direction": "left",
+      "map": "MAP_ROUTE4",
       "offset": 10,
-      "map": "MAP_ROUTE4"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE9",
       "offset": 10,
-      "map": "MAP_ROUTE9"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "in_connection": false,
       "x": 31,
       "y": 12,
       "elevation": 3,
@@ -48,11 +48,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Policeman",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-      "in_connection": false,
       "x": 33,
       "y": 6,
       "elevation": 3,
@@ -62,11 +63,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Grunt",
-      "flag": "FLAG_HIDE_CERULEAN_ROCKET"
+      "flag": "FLAG_HIDE_CERULEAN_ROCKET",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "in_connection": false,
       "x": 16,
       "y": 21,
       "elevation": 3,
@@ -76,11 +78,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_LittleBoy",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-      "in_connection": false,
       "x": 9,
       "y": 23,
       "elevation": 3,
@@ -90,11 +93,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_BaldingMan",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SLOWBRO",
-      "in_connection": false,
       "x": 32,
       "y": 29,
       "elevation": 3,
@@ -104,11 +108,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Slowbro",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "in_connection": false,
       "x": 33,
       "y": 29,
       "elevation": 3,
@@ -118,11 +123,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Lass",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "in_connection": false,
       "x": 34,
       "y": 22,
       "elevation": 3,
@@ -132,11 +138,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Youngster",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
-      "in_connection": false,
       "x": 22,
       "y": 0,
       "elevation": 3,
@@ -146,11 +153,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_CERULEAN_RIVAL"
+      "flag": "FLAG_HIDE_CERULEAN_RIVAL",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUT_TREE",
-      "in_connection": false,
       "x": 26,
       "y": 32,
       "elevation": 3,
@@ -160,11 +168,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
-      "flag": "FLAG_CERULEAN_CITY_CUT_TREE"
+      "flag": "FLAG_CERULEAN_CITY_CUT_TREE",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUT_TREE",
-      "in_connection": true,
       "x": 50,
       "y": 18,
       "elevation": 10,
@@ -174,11 +183,12 @@
       "trainer_type": "27",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "0x0",
-      "flag": "FLAG_ROUTE_9_CUT_TREE"
+      "flag": "FLAG_ROUTE_9_CUT_TREE",
+      "in_connection": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
-      "in_connection": false,
       "x": 12,
       "y": 30,
       "elevation": 3,
@@ -188,11 +198,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_Woman",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "in_connection": false,
       "x": 1,
       "y": 13,
       "elevation": 3,
@@ -202,11 +213,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CeruleanCity_EventScript_CeruleanCaveGuard",
-      "flag": "FLAG_HIDE_CERULEAN_CAVE_GUARD"
+      "flag": "FLAG_HIDE_CERULEAN_CAVE_GUARD",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_BLACK_BELT",
-      "in_connection": false,
       "x": 13,
       "y": 6,
       "elevation": 3,
@@ -216,11 +228,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Poliwrath",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MASTER_PSYCHIC_M",
-      "in_connection": false,
       "x": 7,
       "y": 33,
       "elevation": 3,
@@ -230,7 +243,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MasterTrainer_EventScript_Jynx",
-      "flag": "FLAG_HIDE_MASTER_TRAINERS"
+      "flag": "FLAG_HIDE_MASTER_TRAINERS",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -239,98 +253,98 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE1",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 30,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 15,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE3",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 22,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_POKEMON_CENTER_1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 31,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_GYM",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 13,
       "y": 28,
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CITY_BIKE_SHOP",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 29,
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_MART",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 1,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_NONE",
-      "dest_warp_id": 127
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "127"
     },
     {
       "x": 10,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE1",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 31,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE2",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 31,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE2",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 14,
       "y": 28,
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CITY_BIKE_SHOP",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 23,
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE4",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 17,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CITY_HOUSE5",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

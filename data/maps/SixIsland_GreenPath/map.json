@@ -15,20 +15,20 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
       "offset": 0,
-      "map": "MAP_SIX_ISLAND_OUTCAST_ISLAND"
+      "direction": "up"
     },
     {
-      "direction": "right",
+      "map": "MAP_SIX_ISLAND_WATER_PATH",
       "offset": 0,
-      "map": "MAP_SIX_ISLAND_WATER_PATH"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
-      "in_connection": false,
       "x": 11,
       "y": 8,
       "elevation": 3,
@@ -38,7 +38,8 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "SixIsland_GreenPath_EventScript_Jaclyn",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -47,42 +48,42 @@
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 68,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 69,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 46,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 47,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 48,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

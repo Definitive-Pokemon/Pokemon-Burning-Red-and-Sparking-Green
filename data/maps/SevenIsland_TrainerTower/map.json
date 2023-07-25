@@ -2,7 +2,7 @@
   "id": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
   "name": "SevenIsland_TrainerTower",
   "layout": "LAYOUT_SEVEN_ISLAND_TRAINER_TOWER",
-  "music": "MUS_ROUTE110",
+  "music": "MUS_SEVII_ROUTE",
   "region_map_section": "MAPSEC_TRAINER_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -15,15 +15,15 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_SEVEN_ISLAND",
       "offset": 10,
-      "map": "MAP_SEVEN_ISLAND"
+      "direction": "down"
     }
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "in_connection": false,
       "x": 18,
       "y": 26,
       "elevation": 3,
@@ -33,11 +33,12 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "SevenIsland_TrainerTower_EventScript_Dario",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
-      "in_connection": false,
       "x": 18,
       "y": 29,
       "elevation": 3,
@@ -47,7 +48,8 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "SevenIsland_TrainerTower_EventScript_Rodette",
-      "flag": "0"
+      "flag": "0",
+      "in_connection": false
     }
   ],
   "warp_events": [
@@ -56,7 +58,7 @@
       "y": 7,
       "elevation": 3,
       "dest_map": "MAP_TRAINER_TOWER_LOBBY",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

@@ -1,12 +1,12 @@
 {
-  "id": "MAP_SEVEN_ISLAND_UNUSED_HOUSE",
-  "name": "SevenIsland_UnusedHouse",
-  "layout": "LAYOUT_HOUSE4",
-  "music": "MUS_SEVII_67",
-  "region_map_section": "MAPSEC_SEVEN_ISLAND",
+  "id": "MAP_VIRIDIAN_CITY_NEW_HOUSE",
+  "name": "ViridianCity_NewHouse",
+  "layout": "LAYOUT_VIRIDIAN_CITY_NEW_HOUSE",
+  "music": "MUS_FUCHSIA",
+  "region_map_section": "MAPSEC_VIRIDIAN_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_INDOOR",
+  "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -25,6 +25,5 @@
   ],
   "bg_events": [
 
-  ],
-  "level_scaling": "0"
+  ]
 }
