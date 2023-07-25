@@ -136,10 +136,10 @@ SilphCo_7F_Movement_RivalExitBottom:: @ 8161ABF
 	face_down
 	step_end
 
-SilphCo_7F_EventScript_CastformGuy:: @ 8161AC8
+SilphCo_7F_EventScript_LaprasGuy:: @ 8161AC8
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_CASTFORM_FROM_SILPH, SilphCo_7F_EventScript_AlreadyGotCastform
+	goto_if_set FLAG_GOT_LAPRAS_FROM_SILPH, SilphCo_7F_EventScript_AlreadyGotCastform
 	msgbox SilphCo_7F_Text_HaveMonForSavingUs
 	setvar VAR_TEMP_1, SPECIES_CASTFORM
 	givemon SPECIES_CASTFORM, 45, ITEM_NONE
@@ -197,7 +197,7 @@ SilphCo_7F_EventScript_CastformTransferredToPC:: @ 8161B73
 SilphCo_7F_EventScript_EndReceiveCastform:: @ 8161B7E
 	textcolor 0
 	msgbox SilphCo_7F_Text_ExplainCastform
-	setflag FLAG_GOT_CASTFORM_FROM_SILPH
+	setflag FLAG_GOT_LAPRAS_FROM_SILPH
 	release
 	end
 
