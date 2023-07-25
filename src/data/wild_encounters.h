@@ -1602,13 +1602,13 @@ const struct WildPokemon sFiveIslandLostCaveRoom7_FireRed_LandMons[] =
     { 59, 59, SPECIES_MISDREAVUS },
     { 59, 59, SPECIES_MURKROW },
     { 59, 59, SPECIES_MISDREAVUS },
-    { 58, 58, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
     { 60, 60, SPECIES_GENGAR },
 };
 
@@ -1634,7 +1634,7 @@ const struct WildPokemonInfo sFiveIslandLostCaveRoom8_FireRed_LandMonsInfo = { 8
 
 const struct WildPokemon sFiveIslandLostCaveRoom9_FireRed_LandMons[] =
 {
-    { 59, 59, SPECIES_MR._MIME },
+    { 59, 59, SPECIES_MR_MIME },
     { 58, 58, SPECIES_KADABRA },
     { 61, 61, SPECIES_WOBBUFFET },
     { 60, 60, SPECIES_WOBBUFFET },
@@ -2881,15 +2881,15 @@ const struct WildPokemonInfo sRoute20_FireRed_FishingMonsInfo = { 20, sRoute20_F
 const struct WildPokemon sRoute21North_FireRed_LandMons[] =
 {
     { 34, 34, SPECIES_TANGELA },
-    { 33, 33, SPECIES_MR._MIME },
+    { 33, 33, SPECIES_MR_MIME },
     { 34, 34, SPECIES_LICKITUNG },
     { 35, 35, SPECIES_TANGELA },
     { 36, 36, SPECIES_LICKITUNG },
-    { 37, 37, SPECIES_MR._MIME },
+    { 37, 37, SPECIES_MR_MIME },
     { 34, 34, SPECIES_TANGELA },
-    { 36, 36, SPECIES_MR._MIME },
+    { 36, 36, SPECIES_MR_MIME },
     { 38, 38, SPECIES_LICKITUNG },
-    { 34, 34, SPECIES_MR._MIME },
+    { 34, 34, SPECIES_MR_MIME },
     { 37, 37, SPECIES_LICKITUNG },
     { 39, 39, SPECIES_TANGELA },
 };
@@ -5230,13 +5230,13 @@ const struct WildPokemon sFiveIslandLostCaveRoom7_LeafGreen_LandMons[] =
     { 59, 59, SPECIES_MISDREAVUS },
     { 59, 59, SPECIES_MURKROW },
     { 59, 59, SPECIES_MISDREAVUS },
-    { 58, 58, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
-    { 59, 59, SPECIES_MR._MIME },
-    { 58, 58, SPECIES_MR._MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
+    { 59, 59, SPECIES_MR_MIME },
+    { 58, 58, SPECIES_MR_MIME },
     { 60, 60, SPECIES_GENGAR },
 };
 
@@ -5262,7 +5262,7 @@ const struct WildPokemonInfo sFiveIslandLostCaveRoom8_LeafGreen_LandMonsInfo = {
 
 const struct WildPokemon sFiveIslandLostCaveRoom9_LeafGreen_LandMons[] =
 {
-    { 59, 59, SPECIES_MR._MIME },
+    { 59, 59, SPECIES_MR_MIME },
     { 58, 58, SPECIES_KADABRA },
     { 61, 61, SPECIES_WOBBUFFET },
     { 60, 60, SPECIES_WOBBUFFET },
@@ -6509,15 +6509,15 @@ const struct WildPokemonInfo sRoute20_LeafGreen_FishingMonsInfo = { 20, sRoute20
 const struct WildPokemon sRoute21North_LeafGreen_LandMons[] =
 {
     { 34, 34, SPECIES_TANGELA },
-    { 33, 33, SPECIES_MR._MIME },
+    { 33, 33, SPECIES_MR_MIME },
     { 34, 34, SPECIES_LICKITUNG },
     { 35, 35, SPECIES_TANGELA },
     { 36, 36, SPECIES_LICKITUNG },
-    { 37, 37, SPECIES_MR._MIME },
+    { 37, 37, SPECIES_MR_MIME },
     { 34, 34, SPECIES_TANGELA },
-    { 36, 36, SPECIES_MR._MIME },
+    { 36, 36, SPECIES_MR_MIME },
     { 38, 38, SPECIES_LICKITUNG },
-    { 34, 34, SPECIES_MR._MIME },
+    { 34, 34, SPECIES_MR_MIME },
     { 37, 37, SPECIES_LICKITUNG },
     { 39, 39, SPECIES_TANGELA },
 };
