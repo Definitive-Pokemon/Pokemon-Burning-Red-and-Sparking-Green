@@ -50,6 +50,7 @@ FuchsiaCity_House2_Text_ExplainLapras:: @ 8176305
 
 FuchsiaCity_House2_Text_HowIsLapras::
     .string "Hello again!\n"
-    .string "How is LAPRAS "faring?"\p"
+    .string "How is LAPRAS…\n"
+    .string "faring?\p"
     .string "Hahah, I know, I know!\p"
     .string "That was a horrible pun.$"
