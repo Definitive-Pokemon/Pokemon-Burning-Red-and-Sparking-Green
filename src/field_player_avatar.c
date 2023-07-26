@@ -2042,7 +2042,7 @@ static void Task_TeleportWarpOutPlayerAnim(u8 taskId)
         SavePlayerFacingDirectionForTeleport(object->facingDirection);
         tRotationTimer = 0;
         tDeltaY = 1;
-        tYdeflection = (u16)(sprite->y + sprite->pos2.y) * 16;
+        tYdeflection = (u16)(sprite->pos1.y + sprite->pos2.y) * 16;
         sprite->pos2.y = 0;
         CameraObjectReset2();
         object->fixedPriority = TRUE;
@@ -2054,8 +2054,8 @@ static void Task_TeleportWarpOutPlayerAnim(u8 taskId)
         TeleportAnim_RotatePlayer(object, &tRotationTimer);
         tYdeflection -= tDeltaY;
         tDeltaY += 3;
-        sprite->y = tYdeflection >> 4;
-        if (sprite->y + (s16)gTotalCameraPixelOffsetY < -32)
+        sprite->pos1.y = tYdeflection >> 4;
+        if (sprite->pos1.y + (s16)gTotalCameraPixelOffsetY < -32)
         {
             tState++;
         }
@@ -2090,7 +2090,7 @@ static void Task_TeleportWarpInPlayerAnim(u8 taskId)
         ObjectEventForceSetHeldMovement(object, GetFaceDirectionMovementAction(sTeleportFacingDirectionSequence[tFinalFacingDirection]));
         tRotationTimer = 0;
         tDeltaY = 116;
-        tYpos = sprite->y;
+        tYpos = sprite->pos1.y;
         tPriority = sprite->oam.priority;
         tSubpriority = sprite->subpriority;
         tYdeflection = -((u16)sprite->pos2.y + 32) * 16;
@@ -2109,10 +2109,10 @@ static void Task_TeleportWarpInPlayerAnim(u8 taskId)
         {
             tDeltaY = 4;
         }
-        sprite->y = tYdeflection >> 4;
-        if (sprite->y >= tYpos)
+        sprite->pos1.y = tYdeflection >> 4;
+        if (sprite->pos1.y >= tYpos)
         {
-            sprite->y = tYpos;
+            sprite->pos1.y = tYpos;
             tLandingDelay = 0;
             tState++;
         }
