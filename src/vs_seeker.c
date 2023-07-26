@@ -555,18 +555,6 @@ static const VsSeekerData sVsSeekerData[] = {
       MAP_GROUP(SEVEN_ISLAND_TANOBY_RUINS), MAP_NUM(SEVEN_ISLAND_TANOBY_RUINS) },
    { {TRAINER_GENTLEMAN_CLIFFORD, TRAINER_GENTLEMAN_CLIFFORD},
       MAP_GROUP(SEVEN_ISLAND_TANOBY_RUINS), MAP_NUM(SEVEN_ISLAND_TANOBY_RUINS) },
-   { {TRAINER_PKMN_RANGER_HELENA, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_PKMN_RANGER_HELENA_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
-   { {TRAINER_COOLTRAINER_ATTICUS, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_COOLTRAINER_ATTICUS_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
-   { {TRAINER_FISHERMAN_DEFOREST, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_FISHERMAN_DEFOREST_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
-   { {TRAINER_BIRD_KEEPER_SPEDO, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_BIRD_KEEPER_SPEDO_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
-   { {TRAINER_COOLTRAINER_CASPARA, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_COOLTRAINER_CASPARA_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
-   { {TRAINER_SWIMMER_FEMALE_SEDEF, 0xFFFF, 0xFFFF, 0xFFFF, TRAINER_SWIMMER_FEMALE_SEDEF_2},
-      MAP_GROUP(TWO_ISLAND_CAPE_BRINK), MAP_NUM(TWO_ISLAND_CAPE_BRINK) },
 };
 
 static const u8 sMovementScript_Wait48[] = {
@@ -610,7 +598,7 @@ void VsSeekerFreezeObjectsAfterChargeComplete(void)
 static void Task_ResetObjectsRematchWantedState(u8 taskId)
 {
     struct Task * task = &gTasks[taskId];
-    u32 i;
+    u8 i;
 
     if (task->data[0] == 0 && walkrun_is_standing_still() == TRUE)
     {
@@ -643,7 +631,7 @@ static void Task_ResetObjectsRematchWantedState(u8 taskId)
 void VsSeekerResetObjectMovementAfterChargeComplete(void)
 {
     struct ObjectEventTemplate * templates = gSaveBlock1Ptr->objectEventTemplates;
-    u32 i;
+    u8 i;
     u8 movementType;
     u8 objEventId;
     struct ObjectEvent * objectEvent;
@@ -651,12 +639,12 @@ void VsSeekerResetObjectMovementAfterChargeComplete(void)
     for (i = 0; i < gMapHeader.events->objectEventCount; i++)
     {
         if ((
-                templates[i].trainerType == TRAINER_TYPE_NORMAL
-             || templates[i].trainerType == TRAINER_TYPE_BURIED
+                templates[i].objUnion.normal.trainerType == TRAINER_TYPE_NORMAL
+             || templates[i].objUnion.normal.trainerType == TRAINER_TYPE_BURIED
             ) && (
-                templates[i].movementType == MOVEMENT_TYPE_VS_SEEKER_4D
-             || templates[i].movementType == MOVEMENT_TYPE_VS_SEEKER_4E
-             || templates[i].movementType == MOVEMENT_TYPE_VS_SEEKER_4F
+                templates[i].objUnion.normal.movementType == MOVEMENT_TYPE_VS_SEEKER_4D
+             || templates[i].objUnion.normal.movementType == MOVEMENT_TYPE_VS_SEEKER_4E
+             || templates[i].objUnion.normal.movementType == MOVEMENT_TYPE_VS_SEEKER_4F
           ))
         {
             movementType = GetRandomFaceDirectionMovementType();
@@ -666,7 +654,7 @@ void VsSeekerResetObjectMovementAfterChargeComplete(void)
             {
                 SetTrainerMovementType(objectEvent, movementType);
             }
-            templates[i].movementType = movementType;
+            templates[i].objUnion.normal.movementType = movementType;
         }
     }
 }
@@ -678,14 +666,7 @@ bool8 UpdateVsSeekerStepCounter(void)
     if (CheckBagHasItem(ITEM_VS_SEEKER, 1) == TRUE)
     {
         if ((gSaveBlock1Ptr->trainerRematchStepCounter & 0xFF) < 100)
-        {
             gSaveBlock1Ptr->trainerRematchStepCounter++;
-            if(GetAbilityBySpecies(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), GetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM)) == ABILITY_LIGHTNING_ROD)
-            {
-               if ((gSaveBlock1Ptr->trainerRematchStepCounter & 0xFF) < 100)
-                  gSaveBlock1Ptr->trainerRematchStepCounter++;
-            }
-        }
     }
 
     if (FlagGet(FLAG_SYS_VS_SEEKER_CHARGING) == TRUE)
@@ -693,11 +674,6 @@ bool8 UpdateVsSeekerStepCounter(void)
         if (((gSaveBlock1Ptr->trainerRematchStepCounter >> 8) & 0xFF) < 100)
         {
             x = (((gSaveBlock1Ptr->trainerRematchStepCounter >> 8) & 0xFF) + 1);
-            if(GetAbilityBySpecies(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), GetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM)) == ABILITY_LIGHTNING_ROD)
-            {
-               if (((gSaveBlock1Ptr->trainerRematchStepCounter >> 8) & 0xFF) < 100)
-                  x = (((gSaveBlock1Ptr->trainerRematchStepCounter >> 8) & 0xFF) + 1);
-            }
             gSaveBlock1Ptr->trainerRematchStepCounter = (gSaveBlock1Ptr->trainerRematchStepCounter & 0xFF) | (x << 8);
         }
         if (((gSaveBlock1Ptr->trainerRematchStepCounter >> 8) & 0xFF) == 100)
@@ -722,7 +698,7 @@ void MapResetTrainerRematches(u16 mapGroup, u16 mapNum)
 
 static void ResetMovementOfRematchableTrainers(void)
 {
-    u32 i;
+    u8 i;
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
@@ -732,8 +708,8 @@ static void ResetMovementOfRematchableTrainers(void)
             u8 movementType = GetRandomFaceDirectionMovementType();
             if (objectEvent->active && gSprites[objectEvent->spriteId].data[0] == i)
             {
-                gSprites[objectEvent->spriteId].pos2.x = 0;
-                gSprites[objectEvent->spriteId].pos2.y = 0;
+                gSprites[objectEvent->spriteId].x2 = 0;
+                gSprites[objectEvent->spriteId].y2 = 0;
                 SetTrainerMovementType(objectEvent, movementType);
             }
         }
@@ -764,7 +740,7 @@ static void VsSeekerSetStepCounterFullyCharged(void)
 
 void Task_VsSeeker_0(u8 taskId)
 {
-    u32 i;
+    u8 i;
     u8 respval;
 
     for (i = 0; i < 16; i++)
@@ -832,7 +808,7 @@ static void GatherNearbyTrainerInfo(void)
 
     for (objectEventIdx = 0; objectEventIdx < gMapHeader.events->objectEventCount; objectEventIdx++)
     {
-        if (templates[objectEventIdx].trainerType == 1 || templates[objectEventIdx].trainerType == 3)
+        if (templates[objectEventIdx].objUnion.normal.trainerType == 1 || templates[objectEventIdx].objUnion.normal.trainerType == 3)
         {
             sVsSeeker->trainerInfo[vsSeekerObjectIdx].script = templates[objectEventIdx].script;
             sVsSeeker->trainerInfo[vsSeekerObjectIdx].trainerIdx = GetTrainerFlagFromScript(templates[objectEventIdx].script);
@@ -871,27 +847,19 @@ static void Task_VsSeeker_3(u8 taskId)
 
 static u8 CanUseVsSeeker(void)
 {
-   u8 vsSeekerChargeSteps = gSaveBlock1Ptr->trainerRematchStepCounter;
-   if (vsSeekerChargeSteps == 100)
-   {
-      if (GetRematchableTrainerLocalId() == 0xFF)
-         return VSSEEKER_NO_ONE_IN_RANGE;
-      else
-         return VSSEEKER_CAN_USE;
-   }
-   else
-   {
-      if(GetAbilityBySpecies(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), GetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM)) == ABILITY_LIGHTNING_ROD)
-      {
-         if(vsSeekerChargeSteps % 2 == 0)
-            TV_PrintIntToStringVar(0, (100 - vsSeekerChargeSteps) / 2);
-         else
-            TV_PrintIntToStringVar(0, ((100 - vsSeekerChargeSteps) / 2) + 1);
-      }
-      else
-         TV_PrintIntToStringVar(0, 100 - vsSeekerChargeSteps);
-      return VSSEEKER_NOT_CHARGED;
-   }
+    u8 vsSeekerChargeSteps = gSaveBlock1Ptr->trainerRematchStepCounter;
+    if (vsSeekerChargeSteps == 100)
+    {
+        if (GetRematchableTrainerLocalId() == 0xFF)
+            return VSSEEKER_NO_ONE_IN_RANGE;
+        else
+            return VSSEEKER_CAN_USE;
+    }
+    else
+    {
+        TV_PrintIntToStringVar(0, 100 - vsSeekerChargeSteps);
+        return VSSEEKER_NOT_CHARGED;
+    }
 }
 
 static u8 GetVsSeekerResponseInArea(const VsSeekerData * vsSeekerData)
@@ -974,7 +942,9 @@ void ClearRematchStateByTrainerId(void)
 
         for (i = 0; i < gMapHeader.events->objectEventCount; i++)
         {
-            if ((objectEventTemplates[i].trainerType == TRAINER_TYPE_NORMAL || objectEventTemplates[i].trainerType == TRAINER_TYPE_BURIED) && vsSeekerDataIdx == LookupVsSeekerOpponentInArray(sVsSeekerData, GetTrainerFlagFromScript(objectEventTemplates[i].script)))
+            if ((objectEventTemplates[i].objUnion.normal.trainerType == TRAINER_TYPE_NORMAL 
+              || objectEventTemplates[i].objUnion.normal.trainerType == TRAINER_TYPE_BURIED)
+              && vsSeekerDataIdx == LookupVsSeekerOpponentInArray(sVsSeekerData, GetTrainerFlagFromScript(objectEventTemplates[i].script)))
             {
                 struct ObjectEvent *objectEvent;
 
@@ -1230,7 +1200,7 @@ static bool32 IsThisTrainerRematchable(u32 localId)
 
 static void ClearAllTrainerRematchStates(void)
 {
-    u32 i;
+    u8 i;
 
     for (i = 0; i < NELEMS(gSaveBlock1Ptr->trainerRematches); i++)
         gSaveBlock1Ptr->trainerRematches[i] = 0;
@@ -1284,7 +1254,7 @@ static u8 GetNextAvailableRematchTrainer(const VsSeekerData * vsSeekerData, u16 
 static u8 GetRematchableTrainerLocalId(void)
 {
     u8 idx;
-    u32 i;
+    u8 i;
 
     for (i = 0; sVsSeeker->trainerInfo[i].localId != 0xFF; i++)
     {

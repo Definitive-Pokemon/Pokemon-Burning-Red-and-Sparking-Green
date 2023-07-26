@@ -20,7 +20,6 @@
 #include "fldeff.h"
 #include "heal_location.h"
 #include "help_system.h"
-#include "item.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -33,8 +32,6 @@
 #include "new_menu_helpers.h"
 #include "overworld.h"
 #include "play_time.h"
-#include "pokedex.h"
-#include "pokemon_storage_system.h"
 #include "quest_log.h"
 #include "quest_log_objects.h"
 #include "random.h"
@@ -50,11 +47,10 @@
 #include "trainer_pokemon_sprites.h"
 #include "vs_seeker.h"
 #include "wild_encounter.h"
-#include "constants/abilities.h"
+#include "constants/event_objects.h"
 #include "constants/maps.h"
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
-#include "constants/items.h"
 
 #define PLAYER_TRADING_STATE_IDLE 0x80
 #define PLAYER_TRADING_STATE_BUSY 0x81
@@ -148,11 +144,12 @@ static void VBlankCB_Field(void);
 static bool32 map_loading_iteration_3(u8 *state);
 static bool32 sub_8056CD8(u8 *state);
 static bool32 map_loading_iteration_2_link(u8 *state);
+static void do_load_map_stuff_loop(u8 *state);
 static void MoveSaveBlocks_ResetHeap_(void);
 static void sub_8056E80(void);
 static void sub_8056F08(void);
 static void InitOverworldGraphicsRegisters(void);
-static void sub_8057024(bool32 a0);
+static void ResumeMap(bool32 a0);
 static void sub_8057074(void);
 static void mli4_mapscripts_and_other(void);
 static void ReloadObjectsAndRunReturnToFieldMapScript(void);
@@ -246,65 +243,6 @@ static const u16 sWhiteOutMoneyLossBadgeFlagIDs[] = {
     FLAG_BADGE07_GET,
     FLAG_BADGE08_GET
 };
-
-bool8 CheckNationalDexEligibilityOnSaveLoad(void)
-{
-    u16 mapGroup = gSaveBlock1Ptr->location.mapGroup;
-    s8 mapNum = gSaveBlock1Ptr->location.mapNum;
-    if((mapGroup == MAP_GROUP(VIRIDIAN_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(VIRIDIAN_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(PEWTER_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(PEWTER_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(CERULEAN_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(CERULEAN_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(LAVENDER_TOWN_POKEMON_CENTER_1F) && mapNum == MAP_NUM(LAVENDER_TOWN_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(VERMILION_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(VERMILION_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(CELADON_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(CELADON_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(FUCHSIA_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(FUCHSIA_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(CINNABAR_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(CINNABAR_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(INDIGO_PLATEAU_POKEMON_CENTER_1F) && mapNum == MAP_NUM(INDIGO_PLATEAU_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(SAFFRON_CITY_POKEMON_CENTER_1F) && mapNum == MAP_NUM(SAFFRON_CITY_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(ROUTE4_POKEMON_CENTER_1F) && mapNum == MAP_NUM(ROUTE4_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(ROUTE10_POKEMON_CENTER_1F) && mapNum == MAP_NUM(ROUTE10_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(ONE_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(ONE_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(TWO_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(TWO_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(THREE_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(THREE_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(FOUR_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(FOUR_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(FIVE_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(FIVE_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(SEVEN_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(SEVEN_ISLAND_POKEMON_CENTER_1F)) ||
-       (mapGroup == MAP_GROUP(SIX_ISLAND_POKEMON_CENTER_1F) && mapNum == MAP_NUM(SIX_ISLAND_POKEMON_CENTER_1F)))
-    {
-        if(!IsNationalPokedexEnabled() && HasNationalMon())
-        {
-            VarSet(VAR_TEMP_0, 0);
-            return TRUE;
-        }
-    }
-    return FALSE;
-}
-
-bool8 DoCoordsMatchPMCExitMat(void)
-{
-    s16 x;
-    s16 y;
-    switch(gMapHeader.regionMapSectionId)
-    {
-        case MAPSEC_INDIGO_PLATEAU:
-            x = 11;
-            y = 16;
-            break;
-        case MAPSEC_ONE_ISLAND:
-            x = 9;
-            y = 9;
-            break;
-        default:
-            x = 7;
-            y = 8;
-            break;
-    }
-    if(gSaveBlock1Ptr->pos.x == x && gSaveBlock1Ptr->pos.y == y)
-    {
-        return TRUE;
-    }
-    return FALSE;
-}
 
 static void DoWhiteOut(void)
 {
@@ -452,7 +390,7 @@ void SetGameStat(u8 statId, u32 statVal)
 
 void ApplyNewEncryptionKeyToGameStats(u32 newKey)
 {
-    u32 i;
+    u8 i;
     for (i = 0; i < NUM_GAME_STATS; i++)
     {
         ApplyNewEncryptionKeyToWord(&gSaveBlock1Ptr->gameStats[i], newKey);
@@ -466,22 +404,22 @@ static void LoadObjEventTemplatesFromHeader(void)
     u8 i, j;
     for (i = 0, j = 0; i < gMapHeader.events->objectEventCount; i++)
     {
-        if (gMapHeader.events->objectEvents[i].inConnection == 0xFF)
+        if (gMapHeader.events->objectEvents[i].kind == OBJ_KIND_CLONE)
         {
-            // load "in_connection" object from the connecting map
-            u8 localId = gMapHeader.events->objectEvents[i].elevation;
-            u8 mapNum = gMapHeader.events->objectEvents[i].trainerType;
-            u8 mapGroup = gMapHeader.events->objectEvents[i].trainerRange_berryTreeId;
+            // load target object from the connecting map
+            u8 localId = gMapHeader.events->objectEvents[i].objUnion.clone.targetLocalId;
+            u8 mapNum = gMapHeader.events->objectEvents[i].objUnion.clone.targetMapNum;
+            u8 mapGroup = gMapHeader.events->objectEvents[i].objUnion.clone.targetMapGroup;
             const struct MapHeader * connectionMap = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
 
             gSaveBlock1Ptr->objectEventTemplates[j] = connectionMap->events->objectEvents[localId - 1];
             gSaveBlock1Ptr->objectEventTemplates[j].localId = gMapHeader.events->objectEvents[i].localId;
             gSaveBlock1Ptr->objectEventTemplates[j].x = gMapHeader.events->objectEvents[i].x;
             gSaveBlock1Ptr->objectEventTemplates[j].y = gMapHeader.events->objectEvents[i].y;
-            gSaveBlock1Ptr->objectEventTemplates[j].elevation = localId;
-            gSaveBlock1Ptr->objectEventTemplates[j].trainerType = mapNum;
-            gSaveBlock1Ptr->objectEventTemplates[j].trainerRange_berryTreeId = mapGroup;
-            gSaveBlock1Ptr->objectEventTemplates[j].inConnection = 0xFF;
+            gSaveBlock1Ptr->objectEventTemplates[j].objUnion.clone.targetLocalId = localId;
+            gSaveBlock1Ptr->objectEventTemplates[j].objUnion.clone.targetMapNum = mapNum;
+            gSaveBlock1Ptr->objectEventTemplates[j].objUnion.clone.targetMapGroup = mapGroup;
+            gSaveBlock1Ptr->objectEventTemplates[j].kind = OBJ_KIND_CLONE;
             j++;
         }
         else
@@ -529,24 +467,7 @@ void Overworld_SetObjEventTemplateMovementType(u8 localId, u8 movementType)
         struct ObjectEventTemplate *objectEventTemplate = &savObjTemplates[i];
         if (objectEventTemplate->localId == localId)
         {
-            objectEventTemplate->movementType = movementType;
-            return;
-        }
-    }
-}
-
-void Overworld_ResetObjEventTemplateMovementType(u8 localId)
-{
-    s32 i;
-    struct ObjectEventTemplate *savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
-    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
-    {
-        struct ObjectEventTemplate *objectEventTemplate = &savObjTemplates[i];
-        struct ObjectEventTemplate *headerObjectEventTemplate = &gMapHeader.events->objectEvents[i];
-        if (objectEventTemplate->localId == localId)
-        {
-            objectEventTemplate->movementType = headerObjectEventTemplate->movementType;
-            SetObjectMovementType(localId, headerObjectEventTemplate->movementType);
+            objectEventTemplate->objUnion.normal.movementType = movementType;
             return;
         }
     }
@@ -557,8 +478,8 @@ void Overworld_ResetObjEventTemplateMovementType(u8 localId)
 static void mapdata_load_assets_to_gpu_and_full_redraw(void)
 {
     move_tilemap_camera_to_upper_left_corner();
-    copy_map_tileset1_tileset2_to_vram(gMapHeader.mapLayout);
-    apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+    CopyMapTilesetsToVram(gMapHeader.mapLayout);
+    LoadMapTilesetPalettes(gMapHeader.mapLayout);
     DrawWholeMapView();
     InitTilesetAnimations();
 }
@@ -846,8 +767,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     RunOnTransitionMapScript();
     TryRegenerateRenewableHiddenItems();
     InitMap();
-    copy_map_tileset2_to_vram_2(gMapHeader.mapLayout);
-    apply_map_tileset2_palette(gMapHeader.mapLayout);
+    CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
+    LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
     for (paletteIndex = 7; paletteIndex < 13; paletteIndex++)
         ApplyWeatherGammaShiftToPal(paletteIndex);
     InitSecondaryTilesetAnimation();
@@ -914,7 +835,7 @@ void ResetInitialPlayerAvatarState(void)
     sInitialPlayerAvatarState.unk2 = FALSE;
 }
 
-void SetInitialPlayerAvatarStateWithDirection(u8 dirn)
+static void SetInitialPlayerAvatarStateWithDirection(u8 dirn)
 {
     sInitialPlayerAvatarState.direction = dirn;
     sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_ON_FOOT;
@@ -957,7 +878,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (mapType == MAP_TYPE_UNDERWATER)
         return PLAYER_AVATAR_FLAG_UNDERWATER;
-    else if (MetatileBehavior_IsSurfableWaterOrUnderwater(metatileBehavior) == TRUE)
+    else if (sub_8055B38(metatileBehavior) == TRUE)
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (MetatileBehavior_IsSurfable(metatileBehavior) == TRUE)
         return PLAYER_AVATAR_FLAG_SURFING;
@@ -971,7 +892,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ACRO_BIKE;
 }
 
-bool8 MetatileBehavior_IsSurfableWaterOrUnderwater(u16 metatileBehavior)
+bool8 sub_8055B38(u16 metatileBehavior)
 {
     if (MetatileBehavior_IsSurfable(metatileBehavior) != TRUE)
         return FALSE;
@@ -1063,8 +984,6 @@ void Overworld_SetWarpDestinationFromWarp(struct WarpData * warp)
 
 static u16 GetLocationMusic(struct WarpData * warp)
 {
-    if(FlagGet(FLAG_SYS_ON_CYCLING_ROAD))
-        return MUS_CYCLING;
     return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
 
@@ -1072,20 +991,12 @@ static u16 GetCurrLocationDefaultMusic(void)
 {
     u16 music;
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
-    {
-        music = MUS_GSC_PEWTER;
-    }
     return music;
 }
 
 static u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
-    {
-        music = MUS_GSC_PEWTER;
-    }
     return music;
 }
 
@@ -1257,18 +1168,7 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
         *state = 3;
         break;
     case 2:
-        divBy = 1;
-        monsCount = CalculatePlayerPartyCount();
-        for (i = 0; i < monsCount; i++)
-        {
-            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
-                && GetMonAbility(&gPlayerParty[0]) == ABILITY_SWARM)
-            {
-                divBy = 2;
-                break;
-            }
-        }
-        *delayCounter = ((Random() % 1200) + 1200) / divBy;
+        *delayCounter = (Random() % 1200) + 1200;
         *state = 3;
         break;
     case 3:
@@ -1338,10 +1238,6 @@ bool8 IsMapTypeOutdoors(u8 mapType)
 
 bool8 Overworld_MapTypeAllowsTeleportAndFly(u8 mapType)
 {
-    if(GetCurrentRegionMapSectionId() == MAPSEC_FARAWAY_ISLAND || GetCurrentRegionMapSectionId() == MAPSEC_SOUTHERN_ISLAND)
-        return FALSE;
-    if(GetCurrentRegionMapSectionId() == MAPSEC_BATTLE_FRONTIER)
-        return FALSE;
     if (mapType == MAP_TYPE_ROUTE
         || mapType == MAP_TYPE_TOWN
         || mapType == MAP_TYPE_OCEAN_ROUTE
@@ -1451,7 +1347,7 @@ static void InitOverworldBgs(void)
     SetBgTilemapBuffer(3, gBGTilemapBuffers3);
     InitStandardTextBoxWindows();
     InitTextBoxGfxAndPrinters();
-    sub_8069348();
+    InitFieldMessageBox();
 }
 
 static void InitOverworldBgs_NoResetHeap(void)
@@ -1469,7 +1365,7 @@ static void InitOverworldBgs_NoResetHeap(void)
     SetBgTilemapBuffer(3, gBGTilemapBuffers3);
     InitStandardTextBoxWindows();
     InitTextBoxGfxAndPrinters();
-    sub_8069348();
+    InitFieldMessageBox();
 }
 
 void CleanupOverworldWindowsAndTilemaps(void)
@@ -1623,14 +1519,10 @@ static bool8 map_post_load_hook_exec(void)
 
 void CB2_NewGame(void)
 {
-    u8 versionBackup = gSaveBlock1Ptr->keyFlags.version;
     FieldClearVBlankHBlankCallbacks();
     StopMapMusic();
     ResetSafariZoneFlag_();
     NewGameInitData();
-    AddBagItem(ITEM_BERRY_POUCH, 1);
-    AddBagItem(ITEM_TM_CASE, 1);
-    gSaveBlock1Ptr->keyFlags.version = versionBackup;
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext1_Init();
@@ -1658,13 +1550,6 @@ void CB2_WhiteOut(void)
         ScriptContext2_Disable();
         gFieldCallback = FieldCB_RushInjuredPokemonToCenter;
         val = 0;
-        if(gSaveBlock1Ptr->keyFlags.nuzlocke == 1 || gSaveBlock1Ptr->keyFlags.noPMC == 1)
-        {
-            if(GetFirstAliveBoxMon() == 420) //no usable Pokemon
-            {
-                gGlobalFieldTintMode = 1; //should grayscale palettes?
-            }
-        }
         do_load_map_stuff_loop(&val);
         QuestLog_CutRecording();
         SetFieldVBlankCallback();
@@ -1791,7 +1676,7 @@ void CB2_ReturnToFieldFromDiploma(void)
 
 static void FieldCB_ShowMapNameOnContinue(void)
 {
-    if (SHOW_MAP_NAME_ENABLED)
+    if (gMapHeader.showMapName == TRUE)
         ShowMapNamePopup(FALSE);
     FieldCB_WarpExitFadeFromBlack();
 }
@@ -1891,7 +1776,7 @@ static bool32 map_loading_iteration_3(u8 *state)
         (*state)++;
         break;
     case 2:
-        sub_8057024(TRUE);
+        ResumeMap(TRUE);
         (*state)++;
         break;
     case 3:
@@ -1912,17 +1797,17 @@ static bool32 map_loading_iteration_3(u8 *state)
         (*state)++;
         break;
     case 6:
-        copy_map_tileset1_to_vram(gMapHeader.mapLayout);
+        CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 7:
-        copy_map_tileset2_to_vram(gMapHeader.mapLayout);
+        CopySecondaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 8:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+            LoadMapTilesetPalettes(gMapHeader.mapLayout);
             (*state)++;
         }
         break;
@@ -1968,7 +1853,7 @@ static bool32 load_map_stuff(u8 *state, bool32 a1)
         (*state)++;
         break;
     case 2:
-        sub_8057024(a1);
+        ResumeMap(a1);
         (*state)++;
         break;
     case 3:
@@ -1997,17 +1882,17 @@ static bool32 load_map_stuff(u8 *state, bool32 a1)
         (*state)++;
         break;
     case 7:
-        copy_map_tileset1_to_vram(gMapHeader.mapLayout);
+        CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 8:
-        copy_map_tileset2_to_vram(gMapHeader.mapLayout);
+        CopySecondaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 9:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+            LoadMapTilesetPalettes(gMapHeader.mapLayout);
             (*state)++;
         }
         break;
@@ -2025,7 +1910,7 @@ static bool32 load_map_stuff(u8 *state, bool32 a1)
             MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
             MapPreview_StartForestTransition(gMapHeader.regionMapSectionId);
         }
-        else if (SHOW_MAP_NAME_ENABLED)
+        else if (gMapHeader.showMapName == TRUE)
         {
             ShowMapNamePopup(FALSE);
         }
@@ -2048,7 +1933,7 @@ static bool32 sub_8056CD8(u8 *state)
     case 0:
         InitOverworldBgs();
         QuestLog_InitPalettesBackup();
-        sub_8057024(FALSE);
+        ResumeMap(FALSE);
         ReloadObjectsAndRunReturnToFieldMapScript();
         sub_8057114();
         (*state)++;
@@ -2082,7 +1967,7 @@ static bool32 map_loading_iteration_2_link(u8 *state)
         break;
     case 1:
         QuestLog_InitPalettesBackup();
-        sub_8057024(1);
+        ResumeMap(1);
         (*state)++;
         break;
     case 2:
@@ -2102,17 +1987,17 @@ static bool32 map_loading_iteration_2_link(u8 *state)
         (*state)++;
         break;
     case 5:
-        copy_map_tileset1_to_vram(gMapHeader.mapLayout);
+        CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 6:
-        copy_map_tileset2_to_vram(gMapHeader.mapLayout);
+        CopySecondaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 7:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+            LoadMapTilesetPalettes(gMapHeader.mapLayout);
             (*state)++;
         }
         break;
@@ -2148,7 +2033,7 @@ static bool32 map_loading_iteration_2_link(u8 *state)
     return FALSE;
 }
 
-void do_load_map_stuff_loop(u8 *state)
+static void do_load_map_stuff_loop(u8 *state)
 {
     while (!load_map_stuff(state, FALSE))
         ;
@@ -2209,7 +2094,7 @@ static void InitOverworldGraphicsRegisters(void)
     ChangeBgY(3, 0, 0);
 }
 
-static void sub_8057024(u32 a1)
+static void ResumeMap(u32 a1)
 {
     ResetTasks();
     ResetSpriteData();
@@ -2292,7 +2177,7 @@ static void sub_8057178(void)
 
 static void sub_80571A8(void)
 {
-    u32 i;
+    u16 i;
     u16 x, y;
 
     GetCameraFocusCoords(&x, &y);
@@ -2309,7 +2194,7 @@ static void sub_80571A8(void)
 
 static void CreateLinkPlayerSprites(void)
 {
-    u32 i;
+    u16 i;
     for (i = 0; i < gFieldLinkPlayerCount; i++)
         CreateLinkPlayerSprite(i, gLinkPlayers[i].version);
 }
@@ -2379,7 +2264,7 @@ static bool32 LoadMap_QLPlayback(u8 *state)
         (*state)++;
         break;
     case 2:
-        sub_8057024(0);
+        ResumeMap(0);
         (*state)++;
         break;
     case 3:
@@ -2397,17 +2282,17 @@ static bool32 LoadMap_QLPlayback(u8 *state)
         (*state)++;
         break;
     case 6:
-        copy_map_tileset1_to_vram(gMapHeader.mapLayout);
+        CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 7:
-        copy_map_tileset2_to_vram(gMapHeader.mapLayout);
+        CopySecondaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 8:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+            LoadMapTilesetPalettes(gMapHeader.mapLayout);
             (*state)++;
         }
         break;
@@ -2440,7 +2325,6 @@ void CB2_EnterFieldFromQuestLog(void)
     Overworld_ResetStateOnContinue();
     InitMapFromSavedGame();
     PlayTimeCounter_Start();
-    CheckNationalDexEligibilityOnSaveLoad();
     ScriptContext1_Init();
     gUnknown_2031DE0 = TRUE;
     if (UseContinueGameWarp() == TRUE)
@@ -2466,7 +2350,7 @@ void Overworld_CreditsMainCB(void)
         SetVBlankCallback(NULL);
     RunTasks();
     AnimateSprites();
-    sub_805ACF0();
+    CameraUpdateNoObjectRefresh();
     UpdateCameraPanning();
     BuildOamBuffer();
     UpdatePaletteFade();
@@ -2567,17 +2451,17 @@ static bool8 MapLdr_Credits(void)
         (*state)++;
         break;
     case 4:
-        copy_map_tileset1_to_vram(gMapHeader.mapLayout);
+        CopyPrimaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 5:
-        copy_map_tileset2_to_vram(gMapHeader.mapLayout);
+        CopySecondaryTilesetToVram(gMapHeader.mapLayout);
         (*state)++;
         break;
     case 6:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            apply_map_tileset1_tileset2_palette(gMapHeader.mapLayout);
+            LoadMapTilesetPalettes(gMapHeader.mapLayout);
             (*state)++;
         }
         break;
@@ -3477,7 +3361,7 @@ static s32 GetLinkPlayerObjectStepTimer(u8 linkPlayerId)
 
 static u8 GetLinkPlayerIdAt(s16 x, s16 y)
 {
-    u32 i;
+    u8 i;
     for (i = 0; i < MAX_LINK_PLAYERS; i++)
     {
         if (gLinkPlayerObjectEvents[i].active
@@ -3607,7 +3491,7 @@ static u8 FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing)
 
 static bool8 LinkPlayerDetectCollision(u8 selfObjEventId, u8 a2, s16 x, s16 y)
 {
-    u32 i;
+    u8 i;
     for (i = 0; i < 16; i++)
     {
         if (i != selfObjEventId)
@@ -3637,10 +3521,6 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
                 GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkGender(objEvent)),
                 SpriteCB_LinkPlayer, 0, 0, 0);
         }
-        else if (gameVersion == VERSION_EMERALD)
-        {   // same as RS for now
-            objEvent->spriteId = AddPseudoObjectEvent(GetEMAvatarGraphicsIdByGender(objEvent->singleMovementActive), SpriteCB_LinkPlayer, 0, 0, 0);
-        }
         else
         {
             objEvent->spriteId = AddPseudoObjectEvent(GetRSAvatarGraphicsIdByGender(linkGender(objEvent)), SpriteCB_LinkPlayer, 0, 0, 0);
@@ -3657,8 +3537,8 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
 {
     struct LinkPlayerObjectEvent *linkPlayerObjEvent = &gLinkPlayerObjectEvents[sprite->data[0]];
     struct ObjectEvent *objEvent = &gObjectEvents[linkPlayerObjEvent->objEventId];
-    sprite->pos1.x = objEvent->initialCoords.x;
-    sprite->pos1.y = objEvent->initialCoords.y;
+    sprite->x = objEvent->initialCoords.x;
+    sprite->y = objEvent->initialCoords.y;
     SetObjectSubpriorityByZCoord(objEvent->previousElevation, sprite, 1);
     sprite->oam.priority = ZCoordToPriority(objEvent->previousElevation);
 

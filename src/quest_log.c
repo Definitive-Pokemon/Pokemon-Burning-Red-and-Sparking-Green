@@ -25,7 +25,6 @@
 #include "new_menu_helpers.h"
 #include "strings.h"
 #include "constants/event_objects.h"
-#include "constants/layouts.h"
 #include "constants/maps.h"
 #include "constants/quest_log.h"
 #include "constants/field_weather.h"
@@ -139,9 +138,6 @@ static void UpdateTrainerFansAfterLinkBattle(struct TrainerFanClub *);
 static bool8 DidPlayerGetFirstFans(struct TrainerFanClub * );
 static void SetPlayerGotFirstFans(struct TrainerFanClub *);
 static bool8 InQuestLogDisabledLocation(void);
-static bool8 sub_8113778(u16, const u16 *);
-static bool8 sub_81137E4(u16, const u16 *);
-static u16 *sub_8113828(u16, const u16 *);
 static bool8 TrySetLinkQuestLogEvent(u16, const u16 *);
 static bool8 TrySetTrainerBattleQuestLogEvent(u16, const u16 *);
 
@@ -278,9 +274,6 @@ u8 GetQuestLogStartType(void)
 
 void StartRecordingQuestLogEntry(u16 eventId)
 {
-    if (eventId == QL_EVENT_DEPARTED && gMapHeader.mapLayoutId == LAYOUT_PALLET_TOWN && VarGet(VAR_MAP_SCENE_PALLET_TOWN_OAK) == 3)
-        return; //Don't record departing from Oak's Lab if Master Trainer speech is pending.
-
     if (sCurrentSceneNum >= QUEST_LOG_SCENE_COUNT)
         sCurrentSceneNum = 0;
 
@@ -316,7 +309,7 @@ static void SetPlayerInitialCoordsAtScene(u8 sceneNum)
 static void SetNPCInitialCoordsAtScene(u8 sceneNum)
 {
     struct QuestLog * questLog = &gSaveBlock1Ptr->questLog[sceneNum];
-    u32 i;
+    u16 i;
 
     SetQuestLogObjectEventsData(questLog);
 
@@ -342,8 +335,8 @@ static void SetNPCInitialCoordsAtScene(u8 sceneNum)
             questLog->npcData[i].y = (u8)gSaveBlock1Ptr->objectEventTemplates[i].y;
             questLog->npcData[i].negy = FALSE;
         }
-        questLog->npcData[i].elevation = gSaveBlock1Ptr->objectEventTemplates[i].elevation;
-        questLog->npcData[i].movementType = gSaveBlock1Ptr->objectEventTemplates[i].movementType;
+        questLog->npcData[i].elevation = gSaveBlock1Ptr->objectEventTemplates[i].objUnion.normal.elevation;
+        questLog->npcData[i].movementType = gSaveBlock1Ptr->objectEventTemplates[i].objUnion.normal.movementType;
     }
 }
 
@@ -388,7 +381,7 @@ static void TryRecordEvent39_GoToNextScene(void)
 
 static bool8 TryRecordQuestLogEntrySequence(struct QuestLogEntry * entry)
 {
-    u32 i;
+    u16 i;
 
     for (i = gUnknown_203ADFC; i < sQuestLogCursor; i++)
     {
@@ -422,7 +415,7 @@ static bool8 TryRecordQuestLogEntrySequence(struct QuestLogEntry * entry)
 
 void TrySetUpQuestLogScenes_ElseContinueFromSave(u8 taskId)
 {
-    u32 i;
+    u8 i;
 
     QL_EnableRecordingSteps();
     sNumScenes = 0;
@@ -486,7 +479,7 @@ static bool8 FieldCB2_QuestLogStartPlaybackStandingInPlace(void)
 
 void DrawPreviouslyOnQuestHeader(u8 sceneNum)
 {
-    u32 i;
+    u8 i;
 
     for (i = 0; i < NELEMS(sQuestLogHeaderWindowTemplates); i++)
     {
@@ -520,7 +513,7 @@ void CommitQuestLogWindow1(void)
 static void QuestLogPlaybackSetObjectEventTemplates(u8 sceneNum)
 {
     struct QuestLog *questLog = &gSaveBlock1Ptr->questLog[sceneNum];
-    u32 i;
+    u16 i;
     
     for (i = 0; i < 64; i++)
     {
@@ -532,8 +525,8 @@ static void QuestLogPlaybackSetObjectEventTemplates(u8 sceneNum)
             gSaveBlock1Ptr->objectEventTemplates[i].y = -(u8)questLog->npcData[i].y;
         else
             gSaveBlock1Ptr->objectEventTemplates[i].y = questLog->npcData[i].y;
-        gSaveBlock1Ptr->objectEventTemplates[i].elevation = questLog->npcData[i].elevation;
-        gSaveBlock1Ptr->objectEventTemplates[i].movementType = questLog->npcData[i].movementType;
+        gSaveBlock1Ptr->objectEventTemplates[i].objUnion.normal.elevation = questLog->npcData[i].elevation;
+        gSaveBlock1Ptr->objectEventTemplates[i].objUnion.normal.movementType = questLog->npcData[i].movementType;
     }
 
     SetSav1ObjectEventsFromQuestLog(questLog, gSaveBlock1Ptr->objectEventTemplates);
@@ -681,7 +674,7 @@ static void QuestLog_GetSaneMonCounts(void)
 static u16 QuestLog_GetSanePartyCount(void)
 {
     u16 count = 0;
-    u32 i;
+    u16 i;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -743,7 +736,7 @@ void sub_8111708(void)
 
 static void ReadQuestLogScriptFromSav1(u8 sceneNum, struct QuestLogEntry * a1)
 {
-    u32 i;
+    u16 i;
     u16 *r4;
     u16 r6 = 0;
     u16 r9 = 0;
@@ -814,34 +807,9 @@ static void QuestLog_AdvancePlayhead(void)
 
 static void QuestLog_StartFinalScene(void)
 {
-    u32 i;
-    u8 KeyVersionBackup = gSaveBlock1Ptr->keyFlags.version;
-    u8 KeyDifficultyBackup = gSaveBlock1Ptr->keyFlags.difficulty;
-    u8 KeyNuzlockeBackup = gSaveBlock1Ptr->keyFlags.nuzlocke;
-    u8 KeyIvCalcBackup = gSaveBlock1Ptr->keyFlags.ivCalcMode;
-    u8 KeyEvCalcBackup = gSaveBlock1Ptr->keyFlags.evCalcMode;
-    u8 ChangedCalcBackup = gSaveBlock1Ptr->keyFlags.changedCalcMode;
-    u8 noPMCBackup = gSaveBlock1Ptr->keyFlags.noPMC;
-    u8 expModBackup = gSaveBlock1Ptr->keyFlags.expMod;
     ResetSpecialVars();
     Save_ResetSaveCounters();
     Save_LoadGameData(SAVE_NORMAL);
-    gSaveBlock1Ptr->keyFlags.version = KeyVersionBackup;
-    gSaveBlock1Ptr->keyFlags.difficulty = KeyDifficultyBackup;
-    gSaveBlock1Ptr->keyFlags.nuzlocke = KeyNuzlockeBackup;
-    gSaveBlock1Ptr->keyFlags.ivCalcMode = KeyIvCalcBackup;
-    gSaveBlock1Ptr->keyFlags.evCalcMode = KeyEvCalcBackup;
-    gSaveBlock1Ptr->keyFlags.noPMC = noPMCBackup;
-    gSaveBlock1Ptr->keyFlags.expMod = expModBackup;
-    gSaveBlock1Ptr->keyFlags.changedCalcMode = 0;
-    //recalculate party stats for IV and EV keys if they were changed
-    if(ChangedCalcBackup == 1)
-    {
-        for (i = 0; i < gPlayerPartyCount; i++)
-        {
-            CalculateMonStats(&gPlayerParty[i], FALSE);
-        }
-    }
     SetMainCallback2(CB2_EnterFieldFromQuestLog);
     gFieldCallback2 = FieldCB2_FinalScene;
     FreeAllWindowBuffers();
@@ -951,7 +919,7 @@ static void HandleShowQuestLogMessage(void)
 
 static u8 GetQuestLogTextDisplayDuration(void)
 {
-    u32 i;
+    u16 i;
     u16 count = 0;
 
     for (i = 0; i < 0x400 && gStringVar4[i] != EOS; i++)
@@ -1012,7 +980,7 @@ void QuestLog_DrawPreviouslyOnQuestHeaderIfInPlaybackMode(void)
 
 static void DrawQuestLogSceneDescription(void)
 {
-    u32 i;
+    u16 i;
     u8 numLines = 0;
 
     for (i = 0; i < 0x100 && gStringVar4[i] != EOS; i++)
@@ -1138,11 +1106,6 @@ static void Task_QuestLogScene_SavedGame(u8 taskId)
         if (sQuestLogCurrentScene.sceneEndMode != 1)
         {
             GetMapNameGeneric(gStringVar1, gMapHeader.regionMapSectionId);
-            if(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RS_BATTLE_TOWER) && (gSaveBlock1Ptr->location.mapNum >= MAP_NUM(RS_BATTLE_TOWER)
-        && gSaveBlock1Ptr->location.mapNum <= MAP_NUM(RS_BATTLE_TOWER_BATTLE_ROOM)))
-            {
-                StringCopy(gStringVar1, gText_BattleTower);
-            }
             StringExpandPlaceholders(gStringVar4, gText_QuestLog_SavedGameAtLocation);
             DrawQuestLogSceneDescription();
         }
@@ -1173,15 +1136,13 @@ static void Task_WaitAtEndOfQuestLog(u8 taskId)
 
 #undef tTimer
 
-extern const u8 NationalDexAideEvent[];
-
 #define tState data[0]
 #define tTimer data[1]
 
 static void Task_EndQuestLog(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    u32 i;
+    u8 i;
 
     switch (tState)
     {
@@ -1224,11 +1185,6 @@ static void Task_EndQuestLog(u8 taskId)
         DisableWildEncounters(FALSE);
         gHelpSystemEnabled = TRUE;
         DestroyTask(taskId);
-        if(CheckNationalDexEligibilityOnSaveLoad() && DoCoordsMatchPMCExitMat() && FlagGet(FLAG_SYS_RECEIVED_EXTENDED_DEX))
-        {
-            DismissMapNamePopup();
-            ScriptContext1_SetupScript(NationalDexAideEvent);
-        }
         break;
     }
 }
@@ -1298,7 +1254,7 @@ void QuestLog_CutRecording(void)
 static void SortQuestLogInSav1(void)
 {
     struct QuestLog * buffer = AllocZeroed(QUEST_LOG_SCENE_COUNT * sizeof(struct QuestLog));
-    u32 i;
+    u8 i;
     u8 sceneNum = sCurrentSceneNum;
     u8 count = 0;
     for (i = 0; i < QUEST_LOG_SCENE_COUNT; i++)
