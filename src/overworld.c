@@ -116,7 +116,7 @@ bool8 (*gFieldCallback2)(void);
 u16 gHeldKeyCodeToSend;
 u8 gLocalLinkPlayerId;
 u8 gFieldLinkPlayerCount;
-
+ 
 static u8 sPlayerTradingStates[4];
 static KeyInterCB sPlayerKeyInterceptCallback;
 static bool8 sReceivingFromLink;
@@ -144,7 +144,6 @@ static void VBlankCB_Field(void);
 static bool32 map_loading_iteration_3(u8 *state);
 static bool32 sub_8056CD8(u8 *state);
 static bool32 map_loading_iteration_2_link(u8 *state);
-static void do_load_map_stuff_loop(u8 *state);
 static void MoveSaveBlocks_ResetHeap_(void);
 static void sub_8056E80(void);
 static void sub_8056F08(void);
@@ -835,7 +834,7 @@ void ResetInitialPlayerAvatarState(void)
     sInitialPlayerAvatarState.unk2 = FALSE;
 }
 
-static void SetInitialPlayerAvatarStateWithDirection(u8 dirn)
+void SetInitialPlayerAvatarStateWithDirection(u8 dirn)
 {
     sInitialPlayerAvatarState.direction = dirn;
     sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_ON_FOOT;
@@ -878,7 +877,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (mapType == MAP_TYPE_UNDERWATER)
         return PLAYER_AVATAR_FLAG_UNDERWATER;
-    else if (sub_8055B38(metatileBehavior) == TRUE)
+    else if (MetatileBehavior_IsSurfableWaterOrUnderwater(metatileBehavior) == TRUE)
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (MetatileBehavior_IsSurfable(metatileBehavior) == TRUE)
         return PLAYER_AVATAR_FLAG_SURFING;
@@ -892,7 +891,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ACRO_BIKE;
 }
 
-bool8 sub_8055B38(u16 metatileBehavior)
+bool8 MetatileBehavior_IsSurfableWaterOrUnderwater(u16 metatileBehavior)
 {
     if (MetatileBehavior_IsSurfable(metatileBehavior) != TRUE)
         return FALSE;
@@ -1529,7 +1528,6 @@ void CB2_NewGame(void)
     ScriptContext2_Disable();
     gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     gFieldCallback2 = NULL;
-    do_load_map_stuff_loop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
@@ -1550,7 +1548,6 @@ void CB2_WhiteOut(void)
         ScriptContext2_Disable();
         gFieldCallback = FieldCB_RushInjuredPokemonToCenter;
         val = 0;
-        do_load_map_stuff_loop(&val);
         QuestLog_CutRecording();
         SetFieldVBlankCallback();
         SetMainCallback1(CB1_Overworld);
@@ -1570,7 +1567,6 @@ void CB2_LoadMap(void)
 
 static void CB2_LoadMap2(void)
 {
-    do_load_map_stuff_loop(&gMain.state);
     if (QuestLog_ShouldEndSceneOnMapChange() == TRUE)
     {
         QuestLog_AdvancePlayhead_();
@@ -2031,12 +2027,6 @@ static bool32 map_loading_iteration_2_link(u8 *state)
     }
 
     return FALSE;
-}
-
-static void do_load_map_stuff_loop(u8 *state)
-{
-    while (!load_map_stuff(state, FALSE))
-        ;
 }
 
 static void MoveSaveBlocks_ResetHeap_(void)
@@ -3537,8 +3527,8 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
 {
     struct LinkPlayerObjectEvent *linkPlayerObjEvent = &gLinkPlayerObjectEvents[sprite->data[0]];
     struct ObjectEvent *objEvent = &gObjectEvents[linkPlayerObjEvent->objEventId];
-    sprite->x = objEvent->initialCoords.x;
-    sprite->y = objEvent->initialCoords.y;
+    sprite->pos1.x = objEvent->initialCoords.x;
+    sprite->pos1.y = objEvent->initialCoords.y;
     SetObjectSubpriorityByZCoord(objEvent->previousElevation, sprite, 1);
     sprite->oam.priority = ZCoordToPriority(objEvent->previousElevation);
 
