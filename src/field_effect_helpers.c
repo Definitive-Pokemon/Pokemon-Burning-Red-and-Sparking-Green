@@ -968,7 +968,7 @@ u32 FldEff_SurfBlob(void)
     return spriteId;
 }
 
-void sub_80DC44C(u8 spriteId, u8 value)
+void SetSurfBlob_BobState(u8 spriteId, u8 value)
 {
     gSprites[spriteId].data[0] = (gSprites[spriteId].data[0] & ~0xF) | (value & 0xF);
 }

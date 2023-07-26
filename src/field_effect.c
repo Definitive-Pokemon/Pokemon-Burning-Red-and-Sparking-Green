@@ -3049,7 +3049,7 @@ static void UseSurfEffect_5(struct Task * task)
         gPlayerAvatar.preventStep = FALSE;
         gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_CONTROLLABLE;
         ObjectEventSetHeldMovement(objectEvent, GetFaceDirectionMovementAction(objectEvent->movementDirection));
-        sub_80DC44C(objectEvent->fieldEffectSpriteId, 1);
+        SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, 1);
         UnfreezeObjectEvents();
         ScriptContext2_Disable();
         FieldEffectActiveListRemove(FLDEFF_USE_SURF);
@@ -3242,7 +3242,7 @@ static void UseFlyEffect_3(struct Task * task)
         struct ObjectEvent * objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
         if (task->data[15] & 0x08)
         {
-            sub_80DC44C(objectEvent->fieldEffectSpriteId, 2);
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, 2);
             sub_80DC478(objectEvent->fieldEffectSpriteId, 0);
         }
         task->data[1] = sub_8087168();
@@ -3526,7 +3526,7 @@ static void FlyInEffect_1(struct Task * task)
         SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
         if (task->data[15] & PLAYER_AVATAR_FLAG_SURFING)
         {
-            sub_80DC44C(objectEvent->fieldEffectSpriteId, 0);
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, 0);
         }
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_RIDE));
         CameraObjectReset2();
@@ -3641,7 +3641,7 @@ static void FlyInEffect_7(struct Task * task)
         if (task->data[15] & PLAYER_AVATAR_FLAG_SURFING)
         {
             state = PLAYER_AVATAR_GFX_RIDE;
-            sub_80DC44C(objectEvent->fieldEffectSpriteId, 1);
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, 1);
         }
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(state));
         ObjectEventTurn(objectEvent, DIR_SOUTH);
