@@ -632,7 +632,7 @@ static void sub_80A1B48(u8 taskId)
 
 bool8 CanUseEscapeRopeOnCurrMap(void)
 {
-    if (gMapHeader.escapeRope)
+    if (gMapHeader.allowEscaping)
         return TRUE;
     else
         return FALSE;
