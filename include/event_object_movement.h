@@ -208,7 +208,7 @@ extern const u8 gReflectionEffectPaletteMap[];
 u8 GetLedgeJumpDirection(s16 x, s16 y, u8 z);
 u8 sub_8063F58(u32 direction);
 u8 sub_8063FDC(u32 direction);
-u8 sub_GetRideWaterCurrentMovementAction(u32 direction);
+u8 GetRideWaterCurrentMovementAction(u32 direction);
 u8 GetPlayerRunMovementAction(u32 direction);
 u8 GetPlayerRunSlowMovementAction(u32 direction);
 u8 GetWalkSlowMovementAction(u32 direction);
