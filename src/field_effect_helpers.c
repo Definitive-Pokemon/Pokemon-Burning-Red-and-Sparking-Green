@@ -978,7 +978,7 @@ void sub_80DC478(u8 spriteId, u8 value)
     gSprites[spriteId].data[0] = (gSprites[spriteId].data[0] & ~0xF0) | ((value & 0xF) << 4);
 }
 
-void sub_80DC4A4(u8 spriteId, u8 value, s16 data1)
+void SetSurfBlob_PlayerOffset(u8 spriteId, u8 value, s16 data1)
 {
     gSprites[spriteId].data[0] = (gSprites[spriteId].data[0] & ~0xF00) | ((value & 0xF) << 8);
     gSprites[spriteId].data[1] = data1;
