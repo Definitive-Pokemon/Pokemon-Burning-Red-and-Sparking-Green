@@ -61,7 +61,7 @@ static u8 GetObjectEventIdByLocalId(u8);
 static u8 GetObjectEventIdByLocalIdAndMapInternal(u8, u8, u8);
 static bool8 GetAvailableObjectEventId(u16, u8, u8, u8 *);
 static void SetObjectEventDynamicGraphicsId(struct ObjectEvent *);
-static void RemoveObjectEventInternal(struct ObjectEvent *);
+void RemoveObjectEventInternal(struct ObjectEvent *);
 static u16 GetObjectEventFlagIdByObjectEventId(u8);
 static void UpdateObjectEventVisibility(struct ObjectEvent *, struct Sprite *);
 static void MakeObjectTemplateFromObjectEventTemplate(struct ObjectEventTemplate *, struct SpriteTemplate *, const struct SubspriteTable **);
@@ -7998,7 +7998,7 @@ static bool8 MovementAction_PauseSpriteAnim(struct ObjectEvent *objectEvent, str
 
 static bool8 MovementActionFunc_xA4_0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    sprite->y2 = 0;
+    sprite->pos2.y = 0;
     sprite->data[2]++;
     return FALSE;
 }
