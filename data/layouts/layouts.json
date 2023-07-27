@@ -4764,6 +4764,6 @@
       "secondary_tileset": "gTileset_BattleFrontierRankingHall",
       "border_filepath": "data/layouts/BattleFrontier_RankingHall/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_RankingHall/map.bin"
-    },
+    }
   ]
 }
