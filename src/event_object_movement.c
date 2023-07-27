@@ -475,6 +475,15 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_RS_GROUDON                  0x1119
 #define OBJ_EVENT_PAL_TAG_RS_GROUDON_REFLECTION       0x111A
 #define OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW         0x111B
+#define OBJ_EVENT_PAL_TAG_27                          0x111C
+#define OBJ_EVENT_PAL_TAG_28                          0x111D
+#define OBJ_EVENT_PAL_TAG_29                          0x111E
+#define OBJ_EVENT_PAL_TAG_CABLE_CAR                   0x111F
+#define OBJ_EVENT_PAL_TAG_31                          0x1120
+#define OBJ_EVENT_PAL_TAG_32                          0x1121
+#define OBJ_EVENT_PAL_TAG_33                          0x1122
+#define OBJ_EVENT_PAL_TAG_34                          0x1123
+#define OBJ_EVENT_PAL_TAG_LADY                        0x1124
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -504,6 +513,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meteorite,               OBJ_EVENT_PAL_TAG_METEORITE},
     {gObjectEventPal_SSAnne,                  OBJ_EVENT_PAL_TAG_SS_ANNE},
     {gObjectEventPal_Seagallop,               OBJ_EVENT_PAL_TAG_SEAGALLOP},
+    {gUnderwaterEventObjectPalette,           OBJ_EVENT_PAL_TAG_27},
+    {gEmBrendanPalette,                       OBJ_EVENT_PAL_TAG_28},
+    {gEmMayPalette,                           OBJ_EVENT_PAL_TAG_29},
+    {gObjectEventPal_CableCar,                OBJ_EVENT_PAL_TAG_CABLE_CAR},
+    {gObjectEventPal_Lady,                    OBJ_EVENT_PAL_TAG_LADY},
     {},
 };
 
@@ -591,6 +605,21 @@ static const u16 sRSKyogreReflectionPaletteTags[] = {
     OBJ_EVENT_PAL_TAG_RS_KYOGRE_REFLECTION,
 };
 
+
+static const u16 sReflectionPaletteTags_CableCar[] = {
+    OBJ_EVENT_PAL_TAG_CABLE_CAR,
+    OBJ_EVENT_PAL_TAG_CABLE_CAR,
+    OBJ_EVENT_PAL_TAG_CABLE_CAR,
+    OBJ_EVENT_PAL_TAG_CABLE_CAR,
+};
+
+static const u16 sReflectionPaletteTags_Lady[] = {
+    OBJ_EVENT_PAL_TAG_LADY,
+    OBJ_EVENT_PAL_TAG_LADY,
+    OBJ_EVENT_PAL_TAG_LADY,
+    OBJ_EVENT_PAL_TAG_LADY,
+};
+
 static const u16 sRSGroudonReflectionPaletteTags[] = {
     OBJ_EVENT_PAL_TAG_RS_GROUDON_REFLECTION,
     OBJ_EVENT_PAL_TAG_RS_GROUDON_REFLECTION,
@@ -605,7 +634,7 @@ static const u16 sGreenNPCReflectionPaletteTags[] = {
     OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION,
 };
 
-static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
+const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PLAYER_RED,          sPlayerReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_PLAYER_GREEN,        sPlayerReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_RS_QUINTY_PLUMP,     sRSQuintyPlumpReflectionPaletteTags},
@@ -618,6 +647,8 @@ static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_RS_GROUDON,          sRSGroudonReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_NPC_GREEN,           sGreenNPCReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW, sRSSubmarineShadowReflectionPaletteTags},
+    {OBJ_EVENT_PAL_TAG_CABLE_CAR,           sReflectionPaletteTags_CableCar},
+    {OBJ_EVENT_PAL_TAG_LADY,                sReflectionPaletteTags_Lady},
     {OBJ_EVENT_PAL_TAG_NONE, NULL},
 };
 
@@ -1617,11 +1648,11 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
     }
 
     sprite = &gSprites[spriteId];
-    GetMapCoordsFromSpritePos(objectEvent->currentCoords.x + cameraX, objectEvent->currentCoords.y + cameraY, &sprite->x, &sprite->y);
+    GetMapCoordsFromSpritePos(objectEvent->currentCoords.x + cameraX, objectEvent->currentCoords.y + cameraY, &sprite->pos1.x, &sprite->pos1.y);
     sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-    sprite->x += 8;
-    sprite->y += 16 + sprite->centerToCornerVecY;
+    sprite->pos1.x += 8;
+    sprite->pos1.y += 16 + sprite->centerToCornerVecY;
     sprite->oam.paletteNum = graphicsInfo->paletteSlot;
     sprite->coordOffsetEnabled = TRUE;
     sprite->data[0] = objectEventId;
@@ -1772,7 +1803,7 @@ u8 sprite_new(u8 graphicsId, u8 a1, s16 x, s16 y, u8 z, u8 direction)
         sprite = &gSprites[spriteId];
         sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
         sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-        sprite->y += sprite->centerToCornerVecY;
+        sprite->pos1.y += sprite->centerToCornerVecY;
         sprite->oam.paletteNum = graphicsInfo->paletteSlot;
         sprite->coordOffsetEnabled = TRUE;
         sprite->data[0] = a1;
@@ -1811,7 +1842,7 @@ u8 sub_805EB44(u8 graphicsId, u8 a1, s16 x, s16 y)
     {
         sprite = &gSprites[spriteId];
         sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-        sprite->y += sprite->centerToCornerVecY;
+        sprite->pos1.y += sprite->centerToCornerVecY;
         sprite->oam.paletteNum = graphicsInfo->paletteSlot;
         sprite->data[0] = a1;
         if (graphicsInfo->paletteSlot == 10)
@@ -1950,11 +1981,11 @@ static void ReloadMapObjectWithOffset(u8 objectEventId, s16 x, s16 y)
     if (spriteId != MAX_SPRITES)
     {
         sprite = &gSprites[spriteId];
-        GetMapCoordsFromSpritePos(x + objectEvent->currentCoords.x, y + objectEvent->currentCoords.y, &sprite->x, &sprite->y);
+        GetMapCoordsFromSpritePos(x + objectEvent->currentCoords.x, y + objectEvent->currentCoords.y, &sprite->pos1.x, &sprite->pos1.y);
         sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
         sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-        sprite->x += 8;
-        sprite->y += 16 + sprite->centerToCornerVecY;
+        sprite->pos1.x += 8;
+        sprite->pos1.y += 16 + sprite->centerToCornerVecY;
         sprite->images = graphicsInfo->images;
         if (objectEvent->movementType == MOVEMENT_TYPE_PLAYER)
         {
@@ -2041,11 +2072,11 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
     }
     objectEvent->inanimate = graphicsInfo->inanimate;
     objectEvent->graphicsId = graphicsId;  
-    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
+    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->pos1.x, &sprite->pos1.y);
     sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-    sprite->x += 8;
-    sprite->y += 16 + sprite->centerToCornerVecY;
+    sprite->pos1.x += 8;
+    sprite->pos1.y += 16 + sprite->centerToCornerVecY;
     if (objectEvent->trackedByCamera)
     {
         CameraObjectReset1();
@@ -2172,8 +2203,8 @@ void SetObjectPositionByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, s16 x,
     if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
     {
         sprite = &gSprites[gObjectEvents[objectEventId].spriteId];
-        sprite->x2 = x;
-        sprite->y2 = y;
+        sprite->pos2.x = x;
+        sprite->pos2.y = y;
     }
 }
 
@@ -2317,11 +2348,11 @@ void MoveObjectEventToMapCoords(struct ObjectEvent *objectEvent, s16 x, s16 y)
     sprite = &gSprites[objectEvent->spriteId];
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
     SetObjectEventCoords(objectEvent, x, y);
-    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
+    SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->pos1.x, &sprite->pos1.y);
     sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
-    sprite->x += 8;
-    sprite->y += 16 + sprite->centerToCornerVecY;
+    sprite->pos1.x += 8;
+    sprite->pos1.y += 16 + sprite->centerToCornerVecY;
     sub_805EFF4(objectEvent);
     if (objectEvent->trackedByCamera)
         CameraObjectReset1();
@@ -2420,8 +2451,8 @@ static void ObjectCB_CameraObject(struct Sprite *sprite)
 
 static void CameraObject_0(struct Sprite *sprite)
 {
-    sprite->x = gSprites[sprite->data[0]].x;
-    sprite->y = gSprites[sprite->data[0]].y;
+    sprite->pos1.x = gSprites[sprite->data[0]].pos1.x;
+    sprite->pos1.y = gSprites[sprite->data[0]].pos1.y;
     sprite->invisible = TRUE;
     sprite->data[1] = 1;
     CameraObject_1(sprite);
@@ -2429,19 +2460,19 @@ static void CameraObject_0(struct Sprite *sprite)
 
 static void CameraObject_1(struct Sprite *sprite)
 {
-    s16 x = gSprites[sprite->data[0]].x;
-    s16 y = gSprites[sprite->data[0]].y;
+    s16 x = gSprites[sprite->data[0]].pos1.x;
+    s16 y = gSprites[sprite->data[0]].pos1.y;
 
-    sprite->data[2] = x - sprite->x;
-    sprite->data[3] = y - sprite->y;
-    sprite->x = x;
-    sprite->y = y;
+    sprite->data[2] = x - sprite->pos1.x;
+    sprite->data[3] = y - sprite->pos1.y;
+    sprite->pos1.x = x;
+    sprite->pos1.y = y;
 }
 
 static void CameraObject_2(struct Sprite *sprite)
 {
-    sprite->x = gSprites[sprite->data[0]].x;
-    sprite->y = gSprites[sprite->data[0]].y;
+    sprite->pos1.x = gSprites[sprite->data[0]].pos1.x;
+    sprite->pos1.y = gSprites[sprite->data[0]].pos1.y;
     sprite->data[2] = 0;
     sprite->data[3] = 0;
 }
@@ -2510,8 +2541,8 @@ u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority)
         if (!gSprites[i].inUse)
         {
             gSprites[i] = *sprite;
-            gSprites[i].x = x;
-            gSprites[i].y = y;
+            gSprites[i].pos1.x = x;
+            gSprites[i].pos1.y = y;
             gSprites[i].subpriority = subpriority;
             break;
         }
@@ -2528,8 +2559,8 @@ u8 CreateCopySpriteAt(struct Sprite *sprite, s16 x, s16 y, u8 subpriority)
         if (!gSprites[i].inUse)
         {
             gSprites[i] = *sprite;
-            gSprites[i].x = x;
-            gSprites[i].y = y;
+            gSprites[i].pos1.x = x;
+            gSprites[i].pos1.y = y;
             gSprites[i].subpriority = subpriority;
             return i;
         }
@@ -7896,8 +7927,8 @@ static bool8 MovementActionFunc_x99_1(struct ObjectEvent *objectEvent, struct Sp
             sprite->animPaused = FALSE;
             objectEvent->disableAnim = FALSE;
         }
-        sprite->y2 = -(3 * gSineTable[sprite->data[6]] >> 7);
-        objectEvent->singleMovementActive = sprite->y2 != 0;
+        sprite->pos2.y = -(3 * gSineTable[sprite->data[6]] >> 7);
+        objectEvent->singleMovementActive = sprite->pos2.y != 0;
         return FALSE;
     case 1:
         if (++sprite->data[4] > 16)
@@ -7932,7 +7963,7 @@ static bool8 MovementActionFunc_x9A_1(struct ObjectEvent *objectEvent, struct Sp
 {
     bool8 ret;
     sprite->data[7] = (sprite->data[7] + 4) & 0xFF;
-    sprite->x2 = gSineTable[sprite->data[7]] >> 7;
+    sprite->pos2.x = gSineTable[sprite->data[7]] >> 7;
     if (sprite->data[7] == 0)
         ret = TRUE;
     else
@@ -7974,23 +8005,23 @@ static bool8 MovementActionFunc_xA4_0(struct ObjectEvent *objectEvent, struct Sp
 
 static bool8 MovementActionFunc_xA4_1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    sprite->y2 -= 8;
-    if (sprite->y2 == -160)
+    sprite->pos2.y -= 8;
+    if (sprite->pos2.y == -160)
         sprite->data[2]++;
     return FALSE;
 }
 
 static bool8 MovementActionFunc_xA5_0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    sprite->y2 = -160;
+    sprite->pos2.y = -160;
     sprite->data[2]++;
     return FALSE;
 }
 
 static bool8 MovementActionFunc_xA5_1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
-    sprite->y2 += 8;
-    if (sprite->y2 == 0)
+    sprite->pos2.y += 8;
+    if (sprite->pos2.y == 0)
         sprite->data[2]++;
     return FALSE;
 }
@@ -8035,13 +8066,13 @@ static void CalcWhetherObjectIsOffscreen(struct ObjectEvent *objectEvent, struct
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
     if (sprite->coordOffsetEnabled)
     {
-        x = sprite->x + sprite->x2 + sprite->centerToCornerVecX + gSpriteCoordOffsetX;
-        y = sprite->y + sprite->y2 + sprite->centerToCornerVecY + gSpriteCoordOffsetY;
+        x = sprite->pos1.x + sprite->pos2.x + sprite->centerToCornerVecX + gSpriteCoordOffsetX;
+        y = sprite->pos1.y + sprite->pos2.y + sprite->centerToCornerVecY + gSpriteCoordOffsetY;
     }
     else
     {
-        x = sprite->x + sprite->x2 + sprite->centerToCornerVecX;
-        y = sprite->y + sprite->y2 + sprite->centerToCornerVecY;
+        x = sprite->pos1.x + sprite->pos2.x + sprite->centerToCornerVecX;
+        y = sprite->pos1.y + sprite->pos2.y + sprite->centerToCornerVecY;
     }
     x2 = graphicsInfo->width + (s16)x;
     y2 = graphicsInfo->height + (s16)y;
@@ -8471,7 +8502,7 @@ void ObjectEventUpdateZCoord(struct ObjectEvent *objEvent)
 void SetObjectSubpriorityByZCoord(u8 a, struct Sprite *sprite, u8 b)
 {
     s32 tmp = sprite->centerToCornerVecY;
-    u32 tmpa = *(u16 *)&sprite->y;
+    u32 tmpa = *(u16 *)&sprite->pos1.y;
     u32 tmpb = *(u16 *)&gSpriteCoordOffsetY;
     s32 tmp2 = (tmpa - tmp) + tmpb;
     u16 tmp3 = (0x10 - ((((u32)tmp2 + 8) & 0xFF) >> 4)) * 2;
@@ -8887,32 +8918,32 @@ void UnfreezeObjectEvents(void)
 
 static void little_step(struct Sprite * sprite, u8 direction)
 {
-    sprite->x += sDirectionToVectors[direction].x;
-    sprite->y += sDirectionToVectors[direction].y;
+    sprite->pos1.x += sDirectionToVectors[direction].x;
+    sprite->pos1.y += sDirectionToVectors[direction].y;
 }
 
 static void double_little_steps(struct Sprite * sprite, u8 direction)
 {
-    sprite->x += 2 * (u16)sDirectionToVectors[direction].x;
-    sprite->y += 2 * (u16)sDirectionToVectors[direction].y;
+    sprite->pos1.x += 2 * (u16)sDirectionToVectors[direction].x;
+    sprite->pos1.y += 2 * (u16)sDirectionToVectors[direction].y;
 }
 
 static void triple_little_steps(struct Sprite * sprite, u8 direction)
 {
-    sprite->x += 2 * (u16)sDirectionToVectors[direction].x + (u16)sDirectionToVectors[direction].x;
-    sprite->y += 2 * (u16)sDirectionToVectors[direction].y + (u16)sDirectionToVectors[direction].y;
+    sprite->pos1.x += 2 * (u16)sDirectionToVectors[direction].x + (u16)sDirectionToVectors[direction].x;
+    sprite->pos1.y += 2 * (u16)sDirectionToVectors[direction].y + (u16)sDirectionToVectors[direction].y;
 }
 
 static void quad_little_steps(struct Sprite * sprite, u8 direction)
 {
-    sprite->x += 4 * (u16)sDirectionToVectors[direction].x;
-    sprite->y += 4 * (u16)sDirectionToVectors[direction].y;
+    sprite->pos1.x += 4 * (u16)sDirectionToVectors[direction].x;
+    sprite->pos1.y += 4 * (u16)sDirectionToVectors[direction].y;
 }
 
 static void oct_little_steps(struct Sprite * sprite, u8 direction)
 {
-    sprite->x += 8 * (u16)sDirectionToVectors[direction].x;
-    sprite->y += 8 * (u16)sDirectionToVectors[direction].y;
+    sprite->pos1.x += 8 * (u16)sDirectionToVectors[direction].x;
+    sprite->pos1.y += 8 * (u16)sDirectionToVectors[direction].y;
 }
 
 void oamt_npc_ministep_reset(struct Sprite * sprite, u8 direction, u8 speed)
@@ -9158,7 +9189,7 @@ u8 DoJumpSpriteMovement(struct Sprite *sprite)
     if (sprite->tJumpSpeed != 0)
         little_step(sprite, sprite->tDirection);
 
-    sprite->y2 = GetJumpYDisplacement(sprite->tStepNo >> shifts[sprite->tJumpSpeed], sprite->tJumpHeight);
+    sprite->pos2.y = GetJumpYDisplacement(sprite->tStepNo >> shifts[sprite->tJumpSpeed], sprite->tJumpHeight);
 
     sprite->tStepNo++;
 
@@ -9167,7 +9198,7 @@ u8 DoJumpSpriteMovement(struct Sprite *sprite)
 
     if (sprite->tStepNo >= duration[sprite->tJumpSpeed])
     {
-        sprite->y2 = 0;
+        sprite->pos2.y = 0;
         jumpPhase = -1;
     }
 
@@ -9183,7 +9214,7 @@ u8 DoJumpSpecialSpriteMovement(struct Sprite *sprite)
     if (sprite->tJumpSpeed != 0 && !(sprite->tStepNo & 1))
         little_step(sprite, sprite->tDirection);
 
-    sprite->y2 = GetJumpYDisplacement(sprite->tStepNo >> shifts[sprite->tJumpSpeed], sprite->tJumpHeight);
+    sprite->pos2.y = GetJumpYDisplacement(sprite->tStepNo >> shifts[sprite->tJumpSpeed], sprite->tJumpHeight);
 
     sprite->tStepNo++;
 
@@ -9192,7 +9223,7 @@ u8 DoJumpSpecialSpriteMovement(struct Sprite *sprite)
 
     if (sprite->tStepNo >= duration[sprite->tJumpSpeed])
     {
-        sprite->y2 = 0;
+        sprite->pos2.y = 0;
         jumpPhase = -1;
     }
 
@@ -9247,13 +9278,13 @@ void UpdateObjectEventSpriteVisibility(struct Sprite *sprite, bool8 invisible)
 
     if (sprite->coordOffsetEnabled)
     {
-        x = sprite->x + sprite->x2 + sprite->centerToCornerVecX + gSpriteCoordOffsetX;
-        y = sprite->y + sprite->y2 + sprite->centerToCornerVecY + gSpriteCoordOffsetY;
+        x = sprite->pos1.x + sprite->pos2.x + sprite->centerToCornerVecX + gSpriteCoordOffsetX;
+        y = sprite->pos1.y + sprite->pos2.y + sprite->centerToCornerVecY + gSpriteCoordOffsetY;
     }
     else
     {
-        x = sprite->x + sprite->x2 + sprite->centerToCornerVecX;
-        y = sprite->y + sprite->y2 + sprite->centerToCornerVecY;
+        x = sprite->pos1.x + sprite->pos2.x + sprite->centerToCornerVecX;
+        y = sprite->pos1.x + sprite->pos2.y + sprite->centerToCornerVecY;
     }
 
     x2 = x - (sprite->centerToCornerVecX >> 1);
@@ -9377,13 +9408,13 @@ static void DoObjectUnionRoomWarpYDisplacementUpwards(struct Sprite * sprite)
     switch (sprite->tUnionRoomWarpAnimState)
     {
     case 0:
-        sprite->y2 = 0;
+        sprite->pos2.y = 0;
         sprite->tUnionRoomWarpAnimState++;
         // fallthrough
     case 1:
-        if ((sprite->y2 -= 8) == -160)
+        if ((sprite->pos2.y -= 8) == -160)
         {
-            sprite->y2 = 0;
+            sprite->pos2.y = 0;
             sprite->tInvisible = 1;
             sprite->tUnionRoomWarpAnimNo = 0;
             sprite->tUnionRoomWarpAnimState = 0;
@@ -9397,11 +9428,11 @@ static void DoObjectUnionRoomWarpYDisplacementDownwards(struct Sprite * sprite)
     switch (sprite->tUnionRoomWarpAnimState)
     {
     case 0:
-        sprite->y2 = -160;
+        sprite->pos2.y = -160;
         sprite->tUnionRoomWarpAnimState++;
         // fallthrough
     case 1:
-        if ((sprite->y2 += 8) == 0)
+        if ((sprite->pos2.y += 8) == 0)
         {
             sprite->tUnionRoomWarpAnimNo = 0;
             sprite->tUnionRoomWarpAnimState = 0;
@@ -9463,8 +9494,8 @@ void DoShadowFieldEffect(struct ObjectEvent *objectEvent)
 static void DoRippleFieldEffect(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    gFieldEffectArguments[0] = sprite->x;
-    gFieldEffectArguments[1] = sprite->y + (graphicsInfo->height >> 1) - 2;
+    gFieldEffectArguments[0] = sprite->pos1.x;
+    gFieldEffectArguments[1] = sprite->pos1.y + (graphicsInfo->height >> 1) - 2;
     gFieldEffectArguments[2] = 151;
     gFieldEffectArguments[3] = 3;
     FieldEffectStart(FLDEFF_RIPPLE);

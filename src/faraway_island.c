@@ -398,7 +398,7 @@ void SetMewAboveGrass(void)
 
         x = mew->currentCoords.x;
         y = mew->currentCoords.y;
-        sub_8063BC4(&x, &y, 8, 8);
+        SetSpritePosToOffsetMapCoords(&x, &y, 8, 8);
         // 15 == Emerald's FLDEFFOBJ_LONG_GRASS. Not sure if this will be the same.
         sGrassSpriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[15], x, y, gSprites[mew->spriteId].subpriority - 1);
         gSpecialVar_Result = sGrassSpriteId;
