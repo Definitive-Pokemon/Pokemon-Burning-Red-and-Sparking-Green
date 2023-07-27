@@ -4765,17 +4765,5 @@
       "border_filepath": "data/layouts/BattleFrontier_RankingHall/border.bin",
       "blockdata_filepath": "data/layouts/BattleFrontier_RankingHall/map.bin"
     },
-    {
-      "id": "LAYOUT_VIRIDIAN_CITY_NEW_HOUSE",
-      "name": "ViridianCity_NewHouse_Layout",
-      "width": 20,
-      "height": 20,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_ViridianCity",
-      "border_filepath": "data/layouts/ViridianCity_NewHouse/border.bin",
-      "blockdata_filepath": "data/layouts/ViridianCity_NewHouse/map.bin"
-    }
   ]
 }
