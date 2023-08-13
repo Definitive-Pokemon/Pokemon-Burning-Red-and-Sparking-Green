@@ -4385,12 +4385,12 @@
       "secondaryId": 0
     },
     {
-      "english": "LETTER",
+      "english": "OAK'S LETTER",
       "itemId": "ITEM_LETTER",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "An extremely important letter to\\nSTEVEN from the PRESIDENT of the\\nDEVON CORPORATION.",
+      "description_english": "A mysterious letter given to you\\nby POKéMON PROFESSOR OAK, meant\\nfor LADY SELPHY of FIVE ISLAND.",
       "importance": 2,
       "exitsBagOnUse": 0,
       "pocket": "POCKET_KEY_ITEMS",

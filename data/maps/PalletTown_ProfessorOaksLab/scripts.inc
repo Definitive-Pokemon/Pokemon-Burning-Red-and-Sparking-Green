@@ -622,6 +622,7 @@ PalletTown_ProfessorOaksLab_EventScript_RivalChoseStarter:: @ 816958B
 PalletTown_ProfessorOaksLab_EventScript_ProfOak:: @ 8169595
 	lock
 	faceplayer
+	goto_if_set FLAG_OAK_HAS_LETTER, PalletTown_ProfessorOaksLab_EventScript_CheckOakGiveLetter
 	goto_if_set SHOWED_OAK_COMPLETE_DEX, PalletTown_ProfessorOaksLab_EventScript_OakJustShownCompleteDex
 	goto_if_set WON_BATTLE, PalletTown_ProfessorOaksLab_EventScript_BattleJustWon
 	call_if_not_defeated TRAINER_MASTER_OAK, PalletTown_ProfessorOaksLab_EventScript_CheckMasterTrainerFlags
@@ -641,6 +642,18 @@ PalletTown_ProfessorOaksLab_EventScript_ProfOak:: @ 8169595
 	compare VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3
 	goto_if_eq PalletTown_ProfessorOaksLab_EventScript_OakCanReachNextTownWithMon
 	msgbox PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose
+	release
+	end
+	
+PalletTown_ProfessorOaksLab_EventScript_CheckOakGiveLetter::
+	goto_if_unset FLAG_OAK_GIVEN_LETTER, PalletTown_ProfessorOaksLab_EventScript_OakGiveLetter
+	return
+	
+PalletTown_ProfessorOaksLab_EventScript_OakGiveLetter::
+	msgbox PalletTown_ProfessorOaksLab_Text_HaveThisLetter,
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedLetterFromOak, ITEM_LETTER
+	setflag FLAG_OAK_GIVEN_LETTER
+	msgbox PalletTown_ProfessorOaksLab_Text_BringToSelphy,
 	release
 	end
 

@@ -39,9 +39,12 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	call EventScript_SetDefeatedEliteFourFlagsVars
 	setrespawn SPAWN_PALLET_TOWN
 	fadescreenspeed FADE_TO_BLACK, 24
+	checkflag 
 	checkitem ITEM_OLD_SEA_MAP, 1
 	compare VAR_RESULT, TRUE
 	call_if_ne PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent
+	checkitem ITEM_HM08, 1
+	call_if_eq PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
 	special EnterHallOfFame
 	waitstate
 	releaseall
@@ -50,6 +53,10 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent::
 	clearflag FLAG_HIDE_LAVENDER_OUTSIDE_FUJI
 	setflag FLAG_HIDE_POKEHOUSE_FUJI
+	return
+	
+PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent::
+	setflag FLAG_OAK_HAS_LETTER
 	return
 
 PokemonLeague_HallOfFame_Movement_EnterRoom:: @ 8162DCD

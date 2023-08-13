@@ -911,10 +911,10 @@
 #define FLAG_HIDE_CYNDAQUIL               0x374
 #define FLAG_CYNDAQUIL_FLED               0x375
 #define FLAG_CAN_GET_HITMON_2               0x376
+#define FLAG_OAK_HAS_LETTER               0x377
+#define FLAG_OAK_GIVEN_LETTER               0x378
 
 // Unused?
-#define FLAG_0x377               0x377
-#define FLAG_0x378               0x378
 #define FLAG_0x379               0x379
 #define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B
