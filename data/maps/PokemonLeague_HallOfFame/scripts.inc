@@ -39,7 +39,6 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	call EventScript_SetDefeatedEliteFourFlagsVars
 	setrespawn SPAWN_PALLET_TOWN
 	fadescreenspeed FADE_TO_BLACK, 24
-	checkflag 
 	checkitem ITEM_OLD_SEA_MAP, 1
 	compare VAR_RESULT, TRUE
 	call_if_ne PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent
