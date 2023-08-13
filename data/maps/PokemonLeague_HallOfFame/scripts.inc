@@ -43,7 +43,7 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	compare VAR_RESULT, TRUE
 	call_if_ne PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent
 	checkitem ITEM_HM07, 1
-	call_if_eq PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
+	call_if_ge PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
 	special EnterHallOfFame
 	waitstate
 	releaseall

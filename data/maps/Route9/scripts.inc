@@ -38,7 +38,7 @@ Route9_EventScript_Lady::
 	goto_if_set FLAG_GOT_BULBASAUR_FROM_LADY, Route9_EventScript_AlreadyGotBulbasaur
 	checkitem ITEM_SUPER_POTION, 1
 	compare VAR_RESULT, TRUE
-	goto_if_eq Route9_EventScript_WantBulbasaur
+	goto_if_ge Route9_EventScript_WantBulbasaur
 	msgbox Route9_Text_FoundInjuredBulbasaur
 	release
 	end
