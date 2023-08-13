@@ -83,7 +83,7 @@ static void Task_OakSpeech41(u8 taskId);
 static void Task_OakSpeech42(u8 taskId);
 
 static void CB2_ReturnFromNamingScreen(void);
-static void CreateNidoranFSprite(u8 taskId);
+static void CreateTaurosSprite(u8 taskId);
 static void CreatePikaOrGrassPlatformSpriteAndLinkToCurrentTask(u8 taskId, u8 state);
 static void DestroyLinkedPikaOrGrassPlatformSprites(u8 taskId, u8 state);
 static void LoadOaksSpeechTrainerPic(u16 whichPic, u16 tileOffset);
@@ -537,7 +537,7 @@ static void Task_OaksSpeech1(u8 taskId)
         break;
     case 1:
         sOakSpeechResources = AllocZeroed(sizeof(*sOakSpeechResources));
-        OakSpeechNidoranFSetup(1, 1);
+        OakSpeechTaurosSetup(1, 1);
         break;
     case 2:
         SetGpuReg(REG_OFFSET_WIN0H, 0);
@@ -910,7 +910,7 @@ static void Task_OakSpeech9(u8 taskId)
         LoadBgTiles(1, sOakSpeechResources->solidColorsGfx, size, 0);
         CopyToBgTilemapBuffer(1, sOakSpeech_BackgroundTilemap, 0, 0);
         CopyBgTilemapBufferToVram(1);
-        CreateNidoranFSprite(taskId);
+        CreateTaurosSprite(taskId);
         LoadOaksSpeechTrainerPic(3, 0);
         CreatePikaOrGrassPlatformSpriteAndLinkToCurrentTask(taskId, 1);
         PlayBGM(MUS_ROUTE24);
@@ -994,7 +994,7 @@ static void Task_OakSpeech13(u8 taskId)
         if (gTasks[taskId].data[3] == 32)
         {
             OaksSpeechPrintMessage(gOakText_WorldInhabited2, sOakSpeechResources->textSpeed);
-            PlayCry1(SPECIES_NIDORAN_F, 0);
+            PlayCry1(SPECIES_TAUROS, 0);
         }
     }
 }
@@ -1550,7 +1550,7 @@ static void Task_OakSpeech41(u8 taskId)
 static void Task_OakSpeech42(u8 taskId)
 {
     FreeAllWindowBuffers();
-    OakSpeechNidoranFFreeResources();
+    OakSpeechTaurosFreeResources();
     Free(sOakSpeechResources);
     sOakSpeechResources = NULL;
     gTextFlags.canABSpeedUpPrint = FALSE;
@@ -1645,13 +1645,13 @@ static void CB2_ReturnFromNamingScreen(void)
     gMain.state++;
 }
 
-static void CreateNidoranFSprite(u8 taskId)
+static void CreateTaurosSprite(u8 taskId)
 {
     u8 spriteId;
 
-    DecompressPicFromTable(&gMonFrontPicTable[SPECIES_NIDORAN_F], OakSpeechNidoranFGetBuffer(0), SPECIES_NIDORAN_F);
-    LoadCompressedSpritePaletteUsingHeap(&gMonPaletteTable[SPECIES_NIDORAN_F]);
-    SetMultiuseSpriteTemplateToPokemon(SPECIES_NIDORAN_F, 0);
+    DecompressPicFromTable(&gMonFrontPicTable[SPECIES_TAUROS], OakSpeechTaurosGetBuffer(0), SPECIES_TAUROS);
+    LoadCompressedSpritePaletteUsingHeap(&gMonPaletteTable[SPECIES_TAUROS]);
+    SetMultiuseSpriteTemplateToPokemon(SPECIES_TAUROS, 0);
     spriteId = CreateSprite(&gMultiuseSpriteTemplate, 0x60, 0x60, 1);
     gSprites[spriteId].callback = SpriteCallbackDummy;
     gSprites[spriteId].oam.priority = 1;
