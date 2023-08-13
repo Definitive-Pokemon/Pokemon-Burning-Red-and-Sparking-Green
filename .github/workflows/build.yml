@@ -21,7 +21,7 @@ jobs:
                 /usr
                 /opt
                 /agbcc
-                /Pokemon-Burning-Red-and-Sparking-Green
+                /Pokemon-Rekindled-Red
                 /bin
           key: default-cache
           
@@ -39,13 +39,13 @@ jobs:
               git clone https://github.com/pret/agbcc --quiet
               cd ./agbcc
               ./build.sh
-              ./install.sh ../Pokemon-Burning-Red-and-Sparking-Green
-              cd ../Pokemon-Burning-Red-and-Sparking-Green
+              ./install.sh ../Pokemon-Rekindled-Red
+              cd ../Pokemon-Rekindled-Red
       
       - name: Ensure setup
         if: steps.cache-build.outputs.cache-hit
         run: |
-              cd ./Pokemon-Burning-Red-and-Sparking-Green
+              cd ./Pokemon-Rekindled-Red
       - name: Build project 
         run: make
         
