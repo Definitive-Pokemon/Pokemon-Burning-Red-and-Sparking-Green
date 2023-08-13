@@ -12,6 +12,8 @@ FiveIsland_ResortGorgeous_House_EventScript_Selphy:: @ 8171EBE
 	special QuestLog_CutRecording
 	lock
 	faceplayer
+	checkitem ITEM_LETTER, 1
+	goto_if_eq FiveIsland_ResortGorgeous_House_EventScript_SelphyLetter
 	goto_if_set SHOWN_REQUESTED_MON, FiveIsland_ResortGorgeous_House_EventScript_JustFulfilledRequest
 	compare VAR_RESORT_GORGEOUS_REQUESTED_MON, 0xFFFF
 	goto_if_eq FiveIsland_ResortGorgeous_House_EventScript_RequestTookTooLong
@@ -19,6 +21,24 @@ FiveIsland_ResortGorgeous_House_EventScript_Selphy:: @ 8171EBE
 	goto_if_ne FiveIsland_ResortGorgeous_House_EventScript_CheckForRequestedMon
 	msgbox FiveIsland_ResortGorgeous_House_Text_PleaseHearMyWish
 	goto FiveIsland_ResortGorgeous_House_EventScript_RequestMon
+	end
+	
+FiveIsland_ResortGorgeous_House_EventScript_SelphyLetter::
+	textcolor 1
+	msgbox FiveIsland_ResortGorgeous_House_Text_SelphyWhatsThis
+	playfanfare MUS_OBTAIN_TMHM
+	textcolor 3
+	message FiveIsland_ResortGorgeous_House_Text_DeliveredLetter
+	waitmessage
+	waitfanfare
+	call EventScript_RestorePrevTextColor
+	removeitem ITEM_LETTER, 1
+	setflag FLAG_SELPHY_RECEIVED_LETTER
+	playse SE_PIN
+	applymovement LOCALID_SELPHY, Movement_ExclamationMark
+	waitmovement 0
+	msgbox FiveIsland_ResortGorgeous_House_Text_SelphyThisLetter
+	release
 	end
 
 FiveIsland_ResortGorgeous_House_EventScript_RequestMon:: @ 8171EFE

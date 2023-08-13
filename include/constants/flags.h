@@ -913,9 +913,9 @@
 #define FLAG_CAN_GET_HITMON_2               0x376
 #define FLAG_OAK_HAS_LETTER               0x377
 #define FLAG_OAK_GIVEN_LETTER               0x378
+#define FLAG_SELPHY_RECEIVED_LETTER               0x379
 
 // Unused?
-#define FLAG_0x379               0x379
 #define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C
