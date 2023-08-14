@@ -42,8 +42,7 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	checkitem ITEM_OLD_SEA_MAP, 1
 	compare VAR_RESULT, TRUE
 	call_if_ne PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent
-	checkitem ITEM_HM07, 1
-	call_if_ge PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
+	goto_if_set FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
 	special EnterHallOfFame
 	waitstate
 	releaseall

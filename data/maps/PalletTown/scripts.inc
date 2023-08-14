@@ -159,8 +159,7 @@ PalletTown_EventScript_EnoughMonsForNationalDex::
 PalletTown_EventScript_BaldingManHM07CheckNo::
 	lock
 	faceplayer
-	checkitem ITEM_HM07, 1
-	goto_if_ge PalletTown_EventScript_BaldingManHM07CheckYes
+	goto_if_set FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, PalletTown_EventScript_BaldingManHM07CheckYes
 	msgbox PalletTown_Text_BaldingManHM07CheckNo
 	release
 	end
