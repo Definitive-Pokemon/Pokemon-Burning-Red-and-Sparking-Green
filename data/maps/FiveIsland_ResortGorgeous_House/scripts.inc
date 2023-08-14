@@ -13,6 +13,7 @@ FiveIsland_ResortGorgeous_House_EventScript_Selphy:: @ 8171EBE
 	lock
 	faceplayer
 	checkitem ITEM_LETTER, 1
+	compare VAR_RESULT, TRUE
 	goto_if_eq FiveIsland_ResortGorgeous_House_EventScript_SelphyLetter
 	goto_if_set SHOWN_REQUESTED_MON, FiveIsland_ResortGorgeous_House_EventScript_JustFulfilledRequest
 	compare VAR_RESORT_GORGEOUS_REQUESTED_MON, 0xFFFF
