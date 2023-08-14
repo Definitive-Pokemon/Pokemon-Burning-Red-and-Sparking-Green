@@ -160,7 +160,7 @@ PalletTown_EventScript_BaldingManHM07CheckNo::
 	lock
 	faceplayer
 	checkitem ITEM_HM07, 1
-	goto_if_ge BaldingManHM07CheckYes
+	goto_if_ge PalletTown_EventScript_BaldingManHM07CheckYes
 	msgbox PalletTown_Text_BaldingManHM07CheckNo
 	release
 	end
@@ -180,8 +180,8 @@ PalletTown_Text_BaldingManHM07CheckYes::
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
 	lock
 	faceplayer
-	checkflag FLAG_OAK_HAS_LETTER
-	goto_if_set BeautyOakHasLetterCheckYes
+	checkflag 
+	goto_if_set FLAG_OAK_HAS_LETTER, PalletTown_EventScript_BeautyOakHasLetterCheckYes
 	msgbox PalletTown_Text_BeautyOakHasLetterCheckNo
 	release
 	end
@@ -201,8 +201,7 @@ PalletTown_Text_BeautyOakHasLetterCheckYes::
 PalletTown_EventScript_OldManOakGaveLetterCheckNo::
 	lock
 	faceplayer
-	checkflag FLAG_OAK_GIVEN_LETTER
-	goto_if_set OldManOakGaveLetterCheckYes
+	goto_if_set FLAG_OAK_GIVEN_LETTER, PalletTown_EventScript_OldManOakGaveLetterCheckYes
 	msgbox PalletTown_Text_OldManOakGaveLetterCheckNo
 	release
 	end
