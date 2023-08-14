@@ -19,6 +19,7 @@ PokemonLeague_HallOfFame_OnFrame:: @ 8162D66
 
 PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	lockall
+	goto_if_set FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
 	textcolor 0
 	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_EnterRoom
 	waitmovement 0
@@ -42,7 +43,6 @@ PokemonLeague_HallOfFame_EventScript_EnterRoom:: @ 8162D70
 	checkitem ITEM_OLD_SEA_MAP, 1
 	compare VAR_RESULT, TRUE
 	call_if_ne PokemonLeague_HallOfFame_EventScript_ActivateOldSeaMapEvent
-	goto_if_set FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, PokemonLeague_HallOfFame_EventScript_ActivateOaksLetterEvent
 	special EnterHallOfFame
 	waitstate
 	releaseall
