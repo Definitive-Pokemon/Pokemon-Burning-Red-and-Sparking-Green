@@ -155,6 +155,69 @@ PalletTown_EventScript_EnoughMonsForNationalDex::
 	msgbox PalletTown_Text_CaughtXImpressiveFollowMe
 	closemessage
 	return
+	
+PalletTown_EventScript_BaldingManHM07CheckNo::
+	lock
+	faceplayer
+	checkitem ITEM_HM07, 1
+	goto_if_ge BaldingManHM07CheckYes
+	msgbox PalletTown_Text_BaldingManHM07CheckNo
+	release
+	end
+	
+PalletTown_Text_BaldingManHM07CheckNo::
+	.string "The game has NOT found a HM07 in your bag!$"
+	
+PalletTown_EventScript_BaldingManHM07CheckYes::
+	msgbox PalletTown_Text_BaldingManHM07CheckYes
+	release
+	end
+	
+PalletTown_Text_BaldingManHM07CheckYes::
+	.string "The game HAS found a HM07 in your bag!\p"
+	.string "Congratulations!$"
+	
+PalletTown_EventScript_BeautyOakHasLetterCheckNo::
+	lock
+	faceplayer
+	checkflag FLAG_OAK_HAS_LETTER
+	goto_if_set BeautyOakHasLetterCheckYes
+	msgbox PalletTown_Text_BeautyOakHasLetterCheckNo
+	release
+	end
+	
+PalletTown_Text_BeautyOakHasLetterCheckNo::
+	.string "Professor Oak does NOT have a letter to give!$"
+	
+PalletTown_EventScript_BeautyOakHasLetterCheckYes::
+	msgbox PalletTown_Text_BeautyOakHasLetterCheckYes
+	release
+	end
+	
+PalletTown_Text_BeautyOakHasLetterCheckYes::
+	.string "Professor Oak DOES have a letter to give!\p"
+	.string "Congratulations!$"
+	
+PalletTown_EventScript_OldManOakGaveLetterCheckNo::
+	lock
+	faceplayer
+	checkflag FLAG_OAK_GIVEN_LETTER
+	goto_if_set OldManOakGaveLetterCheckYes
+	msgbox PalletTown_Text_OldManOakGaveLetterCheckNo
+	release
+	end
+	
+PalletTown_Text_OldManOakGaveLetterCheckNo::
+	.string "The game thinks Professor Oak did NOT give you the letter!$"
+	
+PalletTown_EventScript_OldManOakGaveLetterCheckYes::
+	msgbox PalletTown_Text_OldManOakGaveLetterCheckYes
+	release
+	end
+	
+PalletTown_Text_OldManOakGaveLetterCheckYes::
+	.string "The game thinks Professor Oak DID give you the letter!\p"
+	.string "Congratulations!$"
 
 PalletTown_Movement_OakWalkToPlayersDoor:: @ 81655AF
 	walk_left
