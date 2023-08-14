@@ -219,6 +219,28 @@ PalletTown_Text_OldManOakGaveLetterCheckYes::
 	.string "The game thinks Professor Oak DID\n"
 	.string "give you the letter!\p"
 	.string "Congratulations!$"
+	
+PalletTown_EventScript_BikerLetterCheckNo::
+	lock
+	faceplayer
+	checkitem ITEM_LETTER, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq PalletTown_EventScript_BikerLetterCheckYes
+	msgbox PalletTown_Text_BikerLetterCheckYes
+	release
+	end
+	
+PalletTown_Text_BikerLetterCheckNo::
+	.string "You do NOT have the letter!$"
+	
+PalletTown_EventScript_BikerLetterCheckYes::
+	msgbox PalletTown_Text_BikerLetterCheckYes
+	release
+	end
+	
+PalletTown_Text_BikerLetterCheckYes::
+	.string "You DO have the letter!\p"
+	.string "Congratulations!$"
 
 PalletTown_Movement_OakWalkToPlayersDoor:: @ 81655AF
 	walk_left
