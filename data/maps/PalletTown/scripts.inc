@@ -179,8 +179,7 @@ PalletTown_Text_BaldingManHM07CheckYes::
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
 	lock
-	faceplayer
-	checkflag 
+	faceplayer 
 	goto_if_set FLAG_OAK_HAS_LETTER, PalletTown_EventScript_BeautyOakHasLetterCheckYes
 	msgbox PalletTown_Text_BeautyOakHasLetterCheckNo
 	release
