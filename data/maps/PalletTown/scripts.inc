@@ -173,7 +173,7 @@ PalletTown_EventScript_BaldingManHM07CheckYes::
 	end
 	
 PalletTown_Text_BaldingManHM07CheckYes::
-	.string "You HAVE recovered the SAPPHIRE\!p"
+	.string "You HAVE recovered the SAPPHIRE!\p"
 	.string "Congratulations!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
