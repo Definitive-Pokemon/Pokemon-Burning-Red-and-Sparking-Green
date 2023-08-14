@@ -693,9 +693,9 @@ static void SetTitleScreenScene_Cry(s16 * data)
         if (!gPaletteFade.active)
         {
             if(gSaveBlock1Ptr->keyFlags.version == 0)
-                PlayCry1(SPECIES_CHARIZARD, 0);
+                PlayCry1(SPECIES_MOLTRES, 0);
             else
-                PlayCry1(SPECIES_VENUSAUR, 0);
+                PlayCry1(SPECIES_MOLTRES, 0);
             ScheduleHideSlashSprite(data[6]);
             data[2] = 0;
             data[1]++;
