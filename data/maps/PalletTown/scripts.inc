@@ -189,7 +189,7 @@ PalletTown_EventScript_BeautyOakHasLetterCheckNo::
 	
 PalletTown_Text_BeautyOakHasLetterCheckNo::
 	.string "Professor Oak does NOT have a letter\n"
-	"to give!$"
+	.string "to give!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckYes::
 	msgbox PalletTown_Text_BeautyOakHasLetterCheckYes
