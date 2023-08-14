@@ -159,14 +159,13 @@ PalletTown_EventScript_EnoughMonsForNationalDex::
 PalletTown_EventScript_BaldingManHM07CheckNo::
 	lock
 	faceplayer
-	goto_if_set FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, PalletTown_EventScript_BaldingManHM07CheckYes
+	goto_if_set FLAG_RECOVERED_SAPPHIRE, PalletTown_EventScript_BaldingManHM07CheckYes
 	msgbox PalletTown_Text_BaldingManHM07CheckNo
 	release
 	end
 	
 PalletTown_Text_BaldingManHM07CheckNo::
-	.string "The game has NOT found a HM07\n" 
-	.string "in your bag!$"
+	.string "You have NOT recovered the SAPPHIRE!$"
 	
 PalletTown_EventScript_BaldingManHM07CheckYes::
 	msgbox PalletTown_Text_BaldingManHM07CheckYes
@@ -174,8 +173,7 @@ PalletTown_EventScript_BaldingManHM07CheckYes::
 	end
 	
 PalletTown_Text_BaldingManHM07CheckYes::
-	.string "The game HAS found a HM07\n"
-	.string "in your bag!\p"
+	.string "You HAVE recovered the SAPPHIRE\!p"
 	.string "Congratulations!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
