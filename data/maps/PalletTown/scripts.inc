@@ -166,7 +166,8 @@ PalletTown_EventScript_BaldingManHM07CheckNo::
 	end
 	
 PalletTown_Text_BaldingManHM07CheckNo::
-	.string "The game has NOT found a HM07 in your bag!$"
+	.string "The game has NOT found a HM07\n" 
+	.string "in your bag!$"
 	
 PalletTown_EventScript_BaldingManHM07CheckYes::
 	msgbox PalletTown_Text_BaldingManHM07CheckYes
@@ -174,7 +175,8 @@ PalletTown_EventScript_BaldingManHM07CheckYes::
 	end
 	
 PalletTown_Text_BaldingManHM07CheckYes::
-	.string "The game HAS found a HM07 in your bag!\p"
+	.string "The game HAS found a HM07\n"
+	.string "in your bag!\p"
 	.string "Congratulations!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
@@ -186,7 +188,8 @@ PalletTown_EventScript_BeautyOakHasLetterCheckNo::
 	end
 	
 PalletTown_Text_BeautyOakHasLetterCheckNo::
-	.string "Professor Oak does NOT have a letter to give!$"
+	.string "Professor Oak does NOT have a letter\n"
+	"to give!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckYes::
 	msgbox PalletTown_Text_BeautyOakHasLetterCheckYes
@@ -194,7 +197,8 @@ PalletTown_EventScript_BeautyOakHasLetterCheckYes::
 	end
 	
 PalletTown_Text_BeautyOakHasLetterCheckYes::
-	.string "Professor Oak DOES have a letter to give!\p"
+	.string "Professor Oak DOES have a letter\n"
+	.string "to give!\p"
 	.string "Congratulations!$"
 	
 PalletTown_EventScript_OldManOakGaveLetterCheckNo::
@@ -206,7 +210,8 @@ PalletTown_EventScript_OldManOakGaveLetterCheckNo::
 	end
 	
 PalletTown_Text_OldManOakGaveLetterCheckNo::
-	.string "The game thinks Professor Oak did NOT give you the letter!$"
+	.string "The game thinks Professor Oak did\n"
+	.string "NOT give you the letter!$"
 	
 PalletTown_EventScript_OldManOakGaveLetterCheckYes::
 	msgbox PalletTown_Text_OldManOakGaveLetterCheckYes
@@ -214,7 +219,8 @@ PalletTown_EventScript_OldManOakGaveLetterCheckYes::
 	end
 	
 PalletTown_Text_OldManOakGaveLetterCheckYes::
-	.string "The game thinks Professor Oak DID give you the letter!\p"
+	.string "The game thinks Professor Oak DID\n"
+	.string "give you the letter!\p"
 	.string "Congratulations!$"
 
 PalletTown_Movement_OakWalkToPlayersDoor:: @ 81655AF
