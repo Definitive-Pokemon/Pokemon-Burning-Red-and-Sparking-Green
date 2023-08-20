@@ -1,3 +1,3 @@
 MtEmberRegirockPuzzle_Text_SomethingHappened::
-	.string "Oh well, just stop staring and\n"
-	.string "hand me that letter!$"
+	.string "It sounded as if a door opened\n"
+	.string "somewhere far away.$"
