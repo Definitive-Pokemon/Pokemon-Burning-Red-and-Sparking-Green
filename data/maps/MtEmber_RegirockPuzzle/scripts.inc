@@ -11,7 +11,7 @@ MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder::
 	setobjectxyperm 6, 9, 6
 	return
 	
-MtEmber_RegirockPuzzle_SetRockBarrier::
+MtEmber_RegirockPuzzle_EventScript_SetRockBarrier::
 	setmetatile 6, 8, METATILE_Cave_RockBarrier_Top, 1
 	return
 	
