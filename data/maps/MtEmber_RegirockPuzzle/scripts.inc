@@ -69,6 +69,8 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2::
 	end
 	
 MtEmberRegirockPuzzle_EventScript_Braille::
+	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
+	goto_if_eq	MtEmber_RegirockPuzzle_EventScript_NoBraille
 	lockall
 	setvar VAR_0x8005, 130
 	braillemessage_wait Braille_Text_Push
@@ -77,4 +79,7 @@ MtEmberRegirockPuzzle_EventScript_Braille::
 	braillemessage Braille_Text_Buttons
 	waitbuttonpress
 	releaseall
+	end
+	
+MtEmber_RegirockPuzzle_EventScript_NoBraille::
 	end
