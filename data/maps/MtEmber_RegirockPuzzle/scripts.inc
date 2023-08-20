@@ -45,10 +45,14 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitch2::
 	moveobjectoffscreen 6
 	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
 	fadeoutbgm 0
-	playse SE_TRUCK_MOVE
-	delay 40
+	special ShakeScreen
+	delay 60
+	special ShakeScreen
+	delay 60
+	playse SE_LAVARIDGE_FALL_WARP
+	waitse
 	playse SE_DOOR
-	delay 40
+	waitse
 	msgbox MtEmberRegirockPuzzle_Text_SomethingHappened, MSGBOX_DEFAULT
 	closemessage
 	fadeinbgm 0
@@ -66,6 +70,7 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2::
 	
 MtEmberRegirockPuzzle_EventScript_Braille::
 	lockall
+	setvar VAR_0x8005, 130
 	braillemessage_wait Braille_Text_Push
 	braillemessage_wait Braille_Text_Rocks
 	braillemessage_wait Braille_Text_Onto
