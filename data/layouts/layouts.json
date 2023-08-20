@@ -4836,6 +4836,18 @@
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/SageCave/border.bin",
       "blockdata_filepath": "data/layouts/SageCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_EMBER_REGIROCK_PUZZLE",
+      "name": "MtEmber_RegirockPuzzle_Layout",
+      "width": 21,
+      "height": 21,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MtEmber",
+      "border_filepath": "data/layouts/MtEmber_RegirockPuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/MtEmber_RegirockPuzzle/map.bin"
     }
   ]
 }
