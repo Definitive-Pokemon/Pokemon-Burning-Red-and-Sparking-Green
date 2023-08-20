@@ -51,7 +51,8 @@
     "TradeCenter",
     "RecordCorner",
     "BattleColosseum_4P",
-    "UnionRoom"
+    "UnionRoom",
+    "SageCave"
   ],
   "gMapGroup_Dungeons": [
     "ViridianForest",

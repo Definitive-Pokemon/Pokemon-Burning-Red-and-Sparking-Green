@@ -1343,3 +1343,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/Fiery_Passage/scripts.inc"
 	.include "data/maps/Fiery_Passage/text.inc"
+
+	.include "data/maps/SageCave/scripts.inc"
+	.include "data/maps/SageCave/text.inc"
