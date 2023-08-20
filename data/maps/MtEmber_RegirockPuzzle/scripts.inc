@@ -1,4 +1,5 @@
 MtEmber_RegirockPuzzle_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MtEmber_RegirockPuzzle_OnLoad
 	.byte 0
 
 MtEmber_RegirockPuzzle_OnLoad::

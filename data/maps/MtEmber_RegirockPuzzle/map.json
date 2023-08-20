@@ -145,7 +145,7 @@
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER",
       "var_value": "99",
-      "script": "NULL"
+      "script": "MtEmber_RegirockPuzzle_EventScript_FloorSwitch"
     }
   ],
   "bg_events": [
