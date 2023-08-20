@@ -3,33 +3,73 @@ MtEmber_RegirockPuzzle_MapScripts::
 	.byte 0
 
 MtEmber_RegirockPuzzle_OnLoad::
-	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER, 100
+	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
 	call_if_ne MtEmber_RegirockPuzzle_EventScript_SetRockBarrier
-	call_if_eq MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder
+	call_if_eq MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder1
+	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
+	call_if_eq MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder2
 	end
 	
-MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder::
+MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder1::
 	setobjectxyperm 6, 9, 6
 	return
 	
-MtEmber_RegirockPuzzle_EventScript_SetRockBarrier::
-	setmetatile 6, 8, METATILE_Cave_RockBarrier_Top, 1
+MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder2::
+	setobjectxyperm 1, 6, 6
 	return
 	
-MtEmber_RegirockPuzzle_EventScript_FloorSwitch::
+MtEmber_RegirockPuzzle_EventScript_SetRockBarrier::
+	setmetatile 6, 8, METATILE_MtEmber_Braille, 1
+	return
+	
+MtEmber_RegirockPuzzle_EventScript_FloorSwitch1::
 	lockall
-	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER, 100
-	goto_if_eq MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed
-	setmetatile 6, 8, METATILE_MtEmber_Braille, 0
+	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
+	goto_if_eq MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed1
+	setmetatile 6, 8, METATILE_MtEmber_Floor, 0
 	playse SE_ICE_BREAK
 	special DrawWholeMapView
 	waitse
 	moveobjectoffscreen 6
-	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER, 100
+	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
 	releaseall
 	end
 	
-MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed::
+MtEmber_RegirockPuzzle_EventScript_FloorSwitch2::
+	lockall
+	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
+	goto_if_eq MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2
+	playse SE_ICE_BREAK
+	special DrawWholeMapView
+	waitse
+	moveobjectoffscreen 6
+	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
+	fadeoutbgm 0
+	playse SE_TRUCK_MOVE
+	delay 40
+	playse SE_DOOR
+	delay 40
+	msgbox MtEmberRegirockPuzzle_Text_SomethingHappened, MSGBOX_DEFAULT
+	closemessage
+	fadeinbgm 0
+	setflag FLAG_REGIROCK_DOOR_OPENED
 	releaseall
 	end
 	
+MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed1::
+	releaseall
+	end
+	
+MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2::
+	releaseall
+	end
+	
+MtEmberRegirockPuzzle_EventScript_Braille::
+	lockall
+	braillemessage_wait Braille_Text_Push
+	braillemessage_wait Braille_Text_Rocks
+	braillemessage_wait Braille_Text_Onto
+	braillemessage Braille_Text_Buttons
+	waitbuttonpress
+	releaseall
+	end

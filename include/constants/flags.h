@@ -914,9 +914,9 @@
 #define FLAG_OAK_HAS_LETTER               0x377
 #define FLAG_OAK_GIVEN_LETTER               0x378
 #define FLAG_SELPHY_RECEIVED_LETTER               0x379
+#define FLAG_REGIROCK_DOOR_OPENED               0x37A
 
 // Unused?
-#define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C
 #define FLAG_0x37D               0x37D
