@@ -3,7 +3,7 @@
   "name": "Icy_Tomb",
   "layout": "LAYOUT_ICY_TOMB",
   "music": "MUS_SEALED_CHAMBER",
-  "region_map_section": "MAPSEC_ICY_TOMB",
+  "region_map_section": "MAPSEC_ICEFALL_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
