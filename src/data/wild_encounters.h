@@ -1947,7 +1947,34 @@ const struct WildPokemon sThreeIslandPort_FireRed_LandMons[] =
     { 48, 48, SPECIES_ALTARIA },
 };
 
-const struct WildPokemonInfo sThreeIslandPort_FireRed_LandMonsInfo = { 1, sThreeIslandPort_FireRed_LandMons };
+const struct WildPokemonInfo sThreeIslandPort_LandMonsInfo = { 1, sThreeIslandPort_LandMons };
+
+const struct WildPokemon sThreeIslandPort_WaterMons[] =
+{
+    { 50, 60, SPECIES_SKIPLOOM },
+    { 50, 60, SPECIES_SKIPLOOM },
+    { 55, 65, SPECIES_TENTACOOL },
+    { 55, 65, SPECIES_TENTACRUEL },
+    { 55, 65, SPECIES_TENTACRUEL },
+};
+
+const struct WildPokemonInfo sThreeIslandPort_WaterMonsInfo = { 2, sThreeIslandPort_WaterMons };
+
+const struct WildPokemon sThreeIslandPort_FishingMons[] =
+{
+    { 5, 5, SPECIES_MAGIKARP },
+    { 5, 5, SPECIES_MAGIKARP },
+    { 5, 15, SPECIES_HORSEA },
+    { 5, 15, SPECIES_MAGIKARP },
+    { 5, 15, SPECIES_HORSEA },
+    { 50, 60, SPECIES_QWILFISH },
+    { 50, 60, SPECIES_QWILFISH },
+    { 50, 60, SPECIES_GYARADOS },
+    { 55, 65, SPECIES_GYARADOS },
+    { 55, 65, SPECIES_GYARADOS },
+};
+
+const struct WildPokemonInfo sThreeIslandPort_FishingMonsInfo = { 20, sThreeIslandPort_FishingMons };
 
 const struct WildPokemon sFiveIslandResortGorgeous_FireRed_WaterMons[] =
 {
@@ -8402,12 +8429,12 @@ const struct WildPokemonHeader gWildMonHeaders[] =
         .mapNum = MAP_NUM(THREE_ISLAND_PORT),
         .landMonsInfo_FR = &sThreeIslandPort_FireRed_LandMonsInfo,
         .landMonsInfo_LG = &sThreeIslandPort_LeafGreen_LandMonsInfo,
-        .waterMonsInfo_FR = NULL,
-        .waterMonsInfo_LG = NULL,
+        .waterMonsInfo_FR = &sThreeIslandPort_WaterMonsInfo
+        .waterMonsInfo_LG = &sThreeIslandPort_WaterMonsInfo
         .rockSmashMonsInfo_FR = NULL,
         .rockSmashMonsInfo_LG = NULL,
-        .fishingMonsInfo_FR = NULL,
-        .fishingMonsInfo_LG = NULL,
+        .fishingMonsInfo_FR = &sThreeIslandPort_FishingMonsInfo
+        .fishingMonsInfo_LG = &sThreeIslandPort_FishingMonsInfo
     },
     {
         .mapGroup = MAP_GROUP(FIVE_ISLAND_RESORT_GORGEOUS),

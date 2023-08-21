@@ -2668,7 +2668,7 @@
     {
       "id": "LAYOUT_THREE_ISLAND_PORT",
       "name": "ThreeIsland_Port_Layout",
-      "width": 48,
+      "width": 60,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
