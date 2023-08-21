@@ -32,6 +32,7 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitch1::
 	waitse
 	moveobjectoffscreen 6
 	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
+	setflag FLAG_REGIROCK_BRAILLE_GONE
 	releaseall
 	end
 	
