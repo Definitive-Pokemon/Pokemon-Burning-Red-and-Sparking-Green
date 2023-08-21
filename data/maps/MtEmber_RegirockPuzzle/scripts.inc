@@ -19,7 +19,7 @@ MtEmber_RegirockPuzzle_EventScript_MoveSwitchBoulder2::
 	return
 	
 MtEmber_RegirockPuzzle_EventScript_SetRockBarrier::
-	setmetatile 6, 8, METATILE_MtEmber_Braille, 1
+	setmetatile 6, 8, METATILE_MtEmber_Rock, 1
 	return
 	
 MtEmber_RegirockPuzzle_EventScript_FloorSwitch1::
@@ -32,7 +32,6 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitch1::
 	waitse
 	moveobjectoffscreen 6
 	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
-	setflag FLAG_REGIROCK_BRAILLE_GONE
 	releaseall
 	end
 	
@@ -67,20 +66,4 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed1::
 	
 MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2::
 	releaseall
-	end
-	
-MtEmberRegirockPuzzle_EventScript_Braille::
-	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1, 100
-	goto_if_eq	MtEmber_RegirockPuzzle_EventScript_NoBraille
-	lockall
-	setvar VAR_0x8005, 130
-	braillemessage_wait Braille_Text_Push
-	braillemessage_wait Braille_Text_Rocks
-	braillemessage_wait Braille_Text_Onto
-	braillemessage Braille_Text_Buttons
-	waitbuttonpress
-	releaseall
-	end
-	
-MtEmber_RegirockPuzzle_EventScript_NoBraille::
 	end

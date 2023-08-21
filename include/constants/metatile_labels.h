@@ -111,7 +111,7 @@
 // gTileset_MtEmber
 #define METATILE_MtEmber_CaveEntrance  0x346
 #define METATILE_MtEmber_Floor  0x281
-#define METATILE_MtEmber_Braille  0x353
+#define METATILE_MtEmber_Rock  0x282
 
 // gTileset_PalletTown
 #define METATILE_PalletTown_Door         0x2A3
