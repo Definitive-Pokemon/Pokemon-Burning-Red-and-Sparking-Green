@@ -239,7 +239,7 @@ gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Mudkip, gDummySpriteAf
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_PLAYER_RED, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
-2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+3, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Regirock, gDummySpriteAffineAnimTable};
 
