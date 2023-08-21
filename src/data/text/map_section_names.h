@@ -175,6 +175,7 @@ const u8 gMapSecName_PatternBush[] = _("PATTERN BUSH");
 const u8 gMapSecName_AlteringCave[] = _("ALTERING CAVE");
 const u8 gMapSecName_TanobyChambers[] = _("TANOBY CHAMBERS");
 const u8 gMapSecName_ThreeIslePath[] = _("THREE ISLE PATH");
+const u8 gMapSecName_StoneTomb[] = _("STONE TOMB");
 const u8 gMapSecName_TanobyKey[] = _("TANOBY KEY");
 const u8 gMapSecName_BirthIsland[] = _("BIRTH ISLAND");
 const u8 gMapSecName_MoneanChamber[] = _("MONEAN CHAMBER");
