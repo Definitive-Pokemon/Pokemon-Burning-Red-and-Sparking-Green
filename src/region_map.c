@@ -1429,7 +1429,6 @@ static const u16 sMapSectionDimensions[MAPSEC_COUNT][2] = {
     [MAPSEC_ALTERING_CAVE       ] = {1, 1},
     [MAPSEC_TANOBY_CHAMBERS     ] = {1, 1},
     [MAPSEC_THREE_ISLE_PATH     ] = {1, 1},
-	[MAPSEC_STONE_TOMB			] = {1, 1},
     [MAPSEC_TANOBY_KEY          ] = {1, 1},
     [MAPSEC_BIRTH_ISLAND        ] = {1, 1},
     [MAPSEC_MONEAN_CHAMBER      ] = {1, 1},
