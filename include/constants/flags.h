@@ -918,15 +918,15 @@
 #define FLAG_FOUGHT_REGIROCK               0x37B
 #define FLAG_HIDE_REGIROCK               0x37C
 #define FLAG_REGIROCK_FLED               0x37D
+#define FLAG_FOUGHT_REGIROCK               0x37E
+#define FLAG_HIDE_REGICE               0x37F
+#define FLAG_REGISTEEL_FLED               0x380
+#define FLAG_FOUGHT_REGIROCK               0x381
+#define FLAG_HIDE_REGICE               0x382
+#define FLAG_REGISTEEL_FLED               0x383
 
 
 // Unused?
-#define FLAG_0x37E               0x37E
-#define FLAG_0x37F               0x37F
-#define FLAG_0x380               0x380
-#define FLAG_0x381               0x381
-#define FLAG_0x382               0x382
-#define FLAG_0x383               0x383
 #define FLAG_0x384               0x384
 #define FLAG_0x385               0x385
 #define FLAG_0x386               0x386
@@ -1464,8 +1464,8 @@
 #define FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR                        (SYS_FLAGS + 0xC2)
 
 #define FLAG_WORLD_MAP_THREE_ISLAND_STONE_TOMB                      (SYS_FLAGS + 0xC3)
-#define FLAG_0x8C4                                                  (SYS_FLAGS + 0xC4)
-#define FLAG_0x8C5                                                  (SYS_FLAGS + 0xC5)
+#define FLAG_WORLD_MAP_FOUR_ISLAND_ICY_TOMB                         (SYS_FLAGS + 0xC4)
+#define FLAG_WORLD_MAP_FIVE_ISLAND_METAL_TOMB                       (SYS_FLAGS + 0xC5)
 #define FLAG_0x8C6                                                  (SYS_FLAGS + 0xC6)
 #define FLAG_0x8C7                                                  (SYS_FLAGS + 0xC7)
 #define FLAG_0x8C8                                                  (SYS_FLAGS + 0xC8)
