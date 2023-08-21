@@ -1349,3 +1349,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/MtEmber_RegirockPuzzle/scripts.inc"
 	.include "data/maps/MtEmber_RegirockPuzzle/text.inc"
+
+	.include "data/maps/Stone_Tomb/scripts.inc"
+	.include "data/maps/Stone_Tomb/text.inc"

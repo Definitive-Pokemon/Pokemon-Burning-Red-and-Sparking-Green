@@ -4848,6 +4848,18 @@
       "secondary_tileset": "gTileset_MtEmber",
       "border_filepath": "data/layouts/MtEmber_RegirockPuzzle/border.bin",
       "blockdata_filepath": "data/layouts/MtEmber_RegirockPuzzle/map.bin"
+    },
+    {
+      "id": "LAYOUT_STONE_TOMB",
+      "name": "Stone_Tomb_Layout",
+      "width": 17,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Stone_Tomb/border.bin",
+      "blockdata_filepath": "data/layouts/Stone_Tomb/map.bin"
     }
   ]
 }

@@ -85,6 +85,13 @@
       "elevation": 3,
       "dest_map": "MAP_THREE_ISLAND_HARBOR",
       "dest_warp_id": 0
+    },
+    {
+      "x": 51,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_STONE_TOMB",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
