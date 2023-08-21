@@ -451,11 +451,6 @@ void StartLegendaryBattle(void)
     case SPECIES_CYNDAQUIL:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_WILD);
         break;
-	case SPECIES_REGIROCK:
-	case SPECIES_REGICE:
-	case SPECIES_REGISTEEL:
-		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_REGI);
-		break;
 	default:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
         break;
@@ -470,9 +465,9 @@ void StartGroudonKyogreBattle(void)
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON;
     if (gGameVersion == VERSION_FIRE_RED)
-        CreateBattleStartTask(B_TRANSITION_BLACK_DOODLES, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_BLACK_DOODLES, MUS_VS_KYOGRE_GROUDON);
     else // pointless, exactly the same
-        CreateBattleStartTask(B_TRANSITION_BLACK_DOODLES, MUS_RS_VS_TRAINER);
+        CreateBattleStartTask(B_TRANSITION_BLACK_DOODLES, MUS_VS_KYOGRE_GROUDON);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
@@ -482,7 +477,17 @@ void StartRegiBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI;
-    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
+    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_REGI);
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+}
+
+void StartRayquazaBattle(void)
+{
+    ScriptContext2_Enable();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_RAYQUAZA;
+    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_RAYQUAZA);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
