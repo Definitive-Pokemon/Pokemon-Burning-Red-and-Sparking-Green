@@ -1947,7 +1947,7 @@ const struct WildPokemon sThreeIslandPort_FireRed_LandMons[] =
     { 48, 48, SPECIES_ALTARIA },
 };
 
-const struct WildPokemonInfo sThreeIslandPort_LandMonsInfo = { 1, sThreeIslandPort_LandMons };
+const struct WildPokemonInfo sThreeIslandPort_FireRed_LandMonsInfo = { 1, sThreeIslandPort_FireRed_LandMons };
 
 const struct WildPokemon sThreeIslandPort_WaterMons[] =
 {
@@ -8429,12 +8429,12 @@ const struct WildPokemonHeader gWildMonHeaders[] =
         .mapNum = MAP_NUM(THREE_ISLAND_PORT),
         .landMonsInfo_FR = &sThreeIslandPort_FireRed_LandMonsInfo,
         .landMonsInfo_LG = &sThreeIslandPort_LeafGreen_LandMonsInfo,
-        .waterMonsInfo_FR = &sThreeIslandPort_WaterMonsInfo
-        .waterMonsInfo_LG = &sThreeIslandPort_WaterMonsInfo
+        .waterMonsInfo_FR = &sThreeIslandPort_WaterMonsInfo,
+        .waterMonsInfo_LG = &sThreeIslandPort_WaterMonsInfo,
         .rockSmashMonsInfo_FR = NULL,
         .rockSmashMonsInfo_LG = NULL,
-        .fishingMonsInfo_FR = &sThreeIslandPort_FishingMonsInfo
-        .fishingMonsInfo_LG = &sThreeIslandPort_FishingMonsInfo
+        .fishingMonsInfo_FR = &sThreeIslandPort_FishingMonsInfo,
+        .fishingMonsInfo_LG = &sThreeIslandPort_FishingMonsInfo,
     },
     {
         .mapGroup = MAP_GROUP(FIVE_ISLAND_RESORT_GORGEOUS),

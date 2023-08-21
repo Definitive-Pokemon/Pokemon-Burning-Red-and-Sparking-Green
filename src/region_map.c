@@ -575,6 +575,7 @@ static const u8 sSeviiMapsecs[3][30] = {
         MAPSEC_BERRY_FOREST,
         MAPSEC_THREE_ISLE_PATH,
         MAPSEC_EMBER_SPA,
+		MAPSEC_STONE_TOMB
         MAPSEC_NONE
     }, 
     [REGIONMAP_SEVII45 - 1] =
@@ -1048,6 +1049,7 @@ static const u8 *const sMapNames[] = {
     [MAPSEC_ALTERING_CAVE       ] = gMapSecName_AlteringCave,
     [MAPSEC_TANOBY_CHAMBERS     ] = gMapSecName_TanobyChambers,
     [MAPSEC_THREE_ISLE_PATH     ] = gMapSecName_ThreeIslePath,
+	MAPSEC_STONE_TOMB			] = gMapSecName_StoneTomb
     [MAPSEC_TANOBY_KEY          ] = gMapSecName_TanobyKey,
     [MAPSEC_BIRTH_ISLAND        ] = gMapSecName_BirthIsland,
     [MAPSEC_MONEAN_CHAMBER      ] = gMapSecName_MoneanChamber,
@@ -1427,6 +1429,7 @@ static const u16 sMapSectionDimensions[MAPSEC_COUNT][2] = {
     [MAPSEC_ALTERING_CAVE       ] = {1, 1},
     [MAPSEC_TANOBY_CHAMBERS     ] = {1, 1},
     [MAPSEC_THREE_ISLE_PATH     ] = {1, 1},
+	[MAPSEC_STONE_TOMB			] = {1, 1},
     [MAPSEC_TANOBY_KEY          ] = {1, 1},
     [MAPSEC_BIRTH_ISLAND        ] = {1, 1},
     [MAPSEC_MONEAN_CHAMBER      ] = {1, 1},
@@ -1695,6 +1698,7 @@ static const u8 sMapFlyDestinations[][3] = {
     [MAPSEC_ALTERING_CAVE       ] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_TANOBY_CHAMBERS     ] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_THREE_ISLE_PATH     ] = {MAP(PALLET_TOWN),                           0},
+    [MAPSEC_STONE_TOMB          ] = {MAP(PALLET_TOWN),                           0},	
     [MAPSEC_TANOBY_KEY          ] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_BIRTH_ISLAND        ] = {MAP(BIRTH_ISLAND_EXTERIOR),                 0},
     [MAPSEC_MONEAN_CHAMBER      ] = {MAP(PALLET_TOWN),                           0},
@@ -3860,6 +3864,8 @@ static u8 GetDungeonMapsecType(u8 mapsec)
         return FlagGet(FLAG_WORLD_MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case MAPSEC_THREE_ISLE_PATH:
         return FlagGet(FLAG_WORLD_MAP_THREE_ISLAND_DUNSPARCE_TUNNEL) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+	case MAPSEC_STONE_TOMB:
+        return FlagGet(FLAG_WORLD_MAP_THREE_ISLAND_STONE_TOMB) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case MAPSEC_TANOBY_KEY:
         return FlagGet(FLAG_WORLD_MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
     case MAPSEC_BIRTH_ISLAND:
