@@ -259,7 +259,9 @@
     "MtMoon_Square",
     "Fiery_Passage",
     "MtEmber_RegirockPuzzle",
-    "Stone_Tomb"
+    "Stone_Tomb",
+    "Icy_Tomb",
+    "Metal_Tomb"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

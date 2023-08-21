@@ -219,6 +219,8 @@
 #define MAP_FIERY_PASSAGE                             (73 | (2 << 8))
 #define MAP_MT_EMBER_REGIROCK_PUZZLE                  (74 | (2 << 8))
 #define MAP_STONE_TOMB                                (75 | (2 << 8))
+#define MAP_ICY_TOMB                                  (76 | (2 << 8))
+#define MAP_METAL_TOMB                                (77 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_STONE_TOMB",
-  "name": "Stone_Tomb",
-  "layout": "LAYOUT_STONE_TOMB",
+  "id": "MAP_METAL_TOMB",
+  "name": "Metal_Tomb",
+  "layout": "LAYOUT_METAL_TOMB",
   "music": "MUS_SEALED_CHAMBER",
-  "region_map_section": "MAPSEC_STONE_TOMB",
+  "region_map_section": "MAPSEC_METAL_TOMB",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -16,7 +16,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_REGIROCK",
+      "graphics_id": "OBJ_EVENT_GFX_REGISTEEL",
       "in_connection": false,
       "x": 8,
       "y": 7,
@@ -26,8 +26,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Stone_Tomb_EventScript_Regirock",
-      "flag": "FLAG_HIDE_REGIROCK"
+      "script": "Metal_Tomb_EventScript_Registeel",
+      "flag": "FLAG_HIDE_REGISTEEL"
     }
   ],
   "warp_events": [
@@ -35,8 +35,8 @@
       "x": 8,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_THREE_ISLAND_PORT",
-      "dest_warp_id": 3
+      "dest_map": "MAP_FIVE_ISLAND_MEMORIAL_PILLAR",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
@@ -44,6 +44,5 @@
   ],
   "bg_events": [
 
-  ],
-  "level_scaling": "0"
+  ]
 }

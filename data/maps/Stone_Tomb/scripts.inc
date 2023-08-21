@@ -31,7 +31,7 @@ Stone_Tomb_EventScript_Regirock::
 	special QuestLog_CutRecording
 	lock
 	faceplayer
-	setwildbattle SPECIES_REGIROCK, 15, ITEM_NONE
+	setwildbattle SPECIES_REGIROCK, 60, ITEM_NONE
 	waitse
 	playmoncry SPECIES_REGIROCK, 2
 	msgbox Stone_Tomb_Text_Regirock
@@ -41,7 +41,7 @@ Stone_Tomb_EventScript_Regirock::
 	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
 	waitbuttonpress
 	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
-	special StartLegendaryBattle
+	special StartRegiBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 	specialvar VAR_RESULT, GetBattleOutcome

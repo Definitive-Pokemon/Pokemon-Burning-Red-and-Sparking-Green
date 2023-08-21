@@ -1352,3 +1352,9 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/Stone_Tomb/scripts.inc"
 	.include "data/maps/Stone_Tomb/text.inc"
+
+	.include "data/maps/Icy_Tomb/scripts.inc"
+	.include "data/maps/Icy_Tomb/text.inc"
+
+	.include "data/maps/Metal_Tomb/scripts.inc"
+	.include "data/maps/Metal_Tomb/text.inc"

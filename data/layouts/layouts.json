@@ -4860,6 +4860,30 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Stone_Tomb/border.bin",
       "blockdata_filepath": "data/layouts/Stone_Tomb/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICY_TOMB",
+      "name": "Icy_Tomb_Layout",
+      "width": 17,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/Icy_Tomb/border.bin",
+      "blockdata_filepath": "data/layouts/Icy_Tomb/map.bin"
+    },
+    {
+      "id": "LAYOUT_METAL_TOMB",
+      "name": "Metal_Tomb_Layout",
+      "width": 17,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RockTunnel",
+      "border_filepath": "data/layouts/Metal_Tomb/border.bin",
+      "blockdata_filepath": "data/layouts/Metal_Tomb/map.bin"
     }
   ]
 }

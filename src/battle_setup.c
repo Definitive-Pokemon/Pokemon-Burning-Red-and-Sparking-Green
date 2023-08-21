@@ -455,7 +455,7 @@ void StartLegendaryBattle(void)
 	case SPECIES_REGICE:
 	case SPECIES_REGISTEEL:
 		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_REGI);
-    default:
+		break
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
         break;
     }

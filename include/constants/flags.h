@@ -918,11 +918,11 @@
 #define FLAG_FOUGHT_REGIROCK               0x37B
 #define FLAG_HIDE_REGIROCK               0x37C
 #define FLAG_REGIROCK_FLED               0x37D
-#define FLAG_FOUGHT_REGIROCK               0x37E
+#define FLAG_FOUGHT_REGICE               0x37E
 #define FLAG_HIDE_REGICE               0x37F
-#define FLAG_REGISTEEL_FLED               0x380
-#define FLAG_FOUGHT_REGIROCK               0x381
-#define FLAG_HIDE_REGICE               0x382
+#define FLAG_REGICE_FLED               0x380
+#define FLAG_FOUGHT_REGISTEEL               0x381
+#define FLAG_HIDE_REGISTEEL               0x382
 #define FLAG_REGISTEEL_FLED               0x383
 
 
