@@ -213,8 +213,11 @@
 #define OBJ_EVENT_GFX_TREECKO 209
 #define OBJ_EVENT_GFX_TORCHIC 210
 #define OBJ_EVENT_GFX_MUDKIP 211
+#define OBJ_EVENT_GFX_REGIROCK 212
+#define OBJ_EVENT_GFX_REGICE 213
+#define OBJ_EVENT_GFX_REGISTEEL 214
 
-#define NUM_OBJ_EVENT_GFX     212
+#define NUM_OBJ_EVENT_GFX     215
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

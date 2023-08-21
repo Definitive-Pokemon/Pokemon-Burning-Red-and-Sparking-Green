@@ -2231,6 +2231,42 @@ const struct SpriteFrameImage gObjectEventPicTable_Mudkip[] = {
     overworld_frame(gObjectEventPic_Mudkip, 2, 2, 0),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_Regirock[] = {
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regirock, 4, 4, 0),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Regice[] = {
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Regice, 4, 4, 0),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Registeel[] = {
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Abra[] = {
     overworld_frame(gObjectEventPic_Abra, 2, 2, 0),
     overworld_frame(gObjectEventPic_Abra, 2, 2, 1),

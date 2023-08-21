@@ -189,6 +189,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Smoochum;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treecko;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Torchic;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mudkip;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abra;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater2;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MasterBeauty;
@@ -403,6 +406,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TREECKO]                  = &gObjectEventGraphicsInfo_Treecko,
     [OBJ_EVENT_GFX_TORCHIC]                  = &gObjectEventGraphicsInfo_Torchic,
     [OBJ_EVENT_GFX_MUDKIP]                   = &gObjectEventGraphicsInfo_Mudkip,
+    [OBJ_EVENT_GFX_REGIROCK]                 = &gObjectEventGraphicsInfo_Regirock,
+    [OBJ_EVENT_GFX_REGICE]                   = &gObjectEventGraphicsInfo_Regice,
+    [OBJ_EVENT_GFX_REGISTEEL]                = &gObjectEventGraphicsInfo_Registeel,
     [OBJ_EVENT_GFX_ABRA]                     = &gObjectEventGraphicsInfo_Abra,
     [OBJ_EVENT_GFX_SWIMMER_F_WATER_2]        = &gObjectEventGraphicsInfo_SwimmerFWater2,
     [OBJ_EVENT_GFX_MASTER_BEAUTY]            = &gObjectEventGraphicsInfo_MasterBeauty,
