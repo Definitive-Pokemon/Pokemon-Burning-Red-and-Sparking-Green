@@ -575,7 +575,7 @@ static const u8 sSeviiMapsecs[3][30] = {
         MAPSEC_BERRY_FOREST,
         MAPSEC_THREE_ISLE_PATH,
         MAPSEC_EMBER_SPA,
-		MAPSEC_STONE_TOMB
+		MAPSEC_STONE_TOMB,
         MAPSEC_NONE
     }, 
     [REGIONMAP_SEVII45 - 1] =
@@ -1049,7 +1049,7 @@ static const u8 *const sMapNames[] = {
     [MAPSEC_ALTERING_CAVE       ] = gMapSecName_AlteringCave,
     [MAPSEC_TANOBY_CHAMBERS     ] = gMapSecName_TanobyChambers,
     [MAPSEC_THREE_ISLE_PATH     ] = gMapSecName_ThreeIslePath,
-	[MAPSEC_STONE_TOMB			] = gMapSecName_StoneTomb
+	[MAPSEC_STONE_TOMB			] = gMapSecName_StoneTomb,
     [MAPSEC_TANOBY_KEY          ] = gMapSecName_TanobyKey,
     [MAPSEC_BIRTH_ISLAND        ] = gMapSecName_BirthIsland,
     [MAPSEC_MONEAN_CHAMBER      ] = gMapSecName_MoneanChamber,
