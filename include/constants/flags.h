@@ -916,17 +916,17 @@
 #define FLAG_SELPHY_RECEIVED_LETTER               0x379
 #define FLAG_REGIROCK_DOOR_OPENED               0x37A
 #define FLAG_FOUGHT_REGIROCK               0x37B
-#define FLAG_FOUGHT_REGICE               0x37C
-#define FLAG_FOUGHT_REGISTEEL               0x37D
-#define FLAG_HIDE_REGIROCK               0x37E
-#define FLAG_HIDE_REGICE               0x37F
-#define FLAG_HIDE_REGISTEEL               0x380
-#define FLAG_REGIROCK_FLED              0x381
-#define FLAG_REGICE_FLED               0x382
-#define FLAG_REGISTEEL_FLED               0x383
+#define FLAG_HIDE_REGIROCK               0x37C
+#define FLAG_REGIROCK_FLED               0x37D
 
 
 // Unused?
+#define FLAG_0x37E               0x37E
+#define FLAG_0x37F               0x37F
+#define FLAG_0x380               0x380
+#define FLAG_0x381               0x381
+#define FLAG_0x382               0x382
+#define FLAG_0x383               0x383
 #define FLAG_0x384               0x384
 #define FLAG_0x385               0x385
 #define FLAG_0x386               0x386
