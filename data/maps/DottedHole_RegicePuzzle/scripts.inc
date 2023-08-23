@@ -10,12 +10,12 @@ DottedHole_RegicePuzzle_OnTransition::
 	end
 	
 DottedHole_RegicePuzzle_OnResume::
-	setstepcallback STEP_CB_ICE
+	setstepcallback STEP_CB_REGICE_PUZZLE
 	end
 
 DottedHole_RegicePuzzle_OnLoad::
 	call DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles
-	special SetIcefallCaveCrackedIceMetatiles
+	special SetRegicePuzzleCrackedIceMetatiles
 	end
 	
 DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles::

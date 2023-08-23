@@ -24,6 +24,7 @@
 static void DummyPerStepCallback(u8 taskId);
 static void AshGrassPerStepCallback(u8 taskId);
 static void IcefallCaveIcePerStepCallback(u8 taskId);
+static void RegicePuzzleIcePerStepCallback(u8 taskId);
 static void CrackedFloorPerStepCallback(u8 taskId);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -33,7 +34,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_FORTREE_BRIDGE]    = DummyPerStepCallback,
     [STEP_CB_PACIFIDLOG_BRIDGE] = DummyPerStepCallback,
     [STEP_CB_ICE]               = IcefallCaveIcePerStepCallback,
-    [STEP_CB_TRUCK]             = DummyPerStepCallback,
+    [STEP_CB_REGICE_PUZZLE]     = RegicePuzzleIcePerStepCallback,
     [STEP_CB_SECRET_BASE]       = DummyPerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
 };
@@ -49,6 +50,22 @@ static const u8 sIcefallCaveIceTileCoords[][2] =
     {  8, 10 },
     {  9, 10 },
     {  8, 14 }
+};
+
+static const u16 sRegicePuzzleIceRowVars[] =
+{
+    0,
+    0,
+    VAR_TEMP_1,
+    VAR_TEMP_2,
+    VAR_TEMP_3,
+    VAR_TEMP_4,
+    VAR_TEMP_5,
+    VAR_TEMP_6,
+    VAR_TEMP_7,
+    0,
+    0,
+    0,
 };
 
 static void Task_RunPerStepCallback(u8 taskId)
@@ -221,6 +238,122 @@ static void IcefallCaveIcePerStepCallback(u8 taskId)
                 MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_IceHole);
                 CurrentMapDrawMetatileAt(x, y);
                 VarSet(VAR_TEMP_1, 1);
+                data[1] = 1;
+            }
+            break;
+    }
+}
+
+static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
+{
+    if ((u16)(x - 3) < 11 && (u16)(y - 6) < 14 && sRegicePuzzleIceRowVars[y])
+        return TRUE;
+    else
+        return FALSE;
+}
+
+static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
+{
+    //if (CoordInIcePuzzleRegion(x, y))
+    *GetVarPointer(sRegicePuzzleIceRowVars[y]) |= (1 << (x - 3));
+}
+
+static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
+{
+    u32 var;
+    if (!CoordInIcePuzzleRegion(x, y))
+        return FALSE;
+
+    var = VarGet(sRegicePuzzleIceRowVars[y]) << 16;
+    if ((0x10000 << (x - 3)) & var) // TODO: fix that if
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void SetRegicePuzzleCrackedIceMetatiles(void)
+{
+    s32 x, y;
+    s32 width = gMapHeader.mapLayout->width;
+    s32 height = gMapHeader.mapLayout->height;
+    for (x = 0; x < width; x++)
+    {
+        for (y = 0; y < height; y++)
+        {
+            if (IsIcePuzzleCoordVisited(x, y) == TRUE)
+                MapGridSetMetatileIdAt(x + 7, y + 7, METATILE_SeafoamIslands_CrackedIce);
+        }
+    }
+}
+
+static void RegicePuzzleIcePerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u16 tileBehavior;
+    u16 *iceStepCount;
+    s16 *data = gTasks[taskId].data;
+    switch (data[1])
+    {
+        case 0:
+            PlayerGetDestCoords(&x, &y);
+            data[2] = x;
+            data[3] = y;
+            data[1] = 1;
+            break;
+        case 1:
+            PlayerGetDestCoords(&x, &y);
+            if (x != data[2] || y != data[3])
+            {
+                data[2] = x;
+                data[3] = y;
+                tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+                iceStepCount = GetVarPointer(VAR_ICE_STEP_COUNT);
+                if (MetatileBehavior_IsThinIce(tileBehavior) == TRUE)
+                {
+                    (*iceStepCount)++;
+                    data[6] = 4;
+                    data[1] = 2;
+                    data[4] = x;
+                    data[5] = y;
+                }
+                else if (MetatileBehavior_IsCrackedIce(tileBehavior) == TRUE)
+                {
+                    *iceStepCount = 0;
+                    data[6] = 4;
+                    data[1] = 3;
+                    data[4] = x;
+                    data[5] = y;
+                }
+            }
+            break;
+        case 2:
+            if (data[6] != 0)
+            {
+                data[6]--;
+            }
+            else
+            {
+                x = data[4];
+                y = data[5];
+                PlaySE(SE_ICE_CRACK);
+                MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_CrackedIce);
+                CurrentMapDrawMetatileAt(x, y);
+                MarkIcePuzzleCoordVisited(x - 7, y - 7);
+                data[1] = 1;
+            }
+            break;
+        case 3:
+            if (data[6] != 0)
+            {
+                data[6]--;
+            }
+            else
+            {
+                x = data[4];
+                y = data[5];
+                PlaySE(SE_ICE_BREAK);
+                MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_IceHole);
+                CurrentMapDrawMetatileAt(x, y);
                 data[1] = 1;
             }
             break;
