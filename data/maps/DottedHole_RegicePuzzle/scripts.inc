@@ -28,7 +28,7 @@ DottedHole_RegicePuzzle_OnFrame::
 	map_script_2 VAR_ICE_STEP_COUNT, 0, DottedHole_RegicePuzzle_EventScript_FallThroughIce
 	.2byte 0
 	
-DottedHole_RegicePuzzle_EventScript_UnlockFirstIcyTile::
+DottedHole_RegicePuzzle_EventScript_UnlockIcyTile::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
 	playse SE_ICE_STAIRS
@@ -39,7 +39,7 @@ DottedHole_RegicePuzzle_EventScript_UnlockFirstIcyTile::
 DottedHole_RegicePuzzle_EventScript_FallDownHole::
 	lockall
 	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, DottedHole_RegicePuzzle_Movement_SetInvisible
+	applymovement OBJ_EVENT_ID_PLAYER, DottedHole_RegicePuzzle_Movement_FallThroughIce
 	waitmovement 0
 	playse SE_FALL
 	delay 60
