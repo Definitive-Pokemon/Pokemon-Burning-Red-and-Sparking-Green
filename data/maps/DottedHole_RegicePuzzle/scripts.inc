@@ -19,7 +19,9 @@ DottedHole_RegicePuzzle_OnLoad::
 	end
 	
 DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles::
-	goto_if_lt VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_DontShowIcyTile
+	compare VAR_ICE_STEP_COUNT, 55
+	goto_if_lt DottedHole_RegicePuzzle_EventScript_DontShowIcyTile
+	
 DottedHole_RegicePuzzle_EventScript_DontShowIcyTile::
 	return
 	
