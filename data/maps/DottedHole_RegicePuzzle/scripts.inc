@@ -18,7 +18,7 @@ DottedHole_RegicePuzzle_OnLoad::
 	special SetIcefallCaveCrackedIceMetatiles
 	end
 	
-DottedHole_RegicePuzzle_EventScript_CheckSetStairMetatiles::
+DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles::
 	goto_if_lt VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_ShowIcyTile
 	setmetatile 5, 5, METATILE_SeafoamIslands_SlidingIce, FALSE
 	
