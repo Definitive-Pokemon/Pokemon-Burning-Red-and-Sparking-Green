@@ -1358,3 +1358,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/Metal_Tomb/scripts.inc"
 	.include "data/maps/Metal_Tomb/text.inc"
+
+	.include "data/maps/DottedHole_RegicePuzzle/scripts.inc"
+	.include "data/maps/DottedHole_RegicePuzzle/text.inc"

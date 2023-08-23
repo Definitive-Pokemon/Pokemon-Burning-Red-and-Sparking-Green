@@ -4884,6 +4884,18 @@
       "secondary_tileset": "gTileset_RockTunnel",
       "border_filepath": "data/layouts/Metal_Tomb/border.bin",
       "blockdata_filepath": "data/layouts/Metal_Tomb/map.bin"
+    },
+    {
+      "id": "LAYOUT_DOTTED_HOLE_REGICE_PUZZLE",
+      "name": "DottedHole_RegicePuzzle_Layout",
+      "width": 15,
+      "height": 16,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/DottedHole_RegicePuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/DottedHole_RegicePuzzle/map.bin"
     }
   ]
 }
