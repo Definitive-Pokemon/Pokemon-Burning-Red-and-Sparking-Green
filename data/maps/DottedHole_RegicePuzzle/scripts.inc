@@ -38,7 +38,7 @@ DottedHole_RegicePuzzle_EventScript_UnlockIcyTile::
 	special DrawWholeMapView
 	end
 	
-DottedHole_RegicePuzzle_EventScript_FallDownHole::
+DottedHole_RegicePuzzle_EventScript_FallThroughIce::
 	lockall
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, DottedHole_RegicePuzzle_Movement_FallThroughIce
