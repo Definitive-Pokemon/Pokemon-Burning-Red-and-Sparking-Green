@@ -19,8 +19,9 @@ DottedHole_RegicePuzzle_OnLoad::
 	end
 	
 DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles::
-	goto_if_lt VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_ShowIcyTile
-	setmetatile 5, 5, METATILE_SeafoamIslands_SlidingIce, FALSE
+	goto_if_lt VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_DontShowIcyTile
+DottedHole_RegicePuzzle_EventScript_DontShowIcyTile::
+	return
 	
 DottedHole_RegicePuzzle_OnFrame::
 	map_script_2 VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_UnlockIcyTile
