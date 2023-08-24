@@ -52,8 +52,9 @@ static const u8 sIcefallCaveIceTileCoords[][2] =
     {  8, 14 }
 };
 
-static const u16 sRegicePuzzleIceRowVars[] =
+static const u16 sRegicePuzzleIceColumnVars[] =
 {
+    0,
     0,
     0,
     VAR_TEMP_1,
@@ -63,6 +64,8 @@ static const u16 sRegicePuzzleIceRowVars[] =
     VAR_TEMP_5,
     VAR_TEMP_6,
     VAR_TEMP_7,
+    VAR_TEMP_8,
+    VAR_TEMP_9,
     0,
     0,
     0,
@@ -246,7 +249,7 @@ static void IcefallCaveIcePerStepCallback(u8 taskId)
 
 static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
 {
-    if ((u16)(x - 3) < 11 && (u16)(y - 6) < 14 && sRegicePuzzleIceRowVars[y])
+    if ((u16)(x - 3) < 11 && (u16)(y - 6) < 14 && sRegicePuzzleIceColumnVars[y])
         return TRUE;
     else
         return FALSE;
@@ -255,17 +258,17 @@ static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
 static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
 {
     //if (CoordInIcePuzzleRegion(x, y))
-    *GetVarPointer(sRegicePuzzleIceRowVars[y]) |= (1 << (x - 3));
+    *GetVarPointer(sRegicePuzzleIceColumnVars[x]) |= (1 << (y - 4));
 }
 
 static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
 {
     u32 var;
-    if (!CoordInIcePuzzleRegion(x, y))
-        return FALSE;
+    //if (!CoordInIcePuzzleRegion(x, y))
+    //    return FALSE;
 
-    var = VarGet(sRegicePuzzleIceRowVars[y]) << 16;
-    if ((0x10000 << (x - 3)) & var) // TODO: fix that if
+    var = VarGet(sRegicePuzzleIceColumnVars[x]) << 16;
+    if ((0x10000 << (y - 4)) & var) // TODO: fix that if
         return TRUE;
     else
         return FALSE;
