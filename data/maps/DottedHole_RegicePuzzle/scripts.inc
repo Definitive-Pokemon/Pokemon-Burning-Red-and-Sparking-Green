@@ -14,7 +14,6 @@ DottedHole_RegicePuzzle_OnResume::
 	end
 
 DottedHole_RegicePuzzle_OnLoad::
-	call DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles
 	special SetRegicePuzzleCrackedIceMetatiles
 	end
 
