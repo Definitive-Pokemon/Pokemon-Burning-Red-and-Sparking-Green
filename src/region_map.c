@@ -1080,7 +1080,11 @@ static const u8 *const sMapNames[] = {
     [MAPSEC_DESERT_UNDERPASS    ] = gMapSecName_DesertUnderpass,
     [MAPSEC_ALTERING_CAVE_E     ] = gMapSecName_AlteringCave,
     [MAPSEC_NAVEL_ROCK_E        ] = gMapSecName_NavelRock,
-    [MAPSEC_TRAINER_HILL        ] = gMapSecName_TrainerHill
+    [MAPSEC_TRAINER_HILL        ] = gMapSecName_TrainerHill,
+    [MAPSEC_STONE_TOMB          ] = gMapSecName_StoneTomb,
+    [MAPSEC_ICY_TOMB            ] = gMapSecName_IcyTomb,
+    [MAPSEC_METAL_TOMB          ] = gMapSecName_MetalTomb,
+    [MAPSEC_SAGE_CAVE           ] = gMapSecName_SageCave
 };
 
 static const u16 sMapSectionTopLeftCorners[MAPSEC_COUNT][2] = {
