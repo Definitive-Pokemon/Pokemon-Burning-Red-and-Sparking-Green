@@ -17,25 +17,35 @@ DottedHole_RegicePuzzle_OnLoad::
 	call DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles
 	special SetRegicePuzzleCrackedIceMetatiles
 	end
-	
-DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles::
-	compare VAR_ICE_STEP_COUNT, 55
-	goto_if_lt DottedHole_RegicePuzzle_EventScript_DontShowIcyTile
-	
-DottedHole_RegicePuzzle_EventScript_DontShowIcyTile::
-	return
-	
+
 DottedHole_RegicePuzzle_OnFrame::
-	map_script_2 VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_UnlockIcyTile
+	map_script_2 VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_UnlockDoor
 	map_script_2 VAR_ICE_STEP_COUNT, 0, DottedHole_RegicePuzzle_EventScript_FallThroughIce
 	.2byte 0
 	
-DottedHole_RegicePuzzle_EventScript_UnlockIcyTile::
+DottedHole_RegicePuzzle_EventScript_UnlockDoor::
+	goto_if_set FLAG_REGICE_DOOR_OPENED, DottedHole_RegicePuzzle_EventScript_AlreadyDone
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
 	playse SE_ICE_STAIRS
-	call DottedHole_RegicePuzzle_EventScript_CheckSetIcyMetatiles
-	special DrawWholeMapView
+	waitse
+	fadeoutbgm 0
+	special ShakeScreen
+	delay 60
+	special ShakeScreen
+	delay 60
+	playse SE_LAVARIDGE_FALL_WARP
+	waitse
+	playse SE_DOOR
+	waitse
+	msgbox MtEmberRegirockPuzzle_Text_SomethingHappened, MSGBOX_DEFAULT
+	closemessage
+	fadeinbgm 0
+	setflag FLAG_REGICE_DOOR_OPENED
+	releaseall
+	end
+	
+DottedHole_RegicePuzzle_EventScript_AlreadyDone::
 	end
 	
 DottedHole_RegicePuzzle_EventScript_FallThroughIce::

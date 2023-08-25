@@ -924,11 +924,11 @@
 #define FLAG_FOUGHT_REGISTEEL               0x381
 #define FLAG_HIDE_REGISTEEL               0x382
 #define FLAG_REGISTEEL_FLED               0x383
+#define FLAG_REGICE_DOOR_OPENED               0x384
+#define FLAG_REGISTEEL_DOOR_OPENED               0x385
 
 
 // Unused?
-#define FLAG_0x384               0x384
-#define FLAG_0x385               0x385
 #define FLAG_0x386               0x386
 #define FLAG_0x387               0x387
 #define FLAG_0x388               0x388
