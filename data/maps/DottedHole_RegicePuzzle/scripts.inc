@@ -15,8 +15,12 @@ DottedHole_RegicePuzzle_OnResume::
 
 DottedHole_RegicePuzzle_OnLoad::
 	special SetRegicePuzzleCrackedIceMetatiles
-	
+	goto_if_set FLAG_REGICE_DOOR_OPENED, DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier	
 	end
+	
+DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier::
+	setmetatile 4, 1, METATILE_SeamfoamIslands_IceUnderIce, 0
+	return
 
 DottedHole_RegicePuzzle_OnFrame::
 	map_script_2 VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_UnlockDoor
@@ -27,6 +31,7 @@ DottedHole_RegicePuzzle_EventScript_UnlockDoor::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
 	playse SE_ICE_STAIRS
+	special DrawWholeMapView
 	setmetatile 4, 11, METATILE_SeafoamIslands_RockUnderIce, 1
 	fadeoutbgm 0
 	special ShakeScreen
@@ -51,7 +56,7 @@ DottedHole_RegicePuzzle_EventScript_FallThroughIce::
 	waitmovement 0
 	playse SE_FALL
 	delay 60
-	warphole MAP_DOTTED_HOLE_REGICE_PUZZLE
+	warphole MAP_DOTTED_HOLE_REGICE_PUZZLE2
 	waitstate
 	releaseall
 	end
