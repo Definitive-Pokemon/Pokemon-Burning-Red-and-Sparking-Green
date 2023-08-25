@@ -19,7 +19,7 @@ DottedHole_RegicePuzzle_OnLoad::
 	end
 	
 DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier::
-	setmetatile 4, 11, METATILE_SeafoamIslands_RockUnderIce, 0
+	setmetatile 4, 11, METATILE_SeafoamIslands_RockUnderIce, 1
 	end
 
 DottedHole_RegicePuzzle_OnFrame::
