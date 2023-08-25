@@ -218,6 +218,8 @@
 #define METATILE_SeafoamIslands_IceHole       0x35B
 #define METATILE_SeafoamIslands_SlidingIce    0x34B
 #define METATILE_SeafoamIslands_UncrackedIce  0x359
+#define METATILE_SeafoamIslands_RockUnderIce  0x35C
+#define METATILE_SeafoamIslands_IceUnderIce  0x353
 
 // gTileset_SeviiIslands123
 #define METATILE_SeviiIslands123_Door                0x297

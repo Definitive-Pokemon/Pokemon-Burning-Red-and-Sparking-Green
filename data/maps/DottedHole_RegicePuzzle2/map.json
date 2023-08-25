@@ -1,11 +1,11 @@
 {
-  "id": "MAP_DOTTED_HOLE_REGICE_PUZZLE",
-  "name": "DottedHole_RegicePuzzle",
-  "layout": "LAYOUT_DOTTED_HOLE_REGICE_PUZZLE",
+  "id": "MAP_DOTTED_HOLE_REGICE_PUZZLE2",
+  "name": "DottedHole_RegicePuzzle2",
+  "layout": "LAYOUT_DOTTED_HOLE_REGICE_PUZZLE2",
   "music": "MUS_SEALED_CHAMBER",
   "region_map_section": "MAPSEC_DOTTED_HOLE",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
@@ -19,18 +19,11 @@
   ],
   "warp_events": [
     {
-      "x": 4,
-      "y": 12,
-      "elevation": 0,
-      "dest_map": "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM",
-      "dest_warp_id": 2
-    },
-    {
       "x": 11,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_DOTTED_HOLE_REGICE_PUZZLE2",
-      "dest_warp_id": 0
+      "dest_map": "MAP_DOTTED_HOLE_REGICE_PUZZLE",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [

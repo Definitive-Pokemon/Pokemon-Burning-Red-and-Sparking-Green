@@ -262,7 +262,8 @@
     "Stone_Tomb",
     "Icy_Tomb",
     "Metal_Tomb",
-    "DottedHole_RegicePuzzle"
+    "DottedHole_RegicePuzzle",
+    "DottedHole_RegicePuzzle2"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",
