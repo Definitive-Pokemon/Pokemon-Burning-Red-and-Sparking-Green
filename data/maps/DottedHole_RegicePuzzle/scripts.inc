@@ -45,6 +45,7 @@ DottedHole_RegicePuzzle_EventScript_UnlockDoor::
 	end
 	
 DottedHole_RegicePuzzle_EventScript_AlreadyDone::
+	releaseall
 	end
 	
 DottedHole_RegicePuzzle_EventScript_FallThroughIce::
