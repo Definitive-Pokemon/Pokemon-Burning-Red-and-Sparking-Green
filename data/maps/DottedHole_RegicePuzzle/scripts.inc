@@ -94,7 +94,7 @@ DottedHole_RegicePuzzle_EventScript_UnlockDoor::
 	setmetatile 9, 10, METATILE_SeafoamIslands_SlidingIce, 0
 	setmetatile 10, 10, METATILE_SeafoamIslands_SlidingIce, 0
 	setmetatile 11, 10, METATILE_SeafoamIslands_SlidingIce, 0
-	playse SE_EARTHQUAKE
+	playse SE_M_EARTHQUAKE
 	waitse
 	fadescreen FADE_FROM_BLACK
 	fadeinbgm 0
