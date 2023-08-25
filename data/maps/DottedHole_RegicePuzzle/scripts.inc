@@ -20,7 +20,7 @@ DottedHole_RegicePuzzle_OnLoad::
 	
 DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier::
 	setmetatile 4, 1, METATILE_SeafoamIslands_IceUnderIce, 0
-	return
+	end
 
 DottedHole_RegicePuzzle_OnFrame::
 	map_script_2 VAR_ICE_STEP_COUNT, 55, DottedHole_RegicePuzzle_EventScript_UnlockDoor
@@ -30,9 +30,9 @@ DottedHole_RegicePuzzle_OnFrame::
 DottedHole_RegicePuzzle_EventScript_UnlockDoor::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
-	playse SE_ICE_STAIRS
-	special DrawWholeMapView
 	setmetatile 4, 11, METATILE_SeafoamIslands_RockUnderIce, 1
+	special DrawWholeMapView
+	playse SE_ICE_STAIRS
 	fadeoutbgm 0
 	special ShakeScreen
 	delay 60
