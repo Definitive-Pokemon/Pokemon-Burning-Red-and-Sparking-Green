@@ -1,9 +1,9 @@
 {
-  "id": "MAP_SAGE_CAVE",
-  "name": "SageCave",
-  "layout": "LAYOUT_SAGE_CAVE",
+  "id": "MAP_SAGE_CAVE_REGISTEEL_PUZZLE",
+  "name": "SageCave_RegisteelPuzzle",
+  "layout": "LAYOUT_SAGE_CAVE_REGISTEEL_PUZZLE",
   "music": "MUS_SEALED_CHAMBER",
-  "region_map_section": "MAPSEC_TRAINER_TOWER",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -18,20 +18,7 @@
 
   ],
   "warp_events": [
-    {
-      "x": 7,
-      "y": 11,
-      "elevation": 0,
-      "dest_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
-      "dest_warp_id": 1
-    },
-    {
-      "x": 11,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_SAGE_CAVE_REGISTEEL_PUZZLE",
-      "dest_warp_id": 0
-    }
+
   ],
   "coord_events": [
 

@@ -1364,3 +1364,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/DottedHole_RegicePuzzle2/scripts.inc"
 	.include "data/maps/DottedHole_RegicePuzzle2/text.inc"
+
+	.include "data/maps/SageCave_RegisteelPuzzle/scripts.inc"
+	.include "data/maps/SageCave_RegisteelPuzzle/text.inc"

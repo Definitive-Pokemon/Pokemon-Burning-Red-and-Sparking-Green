@@ -223,6 +223,7 @@
 #define MAP_METAL_TOMB                                (77 | (2 << 8))
 #define MAP_DOTTED_HOLE_REGICE_PUZZLE                 (78 | (2 << 8))
 #define MAP_DOTTED_HOLE_REGICE_PUZZLE2                (79 | (2 << 8))
+#define MAP_SAGE_CAVE_REGISTEEL_PUZZLE                (80 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))

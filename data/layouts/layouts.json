@@ -4908,6 +4908,18 @@
       "secondary_tileset": "gTileset_SeafoamIslands",
       "border_filepath": "data/layouts/DottedHole_RegicePuzzle2/border.bin",
       "blockdata_filepath": "data/layouts/DottedHole_RegicePuzzle2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAGE_CAVE_REGISTEEL_PUZZLE",
+      "name": "SageCave_RegisteelPuzzle_Layout",
+      "width": 15,
+      "height": 12,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/SageCave_RegisteelPuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/SageCave_RegisteelPuzzle/map.bin"
     }
   ]
 }
