@@ -4912,8 +4912,8 @@
     {
       "id": "LAYOUT_SAGE_CAVE_REGISTEEL_PUZZLE",
       "name": "SageCave_RegisteelPuzzle_Layout",
-      "width": 15,
-      "height": 12,
+      "width": 13,
+      "height": 45,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
