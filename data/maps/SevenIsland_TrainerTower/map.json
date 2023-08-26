@@ -59,8 +59,8 @@
       "dest_warp_id": 1
     },
     {
-      "x": 11,
-      "y": 13,
+      "x": 12,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_SAGE_CAVE",
       "dest_warp_id": 0
