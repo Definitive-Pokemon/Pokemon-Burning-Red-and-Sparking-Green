@@ -257,7 +257,7 @@ PalletTown_Text_Turn_Off_RubyFlag::
 PalletTown_EventScript_Turn_Off_SapphireFlag::
 	lock
 	faceplayer
-	unset_flag FLAG_HIDE_SAPPHIRE
+	clearflag FLAG_HIDE_SAPPHIRE
 	msgbox PalletTown_Text_Turn_Off_SapphireFlag
 	release
 	end
