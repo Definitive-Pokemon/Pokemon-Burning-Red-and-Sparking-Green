@@ -245,8 +245,8 @@ PalletTown_Text_BikerLetterCheckYes::
 PalletTown_EventScript_Turn_Off_RubyFlag::
 	lock
 	faceplayer
-	unset_flag FLAG_GOT_RUBY 
-	unset_flag FLAG_HIDE_RUBY 
+	clearflag FLAG_GOT_RUBY 
+	clearflag FLAG_HIDE_RUBY 
 	msgbox PalletTown_Text_Turn_Off_RubyFlag
 	release
 	end
