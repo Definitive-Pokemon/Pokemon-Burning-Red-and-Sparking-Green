@@ -121,6 +121,16 @@
 #define METATILE_MtEmber_CaveDoor5 0x294
 #define METATILE_MtEmber_CaveDoor6 0x295
 
+// gTileset_NavelRock
+#define METATILE_NavelRock_Lower_Wall 0x299
+#define METATILE_NavelRock_Upper_Wall 0x2C4
+#define METATILE_NavelRock_CaveDoor1 0x28B
+#define METATILE_NavelRock_CaveDoor2 0x28C
+#define METATILE_NavelRock_CaveDoor3 0x28D
+#define METATILE_NavelRock_CaveDoor4 0x293
+#define METATILE_NavelRock_CaveDoor5 0x294
+#define METATILE_NavelRock_CaveDoor6 0x295
+
 // gTileset_PalletTown
 #define METATILE_PalletTown_Door         0x2A3
 #define METATILE_PalletTown_OaksLabDoor  0x2AC

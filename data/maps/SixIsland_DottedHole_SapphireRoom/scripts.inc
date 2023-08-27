@@ -2,7 +2,21 @@
 .equ LOCALID_THIEF,    2
 
 SixIsland_DottedHole_SapphireRoom_MapScripts:: @ 81641B4
+	map_script MAP_SCRIPT_ON_LOAD, SixIsland_DottedHole_SapphireRoom_EventScript_OnLoad
 	.byte 0
+	
+SixIsland_DottedHole_SapphireRoom_EventScript_OnLoad::
+	goto_if_set FLAG_HIDE_SAPPHIRE, SixIsland_DottedHole_SapphireRoom_EventScript_PuzzleDoorClosed
+	end
+	
+SixIsland_DottedHole_SapphireRoom_EventScript_PuzzleDoorClosed::
+	setmetatile 6, 1, METATILE_NavelRock_Upper_Wall, 1
+	setmetatile 7, 1, METATILE_NavelRock_Upper_Wall, 1
+	setmetatile 8, 1, METATILE_NavelRock_Upper_Wall, 1
+	setmetatile 6, 2, METATILE_NavelRock_Lower_Wall, 1
+	setmetatile 7, 2, METATILE_NavelRock_Lower_Wall, 1
+	setmetatile 8, 2, METATILE_NavelRock_Lower_Wall, 1
+	return
 
 SixIsland_DottedHole_SapphireRoom_EventScript_Sapphire:: @ 81641B5
 	lock
@@ -62,6 +76,21 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Sapphire:: @ 81641B5
 	compare VAR_FACING, DIR_WEST
 	call_if_eq SixIsland_DottedHole_SapphireRoom_EventScript_PlayerFaceThiefDown2
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword
+	closemessage
+	delay 40
+	setmetatile 6, 1, METATILE_NavelRock_CaveDoor1, 1
+	setmetatile 7, 1, METATILE_NavelRock_CaveDoor2, 1
+	setmetatile 8, 1, METATILE_NavelRock_CaveDoor3, 1
+	setmetatile 6, 2, METATILE_NavelRock_CaveDoor4, 1
+	setmetatile 7, 2, METATILE_NavelRock_CaveDoor5, 0
+	setmetatile 8, 2, METATILE_NavelRock_CaveDoor6, 1
+	playse SE_DOOR
+	special DrawWholeMapView
+	waitse
+	playse SE_PIN
+	applymovement LOCALID_THIEF, SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookUp
+	waitmovement 0
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_BotherWithThat
 	closemessage
 	compare VAR_FACING, DIR_NORTH
 	call_if_eq SixIsland_DottedHole_SapphireRoom_EventScript_ThiefExitNorth
@@ -237,6 +266,11 @@ SixIsland_DottedHole_SapphireRoom_Movement_ThiefFallIn:: @ 816440F
 SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit:: @ 816441C
 	delay_16
 	walk_in_place_fastest_right
+	step_end
+	
+SixIsland_DottedHole_SapphireRoom_Movement_ThiefLookUp::
+	face_up
+	emote_exclamation_mark
 	step_end
 
 SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage:: @ 816441F
