@@ -3,7 +3,7 @@ MtEmber_RubyPath_B5F_MapScripts:: @ 8163BAA
 	.byte 0
 	
 MtEmber_RubyPath_B5F_EventScript_OnLoad::
-	goto_if_set FLAG_GOT_RUBY, MtEmber_RubyPath_B5F_EventScript_PuzzleDoorClosed
+	goto_if_unset FLAG_GOT_RUBY, MtEmber_RubyPath_B5F_EventScript_PuzzleDoorClosed
 	end
 
 MtEmber_RubyPath_B5F_EventScript_PuzzleDoorClosed::
