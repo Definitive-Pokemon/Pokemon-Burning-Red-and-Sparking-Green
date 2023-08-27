@@ -112,6 +112,14 @@
 #define METATILE_MtEmber_CaveEntrance  0x346
 #define METATILE_MtEmber_Floor  0x281
 #define METATILE_MtEmber_Rock  0x282
+#define METATILE_Mt.Ember_Lower_Wall 0x299
+#define METATILE_Mt.Ember_Upper_Wall 0x2C4
+#define METATILE_Mt.Ember_CaveDoor1 0x28B
+#define METATILE_Mt.Ember_CaveDoor2 0x28C
+#define METATILE_Mt.Ember_CaveDoor3 0x28D
+#define METATILE_Mt.Ember_CaveDoor4 0x293
+#define METATILE_Mt.Ember_CaveDoor5 0x294
+#define METATILE_Mt.Ember_CaveDoor6 0x295
 
 // gTileset_PalletTown
 #define METATILE_PalletTown_Door         0x2A3

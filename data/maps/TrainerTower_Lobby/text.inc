@@ -115,3 +115,10 @@ TrainerTower_Lobby_Text_StairsTougherThanAnyBattle:: @ 817CE9F
     .string "Never mind battling! These stairs…\n"
     .string "They're tougher than any battle…$"
 
+TrainerTower_Lobby_Text_Lore::
+    .string "The legendary prize they offer\n"
+    .string "here at the tower…\p"
+    .string "They say it was found in a cave\n"
+    .string "underneath the building site.\p"
+    .string "I wonder if they were right in\n"
+    .string "just taking it like that.$"

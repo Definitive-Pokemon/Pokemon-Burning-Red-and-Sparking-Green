@@ -1,5 +1,39 @@
 MtEmber_RubyPath_B5F_MapScripts:: @ 8163BAA
+	map_script MAP_SCRIPT_ON_LOAD, MtEmber_RubyPath_B5F_EventScript_OnLoad
 	.byte 0
+	
+MtEmber_RubyPath_B5F_EventScript_OnLoad::
+	goto_if_set FLAG_GOT_RUBY, MtEmber_RubyPath_B5F_EventScript_PuzzleDoorClosed
+	end
+
+MtEmber_RubyPath_B5F_EventScript_PuzzleDoorClosed::
+	setmetatile 6, 1, METATILE_Mt.Ember_Upper_Wall, 1
+	setmetatile 7, 1, METATILE_Mt.Ember_Upper_Wall, 1
+	setmetatile 8, 1, METATILE_Mt.Ember_Upper_Wall, 1
+	setmetatile 6, 2, METATILE_Mt.Ember_Lower_Wall, 1
+	setmetatile 7, 2, METATILE_Mt.Ember_Lower_Wall, 1
+	setmetatile 8, 2, METATILE_Mt.Ember_Lower_Wall, 1
+	return
+	
+MtEmber_RubyPath_B5F_EventScript_Ruby:: @ 8163C49
+	lock
+	faceplayer
+	setflag FLAG_GOT_RUBY
+	clearflag FLAG_HIDE_SCOTT
+	removeobject LOCALID_RUBY
+	giveitem_msg MtEmber_RubyPath_B5F_Text_FoundARuby, ITEM_RUBY, 1, MUS_OBTAIN_KEY_ITEM
+	delay 40
+	setmetatile 6, 1, METATILE_Mt.Ember_CaveDoor1, 1
+	setmetatile 7, 1, METATILE_Mt.Ember_CaveDoor2, 1
+	setmetatile 8, 1, METATILE_Mt.Ember_CaveDoor3, 1
+	setmetatile 6, 2, METATILE_Mt.Ember_CaveDoor4, 1
+	setmetatile 7, 2, METATILE_Mt.Ember_CaveDoor5, 0
+	setmetatile 8, 2, METATILE_Mt.Ember_CaveDoor6, 1
+	playse SE_DOOR
+	special DrawWholeMapView
+	waitse
+	release
+	end
 
 MtEmber_RubyPath_B5F_EventScript_BrailleMessage:: @ 8163BAB
 	lockall

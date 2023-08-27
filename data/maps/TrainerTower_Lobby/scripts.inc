@@ -230,3 +230,7 @@ TrainerTower_Lobby_EventScript_CooltrainerF:: @ 8164AE6
 TrainerTower_Lobby_EventScript_BaldingMan:: @ 8164AEF
 	msgbox TrainerTower_Lobby_Text_StairsTougherThanAnyBattle, MSGBOX_NPC
 	end
+
+TrainerTower_Lobby_EventScript_Camper::
+	msgbox TrainerTower_Lobby_Text_Lore, MSGBOX_NPC
+	end
