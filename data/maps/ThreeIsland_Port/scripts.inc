@@ -1,11 +1,20 @@
 ThreeIsland_Port_MapScripts:: @ 8168789
 	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_Port_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, ThreeIsland_Port_EventScript_OnLoad
 	.byte 0
 
 ThreeIsland_Port_OnTransition:: @ 816878F
 	clearflag FLAG_SYS_PC_STORAGE_DISABLED
 	setflag FLAG_SEVII_DETOUR_FINISHED
 	end
+	
+ThreeIsland_Port_EventScript_OnLoad::
+	goto_if_unset FLAG_REGIROCK_DOOR_OPENED, ThreeIsland_Port_EventScript_RegiDoorClosed
+	end
+	
+ThreeIsland_Port_EventScript_RegiDoorClosed::
+	setmetatile 51, 9, METATILE_General_CaveWall, 1
+	return
 
 ThreeIsland_Port_EventScript_Woman:: @ 8168796
 	lock

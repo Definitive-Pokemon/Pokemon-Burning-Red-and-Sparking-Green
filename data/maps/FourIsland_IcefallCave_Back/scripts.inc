@@ -5,12 +5,24 @@
 
 FourIsland_IcefallCave_Back_MapScripts:: @ 8163D82
 	map_script MAP_SCRIPT_ON_TRANSITION, FourIsland_IcefallCave_Back_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, FourIsland_IcefallCave_Back_EventScript_OnLoad
 	.byte 0
 
 FourIsland_IcefallCave_Back_OnTransition:: @ 8163D88
 	compare VAR_MAP_SCENE_ICEFALL_CAVE_BACK, 1
 	call_if_eq FourIsland_IcefallCave_Back_EventScript_HideLorelei
 	end
+	
+FourIsland_IcefallCave_Back_EventScript_OnLoad::
+	goto_if_unset FLAG_REGICE_DOOR_OPENED, FourIsland_IcefallCave_Back_RegiDoorClosed
+	end
+	
+FourIsland_IcefallCave_Back_EventScript_RegiDoorClosed::
+	setmetatile 12, 14, METATILE_SeaFoamIslands_CaveWall, 1
+	setmetatile 11, 15, METATILE_SeaFoamIslands_CaveWall, 1
+	setmetatile 12, 15, METATILE_SeaFoamIslands_CaveWall, 1
+	setmetatile 13, 15, METATILE_SeaFoamIslands_CaveWall, 1
+	return
 
 FourIsland_IcefallCave_Back_EventScript_HideLorelei:: @ 8163D94
 	setflag FLAG_HIDE_ICEFALL_CAVE_LORELEI

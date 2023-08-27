@@ -34,8 +34,16 @@ DottedHole_RegicePuzzle_EventScript_UnlockDoor::
 	special DrawWholeMapView
 	playse SE_ICE_STAIRS
 	fadeoutbgm 0
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
 	special ShakeScreen
 	delay 60
+	setvar VAR_0x8004, 3
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 2
 	special ShakeScreen
 	delay 60
 	playse SE_LAVARIDGE_FALL_WARP

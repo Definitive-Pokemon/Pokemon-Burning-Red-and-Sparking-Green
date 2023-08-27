@@ -96,6 +96,7 @@
 #define METATILE_General_WideTreeTopLeft_Mowed   0x00E
 #define METATILE_General_WideTreeTopRight_Grass  0x00C
 #define METATILE_General_WideTreeTopRight_Mowed  0x00F
+#define METATILE_General_CaveWall  0x079
 
 // gTileset_GenericBuilding1
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F
@@ -238,6 +239,7 @@
 #define METATILE_SeafoamIslands_UncrackedIce  0x359
 #define METATILE_SeafoamIslands_RockUnderIce  0x35C
 #define METATILE_SeafoamIslands_IceUnderIce  0x353
+#define METATILE_SeafoamIslands_CaveWall    0x299
 
 // gTileset_SeviiIslands123
 #define METATILE_SeviiIslands123_Door                0x297
