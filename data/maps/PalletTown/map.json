@@ -198,7 +198,7 @@
       "elevation": 3,
       "var": "VAR_MAP_SCENE_PALLET_TOWN_OAK",
       "var_value": "0",
-      "script": ""
+      "script": "PalletTown_EventScript_OakTriggerLeft"
     },
     {
       "type": "trigger",
@@ -226,7 +226,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": ""
+      "script": "PalletTown_EventScript_OaksLabSign"
     },
     {
       "type": "sign",
