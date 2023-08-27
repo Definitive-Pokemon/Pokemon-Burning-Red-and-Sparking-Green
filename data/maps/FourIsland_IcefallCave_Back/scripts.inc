@@ -19,9 +19,6 @@ FourIsland_IcefallCave_Back_EventScript_OnLoad::
 	
 FourIsland_IcefallCave_Back_EventScript_RegiDoorClosed::
 	setmetatile 12, 14, METATILE_SeaFoamIslands_CaveIce, 1
-	setmetatile 11, 15, METATILE_SeaFoamIslands_CaveIce, 1
-	setmetatile 12, 15, METATILE_SeaFoamIslands_CaveIce, 1
-	setmetatile 13, 15, METATILE_SeaFoamIslands_CaveIce, 1
 	return
 
 FourIsland_IcefallCave_Back_EventScript_HideLorelei:: @ 8163D94
