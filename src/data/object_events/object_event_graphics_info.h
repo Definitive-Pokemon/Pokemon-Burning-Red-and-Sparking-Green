@@ -245,7 +245,7 @@ gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Regirock, gDummySprite
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_PINK, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
-2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+1, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Regice, gDummySpriteAffineAnimTable};
 
