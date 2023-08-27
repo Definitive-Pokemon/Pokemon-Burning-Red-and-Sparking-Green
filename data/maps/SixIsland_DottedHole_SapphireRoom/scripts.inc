@@ -6,7 +6,7 @@ SixIsland_DottedHole_SapphireRoom_MapScripts:: @ 81641B4
 	.byte 0
 	
 SixIsland_DottedHole_SapphireRoom_EventScript_OnLoad::
-	goto_if_set FLAG_HIDE_SAPPHIRE, SixIsland_DottedHole_SapphireRoom_EventScript_PuzzleDoorClosed
+	goto_if_unset FLAG_HIDE_SAPPHIRE, SixIsland_DottedHole_SapphireRoom_EventScript_PuzzleDoorClosed
 	end
 	
 SixIsland_DottedHole_SapphireRoom_EventScript_PuzzleDoorClosed::
