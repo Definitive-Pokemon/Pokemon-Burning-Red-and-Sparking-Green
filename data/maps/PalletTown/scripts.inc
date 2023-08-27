@@ -241,29 +241,6 @@ PalletTown_EventScript_BikerLetterCheckYes::
 PalletTown_Text_BikerLetterCheckYes::
 	.string "You DO have the letter!\p"
 	.string "Congratulations!$"
-	
-PalletTown_EventScript_Turn_Off_RubyFlag::
-	lock
-	faceplayer
-	clearflag FLAG_GOT_RUBY 
-	clearflag FLAG_HIDE_RUBY 
-	msgbox PalletTown_Text_Turn_Off_RubyFlag
-	release
-	end
-	
-PalletTown_Text_Turn_Off_RubyFlag::
-	.string "I turned off the Ruby Flags!$"
-	
-PalletTown_EventScript_Turn_Off_SapphireFlag::
-	lock
-	faceplayer
-	clearflag FLAG_HIDE_SAPPHIRE
-	msgbox PalletTown_Text_Turn_Off_SapphireFlag
-	release
-	end
-	
-PalletTown_Text_Turn_Off_SapphireFlag::
-	.string "I turned off the Sapphire Flag!$"
 
 PalletTown_Movement_OakWalkToPlayersDoor:: @ 81655AF
 	walk_left
