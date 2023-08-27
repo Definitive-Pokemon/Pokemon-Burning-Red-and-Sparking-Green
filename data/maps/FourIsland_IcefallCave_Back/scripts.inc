@@ -14,7 +14,7 @@ FourIsland_IcefallCave_Back_OnTransition:: @ 8163D88
 	end
 	
 FourIsland_IcefallCave_Back_EventScript_OnLoad::
-	goto_if_unset FLAG_REGICE_DOOR_OPENED, FourIsland_IcefallCave_Back_RegiDoorClosed
+	goto_if_unset FLAG_REGICE_DOOR_OPENED, FourIsland_IcefallCave_Back_EventScript_RegiDoorClosed
 	end
 	
 FourIsland_IcefallCave_Back_EventScript_RegiDoorClosed::
