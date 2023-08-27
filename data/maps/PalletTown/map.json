@@ -150,7 +150,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PalletTown_EventScript_Turn_Off_RubyFlag",
-      "flag": ""
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MISTY",
@@ -164,7 +164,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PalletTown_EventScript_Turn_Off_SapphireFlag",
-      "flag": ""
+      "flag": "0"
     }
   ],
   "warp_events": [
