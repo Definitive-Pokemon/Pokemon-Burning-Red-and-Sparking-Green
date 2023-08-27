@@ -21,7 +21,7 @@ MtEmber_RubyPath_B5F_EventScript_Ruby:: @ 8163C49
 	setflag FLAG_GOT_RUBY
 	clearflag FLAG_HIDE_SCOTT
 	removeobject LOCALID_RUBY
-	giveitem_msg MtEmber_RubyPath_B5F_Text_FoundARuby, ITEM_RUBY, 1, MUS_OBTAIN_KEY_ITEM
+	giveitem_msg MtEmber_RubyPath_B3F_Text_FoundARuby, ITEM_RUBY, 1, MUS_OBTAIN_KEY_ITEM
 	delay 40
 	setmetatile 6, 1, METATILE_MtEmber_CaveDoor1, 1
 	setmetatile 7, 1, METATILE_MtEmber_CaveDoor2, 1
