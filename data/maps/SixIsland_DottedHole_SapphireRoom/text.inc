@@ -23,10 +23,9 @@ SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword:: @ 817BDD4
     .string "Don't think badly of me!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_BotherWithThat::
-    .string "WOAH!\n"
-    .string "What's this?\p"
-    .string "It seems some secret entrance\n"
-    .string "has opened up when I took\p"
-	.string "the SAPPHIRE!\p"
-	.string "Maybe you should go check it\n"
-	.string "Out. See ya!$"
+    .string "Whoa!\n"
+    .string "What's going on here?\p"
+    .string "Did this happen when I took\n"
+	.string "the SAPPHIRE?\p"
+	.string "Maybe you should go check it out.\n"
+	.string "See ya!$"
