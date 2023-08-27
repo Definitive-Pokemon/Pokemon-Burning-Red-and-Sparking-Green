@@ -39,9 +39,8 @@ MtEmber_RegirockPuzzle_EventScript_FloorSwitch2::
 	lockall
 	compare VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
 	goto_if_eq MtEmber_RegirockPuzzle_EventScript_FloorSwitchAlreadyPressed2
-	playse SE_ICE_BREAK
 	special DrawWholeMapView
-	waitse
+	playse SE_ICE_BREAK
 	moveobjectoffscreen 6
 	setvar VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2, 100
 	fadeoutbgm 0

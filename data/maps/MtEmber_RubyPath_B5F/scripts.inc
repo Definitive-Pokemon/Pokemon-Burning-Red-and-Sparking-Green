@@ -23,7 +23,7 @@ MtEmber_RubyPath_B5F_EventScript_Ruby:: @ 8163C49
 	removeobject LOCALID_RUBY
 	giveitem_msg MtEmber_RubyPath_B3F_Text_FoundARuby, ITEM_RUBY, 1, MUS_OBTAIN_KEY_ITEM
 	closemessage
-	delay 40
+	delay 10
 	setmetatile 6, 1, METATILE_MtEmber_CaveDoor1, 1
 	setmetatile 7, 1, METATILE_MtEmber_CaveDoor2, 1
 	setmetatile 8, 1, METATILE_MtEmber_CaveDoor3, 1
