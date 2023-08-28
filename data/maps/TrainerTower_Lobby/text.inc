@@ -74,6 +74,10 @@ TrainerTower_Roof_Text_HaveEmerald::
 TrainerTower_Roof_Text_ObtainedEmerald::
     .string "{PLAYER} received the EMERALD\n"
 	.string "from the owner of the tower!$"
+	
+TrainerTower_Roof_Text_AboutTimes::
+    .string "Now, let us see how long\n"
+	.string "it took you to reach me.$"
 
 TrainerTower_Roof_Text_ImOwnerBattledPerfectly:: @ 817CA5A
     .string "Hello…\p"
