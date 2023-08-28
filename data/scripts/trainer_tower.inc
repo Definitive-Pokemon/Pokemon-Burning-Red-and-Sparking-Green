@@ -275,7 +275,7 @@ TrainerTower_EventScript_DoPostBattleText:
 TrainerTower_EventScript_SpeakToOwner:: @ 81C53AA
 	lock
 	faceplayer
-	if unsetflag FLAG_GOT_EMERALD, TrainerTower_Roof_EventScript_GiveEmerald
+	goto_if_unset FLAG_GOT_EMERALD, TrainerTower_Roof_EventScript_GiveEmerald
 	ttower_getownerstate
 	switch VAR_RESULT
 	case 0, TrainerTower_Roof_EventScript_Arrived
@@ -289,7 +289,8 @@ TrainerTower_Roof_EventScript_GiveEmerald:
 	msgbox TrainerTower_Roof_Text_HaveEmerald
 	waitmessage
 	giveitem ITEM_EMERALD
-	msgbox TrainerTower_Roof_Text_GotEmerald
+	setflag FLAG_GOT_EMERALD
+	msgbox TrainerTower_Roof_Text_ObtainedEmerald
 	goto TrainerTower_Roof_EventScript_CheckFinalTime
 
 TrainerTower_Roof_EventScript_Arrived:
