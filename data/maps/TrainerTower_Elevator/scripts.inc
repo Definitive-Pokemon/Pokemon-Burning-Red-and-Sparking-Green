@@ -54,12 +54,12 @@ TrainerTower_Elevator_EventScript_SelectLobby:: @ 8164B90
 	end
 	
 TrainerTower_Elevator_EventScript_StartHorror::
-	setvar VAR_0x8006, 1
+	setvar VAR_0x8006, 16
 	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
-	compare VAR_ELEVATOR_FLOOR, 1
+	compare VAR_ELEVATOR_FLOOR, 16
 	goto_if_eq TrainerTower_Elevator_EventScript_CloseFloorSelect
 	call TrainerTower_Elevator_EventScript_MoveElevator
-	setvar VAR_ELEVATOR_FLOOR, 1
+	setvar VAR_ELEVATOR_FLOOR, 16
 	special CloseElevatorCurrentFloorWindow
 	delay 25
 	fadeoutbgm 0
