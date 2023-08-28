@@ -776,7 +776,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene:: @ 816961E
 	waitmessage
 	waitfanfare
 	call EventScript_RestorePrevTextColor
-	removeitem ITEM_LETTER, 1
+	removeitem ITEM_OAKS_PARCEL, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCustomBallIOrdered
 	playbgm MUS_ENCOUNTER_RIVAL, 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalGramps
