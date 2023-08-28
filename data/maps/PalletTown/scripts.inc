@@ -159,22 +159,13 @@ PalletTown_EventScript_EnoughMonsForNationalDex::
 PalletTown_EventScript_BaldingManHM07CheckNo::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECOVERED_SAPPHIRE, PalletTown_EventScript_BaldingManHM07CheckYes
+	clearflag FLAG_HIDE_RESORT_GORGEOUS_INSIDE_SELPHY, PalletTown_EventScript_BaldingManHM07CheckYes
 	msgbox PalletTown_Text_BaldingManHM07CheckNo
 	release
 	end
 	
 PalletTown_Text_BaldingManHM07CheckNo::
-	.string "You have NOT recovered the SAPPHIRE!$"
-	
-PalletTown_EventScript_BaldingManHM07CheckYes::
-	msgbox PalletTown_Text_BaldingManHM07CheckYes
-	release
-	end
-	
-PalletTown_Text_BaldingManHM07CheckYes::
-	.string "You HAVE recovered the SAPPHIRE!\p"
-	.string "Congratulations!$"
+	.string "SELPHY arrived!$"
 	
 PalletTown_EventScript_BeautyOakHasLetterCheckNo::
 	lock
