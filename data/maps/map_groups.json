@@ -51,8 +51,7 @@
     "TradeCenter",
     "RecordCorner",
     "BattleColosseum_4P",
-    "UnionRoom",
-    "SageCave"
+    "UnionRoom"
   ],
   "gMapGroup_Dungeons": [
     "ViridianForest",
@@ -264,7 +263,8 @@
     "Metal_Tomb",
     "DottedHole_RegicePuzzle",
     "DottedHole_RegicePuzzle2",
-    "SageCave_RegisteelPuzzle"
+    "SageCave_RegisteelPuzzle",
+    "SageCave"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

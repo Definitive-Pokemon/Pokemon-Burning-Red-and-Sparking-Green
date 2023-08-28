@@ -924,7 +924,7 @@ void GetElevatorFloor(void)
             floor = 3;
             break;
 		case MAP_NUM(SAGE_CAVE):
-            floor = 16;
+            floor = 1;
             break;
         }
     }
