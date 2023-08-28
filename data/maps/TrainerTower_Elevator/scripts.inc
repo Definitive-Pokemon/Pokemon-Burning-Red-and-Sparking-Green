@@ -71,12 +71,17 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 60
 	playse SE_M_THUNDER_WAVE
 	waitse
+	playse SE_M_THUNDER_WAVE
+	waitse
 	setweather WEATHER_SHADE
 	doweather
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
+	closemessage
+	fadescreen FADE_TO_BLACK
 	special AnimateElevator
 	waitstate
-	delay 25
+	fadescreen FADE_FROM_BLACK
+	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	warp MAP_SAGE_CAVE, 255, 7, 2
