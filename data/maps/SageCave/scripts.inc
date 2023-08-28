@@ -1,7 +1,7 @@
 SageCave_MapScripts::
 	.byte 0
 	
-TrainerTower_Lobby_OnFrame::
+SageCave_OnFrame::
 	map_script_2 VAR_TEMP_D, 17, SageCave_EventScript_ExitElevator
 	.2byte 0
 
