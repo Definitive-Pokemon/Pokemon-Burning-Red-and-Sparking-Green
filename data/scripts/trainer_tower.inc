@@ -284,6 +284,7 @@ TrainerTower_EventScript_SpeakToOwner:: @ 81C53AA
 	
 TrainerTower_Roof_EventScript_GiveEmerald:
 	message TrainerTower_Roof_Text_ImOwnerBattle
+	waitmessage
 	waitbuttonpress
 	trainerbattle_no_intro TRAINER_EXPERT_CARR, TrainerTower_Roof_Text_CarrDefeat
 	msgbox TrainerTower_Roof_Text_HaveEmerald
