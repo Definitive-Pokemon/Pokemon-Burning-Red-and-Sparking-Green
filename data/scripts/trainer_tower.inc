@@ -292,7 +292,6 @@ TrainerTower_Roof_EventScript_GiveEmerald:
 	giveitem_msg TrainerTower_Roof_Text_ObtainedEmerald, ITEM_EMERALD 
 	setflag FLAG_GOT_EMERALD
 	msgbox TrainerTower_Roof_Text_AboutTimes
-	waitbuttonpress
 	goto TrainerTower_Roof_EventScript_CheckFinalTime
 
 TrainerTower_Roof_EventScript_Arrived:
