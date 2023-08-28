@@ -6059,12 +6059,12 @@
       "secondaryId": 0
     },
     {
-      "english": "MAGMA EMBLEM",
-      "itemId": "ITEM_MAGMA_EMBLEM",
+      "english": "EMERALD",
+      "itemId": "ITEM_EMERALD",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "A medal-like item in the same shape\\nas TEAM MAGMA's mark.",
+      "description_english": "An exquisitely beautiful gem that\\nhas a green glow.\\nIt symbolizes tranquility.",
       "importance": 1,
       "exitsBagOnUse": 1,
       "pocket": "POCKET_KEY_ITEMS",

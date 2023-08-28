@@ -926,10 +926,10 @@
 #define FLAG_REGISTEEL_FLED               0x383
 #define FLAG_REGICE_DOOR_OPENED               0x384
 #define FLAG_REGISTEEL_DOOR_OPENED               0x385
+#define FLAG_GOT_EMERALD               0x386
 
 
 // Unused?
-#define FLAG_0x386               0x386
 #define FLAG_0x387               0x387
 #define FLAG_0x388               0x388
 #define FLAG_0x389               0x389

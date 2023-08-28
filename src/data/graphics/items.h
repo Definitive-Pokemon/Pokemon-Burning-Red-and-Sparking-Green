@@ -671,8 +671,8 @@ const u32 gFile_graphics_items_icon_palettes_ruby_palette[] = INCBIN_U32("graphi
 const u32 gFile_graphics_items_icons_gem_sheet[] = INCBIN_U32("graphics/items/icons/gem.4bpp.lz");
 const u32 gFile_graphics_items_icon_palettes_sapphire_palette[] = INCBIN_U32("graphics/items/icon_palettes/sapphire.gbapal.lz");
 
-const u32 gFile_graphics_items_icons_magma_emblem_sheet[] = INCBIN_U32("graphics/items/icons/magma_emblem.4bpp.lz");
-const u32 gFile_graphics_items_icon_palettes_magma_emblem_palette[] = INCBIN_U32("graphics/items/icon_palettes/magma_emblem.gbapal.lz");
+const u32 gFile_graphics_items_icons_emerald_sheet[] = INCBIN_U32("graphics/items/icons/emerald.4bpp.lz");
+const u32 gFile_graphics_items_icon_palettes_emerald_palette[] = INCBIN_U32("graphics/items/icon_palettes/emerald.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_old_sea_map_sheet[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.lz");
 const u32 gFile_graphics_items_icon_palettes_old_sea_map_palette[] = INCBIN_U32("graphics/items/icon_palettes/old_sea_map.gbapal.lz");

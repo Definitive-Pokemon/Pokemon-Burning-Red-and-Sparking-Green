@@ -441,7 +441,7 @@
 #define ITEM_N_A 377
 
 // Emerald
-#define ITEM_MAGMA_EMBLEM 375
+#define ITEM_EMERALD 375
 #define ITEM_OLD_SEA_MAP 376
 
 #define ITEMS_COUNT 377

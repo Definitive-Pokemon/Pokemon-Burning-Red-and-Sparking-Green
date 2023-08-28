@@ -45,6 +45,35 @@ TrainerTower_Lobby_Text_MoveCounterHereWhenTrainersSwitch:: @ 817C9C0
     .string "To avoid the stampede, we moved\n"
     .string "the reception counter here.\p"
     .string "I'm sorry for the inconvenience.$"
+	
+TrainerTower_Roof_Text_ImOwnerBattle::
+    .string "Hello…\p"
+    .string "I am the owner of this TOWER…\p"
+    .string "How the sky soars above this\n"
+    .string "rooftop…\p"
+    .string "The caress of the winds up here…\p"
+    .string "It's all so perfect…\p"
+    .string "The way you battled…\n"
+    .string "It, too, was perfection…\p"
+	.string "Now, in order to obtain this\n"
+	.string "equally perfect prize…\p"
+	.string "You will have to best me\n"
+	.string "in glorious battle.\p"
+	.string "This will be your final test!!!$"
+	
+TrainerTower_Roof_Text_CarrDefeat::
+    .string "Incredible…\n"
+    .string "You are more than worthy…$"
+	
+TrainerTower_Roof_Text_HaveEmerald::
+    .string "The way you battled was\n"
+    .string "simply magnificent…\p"
+	.string "The grand prize of TRAINER TOWER\n"
+	.string "is now yours.$"
+	
+TrainerTower_Roof_Text_ObtainedEmerald::
+    .string "{PLAYER} received the EMERALD\n"
+	.string "from the owner of the tower!$"
 
 TrainerTower_Roof_Text_ImOwnerBattledPerfectly:: @ 817CA5A
     .string "Hello…\p"
