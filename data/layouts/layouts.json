@@ -4833,7 +4833,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_TrainerTower",
+      "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/SageCave/border.bin",
       "blockdata_filepath": "data/layouts/SageCave/map.bin"
     },

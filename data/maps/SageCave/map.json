@@ -19,15 +19,8 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_TRAINER_TOWER_LOBBY",
-      "dest_warp_id": 3
-    },
-    {
-      "x": 11,
-      "y": 3,
+      "x": 7,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_SAGE_CAVE_REGISTEEL_PUZZLE",
       "dest_warp_id": 0
