@@ -159,7 +159,7 @@ PalletTown_EventScript_EnoughMonsForNationalDex::
 PalletTown_EventScript_BaldingManHM07CheckNo::
 	lock
 	faceplayer
-	clearflag FLAG_HIDE_RESORT_GORGEOUS_INSIDE_SELPHY, PalletTown_EventScript_BaldingManHM07CheckYes
+	clearflag FLAG_HIDE_RESORT_GORGEOUS_INSIDE_SELPHY
 	msgbox PalletTown_Text_BaldingManHM07CheckNo
 	release
 	end
