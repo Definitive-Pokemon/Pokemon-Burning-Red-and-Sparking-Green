@@ -84,7 +84,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
-	warp MAP_MtEmber_Summit, 255, 7, 2
+	warp MAP_MT_EMBER_SUMMIT, 255, 7, 2
 	waitstate
 	releaseall
 	end
