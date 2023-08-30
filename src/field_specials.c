@@ -923,9 +923,6 @@ void GetElevatorFloor(void)
         case MAP_NUM(TRAINER_TOWER_LOBBY):
             floor = 3;
             break;
-		case MAP_NUM(SAGE_CAVE):
-            floor = 1;
-            break;
         }
     }
     VarSet(VAR_ELEVATOR_FLOOR, floor);
