@@ -54,12 +54,8 @@ TrainerTower_Elevator_EventScript_SelectLobby:: @ 8164B90
 	end
 	
 TrainerTower_Elevator_EventScript_StartHorror::
-	setvar VAR_0x8006, 1
-	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
-	compare VAR_ELEVATOR_FLOOR, 1
 	goto_if_eq TrainerTower_Elevator_EventScript_CloseFloorSelect
 	call TrainerTower_Elevator_EventScript_MoveElevator
-	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
 	fadeoutbgm 0
@@ -82,6 +78,10 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	waitstate
 	fadescreen FADE_FROM_BLACK
 	delay 100
+	setvar VAR_0x8006, 1
+	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
+	compare VAR_ELEVATOR_FLOOR, 1
+	setvar VAR_ELEVATOR_FLOOR, 1
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	warp MAP_SAGE_CAVE, 255, 7, 2
