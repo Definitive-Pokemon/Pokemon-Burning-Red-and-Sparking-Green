@@ -78,10 +78,6 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	waitstate
 	fadescreen FADE_FROM_BLACK
 	delay 100
-	setvar VAR_0x8006, 1
-	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
-	compare VAR_ELEVATOR_FLOOR, 1
-	setvar VAR_ELEVATOR_FLOOR, 1
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	warp MAP_SAGE_CAVE, 255, 7, 2
