@@ -11,7 +11,6 @@
 #define MAP_RECORD_CORNER       (2 | (0 << 8))
 #define MAP_BATTLE_COLOSSEUM_4P (3 | (0 << 8))
 #define MAP_UNION_ROOM          (4 | (0 << 8))
-#define MAP_SAGE_CAVE           (5 | (0 << 8))
 
 // gMapGroup_Dungeons
 #define MAP_VIRIDIAN_FOREST                      (0 | (1 << 8))
@@ -224,6 +223,7 @@
 #define MAP_DOTTED_HOLE_REGICE_PUZZLE                 (78 | (2 << 8))
 #define MAP_DOTTED_HOLE_REGICE_PUZZLE2                (79 | (2 << 8))
 #define MAP_SAGE_CAVE_REGISTEEL_PUZZLE                (80 | (2 << 8))
+#define MAP_SAGE_CAVE                                 (81 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))
