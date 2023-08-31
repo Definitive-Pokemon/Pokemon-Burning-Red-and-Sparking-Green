@@ -62,10 +62,12 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
-	setweather WEATHER_SHADE
-	doweather
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
+	fadescreen FADE_TO_BLACK
+	special AnimateElevator
+	waitstate
+	fadescreen FADE_FROM_BLACK
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
