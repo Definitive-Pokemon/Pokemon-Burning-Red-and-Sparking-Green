@@ -82,7 +82,6 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	waitstate
 	fadescreen FADE_FROM_BLACK
 	delay 100
-	warp MAP_SAGE_CAVE, 255, 7, 2
 	waitstate
 	releaseall
 	end
