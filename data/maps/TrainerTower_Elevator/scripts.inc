@@ -62,8 +62,11 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
-	playse SE_M_THUNDER_WAVE
-	waitse
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
+	special ScreenShake
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
 	delay 100
