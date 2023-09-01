@@ -1,6 +1,5 @@
 TrainerTower_Elevator_MapScripts:: @ 8164AF8
 	map_script MAP_SCRIPT_ON_RESUME, TrainerTower_OnResume
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, TrainerTower_OnFrame
 	.byte 0
 
 TrainerTower_Elevator_EventScript_FloorSelect:: @ 8164B03
