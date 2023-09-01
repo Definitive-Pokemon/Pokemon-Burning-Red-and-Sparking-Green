@@ -83,7 +83,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
-	warp MAP_SAGE_CAVE, 0, 0, 0
+	warp MAP_SAGE_CAVE, 0, 7, 11
 	waitstate
 	releaseall
 	end
