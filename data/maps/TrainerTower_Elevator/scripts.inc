@@ -67,7 +67,6 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_0x8006, 10
 	setvar VAR_0x8007, 3
 	special ShakeScreen
-	setvar VAR_0x8004, 6
 	delay 60
 	playse SE_M_THUNDER_WAVE
 	waitse
@@ -78,14 +77,13 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
 	fadescreen FADE_TO_BLACK
-	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
 	special AnimateElevator
 	waitstate
 	fadescreen FADE_FROM_BLACK
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
-	warp MAP_SAGE_CAVE, 255, 7, 2
+	warp MAP_SAGE_CAVE, 0, 0, 0
 	waitstate
 	releaseall
 	end
