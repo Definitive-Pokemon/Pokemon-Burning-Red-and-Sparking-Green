@@ -78,15 +78,15 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
 	fadescreen FADE_TO_BLACK
-	special AnimateElevator
-	waitstate
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
 	fadescreen FADE_FROM_BLACK
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	warp MAP_SAGE_CAVE, 255, 7, 2
-	playse SE_M_BUBBLE
-	waitse
 	waitstate
 	releaseall
 	end
