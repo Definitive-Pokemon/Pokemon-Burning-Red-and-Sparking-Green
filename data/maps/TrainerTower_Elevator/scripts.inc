@@ -85,6 +85,8 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	warp MAP_SAGE_CAVE, 255, 7, 2
+	waitstate
+	playse SE_M_BUBBLE
 	releaseall
 	end
 	
