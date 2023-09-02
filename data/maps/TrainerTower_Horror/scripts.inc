@@ -35,8 +35,37 @@ TrainerTower_Horror_EventScript_SelectLobby::
 	goto TrainerTower_Horror_EventScript_HorrorSequence
 	
 TrainerTower_Horror_EventScript_HorrorSequence::
-	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
+	setvar VAR_0x8005, 8
+	setvar VAR_0x8006, 1
+	waitse
+	special AnimateElevator
+	waitstate
+	setflag FLAG_TEMP_2
+	delay 25
+	fadeoutbgm 0
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	delay 60
+	playse SE_M_THUNDER_WAVE
+	waitse
+	playse SE_M_THUNDER_WAVE
+	waitse
+	setweather WEATHER_SHADE
+	doweather
+	msgbox TrainerTower_Horror_Text_SomethingHappened
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	fadescreen FADE_FROM_BLACK
+	delay 100
 	setflag FLAG_HORROR_ELEVATOR_BOTTOM
+	warp MAP_SAGE_CAVE, 255, 7, 2
 	releaseall
 	end
 	
