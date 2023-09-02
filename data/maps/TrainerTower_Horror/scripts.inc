@@ -22,7 +22,7 @@ TrainerTower_Horror_ControlsBroke::
 TrainerTower_Horror_EventScript_PromptFloor:: 
 	@ msgbox
 	@ also show current floor?
-	multichoice 0, 0, MULTICHOICE_TRAINER_TOWER_HORROR_ELEVATOR
+	multichoice 0, 0, MULTICHOICE_TRAINER_TOWER_HORROR_ELEVATOR, FALSE
 	switch VAR_RESULT
 	case 0, TrainerTower_Horror_EventScript_CloseFloorSelect
 	case 1, TrainerTower_Horror_EventScript_SelectLobby
