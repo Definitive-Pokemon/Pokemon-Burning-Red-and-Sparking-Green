@@ -225,6 +225,7 @@ gStdScriptsEnd::
 	.include "data/maps/TrainerTower_Roof/scripts.inc"
 	.include "data/maps/TrainerTower_Lobby/scripts.inc"
 	.include "data/maps/TrainerTower_Elevator/scripts.inc"
+	.include "data/maps/TrainerTower_Horror/scripts.inc"
 	.include "data/maps/FiveIsland_LostCave_Entrance/scripts.inc"
 	.include "data/maps/FiveIsland_LostCave_Room1/scripts.inc"
 	.include "data/maps/FiveIsland_LostCave_Room2/scripts.inc"

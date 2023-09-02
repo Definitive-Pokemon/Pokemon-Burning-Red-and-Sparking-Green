@@ -219,6 +219,12 @@ static const struct MenuAction sScriptMultiChoiceMenu_DeptStoreElevator[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sScriptMultiChoiceMenu_TrainerTowerHorrorElevator[] = {
+    { gText_Rooftop },
+    { gText_B1F },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sScriptMultiChoiceMenu_ThirstyGirlFreshWater[] = {
     { gText_FreshWater },
     { gOtherText_Exit }
@@ -649,6 +655,7 @@ const struct MultichoiceListStruct gScriptMultiChoiceMenus[] = {
     { sScriptMultiChoiceMenu_RightLeft, NELEMS(sScriptMultiChoiceMenu_RightLeft) },
     { sScriptMultiChoiceMenu_GameCornerTMPrizes, NELEMS(sScriptMultiChoiceMenu_GameCornerTMPrizes) },
     { sScriptMultiChoiceMenu_DeptStoreElevator, NELEMS(sScriptMultiChoiceMenu_DeptStoreElevator) },
+    { sScriptMultiChoiceMenu_TrainerTowerHorrorElevator, NELEMS(sScriptMultiChoiceMenu_TrainerTowerHorrorElevator) },
     { sScriptMultiChoiceMenu_ThirstyGirlFreshWater, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlFreshWater) },
     { sScriptMultiChoiceMenu_ThirstyGirlSodaPop, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlSodaPop) },
     { sScriptMultiChoiceMenu_ThirstyGirlFreshWaterSodaPop, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlFreshWaterSodaPop) },

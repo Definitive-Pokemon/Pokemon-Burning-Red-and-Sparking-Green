@@ -37,7 +37,6 @@ TrainerTower_Elevator_EventScript_ChooseFloor:: @ 8164B5E
 	end
 
 TrainerTower_Elevator_EventScript_SelectLobby:: @ 8164B90
-	goto_if_unset FLAG_HORROR_DONE, TrainerTower_Elevator_EventScript_StartHorror
 	setvar VAR_0x8006, 3
 	setdynamicwarp MAP_TRAINER_TOWER_LOBBY, 255, 17, 8
 	compare VAR_ELEVATOR_FLOOR, 3
@@ -52,45 +51,6 @@ TrainerTower_Elevator_EventScript_SelectLobby:: @ 8164B90
 	waitstate
 	releaseall
 	end
-	
-TrainerTower_Elevator_EventScript_StartHorror::
-	setvar VAR_0x8006, 1
-	setdynamicwarp MAP_SAGE_CAVE, 255, 7, 2
-	compare VAR_ELEVATOR_FLOOR, 1
-	goto_if_eq TrainerTower_Elevator_EventScript_CloseFloorSelect
-	call TrainerTower_Elevator_EventScript_MoveElevator
-	setvar VAR_ELEVATOR_FLOOR, 1
-	special CloseElevatorCurrentFloorWindow
-	delay 25
-	fadeoutbgm 0
-	setvar VAR_0x8004, 2
-	setvar VAR_0x8005, 2
-	setvar VAR_0x8006, 10
-	setvar VAR_0x8007, 3
-	special ShakeScreen
-	delay 60
-	playse SE_M_THUNDER_WAVE
-	waitse
-	playse SE_M_THUNDER_WAVE
-	waitse
-	setweather WEATHER_SHADE
-	doweather
-	msgbox TrainerTower_Elevator_Text_SomethingHappened
-	closemessage
-	fadescreen FADE_TO_BLACK
-	special AnimateElevator
-	waitstate
-	fadescreen FADE_FROM_BLACK
-	delay 100
-	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
-	waitmovement 0
-	warp MAP_SAGE_CAVE, 255, 7, 2
-	waitstate
-	releaseall
-	end
-	
-TrainerTower_Elevator_Text_SomethingHappened::
-	.string "The elevator is malfunctioning!$"
 
 TrainerTower_Elevator_EventScript_SelectRoof:: @ 8164BCD
 	goto TrainerTower_Elevator_EventScript_CloseFloorSelect
@@ -118,4 +78,3 @@ TrainerTower_Elevator_Movement_ExitElevator:: @ 8164BE5
 	walk_right
 	walk_down
 	step_end
-	
