@@ -69,10 +69,8 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_0x8007, 3
 	special ShakeScreen
 	delay 60
-	playse SE_M_THUNDER_WAVE
-	waitse
-	playse SE_M_THUNDER_WAVE
-	waitse
+	setweather WEATHER_SHADE
+	doweather
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
 	fadescreen FADE_TO_BLACK
