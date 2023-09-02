@@ -14,9 +14,9 @@ TrainerTower_Roof_OnLoad::
 	goto_if_unset FLAG_HORROR_DONE, TrainerTower_Roof_SetHorrorElevator
 	clearflag FLAG_HORROR_ELEVATOR_BOTTOM
 	@ use default elevator instead
-	setdynamicwarp MAP_TRAINER_TOWER_ELEVATOR, 255, 7, 2
+	setdynamicwarp MAP_TRAINER_TOWER_ELEVATOR, 255, 2, 4
 	end
 
 TrainerTower_Roof_SetHorrorElevator::
-	setdynamicwarp MAP_TRAINER_TOWER_HORROR, 255, 7, 2
+	setdynamicwarp MAP_TRAINER_TOWER_HORROR, 255, 2, 4
 	end
