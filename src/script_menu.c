@@ -655,7 +655,6 @@ const struct MultichoiceListStruct gScriptMultiChoiceMenus[] = {
     { sScriptMultiChoiceMenu_RightLeft, NELEMS(sScriptMultiChoiceMenu_RightLeft) },
     { sScriptMultiChoiceMenu_GameCornerTMPrizes, NELEMS(sScriptMultiChoiceMenu_GameCornerTMPrizes) },
     { sScriptMultiChoiceMenu_DeptStoreElevator, NELEMS(sScriptMultiChoiceMenu_DeptStoreElevator) },
-    { sScriptMultiChoiceMenu_TrainerTowerHorrorElevator, NELEMS(sScriptMultiChoiceMenu_TrainerTowerHorrorElevator) },
     { sScriptMultiChoiceMenu_ThirstyGirlFreshWater, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlFreshWater) },
     { sScriptMultiChoiceMenu_ThirstyGirlSodaPop, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlSodaPop) },
     { sScriptMultiChoiceMenu_ThirstyGirlFreshWaterSodaPop, NELEMS(sScriptMultiChoiceMenu_ThirstyGirlFreshWaterSodaPop) },
@@ -708,6 +707,7 @@ const struct MultichoiceListStruct gScriptMultiChoiceMenus[] = {
     { sScriptMultiChoiceMenu_SouthernBirthNavel, NELEMS(sScriptMultiChoiceMenu_SouthernBirthNavel) },
     { sScriptMultiChoiceMenu_SouthernBirthNavelFaraway, NELEMS(sScriptMultiChoiceMenu_SouthernBirthNavelFaraway) },
     { sScriptMultiChoiceMenu_MasterYoungster, NELEMS(sScriptMultiChoiceMenu_MasterYoungster) },
+    { sScriptMultiChoiceMenu_TrainerTowerHorrorElevator, NELEMS(sScriptMultiChoiceMenu_TrainerTowerHorrorElevator) },
 };
 
 // From Cool to Berries goes unused

@@ -62,7 +62,6 @@ TrainerTower_Horror_EventScript_HorrorSequence::
 	waitse
 	playse SE_DING_DONG
 	waitse
-	waitstate
 	fadescreen FADE_FROM_BLACK
 	delay 100
 	@ warp MAP_SAGE_CAVE, 255, 7, 2
