@@ -62,6 +62,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
+	fadeoutbgm 0
 	setvar VAR_0x8004, 2
 	setvar VAR_0x8005, 2
 	setvar VAR_0x8006, 10
@@ -76,6 +77,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	doweather
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
+	fadeinbgm MUS_WEATHER_GROUDON
 	fadescreen FADE_TO_BLACK
 	special AnimateElevator
 	waitstate
