@@ -62,7 +62,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
-	fadeoutbgm 0
+	fadenewbgm MUS_DUMMY
 	setvar VAR_0x8004, 2
 	setvar VAR_0x8005, 2
 	setvar VAR_0x8006, 10
