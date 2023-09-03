@@ -62,7 +62,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_ELEVATOR_FLOOR, 1
 	special CloseElevatorCurrentFloorWindow
 	delay 25
-	fadeoutbgm
+	fadeoutbgm 0
 	setvar VAR_0x8004, 2
 	setvar VAR_0x8005, 2
 	setvar VAR_0x8006, 10
@@ -85,7 +85,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
-	fadeinbgm
+	fadeinbgm 1
 	warp MAP_SAGE_CAVE, 255, 7, 2
 	waitstate
 	releaseall
