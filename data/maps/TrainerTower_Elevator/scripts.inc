@@ -68,7 +68,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setvar VAR_0x8006, 10
 	setvar VAR_0x8007, 3
 	special ShakeScreen
-	delay 60
+	delay 40
 	setvar VAR_0x8006, 1
 	fadescreen FADE_TO_WHITE
 	playse SE_M_THUNDER_WAVE
