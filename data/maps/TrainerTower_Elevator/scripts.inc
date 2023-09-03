@@ -77,7 +77,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	doweather
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
-	fadeinbgm MUS_WEATHER_GROUDON
+	fadenewbgm MUS_WEATHER_GROUDON
 	fadescreen FADE_TO_BLACK
 	special AnimateElevator
 	waitstate
