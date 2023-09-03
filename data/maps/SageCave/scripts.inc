@@ -11,3 +11,10 @@ SageCave_EventScript_ExitElevator::
 	waitmovement 0
 	releaseall
 	end
+	
+SageCave_EventScript_Sign::
+	lock
+	message SageCave_Text_OutOfOrder
+	
+SageCave_Text_OutOfOrder::
+	.string "The elevator seems to be out of order.$"
