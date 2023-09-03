@@ -76,7 +76,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	fadescreen FADE_FROM_BLACK
 	delay 20
 	fadescreen FADE_TO_BLACK
-	playse SE_M_THUNDER
+	playse SE_M_THUNDERBOLT
 	waitse
 	fadescreen FADE_FROM_BLACK
 	setweather WEATHER_SHADE
