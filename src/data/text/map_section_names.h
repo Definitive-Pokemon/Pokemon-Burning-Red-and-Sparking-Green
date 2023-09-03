@@ -198,5 +198,5 @@ const u8 gMapSecName_TrainerHill[] = _("TRAINER HILL");
 const u8 gMapSecName_StoneTomb[] = _("STONE TOMB");
 const u8 gMapSecName_IcyTomb[] = _("ICY TOMB");
 const u8 gMapSecName_MetalTomb[] = _("METALLIC TOMB");
-const u8 gMapSecName_SageCave[] = _("TRAINER TOWER VAULT");
+const u8 gMapSecName_SageCave[] = _("ROCKET VAULT");
 const u8 gMapSecName_None[] = _("");
