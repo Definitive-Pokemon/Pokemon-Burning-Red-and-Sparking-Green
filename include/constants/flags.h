@@ -1466,7 +1466,7 @@
 #define FLAG_WORLD_MAP_THREE_ISLAND_STONE_TOMB                      (SYS_FLAGS + 0xC3)
 #define FLAG_WORLD_MAP_FOUR_ISLAND_ICY_TOMB                         (SYS_FLAGS + 0xC4)
 #define FLAG_WORLD_MAP_FIVE_ISLAND_METAL_TOMB                       (SYS_FLAGS + 0xC5)
-#define FLAG_0x8C6                                                  (SYS_FLAGS + 0xC6)
+#define FLAG_WORLD_MAP_SAGE_CAVE                                    (SYS_FLAGS + 0xC6)
 #define FLAG_0x8C7                                                  (SYS_FLAGS + 0xC7)
 #define FLAG_0x8C8                                                  (SYS_FLAGS + 0xC8)
 #define FLAG_0x8C9                                                  (SYS_FLAGS + 0xC9)
