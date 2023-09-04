@@ -107,6 +107,9 @@ SageCave_Movement_ExitElevator::
 SageCave_Movement_RocketTwoSteps::
 	emote_exclamation_mark
 	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_left
 	walk_left	
 	step_end
@@ -114,10 +117,16 @@ SageCave_Movement_RocketTwoSteps::
 SageCave_Movement_RocketOneStep::
 	emote_exclamation_mark
 	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_left	
 	step_end
 	
 SageCave_Movement_RocketNoSteps::
 	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
 	delay_16	
 	step_end
