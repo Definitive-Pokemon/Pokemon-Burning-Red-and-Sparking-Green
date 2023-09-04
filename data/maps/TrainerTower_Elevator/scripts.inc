@@ -80,12 +80,12 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	waitse
 	setweather WEATHER_SHADE
 	doweather
-	delay 20
+	delay 100
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
 	delay 60
 	fadescreen FADE_TO_BLACK
-	delay 30
+	delay 60
 	special AnimateElevator
 	waitstate
 	fadescreen FADE_FROM_BLACK
