@@ -4,3 +4,6 @@ SageCave_Text_RocketWhat::
     .string "This place is off-limits to anyone\n"
     .string "but members of TEAM ROCKET!\p"
 	.string "It's time to teach you a lesson!$"
+
+SageCave_Text_OutOfOrder::
+	.string "The elevator seems to be out of order.$"

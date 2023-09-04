@@ -2,17 +2,13 @@
 
 SageCave_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SageCave_EventScript_OnLoad
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SageCave_OnFrame
 	.byte 0
 	
 SageCave_EventScript_OnLoad::
+	map_script_2 VAR_TEMP_D, 17, SageCave_EventScript_ExitElevator
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	call SageCave_EventScript_CheckBrokenElevator
 	end
-	
-SageCave_OnFrame::
-	map_script_2 VAR_TEMP_D, 17, SageCave_EventScript_ExitElevator
-	.2byte 0
 
 SageCave_EventScript_ExitElevator::
 	lockall
@@ -44,9 +40,6 @@ SageCave_EventScript_ElevatorBroken::
 SageCave_Movement_ForcePlayerFromDoor::
 	walk_down
 	step_end
-	
-SageCave_Text_OutOfOrder::
-	.string "The elevator seems to be out of order.$"
 	
 SageCave_EventScript_RocketLeft::
 	lockall
