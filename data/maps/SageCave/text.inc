@@ -6,4 +6,5 @@ SageCave_Text_RocketWhat::
 	.string "It's time to teach you a lesson!$"
 
 SageCave_Text_OutOfOrder::
-	.string "The elevator seems to be out of order.$"
+	.string "The elevator seems to be out\n"
+	.string "of order.\p"

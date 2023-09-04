@@ -76,12 +76,15 @@ SageCave_EventScript_Rocket::
 	
 SageCave_EventScript_RocketTwoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketTwoSteps
+	return
 
 SageCave_EventScript_RocketOneStep::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketOneStep
+	return
 
 SageCave_EventScript_RocketNoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketNoSteps
+	return
 
 SageCave_Movement_RocketTwoSteps::
 	emote_exclamation_mark
