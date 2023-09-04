@@ -6,16 +6,6 @@ SageCave_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	end
 	
-SageCave_OnFrame::
-	map_script_2 VAR_TEMP_D, 17, SageCave_EventScript_ExitElevator
-	.2byte 0
-
-SageCave_EventScript_ExitElevator::
-	lockall
-	waitmovement 0
-	releaseall
-	end
-	
 SageCave_EventScript_Sign::
 	lock
 	message SageCave_Text_OutOfOrder
