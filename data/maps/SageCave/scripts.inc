@@ -3,6 +3,7 @@
 SageCave_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SageCave_EventScript_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SageCave_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, SageCave_OnTransition
 	.byte 0
 	
 SageCave_EventScript_OnLoad::
@@ -13,6 +14,11 @@ SageCave_EventScript_OnLoad::
 SageCave_OnFrame::
 	map_script_2 VAR_TEMP_D, 2, SageCave_EventScript_ExitElevator
 	.2byte 0
+	
+SageCave_OnTransition::
+	setworldmapflag FLAG_WORLD_MAP_SAGE_CAVE
+	getplayerxy VAR_TEMP_D, VAR_RESULT
+	end
 
 SageCave_EventScript_ExitElevator::
 	lockall
@@ -80,14 +86,17 @@ SageCave_EventScript_Rocket::
 	
 SageCave_EventScript_RocketTwoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketTwoSteps
+	waitmovement
 	return
 
 SageCave_EventScript_RocketOneStep::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketOneStep
+	waitmovement
 	return
 
 SageCave_EventScript_RocketNoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketNoSteps
+	waitmovement
 	return
 
 SageCave_Movement_RocketTwoSteps::
