@@ -93,7 +93,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 200
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
-	fadeinbgm 1
+	setflag FLAG_DONT_TRANSITION_MUSIC
 	warp MAP_SAGE_CAVE, 255, 7, 2
 	waitstate
 	releaseall

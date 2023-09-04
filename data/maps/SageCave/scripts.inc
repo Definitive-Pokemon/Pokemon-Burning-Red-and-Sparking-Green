@@ -1,5 +1,10 @@
 SageCave_MapScripts::
+	SageCave_EventScript_OnLoad
 	.byte 0
+	
+SageCave_EventScript_OnLoad::
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+	end
 	
 SageCave_OnFrame::
 	map_script_2 VAR_TEMP_D, 17, SageCave_EventScript_ExitElevator
