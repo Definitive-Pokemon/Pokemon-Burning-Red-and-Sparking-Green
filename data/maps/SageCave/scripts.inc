@@ -1,5 +1,5 @@
 SageCave_MapScripts::
-	SageCave_EventScript_OnLoad
+	map_script MAP_SCRIPT_ON_LOAD, SageCave_EventScript_OnLoad
 	.byte 0
 	
 SageCave_EventScript_OnLoad::
