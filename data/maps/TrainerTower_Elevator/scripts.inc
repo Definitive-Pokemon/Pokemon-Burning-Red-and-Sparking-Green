@@ -83,7 +83,9 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 20
 	msgbox TrainerTower_Elevator_Text_SomethingHappened
 	closemessage
+	delay 60
 	fadescreen FADE_TO_BLACK
+	delay 30
 	special AnimateElevator
 	waitstate
 	fadescreen FADE_FROM_BLACK
