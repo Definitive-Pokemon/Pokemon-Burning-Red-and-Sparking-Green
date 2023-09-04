@@ -12,7 +12,6 @@ SageCave_OnFrame::
 
 SageCave_EventScript_ExitElevator::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Lobby_Movement_ExitElevator
 	waitmovement 0
 	releaseall
 	end
