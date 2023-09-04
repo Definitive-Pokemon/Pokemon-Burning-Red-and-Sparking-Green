@@ -86,17 +86,17 @@ SageCave_EventScript_Rocket::
 	
 SageCave_EventScript_RocketTwoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketTwoSteps
-	waitmovement
+	waitmovement 0
 	return
 
 SageCave_EventScript_RocketOneStep::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketOneStep
-	waitmovement
+	waitmovement 0
 	return
 
 SageCave_EventScript_RocketNoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketNoSteps
-	waitmovement
+	waitmovement 0
 	return
 
 SageCave_Movement_RocketTwoSteps::
