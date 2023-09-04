@@ -88,8 +88,9 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 60
 	special AnimateElevator
 	waitstate
-	fadescreen FADE_FROM_BLACK
 	delay 100
+	fadescreen FADE_FROM_BLACK
+	delay 200
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	fadeinbgm 1
