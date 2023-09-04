@@ -190,10 +190,10 @@
 
 
 #define VAR_FARAWAY_ISLAND_STEP_COUNTER  0x408C
-#define VAR_MT_MOON_MUDKIP_BERRY_GIVEN                 0x408D
-#define VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1                 0x408E
-#define VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2                 0x408F
-#define VAR_0x4090                 0x4090
+#define VAR_MT_MOON_MUDKIP_BERRY_GIVEN                                         0x408D
+#define VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER1                               0x408E
+#define VAR_MAP_SCENE_MT_EMBER_REGIROCK_BOULDER2                               0x408F
+#define VAR_MAP_SCENE_SAGE_CAVE                                                0x4090
 #define VAR_0x4091                 0x4091
 #define VAR_0x4092                 0x4092
 #define VAR_0x4093                 0x4093
