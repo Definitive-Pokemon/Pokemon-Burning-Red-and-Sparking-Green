@@ -17,7 +17,7 @@ SageCave_OnFrame::
 	
 SageCave_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SAGE_CAVE
-	getplayerxy VAR_TEMP_D, VAR_RESULT
+	getplayerxy VAR_RESULT, VAR_TEMP_D
 	end
 
 SageCave_EventScript_ExitElevator::
@@ -98,26 +98,26 @@ SageCave_EventScript_RocketNoSteps::
 	applymovement LOCALID_ROCKET_M, SageCave_Movement_RocketNoSteps
 	waitmovement 0
 	return
-
-SageCave_Movement_RocketTwoSteps::
-	emote_exclamation_mark
-	delay_16
-	walk_left
-	walk_left	
-	step_end
 	
 SageCave_Movement_ExitElevator::
 	walk_down
 	walk_down
 	step_end
+
+SageCave_Movement_RocketTwoSteps::
+	emote_exclamation_mark
+	delay_100
+	walk_left
+	walk_left	
+	step_end
 	
 SageCave_Movement_RocketOneStep::
 	emote_exclamation_mark
-	delay_16
+	delay_100
 	walk_left	
 	step_end
 	
 SageCave_Movement_RocketNoSteps::
 	emote_exclamation_mark
-	delay_16	
+	delay_100	
 	step_end
