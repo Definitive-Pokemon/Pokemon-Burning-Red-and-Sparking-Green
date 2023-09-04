@@ -30,7 +30,7 @@ SageCave_EventScript_ElevatorBroken::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	delay 20
-	message SageCave_Text_OutOfOrder
+	msgbox SageCave_Text_OutOfOrder
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SageCave_Movement_ForcePlayerFromDoor
 	waitmovement 0
