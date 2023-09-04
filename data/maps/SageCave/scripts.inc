@@ -24,6 +24,7 @@ SageCave_EventScript_ExitElevator::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, SageCave_Movement_ExitElevator
 	waitmovement 0
+	setvar VAR_TEMP_D, 0
 	releaseall
 	end
 	
@@ -100,7 +101,6 @@ SageCave_EventScript_RocketNoSteps::
 	return
 	
 SageCave_Movement_ExitElevator::
-	walk_down
 	walk_down
 	step_end
 
