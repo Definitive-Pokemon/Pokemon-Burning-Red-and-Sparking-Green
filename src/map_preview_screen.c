@@ -308,7 +308,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .tilesptr = sMoneanChamberMapPreviewTiles,
         .tilemapptr = sMoneanChamberMapPreviewTilemap,
         .palptr = sMoneanChamberMapPreviewPalette
-    }
+    },
 	[MPS_SAGE_CAVE] = {
         .mapsec = MAPSEC_SAGE_CAVE,
         .type = MPS_TYPE_FOREST,
@@ -316,7 +316,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .tilesptr = sSageCaveMapPreviewTiles,
         .tilemapptr = sSageCaveMapPreviewTilemap,
         .palptr = sSageCaveMapPreviewPalette
-    },
+    }
 };
 
 static const struct WindowTemplate sMapNameWindow = {
