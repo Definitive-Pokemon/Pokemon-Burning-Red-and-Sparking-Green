@@ -2161,38 +2161,38 @@ const struct SpriteFrameImage gObjectEventPicTable_Totodile[] = {
 
 const struct SpriteFrameImage gObjectEventPicTable_Magby[] = {
     overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 2),
     overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
     overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Magby, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Magby, 2, 2, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Elekid[] = {
     overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 2),
     overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
     overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Elekid, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Elekid, 2, 2, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Smoochum[] = {
     overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 2),
     overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
     overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Smoochum, 2, 2, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Treecko[] = {
