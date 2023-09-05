@@ -191,6 +191,7 @@ const u16 gObjectEventPic_Mudkip[] = INCBIN_U16("graphics/object_events/pics/pok
 const u16 gObjectEventPic_Regirock[] = INCBIN_U16("graphics/object_events/pics/pokemon/regirock.4bpp");
 const u16 gObjectEventPic_Regice[] = INCBIN_U16("graphics/object_events/pics/pokemon/regice.4bpp");
 const u16 gObjectEventPic_Registeel[] = INCBIN_U16("graphics/object_events/pics/pokemon/registeel.4bpp");
+const u16 gObjectEventPic_Kabutops_Shadow[] = INCBIN_U16("graphics/object_events/pics/pokemon/kabutops.4bpp");
 const u16 gObjectEventPic_Abra[] = INCBIN_U16("graphics/object_events/pics/pokemon/abra.4bpp");
 const u16 gObjectEventPic_SwimmerFWater2[] = INCBIN_U16("graphics/object_events/pics/people/swimmer_f_water_2.4bpp");
 const u16 gObjectEventPal_Meteorite[] = INCBIN_U16("graphics/object_events/palettes/meteorite.gbapal");

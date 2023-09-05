@@ -2267,6 +2267,18 @@ const struct SpriteFrameImage gObjectEventPicTable_Registeel[] = {
     overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_Kabutops_Shadow[] = {
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Abra[] = {
     overworld_frame(gObjectEventPic_Abra, 2, 2, 0),
     overworld_frame(gObjectEventPic_Abra, 2, 2, 1),

@@ -255,6 +255,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel =
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Registeel, gDummySpriteAffineAnimTable};
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kabutops_Shadow = 
+{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
+6, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+&gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
+gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Kabutops_Shadow, gDummySpriteAffineAnimTable};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abra = {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_BLUE, OBJ_EVENT_PAL_TAG_NONE, 128, 16, 16, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x16, gObjectEventSpriteOamTables_16x16, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Abra, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater2 = {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_GREEN, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_SwimmerFWater2, gDummySpriteAffineAnimTable};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MasterBeauty = {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_BLUE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_MasterBeauty, gDummySpriteAffineAnimTable};
