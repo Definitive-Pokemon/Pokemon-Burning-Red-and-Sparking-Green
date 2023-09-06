@@ -1081,7 +1081,7 @@ static const u8 *const sMapNames[] = {
     [MAPSEC_STONE_TOMB          ] = gMapSecName_StoneTomb,
     [MAPSEC_ICY_TOMB            ] = gMapSecName_IcyTomb,
     [MAPSEC_METAL_TOMB          ] = gMapSecName_MetalTomb,
-    [MAPSEC_SAGE_CAVE           ] = gMapSecName_SageCave
+    [MAPSEC_MONITORING_STATION           ] = gMapSecName_MonitoringStation
 };
 
 static const u16 sMapSectionTopLeftCorners[MAPSEC_COUNT][2] = {

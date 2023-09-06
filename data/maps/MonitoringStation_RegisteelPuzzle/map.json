@@ -1,14 +1,14 @@
 {
-  "id": "MAP_SAGE_CAVE_REGISTEEL_PUZZLE",
-  "name": "SageCave_RegisteelPuzzle",
-  "layout": "LAYOUT_SAGE_CAVE_REGISTEEL_PUZZLE",
+  "id": "MAP_MONITORING_STATION_REGISTEEL_PUZZLE",
+  "name": "MonitoringStation_RegisteelPuzzle",
+  "layout": "LAYOUT_MONITORING_STATION_REGISTEEL_PUZZLE",
   "music": "MUS_SEALED_CHAMBER",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
-  "allow_cycling": true,
-  "allow_escaping": true,
+  "allow_cycling": false,
+  "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
   "floor_number": 0,
@@ -35,7 +35,7 @@
       "x": 9,
       "y": 43,
       "elevation": 0,
-      "dest_map": "MAP_SAGE_CAVE",
+      "dest_map": "MAP_MONITORING_STATION",
       "dest_warp_id": 1
     }
   ],

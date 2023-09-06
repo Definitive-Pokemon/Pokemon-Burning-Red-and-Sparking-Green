@@ -4826,16 +4826,16 @@
       "blockdata_filepath": "data/layouts/Fiery_Passage/map.bin"
     },
     {
-      "id": "LAYOUT_SAGE_CAVE",
-      "name": "SageCave_Layout",
+      "id": "LAYOUT_MONITORING_STATION",
+      "name": "MonitoringStation_Layout",
       "width": 15,
       "height": 15,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_SilphCo",
-      "border_filepath": "data/layouts/SageCave/border.bin",
-      "blockdata_filepath": "data/layouts/SageCave/map.bin"
+      "border_filepath": "data/layouts/MonitoringStation/border.bin",
+      "blockdata_filepath": "data/layouts/MonitoringStation/map.bin"
     },
     {
       "id": "LAYOUT_MT_EMBER_REGIROCK_PUZZLE",
@@ -4910,16 +4910,28 @@
       "blockdata_filepath": "data/layouts/DottedHole_RegicePuzzle2/map.bin"
     },
     {
-      "id": "LAYOUT_SAGE_CAVE_REGISTEEL_PUZZLE",
-      "name": "SageCave_RegisteelPuzzle_Layout",
+      "id": "LAYOUT_MONITORING_STATION_REGISTEEL_PUZZLE",
+      "name": "MonitoringStation_RegisteelPuzzle_Layout",
       "width": 13,
       "height": 45,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CeruleanCave",
-      "border_filepath": "data/layouts/SageCave_RegisteelPuzzle/border.bin",
-      "blockdata_filepath": "data/layouts/SageCave_RegisteelPuzzle/map.bin"
+      "border_filepath": "data/layouts/MonitoringStation_RegisteelPuzzle/border.bin",
+      "blockdata_filepath": "data/layouts/MonitoringStation_RegisteelPuzzle/map.bin"
+    },
+    {
+      "id": "LAYOUT_MONITORING_STATION_CENTRAL",
+      "name": "MonitoringStation_Central_Layout",
+      "width": 35,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/MonitoringStation_Central/border.bin",
+      "blockdata_filepath": "data/layouts/MonitoringStation_Central/map.bin"
     }
   ]
 }

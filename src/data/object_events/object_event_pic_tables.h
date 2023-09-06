@@ -2268,15 +2268,15 @@ const struct SpriteFrameImage gObjectEventPicTable_Registeel[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Kabutops_Shadow[] = {
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Registeel, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Kabutops_Shadow, 4, 4, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Abra[] = {

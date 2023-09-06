@@ -1,14 +1,14 @@
 {
-  "id": "MAP_SAGE_CAVE",
-  "name": "SageCave",
-  "layout": "LAYOUT_SAGE_CAVE",
+  "id": "MAP_MONITORING_STATION",
+  "name": "MonitoringStation",
+  "layout": "LAYOUT_MONITORING_STATION",
   "music": "MUS_ROCKET_HIDEOUT",
-  "region_map_section": "MAPSEC_SAGE_CAVE",
+  "region_map_section": "MAPSEC_MONITORING_STATION",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
-  "allow_escaping": true,
+  "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
   "floor_number": 0,
@@ -35,7 +35,7 @@
       "x": 7,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_SAGE_CAVE_REGISTEEL_PUZZLE",
+      "dest_map": "MAP_MONITORING_STATION_REGISTEEL_PUZZLE",
       "dest_warp_id": 0
     },
     {
@@ -54,34 +54,34 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
-      "script": "SageCave_EventScript_ElevatorBroken"
+      "script": "MonitoringStation_EventScript_ElevatorBroken"
     },
     {
       "type": "trigger",
       "x": 6,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_MAP_SCENE_SAGE_CAVE",
+      "var": "VAR_MAP_SCENE_MONITORING_STATION",
       "var_value": "0",
-      "script": "SageCave_EventScript_RocketLeft"
+      "script": "MonitoringStation_EventScript_RocketLeft"
     },
     {
       "type": "trigger",
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_MAP_SCENE_SAGE_CAVE",
+      "var": "VAR_MAP_SCENE_MONITORING_STATION",
       "var_value": "0",
-      "script": "SageCave_EventScript_RocketMiddle"
+      "script": "MonitoringStation_EventScript_RocketMiddle"
     },
     {
       "type": "trigger",
       "x": 8,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_MAP_SCENE_SAGE_CAVE",
+      "var": "VAR_MAP_SCENE_MONITORING_STATION",
       "var_value": "0",
-      "script": "SageCave_EventScript_RocketRight"
+      "script": "MonitoringStation_EventScript_RocketRight"
     }
   ],
   "bg_events": [

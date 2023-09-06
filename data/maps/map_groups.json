@@ -263,8 +263,9 @@
     "Metal_Tomb",
     "DottedHole_RegicePuzzle",
     "DottedHole_RegicePuzzle2",
-    "SageCave_RegisteelPuzzle",
-    "SageCave"
+    "MonitoringStation_RegisteelPuzzle",
+    "MonitoringStation",
+    "MonitoringStation_Central"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

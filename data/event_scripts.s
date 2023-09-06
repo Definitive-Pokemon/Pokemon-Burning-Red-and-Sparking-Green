@@ -1344,8 +1344,8 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 	.include "data/maps/Fiery_Passage/scripts.inc"
 	.include "data/maps/Fiery_Passage/text.inc"
 
-	.include "data/maps/SageCave/scripts.inc"
-	.include "data/maps/SageCave/text.inc"
+	.include "data/maps/MonitoringStation/scripts.inc"
+	.include "data/maps/MonitoringStation/text.inc"
 
 	.include "data/maps/MtEmber_RegirockPuzzle/scripts.inc"
 	.include "data/maps/MtEmber_RegirockPuzzle/text.inc"
@@ -1365,5 +1365,8 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 	.include "data/maps/DottedHole_RegicePuzzle2/scripts.inc"
 	.include "data/maps/DottedHole_RegicePuzzle2/text.inc"
 
-	.include "data/maps/SageCave_RegisteelPuzzle/scripts.inc"
-	.include "data/maps/SageCave_RegisteelPuzzle/text.inc"
+	.include "data/maps/MonitoringStation_RegisteelPuzzle/scripts.inc"
+	.include "data/maps/MonitoringStation_RegisteelPuzzle/text.inc"
+
+	.include "data/maps/MonitoringStation_Central/scripts.inc"
+	.include "data/maps/MonitoringStation_Central/text.inc"

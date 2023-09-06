@@ -223,7 +223,7 @@
 #define MAPSEC_STONE_TOMB                   0xD5
 #define MAPSEC_ICY_TOMB                     0xD6
 #define MAPSEC_METAL_TOMB                   0xD7
-#define MAPSEC_SAGE_CAVE                    0xD8
+#define MAPSEC_MONITORING_STATION                    0xD8
 #define MAPSEC_NONE                         0xD9
 #define MAPSEC_COUNT                        0xDA
 
