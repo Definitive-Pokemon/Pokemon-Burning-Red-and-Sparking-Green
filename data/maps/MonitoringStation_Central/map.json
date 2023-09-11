@@ -18,7 +18,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_KABUTOPS_SHADOW",
       "in_connection": false,
-      "x": 13,
+      "x": 12,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -32,7 +32,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "in_connection": false,
-      "x": 7,
+      "x": 6,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -46,21 +46,21 @@
   ],
   "warp_events": [
     {
-      "x": 16,
+      "x": 15,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION",
       "dest_warp_id": 0
     },
     {
-      "x": 10,
+      "x": 9,
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_SHORTCUT",
       "dest_warp_id": 0
     },
     {
-      "x": 26,
+      "x": 25,
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_HALLWAY2",

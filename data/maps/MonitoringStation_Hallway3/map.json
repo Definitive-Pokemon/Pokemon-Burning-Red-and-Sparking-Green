@@ -19,31 +19,38 @@
   ],
   "warp_events": [
     {
-      "x": 4,
-      "y": 4,
+      "x": 3,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_SHORTCUT",
       "dest_warp_id": 2
     },
     {
+      "x": 16,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_QUARTERS",
+      "dest_warp_id": 0
+    },
+    {
       "x": 17,
-      "y": 3,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_QUARTERS",
       "dest_warp_id": 0
     },
     {
-      "x": 18,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_MONITORING_STATION_QUARTERS",
-      "dest_warp_id": 0
-    },
-    {
-      "x": 13,
-      "y": 23,
+      "x": 12,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_OFFICE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 21,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_END",
       "dest_warp_id": 0
     }
   ],

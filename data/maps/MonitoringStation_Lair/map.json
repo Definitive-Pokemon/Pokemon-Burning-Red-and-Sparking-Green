@@ -1,12 +1,12 @@
 {
-  "id": "MAP_MONITORING_STATION_OFFICE",
-  "name": "MonitoringStation_Office",
-  "layout": "LAYOUT_MONITORING_STATION_OFFICE",
-  "music": "MUS_ROCKET_HIDEOUT",
+  "id": "MAP_MONITORING_STATION_LAIR",
+  "name": "MonitoringStation_Lair",
+  "layout": "LAYOUT_MONITORING_STATION_LAIR",
+  "music": "MUS_SEALED_CHAMBER",
   "region_map_section": "MAPSEC_MONITORING_STATION",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_INDOOR",
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
@@ -19,11 +19,11 @@
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 2,
+      "x": 5,
+      "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_MONITORING_STATION_HALLWAY3",
-      "dest_warp_id": 3
+      "dest_map": "MAP_MONITORING_STATION_REGISTEEL_PUZZLE",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [

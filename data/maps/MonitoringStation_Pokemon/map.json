@@ -19,8 +19,8 @@
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 3,
+      "x": 6,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_STORAGE",
       "dest_warp_id": 1

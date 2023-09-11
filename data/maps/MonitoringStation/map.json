@@ -18,7 +18,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "in_connection": false,
-      "x": 9,
+      "x": 5,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -32,21 +32,21 @@
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 3,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_CENTRAL",
       "dest_warp_id": 0
     },
     {
-      "x": 7,
+      "x": 3,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_TRAINER_TOWER_ELEVATOR",
       "dest_warp_id": 0
     },
     {
-      "x": 13,
+      "x": 9,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_TRAINER_TOWER_LOBBY",
@@ -56,7 +56,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 7,
+      "x": 3,
       "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
@@ -65,7 +65,7 @@
     },
     {
       "type": "trigger",
-      "x": 6,
+      "x": 2,
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",
@@ -74,7 +74,7 @@
     },
     {
       "type": "trigger",
-      "x": 7,
+      "x": 3,
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",
@@ -83,7 +83,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",

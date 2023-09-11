@@ -1397,3 +1397,12 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/MonitoringStation_Office/scripts.inc"
 	.include "data/maps/MonitoringStation_Office/text.inc"
+
+	.include "data/maps/MonitoringStation_End/scripts.inc"
+	.include "data/maps/MonitoringStation_End/text.inc"
+
+	.include "data/maps/MonitoringStation_EmeraldRoom/scripts.inc"
+	.include "data/maps/MonitoringStation_EmeraldRoom/text.inc"
+
+	.include "data/maps/MonitoringStation_Lair/scripts.inc"
+	.include "data/maps/MonitoringStation_Lair/text.inc"

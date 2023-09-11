@@ -274,7 +274,10 @@
     "MonitoringStation_Pokemon",
     "MonitoringStation_Hallway3",
     "MonitoringStation_Quarters",
-    "MonitoringStation_Office"
+    "MonitoringStation_Office",
+    "MonitoringStation_End",
+    "MonitoringStation_EmeraldRoom",
+    "MonitoringStation_Lair"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

@@ -19,8 +19,8 @@
   ],
   "warp_events": [
     {
-      "x": 11,
-      "y": 14,
+      "x": 9,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_HALLWAY3",
       "dest_warp_id": 1
