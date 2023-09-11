@@ -127,7 +127,7 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION",
-      "dest_warp_id": 0
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

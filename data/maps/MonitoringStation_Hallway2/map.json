@@ -1,0 +1,57 @@
+{
+  "id": "MAP_MONITORING_STATION_HALLWAY2",
+  "name": "MonitoringStation_Hallway2",
+  "layout": "LAYOUT_MONITORING_STATION_HALLWAY2",
+  "music": "MUS_ROCKET_HIDEOUT",
+  "region_map_section": "MAPSEC_MONITORING_STATION",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_CENTRAL",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 21,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_CONFERENCE_ROOM",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 22,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_CONFERENCE_ROOM",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_STORAGE",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ],
+  "level_scaling": "0"
+}

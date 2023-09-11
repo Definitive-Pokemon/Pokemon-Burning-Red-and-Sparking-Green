@@ -1370,3 +1370,30 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/MonitoringStation_Central/scripts.inc"
 	.include "data/maps/MonitoringStation_Central/text.inc"
+
+	.include "data/maps/MonitoringStation_Shortcut/scripts.inc"
+	.include "data/maps/MonitoringStation_Shortcut/text.inc"
+
+	.include "data/maps/MonitoringStation_Power/scripts.inc"
+	.include "data/maps/MonitoringStation_Power/text.inc"
+
+	.include "data/maps/MonitoringStation_Hallway2/scripts.inc"
+	.include "data/maps/MonitoringStation_Hallway2/text.inc"
+
+	.include "data/maps/MonitoringStation_ConferenceRoom/scripts.inc"
+	.include "data/maps/MonitoringStation_ConferenceRoom/text.inc"
+
+	.include "data/maps/MonitoringStation_Storage/scripts.inc"
+	.include "data/maps/MonitoringStation_Storage/text.inc"
+
+	.include "data/maps/MonitoringStation_Pokemon/scripts.inc"
+	.include "data/maps/MonitoringStation_Pokemon/text.inc"
+
+	.include "data/maps/MonitoringStation_Hallway3/scripts.inc"
+	.include "data/maps/MonitoringStation_Hallway3/text.inc"
+
+	.include "data/maps/MonitoringStation_Quarters/scripts.inc"
+	.include "data/maps/MonitoringStation_Quarters/text.inc"
+
+	.include "data/maps/MonitoringStation_Office/scripts.inc"
+	.include "data/maps/MonitoringStation_Office/text.inc"

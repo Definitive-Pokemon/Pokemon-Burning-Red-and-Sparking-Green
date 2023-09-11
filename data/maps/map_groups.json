@@ -265,7 +265,16 @@
     "DottedHole_RegicePuzzle2",
     "MonitoringStation_RegisteelPuzzle",
     "MonitoringStation",
-    "MonitoringStation_Central"
+    "MonitoringStation_Central",
+    "MonitoringStation_Shortcut",
+    "MonitoringStation_Power",
+    "MonitoringStation_Hallway2",
+    "MonitoringStation_ConferenceRoom",
+    "MonitoringStation_Storage",
+    "MonitoringStation_Pokemon",
+    "MonitoringStation_Hallway3",
+    "MonitoringStation_Quarters",
+    "MonitoringStation_Office"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

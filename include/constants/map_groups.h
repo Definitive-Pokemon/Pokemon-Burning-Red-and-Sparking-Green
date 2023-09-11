@@ -225,6 +225,15 @@
 #define MAP_MONITORING_STATION_REGISTEEL_PUZZLE       (80 | (2 << 8))
 #define MAP_MONITORING_STATION                        (81 | (2 << 8))
 #define MAP_MONITORING_STATION_CENTRAL                (82 | (2 << 8))
+#define MAP_MONITORING_STATION_SHORTCUT               (83 | (2 << 8))
+#define MAP_MONITORING_STATION_POWER                  (84 | (2 << 8))
+#define MAP_MONITORING_STATION_HALLWAY2               (85 | (2 << 8))
+#define MAP_MONITORING_STATION_CONFERENCE_ROOM        (86 | (2 << 8))
+#define MAP_MONITORING_STATION_STORAGE                (87 | (2 << 8))
+#define MAP_MONITORING_STATION_POKEMON                (88 | (2 << 8))
+#define MAP_MONITORING_STATION_HALLWAY3               (89 | (2 << 8))
+#define MAP_MONITORING_STATION_QUARTERS               (90 | (2 << 8))
+#define MAP_MONITORING_STATION_OFFICE                 (91 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))
