@@ -38,10 +38,6 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	release
 	end
 	
-MonitoringStation_EventScript_PlayRocket::
-	playbgm MUS_ROCKET_HIDEOUT, 0
-	return
-	
 MonitoringStation_EventScript_Restore_Power::
 	setweather WEATHER_NONE
 	doweather

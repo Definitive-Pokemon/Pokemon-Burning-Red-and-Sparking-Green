@@ -22,7 +22,7 @@
       "x": 10,
       "y": 2,
       "elevation": 3,
-      "dest_map": "MAP_MONITORING_STATION",
+      "dest_map": "MAP_TRAINER_TOWER_ELEVATOR",
       "dest_warp_id": 1
     }
   ],
