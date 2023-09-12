@@ -12,7 +12,6 @@ MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
-	call_if_unset FLAG_HORROR_DONE, MonitoringStation_EventScript_PlayWeather
 	call MonitoringStation_EventScript_CheckBrokenElevator
 	end
 	
@@ -41,10 +40,6 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	
 MonitoringStation_EventScript_PlayRocket::
 	playbgm MUS_ROCKET_HIDEOUT, 0
-	return
-	
-MonitoringStation_EventScript_PlayWeather::
-	playbgm MUS_WEATHER_GROUDON, 0
 	return
 	
 MonitoringStation_EventScript_Restore_Power::
