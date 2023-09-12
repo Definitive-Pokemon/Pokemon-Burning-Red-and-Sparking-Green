@@ -3,8 +3,17 @@ MonitoringStation_Central_MapScripts::
 	.byte 0
 	
 MonitoringStation_Central_EventScript_OnLoad::
+	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Central_EventScript_GreyDoorAdminShadows
 	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Central_EventScript_PlayWeatherMusic
 	end
+	
+MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
+	setmetatile 2, 21, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
+	setmetatile 3, 22, METATILE_SilphCo_HideoutFloor, 0
+	setmetatile 3, 23, METATILE_SilphCo_HideoutFloor, 0
+	setweather WEATHER_NONE
+	doweather
+	return
 	
 MonitoringStation_Central_EventScript_PlayWeatherMusic::
 	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Central_EventScript_DontPlayWeatherMusic
@@ -21,3 +30,4 @@ MonitoringStation_Central_EventScript_GreyDoors::
 	closemessage
 	release
 	end
+	

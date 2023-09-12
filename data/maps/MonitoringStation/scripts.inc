@@ -10,7 +10,7 @@ MonitoringStation_MapScripts::
 	
 MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShadows
+	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShortShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
 	call MonitoringStation_EventScript_CheckBrokenElevator
 	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_PlayWeatherMusic
@@ -24,7 +24,7 @@ MonitoringStation_EventScript_PlayWeatherMusic::
 MonitoringStation_EventScript_DontPlayWeatherMusic::
 	end
 	
-MonitoringStation_EventScript_RedDoorShadows::
+MonitoringStation_EventScript_RedDoorShortShadows::
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
 	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
 	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
@@ -48,8 +48,8 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	removeobject LOCALID_RED_DOOR1
 	removeobject LOCALID_RED_DOOR2
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
-	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
-	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
+	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor, 0
+	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor, 0
 	special DrawWholeMapView
 	msgbox MonitoringStation_Text_RedDoorGone
 	closemessage

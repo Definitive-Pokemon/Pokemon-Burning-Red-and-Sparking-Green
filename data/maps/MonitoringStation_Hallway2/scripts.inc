@@ -1,2 +1,21 @@
 MonitoringStation_Hallway2_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Hallway2_EventScript_OnLoad
 	.byte 0
+
+MonitoringStation_Hallway2_EventScript_OnLoad::
+	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Hallway2_EventScript_Weather
+	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Hallway2_EventScript_PlayWeatherMusic
+	end
+	
+MonitoringStation_Central_EventScript_PlayWeatherMusic::
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Hallway2_EventScript_DontPlayWeatherMusic
+	playbgm MUS_WEATHER_GROUDON, 1
+	end
+	
+MonitoringStation_Hallway2_EventScript_DontPlayWeatherMusic::
+	end
+	
+MonitoringStation_Hallway2_EventScript_Weather::
+	setweather WEATHER_NONE
+	doweather
+	return

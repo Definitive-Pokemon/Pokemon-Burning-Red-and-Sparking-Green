@@ -30,7 +30,14 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Power_EventScript_Restore_Power"
+    }
   ],
   "level_scaling": "0"
 }

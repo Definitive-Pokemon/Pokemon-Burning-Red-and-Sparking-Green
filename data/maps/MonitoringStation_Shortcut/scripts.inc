@@ -1,2 +1,24 @@
 MonitoringStation_Shortcut_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Shortcut_EventScript_OnLoad
 	.byte 0
+
+MonitoringStation_Shortcut_EventScript_OnLoad::
+	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows
+	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Shortcut_EventScript_PlayWeatherMusic
+	end
+	
+MonitoringStation_Central_EventScript_PlayWeatherMusic::
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Shortcut_EventScript_DontPlayWeatherMusic
+	playbgm MUS_WEATHER_GROUDON, 1
+	end
+	
+MonitoringStation_Shortcut_EventScript_DontPlayWeatherMusic::
+	end
+	
+MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
+	setmetatile 3, 7, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
+	setmetatile 4, 8, METATILE_SilphCo_HideoutFloor, 0
+	setmetatile 4, 9, METATILE_SilphCo_HideoutFloor, 0
+	setweather WEATHER_NONE
+	doweather
+	return
