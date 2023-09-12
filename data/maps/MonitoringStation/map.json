@@ -120,7 +120,36 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_BLUE_KEY",
+      "flag": "FLAG_0x39B",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_YELLOW_KEY",
+      "flag": "FLAG_0x39C",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_RED_KEY",
+      "flag": "FLAG_0x39D",
+      "quantity": 1,
+      "underfoot": false
+    }
   ],
   "level_scaling": "0"
 }
