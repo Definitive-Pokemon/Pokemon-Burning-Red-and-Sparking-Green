@@ -13,6 +13,16 @@ MonitoringStation_EventScript_OnLoad::
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
 	call MonitoringStation_EventScript_CheckBrokenElevator
+	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_PlayWeatherMusic
+	end
+	
+MonitoringStation_EventScript_PlayWeatherMusic::
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_PlayRocketMusic
+	playbgm MUS_WEATHER_GROUDON, 1
+	end
+	
+MonitoringStation_EventScript_PlayRocketMusic::
+	playbgm MUS_ROCKET_HIDEOUT, 1
 	end
 	
 MonitoringStation_EventScript_RedDoorShadows::
@@ -26,7 +36,9 @@ MonitoringStation_EventScript_RedDoor::
 	checkitem ITEM_RED_KEY, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MonitoringStation_EventScript_RemoveRedDoor
-	message MonitoringStation_Text_RedDoor
+	textcolor 2
+	msgbox MonitoringStation_Text_RedDoor
+	closemessage
 	release
 	end
 	
@@ -34,7 +46,8 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT
 	playse SE_UNLOCK
 	removeobject LOCALID_RED_DOOR
-	message MonitoringStation_Text_RedDoorGone
+	msgbox MonitoringStation_Text_RedDoorGone
+	closemessage
 	release
 	end
 	
