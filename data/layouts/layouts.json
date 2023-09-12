@@ -4937,7 +4937,7 @@
       "id": "LAYOUT_MONITORING_STATION_SHORTCUT",
       "name": "MonitoringStation_Shortcut_Layout",
       "width": 28,
-      "height": 8,
+      "height": 13,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",

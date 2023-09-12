@@ -33,8 +33,8 @@
       "dest_warp_id": 0
     },
     {
-      "x": 3,
-      "y": 3,
+      "x": 6,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_HALLWAY3",
       "dest_warp_id": 0
