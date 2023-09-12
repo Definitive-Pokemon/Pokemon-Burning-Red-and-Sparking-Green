@@ -14,8 +14,8 @@ MonitoringStation_Text_RocketAh::
 	
 MonitoringStation_Text_RocketCheck::
 	.string "I have to investigate.\p"
-	.string "A POKéMON may have broken out\n"
-	.string "of the containment area!\p"
+	.string "A POKéMON may have broken out of\n"
+	.string "the containment area!\p"
 	.string "You just stay put. I will be back\n"
 	.string "in a jiffy.\p"
 	.string "NO wandering around this base,\n"

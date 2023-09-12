@@ -105,10 +105,9 @@ MonitoringStation_EventScript_Rocket::
 	call_if_eq MonitoringStation_EventScript_RocketMoveOneStep
 	compare VAR_TEMP_1, 2
 	call_if_eq MonitoringStation_EventScript_RocketMoveNoSteps
-	delay 10
-	playse SE_WARP_OUT
+	playse SE_EXIT
 	removeobject LOCALID_ROCKET_M
-	delay 60
+	delay 100
 	msgbox MonitoringStation_Text_RocketNo
 	closemessage
 	playbgm MUS_WEATHER_GROUDON, 0
