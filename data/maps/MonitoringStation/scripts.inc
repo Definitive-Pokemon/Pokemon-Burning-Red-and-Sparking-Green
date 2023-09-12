@@ -18,9 +18,9 @@ MonitoringStation_EventScript_OnLoad::
 	end
 	
 MonitoringStation_EventScript_RedDoorShadows::
-	setmetatile 9, 8, METATILE_HideoutFloor_ShadeFull, 0
-	setmetatile 10, 9, METATILE_HideoutFloor, 0
-	setmetatile 10, 10, METATILE_HideoutFloor, 0
+	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
+	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
+	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
 	return
 	
 MonitoringStation_EventScript_RedDoor::
