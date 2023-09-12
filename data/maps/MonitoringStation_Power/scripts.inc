@@ -26,7 +26,8 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	setflashlevel 0
 	setweather WEATHER_NONE
 	doweather
-	MonitoringStation_Power_Text_Restore_Power
+	msgbox MonitoringStation_Power_Text_Restore_Power
+	waitmessage
 	setflag FLAG_HORROR_POWER_RESTORED
 	release
 	end
