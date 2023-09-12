@@ -3,6 +3,7 @@ MonitoringStation_Power_MapScripts::
 	.byte 0
 
 MonitoringStation_Power_EventScript_OnLoad::
+	setflashradius 0
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Weather
 	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Power_EventScript_PlayWeatherMusic
 	end
@@ -16,14 +17,13 @@ MonitoringStation_Power_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_Power_EventScript_Weather::
-	setflashlevel 0
+	setflashradius 0
 	setweather WEATHER_NONE
 	doweather
 	return
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
-	flashlevel 0
 	setweather WEATHER_NONE
 	doweather
 	msgbox MonitoringStation_Power_Text_Restore_Power
