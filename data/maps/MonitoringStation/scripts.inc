@@ -112,6 +112,8 @@ MonitoringStation_EventScript_Rocket::
 	closemessage
 	playbgm MUS_WEATHER_GROUDON, 0
 	fadeinbgm 1
+	setflag FLAG_HORROR_ROCKED_MOVED
+	setvar VAR_MAP_SCENE_MONITORING_STATION, 1
 	end
 	
 MonitoringStation_EventScript_RocketMoveTwoSteps::
