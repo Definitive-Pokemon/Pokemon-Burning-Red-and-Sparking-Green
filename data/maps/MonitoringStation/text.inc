@@ -1,3 +1,10 @@
+MonitoringStation_Text_RedDoorGone::
+	.string "The RED KEY unlocked the door!$"
+
+MonitoringStation_Text_RedDoor::
+	.string "This door is electronically locked.\n"
+	.string "A specific key can unlock it.$"
+
 MonitoringStation_Text_OutOfOrder::
 	.string "The elevator seems to be out\n"
 	.string "of order.$"

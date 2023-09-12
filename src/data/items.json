@@ -4290,7 +4290,7 @@
     },
     {
       "english": "WAILMER PAIL",
-      "itemId": "ITEM_WAILMER_PAIL",
+      "itemId": "ITEM_BLUE_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
@@ -4306,7 +4306,7 @@
     },
     {
       "english": "DEVON GOODS",
-      "itemId": "ITEM_DEVON_GOODS",
+      "itemId": "ITEM_YELLOW_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
@@ -4466,7 +4466,7 @@
     },
     {
       "english": "GO-GOGGLES",
-      "itemId": "ITEM_GO_GOGGLES",
+      "itemId": "ITEM_RED_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,

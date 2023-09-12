@@ -15,10 +15,10 @@ DottedHole_RegicePuzzle_OnResume::
 
 DottedHole_RegicePuzzle_OnLoad::
 	special SetRegicePuzzleCrackedIceMetatiles
-	goto_if_set FLAG_REGICE_DOOR_OPENED, DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier	
+	goto_if_set FLAG_REGICE_DOOR_OPENED, DottedHole_RegicePuzzle_EventScript_SetRockBarrier	
 	end
 	
-DottedHole_RegicePuzzle_EventScript_UnSetRockBarrier::
+DottedHole_RegicePuzzle_EventScript_SetRockBarrier::
 	setmetatile 4, 11, METATILE_SeafoamIslands_RockUnderIce, 1
 	end
 

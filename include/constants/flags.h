@@ -930,10 +930,10 @@
 #define FLAG_HORROR_DONE               0x387
 #define FLAG_HORROR_POWER_RESTORED               0x388
 #define FLAG_HORROR_ROCKET_MOVED               0x389
+#define FLAG_RED_DOOR_SHORTCUT               0x38A
 
 
 // Unused?
-#define FLAG_0x38A               0x38A
 #define FLAG_0x38B               0x38B
 #define FLAG_0x38C               0x38C
 #define FLAG_0x38D               0x38D

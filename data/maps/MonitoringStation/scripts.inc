@@ -1,4 +1,6 @@
 .set LOCALID_ROCKET_M, 1
+.set LOCALID_RED_DOOR, 2
+.set LOCALID_RED_DOOR, 3
 
 MonitoringStation_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_EventScript_OnLoad
@@ -8,14 +10,48 @@ MonitoringStation_MapScripts::
 	
 MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
+	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
+	call_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_PlayRocket
+	call_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_PlayWeather
 	call MonitoringStation_EventScript_CheckBrokenElevator
 	end
+	
+MonitoringStation_EventScript_RedDoorShadows::
+	setmetatile 9, 8, METATILE_HideoutFloor_ShadeFull, 0
+	setmetatile 10, 9, METATILE_HideoutFloor, 0
+	setmetatile 10, 10, METATILE_HideoutFloor, 0
+	return
+	
+MonitoringStation_EventScript_RedDoor::
+	lock
+	checkitem ITEM_RED_KEY, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq MonitoringStation_EventScript_RemoveRedDoor
+	message MonitoringStation_Text_RedDoor
+	release
+	end
+	
+MonitoringStation_EventScript_RemoveRedDoor::
+	setflag FLAG_RED_DOOR_SHORTCUT
+	playse SE_UNLOCK
+	removeobject LOCALID_RED_DOOR
+	message MonitoringStation_Text_RedDoorGone
+	release
+	end
+	
+MonitoringStation_EventScript_PlayRocket::
+	playbgm MUS_ROCKET_HIDEOUT, 0
+	return
+	
+MonitoringStation_EventScript_PlayWeather::
+	playbgm MUS_WEATHER_GROUDON, 0
+	return
 	
 MonitoringStation_EventScript_Restore_Power::
 	setweather WEATHER_NONE
 	doweather
-	end
+	return
 	
 MonitoringStation_OnFrame::
 	map_script_2 VAR_TEMP_D, 2, MonitoringStation_EventScript_ExitElevator
@@ -107,12 +143,12 @@ MonitoringStation_EventScript_Rocket::
 	call_if_eq MonitoringStation_EventScript_RocketMoveNoSteps
 	playse SE_EXIT
 	removeobject LOCALID_ROCKET_M
+	setflag FLAG_HORROR_ROCKET_MOVED
 	delay 100
 	msgbox MonitoringStation_Text_RocketNo
 	closemessage
 	playbgm MUS_WEATHER_GROUDON, 0
 	fadeinbgm 1
-	setflag FLAG_HORROR_ROCKET_MOVED
 	setvar VAR_MAP_SCENE_MONITORING_STATION, 1
 	end
 	
