@@ -7,7 +7,7 @@ MonitoringStation_Shortcut_EventScript_OnLoad::
 	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Shortcut_EventScript_PlayWeatherMusic
 	end
 	
-MonitoringStation_Central_EventScript_PlayWeatherMusic::
+MonitoringStation_Shortcut_EventScript_PlayWeatherMusic::
 	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Shortcut_EventScript_DontPlayWeatherMusic
 	playbgm MUS_WEATHER_GROUDON, 1
 	end
