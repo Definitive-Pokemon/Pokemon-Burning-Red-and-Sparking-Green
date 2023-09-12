@@ -1,6 +1,6 @@
 .set LOCALID_ROCKET_M, 1
-.set LOCALID_RED_DOOR, 2
-.set LOCALID_RED_DOOR, 3
+.set LOCALID_RED_DOOR1, 2
+.set LOCALID_RED_DOOR2, 3
 
 MonitoringStation_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_EventScript_OnLoad
@@ -40,7 +40,11 @@ MonitoringStation_EventScript_RedDoor::
 MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT
 	playse SE_UNLOCK
-	removeobject LOCALID_RED_DOOR
+	removeobject LOCALID_RED_DOOR1
+	removeobject LOCALID_RED_DOOR2
+	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
+	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
+	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
 	msgbox MonitoringStation_Text_RedDoorGone
 	closemessage
 	release
