@@ -257,7 +257,7 @@ gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Registeel, gDummySprit
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kabutops_Shadow = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
-3, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Kabutops_Shadow, gDummySpriteAffineAnimTable};
 
