@@ -13,11 +13,16 @@ MonitoringStation_EventScript_OnLoad::
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
 	call MonitoringStation_EventScript_CheckBrokenElevator
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_DontTransitionMusic
+	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_PlayWeatherMusic
 	end
 	
-MonitoringStation_EventScript_DontTransitionMusic::
-	setflag FLAG_DONT_TRANSITION_MUSIC
+MonitoringStation_EventScript_PlayWeatherMusic::
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_PlayRocketMusic
+	playbgm MUS_WEATHER_GROUDON, 1
+	end
+	
+MonitoringStation_EventScript_PlayRocketMusic::
+	playbgm MUS_ROCKET_HIDEOUT, 1
 	end
 	
 MonitoringStation_EventScript_RedDoorShadows::
@@ -45,6 +50,7 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
 	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
 	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
+	special DrawWholeMapView
 	msgbox MonitoringStation_Text_RedDoorGone
 	closemessage
 	release
