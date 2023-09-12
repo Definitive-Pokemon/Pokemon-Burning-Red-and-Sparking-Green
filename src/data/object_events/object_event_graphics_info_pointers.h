@@ -101,6 +101,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ruby;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sapphire;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldAmber;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymSign;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlueDoor,
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreyDoor,
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedDoor,
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YellowDoor,
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sign;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainerTips;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clipboard;
@@ -320,6 +324,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OLD_AMBER]                = &gObjectEventGraphicsInfo_OldAmber,
     [OBJ_EVENT_GFX_GYM_SIGN]                 = &gObjectEventGraphicsInfo_GymSign,
     [OBJ_EVENT_GFX_SIGN]                     = &gObjectEventGraphicsInfo_Sign,
+    [OBJ_EVENT_GFX_BLUE_DOOR]                = &gObjectEventGraphicsInfo_BlueDoor,
+    [OBJ_EVENT_GFX_GREY_DOOR]                = &gObjectEventGraphicsInfo_GreyDoor,
+    [OBJ_EVENT_GFX_RED_DOOR]                 = &gObjectEventGraphicsInfo_RedDoor,
+    [OBJ_EVENT_GFX_YELLOW_DOOR]              = &gObjectEventGraphicsInfo_YellowDoor,
     [OBJ_EVENT_GFX_TRAINER_TIPS]             = &gObjectEventGraphicsInfo_TrainerTips,
     [OBJ_EVENT_GFX_CLIPBOARD]                = &gObjectEventGraphicsInfo_Clipboard,
     [OBJ_EVENT_GFX_METEORITE]                = &gObjectEventGraphicsInfo_Meteorite,

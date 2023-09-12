@@ -217,8 +217,11 @@
 #define OBJ_EVENT_GFX_REGICE 213
 #define OBJ_EVENT_GFX_REGISTEEL 214
 #define OBJ_EVENT_GFX_KABUTOPS_SHADOW 215
-
-#define NUM_OBJ_EVENT_GFX     216
+#define OBJ_EVENT_GFX_BLUE_DOOR 216
+#define OBJ_EVENT_GFX_GREY_DOOR 217
+#define OBJ_EVENT_GFX_RED_DOOR 218
+#define OBJ_EVENT_GFX_YELLOW_DOOR 219
+#define NUM_OBJ_EVENT_GFX     220
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
