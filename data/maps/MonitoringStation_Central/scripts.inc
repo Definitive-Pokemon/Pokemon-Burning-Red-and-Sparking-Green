@@ -14,3 +14,10 @@ MonitoringStation_Central_EventScript_PlayWeatherMusic::
 MonitoringStation_Central_EventScript_DontPlayWeatherMusic::
 	end
 	
+MonitoringStation_Central_EventScript_GreyDoors::
+	lock
+	textcolor 2
+	msgbox MonitoringStation_Central_Text_GreyDoor
+	closemessage
+	release
+	end
