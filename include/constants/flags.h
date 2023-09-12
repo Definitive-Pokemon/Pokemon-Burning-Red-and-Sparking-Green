@@ -928,10 +928,10 @@
 #define FLAG_REGISTEEL_DOOR_OPENED               0x385
 #define FLAG_GOT_EMERALD               0x386
 #define FLAG_HORROR_DONE               0x387
+#define FLAG_HORROR_POWER_RESTORED               0x388
 
 
 // Unused?
-#define FLAG_0x388               0x388
 #define FLAG_0x389               0x389
 #define FLAG_0x38A               0x38A
 #define FLAG_0x38B               0x38B

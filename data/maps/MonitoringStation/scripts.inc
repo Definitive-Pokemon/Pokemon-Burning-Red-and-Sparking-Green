@@ -8,6 +8,7 @@ MonitoringStation_MapScripts::
 	
 MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
+	goto_if_set FLAG_HORROR_POWER_RESTORED, setweather WEATHER_NONE
 	call MonitoringStation_EventScript_CheckBrokenElevator
 	end
 	
@@ -82,8 +83,49 @@ MonitoringStation_EventScript_Rocket::
 	msgbox MonitoringStation_Text_RocketWhat
 	closemessage
 	fadeoutbgm 0
+	playmoncry SPECIES_KABUTOPS, 2
+	waitmoncry
+	playse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketScared
+	waitmovement 0
+	msgbox MonitoringStation_Text_RocketAh
+	waitmessage
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketMoveToPlayer
+	waitmovement 0
+	msgbox MonitoringStation_Text_RocketCheck
+	closemessage
+	compare VAR_TEMP_1, 0
+	call_if_eq MonitoringStation_EventScript_RocketMoveTwoSteps
+	compare VAR_TEMP_1, 1
+	call_if_eq MonitoringStation_EventScript_RocketMoveOneStep
+	compare VAR_TEMP_1, 2
+	call_if_eq MonitoringStation_EventScript_RocketMoveNoSteps
+	delay 10
+	playse SE_DOOR
+	removeobject LOCALID_ROCKET_M
+	delay 60
+	msgbox MonitoringStation_Text_RocketNo
+	closemessage
+	changebgm BGM_WEATHER_GROUDON
 	fadeinbgm 1
 	end
+	
+MonitoringStation_EventScript_RocketMoveTwoSteps::
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketMoveTwoSteps
+	waitmovement 0
+	return
+
+MonitoringStation_EventScript_RocketMoveOneStep::
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketMoveOneStep
+	waitmovement 0
+	return
+
+MonitoringStation_EventScript_RocketMoveNoSteps::
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketMoveNoSteps
+	waitmovement 0
+	return
 	
 MonitoringStation_EventScript_RocketTwoSteps::
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketTwoSteps
@@ -100,8 +142,39 @@ MonitoringStation_EventScript_RocketNoSteps::
 	waitmovement 0
 	return
 	
-MonitoringStation_Movement_ExitElevator::
+MonitoringStation_Movement_RocketMoveTwoSteps::
 	walk_down
+	walk_down
+	walk_down
+	step_end
+	
+MonitoringStation_Movement_RocketMoveOneStep::
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	step_end
+	
+MonitoringStation_Movement_RocketMoveNoSteps::
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+	
+MonitoringStation_Movement_RocketMove::
+	walk_down
+	
+MonitoringStation_Movement_RocketMoveToPlayer::
+	walk_in_place_left
+	walk_in_place_down
+	walk_in_place_left
+	step_end
+	
+MonitoringStation_Movement_RocketScared::
+	walk_in_place_down
+	emote_exclamation_mark
 	step_end
 
 MonitoringStation_Movement_RocketTwoSteps::
@@ -129,4 +202,8 @@ MonitoringStation_Movement_RocketNoSteps::
 	delay_16
 	delay_16
 	delay_16	
+	step_end
+	
+MonitoringStation_Movement_ExitElevator::
+	walk_down
 	step_end
