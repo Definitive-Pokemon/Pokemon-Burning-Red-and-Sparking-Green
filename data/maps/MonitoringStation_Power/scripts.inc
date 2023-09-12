@@ -23,7 +23,7 @@ MonitoringStation_Power_EventScript_Weather::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
-	setflashlevel 0
+	flashlevel 0
 	setweather WEATHER_NONE
 	doweather
 	msgbox MonitoringStation_Power_Text_Restore_Power
