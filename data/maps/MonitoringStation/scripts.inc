@@ -90,7 +90,6 @@ MonitoringStation_EventScript_Rocket::
 	fadeoutbgm 0
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
-	delay 10
 	playse SE_PIN
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketScared
 	waitmovement 0
@@ -107,7 +106,7 @@ MonitoringStation_EventScript_Rocket::
 	compare VAR_TEMP_1, 2
 	call_if_eq MonitoringStation_EventScript_RocketMoveNoSteps
 	delay 10
-	playse SE_DOOR
+	playse SE_WARP_OUT
 	removeobject LOCALID_ROCKET_M
 	delay 60
 	msgbox MonitoringStation_Text_RocketNo

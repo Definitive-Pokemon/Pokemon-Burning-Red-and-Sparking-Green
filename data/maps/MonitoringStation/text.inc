@@ -13,12 +13,13 @@ MonitoringStation_Text_RocketAh::
 	.string "What was that noise about?!$"
 	
 MonitoringStation_Text_RocketCheck::
-	.string "I have no choice but to check whether\n"
-	.string "some POKéMON escaped confinement.\p"
+	.string "I have to investigate.\p"
+	.string "A POKéMON may have broken out\n"
+	.string "of the containment area!\p"
 	.string "You just stay put. I will be back\n"
 	.string "in a jiffy.\p"
 	.string "NO wandering around this base,\n"
-	.string "got it?$"
+	.string "understood?$"
 	
 MonitoringStation_Text_RocketNo::
 	.string "AAAAAAAGHHHHHH!!!!$"
