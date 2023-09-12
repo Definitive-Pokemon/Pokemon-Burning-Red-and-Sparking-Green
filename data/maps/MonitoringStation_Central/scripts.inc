@@ -1,2 +1,16 @@
-MonitoringStation_Central_MapScripts::
+MonitoringStation_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Central_EventScript_OnLoad
 	.byte 0
+	
+MonitoringStation_Central_EventScript_OnLoad::
+	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Central_EventScript_PlayWeatherMusic
+	end
+	
+MonitoringStation_Central_EventScript_PlayWeatherMusic::
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Central_EventScript_DontPlayWeatherMusic
+	playbgm MUS_WEATHER_GROUDON, 1
+	end
+	
+MonitoringStation_Central_EventScript_DontPlayWeatherMusic::
+	end
+	

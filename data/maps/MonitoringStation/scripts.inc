@@ -17,12 +17,11 @@ MonitoringStation_EventScript_OnLoad::
 	end
 	
 MonitoringStation_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_PlayRocketMusic
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_DontPlayWeatherMusic
 	playbgm MUS_WEATHER_GROUDON, 1
 	end
 	
-MonitoringStation_EventScript_PlayRocketMusic::
-	playbgm MUS_ROCKET_HIDEOUT, 1
+MonitoringStation_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_EventScript_RedDoorShadows::
@@ -45,6 +44,7 @@ MonitoringStation_EventScript_RedDoor::
 MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT
 	playse SE_UNLOCK
+	waitse
 	removeobject LOCALID_RED_DOOR1
 	removeobject LOCALID_RED_DOOR2
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0

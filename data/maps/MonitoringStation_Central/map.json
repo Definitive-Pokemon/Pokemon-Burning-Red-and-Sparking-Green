@@ -2,7 +2,7 @@
   "id": "MAP_MONITORING_STATION_CENTRAL",
   "name": "MonitoringStation_Central",
   "layout": "LAYOUT_MONITORING_STATION_CENTRAL",
-  "music": "MUS_WEATHER_GROUDON",
+  "music": "MUS_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_MONITORING_STATION",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
