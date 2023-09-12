@@ -176,8 +176,8 @@ MonitoringStation_Movement_RocketMoveToPlayer::
 	step_end
 	
 MonitoringStation_Movement_RocketScared::
-	walk_in_place_down
 	emote_exclamation_mark
+	walk_in_place_down
 	step_end
 
 MonitoringStation_Movement_RocketTwoSteps::
