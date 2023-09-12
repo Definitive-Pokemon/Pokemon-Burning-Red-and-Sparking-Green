@@ -112,7 +112,7 @@ MonitoringStation_EventScript_Rocket::
 	delay 60
 	msgbox MonitoringStation_Text_RocketNo
 	closemessage
-	playbgm BGM_WEATHER_GROUDON
+	playbgm BGM_WEATHER_GROUDON, 0
 	fadeinbgm 1
 	end
 	
