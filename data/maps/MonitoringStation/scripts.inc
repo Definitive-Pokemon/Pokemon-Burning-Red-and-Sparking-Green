@@ -8,8 +8,13 @@ MonitoringStation_MapScripts::
 	
 MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-	goto_if_set FLAG_HORROR_POWER_RESTORED, setweather WEATHER_NONE
+	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
 	call MonitoringStation_EventScript_CheckBrokenElevator
+	end
+	
+MonitoringStation_EventScript_Restore_Power::
+	setweather WEATHER_NONE
+	doweather
 	end
 	
 MonitoringStation_OnFrame::
@@ -85,7 +90,6 @@ MonitoringStation_EventScript_Rocket::
 	fadeoutbgm 0
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
-	playse
 	delay 10
 	playse SE_PIN
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Movement_RocketScared
@@ -108,7 +112,7 @@ MonitoringStation_EventScript_Rocket::
 	delay 60
 	msgbox MonitoringStation_Text_RocketNo
 	closemessage
-	changebgm BGM_WEATHER_GROUDON
+	playbgm BGM_WEATHER_GROUDON
 	fadeinbgm 1
 	end
 	
