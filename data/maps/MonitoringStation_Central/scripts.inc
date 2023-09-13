@@ -51,7 +51,6 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
 	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
-	addobject LOCALID_PUSHABLE_BOULDER
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack
 	playmoncry SPECIES_MACHOKE, 5
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeSlammedAway
@@ -112,6 +111,7 @@ MonitoringStation_Central_Movement_KabutopsTurnBack::
 	step_end
 	
 MonitoringStation_Central_Movement_KabutopsAttack::
+	set_visible
 	walk_fast_left
 	walk_fast_down
 	walk_fast_left
