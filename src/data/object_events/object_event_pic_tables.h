@@ -1468,19 +1468,19 @@ const struct SpriteFrameImage gObjectEventPicTable_Sign[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_BlueDoor[] = {
-    overworld_frame(gObjectEventPic_BlueDoor, 2, 2, 0),
+    overworld_frame(gObjectEventPic_BlueDoor, 2, 4, 0),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_GreyDoor[] = {
-    overworld_frame(gObjectEventPic_GreyDoor, 2, 2, 0),
+    overworld_frame(gObjectEventPic_GreyDoor, 2, 4, 0),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_RedDoor[] = {
-    overworld_frame(gObjectEventPic_RedDoor, 2, 2, 0),
+    overworld_frame(gObjectEventPic_RedDoor, 2, 4, 0),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_YellowDoor[] = {
-    overworld_frame(gObjectEventPic_YellowDoor, 2, 2, 0),
+    overworld_frame(gObjectEventPic_YellowDoor, 2, 4, 0),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_WoodenSign[] = {
