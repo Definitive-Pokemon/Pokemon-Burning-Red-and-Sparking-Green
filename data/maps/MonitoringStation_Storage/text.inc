@@ -13,7 +13,7 @@ MonitoringStation_Storage_Text_Explain::
 	.string "Stop startling me!\p"
 	.string "Wait, you're just a kid!\n"
 	.string "You're not supposed to be here!\p"
-	.string "You seem to have no idea on\n"
+	.string "You seem to have no idea about\n"
 	.string "what's going either.\p"
 	.string "Seconds ago, I was walking through\n"
 	.string "the hallway on my way downstairs.\p"
