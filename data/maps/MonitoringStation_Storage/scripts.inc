@@ -66,7 +66,7 @@ MonitoringStation_Storage_EventScript_Rocket::
 	msgbox MonitoringStation_Storage_Text_Agh
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
 	msgbox MonitoringStation_Storage_Text_Explain
-	waitmessage
+	closemessage
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket
 	waitmovement 0
 	msgbox MonitoringStation_Storage_Text_RedKeyAdmin
