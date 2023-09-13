@@ -239,9 +239,9 @@ struct PokemonForm
     u16 baseSpecies;
     u8 formNumber;
     struct BaseStats *stats;
-    *u16 levelUpMoves[];
-    *u8 TMHMMoves[];
-    *u16 eggMoves[];
+    u16 (*levelUpMoves)[];
+    u8 (*TMHMMoves)[];
+    u16 (*eggMoves)[];
     u64 *tutorMoveFlags;
 };
 
