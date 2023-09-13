@@ -5,12 +5,15 @@
 
 MonitoringStation_Central_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Central_EventScript_OnLoad
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Central_EventScript_OnFrame
 	.byte 0
 	
 MonitoringStation_Central_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Central_EventScript_GreyDoorAdminShadows
-	call_if_unset FLAG_KABUTOPS_FIRST_APPEAR, MonitoringStation_Central_EventScript_Kabutops
 	end
+	
+MonitoringStation_Central_EventScript_OnFrame::
+	map_script_2 VAR_MONITORING_STATION_CENTRAL_STATE, 1, MonitoringStation_Central_EventScript_Kabutops
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setmetatile 2, 21, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
