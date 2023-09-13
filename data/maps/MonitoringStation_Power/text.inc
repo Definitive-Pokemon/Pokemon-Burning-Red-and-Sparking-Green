@@ -3,6 +3,6 @@ MonitoringStation_Power_Text_Restore_Power::
 	.string "Emergency doors have been\n"
 	.string "reopened.$"
 
-msgbox MonitoringStation_Power_Text_Working::
+MonitoringStation_Power_Text_Working::
 	.string "The power in this base has\n"
 	.string "been restored.$"
