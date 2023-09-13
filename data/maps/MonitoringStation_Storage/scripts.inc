@@ -1,5 +1,6 @@
 .set LOCALID_BLUE_DOOR1, 1
 .set LOCALID_BLUE_DOOR2, 2
+.set LOCALID_ROCKET_M, 3
 
 MonitoringStation_Storage_Storage_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Storage_EventScript_OnLoad
@@ -61,7 +62,7 @@ MonitoringStation_Storage_EventScript_Rocket::
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
 	msgbox MonitoringStation_Storage_Text_Explain
 	waitmessage
-	applymovement MonitoringStation_Storage_Movement_Rocket
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket
 	waitmovement 0
 	msgbox MonitoringStation_Storage_Text_RedKeyAdmin
 	setflag FLAG_HORROR_ROCKET_EXPLAINED
