@@ -9,7 +9,7 @@ MonitoringStation_Power_EventScript_OnLoad::
 	
 MonitoringStation_Power_EventScript_PlayWeatherMusic::
 	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Power_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
+	playbgm MUS_WEATHER_GROUDON, 0
 	end
 	
 MonitoringStation_Power_EventScript_DontPlayWeatherMusic::
@@ -29,8 +29,6 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	playse SE_M_CONFUSE_RAY
 	animateflash 0
 	setflashradius 0
-	fadescreen FADE_TO_WHITE
-	fadescreen FADE_FROM_WHITE
 	playse SE_SLIDING_DOOR
 	setweather WEATHER_NONE
 	doweather
