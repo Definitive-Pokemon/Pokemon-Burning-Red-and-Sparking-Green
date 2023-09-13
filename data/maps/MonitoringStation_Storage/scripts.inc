@@ -79,7 +79,7 @@ MonitoringStation_Storage_EventScript_RocketDone::
 	release
 	end
 	
-MonitoringStation_Storage_EventScript_RocketPhew
+MonitoringStation_Storage_EventScript_RocketPhew::
 	msgbox MonitoringStation_Storage_Text_Phew
 	release
 	end
