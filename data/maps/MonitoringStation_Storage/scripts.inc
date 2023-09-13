@@ -9,6 +9,7 @@ map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Storage_EventScript_OnLoad
 MonitoringStation_Storage_EventScript_OnLoad::
 	call_if_set FLAG_BLUE_DOOR_POKE, MonitoringStation_Storage_EventScript_BlueDoorPokeShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Storage_EventScript_Restore_Power
+	end
 	
 MonitoringStation_Storage_EventScript_BlueDoorPokeShadows::
 	setmetatile 19, 7, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
