@@ -935,9 +935,9 @@
 #define FLAG_BLUE_DOOR_QUARTER               0x38C
 #define FLAG_YELLOW_DOOR               0x38D
 #define FLAG_HORROR_ROCKET_EXPLAINED               0x38E
+#define FLAG_RED_DOOR_END               0x38F
 
 // Unused?
-#define FLAG_0x38F               0x38F
 #define FLAG_0x390               0x390
 #define FLAG_0x391               0x391
 #define FLAG_0x392               0x392
