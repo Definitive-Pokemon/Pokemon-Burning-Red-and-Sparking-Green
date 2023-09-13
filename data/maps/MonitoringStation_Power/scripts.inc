@@ -38,6 +38,6 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	msgbox MonitoringStation_Power_Text_Restore_Power
 	waitmessage
 	setflag FLAG_HORROR_POWER_RESTORED
-	fadeinbgm
+	fadeinbgm 1
 	release
 	end
