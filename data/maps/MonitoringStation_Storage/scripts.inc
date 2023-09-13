@@ -60,6 +60,7 @@ MonitoringStation_Storage_EventScript_Rocket::
 	lock
 	msgbox MonitoringStation_Storage_Text_Agh
 	playse SE_PIN
+	waitse
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket_Face
 	waitmovement 0
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
