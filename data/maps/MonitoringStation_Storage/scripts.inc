@@ -13,7 +13,7 @@ MonitoringStation_Storage_EventScript_OnLoad::
 	
 MonitoringStation_Storage_EventScript_PlayWeatherMusic::
 	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Storage_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 0
+	playbgm MUS_WEATHER_GROUDON, 1
 	end
 	
 MonitoringStation_Storage_EventScript_DontPlayWeatherMusic::
