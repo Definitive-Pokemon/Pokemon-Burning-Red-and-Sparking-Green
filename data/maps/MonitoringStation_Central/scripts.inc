@@ -13,7 +13,7 @@ MonitoringStation_Central_EventScript_OnLoad::
 	end
 	
 MonitoringStation_Central_EventScript_OnFrame::
-	map_script_2 VAR_MONITORING_STATION_CENTRAL_STATE, 1, MonitoringStation_Central_EventScript_Kabutops
+	map_script_2 VAR_MONITORING_STATION_CENTRAL_STATE, 0, MonitoringStation_Central_EventScript_Kabutops
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setmetatile 2, 21, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
