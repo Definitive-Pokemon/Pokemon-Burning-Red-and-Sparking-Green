@@ -71,10 +71,13 @@ MonitoringStation_Storage_EventScript_Rocket::
 	
 MonitoringStation_Storage_EventScript_RocketDone::
 	msgbox MonitoringStation_Storage_Text_Done
-	
+	release
+	end
 	
 	
 MonitoringStation_Storage_Movement_Rocket::
 	walk_in_place_up
+	delay_16
 	walk_in_place_left
+	delay_16
 	step_end
