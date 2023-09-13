@@ -23,6 +23,7 @@ MonitoringStation_Power_EventScript_Weather::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
+	animateflash 0
 	setflashradius 0
 	setweather WEATHER_NONE
 	doweather
