@@ -238,10 +238,10 @@ struct PokemonForm
 {
     u16 baseSpecies;
     u8 formNumber;
-    struct *BaseStats stats;
-    const *u16[] levelUpMoves;
-    const *u8[] TMHMMoves;
-    const *u16[] eggMoves;
+    struct BaseStats *stats;
+    const u16[] *levelUpMoves;
+    const u8[] *TMHMMoves;
+    const u16[] *eggMoves;
     u64 *tutorMoveFlags;
 };
 
