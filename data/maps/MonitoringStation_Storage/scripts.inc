@@ -58,7 +58,10 @@ MonitoringStation_Storage_EventScript_Restore_Power::
 	
 MonitoringStation_Storage_EventScript_Rocket::
 	lock
-	faceplayer
+	msgbox MonitoringStation_Storage_Text_Agh
+	playse SE_PIN
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket_Face
+	waitmovement 0
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
 	msgbox MonitoringStation_Storage_Text_Explain
 	waitmessage
@@ -80,4 +83,9 @@ MonitoringStation_Storage_Movement_Rocket::
 	delay_16
 	walk_in_place_left
 	delay_16
+	step_end
+	
+MonitoringStation_Storage_Movement_Rocket_Face
+	emote_exclamation_mark
+	walk_in_place_left
 	step_end

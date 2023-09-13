@@ -4,9 +4,13 @@ MonitoringStation_Storage_Text_BlueDoorGone::
 MonitoringStation_Storage_Text_BlueDoor::
 	.string "This door is electronically locked.\n"
 	.string "A specific key can unlock it.$"
+	
+MonitoringStation_Storage_Text_Agh::
+	.string "AAGH!!$"
 
 MonitoringStation_Storage_Text_Explain::
-	.string "AAGH!! Stop startling me!\p"
+	.string "Huh, what?!\n"
+	.string "Stop startling me!\p"
 	.string "Wait, you're just a kid!\n"
 	.string "You're not supposed to be here!\p"
 	.string "You seem to have no idea on\n"
@@ -60,6 +64,6 @@ MonitoringStation_Storage_Text_RedKeyAdmin::
 	
 MonitoringStation_Storage_Text_Done::
 	.string "Huh, what?!\n"
-	.string "I said, stop startling me!\p"
+	.string "Stop startling me!\p"
 	.string "What are you waiting for?! Restore\n"
 	.string "the power and get that RED KEYCARD!$"
