@@ -6,5 +6,5 @@ MonitoringStation_Hallway3_Text_YellowDoorGone::
 
 MonitoringStation_Hallway3_Text_Door::
 	.string "This door is electronically locked.\n"
-	.string "A specific key can unlock it.$"
+	.string "A specific keycard can unlock it.$"
 

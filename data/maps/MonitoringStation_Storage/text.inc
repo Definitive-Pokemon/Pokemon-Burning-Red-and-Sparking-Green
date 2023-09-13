@@ -3,7 +3,7 @@ MonitoringStation_Storage_Text_BlueDoorGone::
 
 MonitoringStation_Storage_Text_BlueDoor::
 	.string "This door is electronically locked.\n"
-	.string "A specific key can unlock it.$"
+	.string "A specific keycard can unlock it.$"
 	
 MonitoringStation_Storage_Text_Agh::
 	.string "AAGH!!$"

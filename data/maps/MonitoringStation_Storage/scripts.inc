@@ -86,7 +86,7 @@ MonitoringStation_Storage_Movement_Rocket::
 	delay_16
 	step_end
 	
-MonitoringStation_Storage_Movement_Rocket_Face
+MonitoringStation_Storage_Movement_Rocket_Face::
 	emote_exclamation_mark
 	walk_in_place_left
 	step_end

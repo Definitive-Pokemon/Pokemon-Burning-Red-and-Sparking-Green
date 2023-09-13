@@ -3,7 +3,7 @@ MonitoringStation_Text_RedDoorGone::
 
 MonitoringStation_Text_RedDoor::
 	.string "This door is electronically locked.\n"
-	.string "A specific key can unlock it.$"
+	.string "A specific keycard can unlock it.$"
 
 MonitoringStation_Text_OutOfOrder::
 	.string "The elevator seems to be out\n"
