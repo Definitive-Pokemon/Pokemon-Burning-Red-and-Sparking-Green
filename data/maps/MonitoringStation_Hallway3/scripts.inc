@@ -56,7 +56,7 @@ MonitoringStation_Hallway3_EventScript_YellowDoor::
 	compare VAR_RESULT, TRUE
 	goto_if_eq MonitoringStation_Hallway3_EventScript_RemoveYellowDoor
 	textcolor 2
-	msgbox MonitoringStation_Hallway3_Text_YellowDoor
+	msgbox MonitoringStation_Hallway3_Text_Door
 	closemessage
 	release
 	end
