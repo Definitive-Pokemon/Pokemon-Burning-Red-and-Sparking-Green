@@ -54,7 +54,7 @@ MonitoringStation_Hallway3_EventScript_YellowDoor::
 	end
 	
 MonitoringStation_Hallway3_EventScript_RemoveYellowDoor::
-	setflag FLAG_BLUE_DOOR_POKE
+	setflag FLAG_YELLOW_DOOR
 	playse SE_UNLOCK
 	waitse
 	removeobject LOCALID_YELLOW_DOOR1
