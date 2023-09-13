@@ -60,10 +60,10 @@ MonitoringStation_Storage_EventScript_Rocket::
 	lock
 	msgbox MonitoringStation_Storage_Text_Agh
 	playse SE_PIN
-	waitse
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket_Ex
 	waitmovement 0
 	faceplayer
+	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Storage_EventScript_RocketPhew
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
 	msgbox MonitoringStation_Storage_Text_Explain
 	closemessage
@@ -79,6 +79,10 @@ MonitoringStation_Storage_EventScript_RocketDone::
 	release
 	end
 	
+MonitoringStation_Storage_EventScript_RocketPhew
+	msgbox MonitoringStation_Storage_Text_Phew
+	release
+	end
 	
 MonitoringStation_Storage_Movement_Rocket::
 	walk_in_place_up
