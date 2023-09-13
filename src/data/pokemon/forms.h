@@ -18,5 +18,3 @@ const struct PokemonForm gPokemonForms [] =
         .tutorMoveFlags = sFossilizedKabutopsTutorLearnsets;
     },
 };
-
-#define NUM_TOTAL_VARIANTS NELEMS(gPokemonForms)
