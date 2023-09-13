@@ -21,11 +21,11 @@ MonitoringStation_Hallway3_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_Hallway3_EventScript_YellowDoorShadows::
-	setmetatile 11, 19, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
-	setmetatile 12, 20, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 13, 20, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 12, 21, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 13, 21, METATILE_SilphCo_HideoutFloor, 0
+	setmetatile 11, 19, METATILE_SilphCo_Floor_ShadeFull, 0
+	setmetatile 12, 20, METATILE_SilphCo_Floor, 0
+	setmetatile 13, 20, METATILE_SilphCo_Floor, 0
+	setmetatile 12, 21, METATILE_SilphCo_Floor, 0
+	setmetatile 13, 21, METATILE_SilphCo_Floor, 0
 	return
 	
 MonitoringStation_Hallway3_EventScript_BlueDoor::
@@ -68,11 +68,11 @@ MonitoringStation_Hallway3_EventScript_RemoveYellowDoor::
 	removeobject LOCALID_YELLOW_DOOR1
 	removeobject LOCALID_YELLOW_DOOR2
 	removeobject LOCALID_YELLOW_DOOR3
-	setmetatile 11, 19, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
-	setmetatile 12, 20, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 13, 20, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 12, 21, METATILE_SilphCo_HideoutFloor, 0
-	setmetatile 13, 21, METATILE_SilphCo_HideoutFloor, 0
+	setmetatile 11, 19, METATILE_SilphCo_Floor_ShadeFull, 0
+	setmetatile 12, 20, METATILE_SilphCo_Floor, 0
+	setmetatile 13, 20, METATILE_SilphCo_Floor, 0
+	setmetatile 12, 21, METATILE_SilphCo_Floor, 0
+	setmetatile 13, 21, METATILE_SilphCo_Floor, 0
 	special DrawWholeMapView
 	msgbox MonitoringStation_Hallway3_Text_YellowDoorGone
 	closemessage
