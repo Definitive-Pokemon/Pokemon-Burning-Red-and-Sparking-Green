@@ -65,7 +65,8 @@ MonitoringStation_Storage_Text_RedKeyAdmin::
 	.string "Restore the power and get that\n"
 	.string "RED KEYCARD!\p"
 	.string "Me? I'm just going to remain here\n"
-	.string "while you do all the work.$"
+	.string "while you do all the work.\p"
+	.string "What else am I supposed to do!$"
 	
 MonitoringStation_Storage_Text_Done::
 	.string "Huh, what?!\n"
