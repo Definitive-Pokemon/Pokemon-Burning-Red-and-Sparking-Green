@@ -1584,8 +1584,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonNoItemDefaultMoves *partyData = sTrainers[trainerNum].party.NoItemDefaultMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    // because forms always have the same names, hash values are equivalent. Simply
+                    // make sure it's a valid species number found in the global list 
+                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1598,8 +1601,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonNoItemCustomMoves *partyData = sTrainers[trainerNum].party.NoItemCustomMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1617,8 +1621,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonItemDefaultMoves *partyData = sTrainers[trainerNum].party.ItemDefaultMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1632,9 +1637,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
                 {
                     const struct TrainerMonItemCustomMoves *partyData = sTrainers[trainerNum].party.ItemCustomMoves;
-
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += ((nameHash << 8) - partyData[i].abilityNum);
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1667,8 +1672,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                     u8 gender;
                     u8 friendship = 255;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[tempSpecies][j];
                     if (sTrainers[trainerNum].encounterMusic_gender & 0x80)
                         gender = MON_FEMALE;
                     else
@@ -2332,8 +2338,9 @@ static void BattleStartClearSetData(void)
     gBattleStruct->runTries = 0;
     gBattleStruct->safariGoNearCounter = 0;
     gBattleStruct->safariPkblThrowCounter = 0;
-    *(&gBattleStruct->safariCatchFactor) = gBaseStats[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].catchRate * 100 / 1275;
-    *(&gBattleStruct->safariEscapeFactor) = gBaseStats[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].safariZoneFleeRate * 100 / 1275;
+    struct BaseStats safariStats = GetBaseStats(GetFormAndSpeciesFromMon(gEnemyParty[0]));
+    *(&gBattleStruct->safariCatchFactor) = safariStats.catchRate * 100 / 1275;
+    *(&gBattleStruct->safariEscapeFactor) = safariStats.safariZoneFleeRate * 100 / 1275;
     if (gBattleStruct->safariEscapeFactor <= 1)
         gBattleStruct->safariEscapeFactor = 2;
     gBattleStruct->wildVictorySong = 0;

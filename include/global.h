@@ -116,7 +116,7 @@ extern u8 gStringVar4[];
 
 #define ROUND_BITS_TO_BYTES(numBits)(((numBits) / 8) + (((numBits) % 8) ? 1 : 0))
 
-#define DEX_FLAGS_NO (ROUND_BITS_TO_BYTES(NUM_SPECIES))
+#define DEX_FLAGS_NO (ROUND_BITS_TO_BYTES(NUM_SPECIES + NUM_TOTAL_VARIANTS))
 #define NUM_FLAG_BYTES (ROUND_BITS_TO_BYTES(FLAGS_COUNT))
 
 #define TOTAL_BOXES_COUNT       14

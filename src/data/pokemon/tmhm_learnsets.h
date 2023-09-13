@@ -10873,6 +10873,12 @@ static const u8 sChimechoTMHMLearnset[] =
     0xFF,
 };
 
+static const u8 sFossilizedKabutopsTMHMLearnset[] =
+{
+    TMHM(TM39_ROCK_TOMB),
+    0xFF,
+};
+
 const u8 *const gTMHMLearnsets[] =
 {
     [SPECIES_NONE] = sBulbasaurTMHMLearnset,

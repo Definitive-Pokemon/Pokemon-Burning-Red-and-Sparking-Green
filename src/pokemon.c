@@ -2931,13 +2931,21 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     checksum = CalculateBoxMonChecksum(boxMon);
     SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &checksum);
     EncryptBoxMon(boxMon);
+    u8 form = GetFormFromSpecies(species);
+    SetBoxMonData(boxMon, MON_DATA_FORME, &form);
+    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[GetBaseStats(species).growthRate][level]);
+    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &GetBaseStats(species).friendship);
+    if (GetBaseStats(species).abilities[1])
+    {
+        value = personality & 1;
+        SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
+    }
+    species = RemoveFormFromSpecies(species);
     GetSpeciesName(speciesName, species);
     SetBoxMonData(boxMon, MON_DATA_NICKNAME, speciesName);
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
-    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gBaseStats[species].growthRate][level]);
-    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gBaseStats[species].friendship);
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
@@ -2983,12 +2991,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
         iv = (value & 0x7C00) >> 10;
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
-    }
-
-    if (gBaseStats[species].abilities[1])
-    {
-        value = personality & 1;
-        SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
 
     GiveBoxMonInitialMoveset(boxMon);
@@ -3041,9 +3043,10 @@ void CreateMonWithGenderNatureAbility(struct Pokemon *mon, u16 species, u8 level
 {
     u32 personality;
 
-    if(gBaseStats[species].genderRatio == MON_GENDERLESS
-    || gBaseStats[species].genderRatio == MON_FEMALE
-    || gBaseStats[species].genderRatio == MON_MALE) //don't get stuck on forcing gender if set gender
+    u8 genderRatio = GetBaseStats(u16 species).genderRatio;
+    if(genderRatio == MON_GENDERLESS
+    || genderRatio == MON_FEMALE
+    || genderRatio == MON_MALE) //don't get stuck on forcing gender if set gender
     {
         do
         {

@@ -233,6 +233,18 @@ struct BaseStats
             u8 noFlip : 1;
 };
 
+/* Represents everything about the variant of a pokemon species (form) e.g. Alolan */
+struct PokemonForm
+{
+    u16 baseSpecies;
+    u8 formNumber;
+    *struct BaseStats stats;
+    *const u16[] levelUpMoves;
+    *const u8[] TMHMMoves;
+    *const u16[] eggMoves;
+    *u64 tutorMoveFlags;
+};
+
 struct BattleMove
 {
     u8 effect;
