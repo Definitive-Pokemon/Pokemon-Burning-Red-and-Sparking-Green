@@ -71,16 +71,22 @@ MonitoringStation_Storage_EventScript_Rocket::
 	waitmovement 0
 	msgbox MonitoringStation_Storage_Text_RedKeyAdmin
 	setflag FLAG_HORROR_ROCKET_EXPLAINED
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_RocketRight
+	waitmovement 0
 	release
 	end
 	
 MonitoringStation_Storage_EventScript_RocketDone::
 	msgbox MonitoringStation_Storage_Text_Done
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_RocketRight
+	waitmovement 0
 	release
 	end
 	
 MonitoringStation_Storage_EventScript_RocketPhew::
 	msgbox MonitoringStation_Storage_Text_Phew
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_RocketRight
+	waitmovement 0
 	release
 	end
 	
@@ -93,4 +99,8 @@ MonitoringStation_Storage_Movement_Rocket::
 	
 MonitoringStation_Storage_Movement_Rocket_Ex::
 	emote_exclamation_mark
+	step_end
+	
+MonitoringStation_Storage_Movement_RocketRight::
+	walk_in_place_right
 	step_end

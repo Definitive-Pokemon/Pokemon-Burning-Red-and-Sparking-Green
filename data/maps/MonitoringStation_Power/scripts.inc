@@ -23,19 +23,21 @@ MonitoringStation_Power_EventScript_Weather::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
+	fadeoutbgm 0
 	playse SE_PC_LOGIN
 	delay 60
 	playse SE_M_CONFUSE_RAY
 	animateflash 0
 	setflashradius 0
 	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
 	playse SE_SLIDING_DOOR
 	setweather WEATHER_NONE
 	doweather
-	fadescreen FADE_FROM_WHITE
 	delay 60
 	msgbox MonitoringStation_Power_Text_Restore_Power
 	waitmessage
 	setflag FLAG_HORROR_POWER_RESTORED
+	fadeinbgm
 	release
 	end
