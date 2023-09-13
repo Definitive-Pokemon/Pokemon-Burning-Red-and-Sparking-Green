@@ -2,7 +2,7 @@
 .set LOCALID_BLUE_DOOR2, 2
 .set LOCALID_ROCKET_M, 3
 
-MonitoringStation_Storage_Storage_MapScripts::
+MonitoringStation_Storage_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Storage_EventScript_OnLoad
 	.byte 0
 
