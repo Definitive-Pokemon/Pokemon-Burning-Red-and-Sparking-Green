@@ -1,4 +1,4 @@
-#include "include/constants/species.h"
+#include "species.h"
 
 #define FORM_FLAG_SHIFT 14
 #define FIRST_FORM (0x1 << FORM_FLAG_SHIFT)
