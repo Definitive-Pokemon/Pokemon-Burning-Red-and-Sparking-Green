@@ -35,6 +35,7 @@ MonitoringStation_EventScript_RedDoor::
 MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT
 	playse SE_UNLOCK
+	waitse
 	removeobject LOCALID_RED_DOOR1
 	removeobject LOCALID_RED_DOOR2
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
