@@ -33,6 +33,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	setweather WEATHER_NONE
 	doweather
 	fadescreen FADE_FROM_WHITE
+	delay 60
 	msgbox MonitoringStation_Power_Text_Restore_Power
 	waitmessage
 	setflag FLAG_HORROR_POWER_RESTORED
