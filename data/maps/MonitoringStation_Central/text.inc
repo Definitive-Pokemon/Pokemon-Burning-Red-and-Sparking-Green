@@ -6,6 +6,6 @@ MonitoringStation_Central_Text_RocketAttack::
 	.string "MACHOKE!\n"
 	.string "Use VITAL THROW!!$"
 	
-msgbox MonitoringStation_Central_Text_MachokeNoise::
+MonitoringStation_Central_Text_MachokeNoise::
 	.string "MACHOKE: Gwoooh!$"
 	
