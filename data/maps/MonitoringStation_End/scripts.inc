@@ -7,14 +7,6 @@ map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_End_EventScript_OnLoad
 
 MonitoringStation_End_EventScript_OnLoad::
 	call_if_set FLAG_RED_DOOR_END, MonitoringStation_End_EventScript_RedDoorEndShadows
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_End_EventScript_PlayWeatherMusic
-	
-MonitoringStation_End_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_End_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_End_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_End_EventScript_RedDoorEndShadows::

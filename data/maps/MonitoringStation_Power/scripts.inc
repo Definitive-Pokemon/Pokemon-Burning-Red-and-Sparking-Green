@@ -4,17 +4,8 @@ MonitoringStation_Power_MapScripts::
 
 MonitoringStation_Power_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Weather
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Power_EventScript_PlayWeatherMusic
 	end
-	
-MonitoringStation_Power_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Power_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_Power_EventScript_DontPlayWeatherMusic::
-	end
-	
+
 MonitoringStation_Power_EventScript_Weather::
 	setflashradius 0
 	setweather WEATHER_NONE

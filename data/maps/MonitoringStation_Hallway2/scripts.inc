@@ -4,15 +4,6 @@ MonitoringStation_Hallway2_MapScripts::
 
 MonitoringStation_Hallway2_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Hallway2_EventScript_Weather
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Hallway2_EventScript_PlayWeatherMusic
-	end
-	
-MonitoringStation_Hallway2_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Hallway2_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_Hallway2_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_Hallway2_EventScript_Weather::

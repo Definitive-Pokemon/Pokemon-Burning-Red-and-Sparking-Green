@@ -1089,6 +1089,48 @@ static u16 GetWarpDestinationMusic(void)
     return music;
 }
 
+static u16 GetCurrLocationDefaultMusic(void)
+{
+    u16 music;
+    music = GetLocationMusic(&gSaveBlock1Ptr->location);
+    if(music == MUS_ROCKET_HIDEOUT && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    {
+        music = MUS_WEATHER_GROUDON;
+    }
+    return music;
+}
+
+static u16 GetWarpDestinationMusic(void)
+{
+    u16 music = GetLocationMusic(&sWarpDestination);
+    if(music == MUS_ROCKET_HIDEOUT && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    {
+        music = MUS_WEATHER_GROUDON;
+    }
+    return music;
+}
+
+static u16 GetCurrLocationDefaultMusic(void)
+{
+    u16 music;
+    music = GetLocationMusic(&gSaveBlock1Ptr->location);
+    if(music == MUS_WEATHER_GROUDON && FlagGet(FLAG_HORROR_DONE))
+    {
+        music = MUS_ROCKET_HIDEOUT;
+    }
+    return music;
+}
+
+static u16 GetWarpDestinationMusic(void)
+{
+    u16 music = GetLocationMusic(&sWarpDestination);
+    if(music == MUS_WEATHER_GROUDON && FlagGet(FLAG_HORROR_DONE))
+    {
+        music = MUS_ROCKET_HIDEOUT;
+    }
+    return music;
+}
+
 void Overworld_ResetMapMusic(void)
 {
     ResetMapMusic();

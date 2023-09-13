@@ -10,14 +10,6 @@ map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Hallway3_EventScript_OnLoad
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
 	call_if_set FLAG_YELLOW_DOOR MonitoringStation_Hallway3_EventScript_YellowDoorShadows
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Hallway3_EventScript_PlayWeatherMusic
-	
-MonitoringStation_Hallway3_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Hallway3_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_Hallway3_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_Hallway3_EventScript_YellowDoorShadows::

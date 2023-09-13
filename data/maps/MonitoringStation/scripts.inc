@@ -13,15 +13,6 @@ MonitoringStation_EventScript_OnLoad::
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShortShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
 	call MonitoringStation_EventScript_CheckBrokenElevator
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_EventScript_PlayWeatherMusic
-	end
-	
-MonitoringStation_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_EventScript_DontPlayWeatherMusic::
 	end
 	
 MonitoringStation_EventScript_RedDoorShortShadows::

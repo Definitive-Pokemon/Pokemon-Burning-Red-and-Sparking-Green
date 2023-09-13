@@ -4,7 +4,6 @@ MonitoringStation_Central_MapScripts::
 	
 MonitoringStation_Central_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Central_EventScript_GreyDoorAdminShadows
-	goto_if_set FLAG_HORROR_ROCKET_MOVED, MonitoringStation_Central_EventScript_PlayWeatherMusic
 	end
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
@@ -14,14 +13,6 @@ MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setweather WEATHER_NONE
 	doweather
 	return
-	
-MonitoringStation_Central_EventScript_PlayWeatherMusic::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Central_EventScript_DontPlayWeatherMusic
-	playbgm MUS_WEATHER_GROUDON, 1
-	end
-	
-MonitoringStation_Central_EventScript_DontPlayWeatherMusic::
-	end
 	
 MonitoringStation_Central_EventScript_GreyDoors::
 	lock
