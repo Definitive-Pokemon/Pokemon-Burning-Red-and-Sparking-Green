@@ -58,12 +58,12 @@ MonitoringStation_Storage_EventScript_Restore_Power::
 	
 MonitoringStation_Storage_EventScript_Rocket::
 	lock
-	faceplayer
+	msgbox MonitoringStation_Storage_Text_Agh
 	playse SE_PIN
 	waitse
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Storage_Movement_Rocket_Ex
 	waitmovement 0
-	msgbox MonitoringStation_Storage_Text_Agh
+	faceplayer
 	goto_if_set FLAG_HORROR_ROCKET_EXPLAINED, MonitoringStation_Storage_EventScript_RocketDone
 	msgbox MonitoringStation_Storage_Text_Explain
 	closemessage
