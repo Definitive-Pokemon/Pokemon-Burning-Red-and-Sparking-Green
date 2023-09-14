@@ -45,7 +45,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	playmoncry SPECIES_MACHOKE, 2
 	textcolor 2
 	msgbox MonitoringStation_Central_Text_MachokeNoise
-	waitmessage
+	closemessage
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
