@@ -48,13 +48,14 @@ MonitoringStation_Central_EventScript_Kabutops::
 	closemessage
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack
+	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
-	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack2
 	waitmovement 0
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack
+	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
-	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack2
+	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
 	clearflag FLAG_HORROR_HIDE_BOULDER
 	addobject LOCALID_PUSHABLE_BOULDER
@@ -97,36 +98,30 @@ MonitoringStation_Central_Movement_MachokeAttack::
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
-	step_end
-	
-MonitoringStation_Central_Movement_KabutopsTurn::
-	walk_in_place_right
-	step_end
-
-MonitoringStation_Central_Movement_MachokeAttack2::
 	walk_fast_right
 	walk_in_place_right
 	delay_16
 	walk_in_place_left
 	step_end
 	
+MonitoringStation_Central_Movement_KabutopsTurn::
+	walk_in_place_right
+	step_end
+	
 MonitoringStation_Central_Movement_MachokeAttackBack::
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
-	step_end
-	
-MonitoringStation_Central_Movement_KabutopsTurnBack::
-	walk_in_place_left
-	step_end
-
-MonitoringStation_Central_Movement_MachokeAttackBack2::
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
 	walk_in_place_left
 	delay_16
 	walk_in_place_right
+	step_end
+	
+MonitoringStation_Central_Movement_KabutopsTurnBack::
+	walk_in_place_left
 	step_end
 	
 MonitoringStation_Central_Movement_KabutopsAttack::
