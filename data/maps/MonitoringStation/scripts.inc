@@ -34,7 +34,7 @@ MonitoringStation_EventScript_RedDoor::
 	
 MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT
-	playse SE_FALL
+	playse SE_RS_DOOR
 	waitse
 	removeobject LOCALID_RED_DOOR1
 	removeobject LOCALID_RED_DOOR2
