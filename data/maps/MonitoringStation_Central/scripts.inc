@@ -66,8 +66,8 @@ MonitoringStation_Central_EventScript_Kabutops::
 	end
 
 MonitoringStation_Central_Movement_PanToActionFromTop::
-	walk_slow_down_right
-	walk_slow_down_right
+	walk_slow_southeast
+	walk_slow_southeast
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
