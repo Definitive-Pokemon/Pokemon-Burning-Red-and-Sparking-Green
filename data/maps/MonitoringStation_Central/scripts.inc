@@ -200,15 +200,30 @@ MonitoringStation_Central_Movement_MachokeSlammedAway::
 	
 MonitoringStation_Central_Movement_KabutopsWalkThrough::
 	walk_slow_left
-	delay_64
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_slow_left
-	delay_64
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_slow_left
-	delay_64
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_slow_left
-	delay_64
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_slow_left
-	delay_64
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	step_end
 	
 MonitoringStation_Central_Movement_RocketTalk2::
@@ -217,17 +232,23 @@ MonitoringStation_Central_Movement_RocketTalk2::
 	
 MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	walk_left
-	delay_32
+	delay_16
+	delay_16
 	step_end
 	
 MonitoringStation_Central_Movement_RocketTalk3::
