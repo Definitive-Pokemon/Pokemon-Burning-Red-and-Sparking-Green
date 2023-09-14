@@ -19,7 +19,7 @@
 #include "link.h"
 #include "m4a.h"
 #include "pokedex.h"
-#include "pokemon_forms_functions.c"
+#include "pokemon_forms_functions.h"
 #include "strings.h"
 #include "overworld.h"
 #include "party_menu.h"
