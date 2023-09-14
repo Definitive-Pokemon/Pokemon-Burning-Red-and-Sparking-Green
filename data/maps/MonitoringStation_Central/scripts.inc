@@ -39,6 +39,8 @@ MonitoringStation_Central_EventScript_Kabutops::
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromTop
 	waitmovement 0
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk
+	waitmovement 0
 	textcolor 0
 	msgbox MonitoringStation_Central_Text_RocketAttack
 	waitmessage
@@ -79,14 +81,21 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough
 	waitmovement 0
+	delay 60
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk2
+	waitmovement 0
 	msgbox MonitoringStation_Central_Text_RocketNo
 	closemessage
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough2
 	waitmovement 0
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk3
+	waitmovement 0
+	delay 200
 	msgbox MonitoringStation_Central_Text_RocketOh
 	closemessage
+	delay 100
 	message MonitoringStation_Central_Text_RocketAh
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketRun
 	waitmovement 0
@@ -117,6 +126,10 @@ MonitoringStation_Central_Movement_PanToActionFromTop::
 	walk_slow_down
 	walk_slow_down
 	walk_slow_right
+	step_end
+	
+MonitoringStation_Central_Movement_RocketTalk::
+	walk_in_place_right
 	step_end
 
 MonitoringStation_Central_Movement_MachokeAttack::
@@ -198,6 +211,10 @@ MonitoringStation_Central_Movement_KabutopsWalkThrough::
 	delay_64
 	step_end
 	
+MonitoringStation_Central_Movement_RocketTalk2::
+	walk_in_place_right
+	step_end
+	
 MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	walk_left
 	delay_32
@@ -211,6 +228,10 @@ MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	delay_32
 	walk_left
 	delay_32
+	step_end
+	
+MonitoringStation_Central_Movement_RocketTalk3::
+	walk_in_place_left
 	step_end
 	
 MonitoringStation_Central_Movement_RocketRun::
