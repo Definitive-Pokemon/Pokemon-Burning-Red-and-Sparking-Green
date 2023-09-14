@@ -61,10 +61,11 @@ MonitoringStation_Central_EventScript_Kabutops::
 	addobject LOCALID_PUSHABLE_BOULDER
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack
 	waitmovement 0
-	playse SE_BANG
+	playse SE_FALL
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack2
 	waitmovement 0
 	playmoncry SPECIES_MACHOKE, 5
+	playse SE_BANG
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeSlammedAway
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack3
 	waitmovement 0
