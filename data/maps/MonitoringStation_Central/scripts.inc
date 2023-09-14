@@ -50,14 +50,12 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
-	waitmovement 0
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack2
 	waitmovement 0
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
-	waitmovement 0
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack2
 	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
@@ -76,18 +74,18 @@ MonitoringStation_Central_EventScript_Kabutops::
 	delay 100
 	textcolor 0
 	msgbox MonitoringStation_Central_Text_RocketWhat
-	waitmessage
-	playmoncry SPECIES_KABUTOPS, 9
+	closemessage
+	playmoncry SPECIES_KABUTOPS, 11
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough
 	waitmovement 0
 	msgbox MonitoringStation_Central_Text_RocketNo
-	waitmessage
+	closemessage
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough2
 	msgbox MonitoringStation_Central_Text_RocketOh
-	waitmessage
+	closemessage
 	msgbox MonitoringStation_Central_Text_RocketAh
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketRun
 	waitmovement 0
@@ -200,6 +198,8 @@ MonitoringStation_Central_Movement_KabutopsWalkThrough::
 	step_end
 	
 MonitoringStation_Central_Movement_KabutopsWalkThrough2::
+	walk_left
+	delay_16
 	walk_left
 	delay_16
 	walk_left
