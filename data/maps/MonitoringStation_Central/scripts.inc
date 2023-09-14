@@ -33,6 +33,7 @@ MonitoringStation_Central_EventScript_GreyDoors::
 	
 MonitoringStation_Central_EventScript_Kabutops::
 	lockall
+	setflag FLAG_HORROR_HIDE_BOULDER
 	fadeoutbgm 0
 	delay 60
 	special SpawnCameraObject
@@ -45,15 +46,18 @@ MonitoringStation_Central_EventScript_Kabutops::
 	textcolor 2
 	msgbox MonitoringStation_Central_Text_MachokeNoise
 	waitmessage
+	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
 	waitmovement 0
+	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
 	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
+	addobject LOCALID_PUSHABLE_BOULDER
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack
 	playmoncry SPECIES_MACHOKE, 5
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeSlammedAway
@@ -112,7 +116,6 @@ MonitoringStation_Central_Movement_KabutopsTurnBack::
 	step_end
 	
 MonitoringStation_Central_Movement_KabutopsAttack::
-	set_visible
 	walk_fast_left
 	walk_fast_down
 	walk_fast_left
