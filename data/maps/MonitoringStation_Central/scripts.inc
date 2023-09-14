@@ -70,7 +70,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmovement 0
 	playmoncry SPECIES_MACHOKE, 5
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeSlammedAway
-	applymovement PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack3
+	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack3
 	waitmovement 0
 	removeobject LOCALID_MACHOKE
 	releaseall
