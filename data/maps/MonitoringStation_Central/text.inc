@@ -16,7 +16,7 @@ MonitoringStation_Central_Text_RocketNo::
 	.string "N-no! Wait, NO!!$"
 	
 MonitoringStation_Central_Text_RocketOh::
-	.string "Huh? I've b-been s-s-p-pared?$"
+	.string "Huh? It went… r-right through me?$"
 	
 MonitoringStation_Central_Text_RocketAh::
 	.string "Waaaaaaaaaaaaaaaaaaahh!!!$"
