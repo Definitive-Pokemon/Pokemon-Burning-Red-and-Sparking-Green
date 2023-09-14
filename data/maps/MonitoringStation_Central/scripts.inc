@@ -34,11 +34,12 @@ MonitoringStation_Central_EventScript_GreyDoors::
 	
 MonitoringStation_Central_EventScript_Kabutops::
 	lockall
-	fadeoutbgm 0
+	fadeoutbgm 1
 	delay 60
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromTop
 	waitmovement 0
+	special RemoveCameraObject
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk
 	waitmovement 0
 	textcolor 0
@@ -101,6 +102,11 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmovement 0
 	playse SE_EXIT
 	waitse
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromBottom
+	waitmovement 0
+	special RemoveCameraObject
+	fadeinbgm 1
 	removeobject LOCALID_MACHOKE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	removeobject LOCALID_ROCKET_M
@@ -280,4 +286,25 @@ MonitoringStation_Central_Movement_RocketRun::
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
+	step_end
+	
+MonitoringStation_Central_Movement_PanToActionFromBottom::
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_left
 	step_end
