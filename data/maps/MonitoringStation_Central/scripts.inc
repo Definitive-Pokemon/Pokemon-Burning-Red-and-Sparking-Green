@@ -84,9 +84,10 @@ MonitoringStation_Central_EventScript_Kabutops::
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough2
+	waitmovement 0
 	msgbox MonitoringStation_Central_Text_RocketOh
 	closemessage
-	msgbox MonitoringStation_Central_Text_RocketAh
+	message MonitoringStation_Central_Text_RocketAh
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketRun
 	waitmovement 0
 	playse SE_EXIT
@@ -186,30 +187,30 @@ MonitoringStation_Central_Movement_MachokeSlammedAway::
 	
 MonitoringStation_Central_Movement_KabutopsWalkThrough::
 	walk_slow_left
-	delay_16
+	delay_64
 	walk_slow_left
-	delay_16
+	delay_64
 	walk_slow_left
-	delay_16
+	delay_64
 	walk_slow_left
-	delay_16
+	delay_64
 	walk_slow_left
-	delay_16
+	delay_64
 	step_end
 	
 MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	walk_left
-	delay_16
+	delay_32
 	walk_left
-	delay_16
+	delay_32
 	walk_left
-	delay_16
+	delay_32
 	walk_left
-	delay_16
+	delay_32
 	walk_left
-	delay_16
+	delay_32
 	walk_left
-	delay_16
+	delay_32
 	step_end
 	
 MonitoringStation_Central_Movement_RocketRun::
