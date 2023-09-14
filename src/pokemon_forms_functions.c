@@ -25,7 +25,7 @@ u16 RemoveFormFromSpecies(u16 species)
 }
 // retrieves the basestats for us, regardless of whether it is a form or not
 // work on it returning a pointer instead?
-struct *BaseStats GetBaseStats(u16 species)
+struct BaseStats * GetBaseStats(u16 species)
 {
     if(SpeciesIsForm(species)) 
     {
@@ -48,7 +48,7 @@ struct *BaseStats GetBaseStats(u16 species)
     }
 }
 
-u16 GetFormAndSpeciesFromMon(struct *Pokemon mon)
+u16 GetFormAndSpeciesFromMon(struct Pokemon * mon)
 {
     u16 result = GetMonData(mon, MON_DATA_SPECIES);
     u8 form = GetMonData(mon, MON_DATA_FORME);
