@@ -101,6 +101,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketRun
 	waitmovement 0
 	playse SE_EXIT
+	closemessage
 	waitse
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromBottom
@@ -110,6 +111,8 @@ MonitoringStation_Central_EventScript_Kabutops::
 	removeobject LOCALID_MACHOKE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	removeobject LOCALID_ROCKET_M
+	setflag FLAG_KABUTOPS_FIRST_APPEAR
+	setvar VAR_MONITORING_STATION_CENTRAL_STATE, 1
 	releaseall
 	end
 
