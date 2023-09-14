@@ -1068,35 +1068,6 @@ static u16 GetLocationMusic(struct WarpData * warp)
     return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
 
-static u16 GetCurrLocationDefaultMusic(void)
-{
-    u16 music;
-    music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
-    {
-        music = MUS_GSC_PEWTER;
-    }
-    else if(IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
-    {
-        music = MUS_WEATHER_GROUDON;
-    }
-    return music;
-}
-
-static u16 GetWarpDestinationMusic(void)
-{
-    u16 music = GetLocationMusic(&sWarpDestination);
-    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
-    {
-        music = MUS_GSC_PEWTER;
-    }
-    else if(IsWarpInsideMonitoringStation(&sWarpDestination) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
-    {
-        music = MUS_WEATHER_GROUDON;
-    }
-    return music;
-}
-
 static bool8 IsWarpInsideMonitoringStation(struct WarpData * warp)
 {
     bool8 result = FALSE;
@@ -1119,6 +1090,35 @@ static bool8 IsWarpInsideMonitoringStation(struct WarpData * warp)
         }
     }
     return result;
+}
+
+static u16 GetCurrLocationDefaultMusic(void)
+{
+    u16 music;
+    music = GetLocationMusic(&gSaveBlock1Ptr->location);
+    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
+    {
+        music = MUS_GSC_PEWTER;
+    }
+    else if((bool8)IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    {
+        music = MUS_WEATHER_GROUDON;
+    }
+    return music;
+}
+
+static u16 GetWarpDestinationMusic(void)
+{
+    u16 music = GetLocationMusic(&sWarpDestination);
+    if(music == MUS_SILPH && FlagGet(FLAG_HIDE_SILPH_ROCKETS))
+    {
+        music = MUS_GSC_PEWTER;
+    }
+    else if((bool8)IsWarpInsideMonitoringStation(&sWarpDestination) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    {
+        music = MUS_WEATHER_GROUDON;
+    }
+    return music;
 }
 
 void Overworld_ResetMapMusic(void)
