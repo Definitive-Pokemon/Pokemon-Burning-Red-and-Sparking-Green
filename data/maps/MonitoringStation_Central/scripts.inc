@@ -40,6 +40,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromTop
 	waitmovement 0
 	special RemoveCameraObject
+	delay 60
 	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk
 	waitmovement 0
 	textcolor 0
@@ -75,6 +76,8 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack3
 	waitmovement 0
 	delay 100
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk
+	waitmovement 0
 	textcolor 0
 	msgbox MonitoringStation_Central_Text_RocketWhat
 	closemessage
@@ -83,7 +86,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk2
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk
 	waitmovement 0
 	msgbox MonitoringStation_Central_Text_RocketNo
 	closemessage
@@ -91,7 +94,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough2
 	waitmovement 0
-	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk3
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketTalk2
 	waitmovement 0
 	delay 200
 	msgbox MonitoringStation_Central_Text_RocketOh
@@ -103,6 +106,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	playse SE_EXIT
 	closemessage
 	waitse
+	setobjectxyperm 7, 14, 17
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Central_Movement_PanToActionFromBottom
 	waitmovement 0
@@ -235,10 +239,6 @@ MonitoringStation_Central_Movement_KabutopsWalkThrough::
 	delay_16
 	step_end
 	
-MonitoringStation_Central_Movement_RocketTalk2::
-	walk_in_place_right
-	step_end
-	
 MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	walk_left
 	delay_16
@@ -258,9 +258,15 @@ MonitoringStation_Central_Movement_KabutopsWalkThrough2::
 	walk_left
 	delay_16
 	delay_16
+	walk_left
+	delay_16
+	delay_16
+	walk_left
+	delay_16
+	delay_16
 	step_end
 	
-MonitoringStation_Central_Movement_RocketTalk3::
+MonitoringStation_Central_Movement_RocketTalk2::
 	walk_in_place_left
 	step_end
 	
