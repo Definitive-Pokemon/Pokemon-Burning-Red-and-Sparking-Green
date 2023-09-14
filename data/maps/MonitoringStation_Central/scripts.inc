@@ -1,7 +1,7 @@
 .set LOCALID_KABUTOPS_SHADOW, 1
 .set LOCALID_ROCKET_M, 2
 .set LOCALID_MACHOKE, 3
-.set LOCALID_PUSHABLE_BOULDER, 4
+.set LOCALID_PUSHABLE_BOULDER, 7
 
 MonitoringStation_Central_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Central_EventScript_OnLoad
