@@ -10,6 +10,7 @@ MonitoringStation_Central_MapScripts::
 	
 MonitoringStation_Central_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Central_EventScript_GreyDoorAdminShadows
+	setflag FLAG_HORROR_HIDE_BOULDER
 	end
 	
 MonitoringStation_Central_EventScript_OnFrame::
@@ -33,7 +34,6 @@ MonitoringStation_Central_EventScript_GreyDoors::
 	
 MonitoringStation_Central_EventScript_Kabutops::
 	lockall
-	setflag FLAG_HORROR_HIDE_BOULDER
 	fadeoutbgm 0
 	delay 60
 	special SpawnCameraObject
