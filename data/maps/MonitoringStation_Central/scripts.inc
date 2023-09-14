@@ -51,10 +51,14 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
 	waitmovement 0
+	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack2
+	waitmovement 0
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
+	waitmovement 0
+	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack2
 	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
 	clearflag FLAG_HORROR_HIDE_BOULDER
@@ -69,28 +73,51 @@ MonitoringStation_Central_EventScript_Kabutops::
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeSlammedAway
 	applymovement LOCALID_PUSHABLE_BOULDER, MonitoringStation_Central_Movement_KabutopsAttack3
 	waitmovement 0
+	delay 100
+	textcolor 0
+	msgbox MonitoringStation_Central_Text_RocketWhat
+	waitmessage
+	playmoncry SPECIES_KABUTOPS, 9
+	waitmoncry
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough
+	waitmovement 0
+	msgbox MonitoringStation_Central_Text_RocketNo
+	waitmessage
+	playmoncry SPECIES_KABUTOPS, 4
+	waitmoncry
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsWalkThrough2
+	msgbox MonitoringStation_Central_Text_RocketOh
+	waitmessage
+	msgbox MonitoringStation_Central_Text_RocketAh
+	applymovement LOCALID_ROCKET_M, MonitoringStation_Central_Movement_RocketRun
+	waitmovement 0
+	playse SE_EXIT
+	waitse
 	removeobject LOCALID_MACHOKE
+	removeobject LOCALID_KABUTOPS_SHADOW
+	removeobject LOCALID_ROCKET_M
 	releaseall
 	end
 
 MonitoringStation_Central_Movement_PanToActionFromTop::
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
 	walk_slow_right
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
-	walk_slow_down
-	walk_slow_down
 	walk_slow_right
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
-	walk_slow_down
-	walk_slow_down
-	walk_slow_down
+	walk_slow_right
 	step_end
 
 MonitoringStation_Central_Movement_MachokeAttack::
@@ -99,6 +126,9 @@ MonitoringStation_Central_Movement_MachokeAttack::
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	step_end
+	
+MonitoringStation_Central_Movement_MachokeAttack2::
 	walk_fast_right
 	walk_in_place_right
 	delay_16
@@ -113,6 +143,9 @@ MonitoringStation_Central_Movement_MachokeAttackBack::
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	step_end
+	
+MonitoringStation_Central_Movement_MachokeAttackBack2::
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
@@ -143,6 +176,59 @@ MonitoringStation_Central_Movement_KabutopsAttack3::
 MonitoringStation_Central_Movement_MachokeSlammedAway::
 	walk_in_place_up
 	lock_facing_direction
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+	
+MonitoringStation_Central_Movement_KabutopsWalkThrough::
+	walk_slow_left
+	delay_16
+	walk_slow_left
+	delay_16
+	walk_slow_left
+	delay_16
+	walk_slow_left
+	delay_16
+	walk_slow_left
+	delay_16
+	step_end
+	
+MonitoringStation_Central_Movement_KabutopsWalkThrough2::
+	walk_left
+	delay_16
+	walk_left
+	delay_16
+	walk_left
+	delay_16
+	walk_left
+	delay_16
+	walk_left
+	delay_16
+	step_end
+	
+MonitoringStation_Central_Movement_RocketRun::
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down

@@ -9,3 +9,14 @@ MonitoringStation_Central_Text_RocketAttack::
 MonitoringStation_Central_Text_MachokeNoise::
 	.string "MACHOKE: Gwoooh!$"
 	
+MonitoringStation_Central_Text_RocketWhat::
+	.string "W-what??!$"
+	
+MonitoringStation_Central_Text_RocketNo::
+	.string "N-no! Wait, NO!!$"
+	
+MonitoringStation_Central_Text_RocketOh::
+	.string "Huh? I've b-been s-s-p-pared?$"
+	
+MonitoringStation_Central_Text_RocketAh::
+	.string "Waaaaaaaaaaaaaaaaaaahh!!!$"
