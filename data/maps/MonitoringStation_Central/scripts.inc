@@ -48,12 +48,10 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmessage
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttack
-	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurn
 	waitmovement 0
 	playse SE_M_VITAL_THROW
 	applymovement LOCALID_MACHOKE, MonitoringStation_Central_Movement_MachokeAttackBack
-	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Central_Movement_KabutopsTurnBack
 	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 4
