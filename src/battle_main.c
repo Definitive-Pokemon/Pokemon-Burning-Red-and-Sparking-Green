@@ -2341,8 +2341,8 @@ static void BattleStartClearSetData(void)
     gBattleStruct->safariPkblThrowCounter = 0;
     struct BaseStats * safariStats;
     safariStats = GetBaseStats(GetFormAndSpeciesFromMon(&gEnemyParty[0]));
-    *(&gBattleStruct->safariCatchFactor) = safariStats.catchRate * 100 / 1275;
-    *(&gBattleStruct->safariEscapeFactor) = safariStats.safariZoneFleeRate * 100 / 1275;
+    *(&gBattleStruct->safariCatchFactor) = safariStats->catchRate * 100 / 1275;
+    *(&gBattleStruct->safariEscapeFactor) = safariStats->safariZoneFleeRate * 100 / 1275;
     if (gBattleStruct->safariEscapeFactor <= 1)
         gBattleStruct->safariEscapeFactor = 2;
     gBattleStruct->wildVictorySong = 0;
