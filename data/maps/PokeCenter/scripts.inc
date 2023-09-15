@@ -71,6 +71,8 @@ Pokecenter_EventScript_TheEnd::
 	waitmessage
 	setflag FLAG_HORROR_ABSOLUTE
 	clearflag FLAG_HIDE_HORROR_NPC
+	setvar VAR_HONEY1, 0
+	setvar VAR_HONEY2, 0
 	warp MAP_MONITORING_STATION_SHORTCUT, 255, 3, 3
 	release
 	end

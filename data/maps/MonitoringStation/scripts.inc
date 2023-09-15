@@ -9,7 +9,6 @@ MonitoringStation_MapScripts::
 	.byte 0
 	
 MonitoringStation_EventScript_OnLoad::
-	setflag FLAG_HIDE_HORROR_NPC
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShortShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
@@ -113,6 +112,9 @@ MonitoringStation_EventScript_RocketRight::
 	end
 	
 MonitoringStation_EventScript_Rocket::
+	setvar VAR_HONEY2, 1
+	setvar VAR_HONEY1, 1
+	setflag FLAG_HIDE_HORROR_NPC
 	playbgm MUS_ENCOUNTER_ROCKET, 0
 	compare VAR_TEMP_1, 0
 	call_if_eq MonitoringStation_EventScript_RocketTwoSteps

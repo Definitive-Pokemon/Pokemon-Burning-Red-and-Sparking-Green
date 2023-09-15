@@ -116,7 +116,7 @@
       "y": 6,
       "elevation": 0,
       "var": "VAR_HONEY1",
-      "var_value": "0",
+      "var_value": "1",
       "script": "MonitoringStation_Power_EventScript_Honey1"
     },
     {
@@ -125,7 +125,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_HONEY2",
-      "var_value": "0",
+      "var_value": "1",
       "script": "MonitoringStation_Power_EventScript_Honey2"
     }
   ],
