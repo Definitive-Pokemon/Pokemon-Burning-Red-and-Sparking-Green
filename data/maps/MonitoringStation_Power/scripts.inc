@@ -107,7 +107,7 @@ MonitoringStation_Power_EventScript_Absolute::
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_KabuJump
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Power_Movement_PlayerJump
-	waitmovement 0
+	waitmovement
 	playse SE_EXIT
 	fadeinbgm 1
 	warp MAP_POKE_CENTER, 255, 7, 4
