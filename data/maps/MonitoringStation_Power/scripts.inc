@@ -20,15 +20,13 @@ MonitoringStation_Power_EventScript_Weather::
 	return
 	
 MonitoringStation_Power_EventScript_Music::
-	fadeoutbgm 0
+	playbgm SE_BERRY_BLENDER 1
 	return
 	
 MonitoringStation_Power_EventScript_Rocket::
 	lock
 	msgbox MonitoringStation_Power_Text_Rocket
 	closemessage
-	playse SE_BERRY_BLENDER
-	waitse
 	release
 	end
 	
