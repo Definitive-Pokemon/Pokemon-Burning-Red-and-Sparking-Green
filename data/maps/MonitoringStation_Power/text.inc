@@ -25,15 +25,17 @@ MonitoringStation_Power_Text_Lance::
 	.string "You may be CHAMPION…\p"
 	.string "But you are still a failure…\p"
 	.string "You will never become…\n"
-	.string "A POKéMON MASTER…$"
+	.string "a POKéMON MASTER…$"
 	.string "Now go away…\p"
 	.string "You have ruined me…$"
 	
 MonitoringStation_Power_Text_Honey1::
-	.string "HOONEEEEEYYY!!!$"
+	.string "{PLAYER}!\n"
+	.string "This isn't the time to use that!$"
 	
 MonitoringStation_Power_Text_Honey2::
-	.string "I'VE BAKED A CAKE FOR YOU!!!$"
+	.string "HONEY!!!\p"
+	.string "I'VE BAKED CAKE FOR YOU!!!$"
 
 MonitoringStation_Power_Text_Mom::
 	.string "IT'S YOU!!\p"
