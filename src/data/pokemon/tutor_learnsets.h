@@ -5912,5 +5912,5 @@ static const u64 sFossilizedKabutopsTutorLearnsets =
     | TUTOR(MOVE_SWAGGER)
     | TUTOR(MOVE_SLEEP_TALK)
     | TUTOR(MOVE_DEFENSE_CURL)
-    | TUTOR(MOVE_FURY_CUTTER))
+    | TUTOR(MOVE_FURY_CUTTER));
 
