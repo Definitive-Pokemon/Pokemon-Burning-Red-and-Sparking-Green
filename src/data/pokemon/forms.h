@@ -16,10 +16,10 @@ const struct PokemonForm gPokemonForms[] =
     {
         .baseSpecies = (u16) 0x408D,
         .formNumber = (u8) FORM_PART(SPECIES_FOSSILIZED_KABUTOPS),
-        .stats = gFossilizedKabutopsBaseStats,
-        .levelUpMoves = sFossilizedKabutopsLevelUpLearnset,
-        .TMHMMoves = sFossilizedKabutopsTMHMLearnset,
-        .eggMoves = gFossilizedKabutopsEggMoves,
-        .tutorMoveFlags = sFossilizedKabutopsTutorLearnsets,
+        .stats = &gFossilizedKabutopsBaseStats,
+        .levelUpMoves = &sFossilizedKabutopsLevelUpLearnset,
+        .TMHMMoves = &sFossilizedKabutopsTMHMLearnset,
+        .eggMoves = &gFossilizedKabutopsEggMoves,
+        .tutorMoveFlags = &sFossilizedKabutopsTutorLearnsets,
     },
 };
