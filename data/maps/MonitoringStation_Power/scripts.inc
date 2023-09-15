@@ -20,13 +20,15 @@ MonitoringStation_Power_EventScript_Weather::
 	return
 	
 MonitoringStation_Power_EventScript_Music::
-	playbgm SE_BERRY_BLENDER 1
+	fadeoutbgm 0
 	return
 	
 MonitoringStation_Power_EventScript_Rocket::
 	lock
 	msgbox MonitoringStation_Power_Text_Rocket
 	closemessage
+	playse SE_M_BUBBLE_BEAM
+	waitse
 	release
 	end
 	
@@ -41,7 +43,23 @@ MonitoringStation_Power_EventScript_Lance::
 	lock
 	msgbox MonitoringStation_Power_Text_Lance
 	closemessage
+	playse SE_M_LEER
+	waitse
 	release
+	end
+	
+MonitoringStation_Power_EventScript_Honey1::
+	msgbox MonitoringStation_Power_Text_Honey1
+	closemessage
+	playse SE_M_BUBBLE_BEAM2
+	setvar VAR_HONEY1, 1
+	end
+	
+MonitoringStation_Power_EventScript_Honey2::
+	msgbox MonitoringStation_Power_Text_Honey2
+	closemessage
+	playse SE_M_BUBBLE_BEAM2
+	setvar VAR_HONEY2, 1
 	end
 	
 MonitoringStation_Power_EventScript_Mom::
