@@ -2895,6 +2895,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u32 value;
     u16 checksum;
     u8 version;
+    u8 form;
 
     ZeroBoxMonData(boxMon);
 
@@ -2932,7 +2933,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     checksum = CalculateBoxMonChecksum(boxMon);
     SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &checksum);
     EncryptBoxMon(boxMon);
-    u8 form = GetFormFromSpecies(species);
+    form = GetFormFromSpecies(species);
     SetBoxMonData(boxMon, MON_DATA_FORME, &form);
     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[GetBaseStats(species).growthRate][level]);
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &GetBaseStats(species).friendship);
