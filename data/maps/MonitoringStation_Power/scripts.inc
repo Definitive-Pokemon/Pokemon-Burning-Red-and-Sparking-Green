@@ -1,8 +1,8 @@
-.set LOCALID MOM, 1
-.set LOCALID GIOVANNI, 2
-.set LOCALID LANCE, 3
-.set LOCALID GYM_SIGN, 4
-.set LOCALID KABUTOPS_SHADOW, 5
+.set LOCALID_MOM, 1
+.set LOCALID_GIOVANNI, 2
+.set LOCALID_LANCE, 3
+.set LOCALID_GYM_SIGN, 4
+.set LOCALID_KABUTOPS_SHADOW, 5
 
 MonitoringStation_Power_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Power_EventScript_OnLoad
