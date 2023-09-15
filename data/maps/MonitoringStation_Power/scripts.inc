@@ -25,6 +25,7 @@ MonitoringStation_Power_EventScript_Music::
 	
 MonitoringStation_Power_EventScript_Rocket::
 	lock
+	faceplayer
 	msgbox MonitoringStation_Power_Text_Rocket
 	closemessage
 	playse SE_M_BUBBLE_BEAM
@@ -41,6 +42,7 @@ MonitoringStation_Power_EventScript_Gym::
 	
 MonitoringStation_Power_EventScript_Lance::
 	lock
+	faceplayer
 	msgbox MonitoringStation_Power_Text_Lance
 	closemessage
 	playse SE_M_LEER
@@ -62,6 +64,7 @@ MonitoringStation_Power_EventScript_Honey2::
 	
 MonitoringStation_Power_EventScript_Mom::
 	lock
+	faceplayer
 	msgbox MonitoringStation_Power_Text_Mom
 	closemessage
 	release
@@ -69,6 +72,7 @@ MonitoringStation_Power_EventScript_Mom::
 	
 MonitoringStation_Power_EventScript_Giovanni::
 	lock
+	faceplayer
 	msgbox MonitoringStation_Power_Text_Giovanni
 	closemessage
 	release
@@ -76,11 +80,11 @@ MonitoringStation_Power_EventScript_Giovanni::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
+	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Working
 	removeobject LOCALID_MOM
 	removeobject LOCALID_GIOVANNI
 	removeobject LOCALID_LANCE
 	removeobject LOCALID_GYM_SIGN
-	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Working
 	playse SE_PC_LOGIN
 	delay 60
 	playse SE_M_CONFUSE_RAY
