@@ -106,6 +106,8 @@ MonitoringStation_Power_EventScript_Absolute::
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_KabuJump
+	waitmovement 0
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_KabuJump
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Power_Movement_PlayerJump
 	waitmovement 0
 	playse SE_EXIT
@@ -122,7 +124,9 @@ MonitoringStation_Power_EventScript_Working::
 	
 MonitoringStation_Power_Movement_KabuJump::
 	walk_fast_down
-	walk_fast_down
+	step_end
+	
+MonitoringStation_Power_Movement_KabuJump2::
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
@@ -144,23 +148,22 @@ MonitoringStation_Power_Movement_KabuJump::
 	
 MonitoringStation_Power_Movement_PlayerJump::
 	lock_facing_direction
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
+	slide_down
 	step_end
