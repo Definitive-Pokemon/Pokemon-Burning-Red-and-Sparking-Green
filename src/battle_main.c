@@ -2339,8 +2339,7 @@ static void BattleStartClearSetData(void)
     gBattleStruct->runTries = 0;
     gBattleStruct->safariGoNearCounter = 0;
     gBattleStruct->safariPkblThrowCounter = 0;
-    struct BaseStats * safariStats;
-    safariStats = GetBaseStats(GetFormAndSpeciesFromMon(&gEnemyParty[0]));
+    struct BaseStats *safariStats = GetBaseStats(GetFormAndSpeciesFromMon(&gEnemyParty[0]));
     *(&gBattleStruct->safariCatchFactor) = safariStats->catchRate * 100 / 1275;
     *(&gBattleStruct->safariEscapeFactor) = safariStats->safariZoneFleeRate * 100 / 1275;
     if (gBattleStruct->safariEscapeFactor <= 1)
