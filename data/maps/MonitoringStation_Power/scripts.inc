@@ -77,6 +77,7 @@ MonitoringStation_Power_EventScript_Giovanni::
 	faceplayer
 	msgbox MonitoringStation_Power_Text_Giovanni
 	closemessage
+	playmoncry SPECIES_MEWTWO, 2
 	release
 	end
 	
