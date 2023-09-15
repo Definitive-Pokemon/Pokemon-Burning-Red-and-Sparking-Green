@@ -1,6 +1,6 @@
 #include "global.h"
 
-#define FORM_SPECIES_MASK FIRST_FORM - 1
+#define FORM_SPECIES_MASK (FIRST_FORM - 1)
 #define SPECIES_PART(formSpecies) (formSpecies & FORM_SPECIES_MASK)
 #define FORM_PART(formSpecies) (formSpecies >> FORM_FLAG_SHIFT)
 

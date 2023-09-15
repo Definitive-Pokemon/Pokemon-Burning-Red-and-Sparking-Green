@@ -32,7 +32,6 @@ struct BaseStats *GetBaseStats(u16 species)
         u8 form = FORM_PART(species);
         u16 i;
         species = SPECIES_PART(species);
-        struct BaseStats result = gBaseStats[SPECIES_NONE];
         for(i = 0; i < NUM_TOTAL_VARIANTS; i++)
         {
             if(gPokemonForms[i].baseSpecies == species &&
