@@ -206,7 +206,7 @@
 #define VAR_DETERMINATION          0x409A
 #define VAR_ALMOSTTHERE            0x409B
 #define VAR_THEEND                 0x409C
-#define VAR_0x409D                 0x409D
+#define VAR_TAKEKEY                 0x409D
 #define VAR_0x409E                 0x409E
 #define VAR_0x409F                 0x409F
 #define VAR_0x40A0                 0x40A0
