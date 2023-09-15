@@ -13,3 +13,23 @@ MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	setweather WEATHER_NONE
 	doweather
 	return
+	
+MonitoringStation_Shortcut_EventScript_KabutopsTakesKey::
+	lock
+	fadeoutbgm 0
+	playmoncry SPECIES_KABUTOPS, 2
+	waitmoncry
+	delay 100
+	textcolor 1
+	msgbox MonitoringStation_Shortcut_Text_AdminDefense1
+	waitmessage
+	delay 100
+	msgbox MonitoringStation_Shortcut_Text_AdminDefense2
+	waitmessage
+	delay 50
+	msgbox MonitoringStation_Shortcut_Text_AdminDefense3
+	waitmessage
+	fadeinbgm 1
+	setvar VAR_TAKEKEY, 1
+	release
+	end

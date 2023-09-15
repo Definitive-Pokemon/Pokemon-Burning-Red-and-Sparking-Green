@@ -29,7 +29,6 @@ MonitoringStation_Power_EventScript_Rocket::
 	msgbox MonitoringStation_Power_Text_Rocket
 	closemessage
 	playse SE_M_BUBBLE_BEAM
-	waitse
 	release
 	end
 	
@@ -46,12 +45,12 @@ MonitoringStation_Power_EventScript_Lance::
 	msgbox MonitoringStation_Power_Text_Lance
 	closemessage
 	playse SE_M_LEER
-	waitse
 	release
 	end
 	
 MonitoringStation_Power_EventScript_Honey1::
 	lock
+	playmoncry SPECIES_PARASECT, 2
 	msgbox MonitoringStation_Power_Text_Honey1
 	closemessage
 	setvar VAR_HONEY1, 1

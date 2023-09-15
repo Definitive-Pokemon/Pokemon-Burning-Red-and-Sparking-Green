@@ -35,7 +35,7 @@ MonitoringStation_Power_Text_Honey1::
 	
 MonitoringStation_Power_Text_Honey2::
 	.string "HONEY!!!\p"
-	.string "I'VE BAKED CAKE FOR YOU!!!$"
+	.string "I'VE BAKE CAKE FOR YOU!!!$"
 
 MonitoringStation_Power_Text_Mom::
 	.string "IT'S YOU!!\p"
@@ -53,5 +53,5 @@ MonitoringStation_Power_Text_Giovanni::
 	.string "to your father?\p"
 	.string "Still the silent type. No matter.\p"
 	.string "Now is the time to put aside your\n"
-	.string "weak sympathy and join me\p"
-	.string "in REMAKING this world!$"
+	.string "weak sympathy and join me in\p"
+	.string "REMAKING this world!$"
