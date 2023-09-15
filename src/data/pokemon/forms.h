@@ -5,11 +5,11 @@
 #define FORM_PART(formSpecies) (formSpecies >> FORM_FLAG_SHIFT)
 
 /*  */
-const struct PokemonForm gPokemonForms [] = 
+const struct PokemonForm gPokemonForms[] = 
 {
     [0] = 
     {
-        .baseSpecies = (u16) SPECIES_PART(SPECIES_FOSSILIZED_KABUTOPS);
+        .baseSpecies = (u16) (SPECIES_PART(SPECIES_FOSSILIZED_KABUTOPS));
         .formNumber = (u8) FORM_PART(SPECIES_FOSSILIZED_KABUTOPS);
         .stats = gFossilizedKabutopsBaseStats;
         .levelUpMoves = sFossilizedKabutopsLevelUpLearnset;

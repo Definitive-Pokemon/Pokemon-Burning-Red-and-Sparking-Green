@@ -20,7 +20,7 @@ u8 GetFormFromSpecies(u16 species)
 u16 RemoveFormFromSpecies(u16 species)
 {
     // removes the special form bits
-    species = (species & FORM_SPECIES_MASK);
+    species = (species & ((u16) FORM_SPECIES_MASK));
     return species;
 }
 // retrieves the basestats for us, regardless of whether it is a form or not
