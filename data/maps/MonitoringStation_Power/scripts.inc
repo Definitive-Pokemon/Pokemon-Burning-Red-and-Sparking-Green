@@ -105,8 +105,10 @@ MonitoringStation_Power_EventScript_Restore_Power::
 MonitoringStation_Power_EventScript_Absolute::
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
-	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_KabuJump
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Power_Movement_PlayerJump
+	waitmovement
+	playse SE_EXIT
 	fadeinbgm 1
 	warp MAP_POKE_CENTER, 255, 7, 4
 	release
@@ -118,7 +120,47 @@ MonitoringStation_Power_EventScript_Working::
 	release
 	end
 	
-MonitoringStation_Power_Movement_Jump::
+MonitoringStation_Power_Movement_KabuJump::
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+	
+MonitoringStation_Power_Movement_PlayerJump::
+	lock_facing_direction
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	walk_fast_down
 	walk_fast_down
 	step_end
