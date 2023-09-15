@@ -1,9 +1,16 @@
+.set LOCALID MOM, 1
+.set LOCALID GIOVANNI, 2
+.set LOCALID LANCE, 3
+.set LOCALID GYM_SIGN, 4
+.set LOCALID KABUTOPS_SHADOW, 5
+
 MonitoringStation_Power_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Power_EventScript_OnLoad
 	.byte 0
 
 MonitoringStation_Power_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Weather
+	call_if_unset FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Music
 	end
 
 MonitoringStation_Power_EventScript_Weather::
@@ -12,10 +19,54 @@ MonitoringStation_Power_EventScript_Weather::
 	doweather
 	return
 	
+MonitoringStation_Power_EventScript_Music::
+	fadeoutbgm 0
+	return
+	
+MonitoringStation_Power_EventScript_Rocket::
+	lock
+	msgbox MonitoringStation_Power_Text_Rocket
+	closemessage
+	playse SE_BERRY_BLENDER
+	waitse
+	release
+	end
+	
+MonitoringStation_Power_EventScript_Gym::
+	lock
+	msgbox MonitoringStation_Power_Text_Gym
+	closemessage
+	release
+	end
+	
+MonitoringStation_Power_EventScript_Lance::
+	lock
+	msgbox MonitoringStation_Power_Text_Lance
+	closemessage
+	release
+	end
+	
+MonitoringStation_Power_EventScript_Mom::
+	lock
+	msgbox MonitoringStation_Power_Text_Mom
+	closemessage
+	release
+	end
+	
+MonitoringStation_Power_EventScript_Giovanni::
+	lock
+	msgbox MonitoringStation_Power_Text_Giovanni
+	closemessage
+	release
+	end
+	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
+	removeobject LOCALID_MOM
+	removeobject LOCALID_GIOVANNI
+	removeobject LOCALID_LANCE
+	removeobject LOCALID_GYM_SIGN
 	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Working
-	fadeoutbgm 0
 	playse SE_PC_LOGIN
 	delay 60
 	playse SE_M_CONFUSE_RAY

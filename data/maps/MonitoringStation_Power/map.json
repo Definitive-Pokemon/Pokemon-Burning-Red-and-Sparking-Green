@@ -15,11 +15,94 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "in_connection": false,
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI",
+      "in_connection": false,
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LANCE",
+      "in_connection": false,
+      "x": 2,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GYM_SIGN",
+      "in_connection": false,
+      "x": 10,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KABUTOPS_SHADOW",
+      "in_connection": false,
+      "x": 6,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "in_connection": false,
+      "x": 6,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HORROR_POWER_RESTORED"
+    }
   ],
   "warp_events": [
     {
-      "x": 10,
+      "x": 6,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_MONITORING_STATION_SHORTCUT",
@@ -36,7 +119,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MonitoringStation_Power_EventScript_Restore_Power"
+      "script": "NULL"
     }
   ],
   "level_scaling": "0"
