@@ -24,330 +24,6 @@
     {
       "type": "trigger",
       "x": 224,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_NOHOPE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
-    },
-    {
-      "type": "trigger",
-      "x": 224,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_NOHOPE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
-    },
-    {
-      "type": "trigger",
-      "x": 224,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_NOHOPE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
-    },
-    {
-      "type": "trigger",
-      "x": 224,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_NOHOPE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
-    },
-    {
-      "type": "trigger",
-      "x": 224,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_NOHOPE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
-    },
-    {
-      "type": "trigger",
-      "x": 189,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_POINTLESS",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
-    },
-    {
-      "type": "trigger",
-      "x": 189,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_POINTLESS",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
-    },
-    {
-      "type": "trigger",
-      "x": 189,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_POINTLESS",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
-    },
-    {
-      "type": "trigger",
-      "x": 189,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_POINTLESS",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
-    },
-    {
-      "type": "trigger",
-      "x": 189,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_POINTLESS",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
-    },
-    {
-      "type": "trigger",
-      "x": 156,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_BEYONDREACH",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
-    },
-    {
-      "type": "trigger",
-      "x": 156,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_BEYONDREACH",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
-    },
-    {
-      "type": "trigger",
-      "x": 156,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_BEYONDREACH",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
-    },
-    {
-      "type": "trigger",
-      "x": 156,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_BEYONDREACH",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
-    },
-    {
-      "type": "trigger",
-      "x": 156,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_BEYONDREACH",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
-    },
-    {
-      "type": "trigger",
-      "x": 137,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_DONTGIVEUP",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
-    },
-    {
-      "type": "trigger",
-      "x": 137,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_DONTGIVEUP",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
-    },
-    {
-      "type": "trigger",
-      "x": 137,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_DONTGIVEUP",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
-    },
-    {
-      "type": "trigger",
-      "x": 137,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_DONTGIVEUP",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
-    },
-    {
-      "type": "trigger",
-      "x": 137,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_DONTGIVEUP",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
-    },
-    {
-      "type": "trigger",
-      "x": 93,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_KEEPTRYING",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
-    },
-    {
-      "type": "trigger",
-      "x": 93,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_KEEPTRYING",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
-    },
-    {
-      "type": "trigger",
-      "x": 93,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_KEEPTRYING",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
-    },
-    {
-      "type": "trigger",
-      "x": 93,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_KEEPTRYING",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
-    },
-    {
-      "type": "trigger",
-      "x": 93,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_KEEPTRYING",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_DETERMINATION",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_DETERMINATION",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_DETERMINATION",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_DETERMINATION",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
-    },
-    {
-      "type": "trigger",
-      "x": 64,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_DETERMINATION",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_ALMOSTTHERE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_ALMOSTTHERE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 5,
-      "elevation": 0,
-      "var": "VAR_ALMOSTTHERE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_ALMOSTTHERE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
-    },
-    {
-      "type": "trigger",
-      "x": 33,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_ALMOSTTHERE",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_THEEND",
-      "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
       "y": 4,
       "elevation": 0,
       "var": "VAR_THEEND",
@@ -356,7 +32,331 @@
     },
     {
       "type": "trigger",
+      "x": 189,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_ALMOSTTHERE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_AlmostThere"
+    },
+    {
+      "type": "trigger",
+      "x": 156,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_DETERMINATION",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Determination"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_KEEPTRYING",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_KeepTrying"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_DONTGIVEUP",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_DontGiveUp"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_POINTLESS",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Pointless"
+    },
+    {
+      "type": "trigger",
       "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_NOHOPE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_NoHope"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_NOHOPE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_NoHope"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NOHOPE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_NoHope"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NOHOPE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_NoHope"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_NOHOPE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_NoHope"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_POINTLESS",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Pointless"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_POINTLESS",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Pointless"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_POINTLESS",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Pointless"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_POINTLESS",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Pointless"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_BEYONDREACH",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_BeyondReach"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_BEYONDREACH",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_BeyondReach"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_BEYONDREACH",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_BeyondReach"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_BEYONDREACH",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_BeyondReach"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_BEYONDREACH",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_BeyondReach"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_DONTGIVEUP",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_DontGiveUp"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_DONTGIVEUP",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_DontGiveUp"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_DONTGIVEUP",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_DontGiveUp"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_DONTGIVEUP",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_DontGiveUp"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_KEEPTRYING",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_KeepTrying"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_KEEPTRYING",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_KeepTrying"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_KEEPTRYING",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_KeepTrying"
+    },
+    {
+      "type": "trigger",
+      "x": 137,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_KEEPTRYING",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_KeepTrying"
+    },
+    {
+      "type": "trigger",
+      "x": 156,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_DETERMINATION",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Determination"
+    },
+    {
+      "type": "trigger",
+      "x": 156,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_DETERMINATION",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Determination"
+    },
+    {
+      "type": "trigger",
+      "x": 156,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_DETERMINATION",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Determination"
+    },
+    {
+      "type": "trigger",
+      "x": 156,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_DETERMINATION",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_Determination"
+    },
+    {
+      "type": "trigger",
+      "x": 189,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_ALMOSTTHERE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_AlmostThere"
+    },
+    {
+      "type": "trigger",
+      "x": 189,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ALMOSTTHERE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_AlmostThere"
+    },
+    {
+      "type": "trigger",
+      "x": 189,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ALMOSTTHERE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_AlmostThere"
+    },
+    {
+      "type": "trigger",
+      "x": 189,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ALMOSTTHERE",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_AlmostThere"
+    },
+    {
+      "type": "trigger",
+      "x": 224,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_THEEND",
+      "var_value": "0",
+      "script": "Pokecenter_EventScript_TheEnd"
+    },
+    {
+      "type": "trigger",
+      "x": 224,
       "y": 5,
       "elevation": 0,
       "var": "VAR_THEEND",
@@ -365,7 +365,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 224,
       "y": 6,
       "elevation": 0,
       "var": "VAR_THEEND",
@@ -374,7 +374,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 224,
       "y": 7,
       "elevation": 0,
       "var": "VAR_THEEND",
