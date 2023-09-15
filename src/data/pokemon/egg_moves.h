@@ -1321,4 +1321,4 @@ const u16 gFossilizedKabutopsEggMoves[] =
     MOVE_MAGICAL_LEAF,
     MOVE_GRASS_WHISTLE,
     MOVE_CURSE,
-}
+};
