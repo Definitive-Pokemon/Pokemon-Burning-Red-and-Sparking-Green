@@ -44,7 +44,7 @@ struct BaseStats *GetBaseStats(u16 species)
     }
     else
     {
-        return &gBaseStats[species];
+        return (struct BaseStats *) &gBaseStats[species];
     }
 }
 
@@ -52,7 +52,7 @@ u16 GetFormAndSpeciesFromMon(struct Pokemon * mon)
 {
     u16 result = GetMonData(mon, MON_DATA_SPECIES);
     u8 form = GetMonData(mon, MON_DATA_FORME);
-    result = result | (form (u16) << FORM_FLAG_SHIFT);
+    result = result | (((u16)form) << FORM_FLAG_SHIFT);
     return result;
 }
 
