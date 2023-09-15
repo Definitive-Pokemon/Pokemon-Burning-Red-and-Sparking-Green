@@ -20,18 +20,18 @@ u8 GetFormFromSpecies(u16 species)
 u16 RemoveFormFromSpecies(u16 species)
 {
     // removes the special form bits
-    species = species & FORM_SPECIES_MASK;
+    species = (species & FORM_SPECIES_MASK);
     return species;
 }
 // retrieves the basestats for us, regardless of whether it is a form or not
 // work on it returning a pointer instead?
-struct BaseStats * GetBaseStats(u16 species)
+struct BaseStats *GetBaseStats(u16 species)
 {
     if(SpeciesIsForm(species)) 
     {
-        u8 form = FORM_PART(species)
-        species = SPECIES_PART(species)
+        u8 form = FORM_PART(species);
         u16 i;
+        species = SPECIES_PART(species);
         struct BaseStats result = gBaseStats[SPECIES_NONE];
         for(i = 0; i < NUM_TOTAL_VARIANTS; i++)
         {
