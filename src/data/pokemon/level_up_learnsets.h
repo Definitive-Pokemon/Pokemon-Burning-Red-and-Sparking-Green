@@ -5765,4 +5765,4 @@ static const u16 sChimechoLevelUpLearnset[] = {
 static const u16 sFossilizedKabutopsLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_SWIFT),
     LEVEL_UP_END
-}
+};
