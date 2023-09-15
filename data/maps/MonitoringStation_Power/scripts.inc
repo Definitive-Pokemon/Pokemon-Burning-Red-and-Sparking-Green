@@ -80,6 +80,7 @@ MonitoringStation_Power_EventScript_Giovanni::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
+	goto_if_unset FLAG_HORROR_ABSOLUTE, MonitoringStation_Power_EventScript_Absolute
 	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Working
 	removeobject LOCALID_MOM
 	removeobject LOCALID_GIOVANNI
@@ -98,6 +99,15 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	waitmessage
 	setflag FLAG_HORROR_POWER_RESTORED
 	fadeinbgm 1
+	release
+	end
+	
+MonitoringStation_Power_EventScript_Absolute::
+	playmoncry SPECIES_KABUTOPS, 4
+	waitmoncry
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
+	fadescreen FADE_TO_BLACK
+	warp MAP_POKECENTER, 255, 7, 4
 	release
 	end
 	

@@ -938,9 +938,9 @@
 #define FLAG_RED_DOOR_END               0x38F
 #define FLAG_KABUTOPS_FIRST_APPEAR               0x390
 #define FLAG_HORROR_HIDE_BOULDER               0x391
+#define FLAG_HORROR_ABSOLUTE               0x392
 
 // Unused?
-#define FLAG_0x392               0x392
 #define FLAG_0x393               0x393
 #define FLAG_0x394               0x394
 #define FLAG_0x395               0x395
