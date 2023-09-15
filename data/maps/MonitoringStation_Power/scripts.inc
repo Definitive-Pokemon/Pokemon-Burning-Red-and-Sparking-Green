@@ -107,7 +107,7 @@ MonitoringStation_Power_EventScript_Absolute::
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
 	fadescreen FADE_TO_BLACK
-	warp MAP_POKECENTER, 255, 7, 4
+	warp MAP_POKE_CENTER, 255, 7, 4
 	release
 	end
 	
