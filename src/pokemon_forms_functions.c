@@ -1,5 +1,5 @@
 #include "global.h"
-#include "include/pokemon.h"
+#include "pokemon.h"
 #include "data/pokemon/forms.h"
 
 bool8 SpeciesIsForm(u16 species)
