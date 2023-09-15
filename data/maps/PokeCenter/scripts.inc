@@ -70,6 +70,7 @@ Pokecenter_EventScript_TheEnd::
 	msgbox Pokecenter_Text_TheEnd
 	waitmessage
 	setflag FLAG_HORROR_ABSOLUTE
+	clearflag FLAG_HIDE_HORROR_NPC
 	warp MAP_MONITORING_STATION_SHORTCUT, 255, 3, 3
 	release
 	end

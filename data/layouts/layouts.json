@@ -5085,7 +5085,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_DiglettsCave",
+      "secondary_tileset": "gTileset_SeviiIslands5",
       "border_filepath": "data/layouts/PokeCenter/border.bin",
       "blockdata_filepath": "data/layouts/PokeCenter/map.bin"
     }

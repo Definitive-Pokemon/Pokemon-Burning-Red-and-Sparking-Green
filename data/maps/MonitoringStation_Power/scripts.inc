@@ -51,12 +51,14 @@ MonitoringStation_Power_EventScript_Lance::
 	end
 	
 MonitoringStation_Power_EventScript_Honey1::
+	lock
 	msgbox MonitoringStation_Power_Text_Honey1
 	closemessage
 	setvar VAR_HONEY1, 1
 	end
 	
 MonitoringStation_Power_EventScript_Honey2::
+	lock
 	msgbox MonitoringStation_Power_Text_Honey2
 	closemessage
 	setvar VAR_HONEY2, 1
@@ -97,6 +99,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	delay 60
 	msgbox MonitoringStation_Power_Text_Restore_Power
 	waitmessage
+	setflag FLAG_HIDE_HORROR_NPC
 	setflag FLAG_HORROR_POWER_RESTORED
 	fadeinbgm 1
 	release

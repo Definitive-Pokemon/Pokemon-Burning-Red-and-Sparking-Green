@@ -9,6 +9,7 @@ MonitoringStation_MapScripts::
 	.byte 0
 	
 MonitoringStation_EventScript_OnLoad::
+	setflag FLAG_HIDE_HORROR_NPC
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShortShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
