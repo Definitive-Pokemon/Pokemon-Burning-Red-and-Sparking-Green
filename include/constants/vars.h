@@ -197,7 +197,7 @@
 #define VAR_MONITORING_STATION_CENTRAL_STATE                 0x4091
 #define VAR_MONITORING_STATION_HALLWAY2_HELP                 0x4092
 #define VAR_HONEY1                 0x4093
-#define VAR_0x4094                 0x4094
+#define VAR_HONEY2                 0x4094
 #define VAR_0x4095                 0x4095
 #define VAR_0x4096                 0x4096
 #define VAR_0x4097                 0x4097
