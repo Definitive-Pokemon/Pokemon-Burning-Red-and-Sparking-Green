@@ -2935,9 +2935,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     EncryptBoxMon(boxMon);
     form = GetFormFromSpecies(species);
     SetBoxMonData(boxMon, MON_DATA_FORME, &form);
-    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[GetBaseStats(species).growthRate][level]);
-    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &GetBaseStats(species).friendship);
-    if (GetBaseStats(species).abilities[1])
+    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[GetBaseStats(species)->growthRate][level]);
+    SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &GetBaseStats(species)->friendship);
+    if (GetBaseStats(species)->abilities[1])
     {
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
@@ -3045,7 +3045,7 @@ void CreateMonWithGenderNatureAbility(struct Pokemon *mon, u16 species, u8 level
 {
     u32 personality;
 
-    u8 genderRatio = GetBaseStats(u16 species).genderRatio;
+    u8 genderRatio = GetBaseStats(species)->genderRatio;
     if(genderRatio == MON_GENDERLESS
     || genderRatio == MON_FEMALE
     || genderRatio == MON_MALE) //don't get stuck on forcing gender if set gender
