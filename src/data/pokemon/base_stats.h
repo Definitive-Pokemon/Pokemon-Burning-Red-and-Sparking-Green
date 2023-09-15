@@ -12030,7 +12030,7 @@ const struct BaseStats gBaseStats[] =
     },
 };
 
-const struct FormBaseStats gFossilizedKabutopsBaseStats =
+const struct BaseStats gFossilizedKabutopsBaseStats =
 {
     .baseHP = 60,
     .baseAttack = 115,
