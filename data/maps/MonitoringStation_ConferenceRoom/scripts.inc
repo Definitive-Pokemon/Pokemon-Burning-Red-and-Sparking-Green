@@ -39,7 +39,7 @@ MonitoringStation_ConferenceRoom_EventScript_RocketM3::
 	release
 	end
 	
-MonitoringStation_ConferenceRoom_EventScript_RocketM33
+MonitoringStation_ConferenceRoom_EventScript_RocketM33::
 	msgbox MonitoringStation_ConferenceRoom_Text_RocketM32
 	waitmessage
 	release
