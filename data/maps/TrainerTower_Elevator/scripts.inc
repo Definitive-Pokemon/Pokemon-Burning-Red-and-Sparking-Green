@@ -91,14 +91,14 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 100
 	fadescreen FADE_FROM_BLACK
 	delay 200
+	setflag FLAG_HIDE_ADMIN1
+	setflag FLAG_HIDE_STORAGE_GRUNT1
+	setflag FLAG_HIDE_STORAGE_GRUNT2
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	warp MAP_MONITORING_STATION, 255, 3, 2
 	waitstate
-	setflag FLAG_HIDE_ADMIN1
-	setflag FLAG_HIDE_STORAGE_GRUNT1
-	setflag FLAG_HIDE_STORAGE_GRUNT2
 	releaseall
 	end
 	
