@@ -4289,12 +4289,12 @@
       "secondaryId": 0
     },
     {
-      "english": "WAILMER PAIL",
+      "english": "BLUE KEYCARD",
       "itemId": "ITEM_BLUE_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "A nifty watering pail.\\nUse it to promote strong growth in\\nBERRIES planted in soft soil.",
+      "description_english": "A card-type key that unlocks blue doors\\nin TEAM ROCKET's hideout\\nunderneath TRAINER TOWER.",
       "importance": 1,
       "exitsBagOnUse": 0,
       "pocket": "POCKET_KEY_ITEMS",
@@ -4305,12 +4305,12 @@
       "secondaryId": 0
     },
     {
-      "english": "DEVON GOODS",
+      "english": "YELLOW KEYCARD",
       "itemId": "ITEM_YELLOW_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "A package that contains mechanical\\nparts of some sort made by the\\nDEVON CORPORATION.",
+      "description_english": "A card-type key that unlocks yellow doors\\nin TEAM ROCKET's hideout\\nunderneath TRAINER TOWER.",
       "importance": 2,
       "exitsBagOnUse": 0,
       "pocket": "POCKET_KEY_ITEMS",
@@ -4465,12 +4465,12 @@
       "secondaryId": 0
     },
     {
-      "english": "GO-GOGGLES",
+      "english": "RED KEYCARD",
       "itemId": "ITEM_RED_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "A pair of protective goggles.\\nThey enable a TRAINER to travel\\nthrough even desert sandstorms.",
+      "description_english": "A card-type key that unlocks red doors\\nin TEAM ROCKET's hideout\\nunderneath TRAINER TOWER.",
       "importance": 1,
       "exitsBagOnUse": 0,
       "pocket": "POCKET_KEY_ITEMS",
