@@ -1,6 +1,7 @@
 #include "global.h"
 #include "pokemon.h"
 // required to ensure the pokemon tables load
+#include "constants/abilities.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/items.h"
