@@ -1,3 +1,6 @@
+#ifndef GUARD_POKEMON_FORMS_FUNCTIONS_C
+#define GUARD_POKEMON_FORMS_FUNCTIONS_C
+
 #include "global.h"
 #include "pokemon.h"
 // required to ensure the pokemon tables load
@@ -74,3 +77,5 @@ bool8 PokemonHasVariantForm(u16 species)
     }
     return result;
 }
+
+#endif //GUARD_POKEMON_FORMS_FUNCTIONS_C
