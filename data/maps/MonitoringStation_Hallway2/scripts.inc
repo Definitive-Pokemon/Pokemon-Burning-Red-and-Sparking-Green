@@ -6,11 +6,16 @@ MonitoringStation_Hallway2_MapScripts::
 
 MonitoringStation_Hallway2_EventScript_OnLoad::
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Hallway2_EventScript_Weather
+	call_if_set FLAG_GOT_BLUE_KEY, MonitoringStation_Hallway2_EventScript_FadeMusic
 	end
 	
 MonitoringStation_Hallway2_EventScript_Weather::
 	setweather WEATHER_NONE
 	doweather
+	return
+	
+MonitoringStation_Hallway2_EventScript_FadeMusic::
+	fadeoutbgm 0
 	return
 	
 MonitoringStation_Hallway2_EventScript_Help::
