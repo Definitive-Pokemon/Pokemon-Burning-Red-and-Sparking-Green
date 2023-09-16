@@ -290,7 +290,6 @@ TrainerTower_Roof_EventScript_GiveEmerald:
 	goto TrainerTower_Roof_EventScript_CheckFinalTime
 
 TrainerTower_Roof_EventScript_Arrived:
-	goto_if_unset FLAG_GOT_EMERALD, TrainerTower_Roof_EventScript_GiveEmerald
 	msgbox TrainerTower_Roof_Text_ImOwnerBattledPerfectly
 TrainerTower_Roof_EventScript_GivePrize:
 	ttower_giveprize
@@ -300,6 +299,7 @@ TrainerTower_Roof_EventScript_GivePrize:
 	case 2, TrainerTower_Roof_EventScript_CheckFinalTime
 
 TrainerTower_Roof_EventScript_ReceivePrize:
+	goto_if_unset FLAG_GOT_EMERALD, TrainerTower_Roof_EventScript_GiveEmerald
 	msgbox TrainerTower_Roof_Text_ThisIsForYou
 	textcolor 3
 	playfanfare MUS_LEVEL_UP
