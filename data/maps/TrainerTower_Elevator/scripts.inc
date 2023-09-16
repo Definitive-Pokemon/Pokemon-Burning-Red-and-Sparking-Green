@@ -37,7 +37,7 @@ TrainerTower_Elevator_EventScript_ChooseFloor:: @ 8164B5E
 	end
 
 TrainerTower_Elevator_EventScript_SelectLobby:: @ 8164B90
-	goto_if_unset FLAG_HORROR_DONE, TrainerTower_Elevator_EventScript_StartHorror
+	goto_if_set FLAG_GOT_EMERALD, TrainerTower_Elevator_EventScript_StartHorror
 	setvar VAR_0x8006, 3
 	setdynamicwarp MAP_TRAINER_TOWER_LOBBY, 255, 17, 8
 	compare VAR_ELEVATOR_FLOOR, 3
@@ -94,6 +94,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_ADMIN1
 	setflag FLAG_HIDE_STORAGE_GRUNT1
 	setflag FLAG_HIDE_STORAGE_GRUNT2
+	clearflag FLAG_GOT_EMERALD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
 	setflag FLAG_DONT_TRANSITION_MUSIC

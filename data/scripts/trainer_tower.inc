@@ -299,7 +299,9 @@ TrainerTower_Roof_EventScript_GivePrize:
 	case 2, TrainerTower_Roof_EventScript_CheckFinalTime
 
 TrainerTower_Roof_EventScript_ReceivePrize:
-	goto_if_unset FLAG_GOT_EMERALD, TrainerTower_Roof_EventScript_GiveEmerald
+	checkitem ITEM_EMERALD, 1
+	compare VAR_RESULT, TRUE
+	goto_if_ne TrainerTower_Roof_EventScript_GiveEmerald
 	msgbox TrainerTower_Roof_Text_ThisIsForYou
 	textcolor 3
 	playfanfare MUS_LEVEL_UP
