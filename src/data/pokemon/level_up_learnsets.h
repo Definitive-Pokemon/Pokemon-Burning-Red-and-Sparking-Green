@@ -1,3 +1,6 @@
+#ifndef GUARD_LEVEL_UP_LEARNSETS_H
+#define GUARD_LEVEL_UP_LEARNSETS_H
+
 #define LEVEL_UP_MOVE(lvl, move) ((lvl << 9) | move)
 #define LEVEL_UP_END 0xFFFF
 
@@ -5766,3 +5769,5 @@ static const u16 sFossilizedKabutopsLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_SWIFT),
     LEVEL_UP_END
 };
+
+#endif //GUARD_LEVEL_UP_LEARNSETS_H

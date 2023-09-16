@@ -1,3 +1,6 @@
+#ifndef GUARD_TUTOR_LEARNSETS_H
+#define GUARD_TUTOR_LEARNSETS_H
+
 const u16 sTutorMoves[TUTOR_MOVE_COUNT] =
 {
     [TUTOR_MOVE_MEGA_PUNCH] = MOVE_MEGA_PUNCH,
@@ -5913,4 +5916,6 @@ static const u64 sFossilizedKabutopsTutorLearnsets =
     | TUTOR(MOVE_SLEEP_TALK)
     | TUTOR(MOVE_DEFENSE_CURL)
     | TUTOR(MOVE_FURY_CUTTER));
+
+#endif //GUARD_TUTOR_LEARNSETS_H
 

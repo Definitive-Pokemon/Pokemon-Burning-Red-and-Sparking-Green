@@ -1,3 +1,6 @@
+#ifndef GUARD_EGG_MOVES_H
+#define GUARD_EGG_MOVES_H
+
 #define EGG_MOVES_SPECIES_OFFSET 20000
 #define EGG_MOVES_TERMINATOR 0xFFFF
 #define egg_moves(species, moves...) (SPECIES_##species + EGG_MOVES_SPECIES_OFFSET), moves
@@ -1322,3 +1325,5 @@ const u16 gFossilizedKabutopsEggMoves[] =
     MOVE_GRASS_WHISTLE,
     MOVE_CURSE,
 };
+
+#endif //GUARD_EGG_MOVES_H

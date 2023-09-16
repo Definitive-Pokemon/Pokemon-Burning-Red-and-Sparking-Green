@@ -1,9 +1,7 @@
 #include "global.h"
-#include "base_stats.h"
 #include "level_up_learnsets.h"
 #include "tmhm_learnsets.h"
 #include "tutor_learnsets.h"
-#include "egg_moves.h"
 
 #define FORM_SPECIES_MASK (FIRST_FORM - 1)
 #define SPECIES_PART(formSpecies) (formSpecies & FORM_SPECIES_MASK)

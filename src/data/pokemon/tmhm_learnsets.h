@@ -1,3 +1,6 @@
+#ifndef GUARD_TMHM_LEARNSETS_H
+#define GUARD_TMHM_LEARNSETS_H
+
 //#define TMHM(moves) {(u32)(moves), ((u64)(moves) >> 32)}
 //#define TMHM) ((u64)1 << (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH))
 
@@ -11294,3 +11297,5 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_DEOXYS] = sDeoxysTMHMLearnset,
     [SPECIES_CHIMECHO] = sChimechoTMHMLearnset
 };
+
+#endif //GUARD_TMHM_LEARNSETS_H
