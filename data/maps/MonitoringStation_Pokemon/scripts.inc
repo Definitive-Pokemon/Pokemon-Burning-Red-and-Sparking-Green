@@ -103,3 +103,7 @@ MonitoringStation_Pokemon_EventScript_Venusaur::
 	waitmessage
 	release
 	end
+	
+MonitoringStation_Pokemon_EventScript_Text::
+	msgbox MonitoringStation_Pokemon_Text_Text, MSGBOX_SIGN
+	end
