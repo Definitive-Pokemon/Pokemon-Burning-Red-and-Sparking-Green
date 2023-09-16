@@ -123,7 +123,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 MonitoringStation_Central_Eventscript_Admin::
 	lock
 	faceplayer
-	goto_if_set FLAG_ADMIN_TALKED, MonitoringStation_Central_Eventscript_Admin2
+	goto_if_set FLAG_FIND_BLUE_KEY, MonitoringStation_Central_Eventscript_Admin2
 	msgbox MonitoringStation_Central_Text_Admin
 	waitmessage
 	setflag FLAG_FIND_BLUE_KEY
