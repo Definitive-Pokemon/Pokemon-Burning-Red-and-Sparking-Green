@@ -940,10 +940,10 @@
 #define FLAG_HORROR_HIDE_BOULDER               0x391
 #define FLAG_HORROR_ABSOLUTE               0x392
 #define FLAG_HIDE_HORROR_NPC               0x393
+#define FLAG_HIDE_ADMIN2               0x394
+#define FLAG_FIND_BLUE_KEY               0x395
 
 // Unused?
-#define FLAG_0x394               0x394
-#define FLAG_0x395               0x395
 #define FLAG_0x396               0x396
 #define FLAG_0x397               0x397
 #define FLAG_0x398               0x398

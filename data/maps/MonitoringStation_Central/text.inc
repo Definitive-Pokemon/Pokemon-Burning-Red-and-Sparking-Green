@@ -20,3 +20,23 @@ MonitoringStation_Central_Text_RocketOh::
 	
 MonitoringStation_Central_Text_RocketAh::
 	.string "Waaaaaaaaaaaaaaaaaaahh!!!$"
+
+MonitoringStation_Central_Text_Admin::
+	.string "A… child?\n"
+	.string "This day can't get any stranger.\p"
+	.string "You want my RED KEYCARD, right?\p"
+	.string "Well, unfortunately, I no longer\n"
+	.string "have it.\p"
+	.string "It was taken from me by the ghost\n"
+	.string "you have probably seen wandering\p"
+	.string "around.\p"
+	.string "I suggest you try to find our\n"
+	.string "EXECUTIVE instead. He has the\p"
+	.string "other key in his possession.\p"
+	.string "The alternative would be to\n"
+	.string "challenge that monster…\p"
+	.string "I suggest you search for a way to\n"
+	.string "get into the EXECUTIVE's office.$"
+
+MonitoringStation_Central_Text_Admin2::
+	.string "Well, what are you waiting for?$"

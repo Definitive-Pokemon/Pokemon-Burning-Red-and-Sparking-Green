@@ -62,3 +62,13 @@ MonitoringStation_Storage_Text_Phew::
 	.string "Good job, little guy.\p"
 	.string "Now, go and find the ADMIN and\n"
 	.string "ask for that RED KEYCARD!$"
+
+MonitoringStation_Storage_Text_BlueKey::
+	.string "You got the RED KEYCARD?\p"
+	.string "…\p"
+	.string "Oh.\p"
+	.string "In that case, you will need a\n"
+	.string "YELLOW KEYCARD to get into the\p"
+	.string "office of the EXECUTIVE.\p"
+	.string "I don't have one here, though.\n"
+	.string "You will have to ask someone else.$"

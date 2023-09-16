@@ -120,6 +120,22 @@ MonitoringStation_Central_EventScript_Kabutops::
 	releaseall
 	end
 
+MonitoringStation_Central_Eventscript_Admin::
+	lock
+	faceplayer
+	goto_if_set FLAG_ADMIN_TALKED, MonitoringStation_Central_Eventscript_Admin2
+	msgbox MonitoringStation_Central_Text_Admin
+	waitmessage
+	setflag FLAG_FIND_BLUE_KEY
+	release
+	end
+	
+MonitoringStation_Central_Eventscript_Admin2::
+	msgbox MonitoringStation_Central_Text_Admin2
+	waitmessage
+	release
+	end
+
 MonitoringStation_Central_Movement_PanToActionFromTop::
 	walk_slow_down
 	walk_slow_down

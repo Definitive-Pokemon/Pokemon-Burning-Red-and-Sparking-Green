@@ -31,5 +31,6 @@ MonitoringStation_Shortcut_EventScript_KabutopsTakesKey::
 	waitmessage
 	fadeinbgm 1
 	setvar VAR_TAKEKEY, 1
+	clearflag FLAG_HIDE_ADMIN2
 	release
 	end
