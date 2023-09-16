@@ -1,13 +1,12 @@
 MonitoringStation_ConferenceRoom_Text_RocketM1::
-	.string "Yeah, we were notified that\n"
-	.string "you had somehow snuck your\p"
-	.string "way in.\p"
-	.string "The pipsqueak you saw near\n"
-	.string "the elevator is right there,\p"
-	.string "trying to reach his family.\p"
-	.string "He ran in here the moment the\n"
+	.string "Yeah, we were notified that you had\n"
+	.string "somehow snuck your way in.\p"
+	.string "The pipsqueak you saw near the lift\n"
+	.string "is right there, trying to reach his\p"
+	.string "family.\p"
+	.string "He rushed in here the moment the\n"
 	.string "emergency doors reopened.\p"
-	.string "Hahaha, Poor guy.$"
+	.string "Hahaha, poor guy.$"
 
 MonitoringStation_ConferenceRoom_Text_RocketM2::
 	.string "Right now, I don't feel like talking\n"
@@ -16,12 +15,12 @@ MonitoringStation_ConferenceRoom_Text_RocketM2::
 
 MonitoringStation_ConferenceRoom_Text_RocketM3::
 	.string "Hm? You're looking for a way to\n"
-	.string "get inside the office of\p"
-	.string "the EXECUTIVE?\p"
+	.string "get inside the personal office\p"
+	.string "of our EXECUTIVE?\p"
 	.string "You will need a YELLOW KEY\n"
 	.string "for that.\p"
 	.string "Do I look important enough for you\n"
-	.string "to think I carry around things\p"
+	.string "to believe I carry around things\p"
 	.string "like that?\p"
 	.string "I don't have a YELLOW KEY,\n"
 	.string "but I got a BLUE KEY.\p"
@@ -34,18 +33,18 @@ MonitoringStation_ConferenceRoom_Text_ObtainedBlueKey::
 
 MonitoringStation_ConferenceRoom_Text_RocketM32::
 	.string "I hope you manage to reach the\n"
-	.string "EXECUTIVE without running\p"
-	.string "into trouble.$"
+	.string "EXECUTIVE without running into\p"
+	.string "trouble.$"
 
 MonitoringStation_ConferenceRoom_Text_RocketF1::
 	.string "If that monster dares to set\n"
-	.string "a foot inside this room, it\p"
-	.string "will have to contend with my\n"
-	.string "powerful POKéMON…\n"
+	.string "a foot inside this room,\p"
+	.string "it will have to contend with my\n"
+	.string "powerful POKéMON…$"
 
 MonitoringStation_ConferenceRoom_Text_RocketF2::
 	.string "I'm s-so n-n-nervous!\p"
-	.string "Are we even going to survive\p"
+	.string "Are we even going to survive\n"
 	.string "i-in here…?$"
 
 MonitoringStation_ConferenceRoom_Text_Scientist1::

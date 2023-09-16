@@ -147,7 +147,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": ""
+      "script": "MonitoringStation_ConferenceRoom_EventScript_Text"
     }
   ],
   "level_scaling": "0"
