@@ -24,7 +24,7 @@ MonitoringStation_Central_Text_RocketAh::
 MonitoringStation_Central_Text_Admin::
 	.string "A… child?\n"
 	.string "This day can't get any stranger.\p"
-	.string "You want my RED KEYCARD, right?\p"
+	.string "You want my RED KEY, right?\p"
 	.string "Well, unfortunately, I no longer\n"
 	.string "have it.\p"
 	.string "It was taken from me by the ghost\n"

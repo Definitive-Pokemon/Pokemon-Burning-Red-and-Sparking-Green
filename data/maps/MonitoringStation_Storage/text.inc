@@ -23,7 +23,7 @@ MonitoringStation_Storage_Text_RedKeyAdmin::
 	.string "by climbing the staircase standing\p"
 	.string "next to the elevator.\p"
 	.string "However, to access the staircase,\n"
-	.string "you will need a RED KEYCARD.\p"
+	.string "you will need a RED KEY.\p"
 	.string "Only two people in this base have\n"
 	.string "been given such a key by our BOSS.\p"
 	.string "One of them is the base's ADMIN, who\n"
@@ -47,28 +47,28 @@ MonitoringStation_Storage_Text_RedKeyAdmin::
 	.string "After all, you're stuck here, too!\p"
 	.string "Now, get a move on!\p"
 	.string "Restore the power and get that\n"
-	.string "RED KEYCARD!$"
+	.string "RED KEY!$"
 	
 MonitoringStation_Storage_Text_Done::
 	.string "Huh, what?!\n"
 	.string "Stop startling me!\p"
 	.string "What are you waiting for?!\p"
 	.string "Restore the power and get that\n"
-	.string "RED KEYCARD!$"
+	.string "RED KEY!$"
 	
 MonitoringStation_Storage_Text_Phew::
 	.string "Ah, it's you!\n"
 	.string "Seems you have restored the power.\p"
 	.string "Good job, little guy.\p"
 	.string "Now, go and find the ADMIN and\n"
-	.string "ask for that RED KEYCARD!$"
+	.string "ask for that RED KEY!$"
 
 MonitoringStation_Storage_Text_BlueKey::
-	.string "You got the RED KEYCARD?\p"
+	.string "You got the RED KEY?\p"
 	.string "…\p"
 	.string "Oh.\p"
 	.string "In that case, you will need a\n"
-	.string "YELLOW KEYCARD to get into the\p"
+	.string "YELLOW KEY to get into the\p"
 	.string "office of the EXECUTIVE.\p"
 	.string "I don't have one here, though.\n"
 	.string "You will have to ask someone else.$"

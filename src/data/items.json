@@ -4289,7 +4289,7 @@
       "secondaryId": 0
     },
     {
-      "english": "BLUE KEYCARD",
+      "english": "BLUE KEY",
       "itemId": "ITEM_BLUE_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
@@ -4305,13 +4305,13 @@
       "secondaryId": 0
     },
     {
-      "english": "YELLOW KEYCARD",
+      "english": "YELLOW KEY",
       "itemId": "ITEM_YELLOW_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
       "description_english": "A card-type key that unlocks yellow doors\\nin TEAM ROCKET's hideout\\nunderneath TRAINER TOWER.",
-      "importance": 2,
+      "importance": 1,
       "exitsBagOnUse": 0,
       "pocket": "POCKET_KEY_ITEMS",
       "type": 4,
@@ -4465,7 +4465,7 @@
       "secondaryId": 0
     },
     {
-      "english": "RED KEYCARD",
+      "english": "RED KEY",
       "itemId": "ITEM_RED_KEY",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
