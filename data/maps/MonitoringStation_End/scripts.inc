@@ -28,7 +28,7 @@ MonitoringStation_End_EventScript_RedDoor::
 	
 MonitoringStation_End_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_END
-	playse SE_UNLOCK
+	playse SE_RS_DOOR
 	waitse
 	removeobject LOCALID_RED_DOOR1
 	removeobject LOCALID_RED_DOOR2

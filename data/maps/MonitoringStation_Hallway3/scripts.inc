@@ -33,7 +33,7 @@ MonitoringStation_Hallway3_EventScript_BlueDoor::
 	
 MonitoringStation_Hallway3_EventScript_RemoveBlueDoor::
 	setflag FLAG_BLUE_DOOR_QUARTER
-	playse SE_UNLOCK
+	playse SE_RS_DOOR
 	waitse
 	removeobject LOCALID_BLUE_DOOR1
 	removeobject LOCALID_BLUE_DOOR2
