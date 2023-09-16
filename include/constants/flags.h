@@ -942,9 +942,9 @@
 #define FLAG_HIDE_HORROR_NPC               0x393
 #define FLAG_HIDE_ADMIN2               0x394
 #define FLAG_FIND_BLUE_KEY               0x395
+#define FLAG_GOT_BLUE_KEY               0x396
 
 // Unused?
-#define FLAG_0x396               0x396
 #define FLAG_0x397               0x397
 #define FLAG_0x398               0x398
 #define FLAG_0x399               0x399

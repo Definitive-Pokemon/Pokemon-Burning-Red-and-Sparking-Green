@@ -284,7 +284,7 @@ TrainerTower_EventScript_SpeakToOwner:: @ 81C53AA
 TrainerTower_Roof_EventScript_GiveEmerald:
 	msgbox TrainerTower_Roof_Text_ThisIsForYou
 	waitmessage
-	giveitem_msg TrainerTower_Roof_Text_ObtainedEmerald, ITEM_EMERALD 
+	giveitem_msg TrainerTower_Roof_Text_ObtainedEmerald, ITEM_EMERALD
 	setflag FLAG_GOT_EMERALD
 	msgbox TrainerTower_Roof_Text_AboutTimes
 	goto TrainerTower_Roof_EventScript_CheckFinalTime
