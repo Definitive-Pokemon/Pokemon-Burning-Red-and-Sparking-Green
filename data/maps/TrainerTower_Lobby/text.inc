@@ -46,18 +46,6 @@ TrainerTower_Lobby_Text_MoveCounterHereWhenTrainersSwitch:: @ 817C9C0
     .string "the reception counter here.\p"
     .string "I'm sorry for the inconvenience.$"
 	
-TrainerTower_Roof_Text_HaveEmerald::
-    .string "Hello…\p"
-    .string "I am the owner of this TOWER…\p"
-    .string "How the sky soars above this\n"
-    .string "rooftop…\p"
-    .string "The caress of the winds up here…\p"
-    .string "It's all so perfect…\p"
-    .string "The way you battled was\n"
-    .string "simply magnificent…\p"
-	.string "The grand prize of TRAINER TOWER\n"
-	.string "is now yours.$"
-	
 TrainerTower_Roof_Text_ObtainedEmerald::
     .string "{PLAYER} received the EMERALD\n"
 	.string "from the owner of the tower!$"
