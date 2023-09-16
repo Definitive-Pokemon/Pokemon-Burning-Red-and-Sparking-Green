@@ -28,7 +28,7 @@ MonitoringStation_ConferenceRoom_Text_RocketM3::
 	.string "It will help you find more\n"
 	.string "GRUNTS that can help you.$"
 	
-ConferenceRoom_Text_ObtainedBlueKey::
+MonitoringStation_ConferenceRoom_Text_ObtainedBlueKey::
 	.string "{PLAYER} received a BLUE KEY\n"
 	.string "from the TEAM ROCKET GRUNT!$"
 
