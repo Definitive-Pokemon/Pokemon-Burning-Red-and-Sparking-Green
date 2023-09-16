@@ -77,6 +77,13 @@ MonitoringStation_ConferenceRoom_EventScript_Scientist2::
 	release
 	end
 	
+MonitoringStation_ConferenceRoom_EventScript_RocketM4::
+	lock
+	msgbox MonitoringStation_ConferenceRoom_Text_RocketM4
+	waitmessage
+	release
+	end
+	
 MonitoringStation_ConferenceRoom_EventScript_Text::
 	msgbox MonitoringStation_ConferenceRoom_Text_Text, MSGBOX_SIGN
 	end
