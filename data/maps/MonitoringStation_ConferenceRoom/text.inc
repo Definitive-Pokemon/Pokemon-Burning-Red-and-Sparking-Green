@@ -10,8 +10,8 @@ MonitoringStation_ConferenceRoom_Text_RocketM1::
 	.string "Hahaha, Poor guy.$"
 
 MonitoringStation_ConferenceRoom_Text_RocketM2::
-	.string "Right now, I don't feel like\n"
-	.string "talking to some stuck-up kid.\p"
+	.string "Right now, I don't feel like talking\n"
+	.string "to some stuck-up kid.\p"
 	.string "Go find someone else to bother!$"
 
 MonitoringStation_ConferenceRoom_Text_RocketM3::
