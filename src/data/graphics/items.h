@@ -531,10 +531,10 @@ const u32 gFile_graphics_items_icons_contest_pass_sheet[] = INCBIN_U32("graphics
 const u32 gFile_graphics_items_icon_palettes_contest_pass_palette[] = INCBIN_U32("graphics/items/icon_palettes/contest_pass.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_blue_key_sheet[] = INCBIN_U32("graphics/items/icons/blue_key.4bpp.lz");
-const u32 gFile_graphics_items_icon_palettes_blue_scarf_palette[] = INCBIN_U32("graphics/items/icon_palettes/blue_key.gbapal.lz");
+const u32 gFile_graphics_items_icon_palettes_blue_key_palette[] = INCBIN_U32("graphics/items/icon_palettes/blue_key.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_yellow_key_sheet[] = INCBIN_U32("graphics/items/icons/yellow_key.4bpp.lz");
-const u32 gFile_graphics_items_icon_palettes_yellow_scarf_palette[] = INCBIN_U32("graphics/items/icon_palettes/yellow_key.gbapal.lz");
+const u32 gFile_graphics_items_icon_palettes_yellow_key_palette[] = INCBIN_U32("graphics/items/icon_palettes/yellow_key.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_soot_sack_sheet[] = INCBIN_U32("graphics/items/icons/soot_sack.4bpp.lz");
 const u32 gFile_graphics_items_icon_palettes_soot_sack_palette[] = INCBIN_U32("graphics/items/icon_palettes/soot_sack.gbapal.lz");
@@ -561,7 +561,7 @@ const u32 gFile_graphics_items_icons_scanner_sheet[] = INCBIN_U32("graphics/item
 const u32 gFile_graphics_items_icon_palettes_scanner_palette[] = INCBIN_U32("graphics/items/icon_palettes/scanner.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_red_key_sheet[] = INCBIN_U32("graphics/items/icons/red_key.4bpp.lz");
-const u32 gFile_graphics_items_icon_palettes_red_scarf_palette[] = INCBIN_U32("graphics/items/icon_palettes/red_key.gbapal.lz");
+const u32 gFile_graphics_items_icon_palettes_red_key_palette[] = INCBIN_U32("graphics/items/icon_palettes/red_key.gbapal.lz");
 
 const u32 gFile_graphics_items_icons_meteorite_sheet[] = INCBIN_U32("graphics/items/icons/meteorite.4bpp.lz");
 const u32 gFile_graphics_items_icon_palettes_meteorite_palette[] = INCBIN_U32("graphics/items/icon_palettes/meteorite.gbapal.lz");
