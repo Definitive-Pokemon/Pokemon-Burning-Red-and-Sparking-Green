@@ -30,7 +30,198 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Aggron"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Aggron"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Shiftry"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Shiftry"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Rhydon"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Rhydon"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Typhlosion"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Typhlosion"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Gardevoir"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Gardevoir"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Tauros"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Tauros"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Cacturne"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Cacturne"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Houndoom"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Houndoom"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Walrein"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Walrein"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Altaria"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Altaria"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Ampharos"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Ampharos"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Venusaur"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MonitoringStation_Pokemon_EventScript_Venusaur"
+    }
   ],
   "level_scaling": "0"
 }

@@ -7534,6 +7534,24 @@ const struct WildPokemon sFieryPassage_LandMons[] =
 
 const struct WildPokemonInfo sFieryPassage_LandMonsInfo = { 5, sFieryPassage_LandMons };
 
+const struct WildPokemon sMonitoringStation_Pokemon_LandMons[] =
+{
+    { 16, 16, SPECIES_SHARPEDO },
+    { 17, 17, SPECIES_AGGRON },
+    { 18, 18, SPECIES_VENUSAUR },
+    { 17, 17, SPECIES_SHIFTRY },
+    { 19, 19, SPECIES_STARMIE },
+    { 18, 18, SPECIES_AMPHAROS },
+    { 16, 16, SPECIES_HOUNDOOM },
+    { 17, 17, SPECIES_CACTURNE },
+    { 18, 18, SPECIES_GARDEVOIR },
+    { 18, 18, SPECIES_WALREIN },
+    { 19, 19, SPECIES_WAILMER },
+    { 22, 22, SPECIES_MILOTIC },
+};
+
+const struct WildPokemonInfo sMonitoringStation_Pokemon_LandMonsInfo = { 5, sMonitoringStation_Pokemon_LandMons };
+
 const struct WildPokemonHeader gWildMonHeaders[] =
 {
     {
@@ -9293,6 +9311,18 @@ const struct WildPokemonHeader gWildMonHeaders[] =
         .mapNum = MAP_NUM(FIERY_PASSAGE),
         .landMonsInfo_FR = &sFieryPassage_LandMonsInfo,
         .landMonsInfo_LG = &sFieryPassage_LandMonsInfo,
+        .waterMonsInfo_FR = NULL,
+        .waterMonsInfo_LG = NULL,
+        .rockSmashMonsInfo_FR = NULL,
+        .rockSmashMonsInfo_LG = NULL,
+        .fishingMonsInfo_FR = NULL,
+        .fishingMonsInfo_LG = NULL,
+    },
+	{
+        .mapGroup = MAP_GROUP(MONITORING_STATION_POKEMON),
+        .mapNum = MAP_NUM(MONITORING_STATION_POKEMON),
+        .landMonsInfo_FR = &sMonitoringStation_Pokemon_LandMonsInfo,
+        .landMonsInfo_LG = &sMonitoringStation_Pokemon_LandMonsInfo,
         .waterMonsInfo_FR = NULL,
         .waterMonsInfo_LG = NULL,
         .rockSmashMonsInfo_FR = NULL,
