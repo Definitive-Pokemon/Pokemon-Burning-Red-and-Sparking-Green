@@ -1084,7 +1084,8 @@ static bool8 IsWarpInsideMonitoringStation(struct WarpData * warp)
             warp->mapNum == ((u8)MAP_MONITORING_STATION_POKEMON) ||
             warp->mapNum == ((u8)MAP_MONITORING_STATION_HALLWAY3) ||
             warp->mapNum == ((u8)MAP_MONITORING_STATION_QUARTERS) ||
-            warp->mapNum == ((u8)MAP_MONITORING_STATION_OFFICE))
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_OFFICE) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_END))
         {
             result = TRUE;
         }
