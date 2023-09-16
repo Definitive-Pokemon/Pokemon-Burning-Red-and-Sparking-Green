@@ -1,5 +1,8 @@
 #include "global.h"
 #include "pokemon.h"
+// required to ensure the pokemon tables load
+#include "constants/moves.h"
+#include "constants/party_menu.h"
 #include "data/pokemon/forms.h"
 
 bool8 SpeciesIsForm(u16 species)
