@@ -34,6 +34,12 @@ MonitoringStation_ConferenceRoom_EventScript_RocketM3::
 	waitmessage
 	giveitem_msg MonitoringStation_ConferenceRoom_Text_ObtainedBlueKey, ITEM_BLUE_KEY
 	setflag FLAG_GOT_BLUE_KEY
+	setflag FLAG_HIDE_ADMIN2
+	setflag FLAG_HIDE_STORAGE_GRUNT
+	clearflag FLAG_HIDE_ADMIN1
+	clearflag FLAG_HIDE_STORAGE_GRUNT1
+	clearflag FLAG_HIDE_STORAGE_GRUNT2
+	setvar VAR_ADMIN_CONVO, 1
 	msgbox MonitoringStation_ConferenceRoom_Text_RocketM32
 	waitmessage
 	release

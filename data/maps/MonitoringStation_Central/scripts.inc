@@ -135,6 +135,14 @@ MonitoringStation_Central_Eventscript_Admin2::
 	waitmessage
 	release
 	end
+	
+MonitoringStation_Central_Eventscript_StorageGrunt1::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Central_Text_StorageGrunt1
+	waitmessage
+	release
+	end
 
 MonitoringStation_Central_Movement_PanToActionFromTop::
 	walk_slow_down

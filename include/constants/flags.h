@@ -943,12 +943,12 @@
 #define FLAG_HIDE_ADMIN2               0x394
 #define FLAG_FIND_BLUE_KEY               0x395
 #define FLAG_GOT_BLUE_KEY               0x396
+#define FLAG_HIDE_STORAGE_GRUNT               0x397
+#define FLAG_HIDE_STORAGE_GRUNT1               0x398
+#define FLAG_HIDE_STORAGE_GRUNT2               0x399
+#define FLAG_HIDE_ADMIN1               0x39A
 
 // Unused?
-#define FLAG_0x397               0x397
-#define FLAG_0x398               0x398
-#define FLAG_0x399               0x399
-#define FLAG_0x39A               0x39A
 #define FLAG_0x39B               0x39B
 #define FLAG_0x39C               0x39C
 #define FLAG_0x39D               0x39D

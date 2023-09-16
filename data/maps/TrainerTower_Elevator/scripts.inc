@@ -96,6 +96,9 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_DONT_TRANSITION_MUSIC
 	warp MAP_MONITORING_STATION, 255, 3, 2
 	waitstate
+	setflag FLAG_HIDE_ADMIN1
+	setflag FLAG_HIDE_STORAGE_GRUNT1
+	setflag FLAG_HIDE_STORAGE_GRUNT2
 	releaseall
 	end
 	
