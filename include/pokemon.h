@@ -5,6 +5,7 @@
 #include "sprite.h"
 #include "constants/pokemon.h"
 #include "constants/species.h"
+#include "constants/forms.h"
 
 struct PokemonSubstruct0
 {
@@ -384,6 +385,9 @@ u8 GetDefaultMoveTarget(u8 battlerId);
 u8 GetMonGender(struct Pokemon *mon);
 u8 GetBoxMonGender(struct BoxPokemon *boxMon);
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality);
+u8 GetGenderFromBaseStatsAndPersonality(struct BaseStats *stats, u32 personality);
+u16 GetFormAndSpeciesFromMon(struct Pokemon * mon);
+struct BaseStats *GetBaseStats(u16 species)
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition);
 void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerSpriteId, u8 battlerPosition);
 
@@ -459,6 +463,7 @@ bool8 IsPokeSpriteNotFlipped(u16 species);
 s8 GetFlavorRelationByPersonality(u32 personality, u8 flavor);
 bool8 IsTradedMon(struct Pokemon *mon);
 bool8 IsOtherTrainer(u32 otId, u8 *otName);
+bool8 IsSpeciesInFormList(u16 species)
 void MonRestorePP(struct Pokemon *mon);
 void BoxMonRestorePP(struct BoxPokemon *boxMon);
 void SetMonPreventsSwitchingString(void);

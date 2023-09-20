@@ -4129,6 +4129,22 @@ u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
         return MON_MALE;
 }
 
+u8 GetGenderFromBaseStatsAndPersonality(struct BaseStats *stats, u32 personality)
+{
+    switch (stats->genderRatio)
+    {
+    case MON_MALE:
+    case MON_FEMALE:
+    case MON_GENDERLESS:
+        return stats->genderRatio;
+    }
+
+    if (stats->genderRatio > (personality & 0xFF))
+        return MON_FEMALE;
+    else
+        return MON_MALE;
+}
+
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition)
 {
     if (gMonSpritesGfxPtr != NULL)
@@ -8197,4 +8213,19 @@ void SetFirstDeoxysForm(void)
             break;
         }
     }
+}
+
+u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
+{
+    return 0;
+}
+
+struct BaseStats *GetBaseStats(u16 species)
+{
+    return NULL;
+}
+
+bool8 IsSpeciesInFormList(u16 species)
+{
+    return FALSE;
 }

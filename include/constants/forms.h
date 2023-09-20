@@ -6,14 +6,15 @@
 
 #define FORM_FLAG_SHIFT 14
 // zero form is simply the 'normal' Gen 3 pokemon!
-#define FIRST_FORM (0x1 << FORM_FLAG_SHIFT)
-#define SECOND_FORM (0x2 << FORM_FLAG_SHIFT)
-#define THIRD_FORM (0x3 << FORM_FLAG_SHIFT)
+#define FORM_FLAG_VALUE(form) ((u16) form << FORM_FLAG_SHIFT)
+#define FIRST_FORM FORM_FLAG_VALUE(1)
+#define SECOND_FORM FORM_FLAG_VALUE(1)
+#define THIRD_FORM FORM_FLAG_VALUE(1)
 #define FORM_SPECIES_MASK (FIRST_FORM - 1)
-#define SPECIES_PART(formSpecies) (formSpecies & FORM_SPECIES_MASK)
 #define FORM_PART(formSpecies) (formSpecies >> FORM_FLAG_SHIFT)
-#define MERGE_SPECIES_FORM(species, form) (species & (form << FORM_FLAG_SHIFT))
-#define FORM_SPECIES_NUMBER(form, species) (form + species)
+#define SPECIES_PART(species) (species & ((u16) FORM_SPECIES_MASK))
+#define FORM_SPECIES_NUMBER(form, species) (species | form)
+
 
 // this is the exact order pokemon forms appear in ROM pokemon data tables
 // These definitions should only be used inside data files
