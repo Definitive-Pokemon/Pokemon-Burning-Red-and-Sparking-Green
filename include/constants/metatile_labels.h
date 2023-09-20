@@ -96,7 +96,8 @@
 #define METATILE_General_WideTreeTopLeft_Mowed   0x00E
 #define METATILE_General_WideTreeTopRight_Grass  0x00C
 #define METATILE_General_WideTreeTopRight_Mowed  0x00F
-#define METATILE_General_CaveWall  0x079
+#define METATILE_General_CaveWall                0x079
+#define METATILE_General_Black                   0x008
 
 // gTileset_GenericBuilding1
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F

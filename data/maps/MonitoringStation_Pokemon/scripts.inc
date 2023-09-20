@@ -1,9 +1,5 @@
 MonitoringStation_Pokemon_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Pokemon_OnLoad
 	.byte 0
-
-MonitoringStation_Pokemon_OnLoad::
-	goto_if_set FLAG_DOOR_REMOVE, MonitoringStation_Pokemon_EventScript_SetDoorRemove
 
 MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	setmetatile 5, 1, METATILE_SilphCo_Wall_Upper, 1
@@ -12,11 +8,23 @@ MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	setmetatile 5, 2, METATILE_SilphCo_Wall_Lower, 1
 	setmetatile 6, 2, METATILE_SilphCo_Wall_Lower, 1
 	setmetatile 7, 2, METATILE_SilphCo_Wall_Lower, 1
+	special DrawWholeMapView
+	setvar VAR_DOOR_REMOVE, 1
+	setflag FLAG_DOOR_REMOVE
+	end
+
+MonitoringStation_Pokemon_EventScript_Warp::
+	warp MAP_SPECIAL, 255, 6, 7
 	end
 
 MonitoringStation_Pokemon_EventScript_Aggron::
 	lock
 	playmoncry SPECIES_AGGRON, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
 
 MonitoringStation_Pokemon_EventScript_Shiftry::
 	lock

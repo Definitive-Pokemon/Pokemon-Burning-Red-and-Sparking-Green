@@ -208,7 +208,7 @@
 #define VAR_THEEND                 0x409C
 #define VAR_TAKEKEY                0x409D
 #define VAR_ADMIN_CONVO            0x409E
-#define VAR_0x409F                 0x409F
+#define VAR_REMOVE_DOOR            0x409F
 #define VAR_0x40A0                 0x40A0
 #define VAR_0x40A1                 0x40A1
 #define VAR_0x40A2                 0x40A2
