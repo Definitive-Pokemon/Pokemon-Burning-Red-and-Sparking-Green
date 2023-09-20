@@ -8240,11 +8240,11 @@ struct BaseStats *GetBaseStats(u16 species)
     if (FORM_PART(species))
     {
         u8 formIndex = GetFormIndex(species);
-        result = &gFormBaseStats[formIndex];
+        result = (struct BaseStats *) &gFormBaseStats[formIndex];
     }
     else
     {
-        result = &gBaseStats[species];
+        result = (struct BaseStats *) &gBaseStats[species];
     }
     return result;
 }
