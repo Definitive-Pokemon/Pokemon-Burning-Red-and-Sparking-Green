@@ -4095,55 +4095,45 @@ u8 GetMonGender(struct Pokemon *mon)
     return GetBoxMonGender(&mon->box);
 }
 
+static u8 GetGenderFromGenderRatioAndPersonality(u8 ratio, u32 personality)
+{
+    switch (ratio)
+    {
+    case MON_MALE:
+    case MON_FEMALE:
+    case MON_GENDERLESS:
+        return ratio;
+    }
+
+    if (ratio > (personality & 0xFF))
+        return MON_FEMALE;
+    else
+        return MON_MALE;
+}
+
 u8 GetBoxMonGender(struct BoxPokemon *boxMon)
 {
     u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
     u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY, NULL);
-
-    switch (gBaseStats[species].genderRatio)
+    u8 form = GetBoxMonData(boxMon, MON_DATA_FORME, NULL);
+    if (form)
     {
-    case MON_MALE:
-    case MON_FEMALE:
-    case MON_GENDERLESS:
-        return gBaseStats[species].genderRatio;
+        species = species | FORM_FLAG_VALUE(form);
+        // misusing vars
+        form = GetFormIndex(species);
+        return GetGenderFromGenderRatioAndPersonality(gFormBaseStats[form].genderRatio, personality);
     }
-
-    if (gBaseStats[species].genderRatio > (personality & 0xFF))
-        return MON_FEMALE;
-    else
-        return MON_MALE;
+    return GetGenderFromGenderRatioAndPersonality(gBaseStats[species].genderRatio, personality)
 }
 
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
 {
-    switch (gBaseStats[species].genderRatio)
-    {
-    case MON_MALE:
-    case MON_FEMALE:
-    case MON_GENDERLESS:
-        return gBaseStats[species].genderRatio;
-    }
-
-    if (gBaseStats[species].genderRatio > (personality & 0xFF))
-        return MON_FEMALE;
-    else
-        return MON_MALE;
+    return GetGenderFromGenderRatioAndPersonality(gBaseStats[species].genderRatio, personality);
 }
 
 u8 GetGenderFromBaseStatsAndPersonality(struct BaseStats *stats, u32 personality)
 {
-    switch (stats->genderRatio)
-    {
-    case MON_MALE:
-    case MON_FEMALE:
-    case MON_GENDERLESS:
-        return stats->genderRatio;
-    }
-
-    if (stats->genderRatio > (personality & 0xFF))
-        return MON_FEMALE;
-    else
-        return MON_MALE;
+    return GetGenderFromGenderRatioAndPersonality(stats->genderRatio, personality);
 }
 
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition)
@@ -8233,7 +8223,7 @@ u8 GetFormIndex(u16 species)
 u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
 {
     u16 result = GetMonData(mon, MON_DATA_SPECIES, NULL);
-    result = result | FORM_FLAG_VALUE((u8) GetMonData(mon, MON_DATA_FORME));
+    result = result | FORM_FLAG_VALUE((u8) GetMonData(mon, MON_DATA_FORME, NULL));
     return result;
 }
 
