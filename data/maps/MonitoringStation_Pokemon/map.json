@@ -95,7 +95,7 @@
       "x": 6,
       "y": 59,
       "elevation": 0,
-      "var": "WARPTOSCARY",
+      "var": "VAR_WARPTOSCARY",
       "var_value": "0",
       "script": "MonitoringStation_Pokemon_EventScript_Warp"
     }
