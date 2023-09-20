@@ -1314,16 +1314,13 @@ const u16 gEggMoves[] = {
 
 //TODO:FORME
 
-const u16 gFossilizedKabutopsEggMoves[] = 
-{
-    MOVE_LIGHT_SCREEN,
-    MOVE_SKULL_BASH,
-    MOVE_SAFEGUARD,
-    MOVE_CHARM,
-    MOVE_PETAL_DANCE,
-    MOVE_MAGICAL_LEAF,
-    MOVE_GRASS_WHISTLE,
-    MOVE_CURSE,
+#define form_egg_moves(formIndex, moves...) (formIndex + EGG_MOVES_SPECIES_OFFSET), moves
+
+const u16 gFormEggMoves[] = {
+    form_egg_moves(FORM_FOSSILIZED_KABUTOPS,
+              MOVE_LIGHT_SCREEN,
+              MOVE_SKULL_BASH,
+              MOVE_CURSE),
 };
 
 #endif //GUARD_EGG_MOVES_H

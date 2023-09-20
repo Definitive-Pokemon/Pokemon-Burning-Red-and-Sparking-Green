@@ -11298,4 +11298,15 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_CHIMECHO] = sChimechoTMHMLearnset
 };
 
+static const u8 sFossilizedKabutopsTMHMLearnset[] =
+{
+    TMHM(TM39_ROCK_TOMB),
+    0xFF,
+};
+
+const u8 *const gFormTMHMLearnsets[] =
+{
+    [FORM_FOSSILIZED_KABUTOPS] = sFossilizedKabutopsTMHMLearnset,
+};
+
 #endif //GUARD_TMHM_LEARNSETS_H

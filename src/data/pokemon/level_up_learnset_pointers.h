@@ -413,3 +413,8 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DEOXYS] = sDeoxysLevelUpLearnset,
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
 };
+
+const u16 *const gFormLevelUpLearnsets[NUM_TOTAL_VARIANTS] =
+{
+    [FORM_FOSSILIZED_KABUTOPS] = sFossilizedKabutopsLevelUpLearnset,
+};

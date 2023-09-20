@@ -25,7 +25,6 @@
 #include "party_menu.h"
 #include "pokeball.h"
 #include "pokedex.h"
-#include "pokemon_forms_functions.h"
 #include "quest_log.h"
 #include "random.h"
 #include "roamer.h"

@@ -5903,19 +5903,23 @@ static const u64 sTutorLearnsets[] =
 
 };
 
-static const u64 sFossilizedKabutopsTutorLearnsets = 
-    (TUTOR(MOVE_SWORDS_DANCE)
-    | TUTOR(MOVE_BODY_SLAM)
-    | TUTOR(MOVE_DOUBLE_EDGE)
-    | TUTOR(MOVE_MIMIC)
-    | TUTOR(MOVE_SUBSTITUTE)
-    | TUTOR(MOVE_SNORE)
-    | TUTOR(MOVE_ENDURE)
-    | TUTOR(MOVE_MUD_SLAP)
-    | TUTOR(MOVE_SWAGGER)
-    | TUTOR(MOVE_SLEEP_TALK)
-    | TUTOR(MOVE_DEFENSE_CURL)
-    | TUTOR(MOVE_FURY_CUTTER));
+
+
+static const u64 sFormTutorLearnsets [] = 
+{
+
+    [FORM_FOSSILIZED_KABUTOPS]        = (TUTOR(MOVE_SWORDS_DANCE)
+                                | TUTOR(MOVE_BODY_SLAM)
+                                | TUTOR(MOVE_DOUBLE_EDGE)
+                                | TUTOR(MOVE_MIMIC)
+                                | TUTOR(MOVE_SUBSTITUTE)
+                                | TUTOR(MOVE_SNORE)
+                                | TUTOR(MOVE_ENDURE)
+                                | TUTOR(MOVE_MUD_SLAP)
+                                | TUTOR(MOVE_SWAGGER)
+                                | TUTOR(MOVE_SLEEP_TALK)
+                                | TUTOR(MOVE_DEFENSE_CURL)
+                                | TUTOR(MOVE_FURY_CUTTER)),
+};
 
 #endif //GUARD_TUTOR_LEARNSETS_H
-
