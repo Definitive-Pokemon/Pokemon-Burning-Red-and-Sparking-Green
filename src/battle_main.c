@@ -1601,7 +1601,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonNoItemCustomMoves *partyData = sTrainers[trainerNum].party.NoItemCustomMoves;
 
-                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    u16 tempSpecies = SPECIES_PART(partyData[i].species);
                     for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
                         nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;
@@ -1621,7 +1621,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonItemDefaultMoves *partyData = sTrainers[trainerNum].party.ItemDefaultMoves;
 
-                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    u16 tempSpecies = SPECIES_PART(partyData[i].species);
                     for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
                         nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;
@@ -1637,7 +1637,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
                 {
                     const struct TrainerMonItemCustomMoves *partyData = sTrainers[trainerNum].party.ItemCustomMoves;
-                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    u16 tempSpecies = SPECIES_PART(partyData[i].species);
                     for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
                         nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += ((nameHash << 8) - partyData[i].abilityNum);
@@ -1672,7 +1672,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                     u8 gender;
                     u8 friendship = 255;
 
-                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    u16 tempSpecies = SPECIES_PART(partyData[i].species);
                     for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
                         nameHash += gSpeciesNames[tempSpecies][j];
                     if (sTrainers[trainerNum].encounterMusic_gender & 0x80)
