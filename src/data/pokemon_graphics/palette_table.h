@@ -444,5 +444,5 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
 
 const struct CompressedSpritePalette gFormMonPaletteTable[] =
 {
-    SPECIES_PAL(FORM_FOSSILIZED_KABUTOPS, gMonPalette_CircledQuestionMark),
+    FORM_SPECIES_PAL(FOSSILIZED_KABUTOPS, gMonPalette_CircledQuestionMark),
 };

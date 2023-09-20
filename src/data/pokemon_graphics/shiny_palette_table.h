@@ -444,5 +444,5 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
 
 const struct CompressedSpritePalette gFormMonShinyPaletteTable[] =
 {
-    SPECIES_SHINY_PAL(NONE, gMonShinyPalette_CircledQuestionMark),
+    FORM_SPECIES_SHINY_PAL(FOSSILIZED_KABUTOPS, gMonShinyPalette_CircledQuestionMark),
 };
