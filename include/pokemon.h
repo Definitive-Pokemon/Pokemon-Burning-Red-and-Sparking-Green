@@ -327,12 +327,14 @@ extern struct Pokemon gPlayerParty[PARTY_SIZE];
 extern u8 gEnemyPartyCount;
 extern struct Pokemon gEnemyParty[PARTY_SIZE];
 extern const struct BaseStats gBaseStats[];
+extern const struct BaseStats gFormBaseStats[];
 extern const u8 *const gItemEffectTable[];
 extern const u8 gStatStageRatios[][2];
 extern struct SpriteTemplate gMultiuseSpriteTemplate;
 extern struct PokemonStorage* gPokemonStoragePtr;
 extern const u32 gExperienceTables[][MAX_LEVEL + 1];
 extern const u16 *const gLevelUpLearnsets[];
+extern const u16 *const gFormLevelUpLearnsets[];
 extern const u8 gFacilityClassToPicIndex[];
 extern const u8 gFacilityClassToTrainerClass[];
 extern const struct SpriteTemplate gSpriteTemplates_Battlers[];
@@ -376,7 +378,7 @@ u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality);
 u8 GetGenderFromBaseStatsAndPersonality(struct BaseStats *stats, u32 personality);
 u8 GetFormIndex(u16 species);
 u16 GetFormAndSpeciesFromMon(struct Pokemon * mon);
-struct BaseStats *GetBaseStats(u16 species)
+struct BaseStats *GetBaseStats(u16 species);
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition);
 void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerSpriteId, u8 battlerPosition);
 
@@ -452,7 +454,7 @@ bool8 IsPokeSpriteNotFlipped(u16 species);
 s8 GetFlavorRelationByPersonality(u32 personality, u8 flavor);
 bool8 IsTradedMon(struct Pokemon *mon);
 bool8 IsOtherTrainer(u32 otId, u8 *otName);
-bool8 IsSpeciesInFormList(u16 species)
+bool8 IsSpeciesInFormList(u16 species);
 void MonRestorePP(struct Pokemon *mon);
 void BoxMonRestorePP(struct BoxPokemon *boxMon);
 void SetMonPreventsSwitchingString(void);
