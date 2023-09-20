@@ -18,7 +18,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 16,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_MONITORING_STATION_STORAGE",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 

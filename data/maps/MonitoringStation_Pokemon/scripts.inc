@@ -9,7 +9,7 @@ MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	setmetatile 6, 2, METATILE_SilphCo_Wall_Lower, 1
 	setmetatile 7, 2, METATILE_SilphCo_Wall_Lower, 1
 	special DrawWholeMapView
-	setvar VAR_DOOR_REMOVE, 1
+	setvar VAR_REMOVE_DOOR, 1
 	setflag FLAG_DOOR_REMOVE
 	end
 
