@@ -234,18 +234,6 @@ struct BaseStats
             u8 noFlip : 1;
 };
 
-/* Represents everything about the variant of a pokemon species (form) e.g. Alolan */
-struct PokemonForm
-{
-    u16 baseSpecies;
-    u8 formNumber;
-    struct BaseStats *stats;
-    const u16 (*levelUpMoves)[];
-    const u8 (*TMHMMoves)[];
-    const u16 (*eggMoves)[];
-    const u64 *tutorMoveFlags;
-};
-
 struct BattleMove
 {
     u8 effect;
@@ -386,6 +374,7 @@ u8 GetMonGender(struct Pokemon *mon);
 u8 GetBoxMonGender(struct BoxPokemon *boxMon);
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality);
 u8 GetGenderFromBaseStatsAndPersonality(struct BaseStats *stats, u32 personality);
+u8 GetFormIndex(u16 species);
 u16 GetFormAndSpeciesFromMon(struct Pokemon * mon);
 struct BaseStats *GetBaseStats(u16 species)
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition);

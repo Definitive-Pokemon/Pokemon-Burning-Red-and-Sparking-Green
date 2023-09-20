@@ -1586,7 +1586,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                     // because forms always have the same names, hash values are equivalent. Simply
                     // make sure it's a valid species number found in the global list 
-                    u16 tempSpecies = RemoveFormFromSpecies(partyData[i].species);
+                    u16 tempSpecies = SPECIES_PART(partyData[i].species);
                     for (j = 0; gSpeciesNames[tempSpecies][j] != EOS; ++j)
                         nameHash += gSpeciesNames[tempSpecies][j];
                     personalityValue += nameHash << 8;

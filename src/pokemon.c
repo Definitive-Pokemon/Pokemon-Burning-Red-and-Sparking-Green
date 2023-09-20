@@ -8215,6 +8215,20 @@ void SetFirstDeoxysForm(void)
     }
 }
 
+// will fail if using a regular species
+u8 GetFormIndex(u16 species)
+{
+    u8 i;
+    for (i = 0; i < NUM_TOTAL_VARIANTS; i++)
+    {
+        if(gFormsOrder[i] == species)
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
 u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
 {
     return 0;
@@ -8222,10 +8236,28 @@ u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
 
 struct BaseStats *GetBaseStats(u16 species)
 {
-    return NULL;
+    struct BaseStats * result;
+    if (FORM_PART(species))
+    {
+        u8 formIndex = GetFormIndex(species);
+        result = &gFormBaseStats[formIndex];
+    }
+    else
+    {
+        result = &gBaseStats[species];
+    }
+    return result;
 }
 
 bool8 IsSpeciesInFormList(u16 species)
 {
+    u8 i;
+    for (i = 0; i < NUM_TOTAL_VARIANTS; i++)
+    {
+        if(gFormsOrder[i] == SPECIES_PART(species))
+        {
+            return TRUE;
+        }
+    }
     return FALSE;
 }
