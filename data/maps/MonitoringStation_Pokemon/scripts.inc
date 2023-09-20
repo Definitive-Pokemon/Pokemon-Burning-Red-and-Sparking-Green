@@ -14,7 +14,9 @@ MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	end
 
 MonitoringStation_Pokemon_EventScript_Warp::
+	lockall
 	warp MAP_SPECIAL, 255, 6, 7
+	releaseall
 	end
 
 MonitoringStation_Pokemon_EventScript_Aggron::
