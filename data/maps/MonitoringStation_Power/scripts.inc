@@ -101,6 +101,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	waitmessage
 	setflag FLAG_HIDE_HORROR_NPC
 	setflag FLAG_HORROR_POWER_RESTORED
+	setvar VAR_MONITORING_STATION_HALLWAY2_HELP, 1
 	setvar VAR_TAKEKEY, 0
 	fadeinbgm 1
 	release
