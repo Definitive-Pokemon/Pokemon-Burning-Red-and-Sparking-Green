@@ -328,6 +328,7 @@ extern u8 gEnemyPartyCount;
 extern struct Pokemon gEnemyParty[PARTY_SIZE];
 extern const struct BaseStats gBaseStats[];
 extern const struct BaseStats gFormBaseStats[];
+extern const u16 gFormsOrder[];
 extern const u8 *const gItemEffectTable[];
 extern const u8 gStatStageRatios[][2];
 extern struct SpriteTemplate gMultiuseSpriteTemplate;
