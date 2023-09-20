@@ -4123,7 +4123,7 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
         form = GetFormIndex(species);
         return GetGenderFromGenderRatioAndPersonality((u8)gFormBaseStats[form].genderRatio, personality);
     }
-    return GetGenderFromGenderRatioAndPersonality(gBaseStats[species].genderRatio, personality)
+    return GetGenderFromGenderRatioAndPersonality(gBaseStats[species].genderRatio, personality);
 }
 
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
