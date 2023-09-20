@@ -441,3 +441,8 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(UNOWN_EMARK, gMonPalette_Unown),
     SPECIES_PAL(UNOWN_QMARK, gMonPalette_Unown),
 };
+
+const struct CompressedSpritePalette gFormMonPaletteTable[] =
+{
+    SPECIES_PAL(FORM_FOSSILIZED_KABUTOPS, gMonPalette_CircledQuestionMark),
+};

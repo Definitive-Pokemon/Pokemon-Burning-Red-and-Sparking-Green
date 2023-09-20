@@ -7578,6 +7578,14 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
         else
             return gMonPaletteTable[SPECIES_DEOXYS].data;
     }
+    if (FORM_PART(species))
+    {
+        u8 formIndex = GetFormIndex(species);
+        if (shinyValue < 8)
+            return gFormMonShinyPaletteTable[formIndex].data;
+        else
+            return gFormMonPaletteTable[formIndex].data;
+    }
 
     if (species > SPECIES_EGG)
         return gMonPaletteTable[0].data;
