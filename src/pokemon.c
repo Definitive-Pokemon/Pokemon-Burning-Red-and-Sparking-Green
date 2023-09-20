@@ -8232,7 +8232,9 @@ u8 GetFormIndex(u16 species)
 
 u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
 {
-    return 0;
+    u16 result = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    result = result | FORM_FLAG_VALUE((u8) GetMonData(mon, MON_DATA_FORME));
+    return result;
 }
 
 struct BaseStats *GetBaseStats(u16 species)
