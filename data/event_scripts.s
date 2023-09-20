@@ -1409,3 +1409,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/PokeCenter/scripts.inc"
 	.include "data/maps/PokeCenter/text.inc"
+
+	.include "data/maps/Special/scripts.inc"
+	.include "data/maps/Special/text.inc"

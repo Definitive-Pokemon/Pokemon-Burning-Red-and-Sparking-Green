@@ -238,6 +238,7 @@
 #define MAP_MONITORING_STATION_EMERALD_ROOM           (93 | (2 << 8))
 #define MAP_MONITORING_STATION_LAIR                   (94 | (2 << 8))
 #define MAP_POKE_CENTER                               (95 | (2 << 8))
+#define MAP_SPECIAL                                   (96 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))

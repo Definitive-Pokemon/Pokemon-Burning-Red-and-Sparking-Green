@@ -1,5 +1,18 @@
 MonitoringStation_Pokemon_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Pokemon_OnLoad
 	.byte 0
+
+MonitoringStation_Pokemon_OnLoad::
+	goto_if_set FLAG_DOOR_REMOVE, MonitoringStation_Pokemon_EventScript_SetDoorRemove
+
+MonitoringStation_Pokemon_EventScript_SetDoorRemove::
+	setmetatile 5, 1, METATILE_SilphCo_Wall_Upper, 1
+	setmetatile 6, 1, METATILE_SilphCo_Wall_Upper, 1
+	setmetatile 7, 1, METATILE_SilphCo_Wall_Upper, 1
+	setmetatile 5, 2, METATILE_SilphCo_Wall_Lower, 1
+	setmetatile 6, 2, METATILE_SilphCo_Wall_Lower, 1
+	setmetatile 7, 2, METATILE_SilphCo_Wall_Lower, 1
+	end
 
 MonitoringStation_Pokemon_EventScript_Aggron::
 	lock

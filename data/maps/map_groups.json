@@ -278,7 +278,8 @@
     "MonitoringStation_End",
     "MonitoringStation_EmeraldRoom",
     "MonitoringStation_Lair",
-    "PokeCenter"
+    "PokeCenter",
+    "Special"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

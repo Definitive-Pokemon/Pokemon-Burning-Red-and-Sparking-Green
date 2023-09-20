@@ -4997,7 +4997,7 @@
       "id": "LAYOUT_MONITORING_STATION_POKEMON",
       "name": "MonitoringStation_Pokemon_Layout",
       "width": 13,
-      "height": 23,
+      "height": 60,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -5088,6 +5088,18 @@
       "secondary_tileset": "gTileset_SeviiIslands5",
       "border_filepath": "data/layouts/PokeCenter/border.bin",
       "blockdata_filepath": "data/layouts/PokeCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPECIAL",
+      "name": "Special_Layout",
+      "width": 24,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/Special/border.bin",
+      "blockdata_filepath": "data/layouts/Special/map.bin"
     }
   ]
 }

@@ -350,6 +350,8 @@
 #define METATILE_SilphCo_VerticalBarrier_TopRight       0x3C1
 #define METATILE_SilphCo_Wall_LeftEdge                  0x347
 #define METATILE_SilphCo_Wall_RightEdge                 0x346
+#define METATILE_SilphCo_Wall_Upper                     0x289
+#define METATILE_SilphCo_Wall_Lower                     0x291
 
 // gTileset_TrainerTower
 #define METATILE_TrainerTower_CounterBarrier         0x2B4
