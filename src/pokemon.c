@@ -2458,6 +2458,7 @@ static const s8 sNatureStatTable[][5] =
 #include "data/pokemon/level_up_learnsets.h"
 #include "data/pokemon/evolution.h"
 #include "data/pokemon/level_up_learnset_pointers.h"
+#include "data/pokemon/form_order.h"
 
 static const s8 sPokeblockFlavorCompatibilityTable[] =
 {
