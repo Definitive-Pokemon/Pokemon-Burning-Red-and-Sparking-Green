@@ -94,6 +94,8 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_ADMIN1
 	setflag FLAG_HIDE_ENTRANCE_DOOR
 	setflag FLAG_HIDE_STORAGE_GRUNT2
+	setflag FLAG_HIDE_CAGE
+	setvar VAR_ADD_CAGE, 0
 	clearflag FLAG_GOT_EMERALD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0

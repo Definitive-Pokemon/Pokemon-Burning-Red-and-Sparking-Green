@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MonitoringStation_Pokemon_EventScript_Cage",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CAGE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ABRA",
@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MonitoringStation_Pokemon_EventScript_Cage",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CAGE"
     }
   ],
   "warp_events": [
@@ -57,16 +57,16 @@
     {
       "type": "trigger",
       "x": 6,
-      "y": 21,
+      "y": 19,
       "elevation": 0,
       "var": "VAR_REMOVE_DOOR",
       "var_value": "0",
-      "script": ""
+      "script": "MonitoringStation_Pokemon_EventScript_SetDoorRemove"
     },
     {
       "type": "trigger",
       "x": 3,
-      "y": 21,
+      "y": 19,
       "elevation": 0,
       "var": "VAR_REMOVE_DOOR",
       "var_value": "0",
@@ -75,7 +75,7 @@
     {
       "type": "trigger",
       "x": 9,
-      "y": 21,
+      "y": 19,
       "elevation": 0,
       "var": "VAR_REMOVE_DOOR",
       "var_value": "0",
@@ -88,7 +88,7 @@
       "elevation": 0,
       "var": "VAR_ADD_CAGE",
       "var_value": "1",
-      "script": "NULL"
+      "script": "MonitoringStation_Pokemon_EventScript_AddCage"
     }
   ],
   "bg_events": [
@@ -118,7 +118,7 @@
     },
     {
       "type": "sign",
-      "x": 3,
+      "x": 2,
       "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -346,7 +346,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MasterTrainer_EventScript_Starmie"
+      "script": "MonitoringStation_Pokemon_EventScript_Starmie"
     },
     {
       "type": "sign",
@@ -354,7 +354,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MasterTrainer_EventScript_Starmie"
+      "script": "MonitoringStation_Pokemon_EventScript_Starmie"
     },
     {
       "type": "sign",

@@ -1,5 +1,5 @@
-.set LOCALID_SLOT1, 1
-.set LOCALID_SLOT2, 2
+.set LOCALID_CAGE1, 1
+.set LOCALID_CAGE2, 2
 
 MonitoringStation_Pokemon_MapScripts::
 	.byte 0
@@ -25,8 +25,9 @@ MonitoringStation_Pokemon_EventScript_AddCage::
 	setmetatile 5, 14, METATILE_SilphCo_CageShadow1, 0
 	setmetatile 6, 14, METATILE_SilphCo_CageShadow1, 0
 	setmetatile 7, 14, METATILE_SilphCo_CageShadow2, 0
-	addobject LOCALID_SLOT1
-	addobject LOCALID_SLOT2
+	addobject LOCALID_CAGE1
+	addobject LOCALID_CAGE2
+	clearflag FLAG_HIDE_CAGE
 	setvar VAR_ADD_CAGE, 2
 	end
 	
