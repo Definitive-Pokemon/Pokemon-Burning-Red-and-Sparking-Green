@@ -7,5 +7,5 @@ Special_EventScript_OnLoad::
 	textcolor 2
 	msgbox SpecialArea_Text_Asleep
 	waitbuttonpress
-	warp MAP_FAKE_PALLET_1, 255, 2, 5
+	warp MAP_FAKE_PALLET1, 255, 2, 5
 	end
