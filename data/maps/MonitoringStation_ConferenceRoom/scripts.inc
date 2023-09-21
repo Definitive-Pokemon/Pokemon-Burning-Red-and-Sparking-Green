@@ -37,7 +37,7 @@ MonitoringStation_ConferenceRoom_EventScript_RocketM3::
 	setflag FLAG_HIDE_ADMIN2
 	setflag FLAG_HIDE_STORAGE_GRUNT
 	clearflag FLAG_HIDE_ADMIN1
-	clearflag FLAG_HIDE_STORAGE_GRUNT1
+	clearflag FLAG_HIDE_ENTRANCE_DOOR
 	clearflag FLAG_HIDE_STORAGE_GRUNT2
 	setvar VAR_ADMIN_CONVO, 1
 	msgbox MonitoringStation_ConferenceRoom_Text_RocketM32

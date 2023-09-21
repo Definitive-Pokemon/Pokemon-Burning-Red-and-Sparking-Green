@@ -92,7 +92,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	fadescreen FADE_FROM_BLACK
 	delay 200
 	setflag FLAG_HIDE_ADMIN1
-	setflag FLAG_HIDE_STORAGE_GRUNT1
+	setflag FLAG_HIDE_ENTRANCE_DOOR
 	setflag FLAG_HIDE_STORAGE_GRUNT2
 	clearflag FLAG_GOT_EMERALD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
