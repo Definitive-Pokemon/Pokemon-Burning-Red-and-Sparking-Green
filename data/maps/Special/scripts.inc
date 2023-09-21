@@ -1,5 +1,5 @@
 Special_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME, Special_EventScript_OnFrame
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Special_EventScript_OnFrame
 	.byte 0
 
 Special_EventScript_OnFrame::
