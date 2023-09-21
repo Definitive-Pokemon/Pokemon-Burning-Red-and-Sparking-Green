@@ -4997,7 +4997,7 @@
       "id": "LAYOUT_MONITORING_STATION_POKEMON",
       "name": "MonitoringStation_Pokemon_Layout",
       "width": 13,
-      "height": 60,
+      "height": 23,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
@@ -5092,12 +5092,12 @@
     {
       "id": "LAYOUT_SPECIAL",
       "name": "Special_Layout",
-      "width": 24,
-      "height": 36,
+      "width": 2,
+      "height": 2,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_PalletTown",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SilphCo",
       "border_filepath": "data/layouts/Special/border.bin",
       "blockdata_filepath": "data/layouts/Special/map.bin"
     }

@@ -353,6 +353,13 @@
 #define METATILE_SilphCo_Wall_RightEdge                 0x346
 #define METATILE_SilphCo_Wall_Upper                     0x289
 #define METATILE_SilphCo_Wall_Lower                     0x291
+#define METATILE_SilphCo_Cage1                          0x3F0
+#define METATILE_SilphCo_Cage2                          0x3F1
+#define METATILE_SilphCo_Cage3                          0x3F8
+#define METATILE_SilphCo_Cage4                          0x3F9
+#define METATILE_SilphCo_CageShadow1                    0x285
+#define METATILE_SilphCo_CageShadow2                    0x286
+#define METATILE_SilphCo_CageShadow3                    0x283
 
 // gTileset_TrainerTower
 #define METATILE_TrainerTower_CounterBarrier         0x2B4

@@ -1,3 +1,16 @@
+.set LOCALID_SLOT1, 1
+.set LOCALID_SLOT2, 2
+.set LOCALID_SLOT3, 3
+.set LOCALID_SLOT4, 4
+.set LOCALID_SLOT5, 5
+.set LOCALID_SLOT6, 6
+.set LOCALID_SLOT7, 7
+.set LOCALID_SLOT8, 8
+.set LOCALID_SLOT9, 9
+.set LOCALID_SLOT10, 10
+.set LOCALID_SLOT11, 11
+.set LOCALID_SLOT12, 12
+
 MonitoringStation_Pokemon_MapScripts::
 	.byte 0
 
@@ -10,14 +23,39 @@ MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	setmetatile 7, 2, METATILE_SilphCo_Wall_Lower, 1
 	special DrawWholeMapView
 	setvar VAR_REMOVE_DOOR, 1
-	setflag FLAG_DOOR_REMOVE
+	setvar VAR_ADD_CAGE, 1
 	end
-
-MonitoringStation_Pokemon_EventScript_Warp::
-	lockall
-	warp MAP_SPECIAL, 255, 6, 7
-	releaseall
+	
+MonitoringStation_Pokemon_EventScript_AddCage::
+	setmetatile 5, 12, METATILE_SilphCo_Cage1, 1
+	setmetatile 6, 12, METATILE_SilphCo_Cage2, 1
+	setmetatile 5, 13, METATILE_SilphCo_Cage3, 1
+	setmetatile 6, 13, METATILE_SilphCo_Cage4, 1
+	setmetatile 7, 13, METATILE_SilphCo_CageShadow3, 0
+	setmetatile 5, 14, METATILE_SilphCo_CageShadow1, 0
+	setmetatile 6, 14, METATILE_SilphCo_CageShadow1, 0
+	setmetatile 7, 14, METATILE_SilphCo_CageShadow2, 0
+	addobject LOCALID_SLOT1
+	addobject LOCALID_SLOT2
+	setvar VAR_ADD_CAGE, 2
 	end
+	
+MonitoringStation_Pokemon_EventScript_Cage::
+	lock
+	textcolor 2
+	msgbox MonitoringStation_Pokemon_Text_PutYourselfInCage, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq MonitoringStation_Pokemon_EventScript_GoInCage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_GoInCage::
+	msgbox MonitoringStation_Pokemon_Text_StepInCage
+	closemessage
+	warp MAP_SPECIAL, 255, 0, 0
+	release
+	end
+	
 
 MonitoringStation_Pokemon_EventScript_Aggron::
 	lock
@@ -121,6 +159,60 @@ MonitoringStation_Pokemon_EventScript_Houndoom::
 MonitoringStation_Pokemon_EventScript_Venusaur::
 	lock
 	playmoncry SPECIES_VENUSAUR, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Sharpedo::
+	lock
+	playmoncry SPECIES_SHARPEDO, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Milotic::
+	lock
+	playmoncry SPECIES_MILOTIC, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Starmie::
+	lock
+	playmoncry SPECIES_STARMIE, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Wailmer::
+	lock
+	playmoncry SPECIES_WAILMER, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Luvdisc::
+	lock
+	playmoncry SPECIES_LUVDISC, 4
+	waitmoncry
+	msgbox MonitoringStation_Pokemon_Text_Scared
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Pokemon_EventScript_Gorebyss::
+	lock
+	playmoncry SPECIES_GOREBYSS, 4
 	waitmoncry
 	msgbox MonitoringStation_Pokemon_Text_Scared
 	waitmessage
