@@ -32,7 +32,7 @@ MonitoringStation_Pokemon_EventScript_AddCage::
 	end
 	
 MonitoringStation_Pokemon_EventScript_Cage::
-	lock
+	lockall
 	textcolor 2
 	msgbox MonitoringStation_Pokemon_Text_PutYourselfInCage, MSGBOX_YESNO
 	compare VAR_RESULT, YES
@@ -44,7 +44,8 @@ MonitoringStation_Pokemon_EventScript_GoInCage::
 	msgbox MonitoringStation_Pokemon_Text_StepInCage
 	closemessage
 	warp MAP_SPECIAL, 255, 0, 0
-	release
+	waitstate
+	releaseall
 	end
 
 MonitoringStation_Pokemon_EventScript_Aggron::
