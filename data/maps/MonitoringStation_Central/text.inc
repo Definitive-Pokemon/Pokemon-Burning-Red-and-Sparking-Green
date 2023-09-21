@@ -41,15 +41,5 @@ MonitoringStation_Central_Text_Admin::
 MonitoringStation_Central_Text_Admin2::
 	.string "Well, what are you waiting for?$"
 	
-MonitoringStation_Central_Text_StorageGrunt1::
-	.string "Hey!\n"
-	.string "How's it going?\p"
-	.string "It's me, the GRUNT you met at\n"
-	.string "the storage room!\p"
-	.string "You're wondering why I am\n"
-	.string "standing here?\p"
-	.string "Well… um… that's a secret!\p"
-	.string "Maybe you will find out at\n"
-	.string "some point.\p"
-	.string "Well, good luck finding that\n"
-	.string "YELLOW KEY!$"
+MonitoringStation_Central_Text_EntranceDoor::
+	.string "A door blocks the way.$"

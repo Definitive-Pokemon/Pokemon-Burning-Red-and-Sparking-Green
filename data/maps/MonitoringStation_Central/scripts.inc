@@ -136,10 +136,9 @@ MonitoringStation_Central_Eventscript_Admin2::
 	release
 	end
 	
-MonitoringStation_Central_Eventscript_StorageGrunt1::
+MonitoringStation_Central_Eventscript_EntranceDoor::
 	lock
-	faceplayer
-	msgbox MonitoringStation_Central_Text_StorageGrunt1
+	msgbox MonitoringStation_Central_Text_EntranceDoor
 	waitmessage
 	release
 	end

@@ -279,7 +279,9 @@
     "MonitoringStation_EmeraldRoom",
     "MonitoringStation_Lair",
     "PokeCenter",
-    "Special"
+    "Special",
+    "FakePallet1",
+    "FakePallet2"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

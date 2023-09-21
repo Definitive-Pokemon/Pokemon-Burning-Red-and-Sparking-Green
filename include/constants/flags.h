@@ -944,7 +944,7 @@
 #define FLAG_FIND_BLUE_KEY               0x395
 #define FLAG_GOT_BLUE_KEY               0x396
 #define FLAG_HIDE_STORAGE_GRUNT               0x397
-#define FLAG_HIDE_STORAGE_GRUNT1               0x398
+#define FLAG_HIDE_ENTRANCE_DOOR               0x398
 #define FLAG_HIDE_STORAGE_GRUNT2               0x399
 #define FLAG_HIDE_ADMIN1               0x39A
 

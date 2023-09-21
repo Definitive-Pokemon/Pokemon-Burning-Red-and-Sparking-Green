@@ -45,7 +45,6 @@ MonitoringStation_Pokemon_EventScript_GoInCage::
 	warp MAP_SPECIAL, 255, 0, 0
 	release
 	end
-	
 
 MonitoringStation_Pokemon_EventScript_Aggron::
 	lock
