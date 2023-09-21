@@ -5193,9 +5193,9 @@ u8 GetMonsStateToDoubles(void)
 u8 GetAbilityBySpecies(u16 species, bool8 abilityNum)
 {
     if (abilityNum)
-        gLastUsedAbility = gBaseStats[species].abilities[1];
+        gLastUsedAbility = GetBaseStats(species)->abilities[1];
     else
-        gLastUsedAbility = gBaseStats[species].abilities[0];
+        gLastUsedAbility = GetBaseStats(species)->abilities[0];
 
     return gLastUsedAbility;
 }
@@ -8263,4 +8263,9 @@ bool8 IsSpeciesInFormList(u16 species)
         }
     }
     return FALSE;
+}
+
+u16 GetBattleMonSpecies(struct BattlePokemon *mon)
+{
+    return (mon->species) | FORM_FLAG_VALUE(mon->form);
 }

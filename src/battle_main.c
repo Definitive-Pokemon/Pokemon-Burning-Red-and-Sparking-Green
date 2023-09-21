@@ -2061,7 +2061,15 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
     }
     else if (species > NUM_SPECIES)
     {
-        yOffset = gMonFrontPicCoords[SPECIES_NONE].y_offset;
+        if (SPECIES_PART(species) =< NUM_SPECIES)
+        {
+            yOffset = gFormMonPicCoords[FORM_PART(species)].y_offset;
+        }
+        else
+        {
+            yOffset = gMonFrontPicCoords[SPECIES_NONE].y_offset;
+        }
+        
     }
     else
     {
@@ -2485,6 +2493,7 @@ void FaintClearSetData(void)
 {
     s32 i;
     u8 *ptr;
+    struct BaseStats *baseStats;
 
     for (i = 0; i < NUM_BATTLE_STATS; ++i)
         gBattleMons[gActiveBattler].statStages[i] = 6;
@@ -2553,8 +2562,9 @@ void FaintClearSetData(void)
         *(i * 8 + gActiveBattler * 2 + (u8 *)(gBattleStruct->lastTakenMoveFrom) + 1) = 0;
     }
     gBattleResources->flags->flags[gActiveBattler] = 0;
-    gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
-    gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
+    baseStats = GetBaseStats(GetBattleMonSpecies(&gBattleMons[gActiveBattler]));
+    gBattleMons[gActiveBattler].type1 = baseStats->type1;
+    gBattleMons[gActiveBattler].type2 = baseStats->type2;
 }
 
 static void BattleIntroGetMonsData(void)
@@ -2597,6 +2607,7 @@ static void BattleIntroDrawTrainersOrMonsSprites(void)
 {
     u8 *ptr;
     s32 i;
+    struct BaseStats *baseStats;
 
     if (!gBattleControllerExecFlags)
     {
@@ -2616,9 +2627,10 @@ static void BattleIntroDrawTrainersOrMonsSprites(void)
                 ptr = (u8 *)&gBattleMons[gActiveBattler];
                 for (i = 0; i < sizeof(struct BattlePokemon); ++i)
                     ptr[i] = gBattleBufferB[gActiveBattler][4 + i];
-                gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
-                gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
-                gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].abilityNum);
+                baseStats = GetBaseStats(GetBattleMonSpecies(&gBattleMons[gActiveBattler]));
+                gBattleMons[gActiveBattler].type1 = baseStats->type1;
+                gBattleMons[gActiveBattler].type2 = baseStats->type2;
+                gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(GetBattleMonSpecies(&gBattleMons[gActiveBattler]), gBattleMons[gActiveBattler].abilityNum);
                 hpOnSwitchout = &gBattleStruct->hpOnSwitchout[GetBattlerSide(gActiveBattler)];
                 *hpOnSwitchout = gBattleMons[gActiveBattler].hp;
                 for (i = 0; i < NUM_BATTLE_STATS; ++i)
