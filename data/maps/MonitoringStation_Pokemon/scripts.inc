@@ -3,7 +3,7 @@
 
 MonitoringStation_Pokemon_MapScripts::
 	.byte 0
-
+	
 MonitoringStation_Pokemon_EventScript_SetDoorRemove::
 	setmetatile 5, 1, METATILE_SilphCo_Wall_Upper, 1
 	setmetatile 6, 1, METATILE_SilphCo_Wall_Upper, 1
