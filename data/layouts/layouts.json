@@ -5093,7 +5093,7 @@
       "id": "LAYOUT_SPECIAL",
       "name": "Special_Layout",
       "width": 2,
-      "height": 2,
+      "height": 1,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Building",
