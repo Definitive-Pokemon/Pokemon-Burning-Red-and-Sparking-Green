@@ -37,7 +37,7 @@ MonitoringStation_Pokemon_EventScript_Cage::
 	msgbox MonitoringStation_Pokemon_Text_PutYourselfInCage, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq MonitoringStation_Pokemon_EventScript_GoInCage
-	release
+	releaseall
 	end
 	
 MonitoringStation_Pokemon_EventScript_GoInCage::
