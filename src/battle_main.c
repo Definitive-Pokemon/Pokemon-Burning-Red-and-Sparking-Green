@@ -4404,7 +4404,7 @@ static void HandleAction_WatchesCarefully(void)
         if (gBattleStruct->safariGoNearCounter == 0)
         {
             u16 formSpecies = GetMonData(gEnemyParty, MON_DATA_FORM_SPECIES);
-            struct BaseStats *baseStats = GetBaseStats(formSpecies)
+            struct BaseStats *baseStats = GetBaseStats(formSpecies);
             *(&gBattleStruct->safariCatchFactor) = baseStats->catchRate * 100 / 1275;
             gBattleCommunication[MULTISTRING_CHOOSER] = 0;
         }
