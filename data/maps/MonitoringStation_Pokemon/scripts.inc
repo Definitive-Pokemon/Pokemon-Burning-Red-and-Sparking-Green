@@ -1,15 +1,5 @@
 .set LOCALID_SLOT1, 1
 .set LOCALID_SLOT2, 2
-.set LOCALID_SLOT3, 3
-.set LOCALID_SLOT4, 4
-.set LOCALID_SLOT5, 5
-.set LOCALID_SLOT6, 6
-.set LOCALID_SLOT7, 7
-.set LOCALID_SLOT8, 8
-.set LOCALID_SLOT9, 9
-.set LOCALID_SLOT10, 10
-.set LOCALID_SLOT11, 11
-.set LOCALID_SLOT12, 12
 
 MonitoringStation_Pokemon_MapScripts::
 	.byte 0
