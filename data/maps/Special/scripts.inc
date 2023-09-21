@@ -8,5 +8,4 @@ Special_EventScript_OnLoad::
 	msgbox SpecialArea_Text_Asleep
 	waitbuttonpress
 	warp MAP_FAKE_PALLET1, 255, 2, 5
-	waitstate
 	end

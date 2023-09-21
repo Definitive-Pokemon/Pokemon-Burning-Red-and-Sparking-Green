@@ -44,7 +44,6 @@ MonitoringStation_Pokemon_EventScript_GoInCage::
 	msgbox MonitoringStation_Pokemon_Text_StepInCage
 	closemessage
 	warp MAP_SPECIAL, 255, 0, 0
-	waitstate
 	releaseall
 	end
 
