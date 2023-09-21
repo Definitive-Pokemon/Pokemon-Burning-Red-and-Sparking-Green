@@ -2061,7 +2061,7 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
     }
     else if (species > NUM_SPECIES)
     {
-        if (SPECIES_PART(species) =< NUM_SPECIES)
+        if (SPECIES_PART(species) <= NUM_SPECIES)
         {
             yOffset = gFormMonPicCoords[FORM_PART(species)].y_offset;
         }
