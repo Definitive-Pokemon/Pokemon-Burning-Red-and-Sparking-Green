@@ -1985,7 +1985,7 @@ static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
         {
             sprite->invisible = FALSE;
             sprite->callback = SpriteCB_WildMonShowHealthbox;
-            PlayCry1(sprite->data[2], 25);
+            PlayCry1(sprite->sSpeciesId, 25);
         }
     }
 }
@@ -4403,7 +4403,9 @@ static void HandleAction_WatchesCarefully(void)
         --gBattleStruct->safariGoNearCounter;
         if (gBattleStruct->safariGoNearCounter == 0)
         {
-            *(&gBattleStruct->safariCatchFactor) = gBaseStats[GetMonData(gEnemyParty, MON_DATA_SPECIES)].catchRate * 100 / 1275;
+            u16 formSpecies = GetMonData(gEnemyParty, MON_DATA_FORM_SPECIES);
+            struct BaseStats *baseStats = GetBaseStats(formSpecies)
+            *(&gBattleStruct->safariCatchFactor) = baseStats->catchRate * 100 / 1275;
             gBattleCommunication[MULTISTRING_CHOOSER] = 0;
         }
         else

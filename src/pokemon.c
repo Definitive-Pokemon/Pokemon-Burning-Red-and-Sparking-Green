@@ -4704,6 +4704,8 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_BOX_STATUS:
         retVal = substruct0->boxStatus;
         break;
+    case MON_DATA_FORM_SPECIES:
+        retVal = FORM_SPECIES_NUMBER((substruct0->forme << FORM_FLAG_SHIFT), substruct0->species);
     default:
         break;
     }

@@ -91,9 +91,10 @@
 #define MON_DATA_SPEED2            86
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
-#define MON_DATA_FORME             89
+#define MON_DATA_FORME             89 //introduced with FRLG+ deoxys and reused for 'regular' forms
 #define MON_DATA_BOX_HP            90
 #define MON_DATA_BOX_STATUS        91
+#define MON_DATA_FORM_SPECIES      92
 
 // Pokemon types
 #define TYPE_NORMAL   0x00
