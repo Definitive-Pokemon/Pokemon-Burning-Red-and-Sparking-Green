@@ -1,2 +1,2 @@
-Special_Text_Asleep::
+SpecialArea_Text_Asleep::
 	.string "{PLAYER} dozes off…$"

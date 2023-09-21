@@ -5,7 +5,7 @@ Special_MapScripts::
 Special_EventScript_OnLoad::
 	delay 999
 	textcolor 2
-	msgbox Special_Text_Asleep
+	msgbox SpecialArea_Text_Asleep
 	waitbuttonpress
 	warp MAP_FAKE_PALLET_1, 255, 2, 5
 	end
