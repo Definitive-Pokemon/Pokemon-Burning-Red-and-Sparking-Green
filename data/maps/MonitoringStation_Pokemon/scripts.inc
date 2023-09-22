@@ -211,5 +211,10 @@ MonitoringStation_Pokemon_EventScript_Gorebyss::
 	end
 	
 MonitoringStation_Pokemon_EventScript_Text::
+	goto_if_unset FLAG_HIDE_CAGE, MonitoringStation_Pokemon_EventScript_Text2
 	msgbox MonitoringStation_Pokemon_Text_Text, MSGBOX_SIGN
+	end
+	
+FLAG_HIDE_CAGE, MonitoringStation_Pokemon_EventScript_Text2::
+	msgbox MonitoringStation_Pokemon_Text_Text2, MSGBOX_SIGN
 	end

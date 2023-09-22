@@ -6,6 +6,10 @@ MonitoringStation_Pokemon_Text_Text::
 	.string "Amount of POKéMON currently\n"
 	.string "confiscated: 16.$"
 	
+MonitoringStation_Pokemon_Text_Text2::
+	.string "DO NOT BE AFRAID.\n"
+	.string "ENTER THE CAGE.$"
+	
 MonitoringStation_Pokemon_Text_PutYourselfInCage::
 	.string "Step inside the cage?$"
 	
