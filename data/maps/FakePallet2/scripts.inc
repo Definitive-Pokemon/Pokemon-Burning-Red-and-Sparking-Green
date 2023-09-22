@@ -40,6 +40,13 @@ FakePallet2_EventScript_Mom1::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
 	waitmovement 0
+	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack1
+	waitmovement
+	playse SE_BANG
+	waitse
+	playmoncry SPECIES_KABUTOPS, 2
+	waitmoncry
+	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -79,6 +86,13 @@ FakePallet2_EventScript_Mom2::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap2
 	waitmovement 0
+	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack2
+	waitmovement
+	playse SE_BANG
+	waitse
+	playmoncry SPECIES_KABUTOPS, 2
+	waitmoncry
+	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -118,6 +132,12 @@ FakePallet2_EventScript_Mom3::
 	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
 	waitmovement 0
+	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack3
+	waitmovement
+	playse SE_BANG
+	waitse
+	playmoncry SPECIES_KABUTOPS, 2
+	waitmoncry
 	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
@@ -223,4 +243,20 @@ FakePallet2_Movement_Slap3::
 	
 FakePallet2_Movement_Kabutops::
 	face_player
+	step_end
+	
+FakePallet2_Movement_KabutopsBack1::
+	lock_facing_direction
+	walk_fast_down
+	step_end
+	
+FakePallet2_Movement_KabutopsBack2::
+	walk_in_place_down
+	lock_facing_direction
+	walk_fast_up
+	step_end
+	
+FakePallet2_Movement_KabutopsBack3::
+	lock_facing_direction
+	walk_fast_up
 	step_end

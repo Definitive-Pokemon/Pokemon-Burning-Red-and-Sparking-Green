@@ -61,7 +61,7 @@
       "elevation": 0,
       "var": "VAR_MOM",
       "var_value": "0",
-      "script": "FakePallet2_EventScript_Mom2"
+      "script": "FakePallet2_EventScript_Mom1"
     },
     {
       "type": "trigger",
