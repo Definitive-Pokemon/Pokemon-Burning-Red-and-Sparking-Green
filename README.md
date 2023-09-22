@@ -1,3 +1,5 @@
+# Pokémon Rekindled Red (Under construction)
+
 # Pokémon FireRed and LeafGreen+
 
 This is the repository for the Pokémon FireRed and LeafGreen+ hack, based on [pret's decompilation of Pokémon FireRed and LeafGreen](https://github.com/pret/pokefirered).
