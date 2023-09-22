@@ -7,9 +7,11 @@ FakePallet2_MapScripts::
 FakePallet2_EventScript_Mom1::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom1
-	applymovement LOCALID_MOM FakePallet2_Movement_Face
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
+	waitmovement 0
+	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad
