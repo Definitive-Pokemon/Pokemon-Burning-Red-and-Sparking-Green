@@ -22,7 +22,7 @@ FakePallet2_EventScript_Mom1::
 	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
-	changebgm MUS_DUMMY 1
+	playbgm MUS_DUMMY 1
 	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
@@ -32,8 +32,8 @@ FakePallet2_EventScript_Mom1::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement FakePallet2_Movement_Kabutops1
-	waitmovement
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops1
+	waitmovement 0
 	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
@@ -59,7 +59,7 @@ FakePallet2_EventScript_Mom2::
 	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
-	changebgm MUS_DUMMY 1
+	playbgm MUS_DUMMY 1
 	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
@@ -69,8 +69,8 @@ FakePallet2_EventScript_Mom2::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement FakePallet2_Movement_Kabutops2
-	waitmovement
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops2
+	waitmovement 0
 	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap2
@@ -96,7 +96,7 @@ FakePallet2_EventScript_Mom3::
 	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
-	changebgm MUS_DUMMY 1
+	playbgm MUS_DUMMY 1
 	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
@@ -106,8 +106,8 @@ FakePallet2_EventScript_Mom3::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement FakePallet2_Movement_Kabutops3
-	waitmovement
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops3
+	waitmovement 0
 	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
