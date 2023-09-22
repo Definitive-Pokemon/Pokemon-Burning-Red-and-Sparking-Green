@@ -25,7 +25,6 @@ FakePallet2_EventScript_Mom1::
 	msgbox FakePallet2_Text_Mom3
 	closemessage
 	playbgm MUS_DUMMY 1
-	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
 	addobject LOCALID_KABUTOPS_SHADOW
@@ -38,6 +37,7 @@ FakePallet2_EventScript_Mom1::
 	fadescreen FADE_FROM_BLACK
 	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
+	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
 	waitmovement 0
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
@@ -64,7 +64,6 @@ FakePallet2_EventScript_Mom2::
 	msgbox FakePallet2_Text_Mom3
 	closemessage
 	playbgm MUS_DUMMY 1
-	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
 	addobject LOCALID_KABUTOPS_SHADOW
@@ -77,6 +76,7 @@ FakePallet2_EventScript_Mom2::
 	fadescreen FADE_FROM_BLACK
 	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
+	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap2
 	waitmovement 0
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
@@ -103,7 +103,6 @@ FakePallet2_EventScript_Mom3::
 	msgbox FakePallet2_Text_Mom3
 	closemessage
 	playbgm MUS_DUMMY 1
-	delay 60
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOM
 	addobject LOCALID_KABUTOPS_SHADOW
@@ -116,8 +115,10 @@ FakePallet2_EventScript_Mom3::
 	fadescreen FADE_FROM_BLACK
 	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
+	delay 100
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
 	waitmovement 0
+	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -185,14 +186,38 @@ FakePallet2_Movement_FaceMom3::
 	step_end
 	
 FakePallet2_Movement_Slap1::
+	lock_facing_direction
+	walk_fast_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_down
 	jump_down
 	step_end
 	
 FakePallet2_Movement_Slap2::
+	lock_facing_direction
+	walk_fast_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_left
 	jump_left
 	step_end
 	
 FakePallet2_Movement_Slap3::
+	lock_facing_direction
+	walk_fast_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_up
 	jump_up
 	step_end
 	

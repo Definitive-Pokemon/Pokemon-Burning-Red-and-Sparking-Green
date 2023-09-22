@@ -6,8 +6,7 @@ FakePallet2_Text_Mom2::
 	.string "You were brought back home while\n"
 	.string "you were fast asleep.\p"
 	.string "I have no idea what happened, but\n"
-	.string "I'm glad to see you are safe\p"
-	.string "and sound.$"
+	.string "I'm glad to see you are okay.$"
 	
 FakePallet2_Text_Mom3::
 	.string "You know…\p"
