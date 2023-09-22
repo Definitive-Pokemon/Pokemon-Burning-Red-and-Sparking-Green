@@ -52,7 +52,7 @@ FakePallet2_EventScript_Mom1::
 	setflag FLAG_HIDE_CAGE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	fadescreen FADE_FROM_WHITE
-	delay 60
+	delay 200
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -106,7 +106,7 @@ FakePallet2_EventScript_Mom2::
 	setflag FLAG_HIDE_CAGE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	fadescreen FADE_FROM_WHITE
-	delay 60
+	delay 200
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -160,7 +160,7 @@ FakePallet2_EventScript_Mom3::
 	setflag FLAG_HIDE_CAGE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	fadescreen FADE_FROM_WHITE
-	delay 60
+	delay 200
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall

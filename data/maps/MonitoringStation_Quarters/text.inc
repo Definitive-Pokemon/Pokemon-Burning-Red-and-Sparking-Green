@@ -11,7 +11,8 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "You're looking for a YELLOW KEY?\p"
 	.string "The EXECUTIVE is still hiding away,\n"
 	.string "so you should go find our ADMIN.\p"
-	.string "What's that? You've already met her?\p"
+	.string "What's that? You've already\n"
+	.string "met her before?\p"
 	.string "… … … …\p"
 	.string "The ADMIN is supposed to have a\n"
 	.string "YELLOW KEY on her.\p"
@@ -20,7 +21,7 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "She is probably in the entrance\n"
 	.string "hallway at the moment.\p"
 	.string "Maybe we should go talk to her…\p"
-	.string "In order to destroy the boulder\n"
+	.string "In order to destroy that boulder\n"
 	.string "blocking access to the hallway,\p"
 	.string "we will need a strong POKéMON.\p"
 	.string "I recall there being a VENUSAUR\n"
@@ -35,7 +36,7 @@ MonitoringStation_Quarters_Text_RocketM3Again::
 	.string "If you haven't freed the VENUSAUR\n"
 	.string "yet, go do that now please.\p"
 	.string "I want to get to the bottom of this\n"
-	.string "scheme of our esteemed ADMIN.$"
+	.string "scheme of our esteemed ADMIN…$"
 	
 MonitoringStation_Quarters_Text_RocketM3Solution::
 	.string "You've been to the holding room?\n"
@@ -45,8 +46,8 @@ MonitoringStation_Quarters_Text_RocketM3Solution::
 	
 MonitoringStation_Quarters_Text_RocketM4::
 	.string "Why did you open the door?!\p"
-	.string "Now, that monster can get in\n"
-	.string "here anytime it wants to!$"
+	.string "Now, that monster can get in here\n"
+	.string "anytime it wants to!$"
 	
 MonitoringStation_Quarters_Text_RocketF1::
 	.string "Shhht!\p"
