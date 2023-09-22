@@ -9,6 +9,7 @@ FakePallet2_EventScript_Mom1::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom1
 	waitmovement 0
 	playse SE_PIN
+	waitse
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
 	waitmovement 0
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
@@ -47,6 +48,7 @@ FakePallet2_EventScript_Mom2::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom2
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	playse SE_PIN
+	waitse
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
@@ -83,6 +85,7 @@ FakePallet2_EventScript_Mom3::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom3
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	playse SE_PIN
+	waitse
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
