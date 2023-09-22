@@ -41,7 +41,7 @@ FakePallet2_EventScript_Mom1::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack1
-	waitmovement
+	waitmovement 0
 	playse SE_BANG
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
@@ -87,7 +87,7 @@ FakePallet2_EventScript_Mom2::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap2
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack2
-	waitmovement
+	waitmovement 0
 	playse SE_BANG
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
@@ -133,7 +133,7 @@ FakePallet2_EventScript_Mom3::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack3
-	waitmovement
+	waitmovement 0
 	playse SE_BANG
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
