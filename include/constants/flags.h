@@ -944,15 +944,15 @@
 #define FLAG_FIND_BLUE_KEY               0x395
 #define FLAG_GOT_BLUE_KEY               0x396
 #define FLAG_HIDE_STORAGE_GRUNT               0x397
-#define FLAG_HIDE_ENTRANCE_DOOR               0x398
+#define FLAG_HIDE_BOULDER3               0x398
 #define FLAG_HIDE_STORAGE_GRUNT2               0x399
 #define FLAG_HIDE_ADMIN1               0x39A
 #define FLAG_HIDE_CAGE               0x39B
 #define FLAG_HIDE_MOMBUTOPS               0x39C
 #define FLAG_HIDE_MOM               0x39D
+#define FLAG_HIDE_BOULDER2               0x39E
 
 // Unused?
-#define FLAG_0x39E               0x39E
 #define FLAG_0x39F               0x39F
 #define FLAG_0x3A0               0x3A0
 #define FLAG_0x3A1               0x3A1

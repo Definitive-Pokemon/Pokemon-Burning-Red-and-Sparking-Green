@@ -4,4 +4,4 @@ SpecialArea_Text_NoEscape::
 	.string "for help…$"
 	
 SpecialArea_Text_Asleep::
-	.string "{PLAYER} slowly dozed off…$"
+	.string "{PLAYER} dozed off…$"

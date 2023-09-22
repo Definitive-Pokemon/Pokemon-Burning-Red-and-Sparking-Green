@@ -112,6 +112,7 @@ MonitoringStation_Central_EventScript_Kabutops::
 	waitmovement 0
 	special RemoveCameraObject
 	fadeinbgm 1
+	clearflag FLAG_HIDE_BOULDER2
 	removeobject LOCALID_MACHOKE
 	removeobject LOCALID_KABUTOPS_SHADOW
 	removeobject LOCALID_ROCKET_M
@@ -136,9 +137,9 @@ MonitoringStation_Central_Eventscript_Admin2::
 	release
 	end
 	
-MonitoringStation_Central_Eventscript_EntranceDoor::
+MonitoringStation_Central_Eventscript_Boulder::
 	lock
-	msgbox MonitoringStation_Central_Text_EntranceDoor
+	msgbox MonitoringStation_Central_Text_Boulder
 	waitmessage
 	release
 	end

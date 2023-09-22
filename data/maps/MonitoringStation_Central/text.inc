@@ -41,5 +41,6 @@ MonitoringStation_Central_Text_Admin::
 MonitoringStation_Central_Text_Admin2::
 	.string "Well, what are you waiting for?$"
 	
-MonitoringStation_Central_Text_EntranceDoor::
-	.string "A door blocks the way.$"
+MonitoringStation_Central_Text_Boulder::
+	.string "It's the boulder that was thrown\n"
+	.string "by the mysterious shadow…$"
