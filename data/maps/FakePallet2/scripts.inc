@@ -11,6 +11,7 @@ FakePallet2_EventScript_Mom1::
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
 	waitmovement 0
+	textcolor 1
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
@@ -54,10 +55,13 @@ FakePallet2_EventScript_Mom1::
 	
 FakePallet2_EventScript_Mom2::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom2
-	applymovement LOCALID_MOM FakePallet2_Movement_Face
+	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom1
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
+	waitmovement 0
+	textcolor 1
+	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	closemessage
@@ -100,10 +104,13 @@ FakePallet2_EventScript_Mom2::
 
 FakePallet2_EventScript_Mom3::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom3
-	applymovement LOCALID_MOM FakePallet2_Movement_Face
+	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_FaceMom1
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
+	waitmovement 0
+	textcolor 1
+	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	closemessage
@@ -248,15 +255,18 @@ FakePallet2_Movement_Kabutops::
 FakePallet2_Movement_KabutopsBack1::
 	lock_facing_direction
 	walk_fast_down
+	walk_fast_down
 	step_end
 	
 FakePallet2_Movement_KabutopsBack2::
 	walk_in_place_down
 	lock_facing_direction
 	walk_fast_up
+	walk_fast_up
 	step_end
 	
 FakePallet2_Movement_KabutopsBack3::
 	lock_facing_direction
+	walk_fast_up
 	walk_fast_up
 	step_end

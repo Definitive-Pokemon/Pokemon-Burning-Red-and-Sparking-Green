@@ -15,7 +15,7 @@ FakePallet2_Text_Mom3::
 	.string "I don't like to ask this, but could\n"
 	.string "you stay a bit longer this time?\p"
 	.string "I've been so worried all this time…\n"
-	.string "You know what happened to dad.\p"
+	.string "You know what happened to DAD.\p"
 	.string "Maybe you could bring your POKéMON\n"
 	.string "to PROFESSOR OAK, so he can take\p"
 	.string "care of them, while you live\n"
