@@ -1,7 +1,7 @@
 SpecialArea_Text_NoEscape::
-	.string "With no option for escape,\n"
-	.string "{PLAYER} sees no other\p"
-	.string "option than to wait for help…$"
+	.string "With no hope of escape, {PLAYER}\n"
+	.string "sees no other option than to wait\p"
+	.string "for help…$"
 	
 SpecialArea_Text_Asleep::
 	.string "{PLAYER} slowly dozes off…$"
