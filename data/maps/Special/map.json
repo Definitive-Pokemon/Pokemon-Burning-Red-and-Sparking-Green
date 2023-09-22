@@ -2,7 +2,7 @@
   "id": "MAP_SPECIAL",
   "name": "Special",
   "layout": "LAYOUT_SPECIAL",
-  "music": "SE_BERRY_BLENDER",
+  "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_MONITORING_STATION",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

@@ -211,7 +211,7 @@
 #define VAR_REMOVE_DOOR            0x409F
 #define VAR_ADD_CAGE               0x40A0
 #define VAR_WARPPALLET             0x40A1
-#define VAR_0x40A2                 0x40A2
+#define VAR_MOM                    0x40A2
 #define VAR_0x40A3                 0x40A3
 #define VAR_0x40A4                 0x40A4
 #define VAR_0x40A5                 0x40A5

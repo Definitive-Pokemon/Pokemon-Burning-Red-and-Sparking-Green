@@ -126,3 +126,6 @@ Braille_Text_Onto::
 
 Braille_Text_Buttons::
 	.braille "THE DOOR.$"
+	
+Braille_Text_Submit::
+	.braille "SUBMIT.$"

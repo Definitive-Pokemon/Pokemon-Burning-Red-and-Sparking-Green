@@ -948,10 +948,10 @@
 #define FLAG_HIDE_STORAGE_GRUNT2               0x399
 #define FLAG_HIDE_ADMIN1               0x39A
 #define FLAG_HIDE_CAGE               0x39B
+#define FLAG_HIDE_MOMBUTOPS               0x39C
+#define FLAG_HIDE_MOM               0x39D
 
 // Unused?
-#define FLAG_0x39C               0x39C
-#define FLAG_0x39D               0x39D
 #define FLAG_0x39E               0x39E
 #define FLAG_0x39F               0x39F
 #define FLAG_0x3A0               0x3A0

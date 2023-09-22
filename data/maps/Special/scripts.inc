@@ -3,7 +3,7 @@ Special_MapScripts::
 
 Special_EventScript_Cage::
 	lockall
-	delay 999
+	delay 800
 	textcolor 2
 	msgbox SpecialArea_Text_Asleep
 	waitbuttonpress
