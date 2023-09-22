@@ -10,13 +10,13 @@ FakePallet2_EventScript_Mom1::
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom2
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad2
-	waitmovement
+	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
 	delay 60
@@ -31,7 +31,7 @@ FakePallet2_EventScript_Mom1::
 	playse_SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
-	waitmovement
+	waitmovement 0
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -43,13 +43,13 @@ FakePallet2_EventScript_Mom2::
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom2
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad2
-	waitmovement
+	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
 	delay 60
@@ -61,10 +61,10 @@ FakePallet2_EventScript_Mom2::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	playse_SE_BERRY_BLENDER
+	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap2
-	waitmovement
+	waitmovement 0
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
@@ -76,13 +76,13 @@ FakePallet2_EventScript_Mom3::
 	applymovement LOCALID_MOM FakePallet2_Movement_Face
 	playse SE_PIN
 	applymovement LOCALID_MOM FakePallet2_Movement_Ex
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad
-	waitmovement
+	waitmovement 0
 	msgbox FakePallet2_Text_Mom2
 	applymovement LOCALID_MOM FakePallet2_Movement_Sad2
-	waitmovement
+	waitmovement 0
 	delay 50
 	msgbox FakePallet2_Text_Mom3
 	delay 60
@@ -97,7 +97,7 @@ FakePallet2_EventScript_Mom3::
 	playse_SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
-	waitmovement
+	waitmovement 0
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
 	waitstate
 	releaseall
