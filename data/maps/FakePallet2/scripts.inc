@@ -28,7 +28,7 @@ FakePallet2_EventScript_Mom1::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	playse_SE_BERRY_BLENDER
+	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
 	waitmovement 0
@@ -94,7 +94,7 @@ FakePallet2_EventScript_Mom3::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	playse_SE_BERRY_BLENDER
+	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap3
 	waitmovement 0
