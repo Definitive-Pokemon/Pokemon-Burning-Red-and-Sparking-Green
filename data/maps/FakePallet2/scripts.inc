@@ -47,8 +47,10 @@ FakePallet2_EventScript_Mom1::
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
+	fadescreen FADE_TO_WHITE
 	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
+	fadescreen FADE_FROM_WHITE
 	waitstate
 	releaseall
 	end
@@ -96,8 +98,10 @@ FakePallet2_EventScript_Mom2::
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
+	fadescreen FADE_TO_WHITE
 	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
+	fadescreen FADE_FROM_WHITE
 	waitstate
 	releaseall
 	end
@@ -145,8 +149,10 @@ FakePallet2_EventScript_Mom3::
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
+	fadescreen FADE_TO_WHITE
 	setflag FLAG_HIDE_CAGE
 	warp MAP_MONITORING_STATION_STORAGE, 255, 19, 11
+	fadescreen FADE_FROM_WHITE
 	waitstate
 	releaseall
 	end
