@@ -136,11 +136,23 @@ FakePallet2_Movement_Sad::
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_player
 	step_end
 
 FakePallet2_Movement_Sad2::	
 	face_original_direction
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
