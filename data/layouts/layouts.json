@@ -5081,7 +5081,7 @@
       "id": "LAYOUT_POKE_CENTER",
       "name": "PokeCenter_Layout",
       "width": 255,
-      "height": 11,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",

@@ -76,3 +76,11 @@ Pokecenter_EventScript_TheEnd::
 	warp MAP_MONITORING_STATION_SHORTCUT, 255, 3, 3
 	release
 	end
+	
+Pokecenter_EventScript_Closed::
+	msgbox PokeCenter_Text_Closed, MSGBOX_SIGN
+	end
+	
+Pokecenter_EventScript_Adventure::
+	msgbox PokeCenter_Text_Adventure, MSGBOX_SIGN
+	end

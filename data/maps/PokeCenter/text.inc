@@ -24,3 +24,9 @@ Pokecenter_Text_TheEnd::
 	.string "YOU OVERCAME MY ILLUSION.\p"
 	.string "I WILL HAVE TO TRY…\n"
 	.string "SOMETHING ELSE…$"
+	
+PokeCenter_Text_Closed::
+	.string "The way to safety has been closed…$
+	
+PokeCenter_Text_Adventure::
+	.string "PATH OF ADVENTURE$
