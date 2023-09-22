@@ -32,7 +32,7 @@ FakePallet2_EventScript_Mom1::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops1
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops
 	waitmovement 0
 	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
@@ -69,7 +69,7 @@ FakePallet2_EventScript_Mom2::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops2
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops
 	waitmovement 0
 	playse SE_BERRY_BLENDER
 	goto FakePallet2_EventScript_BrailleMessage
@@ -106,7 +106,7 @@ FakePallet2_EventScript_Mom3::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
-	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops3
+	applymovement LOCALID_KABUTOPS_SHADOW FakePallet2_Movement_Kabutops
 	waitmovement 0
 	playse SE_BERRY_BLENDER
 	call FakePallet2_EventScript_BrailleMessage
@@ -184,4 +184,8 @@ FakePallet2_Movement_Slap2::
 	
 FakePallet2_Movement_Slap3::
 	jump_up
+	step_end
+	
+FakePallet2_Movement_Kabutops::
+	face_player
 	step_end
