@@ -4,7 +4,7 @@ Special_MapScripts::
 Special_EventScript_Cage::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Special_Movement_Cage
-	waitmovement
+	waitmovement 0
 	delay 500
 	textcolor 2
 	msgbox SpecialArea_Text_Asleep
