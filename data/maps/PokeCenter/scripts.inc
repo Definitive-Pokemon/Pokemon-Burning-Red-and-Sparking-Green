@@ -79,7 +79,9 @@ PokeCenter_EventScript_TheEnd::
 	end
 	
 PokeCenter_EventScript_Closed::
+	lockall
 	msgbox PokeCenter_Text_Closed, MSGBOX_SIGN
+	releaseall
 	end
 	
 PokeCenter_EventScript_Adventure::
