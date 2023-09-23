@@ -21,6 +21,7 @@ MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	
 MonitoringStation_Shortcut_EventScript_PokemonScared::
 	lockall
+	delay 50
 	clearflag FLAG_HORROR_ABSOLUTE
 	msgbox MonitoringStation_Shortcut_Text_Scared
 	waitmessage
