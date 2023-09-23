@@ -1101,9 +1101,16 @@ static u16 GetCurrLocationDefaultMusic(void)
     {
         music = MUS_GSC_PEWTER;
     }
-    else if((bool8)IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    else if((bool8)IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location))
     {
-        music = MUS_WEATHER_GROUDON;
+        if (FlagGet(FLAG_HORROR_ROCKET_MOVED))
+        {
+            music = MUS_WEATHER_GROUDON;
+        }
+        else if(FlagGet(FLAG_GOT_BLUE_KEY))
+        {
+            music = MUS_DUMMY;
+        }
     }
     return music;
 }
@@ -1115,9 +1122,16 @@ static u16 GetWarpDestinationMusic(void)
     {
         music = MUS_GSC_PEWTER;
     }
-    else if((bool8)IsWarpInsideMonitoringStation(&sWarpDestination) && FlagGet(FLAG_HORROR_ROCKET_MOVED))
+    else if((bool8)IsWarpInsideMonitoringStation(&sWarpDestination))
     {
-        music = MUS_WEATHER_GROUDON;
+        if (FlagGet(FLAG_HORROR_ROCKET_MOVED))
+        {
+            music = MUS_WEATHER_GROUDON;
+        }
+        else if(FlagGet(FLAG_GOT_BLUE_KEY))
+        {
+            music = MUS_DUMMY;
+        }
     }
     return music;
 }
