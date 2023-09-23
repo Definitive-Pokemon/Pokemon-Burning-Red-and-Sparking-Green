@@ -55,7 +55,7 @@ MonitoringStation_Hallway3_EventScript_YellowDoor::
 	
 MonitoringStation_Hallway3_EventScript_RemoveYellowDoor::
 	setflag FLAG_YELLOW_DOOR
-	playse SE_UNLOCK
+	playse SE_RS_DOOR
 	waitse
 	removeobject LOCALID_YELLOW_DOOR1
 	removeobject LOCALID_YELLOW_DOOR2
