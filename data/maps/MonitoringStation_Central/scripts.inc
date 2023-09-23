@@ -37,7 +37,7 @@ MonitoringStation_Central_EventScript_Quartet::
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
 	msgbox MonitoringStation_Central_Text_Quartet2
 	closemessage
-	playmoncry SPECIES_KANGASKHAN, 1
+	playmoncry SPECIES_KANGASKHAN, 0
 	textcolor 2
 	msgbox MonitoringStation_Central_Text_Kanga
 	closemessage
@@ -69,7 +69,7 @@ MonitoringStation_Central_EventScript_Quartet::
 MonitoringStation_Central_EventScript_Kanga::
 	lock
 	faceplayer
-	playmoncry SPECIES_KANGASKHAN, 1
+	playmoncry SPECIES_KANGASKHAN, 0
 	msgbox MonitoringStation_Central_Text_Kanga
 	closemessage
 	waitmoncry

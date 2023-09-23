@@ -28,12 +28,12 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "in the holding room.\p"
 	.string "That one would be perfect for\n"
 	.string "our little plan.\p"
-	.string "If you go free that caged KANGASKHAN,\n"
+	.string "If you go free that caged POKéMON,\n"
 	.string "I can command it to use STRENGTH\p"
 	.string "against that boulder.$"
 	
 MonitoringStation_Quarters_Text_RocketM3Again::
-	.string "If you haven't freed the KANGASKHAN\n"
+	.string "If you haven't freed KANGASKHAN\n"
 	.string "yet, go do that now please.\p"
 	.string "I want to get to the bottom of this\n"
 	.string "scheme of our esteemed ADMIN…$"
