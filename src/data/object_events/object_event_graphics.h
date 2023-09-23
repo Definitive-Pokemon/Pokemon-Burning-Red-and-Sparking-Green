@@ -157,6 +157,7 @@ const u16 gObjectEventPic_Fearow[] = INCBIN_U16("graphics/object_events/pics/pok
 const u16 gObjectEventPic_Kabuto[] = INCBIN_U16("graphics/object_events/pics/pokemon/kabuto.4bpp");
 const u16 gObjectEventPic_Machoke[] = INCBIN_U16("graphics/object_events/pics/pokemon/machoke.4bpp");
 const u16 gObjectEventPic_Snorlax[] = INCBIN_U16("graphics/object_events/pics/pokemon/snorlax.4bpp");
+const u16 gObjectEventPic_Venusaur[] = INCBIN_U16("graphics/object_events/pics/pokemon/venusaur.4bpp");
 const u16 gObjectEventPic_Spearow[] = INCBIN_U16("graphics/object_events/pics/pokemon/spearow.4bpp");
 const u16 gObjectEventPic_Cubone[] = INCBIN_U16("graphics/object_events/pics/pokemon/cubone.4bpp");
 const u16 gObjectEventPic_Poliwrath[] = INCBIN_U16("graphics/object_events/pics/pokemon/poliwrath.4bpp");

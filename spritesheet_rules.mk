@@ -558,3 +558,6 @@ $(OBJEVENTGFXDIR)/pokemon/mew.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/kabutops.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/venusaur.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

@@ -112,6 +112,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteorite;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LaprasDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Seagallop;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Snorlax;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Venusaur;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Spearow;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cubone;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Poliwrath;
@@ -334,6 +335,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LAPRAS_DOLL]              = &gObjectEventGraphicsInfo_LaprasDoll,
     [OBJ_EVENT_GFX_SEAGALLOP]                = &gObjectEventGraphicsInfo_Seagallop,
     [OBJ_EVENT_GFX_SNORLAX]                  = &gObjectEventGraphicsInfo_Snorlax,
+    [OBJ_EVENT_GFX_VENUSAUR]                 = &gObjectEventGraphicsInfo_Venusaur,
     [OBJ_EVENT_GFX_SPEAROW]                  = &gObjectEventGraphicsInfo_Spearow,
     [OBJ_EVENT_GFX_CUBONE]                   = &gObjectEventGraphicsInfo_Cubone,
     [OBJ_EVENT_GFX_POLIWRATH]                = &gObjectEventGraphicsInfo_Poliwrath,

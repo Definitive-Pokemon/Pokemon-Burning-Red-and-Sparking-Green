@@ -1535,6 +1535,18 @@ const struct SpriteFrameImage gObjectEventPicTable_Snorlax[] = {
     overworld_frame(gObjectEventPic_Snorlax, 4, 4, 0),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_Venusaur[] = {
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Venusaur, 4, 4, 0),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Spearow[] = {
     overworld_frame(gObjectEventPic_Spearow, 2, 2, 0),
     overworld_frame(gObjectEventPic_Spearow, 2, 2, 1),
