@@ -93,7 +93,7 @@ MonitoringStation_Text_ExecutiveKey::
 	.string "Did you manage to get your hands on\n"
 	.string "the RED KEY?$"
 	
-MonitoringStation_EventScript_ExecutiveYay::
+MonitoringStation_Text_ExecutiveYay::
 	.string "FUCKING AWESOME!\n"
 	.string "TO BE CONTINUED!$"
 	
