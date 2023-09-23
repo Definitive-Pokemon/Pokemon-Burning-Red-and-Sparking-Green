@@ -315,7 +315,7 @@ MonitoringStation_EventScript_Rocket::
 	closemessage
 	playbgm MUS_WEATHER_GROUDON, 1
 	fadeinbgm 1
-	setvar VAR_MAP_SCENE_MONITORING_STATION, 1
+	setvar VAR_MAP_SCENE_MONITORING_STATION, 4
 	end
 	
 MonitoringStation_EventScript_RocketMoveTwoSteps::

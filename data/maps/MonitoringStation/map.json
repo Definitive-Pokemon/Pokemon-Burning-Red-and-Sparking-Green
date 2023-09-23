@@ -181,7 +181,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",
-      "var_value": "0",
+      "var_value": "3",
       "script": "MonitoringStation_EventScript_RocketLeft"
     },
     {
@@ -190,7 +190,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",
-      "var_value": "0",
+      "var_value": "3",
       "script": "MonitoringStation_EventScript_RocketMiddle"
     },
     {
@@ -199,7 +199,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_MAP_SCENE_MONITORING_STATION",
-      "var_value": "0",
+      "var_value": "3",
       "script": "MonitoringStation_EventScript_RocketRight"
     },
     {

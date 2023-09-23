@@ -99,6 +99,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_BOULDER2
 	setflag FLAG_HIDE_CHONKDUO
 	setflag FLAG_GOT_YELLOW_KEY
+	setvar VAR_MAP_SCENE_MONITORING_STATION, 3
 	setvar VAR_ADD_CAGE, 0
 	clearflag FLAG_GOT_EMERALD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
