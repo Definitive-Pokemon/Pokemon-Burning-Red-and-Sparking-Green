@@ -28,7 +28,7 @@
       "elevation": 0,
       "var": "VAR_THEEND",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
+      "script": "PokeCenter_EventScript_TheEnd"
     },
     {
       "type": "trigger",
@@ -37,7 +37,7 @@
       "elevation": 0,
       "var": "VAR_ALMOSTTHERE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
+      "script": "PokeCenter_EventScript_AlmostThere"
     },
     {
       "type": "trigger",
@@ -46,7 +46,7 @@
       "elevation": 0,
       "var": "VAR_DETERMINATION",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
+      "script": "PokeCenter_EventScript_Determination"
     },
     {
       "type": "trigger",
@@ -55,7 +55,7 @@
       "elevation": 0,
       "var": "VAR_KEEPTRYING",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
+      "script": "PokeCenter_EventScript_KeepTrying"
     },
     {
       "type": "trigger",
@@ -64,7 +64,7 @@
       "elevation": 0,
       "var": "VAR_DONTGIVEUP",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
+      "script": "PokeCenter_EventScript_DontGiveUp"
     },
     {
       "type": "trigger",
@@ -73,7 +73,7 @@
       "elevation": 0,
       "var": "VAR_POINTLESS",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
+      "script": "PokeCenter_EventScript_Pointless"
     },
     {
       "type": "trigger",
@@ -82,7 +82,7 @@
       "elevation": 0,
       "var": "VAR_NOHOPE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
+      "script": "PokeCenter_EventScript_NoHope"
     },
     {
       "type": "trigger",
@@ -91,7 +91,7 @@
       "elevation": 0,
       "var": "VAR_NOHOPE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
+      "script": "PokeCenter_EventScript_NoHope"
     },
     {
       "type": "trigger",
@@ -100,7 +100,7 @@
       "elevation": 0,
       "var": "VAR_NOHOPE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
+      "script": "PokeCenter_EventScript_NoHope"
     },
     {
       "type": "trigger",
@@ -109,7 +109,7 @@
       "elevation": 0,
       "var": "VAR_NOHOPE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
+      "script": "PokeCenter_EventScript_NoHope"
     },
     {
       "type": "trigger",
@@ -118,7 +118,7 @@
       "elevation": 0,
       "var": "VAR_NOHOPE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_NoHope"
+      "script": "PokeCenter_EventScript_NoHope"
     },
     {
       "type": "trigger",
@@ -127,7 +127,7 @@
       "elevation": 0,
       "var": "VAR_POINTLESS",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
+      "script": "PokeCenter_EventScript_Pointless"
     },
     {
       "type": "trigger",
@@ -136,7 +136,7 @@
       "elevation": 0,
       "var": "VAR_POINTLESS",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
+      "script": "PokeCenter_EventScript_Pointless"
     },
     {
       "type": "trigger",
@@ -145,7 +145,7 @@
       "elevation": 0,
       "var": "VAR_POINTLESS",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
+      "script": "PokeCenter_EventScript_Pointless"
     },
     {
       "type": "trigger",
@@ -154,7 +154,7 @@
       "elevation": 0,
       "var": "VAR_POINTLESS",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Pointless"
+      "script": "PokeCenter_EventScript_Pointless"
     },
     {
       "type": "trigger",
@@ -163,7 +163,7 @@
       "elevation": 0,
       "var": "VAR_BEYONDREACH",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
+      "script": "PokeCenter_EventScript_BeyondReach"
     },
     {
       "type": "trigger",
@@ -172,7 +172,7 @@
       "elevation": 0,
       "var": "VAR_BEYONDREACH",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
+      "script": "PokeCenter_EventScript_BeyondReach"
     },
     {
       "type": "trigger",
@@ -181,7 +181,7 @@
       "elevation": 0,
       "var": "VAR_BEYONDREACH",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
+      "script": "PokeCenter_EventScript_BeyondReach"
     },
     {
       "type": "trigger",
@@ -190,7 +190,7 @@
       "elevation": 0,
       "var": "VAR_BEYONDREACH",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
+      "script": "PokeCenter_EventScript_BeyondReach"
     },
     {
       "type": "trigger",
@@ -199,7 +199,7 @@
       "elevation": 0,
       "var": "VAR_BEYONDREACH",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_BeyondReach"
+      "script": "PokeCenter_EventScript_BeyondReach"
     },
     {
       "type": "trigger",
@@ -208,7 +208,7 @@
       "elevation": 0,
       "var": "VAR_DONTGIVEUP",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
+      "script": "PokeCenter_EventScript_DontGiveUp"
     },
     {
       "type": "trigger",
@@ -217,7 +217,7 @@
       "elevation": 0,
       "var": "VAR_DONTGIVEUP",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
+      "script": "PokeCenter_EventScript_DontGiveUp"
     },
     {
       "type": "trigger",
@@ -226,7 +226,7 @@
       "elevation": 0,
       "var": "VAR_DONTGIVEUP",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
+      "script": "PokeCenter_EventScript_DontGiveUp"
     },
     {
       "type": "trigger",
@@ -235,7 +235,7 @@
       "elevation": 0,
       "var": "VAR_DONTGIVEUP",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_DontGiveUp"
+      "script": "PokeCenter_EventScript_DontGiveUp"
     },
     {
       "type": "trigger",
@@ -244,7 +244,7 @@
       "elevation": 0,
       "var": "VAR_KEEPTRYING",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
+      "script": "PokeCenter_EventScript_KeepTrying"
     },
     {
       "type": "trigger",
@@ -253,7 +253,7 @@
       "elevation": 0,
       "var": "VAR_KEEPTRYING",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
+      "script": "PokeCenter_EventScript_KeepTrying"
     },
     {
       "type": "trigger",
@@ -262,7 +262,7 @@
       "elevation": 0,
       "var": "VAR_KEEPTRYING",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
+      "script": "PokeCenter_EventScript_KeepTrying"
     },
     {
       "type": "trigger",
@@ -271,7 +271,7 @@
       "elevation": 0,
       "var": "VAR_KEEPTRYING",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_KeepTrying"
+      "script": "PokeCenter_EventScript_KeepTrying"
     },
     {
       "type": "trigger",
@@ -280,7 +280,7 @@
       "elevation": 0,
       "var": "VAR_DETERMINATION",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
+      "script": "PokeCenter_EventScript_Determination"
     },
     {
       "type": "trigger",
@@ -289,7 +289,7 @@
       "elevation": 0,
       "var": "VAR_DETERMINATION",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
+      "script": "PokeCenter_EventScript_Determination"
     },
     {
       "type": "trigger",
@@ -298,7 +298,7 @@
       "elevation": 0,
       "var": "VAR_DETERMINATION",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
+      "script": "PokeCenter_EventScript_Determination"
     },
     {
       "type": "trigger",
@@ -307,7 +307,7 @@
       "elevation": 0,
       "var": "VAR_DETERMINATION",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_Determination"
+      "script": "PokeCenter_EventScript_Determination"
     },
     {
       "type": "trigger",
@@ -316,7 +316,7 @@
       "elevation": 0,
       "var": "VAR_ALMOSTTHERE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
+      "script": "PokeCenter_EventScript_AlmostThere"
     },
     {
       "type": "trigger",
@@ -325,7 +325,7 @@
       "elevation": 0,
       "var": "VAR_ALMOSTTHERE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
+      "script": "PokeCenter_EventScript_AlmostThere"
     },
     {
       "type": "trigger",
@@ -334,7 +334,7 @@
       "elevation": 0,
       "var": "VAR_ALMOSTTHERE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
+      "script": "PokeCenter_EventScript_AlmostThere"
     },
     {
       "type": "trigger",
@@ -343,7 +343,7 @@
       "elevation": 0,
       "var": "VAR_ALMOSTTHERE",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_AlmostThere"
+      "script": "PokeCenter_EventScript_AlmostThere"
     },
     {
       "type": "trigger",
@@ -352,7 +352,7 @@
       "elevation": 0,
       "var": "VAR_THEEND",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
+      "script": "PokeCenter_EventScript_TheEnd"
     },
     {
       "type": "trigger",
@@ -361,7 +361,7 @@
       "elevation": 0,
       "var": "VAR_THEEND",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
+      "script": "PokeCenter_EventScript_TheEnd"
     },
     {
       "type": "trigger",
@@ -370,7 +370,7 @@
       "elevation": 0,
       "var": "VAR_THEEND",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
+      "script": "PokeCenter_EventScript_TheEnd"
     },
     {
       "type": "trigger",
@@ -379,7 +379,7 @@
       "elevation": 0,
       "var": "VAR_THEEND",
       "var_value": "0",
-      "script": "Pokecenter_EventScript_TheEnd"
+      "script": "PokeCenter_EventScript_TheEnd"
     }
   ],
   "bg_events": [
@@ -389,7 +389,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PokeCenter_EventScript_Closed"
+      "script": "PokeCenter_EventScript_TheEnd"
     },
     {
       "type": "sign",

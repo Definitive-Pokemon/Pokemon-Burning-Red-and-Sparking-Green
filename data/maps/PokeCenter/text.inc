@@ -1,25 +1,25 @@
-Pokecenter_Text_NoHope::
+PokeCenter_Text_NoHope::
 	.string "THERE IS NO HOPE OF ESCAPE.$"
 	
-Pokecenter_Text_Pointless::
+PokeCenter_Text_Pointless::
 	.string "IT IS POINTLESS TO TRY.$"
 	
-Pokecenter_Text_BeyondReach::
+PokeCenter_Text_BeyondReach::
 	.string "THE END IS BEYOND REACH.$"
 	
-Pokecenter_Text_DontGiveUp::
+PokeCenter_Text_DontGiveUp::
 	.string "YOU WILL NOT GIVE UP, WILL YOU?$"
 	
-Pokecenter_Text_KeepTrying::
+PokeCenter_Text_KeepTrying::
 	.string "WHY DO YOU KEEP TRYING?$"
 	
-Pokecenter_Text_Determination::
+PokeCenter_Text_Determination::
 	.string "I ADMIRE YOUR DETERMINATION…$"
 	
-Pokecenter_Text_AlmostThere::
+PokeCenter_Text_AlmostThere::
 	.string "YOUR MIND IS STRONG…$"
 	
-Pokecenter_Text_TheEnd::
+PokeCenter_Text_TheEnd::
 	.string "WITH YOUR COURAGE AND PERSEVERANCE\n"
 	.string "YOU OVERCAME MY ILLUSION.\p"
 	.string "I WILL HAVE TO TRY…\n"

@@ -59,7 +59,7 @@ MonitoringStation_Central_EventScript_Quartet::
 	removeobject LOCALID_ROCKET_M2
 	playse SE_EXIT
 	waitse
-	setflag HIDE_CHONKDUO
+	setflag FLAG_HIDE_CHONKDUO
 	setflag FLAG_HIDE_BOULDER3
 	clearflag FLAG_HIDE_BOULDER4
 	release

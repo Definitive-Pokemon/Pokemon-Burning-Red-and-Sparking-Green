@@ -274,7 +274,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MonitoringStation_Pokemon_EventScript_Venusaur"
+      "script": "MonitoringStation_Pokemon_EventScript_Kangaskhan"
     },
     {
       "type": "sign",
@@ -282,7 +282,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MonitoringStation_Pokemon_EventScript_Venusaur"
+      "script": "MonitoringStation_Pokemon_EventScript_Kangaskhan"
     },
     {
       "type": "sign",

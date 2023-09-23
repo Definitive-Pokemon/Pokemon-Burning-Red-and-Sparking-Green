@@ -1,73 +1,73 @@
 PokeCenter_MapScripts::
 	.byte 0
 
-Pokecenter_EventScript_NoHope::
+PokeCenter_EventScript_NoHope::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_NoHope
+	msgbox PokeCenter_Text_NoHope
 	waitmessage
 	setvar VAR_NOHOPE, 1
 	release
 	end
 	
-Pokecenter_EventScript_Pointless::
+PokeCenter_EventScript_Pointless::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_Pointless
+	msgbox PokeCenter_Text_Pointless
 	waitmessage
 	setvar VAR_POINTLESS, 1
 	release
 	end
 	
-Pokecenter_EventScript_BeyondReach::
+PokeCenter_EventScript_BeyondReach::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_BeyondReach
+	msgbox PokeCenter_Text_BeyondReach
 	waitmessage
 	setvar VAR_BEYONDREACH, 1
 	release
 	end
 	
-Pokecenter_EventScript_DontGiveUp::
+PokeCenter_EventScript_DontGiveUp::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_DontGiveUp
+	msgbox PokeCenter_Text_DontGiveUp
 	waitmessage
 	setvar VAR_DONTGIVEUP, 1
 	release
 	end
 	
-Pokecenter_EventScript_KeepTrying::
+PokeCenter_EventScript_KeepTrying::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_KeepTrying
+	msgbox PokeCenter_Text_KeepTrying
 	waitmessage
 	setvar VAR_KEEPTRYING, 1
 	release
 	end
 	
-Pokecenter_EventScript_Determination::
+PokeCenter_EventScript_Determination::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_Determination
+	msgbox PokeCenter_Text_Determination
 	waitmessage
 	setvar VAR_DETERMINATION, 1
 	release
 	end
 	
-Pokecenter_EventScript_AlmostThere::
+PokeCenter_EventScript_AlmostThere::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_AlmostThere
+	msgbox PokeCenter_Text_AlmostThere
 	waitmessage
 	setvar VAR_ALMOSTTHERE, 1
 	release
 	end
 	
-Pokecenter_EventScript_TheEnd::
+PokeCenter_EventScript_TheEnd::
 	lock
 	textcolor 2
-	msgbox Pokecenter_Text_TheEnd
+	msgbox PokeCenter_Text_TheEnd
 	waitmessage
 	setflag FLAG_HORROR_ABSOLUTE
 	clearflag FLAG_HIDE_HORROR_NPC
@@ -77,10 +77,10 @@ Pokecenter_EventScript_TheEnd::
 	release
 	end
 	
-Pokecenter_EventScript_Closed::
+PokeCenter_EventScript_Closed::
 	msgbox PokeCenter_Text_Closed, MSGBOX_SIGN
 	end
 	
-Pokecenter_EventScript_Adventure::
+PokeCenter_EventScript_Adventure::
 	msgbox PokeCenter_Text_Adventure, MSGBOX_SIGN
 	end
