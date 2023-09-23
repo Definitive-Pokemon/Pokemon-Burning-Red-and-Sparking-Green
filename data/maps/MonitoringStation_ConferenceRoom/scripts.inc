@@ -36,8 +36,7 @@ MonitoringStation_ConferenceRoom_EventScript_RocketM3::
 	setflag FLAG_GOT_BLUE_KEY
 	setflag FLAG_HIDE_ADMIN2
 	setflag FLAG_HIDE_STORAGE_GRUNT
-	clearflag FLAG_HIDE_ADMIN1
-	clearflag FLAG_HIDE_STORAGE_GRUNT2
+	clearflag FLAG_HIDE_ENTRANCE_PEOPLE
 	clearflag FLAG_HIDE_BOULDER3
 	setflag FLAG_HIDE_BOULDER2
 	setvar VAR_ADMIN_CONVO, 1
