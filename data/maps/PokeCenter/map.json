@@ -397,7 +397,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PokeCenter_Text_Adventure"
+      "script": "PokeCenter_EventScript_Adventure"
     }
   ],
   "level_scaling": "0"
