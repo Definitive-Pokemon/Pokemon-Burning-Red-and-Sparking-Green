@@ -98,6 +98,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_CAGE
 	setflag FLAG_HIDE_MOMBUTOPS
 	setflag FLAG_HIDE_BOULDER2
+	setflag FLAG_HIDE_CHONKDUO
 	setvar VAR_ADD_CAGE, 0
 	clearflag FLAG_GOT_EMERALD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
