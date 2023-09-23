@@ -4041,7 +4041,6 @@ static void CursorCB_FieldMove(u8 taskId)
                     gTasks[taskId].func = Task_CancelAfterAorBPress;
                 }
                 //fall through
-                break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 SetUsedFieldMoveQuestLogEvent(&gPlayerParty[GetCursorSelectionMonId()], fieldMove);
