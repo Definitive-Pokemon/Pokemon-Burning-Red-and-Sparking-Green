@@ -40,6 +40,7 @@ MonitoringStation_Central_EventScript_Quartet::
 	playmoncry SPECIES_KANGASKHAN, 1
 	textcolor 2
 	msgbox MonitoringStation_Central_Text_Kanga
+	closemessage
 	waitmoncry
 	applymovement LOCALID_KANGASKHAN, MonitoringStation_Central_Movement_Kanga
 	waitmovement 0
@@ -70,6 +71,7 @@ MonitoringStation_Central_EventScript_Kanga::
 	faceplayer
 	playmoncry SPECIES_KANGASKHAN, 1
 	msgbox MonitoringStation_Central_Text_Kanga
+	closemessage
 	waitmoncry
 	release
 	end
@@ -219,7 +221,10 @@ MonitoringStation_Central_Movement_Quartet2::
 	step_end
 	
 MonitoringStation_Central_Movement_Quartet3::
-	face_player
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_up
 	step_end
 
 MonitoringStation_Central_Movement_PanToActionFromTop::
