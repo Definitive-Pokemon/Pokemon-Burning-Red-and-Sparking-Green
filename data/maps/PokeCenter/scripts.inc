@@ -75,6 +75,8 @@ PokeCenter_EventScript_TheEnd::
 	setvar VAR_HONEY1, 0
 	setvar VAR_HONEY2, 0
 	warp MAP_MONITORING_STATION_SHORTCUT, 255, 3, 3
+	delay 50
+	release
 	end
 	
 PokeCenter_EventScript_Closed::
