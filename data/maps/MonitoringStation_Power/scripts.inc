@@ -126,4 +126,5 @@ MonitoringStation_Power_EventScript_Working::
 MonitoringStation_Power_Movement_Jump::
 	walk_fast_down
 	walk_fast_down
+	walk_fast_down
 	step_end

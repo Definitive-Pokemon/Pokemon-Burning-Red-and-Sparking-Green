@@ -17,7 +17,7 @@ MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	
 MonitoringStation_Shortcut_EventScript_PokemonScared::
 	lockall
-	setflag FLAG_HORROR_POKEMON_SCARED
+	clearflag FLAG_HORROR_ABSOLUTE
 	msgbox MonitoringStation_Shortcut_Text_Scared
 	waitmessage
 	releaseall
