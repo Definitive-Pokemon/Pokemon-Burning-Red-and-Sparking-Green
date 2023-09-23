@@ -70,6 +70,7 @@ PokeCenter_EventScript_TheEnd::
 	msgbox PokeCenter_Text_TheEnd
 	waitmessage
 	setflag FLAG_HORROR_ABSOLUTE
+	setvar VAR_LOCK_FLASH, 1
 	clearflag FLAG_HIDE_HORROR_NPC
 	setvar VAR_HONEY1, 0
 	setvar VAR_HONEY2, 0
