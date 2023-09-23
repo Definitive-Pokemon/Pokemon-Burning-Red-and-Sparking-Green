@@ -37,7 +37,7 @@ MonitoringStation_EventScript_AdminConvo::
 	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Quartet
 	waitmovement 0
 	msgbox MonitoringStation_Text_Quartet
-	closemessage 0
+	closemessage
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Both
 	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_Both
 	waitmovement 0
@@ -131,7 +131,7 @@ MonitoringStation_EventScript_ExecutiveReal::
 MonitoringStation_EventScript_ExecutiveIntro::
 	msgbox MonitoringStation_Text_ExecutiveIntro
 	
-MonitoringStation_EventScript_ExecutiveYay
+MonitoringStation_EventScript_ExecutiveYay::
 	msgbox MonitoringStation_Text_ExecutiveYay
 	waitmessage
 	release

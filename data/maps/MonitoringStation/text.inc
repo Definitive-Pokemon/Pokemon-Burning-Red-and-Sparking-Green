@@ -28,7 +28,7 @@ MonitoringStation_Text_Executive::
 MonitoringStation_Text_StorageGrunt2::
 	.string "Uh-oh…$"
 	
-MonitoringStation_Text_Executive2
+MonitoringStation_Text_Executive2::
 	.string "And now, you can explain to me why\n"
 	.string "you wanted to leave me, and so\p"
 	.string "many GRUNTS, behind.$"
