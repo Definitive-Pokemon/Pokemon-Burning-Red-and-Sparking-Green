@@ -15,6 +15,7 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "somewhere along the way.\p"
 	.string "The ADMIN is supposed to have a\n"
 	.string "YELLOW KEY on her.\p"
+	.string "…… …… …… ……\p"
 	.string "If she didn't mention it whatsoever,\n"
 	.string "she must be hiding something…\p"
 	.string "She is probably in the entrance\n"
