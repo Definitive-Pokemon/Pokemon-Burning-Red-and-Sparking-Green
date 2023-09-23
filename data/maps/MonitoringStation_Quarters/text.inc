@@ -24,23 +24,23 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "In order to destroy that boulder\n"
 	.string "blocking access to the hallway,\p"
 	.string "we will need a strong POKéMON.\p"
-	.string "I recall there being a VENUSAUR\n"
+	.string "I recall there being a KANGASKHAN\n"
 	.string "in the holding room.\p"
 	.string "That one would be perfect for\n"
 	.string "our little plan.\p"
-	.string "If you go free that caged VENUSAUR,\n"
+	.string "If you go free that caged KANGASKHAN,\n"
 	.string "I can command it to use STRENGTH\p"
 	.string "against that boulder.$"
 	
 MonitoringStation_Quarters_Text_RocketM3Again::
-	.string "If you haven't freed the VENUSAUR\n"
+	.string "If you haven't freed the KANGASKHAN\n"
 	.string "yet, go do that now please.\p"
 	.string "I want to get to the bottom of this\n"
 	.string "scheme of our esteemed ADMIN…$"
 	
 MonitoringStation_Quarters_Text_RocketM3Solution::
 	.string "You've been to the holding room?\n"
-	.string "And you could not find VENUSAUR?\p"
+	.string "And you didn't find KANGASKHAN?\p"
 	.string "Ugh, I'll just go free it myself.\n"
 	.string "Meet me at the monitoring office.$"
 	

@@ -147,9 +147,9 @@ MonitoringStation_Pokemon_EventScript_Houndoom::
 	release
 	end
 
-MonitoringStation_Pokemon_EventScript_Venusaur::
+MonitoringStation_Pokemon_EventScript_Kangashkan::
 	lock
-	playmoncry SPECIES_VENUSAUR, 4
+	playmoncry SPECIES_KANGASKHAN, 4
 	waitmoncry
 	msgbox MonitoringStation_Pokemon_Text_Scared
 	waitmessage
