@@ -4039,6 +4039,7 @@ static void CursorCB_FieldMove(u8 taskId)
                 {
                     DisplayPartyMenuStdMessage(PARTY_MSG_MON_SCARED);
                     gTasks[taskId].func = Task_CancelAfterAorBPress;
+                    break;
                 }
                 //fall through
             default:
