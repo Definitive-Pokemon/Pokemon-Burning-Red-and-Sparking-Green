@@ -111,6 +111,7 @@ MonitoringStation_Power_EventScript_Absolute::
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
+	delay 20
 	fadescreen FADE_TO_BLACK
 	fadeinbgm 1
 	warp MAP_POKE_CENTER, 255, 8, 5
