@@ -68,7 +68,7 @@ MonitoringStation_Central_EventScript_Quartet::
 MonitoringStation_Central_EventScript_Kanga::
 	lock
 	faceplayer
-	playmoncry SPECIES_KANGASKHAN
+	playmoncry SPECIES_KANGASKHAN, 1
 	msgbox MonitoringStation_Central_Text_Kanga
 	waitmoncry
 	release
