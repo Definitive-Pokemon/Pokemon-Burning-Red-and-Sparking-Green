@@ -57,6 +57,9 @@ MonitoringStation_EventScript_AdminConvo::
 	closemessage
 	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveWalk
 	waitmovement 0
+	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_StorageListen
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_AdminListen
+	waitmovement 0
 	msgbox MonitoringStation_Text_Executive2
 	closemessage
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Admin
@@ -139,6 +142,14 @@ MonitoringStation_EventScript_ExecutiveYay::
 	waitmessage
 	release
 	end
+	
+MonitoringStation_Movement_StorageListen::
+	walk_in_place_down
+	step_end
+	
+MonitoringStation_Movement_AdminListen::
+	walk_in_place_down
+	step_end
 	
 MonitoringStation_Movement_Both::
 	emote_exclamation_mark

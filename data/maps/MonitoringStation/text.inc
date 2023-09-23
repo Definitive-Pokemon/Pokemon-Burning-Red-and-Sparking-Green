@@ -4,7 +4,7 @@ MonitoringStation_Text_Admin::
 	
 MonitoringStation_Text_StorageGrunt::
 	.string "This stuff takes time!\p"
-	.string "Without a RED KEY, I need to override\n"
+	.string "Without the key, I need to override\n"
 	.string "the lock manually.\p"
 	.string "You could have just helped that kid\n"
 	.string "get to the EXECUTIVE by giving him\p"
