@@ -93,6 +93,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 200
 	setflag FLAG_HIDE_ADMIN1
 	setflag FLAG_HIDE_BOULDER3
+	setflag FLAG_HIDE_BOULDER4
 	setflag FLAG_HIDE_STORAGE_GRUNT2
 	setflag FLAG_HIDE_CAGE
 	setflag FLAG_HIDE_MOMBUTOPS

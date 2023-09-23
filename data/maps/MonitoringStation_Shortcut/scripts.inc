@@ -21,7 +21,7 @@ MonitoringStation_Shortcut_EventScript_PokemonScared::
 	msgbox MonitoringStation_Shortcut_Text_Scared
 	waitmessage
 	releaseall
-	msgbox 
+	end 
 	
 MonitoringStation_Shortcut_EventScript_KabutopsTakesKey::
 	lock

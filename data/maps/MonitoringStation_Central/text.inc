@@ -1,3 +1,16 @@
+MonitoringStation_Central_Text_Quartet::
+	.string "Watch this KANGASKHAN do its work.\n"
+	.string "Move out of the way, kid!$"
+	
+MonitoringStation_Central_Text_Quartet2::
+	.string "KANGASKHAN! Use STRENGTH!!$"
+	
+MonitoringStation_Central_Text_Kanga::
+	.string "KANGASKHAN: Kan-Ga!!$"
+	
+MonitoringStation_Central_Text_Quartet3::
+	.string "Okay, let's go.$"
+
 MonitoringStation_Central_Text_GreyDoor::
 	.string "The power outage has activated the\n"
 	.string "emergency doors.$"

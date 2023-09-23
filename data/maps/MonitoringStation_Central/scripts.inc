@@ -2,6 +2,9 @@
 .set LOCALID_ROCKET_M, 2
 .set LOCALID_MACHOKE, 3
 .set LOCALID_PUSHABLE_BOULDER, 7
+.set LOCALID_PUSHABLE_BOULDER3, 9
+.set LOCALID_ROCKET_M2, 11
+.set LOCALID_KANGASKHAN, 12
 
 MonitoringStation_Central_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Central_EventScript_OnLoad
@@ -23,6 +26,53 @@ MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setweather WEATHER_NONE
 	doweather
 	return
+	
+MonitoringStation_Central_EventScript_Quartet::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Central_Text_Quartet
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Backwards
+	delay 40
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
+	msgbox MonitoringStation_Central_Text_Quartet2
+	closemessage
+	playmoncry SPECIES_KANGASKHAN, 1
+	textcolor 2
+	msgbox MonitoringStation_Central_Text_Kanga
+	waitmoncry
+	applymovement LOCALID_KANGASKHAN, MonitoringStation_Central_Movement_Kanga
+	waitmovement 0
+	playmoncry SPECIES_KANGASKHAN, 2
+	waitmoncry
+	applymovement LOCALID_PUSHABLE_BOULDER3, MonitoringStation_Central_Movement_KangaBoulder
+	playse SE_M_STRENGTH
+	waitse
+	waitmovement 0
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet2
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Central_Text_Quartet3
+	closemessage
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet3
+	waitmovement 0
+	removeoject
+	playse SE_EXIT
+	waitse
+	setflag HIDE_CHONKDUO
+	setflag FLAG_HIDE_BOULDER3
+	clearflag FLAG_HIDE_BOULDER4
+	release
+	end
+	
+MonitoringStation_Central_EventScript_Kanga::
+	lock
+	faceplayer
+	playmoncry SPECIES_KANGASKHAN
+	msgbox MonitoringStation_Central_Text_Kanga
+	waitmoncry
+	release
+	end
 	
 MonitoringStation_Central_EventScript_GreyDoors::
 	lock
@@ -143,6 +193,34 @@ MonitoringStation_Central_Eventscript_Boulder::
 	waitmessage
 	release
 	end
+	
+MonitoringStation_Central_Movement_Backwards::
+	walk_down
+	walk_in_place_up
+	step_end
+	
+MonitoringStation_Central_Movement_Kanga::
+	walk_left
+	walk_up
+	walk_in_place_right
+	step_end
+	
+MonitoringStation_Central_Movement_KangaBoulder::
+	walk_right
+	step_end
+	
+MonitoringStation_Central_Movement_Quartet::
+	walk_left
+	walk_in_place_right
+	step_end
+	
+MonitoringStation_Central_Movement_Quartet2::
+	face_player
+	step_end
+	
+MonitoringStation_Central_Movement_Quartet3::
+	face_player
+	step_end
 
 MonitoringStation_Central_Movement_PanToActionFromTop::
 	walk_slow_down
