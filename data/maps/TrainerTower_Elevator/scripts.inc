@@ -98,7 +98,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_MOMBUTOPS
 	setflag FLAG_HIDE_BOULDER2
 	setflag FLAG_HIDE_CHONKDUO
-	setflag FLAG_GOT_YELLOW_KEY
+	setflag FLAG_ENDGAME
 	setvar VAR_MAP_SCENE_MONITORING_STATION, 3
 	setvar VAR_ADD_CAGE, 0
 	clearflag FLAG_GOT_EMERALD

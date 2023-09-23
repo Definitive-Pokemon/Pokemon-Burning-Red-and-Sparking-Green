@@ -86,7 +86,8 @@ MonitoringStation_EventScript_AdminConvo::
 	msgbox MonitoringStation_Text_Executive5
 	closemessage
 	setflag FLAG_HIDE_ENTRANCE_PEOPLE
-	clearflag FLAG_GOT_YELLOW_KEY
+	setflag FLAG_GOT_YELLOW_KEY
+	setflag FLAG_ENDGAME
 	setvar VAR_ADMIN_CONVO, 2
 	releaseall
 	end

@@ -12,9 +12,14 @@ MonitoringStation_Central_MapScripts::
 	.byte 0
 	
 MonitoringStation_Central_EventScript_OnLoad::
+	call_if_set FLAG_GOT_YELLOW_KEY, MonitoringStation_Central_EventScript_SetNewPeople
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Central_EventScript_GreyDoorAdminShadows
 	setflag FLAG_HORROR_HIDE_BOULDER
 	end
+	
+MonitoringStation_Central_EventScript_SetNewPeople::
+	clearflag FLAG_ENDGAME
+	return
 	
 MonitoringStation_Central_EventScript_OnFrame::
 	map_script_2 VAR_MONITORING_STATION_CENTRAL_STATE, 0, MonitoringStation_Central_EventScript_Kabutops
