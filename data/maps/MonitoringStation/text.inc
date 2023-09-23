@@ -82,7 +82,7 @@ MonitoringStation_Text_StorageGruntLoose::
 	
 MonitoringStation_Text_AdminLoose::
 	.string "I might have gone too far\n"
-	.string with this…$"
+	.string "with this…$"
 	
 MonitoringStation_Text_ExecutiveIntro::
 	.string "Aah, that's much better.\n"
