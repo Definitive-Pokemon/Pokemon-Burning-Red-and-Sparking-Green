@@ -946,7 +946,7 @@
 #define FLAG_HIDE_STORAGE_GRUNT               0x397
 #define FLAG_HIDE_BOULDER3               0x398
 #define FLAG_HIDE_ENTRANCE_PEOPLE               0x399
-#define FLAG_0x39A               0x39A
+#define FLAG_GOT_YELLOW_KEY               0x39A
 #define FLAG_HIDE_CAGE               0x39B
 #define FLAG_HIDE_MOMBUTOPS               0x39C
 #define FLAG_HIDE_MOM               0x39D
@@ -957,7 +957,6 @@
 #define FLAG_HIDE_BOULDER4               0x3A2
 
 // Unused?
-#define FLAG_0x3A3               0x3A3
 #define FLAG_0x3A4               0x3A4
 #define FLAG_0x3A5               0x3A5
 #define FLAG_0x3A6               0x3A6

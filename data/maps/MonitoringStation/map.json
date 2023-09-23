@@ -63,12 +63,12 @@
       "x": 10,
       "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MonitoringStation_EventScript_Admin",
       "flag": "FLAG_HIDE_ENTRANCE_PEOPLE"
     },
     {
@@ -77,27 +77,69 @@
       "x": 9,
       "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MonitoringStation_EventScript_StorageGrunt",
       "flag": "FLAG_HIDE_ENTRANCE_PEOPLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "in_connection": false,
-      "x": 4,
-      "y": 10,
+      "x": 6,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MonitoringStation_EventScript_Executive",
       "flag": "FLAG_HIDE_ENTRANCE_PEOPLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+      "in_connection": false,
+      "x": 1,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MonitoringStation_EventScript_Admin",
+      "flag": "FLAG_GOT_YELLOW_KEY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "in_connection": false,
+      "x": 1,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MonitoringStation_EventScript_StorageGrunt",
+      "flag": "FLAG_GOT_YELLOW_KEY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "in_connection": false,
+      "x": 3,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MonitoringStation_EventScript_ExecutiveReal",
+      "flag": "FLAG_GOT_YELLOW_KEY"
     }
   ],
   "warp_events": [
@@ -131,7 +173,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
-      "script": "MonitoringStation_EventScript_ElevatorBroken"
+      "script": ""
     },
     {
       "type": "trigger",
@@ -167,7 +209,7 @@
       "elevation": 0,
       "var": "VAR_ADMIN_CONVO",
       "var_value": "1",
-      "script": "NULL"
+      "script": "MonitoringStation_EventScript_AdminConvo"
     }
   ],
   "bg_events": [

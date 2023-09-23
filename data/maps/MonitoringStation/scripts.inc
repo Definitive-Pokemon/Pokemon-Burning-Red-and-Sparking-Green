@@ -1,6 +1,9 @@
 .set LOCALID_ROCKET_M, 1
 .set LOCALID_RED_DOOR1, 2
 .set LOCALID_RED_DOOR2, 3
+.set LOCALID_ROCKET_ADMIN, 4
+.set LOCALID_ROCKET_STORAGE, 5
+.set LOCALID_ROCKET_QUARTET, 6
 
 MonitoringStation_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_EventScript_OnLoad
@@ -21,6 +24,164 @@ MonitoringStation_EventScript_RedDoorShortShadows::
 	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
 	return
 	
+MonitoringStation_EventScript_AdminConvo::
+	lockall
+	textcolor 1
+	msgbox MonitoringStation_Text_Admin
+	closemessage
+	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_StorageGrunt
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_StorageGrunt
+	closemessage
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Quartet
+	waitmovement 0
+	msgbox MonitoringStation_Text_Quartet
+	closemessage 0
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Both
+	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_Both
+	waitmovement 0
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Admin
+	waitmovement 0
+	textcolor 1
+	msgbox MonitoringStation_Text_Admin2
+	closemessage
+	textcolor 0
+	msgbox MonitoringStation_Text_Executive
+	closemessage
+	delay 40
+	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_StorageGrunt2
+	waitmovement 0
+	msgbox MonitoringStation_Text_StorageGrunt2
+	closemessage
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Executive
+	waitmovement 0
+	msgbox MonitoringStation_Text_Executive2
+	closemessage
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Admin
+	waitmovement 0
+	textcolor 1
+	msgbox MonitoringStation_Text_Admin3
+	closemessage
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveWalk
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_Executive3
+	closemessage
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Executive
+	waitmovement 0
+	textcolor 2
+	msgbox MonitoringStation_Text_TookYellowKey
+	closemessage
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveWalkBack
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_Executive4
+	closemessage
+	giveitem_msg MonitoringStation__Text_ObtainedYellowKey, ITEM_YELLOW_KEY
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveLeft
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_Executive5
+	closemessage
+	setflag FLAG_HIDE_ENTRANCE_PEOPLE
+	clearflag FLAG_GOT_YELLOW_KEY
+	setvar VAR_ADMIN_CONVO, 2
+	releaseall
+	end
+	
+MonitoringStation_EventScript_Admin::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Text_AdminLoose
+	waitmessage
+	release
+	end
+	
+MonitoringStation_EventScript_StorageGrunt::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Text_StorageGruntLoose
+	waitmessage
+	release
+	end
+	
+MonitoringStation_EventScript_Executive::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Text_Executive5
+	waitmessage
+	release
+	end
+	
+MonitoringStation_EventScript_ExecutiveReal::
+	lock
+	faceplayer
+	call_if_unset FLAG_TALKED_EXECUTIVE, MonitoringStation_EventScript_ExecutiveIntro
+	msgbox MonitoringStation_Text_ExecutiveKey
+	waitmessage
+	checkitem ITEM_RED_KEY, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq MonitoringStation_EventScript_ExecutiveYay
+	msgbox MonitoringStation_Text_ExecutiveAww
+	waitmessage
+	release
+	end
+	
+MonitoringStation_EventScript_ExecutiveIntro::
+	msgbox MonitoringStation_Text_ExecutiveIntro
+	
+MonitoringStation_EventScript_ExecutiveYay
+	msgbox MonitoringStation_Text_ExecutiveYay
+	waitmessage
+	release
+	end
+	
+MonitoringStation_Movement_Both::
+	emote_exclamation_mark
+	walk_in_place_left
+	step_end
+	
+MonitoringStation_Movement_StorageGrunt::
+	walk_in_place_right
+	step_end
+	
+MonitoringStation_Movement_Quartet::
+	walk_in_place_right
+	step_end
+	
+MonitoringStation_Movement_Admin::
+	walk_in_place_left
+	step_end
+	
+MonitoringStation_Movement_StorageGrunt2::
+	walk_in_place_left
+	step_end
+	
+MonitoringStation_Movement_ExecutiveWalk::
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_up
+	step_end
+	
+MonitoringStation_Movement_Executive::
+	walk_up
+	step_end
+	
+MonitoringStation_Movement_ExecutiveWalkBack::
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_in_place_left
+	step_end
+	
+MonitoringStation_Movement_ExecutiveLeft::
+	walk_in_place_left
+	step_end
+
 MonitoringStation_EventScript_RedDoor::
 	lock
 	checkitem ITEM_RED_KEY, 1
