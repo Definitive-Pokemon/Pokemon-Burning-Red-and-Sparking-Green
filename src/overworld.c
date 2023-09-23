@@ -1103,13 +1103,17 @@ static u16 GetCurrLocationDefaultMusic(void)
     }
     else if((bool8)IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location))
     {
-        if (FlagGet(FLAG_HORROR_ROCKET_MOVED))
+        if (FlagSet(FLAG_HORROR_DONE))
         {
-            music = MUS_WEATHER_GROUDON;
+            return music;
         }
         else if(FlagGet(FLAG_GOT_BLUE_KEY))
         {
             music = MUS_DUMMY;
+        }
+        else if (FlagGet(FLAG_HORROR_ROCKET_MOVED))
+        {
+            music = MUS_WEATHER_GROUDON;
         }
     }
     return music;
