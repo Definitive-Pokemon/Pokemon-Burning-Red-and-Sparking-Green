@@ -147,7 +147,7 @@ MonitoringStation_Pokemon_EventScript_Houndoom::
 	release
 	end
 
-MonitoringStation_Pokemon_EventScript_Kangashkan::
+MonitoringStation_Pokemon_EventScript_Kangaskhan::
 	lock
 	playmoncry SPECIES_KANGASKHAN, 4
 	waitmoncry
