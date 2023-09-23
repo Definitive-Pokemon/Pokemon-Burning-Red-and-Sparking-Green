@@ -196,6 +196,12 @@ MonitoringStation_Central_Eventscript_Boulder::
 	release
 	end
 	
+MonitoringStation_Central_Eventscript_BoulderPostScare::
+	msgbox MonitoringStation_Central_Text_Boulder2
+	waitmessage
+	release
+	end
+	
 MonitoringStation_Central_Movement_Backwards::
 	walk_down
 	walk_in_place_up

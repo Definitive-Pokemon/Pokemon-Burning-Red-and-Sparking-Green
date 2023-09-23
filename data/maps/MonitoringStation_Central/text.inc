@@ -57,3 +57,10 @@ MonitoringStation_Central_Text_Admin2::
 MonitoringStation_Central_Text_Boulder::
 	.string "It's the boulder that was thrown\n"
 	.string "by the mysterious shadow…$"
+	
+MonitoringStation_Central_Text_Boulder2::
+	.string "It's the boulder that was thrown\n"
+	.string "by the mysterious shadow…\p"
+	.string "Your POKéMON are too afraid to\n"
+	.string "show themselves.\p"
+	.string "STRENGTH cannot be used.$"
