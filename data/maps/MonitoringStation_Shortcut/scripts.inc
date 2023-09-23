@@ -1,12 +1,16 @@
 MonitoringStation_Shortcut_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Shortcut_EventScript_OnLoad
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Shortcut_EventScript_OnFrame
 	.byte 0
 
 MonitoringStation_Shortcut_EventScript_OnLoad::
-	call_if_set FLAG_HORROR_ABSOLUTE, MonitoringStation_Shortcut_EventScript_PokemonScared
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows
 	end
-	
+
+MonitoringStation_Shortcut_EventScript_OnFrame::
+	goto_if_set FLAG_HORROR_ABSOLUTE, MonitoringStation_Shortcut_EventScript_PokemonScared
+	end
+
 MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	setmetatile 3, 7, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
 	setmetatile 4, 8, METATILE_SilphCo_HideoutFloor, 0
@@ -21,7 +25,7 @@ MonitoringStation_Shortcut_EventScript_PokemonScared::
 	msgbox MonitoringStation_Shortcut_Text_Scared
 	waitmessage
 	releaseall
-	return
+	end
 	
 MonitoringStation_Shortcut_EventScript_KabutopsTakesKey::
 	lock
