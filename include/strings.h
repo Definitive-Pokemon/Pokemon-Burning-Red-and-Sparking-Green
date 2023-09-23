@@ -298,6 +298,7 @@ extern const u8 gText_First_PM[];
 extern const u8 gText_Second_PM[];
 extern const u8 gText_Third_PM[];
 extern const u8 gText_NotAble[];
+extern const u8 gText_PartyMonScared[];
 extern const u8 gText_Able3[];
 extern const u8 gText_NotAble2[];
 extern const u8 gText_Learned[];

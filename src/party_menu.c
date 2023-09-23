@@ -3952,6 +3952,31 @@ static void CursorCB_Trade2(u8 taskId)
 {
 }
 
+static bool8 IsLocationInsideMonitoringStation(struct WarpData * warp)
+{
+    bool8 result = FALSE;
+    u8 mapGroup = warp->mapGroup;
+    if (warp->mapGroup == 0x02) // there is no definition for any group!
+    {
+        if (warp->mapNum == ((u8)MAP_MONITORING_STATION) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_CENTRAL) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_SHORTCUT) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_POWER) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_HALLWAY2) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_CONFERENCE_ROOM) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_STORAGE) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_POKEMON) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_HALLWAY3) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_QUARTERS) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_OFFICE) ||
+            warp->mapNum == ((u8)MAP_MONITORING_STATION_END))
+        {
+            result = TRUE;
+        }
+    }
+    return result;
+}
+
 static void CursorCB_FieldMove(u8 taskId)
 {
     u8 fieldMove = sPartyMenuInternal->actions[Menu_GetCursorPos()] - MENU_FIELD_MOVES;
@@ -4008,6 +4033,14 @@ static void CursorCB_FieldMove(u8 taskId)
             case FIELD_MOVE_FLY:
                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
                 Task_ClosePartyMenu(taskId);
+                break;
+            case FIELD_MOVE_FLASH:
+                if (FlagGet(FLAG_HORROR_ABSOLUTE) && IsLocationInsideMonitoringStation(&gSaveBlock1Ptr->location))
+                {
+                    DisplayPartyMenuStdMessage(PARTY_MSG_MON_SCARED);
+                    gTasks[taskId].func = Task_CancelAfterAorBPress;
+                }
+                //fall through
                 break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
