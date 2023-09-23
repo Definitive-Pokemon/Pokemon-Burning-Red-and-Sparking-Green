@@ -84,8 +84,8 @@ MonitoringStation_Text_AdminLoose::
 	.string "with this…$"
 	
 MonitoringStation_Text_ExecutiveIntro::
-	.string "Aah, that's much better.\n"
-	.string "That GRUNT outfit is so very\p"
+	.string "Aah, this is much better!\p"
+	.string "That GRUNT outfit is so very\n"
 	.string "uncomfortable.$"
 	
 MonitoringStation_Text_ExecutiveKey::

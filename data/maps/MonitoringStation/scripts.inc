@@ -62,7 +62,7 @@ MonitoringStation_EventScript_AdminConvo::
 	waitmovement 0
 	msgbox MonitoringStation_Text_Executive2
 	closemessage
-	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Admin
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_AdminListen
 	waitmovement 0
 	textcolor 1
 	msgbox MonitoringStation_Text_Admin3
