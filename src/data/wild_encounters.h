@@ -7538,7 +7538,7 @@ const struct WildPokemon sMonitoringStation_Pokemon_LandMons[] =
 {
     { 16, 16, SPECIES_SHARPEDO },
     { 17, 17, SPECIES_AGGRON },
-    { 18, 18, SPECIES_VENUSAUR },
+    { 18, 18, SPECIES_KANGASKHAN },
     { 17, 17, SPECIES_SHIFTRY },
     { 19, 19, SPECIES_STARMIE },
     { 18, 18, SPECIES_AMPHAROS },
