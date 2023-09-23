@@ -97,7 +97,7 @@ MonitoringStation_Text_ExecutiveYay::
 	.string "FUCKING AWESOME!\n"
 	.string "TO BE CONTINUED!$"
 	
-MonitoringStation_EventScript_ExecutiveAww::
+MonitoringStation_Text_ExecutiveAww::
 	.string "Please go get that key quickly.\n"
 	.string "All of our lives depend on it.$"
 
