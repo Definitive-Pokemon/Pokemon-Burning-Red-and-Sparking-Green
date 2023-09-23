@@ -78,7 +78,7 @@ MonitoringStation_EventScript_AdminConvo::
 	textcolor 0
 	msgbox MonitoringStation_Text_Executive4
 	closemessage
-	giveitem_msg MonitoringStation__Text_ObtainedYellowKey, ITEM_YELLOW_KEY
+	giveitem_msg MonitoringStation_Text_ObtainedYellowKey, ITEM_YELLOW_KEY
 	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveLeft
 	waitmovement 0
 	textcolor 0
@@ -119,17 +119,18 @@ MonitoringStation_EventScript_ExecutiveReal::
 	faceplayer
 	call_if_unset FLAG_TALKED_EXECUTIVE, MonitoringStation_EventScript_ExecutiveIntro
 	msgbox MonitoringStation_Text_ExecutiveKey
-	waitmessage
 	checkitem ITEM_RED_KEY, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MonitoringStation_EventScript_ExecutiveYay
 	msgbox MonitoringStation_Text_ExecutiveAww
 	waitmessage
+	setflag FLAG_TALKED_EXECUTIVE
 	release
 	end
 	
 MonitoringStation_EventScript_ExecutiveIntro::
 	msgbox MonitoringStation_Text_ExecutiveIntro
+	return
 	
 MonitoringStation_EventScript_ExecutiveYay::
 	msgbox MonitoringStation_Text_ExecutiveYay
