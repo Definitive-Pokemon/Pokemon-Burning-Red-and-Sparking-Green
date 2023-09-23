@@ -56,7 +56,7 @@ MonitoringStation_Central_EventScript_Quartet::
 	closemessage
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet3
 	waitmovement 0
-	removeobject
+	removeobject LOCALID_ROCKET_M2
 	playse SE_EXIT
 	waitse
 	setflag HIDE_CHONKDUO
