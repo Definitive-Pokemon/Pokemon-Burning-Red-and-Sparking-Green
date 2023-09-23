@@ -8,8 +8,8 @@ MonitoringStation_Shortcut_EventScript_OnLoad::
 	end
 
 MonitoringStation_Shortcut_EventScript_OnFrame::
-	goto_if_set FLAG_HORROR_ABSOLUTE, MonitoringStation_Shortcut_EventScript_PokemonScared
-	end
+	map_script_2 VAR_LOCK_FLASH, 1, MonitoringStation_Shortcut_EventScript_PokemonScared
+	.2byte 0
 
 MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	setmetatile 3, 7, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
@@ -23,6 +23,7 @@ MonitoringStation_Shortcut_EventScript_PokemonScared::
 	lockall
 	delay 50
 	clearflag FLAG_HORROR_ABSOLUTE
+	setvar VAR_LOCK_FLASH, 0
 	msgbox MonitoringStation_Shortcut_Text_Scared
 	waitmessage
 	releaseall
