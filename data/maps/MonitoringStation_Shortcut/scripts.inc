@@ -3,6 +3,7 @@ MonitoringStation_Shortcut_MapScripts::
 	.byte 0
 
 MonitoringStation_Shortcut_EventScript_OnLoad::
+	call_if_set FLAG_HORROR_ABSOLUTE, MonitoringStation_Shortcut_EventScript_PokemonScared
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows
 	end
 	
@@ -13,6 +14,14 @@ MonitoringStation_Shortcut_EventScript_GreyDoorDownstairsShadows::
 	setweather WEATHER_NONE
 	doweather
 	return
+	
+MonitoringStation_Shortcut_EventScript_PokemonScared::
+	lockall
+	setflag FLAG_HORROR_POKEMON_SCARED
+	msgbox MonitoringStation_Shortcut_Text_Scared
+	waitmessage
+	releaseall
+	msgbox 
 	
 MonitoringStation_Shortcut_EventScript_KabutopsTakesKey::
 	lock

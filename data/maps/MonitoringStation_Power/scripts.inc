@@ -82,8 +82,8 @@ MonitoringStation_Power_EventScript_Giovanni::
 	
 MonitoringStation_Power_EventScript_Restore_Power::
 	lock
-	goto_if_unset FLAG_HORROR_ABSOLUTE, MonitoringStation_Power_EventScript_Absolute
 	goto_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_Power_EventScript_Working
+	goto_if_unset FLAG_HORROR_ABSOLUTE, MonitoringStation_Power_EventScript_Absolute
 	removeobject LOCALID_MOM
 	removeobject LOCALID_GIOVANNI
 	removeobject LOCALID_LANCE
