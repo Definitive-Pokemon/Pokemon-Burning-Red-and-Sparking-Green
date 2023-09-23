@@ -3,18 +3,20 @@ MonitoringStation_Text_Admin::
 	.string "We haven't got all day!$"
 	
 MonitoringStation_Text_StorageGrunt::
-	.string "This stuff takes time! Without a key,\n"
-	.string "I need to manually override the lock.\p"
+	.string "This stuff takes time!\p"
+	.string "Without a RED KEY, I need to override\n"
+	.string "the lock manually.\p"
 	.string "You could have just helped that kid\n"
-	.string "get to the EXECUTIVE by giving that\p"
-	.string "YELLOW KEY…$"
+	.string "get to the EXECUTIVE by giving him\p"
+	.string "that YELLOW KEY…$"
 	
 MonitoringStation_Text_Quartet::
 	.string "Hold it!\n"
 	.string "You guys got some explaining to do.$"
 	
 MonitoringStation_Text_Admin2::
-	.string "And who are you to order me around?\p"
+	.string "And who are you to order\n"
+	.string "me around?\p"
 	.string "I will report your misbehavior to\n"
 	.string "the EXECUTIVE.\p"
 	.string "You can explain it to…$"
@@ -22,7 +24,7 @@ MonitoringStation_Text_Admin2::
 MonitoringStation_Text_Executive::
 	.string "I AM the EXECUTIVE, you nitwit!\p"
 	.string "I've been undercover as a GRUNT for\n"
-	.string "a while now, in order to reveal\p"
+	.string "a while now, in order to uncover\p"
 	.string "your scheme to overthrow me.$"
 	
 MonitoringStation_Text_StorageGrunt2::
@@ -35,7 +37,7 @@ MonitoringStation_Text_Executive2::
 	
 MonitoringStation_Text_Admin3::
 	.string "Alright then. I wanted to be the\n"
-	.string "EXECUTIVE, now what?$"
+	.string "EXECUTIVE. So what?$"
 	
 MonitoringStation_Text_Executive3::
 	.string "It's not just that…\p"
@@ -45,7 +47,7 @@ MonitoringStation_Text_Executive3::
 	.string "colleagues to a monster to get\p"
 	.string "what you want.\p"
 	.string "You aren't worthy of the rank of\n"
-	.string "ADMIN, let alone of the rank of\p"
+	.string "ADMIN, let alone the rank of\p"
 	.string "EXECUTIVE.$"
 	
 MonitoringStation_Text_TookYellowKey::
@@ -53,28 +55,25 @@ MonitoringStation_Text_TookYellowKey::
 	.string "from the ADMIN.$"
 	
 MonitoringStation_Text_Executive4::
-	.string "I think you need this more than\p"
-	.string "she ever will…\p"
-	.string "My RED KEY is on my desk in my\n"
-	.string "personal office.\p"
-	.string "You can use it to open this door\n"
-	.string "in a second, rather than taking\p"
-	.string "hours like these buffoons.$"
+	.string "I think you need this more than\n"
+	.string "she ever will…$"
 	
 MonitoringStation_Text_ObtainedYellowKey::
 	.string "{PLAYER} received a YELLOW KEY\n"
 	.string "from the EXECUTIVE!$"
 	
 MonitoringStation_Text_Executive5::
-	.string "She let you run around, searching\n"
-	.string "for this key in vain.\p"
-	.string "Just so the monster would not go\n"
-	.string "after this sneaky duo instead.\p"
-	.string "Yes, you were set up to be a big\n"
-	.string "distraction for that beast.\p"
-	.string "But now, you have a valid reason to\n"
-	.string "go out there one more time.\p"
-	.string "You go get that RED KEY.$"
+	.string "The ADMIN had this key all along.\n"
+	.string "She just wanted to get away\p"
+	.string "while leaving me behind in my\n"
+	.string "office, cowering in fear.\p"
+	.string "Unfortunately for her, I wasn't\n"
+	.string "in my office.\p"
+	.string "Anyway, my RED KEY lies on my desk\n"
+	.string "in my personal office.\p"
+	.string "You can use it to open this door\n"
+	.string "in a second, rather than taking\p"
+	.string "hours like these buffoons.$"
 	
 MonitoringStation_Text_StorageGruntLoose::
 	.string "I got nothing to do with it!\n"

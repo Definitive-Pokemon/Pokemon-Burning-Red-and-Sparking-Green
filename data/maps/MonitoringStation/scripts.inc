@@ -38,6 +38,7 @@ MonitoringStation_EventScript_AdminConvo::
 	waitmovement 0
 	msgbox MonitoringStation_Text_Quartet
 	closemessage
+	playse SE_PIN
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Movement_Both
 	applymovement LOCALID_ROCKET_STORAGE, MonitoringStation_Movement_Both
 	waitmovement 0
@@ -54,7 +55,7 @@ MonitoringStation_EventScript_AdminConvo::
 	waitmovement 0
 	msgbox MonitoringStation_Text_StorageGrunt2
 	closemessage
-	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Executive
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveWalk
 	waitmovement 0
 	msgbox MonitoringStation_Text_Executive2
 	closemessage
@@ -63,7 +64,7 @@ MonitoringStation_EventScript_AdminConvo::
 	textcolor 1
 	msgbox MonitoringStation_Text_Admin3
 	closemessage
-	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_ExecutiveWalk
+	applymovement LOCALID_ROCKET_QUARTET, MonitoringStation_Movement_Executive
 	waitmovement 0
 	textcolor 0
 	msgbox MonitoringStation_Text_Executive3
@@ -168,7 +169,7 @@ MonitoringStation_Movement_ExecutiveWalk::
 	step_end
 	
 MonitoringStation_Movement_Executive::
-	walk_up
+	walk_in_place_up
 	step_end
 	
 MonitoringStation_Movement_ExecutiveWalkBack::
