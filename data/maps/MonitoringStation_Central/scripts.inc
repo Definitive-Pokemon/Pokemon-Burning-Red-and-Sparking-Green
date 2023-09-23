@@ -35,6 +35,7 @@ MonitoringStation_Central_EventScript_Quartet::
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Backwards
 	delay 40
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
+	waitmovement 0
 	msgbox MonitoringStation_Central_Text_Quartet2
 	closemessage
 	playmoncry SPECIES_KANGASKHAN, 0
@@ -227,8 +228,10 @@ MonitoringStation_Central_Movement_Quartet2::
 	step_end
 	
 MonitoringStation_Central_Movement_Quartet3::
+	walk_down
 	walk_right
 	walk_right
+	walk_up
 	walk_up
 	walk_in_place_up
 	step_end
