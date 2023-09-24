@@ -40,7 +40,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmoncry
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_Attack1
 	waitmovement 0
-	playse SE_BANG
+	playse SE_VITAL_THROW
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Office_Movement_KabTurn
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_Attack2
 	waitmovement 0
