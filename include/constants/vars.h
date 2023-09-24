@@ -214,7 +214,7 @@
 #define VAR_MOM                    0x40A2
 #define VAR_LOCK_FLASH             0x40A3
 #define VAR_ELEVATOR_BROKEN        0x40A4
-#define VAR_0x40A5                 0x40A5
+#define VAR_WELCOME                0x40A5
 #define VAR_0x40A6                 0x40A6
 #define VAR_0x40A7                 0x40A7
 #define VAR_0x40A8                 0x40A8

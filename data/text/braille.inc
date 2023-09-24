@@ -129,3 +129,6 @@ Braille_Text_Buttons::
 	
 Braille_Text_Submit::
 	.braille "SUBMIT.$"
+	
+Braille_Text_Welcome::
+	.braille "WELCOME.$"
