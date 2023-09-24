@@ -957,9 +957,9 @@
 #define FLAG_HIDE_BOULDER4               0x3A2
 #define FLAG_TALKED_EXECUTIVE               0x3A4
 #define FLAG_ENDGAME               0x3A5
+#define FLAG_HIDE_DUSCLOPS             0x3A6
 
 // Unused?
-#define FLAG_0x3A6               0x3A6
 #define FLAG_0x3A7               0x3A7
 #define FLAG_0x3A8               0x3A8
 #define FLAG_0x3A9               0x3A9

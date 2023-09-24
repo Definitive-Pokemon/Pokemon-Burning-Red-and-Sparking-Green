@@ -1,5 +1,6 @@
 .set LOCALID_KABUTOPS_SHADOW, 1
 .set LOCALID_ROCKET_ADMIN, 2
+.set LOCALID_DUSCLOPS, 3
 
 MonitoringStation_Office_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Office_OnFrame
@@ -50,8 +51,35 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_AdminPokemon
 	closemessage
+	playse SE_BALL_OPEN
+	fadescreen FADE_TO_WHITE
+	clearflag FLAG_HIDE_DUSCLOPS
+	addobject LOCALID_DUSCLOPS
+	fadescreen FADE_FROM_WHITE
+	playmoncry SPECIES_DUSCLOPS, 0
+	waitmoncry
+	delay 80
+	msgbox MonitoringStation_Office_Text_AdminAttack
+	closemessage
+	playmoncry SPECIES_DUSCLOPS, 2
+	waitmoncry
+	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_DusclopsAttack
+	delay 5
+	playse SE_M_HEADBUTT
+	waitse
+	playmoncry SPECIES_DUSCLOPS, 3
+	waitmoncry
+	delay 40
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_KABUTOPS_SHADOW
+	fadescreen FADE_FROM_BLACK
 	release
 	end
+	
+MonitoringStation_Office_Movement_DusclopsAttack::
+	walk_fast_down
+	walk_in_place_down
+	step_end
 	
 MonitoringStation_Office_Movement_Walk::
 	walk_slow_down
@@ -97,6 +125,7 @@ MonitoringStation_Office_Movement_Attack2::
 	
 MonitoringStation_Office_Movement_AdminRunUp::
 	walk_fast_up
+	walk_fast_up
 	walk_fast_right
 	walk_in_place_down
 	step_end
@@ -129,3 +158,4 @@ MonitoringStation_Office_EventScript_BlockAdmin::
 	closemessage
 	release
 	end
+	
