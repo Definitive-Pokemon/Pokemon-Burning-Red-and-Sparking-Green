@@ -66,9 +66,10 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmoncry
 	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_DusclopsAttack
 	delay 5
-	playse SE_M_HEADBUTT
+	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_KabutopsLook
+	playse SE_M_HORN_ATTACK
 	waitse
-	playmoncry SPECIES_DUSCLOPS, 3
+	playmoncry SPECIES_KABUTOPS, 3
 	waitmoncry
 	delay 40
 	fadescreen FADE_TO_BLACK
@@ -132,6 +133,10 @@ MonitoringStation_Office_Movement_AdminRunUp::
 	walk_fast_up
 	walk_fast_right
 	walk_in_place_down
+	step_end
+	
+MonitoringStation_Office_Movement_KabutopsLook::
+	walk_in_place_up
 	step_end
 	
 MonitoringStation_Office_EventScript_BrailleMessage1::
