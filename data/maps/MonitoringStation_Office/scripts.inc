@@ -16,7 +16,6 @@ MonitoringStation_Office_EventScript_Welcome::
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Office_Movement_PanToActionFromTop
 	waitmovement 0
-	special RemoveCameraObject
 	delay 60
 	playmoncry SPECIES_KABUTOPS, 2
 	call MonitoringStation_Office_EventScript_BrailleMessage
