@@ -104,7 +104,7 @@ MonitoringStation_Office_Movement_KabWalkUp::
 	walk_slow_up
 	step_end
 	
-	MonitoringStation_Office_Movement_Attack1::
+MonitoringStation_Office_Movement_Attack1::
 	lock_facing_direction
 	walk_fast_up
 	delay_16
