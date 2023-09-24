@@ -40,6 +40,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmoncry
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_Attack1
 	waitmovement 0
+	playse SE_BANG
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Office_Movement_KabTurn
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_Attack2
 	waitmovement 0
@@ -83,7 +84,7 @@ MonitoringStation_Office_Movement_DusclopsAttack::
 	
 MonitoringStation_Office_Movement_Walk::
 	walk_slow_down
-	walk_slow_down
+	walk_down
 	step_end
 	
 MonitoringStation_Office_Movement_AdminRun::
@@ -120,6 +121,9 @@ MonitoringStation_Office_Movement_KabTurn::
 	step_end
 	
 MonitoringStation_Office_Movement_Attack2::
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	walk_in_place_up
 	step_end
 	
@@ -144,7 +148,6 @@ MonitoringStation_Office_EventScript_BrailleMessage2::
 	braillemessage_wait Braille_Text_Enough
 	closemessage
 	return
-
 	
 MonitoringStation_Office_Movement_PanToActionFromTop::
 	walk_slow_down
