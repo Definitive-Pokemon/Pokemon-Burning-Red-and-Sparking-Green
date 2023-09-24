@@ -66,8 +66,8 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmoncry
 	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_DusclopsAttack
 	delay 5
-	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_KabutopsLook
-	playse SE_M_HORN_ATTACK
+	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Office_Movement_KabutopsLook
+	playse SE_M_MEGA_KICK
 	waitse
 	playmoncry SPECIES_KABUTOPS, 3
 	waitmoncry
