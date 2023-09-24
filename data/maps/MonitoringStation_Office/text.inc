@@ -14,3 +14,10 @@ MonitoringStation_Office_Text_AdminNo::
 	.string "No!\n"
 	.string "You stupid kid!\p"
 	.string "It's a GHOST-type POKéMON!$"
+	
+MonitoringStation_Office_Text_AdminPokemon::
+	.string "Go, DUSCLOPS!$"
+	
+MonitoringStation_Office_Text_AdminAttack::
+	.string "Use SHADOW PUNCH!!$"
+	
