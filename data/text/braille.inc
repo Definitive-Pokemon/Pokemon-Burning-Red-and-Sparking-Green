@@ -114,21 +114,21 @@ Braille_Text_WorldWaits:: @ 81A93B4
 
 Braille_Text_ForYou:: @ 81A93C0
 	.braille "FOR YOU.$"
-
-Braille_Text_Push::
-	.braille "PUSH ROCKS$"
-
-Braille_Text_Rocks::
-	.braille "ONTO BUTTONS$"
-
-Braille_Text_Onto::
-	.braille "TO OPEN$"
-
-Braille_Text_Buttons::
-	.braille "THE DOOR.$"
 	
 Braille_Text_Submit::
 	.braille "SUBMIT.$"
 	
 Braille_Text_Welcome::
 	.braille "WELCOME.$"
+	
+Braille_Text_Journey::
+	.braille "THIS JOURNEY$"
+	
+Braille_Text_Gone::
+	.braille "HAS GONE$"
+	
+Braille_Text_For::
+	.braille "ON FOR$"
+	
+Braille_Text_Enough::
+	.braille "LONG ENOUGH.$"
