@@ -33,3 +33,11 @@ MonitoringStation_Office_Movement_PanToActionFromTop::
 	walk_slow_down
 	walk_slow_down
 	step_end
+	
+MonitoringStation_Office_EventScript_BlockAdmin::
+	lock
+	textcolor 2
+	msgbox MonitoringStation_Office_Text_BlockAdmin
+	closemessage
+	release
+	end
