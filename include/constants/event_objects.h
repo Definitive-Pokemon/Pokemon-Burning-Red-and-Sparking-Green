@@ -223,7 +223,8 @@
 #define OBJ_EVENT_GFX_YELLOW_DOOR 219
 #define OBJ_EVENT_GFX_VENUSAUR 220
 #define OBJ_EVENT_GFX_PETREL 221
-#define NUM_OBJ_EVENT_GFX     222
+#define OBJ_EVENT_GFX_DUSCLOPS 222
+#define NUM_OBJ_EVENT_GFX     223
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

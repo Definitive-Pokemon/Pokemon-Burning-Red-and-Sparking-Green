@@ -199,6 +199,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kabutops_Shadow;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dusclops;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abra;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater2;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MasterBeauty;
@@ -423,6 +424,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REGICE]                   = &gObjectEventGraphicsInfo_Regice,
     [OBJ_EVENT_GFX_REGISTEEL]                = &gObjectEventGraphicsInfo_Registeel,
     [OBJ_EVENT_GFX_KABUTOPS_SHADOW]          = &gObjectEventGraphicsInfo_Kabutops_Shadow,
+    [OBJ_EVENT_GFX_DUSCLOPS]                 = &gObjectEventGraphicsInfo_Dusclops,
     [OBJ_EVENT_GFX_ABRA]                     = &gObjectEventGraphicsInfo_Abra,
     [OBJ_EVENT_GFX_SWIMMER_F_WATER_2]        = &gObjectEventGraphicsInfo_SwimmerFWater2,
     [OBJ_EVENT_GFX_MASTER_BEAUTY]            = &gObjectEventGraphicsInfo_MasterBeauty,
