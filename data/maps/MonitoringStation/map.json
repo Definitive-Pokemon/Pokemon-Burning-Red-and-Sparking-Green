@@ -128,7 +128,7 @@
       "flag": "FLAG_ENDGAME"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_PETREL",
       "in_connection": false,
       "x": 3,
       "y": 5,
