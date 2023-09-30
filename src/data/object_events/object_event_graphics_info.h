@@ -273,7 +273,7 @@ gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Petrel, gDummySpriteAf
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dusclops = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 
-6, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
+7, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
 &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Dusclops, gDummySpriteAffineAnimTable};
 
