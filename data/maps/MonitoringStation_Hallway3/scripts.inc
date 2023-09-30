@@ -19,10 +19,10 @@ MonitoringStation_Hallway3_EventScript_OnLoad::
 	
 MonitoringStation_Hallway3_EventScript_AdminTalk::
 	lockall
+	setvar VAR_MONITORING_STATION_HALLWAY, 2
 	delay 20
 	msgbox MonitoringStation_Hallway3_Text_AdminTalk
 	closemessage
-	setvar VAR_MONITORING_STATION_HALLWAY, 2
 	warp MAP_MONITORING_STATION, 255, 3, 11
 	setflag FLAG_HIDE_FINAL_ADMIN
 	releaseall
