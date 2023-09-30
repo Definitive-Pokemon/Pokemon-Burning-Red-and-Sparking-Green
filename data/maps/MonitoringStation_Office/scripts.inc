@@ -67,7 +67,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	applymovement LOCALID_DUSCLOPS, MonitoringStation_Office_Movement_DusclopsAttack
 	delay 5
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Office_Movement_KabutopsLook
-	playse SE_M_MEGA_KICK
+	playse SE_M_VITAL_THROW2
 	waitse
 	playmoncry SPECIES_KABUTOPS, 3
 	waitmoncry
@@ -91,7 +91,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	removeobject LOCALID_ROCKET_ADMIN
 	playse SE_EXIT
-	setflag FLAG_HORROR_DONE
+	setflag FLAG_HIDE_FINAL_ADMIN
 	release
 	end
 	
