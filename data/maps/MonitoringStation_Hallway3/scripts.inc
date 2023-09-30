@@ -6,11 +6,27 @@
 
 MonitoringStation_Hallway3_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Hallway3_EventScript_OnLoad
+map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnFrame
 	.byte 0
+	
+MonitoringStation_Hallway3_EventScript_OnFrame::
+	map_script_2 VAR_MONITORING_STATION_HALLWAY, 0, MonitoringStation_Hallway3_EventScript_AdminTalk
+	end
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
 	call_if_set FLAG_YELLOW_DOOR MonitoringStation_Hallway3_EventScript_YellowDoorShadows
 	end
+	
+MonitoringStation_Hallway3_EventScript_AdminTalk::
+	lockall
+	delay 20
+	msgbox MonitoringStation_Hallway3_Text_AdminTalk
+	closemessage
+	setvar VAR_MONITORING_STATION_HALLWAY, 1
+	warp MAP_MONITORING_STATION, 255, 3, 11
+	releaseall
+	end
+	
 	
 MonitoringStation_Hallway3_EventScript_YellowDoorShadows::
 	setmetatile 11, 19, METATILE_SilphCo_Floor_ShadeFull, 0

@@ -196,7 +196,7 @@
 #define VAR_MAP_SCENE_MONITORING_STATION                                                0x4090
 #define VAR_MONITORING_STATION_CENTRAL_STATE                 0x4091
 #define VAR_MONITORING_STATION_HALLWAY2_HELP                 0x4092
-#define VAR_HONEY1                 0x4093
+#define VAR_MONITORING_STATION_HALLWAY                 0x4093
 #define VAR_HONEY2                 0x4094
 #define VAR_NOHOPE                 0x4095
 #define VAR_POINTLESS              0x4096
