@@ -10,8 +10,34 @@ MonitoringStation_Office_OnFrame::
 	map_script_2 VAR_WELCOME, 0, MonitoringStation_Office_EventScript_Welcome
 	.2byte 0
 	
-MonitoringStation_Office_EventScript_Welcome::
+MonitoringStation_Office_EventScript_Var::
+	lockall
+	goto_if_set FLAG_RED_KEY, MonitoringStation_Office_EventScript_Continue
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminLookUp
+	waitmovement 0
+	msgbox MonitoringStation_Office_Text_NotDone
+	closemessage
+	releaseall
+	end
+	
+MonitoringStation_Office_EventScript_Continue::
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminLookUp
+	waitmovement 0
+	msgbox MonitoringStation_Office_Text_Done
+	closemessage
+	releaseall
+	end
+	
+MonitoringStation_Office_EventScript_Talk::
 	lock
+	faceplayer
+	msgbox MonitoringStation_Office_Text_Talk
+	closemessage
+	release
+	end
+	
+MonitoringStation_Office_EventScript_Welcome::
+	lockall
 	setvar VAR_WELCOME, 1
 	delay 60
 	special SpawnCameraObject
@@ -84,19 +110,20 @@ MonitoringStation_Office_EventScript_Welcome::
 	removeobject LOCALID_DUSCLOPS
 	fadescreen FADE_FROM_WHITE
 	delay 100
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminWalkDown
+	waitmovement 0
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
-	
-	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminWalkOut
-	waitmovement 0
-	removeobject LOCALID_ROCKET_ADMIN
-	playse SE_EXIT
-	setflag FLAG_HIDE_FINAL_ADMIN
-	release
+	releaseall
 	end
 	
-MonitoringStation_Office_Movement_AdminWalkOut::
-	walk_up
+MonitoringStation_Office_Movement_AdminLookUp::
+	walk_in_place_up
+	step_end
+	
+MonitoringStation_Office_Movement_AdminWalkDown::
+	walk_down
+	walk_down
 	step_end
 	
 MonitoringStation_Office_Movement_DusclopsAttack::
@@ -182,6 +209,7 @@ MonitoringStation_Office_Movement_PanToActionFromTop::
 	
 MonitoringStation_Office_EventScript_BlockAdmin::
 	lock
+	goto_if_set FLAG_HIDE_DUSCLOPS, MonitoringStation_Office_EventScript_Talk
 	textcolor 2
 	msgbox MonitoringStation_Office_Text_BlockAdmin
 	closemessage

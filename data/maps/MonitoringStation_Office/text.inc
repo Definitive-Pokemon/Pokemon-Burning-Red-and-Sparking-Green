@@ -27,3 +27,15 @@ MonitoringStation_Office_Text_AdminComeBack::
 MonitoringStation_Office_Text_AdminKey::
 	.string "… Go pick up that RED KEY.\p"
 	.string "It's right there, on the desk.$"
+	
+MonitoringStation_Office_Text_Talk::
+	.string "I will need a long rest after\n"
+	.string "all this commotion.$"
+	
+MonitoringStation_Office_Text_NotDone::
+	.string "You really shouldn't be playing\n"
+	.string "around at a time like this.\p"
+	.string "Go pick up that RED KEY.$"
+	
+MonitoringStation_Office_Text_Done::
+	.string "Okay, let's go.$"
