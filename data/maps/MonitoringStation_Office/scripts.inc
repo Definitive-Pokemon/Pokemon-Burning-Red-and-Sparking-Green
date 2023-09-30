@@ -75,8 +75,29 @@ MonitoringStation_Office_EventScript_Welcome::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_KABUTOPS_SHADOW
 	fadescreen FADE_FROM_BLACK
+	delay 100
+	msgbox MonitoringStation_Office_Text_AdminComeBack
+	closemessage
+	playse SE_BALL_OPEN
+	fadescreen FADE_TO_WHITE
+	setflag FLAG_HIDE_DUSCLOPS
+	removeobject LOCALID_DUSCLOPS
+	fadescreen FADE_FROM_WHITE
+	delay 100
+	msgbox MonitoringStation_Office_Text_AdminKey
+	closemessage
+	
+	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminWalkOut
+	waitmovement 0
+	removeobject LOCALID_ROCKET_ADMIN
+	playse SE_EXIT
+	setflag FLAG_HORROR_DONE
 	release
 	end
+	
+MonitoringStation_Office_Movement_AdminWalkOut::
+	walk_up
+	step_end
 	
 MonitoringStation_Office_Movement_DusclopsAttack::
 	walk_fast_down

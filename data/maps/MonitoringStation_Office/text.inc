@@ -21,3 +21,9 @@ MonitoringStation_Office_Text_AdminPokemon::
 MonitoringStation_Office_Text_AdminAttack::
 	.string "Use SHADOW PUNCH!!$"
 	
+MonitoringStation_Office_Text_AdminComeBack::
+	.string "DUSCLOPS! Come back!$"
+	
+MonitoringStation_Office_Text_AdminKey::
+	.string "… Go pick up that RED KEY.\p"
+	.string "It's right there, on the desk.$"
