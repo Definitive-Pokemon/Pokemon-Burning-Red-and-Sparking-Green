@@ -75,7 +75,7 @@
       "elevation": 0,
       "var": "VAR_GOT_RED_KEY",
       "var_value": "1",
-      "script": "NULL"
+      "script": "MonitoringStation_Office_EventScript_Var"
     }
   ],
   "bg_events": [

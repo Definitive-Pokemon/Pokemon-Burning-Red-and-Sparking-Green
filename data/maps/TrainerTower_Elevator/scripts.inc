@@ -102,7 +102,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_FINAL_ADMIN
 	setflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_ELEVATOR_BROKEN, 5
-	setvar VAR_MONITORING_STATION_HALLWAY, 0
+	setvar VAR_GOT_RED_KEY, 0
 	setflag FLAG_ENDGAME
 	setvar VAR_MAP_SCENE_MONITORING_STATION, 3
 	setvar VAR_ADD_CAGE, 0

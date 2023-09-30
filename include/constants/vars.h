@@ -216,7 +216,7 @@
 #define VAR_ELEVATOR_BROKEN        0x40A4
 #define VAR_WELCOME                0x40A5
 #define VAR_GOT_RED_KEY            0x40A6
-#define VAR_MONITORING_STATION_HALLWAY 0x40A7
+#define VAR_0x40A7                 0x40A7
 #define VAR_0x40A8                 0x40A8
 #define VAR_0x40A9                 0x40A9
 

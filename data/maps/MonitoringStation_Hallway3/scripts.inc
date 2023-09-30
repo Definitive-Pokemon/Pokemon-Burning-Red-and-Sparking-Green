@@ -10,7 +10,7 @@ map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnF
 	.byte 0
 	
 MonitoringStation_Hallway3_EventScript_OnFrame::
-	map_script_2 VAR_MONITORING_STATION_HALLWAY, 1, MonitoringStation_Hallway3_EventScript_AdminTalk
+	map_script_2 VAR_GOT_RED_KEY, 1, MonitoringStation_Hallway3_EventScript_AdminTalk
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
 	call_if_set FLAG_YELLOW_DOOR MonitoringStation_Hallway3_EventScript_YellowDoorShadows
@@ -19,7 +19,7 @@ MonitoringStation_Hallway3_EventScript_OnLoad::
 MonitoringStation_Hallway3_EventScript_AdminTalk::
 	lockall
 	setflag FLAG_HIDE_OFFICE_ADMIN
-	setvar VAR_MONITORING_STATION_HALLWAY, 2
+	setvar VAR_GOT_RED_KEY, 2
 	delay 20
 	msgbox MonitoringStation_Hallway3_Text_AdminTalk
 	closemessage
