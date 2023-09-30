@@ -18,6 +18,7 @@ MonitoringStation_Hallway3_EventScript_OnLoad::
 	
 MonitoringStation_Hallway3_EventScript_AdminTalk::
 	lockall
+	setflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_MONITORING_STATION_HALLWAY, 2
 	delay 20
 	msgbox MonitoringStation_Hallway3_Text_AdminTalk

@@ -116,6 +116,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
+	clearflag FLAG_HIDE_FINAL_ADMIN
 	releaseall
 	end
 	
