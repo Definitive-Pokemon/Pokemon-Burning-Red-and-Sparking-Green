@@ -55,6 +55,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	delay 100
 	call MonitoringStation_Office_EventScript_BrailleMessage2
 	delay 80
+	addobject LOCALID_ROCKET_ADMIN
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminRun
 	textcolor 1
 	msgbox MonitoringStation_Office_Text_Admin
@@ -118,6 +119,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
 	clearflag FLAG_HIDE_FINAL_ADMIN
+	clearflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall
 	end
@@ -142,7 +144,6 @@ MonitoringStation_Office_Movement_Walk::
 	step_end
 	
 MonitoringStation_Office_Movement_AdminRun::
-	set_visible
 	walk_fast_down
 	walk_fast_down
 	walk_fast_left
