@@ -10,7 +10,7 @@ map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnF
 	.byte 0
 	
 MonitoringStation_Hallway3_EventScript_OnFrame::
-	map_script_2 VAR_MONITORING_STATION_HALLWAY, 0, MonitoringStation_Hallway3_EventScript_AdminTalk
+	map_script_2 VAR_MONITORING_STATION_HALLWAY, 1, MonitoringStation_Hallway3_EventScript_AdminTalk
 	end
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
@@ -22,7 +22,7 @@ MonitoringStation_Hallway3_EventScript_AdminTalk::
 	delay 20
 	msgbox MonitoringStation_Hallway3_Text_AdminTalk
 	closemessage
-	setvar VAR_MONITORING_STATION_HALLWAY, 1
+	setvar VAR_MONITORING_STATION_HALLWAY, 2
 	warp MAP_MONITORING_STATION, 255, 3, 11
 	setflag FLAG_HIDE_FINAL_ADMIN
 	releaseall
