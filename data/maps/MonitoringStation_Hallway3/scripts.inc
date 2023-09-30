@@ -11,7 +11,6 @@ map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnF
 	
 MonitoringStation_Hallway3_EventScript_OnFrame::
 	map_script_2 VAR_MONITORING_STATION_HALLWAY, 1, MonitoringStation_Hallway3_EventScript_AdminTalk
-	end
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
 	call_if_set FLAG_YELLOW_DOOR MonitoringStation_Hallway3_EventScript_YellowDoorShadows
