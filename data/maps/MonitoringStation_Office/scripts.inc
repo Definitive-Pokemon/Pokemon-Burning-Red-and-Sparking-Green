@@ -17,6 +17,7 @@ MonitoringStation_Office_EventScript_Var::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_NotDone
 	closemessage
+	setvar VAR_GOT_RED_KEY, 2
 	releaseall
 	end
 	
@@ -117,6 +118,7 @@ MonitoringStation_Office_EventScript_Welcome::
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
 	clearflag FLAG_HIDE_FINAL_ADMIN
+	setvar VAR_GOT_RED_KEY, 1
 	releaseall
 	end
 	
