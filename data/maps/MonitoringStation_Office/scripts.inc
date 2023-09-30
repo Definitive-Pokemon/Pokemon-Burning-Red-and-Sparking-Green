@@ -17,7 +17,6 @@ MonitoringStation_Office_EventScript_Var::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_NotDone
 	closemessage
-	setvar VAR_GOT_RED_KEY, 2
 	releaseall
 	end
 	
@@ -26,7 +25,6 @@ MonitoringStation_Office_EventScript_Continue::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_Done
 	closemessage
-	setvar VAR_MONITORING_STATION_HALLWAY, 1
 	warp MAP_MONITORING_STATION_HALLWAY3, 255, 12, 22
 	releaseall
 	end
