@@ -24,6 +24,7 @@ MonitoringStation_Hallway3_EventScript_AdminTalk::
 	closemessage
 	setvar VAR_MONITORING_STATION_HALLWAY, 1
 	warp MAP_MONITORING_STATION, 255, 3, 11
+	setflag FLAG_HIDE_FINAL_ADMIN
 	releaseall
 	end
 	
