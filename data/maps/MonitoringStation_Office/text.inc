@@ -38,9 +38,9 @@ MonitoringStation_Office_Text_Talk::
 	.string "KABUTOPS.\p"
 	.string "Going by the information I heard from\n"
 	.string "the GRUNT who accompanied me,\p"
-	.string "I concluded that the monster is\n"
-	.string "a unique, GHOST-type version of\p"
-	.string "a KABUTOPS.\p"
+	.string "I concluded that the monster is a\n"
+	.string "unique, GHOST-type variant of\p"
+	.string "KABUTOPS.\p"
 	.string "It seems to be gone now, but maybe\n"
 	.string "there is more to this…$"
 	

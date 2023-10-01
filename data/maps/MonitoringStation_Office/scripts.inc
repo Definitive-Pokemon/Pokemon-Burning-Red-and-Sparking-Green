@@ -30,7 +30,7 @@ MonitoringStation_Office_EventScript_Continue::
 	closemessage
 	warp MAP_MONITORING_STATION, 255, 3, 11
 	setvar VAR_GOT_RED_KEY, 2
-	clearflag FLAG_HIDE_OFFICE_ADMIN
+	setflag FLAG_HIDE_OFFICE_ADMIN
 	releaseall
 	end
 	
