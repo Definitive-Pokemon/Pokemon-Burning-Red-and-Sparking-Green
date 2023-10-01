@@ -20,6 +20,7 @@ MonitoringStation_Office_EventScript_Var::
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_PlayerDown
 	waitmovement 0
 	closemessage
+	setvar VAR_GOT_RED_KEY, 2
 	releaseall
 	end
 	
@@ -119,6 +120,9 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Office_Movement_PanToActionFromBottom
+	waitmovement 0
+	special RemoveCameraObject
 	clearflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall
@@ -216,4 +220,10 @@ MonitoringStation_Office_Movement_PanToActionFromTop::
 	walk_slow_down
 	walk_slow_down
 	step_end
-	
+
+MonitoringStation_Office_Movement_PanToActionFromBottom::
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	step_end
