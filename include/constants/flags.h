@@ -535,7 +535,7 @@
 #define FLAG_HIDE_VIRIDIAN_FOREST_DEPTHS_TM10               0x207
 #define FLAG_HIDE_VIRIDIAN_FOREST_DEPTHS_SUPER_POTION               0x208
 #define FLAG_HIDE_VIRIDIAN_FOREST_DEPTHS_GREAT_BALL               0x209
-#define FLAG_RED_KEY               0x20A
+#define FLAG_HIDE_MONITORING_STATION_OFFICE_RED_KEY               0x20A
 #define FLAG_0x20B               0x20B
 #define FLAG_0x20C               0x20C
 #define FLAG_0x20D               0x20D
@@ -960,9 +960,9 @@
 #define FLAG_HIDE_DUSCLOPS             0x3A6
 #define FLAG_HIDE_OFFICE_ADMIN               0x3A7
 #define FLAG_HIDE_OFFICE_KABUTOPS               0x3A8
+#define FLAG_GOT_RED_KEY               0x3A9
 
 // Unused?
-#define FLAG_0x3A9               0x3A9
 #define FLAG_0x3AA               0x3AA
 #define FLAG_0x3AB               0x3AB
 #define FLAG_0x3AC               0x3AC

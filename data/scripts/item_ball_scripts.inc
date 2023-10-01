@@ -33,6 +33,11 @@ ViridianForestDepths_EventScript_ItemSpellTag::
 ViridianForestDepths_EventScript_ItemSuperPotion::
 	finditem ITEM_SUPER_POTION
 	end
+	
+MonitoringStation_Office_EventScript_ItemRedKey::
+	finditem ITEM_RED_KEY
+	setflag FLAG_GOT_RED_KEY
+	end
 
 MtMoon_1F_EventScript_ItemParalyzeHeal:: @ 81BE5CF
 	finditem ITEM_PARALYZE_HEAL

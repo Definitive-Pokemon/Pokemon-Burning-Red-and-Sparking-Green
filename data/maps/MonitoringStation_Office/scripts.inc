@@ -12,10 +12,13 @@ MonitoringStation_Office_OnFrame::
 	
 MonitoringStation_Office_EventScript_Var::
 	lockall
-	goto_if_set FLAG_RED_KEY, MonitoringStation_Office_EventScript_Continue
+	textcolor 1
+	goto_if_set FLAG_GOT_RED_KEY, MonitoringStation_Office_EventScript_Continue
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminLookUp
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_NotDone
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_PlayerDown
+	waitmovement 0
 	closemessage
 	releaseall
 	end
@@ -120,6 +123,10 @@ MonitoringStation_Office_EventScript_Welcome::
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall
 	end
+	
+MonitoringStation_Office_Movement_PlayerDown::
+	walk_down
+	step_end
 	
 MonitoringStation_Office_Movement_AdminLookUp::
 	walk_in_place_up
