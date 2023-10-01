@@ -256,6 +256,7 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	removeobject LOCALID_ROCKET_STORAGEFINAL
 	setflag FLAG_HORROR_DONE
 	setflag FLAG_FINAL_NPCS
+	fadescreen FADE_FROM_BLACK
 	release
 	end
 	
