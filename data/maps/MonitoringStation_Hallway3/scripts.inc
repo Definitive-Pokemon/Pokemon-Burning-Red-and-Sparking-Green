@@ -6,7 +6,6 @@
 
 MonitoringStation_Hallway3_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Hallway3_EventScript_OnLoad
-map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnFrame
 	.byte 0
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
