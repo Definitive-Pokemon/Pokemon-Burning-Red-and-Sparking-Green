@@ -144,6 +144,7 @@ MonitoringStation_EventScript_Executive::
 MonitoringStation_EventScript_ExecutiveReal::
 	lock
 	faceplayer
+	textcolor 0
 	call_if_unset FLAG_TALKED_EXECUTIVE, MonitoringStation_EventScript_ExecutiveIntro
 	msgbox MonitoringStation_Text_ExecutiveKey
 	checkitem ITEM_RED_KEY, 1
@@ -226,17 +227,6 @@ MonitoringStation_EventScript_RedDoor::
 	textcolor 2
 	msgbox MonitoringStation_Text_RedDoor
 	closemessage
-	applymovement LOCALID_ROCKET_EXECUTIVEFINAL, MonitoringStation_Movement_FinalWalk
-	waitmovement 0
-	textcolor 0
-	msgbox MonitoringStation_Text_ExecutiveFinal
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_ROCKET_ADMINFINAL
-	removeobject LOCALID_ROCKET_EXECUTIVEFINAL
-	removeobject LOCALID_ROCKET_STORAGEFINAL
-	setflag FLAG_HORROR_DONE
-	setflag FLAG_FINAL_NPCS
-	closemessage
 	release
 	end
 	
@@ -256,6 +246,16 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	special DrawWholeMapView
 	msgbox MonitoringStation_Text_RedDoorGone
 	closemessage
+	applymovement LOCALID_ROCKET_EXECUTIVEFINAL, MonitoringStation_Movement_FinalWalk
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_ExecutiveFinal
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ROCKET_ADMINFINAL
+	removeobject LOCALID_ROCKET_EXECUTIVEFINAL
+	removeobject LOCALID_ROCKET_STORAGEFINAL
+	setflag FLAG_HORROR_DONE
+	setflag FLAG_FINAL_NPCS
 	release
 	end
 	
