@@ -210,12 +210,3 @@ MonitoringStation_Office_Movement_PanToActionFromTop::
 	walk_slow_down
 	step_end
 	
-MonitoringStation_Office_EventScript_BlockAdmin::
-	lock
-	goto_if_set FLAG_HIDE_DUSCLOPS, MonitoringStation_Office_EventScript_Talk
-	textcolor 2
-	msgbox MonitoringStation_Office_Text_BlockAdmin
-	closemessage
-	release
-	end
-	
