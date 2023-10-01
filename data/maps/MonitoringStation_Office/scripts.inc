@@ -20,7 +20,6 @@ MonitoringStation_Office_EventScript_Var::
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_PlayerDown
 	waitmovement 0
 	closemessage
-	setvar VAR_GOT_RED_KEY, 2
 	releaseall
 	end
 	
@@ -30,6 +29,8 @@ MonitoringStation_Office_EventScript_Continue::
 	msgbox MonitoringStation_Office_Text_Done
 	closemessage
 	warp MAP_MONITORING_STATION, 255, 3, 11
+	setvar VAR_GOT_RED_KEY, 2
+	clearflag FLAG_HIDE_OFFICE_ADMIN
 	releaseall
 	end
 	
