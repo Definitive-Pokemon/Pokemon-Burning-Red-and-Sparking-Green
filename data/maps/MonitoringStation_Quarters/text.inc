@@ -1,3 +1,10 @@
+MonitoringStation_Quarters_Text_Funny::
+	.string "Still here?!\p"
+	.string "Wait…\n"
+	.string "Everyone else left the base?!\p"
+	.string "Ahh, finally I will have some peace\n"
+	.string "and quiet around here!$"
+
 MonitoringStation_Quarters_Text_RocketM1::
 	.string "Can't you stop bothering me?\n"
 	.string "I'm watching TV!$"

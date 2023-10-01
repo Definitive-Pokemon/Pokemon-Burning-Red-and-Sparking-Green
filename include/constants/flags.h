@@ -961,9 +961,9 @@
 #define FLAG_HIDE_OFFICE_ADMIN               0x3A7
 #define FLAG_HIDE_OFFICE_KABUTOPS               0x3A8
 #define FLAG_GOT_RED_KEY               0x3A9
+#define FLAG_FINAL_NPCS               0x3AA
 
 // Unused?
-#define FLAG_0x3AA               0x3AA
 #define FLAG_0x3AB               0x3AB
 #define FLAG_0x3AC               0x3AC
 #define FLAG_0x3AD               0x3AD

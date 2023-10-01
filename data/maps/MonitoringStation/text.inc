@@ -1,3 +1,38 @@
+MonitoringStation_Text_ExecutiveFinal::
+	.string "You really are something, aren't you?\n"
+	.string "CHAMPION of KANTO, and our savior.\p"
+	.string "I know you won't join our ranks,\n"
+	.string "and that means we will remain\p"
+	.string "enemies.\p"
+	.string "Please don't get in our way again,\n"
+	.string "or we will have to take action.\p"
+	.string "Goodbye!$"
+
+MonitoringStation_Text_AdminFinal::
+	.string "I thank you for helping us out\n"
+	.string "of this predicament.\p"
+	.string "You should consider joining\n"
+	.string "TEAM ROCKET.\p"
+	.string "Hm? You've heard that before?\p"
+	.string "Well, that ought to motivate you\n"
+	.string "even further!$"
+	
+MonitoringStation_Text_StorageFinal::
+	.string "I guess that's it for our time\n"
+	.string "inside this awesome base.\p"
+	.string "After all this commotion, the police\n"
+	.string "will come looking for us.\p"
+	.string "Our cover will be blown, and TRAINER TOWER\n"
+	.string "will have to quit.\p"
+	.string "Despite our pretty not-nice plans to\n"
+	.string "capture POKéMON from our visitors,\p"
+	.string "many TRAINERS have been enjoying\n"
+	.string "this facility.\p"
+	.string "So the EXECUTIVE decided to leave it\n"
+	.string "to the people upstairs.\p"
+	.string "Oh, and yeah…\p"
+	.string "… Thanks for your help.$"
+
 MonitoringStation_Text_Admin::
 	.string "…… … that door coming along?\n"
 	.string "We haven't got all day!$"
@@ -93,8 +128,10 @@ MonitoringStation_Text_ExecutiveKey::
 	.string "the RED KEY?$"
 	
 MonitoringStation_Text_ExecutiveYay::
-	.string "FUCKING AWESOME!\n"
-	.string "TO BE CONTINUED!$"
+	.string "You did a very good job.\n"
+	.string "For a kid, that is…\p"
+	.string "I leave the honor of opening\n"
+	.string "the door to you.$"
 	
 MonitoringStation_Text_ExecutiveAww::
 	.string "Please go get that key quickly.\n"

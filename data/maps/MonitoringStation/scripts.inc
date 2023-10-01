@@ -4,6 +4,12 @@
 .set LOCALID_ROCKET_ADMIN, 4
 .set LOCALID_ROCKET_STORAGE, 5
 .set LOCALID_ROCKET_QUARTET, 6
+.set LOCALID_ROCKET_ADMIN2, 7
+.set LOCALID_ROCKET_STORAGE2, 8
+.set LOCALID_ROCKET_EXECUTIVE, 9
+.set LOCALID_ROCKET_ADMINFINAL, 10
+.set LOCALID_ROCKET_EXECUTIVEFINAL, 11
+.set LOCALID_ROCKET_STORAGEFINAL, 12
 
 MonitoringStation_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_EventScript_OnLoad
@@ -23,6 +29,22 @@ MonitoringStation_EventScript_RedDoorShortShadows::
 	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
 	setmetatile 10, 10, METATILE_SilphCo_HideoutFloor , 0
 	return
+
+MonitoringStation_EventScript_AdminFinal::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Text_AdminFinal
+	waitmessage
+	release
+	end
+
+MonitoringStation_EventScript_StorageFinal::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Text_StorageFinal
+	waitmessage
+	release
+	end	
 	
 MonitoringStation_EventScript_AdminConvo::
 	lockall
@@ -204,8 +226,23 @@ MonitoringStation_EventScript_RedDoor::
 	textcolor 2
 	msgbox MonitoringStation_Text_RedDoor
 	closemessage
+	applymovement LOCALID_ROCKET_EXECUTIVEFINAL, MonitoringStation_Movement_FinalWalk
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Text_ExecutiveFinal
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ROCKET_ADMINFINAL
+	removeobject LOCALID_ROCKET_EXECUTIVEFINAL
+	removeobject LOCALID_ROCKET_STORAGEFINAL
+	setflag FLAG_HORROR_DONE
+	setflag FLAG_FINAL_NPCS
+	closemessage
 	release
 	end
+	
+MonitoringStation_Movement_FinalWalk::
+	walk_in_place_left
+	step_end
 	
 MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_RED_DOOR_SHORTCUT

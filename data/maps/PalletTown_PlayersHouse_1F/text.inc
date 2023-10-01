@@ -2,6 +2,7 @@ PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou:: @ 818D2F0
     .string "MOM: …Right.\n"
     .string "All boys leave home someday.\l"
     .string "It said so on TV.\p"
+	.string "Please, just be careful.\p"
     .string "Oh, yes. PROF. OAK, next door, was\n"
     .string "looking for you.$"
 

@@ -17,10 +17,14 @@ MonitoringStation_Office_EventScript_Var::
 	applymovement LOCALID_ROCKET_ADMIN, MonitoringStation_Office_Movement_AdminLookUp
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_NotDone
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_PlayerDown
 	waitmovement 0
-	closemessage
 	releaseall
+	end
+	
+MonitoringStation_Office_EventScript_Text::
+	msgbox MonitoringStation_Office_Text_Text, MSGBOX_SIGN
 	end
 	
 MonitoringStation_Office_EventScript_Continue::
@@ -31,6 +35,8 @@ MonitoringStation_Office_EventScript_Continue::
 	warp MAP_MONITORING_STATION, 255, 3, 11
 	setvar VAR_GOT_RED_KEY, 2
 	setflag FLAG_HIDE_OFFICE_ADMIN
+	setflag FLAG_ENDGAME
+	clearflag FLAG_FINAL_NPCS
 	releaseall
 	end
 	
@@ -200,6 +206,8 @@ MonitoringStation_Office_Movement_AdminRunUp::
 	
 MonitoringStation_Office_Movement_KabutopsLook::
 	walk_in_place_up
+	lock_facing_direction
+	walk_fast_down
 	step_end
 	
 MonitoringStation_Office_EventScript_BrailleMessage1::

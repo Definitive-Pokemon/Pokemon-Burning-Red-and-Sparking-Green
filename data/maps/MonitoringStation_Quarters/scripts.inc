@@ -64,7 +64,14 @@ MonitoringStation_Quarters_EventScript_RocketM4::
 MonitoringStation_Quarters_EventScript_RocketF1::
 	lock
 	faceplayer
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Quarters_EventScript_Funny
 	msgbox MonitoringStation_Quarters_Text_RocketF1
+	waitmessage
+	release
+	end
+
+MonitoringStation_Quarters_EventScript_Funny::
+	msgbox MonitoringStation_Quarters_Text_Funny
 	waitmessage
 	release
 	end

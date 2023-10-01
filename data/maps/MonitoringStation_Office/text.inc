@@ -51,3 +51,26 @@ MonitoringStation_Office_Text_NotDone::
 	
 MonitoringStation_Office_Text_Done::
 	.string "Okay, let's go.$"
+	
+MonitoringStation_Office_Text_Text::
+	.string "PETREL's log:\n"
+	.string "Number 32\p"
+    .string "GIOVANNI's whereabouts are still\n"
+	.string "a complete mystery.\p"
+	.string "Some rumors say he's gone to the\n"
+	.string "JOHTO region to establish a new\p"
+	.string "base of operations there.\p"
+	.string "Other rumors say he's searching\n"
+	.string "for powerful POKéMON, possibly\p"
+	.string "on the SEVII ISLANDS.\p"
+	.string "Personally, I think he's simply\n"
+	.string "biding his time.\p"
+	.string "Testing our loyalty, waiting for\n"
+	.string "us to find him instead.\p"
+	.string "But before that happens, we will\n"
+	.string "have to build a stronger, more\p"
+	.string "resilient TEAM ROCKET.\p"
+	.string "Only then will we be worthy of\n"
+	.string "our BOSS's attention.\p"
+	.string "Otherwise, he may just form a new\n"
+	.string "organization…$"

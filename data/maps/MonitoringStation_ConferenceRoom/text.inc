@@ -63,7 +63,7 @@ MonitoringStation_ConferenceRoom_Text_Scientist2::
 	.string "any use…$"
 
 MonitoringStation_ConferenceRoom_Text_Text::
-	.string "Diary: Sept. 16\n"
+	.string "Entry: Sept. 16\n"
     .string "The Dig\p"
 	.string "Shortly after this base was built,\n"
 	.string "large energy readings were picked\p"
