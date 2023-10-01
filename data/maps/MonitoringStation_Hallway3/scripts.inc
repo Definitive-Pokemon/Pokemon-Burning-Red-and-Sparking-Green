@@ -8,26 +8,10 @@ MonitoringStation_Hallway3_MapScripts::
 map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Hallway3_EventScript_OnLoad
 map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Hallway3_EventScript_OnFrame
 	.byte 0
-	
-MonitoringStation_Hallway3_EventScript_OnFrame::
-	map_script_2 VAR_GOT_RED_KEY, 1, MonitoringStation_Hallway3_EventScript_AdminTalk
 
 MonitoringStation_Hallway3_EventScript_OnLoad::
 	call_if_set FLAG_YELLOW_DOOR MonitoringStation_Hallway3_EventScript_YellowDoorShadows
-	end
-	
-MonitoringStation_Hallway3_EventScript_AdminTalk::
-	lockall
-	setflag FLAG_HIDE_OFFICE_ADMIN
-	setvar VAR_GOT_RED_KEY, 2
-	delay 20
-	msgbox MonitoringStation_Hallway3_Text_AdminTalk
-	closemessage
-	warp MAP_MONITORING_STATION, 255, 3, 11
-	setflag FLAG_HIDE_FINAL_ADMIN
-	releaseall
-	end
-	
+	end	
 	
 MonitoringStation_Hallway3_EventScript_YellowDoorShadows::
 	setmetatile 11, 19, METATILE_SilphCo_Floor_ShadeFull, 0

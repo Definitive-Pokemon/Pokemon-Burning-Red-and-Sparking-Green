@@ -958,11 +958,11 @@
 #define FLAG_TALKED_EXECUTIVE               0x3A4
 #define FLAG_ENDGAME               0x3A5
 #define FLAG_HIDE_DUSCLOPS             0x3A6
-#define FLAG_HIDE_FINAL_ADMIN               0x3A7
-#define FLAG_HIDE_OFFICE_ADMIN               0x3A8
-#define FLAG_HIDE_OFFICE_KABUTOPS               0x3A9
+#define FLAG_HIDE_OFFICE_ADMIN               0x3A7
+#define FLAG_HIDE_OFFICE_KABUTOPS               0x3A8
 
 // Unused?
+#define FLAG_0x3A9               0x3A9
 #define FLAG_0x3AA               0x3AA
 #define FLAG_0x3AB               0x3AB
 #define FLAG_0x3AC               0x3AC

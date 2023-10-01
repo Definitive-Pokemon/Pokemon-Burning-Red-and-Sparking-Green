@@ -25,7 +25,7 @@ MonitoringStation_Office_EventScript_Continue::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_Done
 	closemessage
-	warp MAP_MONITORING_STATION_HALLWAY3, 255, 12, 22
+	warp MAP_MONITORING_STATION, 255, 3, 11
 	releaseall
 	end
 	
@@ -116,7 +116,6 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	msgbox MonitoringStation_Office_Text_AdminKey
 	closemessage
-	clearflag FLAG_HIDE_FINAL_ADMIN
 	clearflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall

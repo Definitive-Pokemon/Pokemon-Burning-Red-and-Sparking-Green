@@ -99,7 +99,6 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_MOMBUTOPS
 	setflag FLAG_HIDE_BOULDER2
 	setflag FLAG_HIDE_CHONKDUO
-	setflag FLAG_HIDE_FINAL_ADMIN
 	setflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_ELEVATOR_BROKEN, 5
 	setvar VAR_GOT_RED_KEY, 0
