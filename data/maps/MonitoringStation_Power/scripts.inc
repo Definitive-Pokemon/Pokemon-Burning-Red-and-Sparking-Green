@@ -103,7 +103,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	setflag FLAG_HORROR_POWER_RESTORED
 	setvar VAR_MONITORING_STATION_HALLWAY2_HELP, 1
 	setvar VAR_TAKEKEY, 0
-	fadeinbgm 5
+	fadeinbgm 1
 	release
 	end
 	
@@ -113,7 +113,7 @@ MonitoringStation_Power_EventScript_Absolute::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
 	delay 20
 	fadescreen FADE_TO_BLACK
-	fadeinbgm 2
+	fadeinbgm 1
 	warp MAP_POKE_CENTER, 255, 8, 5
 	release
 	end
