@@ -7616,7 +7616,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
     u32 shinyValue;
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
 
-    if (species >= (u16)(SPECIES_DEOXYS_ATTACK_FORME) && species <= (u16)(SPECIES_DEOXYS_SPEED_FORME))
+    if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
     {
         if(shinyValue < 8)
             return gMonShinyPaletteTable[SPECIES_DEOXYS].data;
