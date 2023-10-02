@@ -100,7 +100,7 @@ MonitoringStation_Central_Movement_LookAtYou::
 	step_end
 	
 MonitoringStation_Central_Movement_QuartetRock::
-	walk_in_place_down
+	walk_in_place_left
 	step_end
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
