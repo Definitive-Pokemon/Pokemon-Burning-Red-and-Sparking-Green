@@ -447,6 +447,7 @@ u16 GetBattleMonSpecies(struct BattlePokemon *mon);
 void ClearBattleMonForms(void);
 void PlayBattleBGM(void);
 void PlayMapChosenOrBattleBGM(u16 songId);
+u16 GetFormSpeciesSpriteIndex(u16 species);
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon);
 const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 personality);
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon);

@@ -7596,6 +7596,11 @@ void PlayMapChosenOrBattleBGM(u16 songId)
         PlayNewMapMusic(GetBattleBGM());
 }
 
+u16 GetFormSpeciesSpriteIndex(u16 species)
+{
+    return FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
+}
+
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, NULL);
