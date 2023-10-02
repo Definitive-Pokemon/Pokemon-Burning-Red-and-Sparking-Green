@@ -2200,13 +2200,9 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x35,
         .y_offset = 0x0d,
     },
-};
-
-const struct MonCoords gFormMonFrontPicCoords[] =
-{
-    [FORM_FOSSILIZED_KABUTOPS] =
+    [FORM_SPECIES_SPRITE_INDEX(FORM_FOSSILIZED_KABUTOPS)] =
     {
         .size = 0x55,
         .y_offset = 0x10,
-    },
+    }
 };

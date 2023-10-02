@@ -287,9 +287,11 @@ const union AnimCmd *const gSpriteAnimTable_82349BC[] =
 };
 
 #define SPECIES_SPRITE(species, sprite) [SPECIES_##species] = {sprite, 0x800, SPECIES_##species}
-#define FORM_SPECIES_SPRITE(formSpeciesIndex, sprite, formSpeciesNumber) [formSpeciesIndex + NUM_NON_FORM_MON_SPRITES] = {sprite, 0x800, formSpeciesNumber}
+#define FORM_SPECIES_SPRITE_INDEX(formIndex) (formIndex + NUM_NON_FORM_MON_SPRITES)
+#define FORM_SPECIES_SPRITE(formSpeciesIndex, sprite, formSpeciesNumber) [FORM_SPECIES_SPRITE_INDEX(formSpeciesIndex)] = {sprite, 0x800, formSpeciesNumber}
 #define SPECIES_PAL(species, pal) [SPECIES_##species] = {pal, SPECIES_##species}
 #define SPECIES_SHINY_PAL(species, pal) [SPECIES_##species] = {pal, SPECIES_##species + SPECIES_SHINY_TAG}
+
 
 #define FORM_SPECIES_PAL(species, pal) [FORM_##species] = {pal, FORM_##species}
 #define FORM_SPECIES_SHINY_PAL(species, pal) [FORM_##species] = {pal, FORM_##species + SPECIES_SHINY_TAG}

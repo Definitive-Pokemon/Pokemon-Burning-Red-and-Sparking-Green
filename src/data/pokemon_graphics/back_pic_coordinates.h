@@ -2200,5 +2200,10 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x47,
         .y_offset = 0x06,
     },
+    [FORM_SPECIES_SPRITE_INDEX(FORM_FOSSILIZED_KABUTOPS)] = 
+    {
+        .size = 0x77,
+        .y_offset = 0x05,
+    }
 };
 
