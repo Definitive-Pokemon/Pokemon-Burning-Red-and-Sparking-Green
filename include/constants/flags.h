@@ -951,7 +951,7 @@
 #define FLAG_HIDE_MOMBUTOPS               0x39C
 #define FLAG_HIDE_MOM               0x39D
 #define FLAG_HIDE_BOULDER2               0x39E
-#define FLAG_39F               0x39F
+#define FLAG_HIDE_FINAL_ADMIN               0x39F
 #define FLAG_QUARTET_ACTIVE               0x3A0
 #define FLAG_HIDE_CHONKDUO               0x3A1
 #define FLAG_HIDE_BOULDER4               0x3A2

@@ -25,7 +25,7 @@ MonitoringStation_EventScript_OnLoad::
 	
 MonitoringStation_OnFrame::
 	map_script_2 VAR_TEMP_D, 2, MonitoringStation_EventScript_ExitElevator
-	map_script_2 VAR_TEMP_C, 1, MonitoringStation_EventScript_DoorMove
+	map_script_2 VAR_ADMIN_INWAY, 1, MonitoringStation_EventScript_DoorMove
 	.2byte 0
 	
 MonitoringStation_OnTransition::
@@ -156,12 +156,12 @@ MonitoringStation_EventScript_ExecutiveReal::
 	textcolor 0
 	call_if_unset FLAG_TALKED_EXECUTIVE, MonitoringStation_EventScript_ExecutiveIntro
 	msgbox MonitoringStation_Text_ExecutiveKey
+	setflag FLAG_TALKED_EXECUTIVE
 	checkitem ITEM_RED_KEY, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MonitoringStation_EventScript_ExecutiveYay
 	msgbox MonitoringStation_Text_ExecutiveAww
 	waitmessage
-	setflag FLAG_TALKED_EXECUTIVE
 	release
 	end
 	
@@ -259,12 +259,14 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	waitmovement 0
 	textcolor 0
 	msgbox MonitoringStation_Text_ExecutiveFinal
+	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROCKET_ADMINFINAL
 	removeobject LOCALID_ROCKET_EXECUTIVEFINAL
 	removeobject LOCALID_ROCKET_STORAGEFINAL
 	setflag FLAG_HORROR_DONE
 	setflag FLAG_FINAL_NPCS
+	setflag FLAG_ENDGAME
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -289,7 +291,7 @@ MonitoringStation_EventScript_DoorMove::
 	playse SE_EXIT
 	applymovement LOCALID_ROCKET_ADMINFINAL, MonitoringStation_Movement_AdminMove
 	waitmovement 0
-	setvar VAR_TEMP_C, 0
+	setvar VAR_ADMIN_INWAY, 2
 	releaseall
 	end
 	

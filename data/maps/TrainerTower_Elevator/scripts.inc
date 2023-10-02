@@ -102,6 +102,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	setflag FLAG_HIDE_OFFICE_ADMIN
 	setflag FLAG_FINAL_NPCS
 	setflag FLAG_HIDE_KANGA
+	setflag FLAG_HIDE_FINAL_ADMIN
 	setvar VAR_ELEVATOR_BROKEN, 5
 	setvar VAR_GOT_RED_KEY, 0
 	setvar VAR_MONITORING_STATION_QUARTET, 0

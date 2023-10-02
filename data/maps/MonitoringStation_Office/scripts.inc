@@ -36,6 +36,7 @@ MonitoringStation_Office_EventScript_Continue::
 	setvar VAR_GOT_RED_KEY, 2
 	setflag FLAG_HIDE_OFFICE_ADMIN
 	setflag FLAG_ENDGAME
+	setvar VAR_ADMIN_INWAY, 1
 	clearflag FLAG_FINAL_NPCS
 	releaseall
 	end
