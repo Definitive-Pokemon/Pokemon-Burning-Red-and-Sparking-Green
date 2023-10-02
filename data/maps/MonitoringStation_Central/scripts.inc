@@ -41,13 +41,13 @@ MonitoringStation_Central_EventScript_QuartetRock::
 	end
 	
 MonitoringStation_Central_EventScript_QuartetKanga::
-	lock
+	lockall
 	faceplayer
 	msgbox MonitoringStation_Central_Text_QuartetKanga
 	goto_if_set FLAG_HIDE_MOM, MonitoringStation_Central_EventScript_QuartetKangaYes
 	msgbox MonitoringStation_Central_Text_QuartetKangaNo
 	closemessage
-	release
+	releaseall
 	end
 	
 MonitoringStation_Central_EventScript_QuartetKangaYes::
@@ -92,7 +92,7 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	setflag FLAG_HIDE_CHONKDUO
 	setflag FLAG_HIDE_BOULDER3
 	clearflag FLAG_HIDE_BOULDER4
-	release
+	releaseall
 	end
 
 MonitoringStation_Central_Movement_LookAtYou::
