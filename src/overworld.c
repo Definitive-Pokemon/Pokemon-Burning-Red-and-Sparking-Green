@@ -1132,14 +1132,15 @@ static u16 GetWarpDestinationMusic(void)
         {
             return music;
         }
-        else if (FlagGet(FLAG_GOT_BLUE_KEY))
-        {
-            music = MUS_WEATHER_GROUDON;
-        }
         else if(FlagGet(FLAG_HORROR_ROCKET_MOVED))
         {
             music = MUS_DUMMY;
         }
+        else if (FlagGet(FLAG_GOT_BLUE_KEY))
+        {
+            music = MUS_WEATHER_GROUDON;
+        }
+        
     }
     return music;
 }
