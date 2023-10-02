@@ -20,7 +20,7 @@ MonitoringStation_Power_EventScript_Weather::
 	return
 	
 MonitoringStation_Power_EventScript_Music::
-	fadeoutbgm 0
+	playbgm MUS_DUMMY 0
 	return
 	
 MonitoringStation_Power_EventScript_Rocket::
@@ -113,7 +113,6 @@ MonitoringStation_Power_EventScript_Absolute::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
 	delay 20
 	fadescreen FADE_TO_BLACK
-	fadeinbgm 1
 	warp MAP_POKE_CENTER, 255, 8, 5
 	release
 	end
