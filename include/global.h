@@ -10,6 +10,9 @@
 #include "constants/species.h"
 #include "constants/forms.h"
 
+// Another Form index, specifically to add on top of the Sprite and palette tables
+#define FORM_SPECIES_SPRITE_INDEX(formIndex) (formIndex + NUM_NON_FORM_MON_SPRITES)
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
