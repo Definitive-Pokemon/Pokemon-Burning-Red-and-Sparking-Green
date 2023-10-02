@@ -1203,7 +1203,7 @@ static void SetCursorMonData(void *pokemon, u8 mode)
         gPSSData->cursorMonSpecies = GetMonData(mon, MON_DATA_SPECIES2);
         if (gPSSData->cursorMonSpecies != SPECIES_NONE)
         {
-            u8 pokemonForm = GetMonData(boxMon, MON_DATA_FORME);
+            u8 pokemonForm = GetMonData(mon, MON_DATA_FORME);
             sanityIsBagEgg = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
             if (sanityIsBagEgg)
                 gPSSData->cursorMonIsEgg = TRUE;
