@@ -1103,7 +1103,7 @@ static u16 GetCurrLocationDefaultMusic(void)
     }
     else if((bool8)IsWarpInsideMonitoringStation(&gSaveBlock1Ptr->location))
     {
-        if (FlagSet(FLAG_HORROR_DONE))
+        if (FlagGet(FLAG_HORROR_DONE))
         {
             return music;
         }
