@@ -1203,6 +1203,7 @@ static void SetCursorMonData(void *pokemon, u8 mode)
         gPSSData->cursorMonSpecies = GetMonData(mon, MON_DATA_SPECIES2);
         if (gPSSData->cursorMonSpecies != SPECIES_NONE)
         {
+            u8 pokemonForm = GetMonData(boxMon, MON_DATA_FORME);
             sanityIsBagEgg = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
             if (sanityIsBagEgg)
                 gPSSData->cursorMonIsEgg = TRUE;
@@ -1213,29 +1214,19 @@ static void SetCursorMonData(void *pokemon, u8 mode)
             StringGetEnd10(gPSSData->cursorMonNick);
             gPSSData->cursorMonLevel = GetMonData(mon, MON_DATA_LEVEL);
             gPSSData->cursorMonMarkings = GetMonData(mon, MON_DATA_MARKINGS);
-            if(gPSSData->cursorMonSpecies == SPECIES_DEOXYS)
+            if(pokemonForm)
             {
-                switch(GetMonData(mon, MON_DATA_FORME))
+                u16 species = gPSSData->cursorMonSpecies;
+                if (species == SPECIES_DEOXYS)
                 {
-                    case 1: //Attack Forme
-                        gPSSData->cursorMonSpecies = 65531;
-                        break;
-                    case 2:
-                        gPSSData->cursorMonSpecies = 65532;
-                        break;
-                    case 3:
-                        gPSSData->cursorMonSpecies = 65533;
-                        break;
-                    default:
-                        gPSSData->cursorMonSpecies = 65530;
-                        break;
+                    gPSSData->cursorMonSpecies = FORM_SPECIES_NUMBER((pokemonForm << (FORM_FLAG_SHIFT - FORM_NUM_BITS)), species);
                 }
-                gPSSData->cursorMonPersonality = GetMonData(mon, MON_DATA_PERSONALITY);
+                else
+                {
+                    gPSSData->cursorMonSpecies = FORM_SPECIES_NUMBER((pokemonForm << FORM_FLAG_SHIFT), species);
+                }
             }
-            else
-            {
-                gPSSData->cursorMonPersonality = GetMonData(mon, MON_DATA_PERSONALITY);
-            }
+            gPSSData->cursorMonPersonality = GetMonData(mon, MON_DATA_PERSONALITY);
             gPSSData->cursorMonPalette = GetMonFrontSpritePal(mon);
             gender = GetMonGender(mon);
             gPSSData->cursorMonItem = GetMonData(mon, MON_DATA_HELD_ITEM);
@@ -1244,10 +1235,10 @@ static void SetCursorMonData(void *pokemon, u8 mode)
     else if (mode == MODE_BOX)
     {
         struct BoxPokemon *boxMon = (struct BoxPokemon *)pokemon;
-
         gPSSData->cursorMonSpecies = GetBoxMonData(pokemon, MON_DATA_SPECIES2);
         if (gPSSData->cursorMonSpecies != SPECIES_NONE)
         {
+            u8 pokemonForm = GetMonData(boxMon, MON_DATA_FORME);
             u32 otId = GetBoxMonData(boxMon, MON_DATA_OT_ID);
             sanityIsBagEgg = GetBoxMonData(boxMon, MON_DATA_SANITY_IS_BAD_EGG);
             if (sanityIsBagEgg)
@@ -1260,31 +1251,21 @@ static void SetCursorMonData(void *pokemon, u8 mode)
             StringGetEnd10(gPSSData->cursorMonNick);
             gPSSData->cursorMonLevel = GetLevelFromBoxMonExp(boxMon);
             gPSSData->cursorMonMarkings = GetBoxMonData(boxMon, MON_DATA_MARKINGS);
-            if(gPSSData->cursorMonSpecies == SPECIES_DEOXYS)
+            if(pokemonForm)
             {
-                switch(GetMonData(boxMon, MON_DATA_FORME))
+                u16 species = gPSSData->cursorMonSpecies;
+                if (species == SPECIES_DEOXYS)
                 {
-                    case 1: //Attack Forme
-                        gPSSData->cursorMonSpecies = 65531;
-                        break;
-                    case 2:
-                        gPSSData->cursorMonSpecies = 65532;
-                        break;
-                    case 3:
-                        gPSSData->cursorMonSpecies = 65533;
-                        break;
-                    default:
-                        gPSSData->cursorMonSpecies = 65530;
-                        break;
+                    gPSSData->cursorMonSpecies = FORM_SPECIES_NUMBER((pokemonForm << (FORM_FLAG_SHIFT - FORM_NUM_BITS)), species);
                 }
-                gPSSData->cursorMonPersonality = GetMonData(boxMon, MON_DATA_PERSONALITY);
+                else
+                {
+                    gPSSData->cursorMonSpecies = FORM_SPECIES_NUMBER((pokemonForm << FORM_FLAG_SHIFT), species);
+                }
             }
-            else
-            {
-                gPSSData->cursorMonPersonality = GetMonData(boxMon, MON_DATA_PERSONALITY);
-            }
+            gPSSData->cursorMonPersonality = GetMonData(boxMon, MON_DATA_PERSONALITY);
             gPSSData->cursorMonPalette = GetMonSpritePalFromSpeciesAndPersonality(gPSSData->cursorMonSpecies, otId, gPSSData->cursorMonPersonality);
-            gender = GetGenderFromSpeciesAndPersonality(gPSSData->cursorMonSpecies, gPSSData->cursorMonPersonality);
+            gender = GetBoxMonGender(boxMon);
             gPSSData->cursorMonItem = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM);
         }
     }
@@ -1322,11 +1303,7 @@ static void SetCursorMonData(void *pokemon, u8 mode)
 
         txtPtr = gPSSData->cursorMonTexts[1];
         *(txtPtr)++ = CHAR_SLASH;
-        if(gPSSData->cursorMonSpecies >= 65530 && gPSSData->cursorMonSpecies <= 65533)
-            StringCopyPadded(txtPtr, gSpeciesNames[SPECIES_DEOXYS], CHAR_SPACE, 5);
-        else
-            StringCopyPadded(txtPtr, gSpeciesNames[gPSSData->cursorMonSpecies], CHAR_SPACE, 5);
-
+        StringCopyPadded(txtPtr, gSpeciesNames[SPECIES_PART_INCLUDING_DEOXYS(gPSSData->cursorMonSpecies)], CHAR_SPACE, 5);
         txtPtr = gPSSData->cursorMonTexts[2];
         *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
         *(txtPtr)++ = EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW;

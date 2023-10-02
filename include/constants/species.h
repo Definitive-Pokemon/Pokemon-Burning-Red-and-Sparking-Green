@@ -445,6 +445,9 @@
 #define SPECIES_UNOWN_EMARK 438
 #define SPECIES_UNOWN_QMARK 439
 
+// always needs to be updated if a new species is to be added. Final sprited mon num + 1
+#define NUM_NON_FORM_MON_SPRITES 440
+
 #define SPECIES_OLD_UNOWN_EMARK 412
 #define SPECIES_OLD_UNOWN_QMARK 413
 
