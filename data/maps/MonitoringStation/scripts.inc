@@ -303,14 +303,6 @@ MonitoringStation_Movement_AdminMove::
 	walk_in_place_up
 	step_end
 	
-MonitoringStation_EventScript_CheckBrokenElevator::
-	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_ElevatorBackOpen
-	return
-	
-MonitoringStation_EventScript_ElevatorBackOpen::
-	setvar VAR_TEMP_1, 1
-	return
-	
 MonitoringStation_EventScript_ElevatorBroken::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkInPlaceFastestUp
