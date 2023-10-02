@@ -20,7 +20,7 @@ MonitoringStation_Power_EventScript_Weather::
 	return
 	
 MonitoringStation_Power_EventScript_Music::
-	playbgm MUS_DUMMY 0
+	fadeoutbgm 0
 	return
 	
 MonitoringStation_Power_EventScript_Rocket::
@@ -103,7 +103,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	setflag FLAG_HORROR_POWER_RESTORED
 	setvar VAR_MONITORING_STATION_HALLWAY2_HELP, 1
 	setvar VAR_TAKEKEY, 0
-	fadeinbgm 1
+	fadeinbgm 5
 	release
 	end
 	
@@ -114,6 +114,7 @@ MonitoringStation_Power_EventScript_Absolute::
 	delay 20
 	fadescreen FADE_TO_BLACK
 	warp MAP_POKE_CENTER, 255, 8, 5
+	fadeinbgm 2
 	release
 	end
 	

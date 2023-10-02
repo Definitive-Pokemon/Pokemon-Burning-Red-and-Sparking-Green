@@ -32,7 +32,7 @@ MonitoringStation_Quarters_EventScript_RocketM3::
 	setvar VAR_MONITORING_STATION_QUARTET, 1
 	setflag FLAG_QUARTET_ACTIVE
 	clearflag FLAG_HIDE_CHONKDUO
-	warp MAP_MONITORING_STATION_CENTRAL, 255, 14, 4
+	warp MAP_MONITORING_STATION_CENTRAL, 255, 13, 3
 	release
 	end
 

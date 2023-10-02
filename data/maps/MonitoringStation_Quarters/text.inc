@@ -27,7 +27,7 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "she must be hiding something…\p"
 	.string "Maybe we should go talk to her.\p"
 	.string "I want to get to the bottom of this\n"
-	.string "very suspicious behavior.\p"
+	.string "strange behavior.\p"
 	.string "I will lead the way.$"
 	
 MonitoringStation_Quarters_Text_RocketM4::

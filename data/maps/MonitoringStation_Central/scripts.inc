@@ -28,7 +28,7 @@ MonitoringStation_Central_EventScript_OnFrame::
 	
 MonitoringStation_Central_EventScript_QuartetRock::
 	lockall
-	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_LookAtMe
+	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_LookAtYou
 	waitmovement 0
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_QuartetRock
@@ -94,14 +94,9 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	clearflag FLAG_HIDE_BOULDER4
 	release
 	end
-	
-	
-MonitoringStation_Central_Movement_LookAtMe::
-	face_player
-	step_end
 
 MonitoringStation_Central_Movement_LookAtYou::
-	face_up
+	walk_in_place_right
 	step_end
 	
 MonitoringStation_Central_Movement_QuartetRock::
