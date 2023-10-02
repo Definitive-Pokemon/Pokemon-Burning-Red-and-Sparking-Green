@@ -130,16 +130,10 @@ MonitoringStation_Office_EventScript_Welcome::
 	applymovement OBJ_EVENT_ID_CAMERA, MonitoringStation_Office_Movement_PanToActionFromBottom
 	waitmovement 0
 	special RemoveCameraObject
-	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Office_Movement_PlayerUp
-	waitmovement 0
 	clearflag FLAG_HIDE_OFFICE_ADMIN
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall
 	end
-	
-MonitoringStation_Office_Movement_PlayerUp::
-	face_up
-	step_end
 	
 MonitoringStation_Office_Movement_PlayerDown::
 	walk_down
