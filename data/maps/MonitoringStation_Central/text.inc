@@ -1,3 +1,38 @@
+MonitoringStation_Central_Text_QuartetRock::
+	.string "… A boulder is blocking the way to\n"
+	.string "the entrance hallway.\p"
+	.string "Someone has used a POKéMON to push\n"
+	.string "it in front of the entrance hall.\p"
+	.string "We will need a strong POKéMON to\n"
+	.string "take care of it.\p"
+	.string "Since your POKéMON are too afraid\n"
+	.string "to function properly… Hmm…\p"
+	.string "I recall there being a KANGASKHAN\n"
+	.string "in the holding room.\p"
+	.string "That one would be perfect for\n"
+	.string "our little plan.\p"
+	.string "If you go free that caged POKéMON,\n"
+	.string "I can command it to use STRENGTH\p"
+	.string "against that boulder.$"
+	
+MonitoringStation_Central_Text_KangaHappy::
+	.string "KANGASKHAN is happy to see you!$"
+	
+MonitoringStation_Central_Text_QuartetKanga::
+	.string "Did you manage to free the POKéMON\p"
+	.string "I asked for?$"
+	
+MonitoringStation_Central_Text_QuartetKangaNo::
+	.string "You haven't even looked for it?\n"
+	.string "Stop wasting time!\p"
+	.string "We need that KANGASKHAN!$"
+	
+MonitoringStation_Central_Text_QuartetKangaYes::
+	.string "You've been to the holding room?\n"
+	.string "And you didn't find KANGASKHAN?\p"
+	.string "Ugh, I'll just go free it myself.\n"
+	.string "Wait here.$"
+
 MonitoringStation_Central_Text_Quartet::
 	.string "Watch this KANGASKHAN do its work.\n"
 	.string "Move out of the way, kid!$"

@@ -25,34 +25,10 @@ MonitoringStation_Quarters_Text_RocketM3::
 	.string "…… …… …… ……\p"
 	.string "If she didn't mention it whatsoever,\n"
 	.string "she must be hiding something…\p"
-	.string "Maybe we should go talk to her…\p"
-	.string "… A boulder is blocking the way to\n"
-	.string "the entrance hallway?\p"
-	.string "Then she must have locked herself\n"
-	.string "in there.\p"
-	.string "We will need a strong POKéMON to\n"
-	.string "take care of that boulder.\p"
-	.string "Since your POKéMON are too afraid\n"
-	.string "to function properly… Hmm…\p"
-	.string "I recall there being a KANGASKHAN\n"
-	.string "in the holding room.\p"
-	.string "That one would be perfect for\n"
-	.string "our little plan.\p"
-	.string "If you go free that caged POKéMON,\n"
-	.string "I can command it to use STRENGTH\p"
-	.string "against that boulder.$"
-	
-MonitoringStation_Quarters_Text_RocketM3Again::
-	.string "If you haven't freed KANGASKHAN\n"
-	.string "yet, go do that now please.\p"
+	.string "Maybe we should go talk to her.\p"
 	.string "I want to get to the bottom of this\n"
-	.string "scheme of our esteemed ADMIN…$"
-	
-MonitoringStation_Quarters_Text_RocketM3Solution::
-	.string "You've been to the holding room?\n"
-	.string "And you didn't find KANGASKHAN?\p"
-	.string "Ugh, I'll just go free it myself.\n"
-	.string "Meet me at the monitoring office.$"
+	.string "very suspicious behavior.p\"
+	.string "I will lead the way.$"
 	
 MonitoringStation_Quarters_Text_RocketM4::
 	.string "Why did you open the door?!\p"

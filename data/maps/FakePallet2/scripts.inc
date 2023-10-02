@@ -42,9 +42,8 @@ FakePallet2_EventScript_Mom1::
 	applymovement OBJ_EVENT_ID_PLAYER, FakePallet2_Movement_Slap1
 	waitmovement 0
 	applymovement LOCALID_KABUTOPS_SHADOW, FakePallet2_Movement_KabutopsBack1
-	waitmovement 0
 	playse SE_BANG
-	waitse
+	waitmovement 0
 	playmoncry SPECIES_KABUTOPS, 2
 	waitmoncry
 	delay 30

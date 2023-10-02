@@ -23,6 +23,90 @@ MonitoringStation_Central_EventScript_SetNewPeople::
 	
 MonitoringStation_Central_EventScript_OnFrame::
 	map_script_2 VAR_MONITORING_STATION_CENTRAL_STATE, 0, MonitoringStation_Central_EventScript_Kabutops
+	map_script_2 VAR_MONITORING_STATION_QUARTET, 1, MonitoringStation_Central_EventScript_QuartetRock
+	.2byte 0
+	
+MonitoringStation_Central_EventScript_QuartetRock::
+	lockall
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_LookAtMe
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_LookAtYou
+	waitmovement 0
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_QuartetRock
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Central_Text_QuartetRock
+	closemessage
+	setvar VAR_MONITORING_STATION_QUARTET, 2
+	releaseall
+	end
+	
+MonitoringStation_Central_EventScript_QuartetKanga::
+	lock
+	faceplayer
+	msgbox MonitoringStation_Central_Text_QuartetKanga
+	goto_if_set FLAG_HIDE_MOM, MonitoringStation_Central_EventScript_QuartetKangaYes
+	msgbox MonitoringStation_Central_Text_QuartetKangaNo
+	closemessage
+	release
+	end
+	
+MonitoringStation_Central_EventScript_QuartetKangaYes::
+	msgbox MonitoringStation_Central_Text_QuartetKangaYes
+	closemessage
+	fadescreen FADE_TO_BLACK
+	addobject LOCALID_KANGASKHAN
+	clearflag FLAG_HIDE_KANGA
+	fadescreen FADE_FROM_BLACK
+	delay 20
+	msgbox MonitoringStation_Central_Text_Quartet
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Backwards
+	delay 40
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
+	waitmovement 0
+	msgbox MonitoringStation_Central_Text_Quartet2
+	closemessage
+	playmoncry SPECIES_KANGASKHAN, 0
+	textcolor 2
+	msgbox MonitoringStation_Central_Text_Kanga
+	closemessage
+	waitmoncry
+	applymovement LOCALID_KANGASKHAN, MonitoringStation_Central_Movement_Kanga
+	waitmovement 0
+	playmoncry SPECIES_KANGASKHAN, 2
+	waitmoncry
+	applymovement LOCALID_PUSHABLE_BOULDER3, MonitoringStation_Central_Movement_KangaBoulder
+	playse SE_M_STRENGTH
+	waitse
+	waitmovement 0
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet2
+	waitmovement 0
+	textcolor 0
+	msgbox MonitoringStation_Central_Text_Quartet3
+	closemessage
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet3
+	waitmovement 0
+	removeobject LOCALID_ROCKET_M2
+	playse SE_EXIT
+	waitse
+	setflag FLAG_HIDE_CHONKDUO
+	setflag FLAG_HIDE_BOULDER3
+	clearflag FLAG_HIDE_BOULDER4
+	release
+	end
+	
+	
+MonitoringStation_Central_Movement_LookAtMe::
+	face_player
+	step_end
+
+MonitoringStation_Central_Movement_LookAtYou::
+	face_up
+	step_end
+	
+MonitoringStation_Central_Movement_QuartetRock::
+	walk_in_place_down
+	step_end
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setmetatile 2, 21, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
@@ -75,10 +159,21 @@ MonitoringStation_Central_EventScript_Quartet::
 MonitoringStation_Central_EventScript_Kanga::
 	lock
 	faceplayer
+	goto_if_set FLAG_HORROR_DONE, MonitoringStation_Central_EventScript_KangaHappy
 	playmoncry SPECIES_KANGASKHAN, 0
 	msgbox MonitoringStation_Central_Text_Kanga
 	closemessage
 	waitmoncry
+	release
+	end
+	
+MonitoringStation_Central_EventScript_KangaHappy::
+	playmoncry SPECIES_KANGASKHAN, 0
+	msgbox MonitoringStation_Central_Text_Kanga
+	closemessage
+	waitmoncry
+	msgbox MonitoringStation_Central_Text_KangaHappy
+	closemessage
 	release
 	end
 	
@@ -209,6 +304,7 @@ MonitoringStation_Central_Eventscript_BoulderPostScare::
 	end
 	
 MonitoringStation_Central_Movement_Backwards::
+	walk_down
 	walk_down
 	walk_in_place_up
 	step_end

@@ -951,7 +951,7 @@
 #define FLAG_HIDE_MOMBUTOPS               0x39C
 #define FLAG_HIDE_MOM               0x39D
 #define FLAG_HIDE_BOULDER2               0x39E
-#define FLAG_QUARTET_TALKED               0x39F
+#define FLAG_39F               0x39F
 #define FLAG_QUARTET_ACTIVE               0x3A0
 #define FLAG_HIDE_CHONKDUO               0x3A1
 #define FLAG_HIDE_BOULDER4               0x3A2
@@ -962,9 +962,9 @@
 #define FLAG_HIDE_OFFICE_KABUTOPS               0x3A8
 #define FLAG_GOT_RED_KEY               0x3A9
 #define FLAG_FINAL_NPCS               0x3AA
+#define FLAG_HIDE_KANGA               0x3AB
 
 // Unused?
-#define FLAG_0x3AB               0x3AB
 #define FLAG_0x3AC               0x3AC
 #define FLAG_0x3AD               0x3AD
 #define FLAG_0x3AE               0x3AE
