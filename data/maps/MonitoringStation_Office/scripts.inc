@@ -184,6 +184,7 @@ MonitoringStation_Office_Movement_Attack1::
 	delay_16
 	walk_fast_down
 	jump_down
+	unlock_facing_direction
 	step_end
 	
 MonitoringStation_Office_Movement_KabTurn::
