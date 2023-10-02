@@ -267,6 +267,7 @@ MonitoringStation_EventScript_RemoveRedDoor::
 	setflag FLAG_HORROR_DONE
 	setflag FLAG_FINAL_NPCS
 	setflag FLAG_ENDGAME
+	setflag FLAG_HIDE_FINAL_ADMIN
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -289,9 +290,11 @@ MonitoringStation_EventScript_DoorMove::
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Movement_DoorMove
 	waitmovement 0
 	playse SE_EXIT
+	addobject LOCALID_ROCKET_ADMINFINAL
 	applymovement LOCALID_ROCKET_ADMINFINAL, MonitoringStation_Movement_AdminMove
 	waitmovement 0
 	setvar VAR_ADMIN_INWAY, 2
+	clearflag FLAG_HIDE_FINAL_ADMIN
 	releaseall
 	end
 	
