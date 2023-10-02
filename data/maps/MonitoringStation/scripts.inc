@@ -24,6 +24,16 @@ MonitoringStation_EventScript_OnLoad::
 	call MonitoringStation_EventScript_CheckBrokenElevator
 	end
 	
+MonitoringStation_OnFrame::
+	map_script_2 VAR_TEMP_D, 2, MonitoringStation_EventScript_ExitElevator
+	map_script_2 VAR_TEMP_C, 1, MonitoringStation_EventScript_DoorMove
+	.2byte 0
+	
+MonitoringStation_OnTransition::
+	setworldmapflag FLAG_WORLD_MAP_MONITORING_STATION
+	getplayerxy VAR_RESULT, VAR_TEMP_D
+	end
+	
 MonitoringStation_EventScript_RedDoorShortShadows::
 	setmetatile 9, 8, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
 	setmetatile 10, 9, METATILE_SilphCo_HideoutFloor , 0
@@ -264,15 +274,6 @@ MonitoringStation_EventScript_Restore_Power::
 	setweather WEATHER_NONE
 	doweather
 	return
-	
-MonitoringStation_OnFrame::
-	map_script_2 VAR_TEMP_D, 2, MonitoringStation_EventScript_ExitElevator
-	.2byte 0
-	
-MonitoringStation_OnTransition::
-	setworldmapflag FLAG_WORLD_MAP_MONITORING_STATION
-	getplayerxy VAR_RESULT, VAR_TEMP_D
-	end
 
 MonitoringStation_EventScript_ExitElevator::
 	lockall
@@ -281,6 +282,26 @@ MonitoringStation_EventScript_ExitElevator::
 	setvar VAR_TEMP_D, 0
 	releaseall
 	end
+
+MonitoringStation_EventScript_DoorMove::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Movement_DoorMove
+	waitmovement 0
+	playse SE_EXIT
+	applymovement LOCALID_ROCKET_ADMINFINAL, MonitoringStation_Movement_AdminMove
+	waitmovement 0
+	setvar VAR_TEMP_C, 0
+	releaseall
+	end
+	
+MonitoringStation_Movement_DoorMove::
+	walk_up
+	step_end
+	
+MonitoringStation_Movement_AdminMove::
+	set_visible
+	walk_in_place_up
+	step_end
 	
 MonitoringStation_EventScript_CheckBrokenElevator::
 	goto_if_set FLAG_HORROR_DONE, MonitoringStation_EventScript_ElevatorBackOpen
