@@ -3,6 +3,7 @@
 #include "mail_data.h"
 #include "pokemon_icon.h"
 #include "graphics.h"
+#include "pokemon.h"
 
 #define POKE_ICON_BASE_PAL_TAG 56000
 
@@ -465,7 +466,8 @@ const u8 *const gMonIconTable[] = {
     [SPECIES_UNOWN_Y]     = gMonIcon_UnownY,
     [SPECIES_UNOWN_Z]     = gMonIcon_UnownZ,
     [SPECIES_UNOWN_EMARK] = gMonIcon_UnownExclamationMark,
-    [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark
+    [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
+    [FORM_SPECIES_SPRITE_INDEX(FORM_FOSSILIZED_KABUTOPS)] = gMonIcon_QuestionMark
 };
 
 const u8 gMonIconPaletteIndices[] = {
@@ -908,7 +910,8 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_Y]     = 0,
     [SPECIES_UNOWN_Z]     = 0,
     [SPECIES_UNOWN_EMARK] = 0,
-    [SPECIES_UNOWN_QMARK] = 0
+    [SPECIES_UNOWN_QMARK] = 0,
+    [FORM_SPECIES_SPRITE_INDEX(FORM_FOSSILIZED_KABUTOPS)] = 1
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {
@@ -1066,35 +1069,16 @@ u16 GetIconSpecies(u16 species, u32 personality)
             letter += (SPECIES_UNOWN_B - 1);
         result = letter;
     }
-    else if(species == SPECIES_DEOXYS)
-    {
-        switch(personality) //pid was hijacked to hold Deoxys forms
-        {   //setting result to arbitrarily high numbers
-            //picked highest ones to not interfere with
-            //Pokemon expansion.
-            case 1: //Attack Forme
-                result = 65531;
-                break;
-            case 2:
-                result = 65532;
-                break;
-            case 3:
-                result = 65533;
-                break;
-            default: //Normal Forme
-                result = 65530;
-        }
-    }
-    else if(species >= 65530 && species <= 65533)
-    {
-        result = species;
-    }
     else
     {
-        if (species > NUM_SPECIES)
-            result = SPECIES_NONE;
-        else
+        if (FORM_PART(species))
+            result = FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
+        else if (FORM_PART_INCLUDING_DEOXYS(species))
             result = species;
+        else if (species <= NUM_SPECIES)
+            result = species;
+        else
+            result = SPECIES_NONE;
     }
 
     return result;
@@ -1131,22 +1115,21 @@ u16 MailSpeciesToIconSpecies(u16 species)
 const u8 *GetMonIconTiles(u16 species, bool32 extra)
 {
     const u8 *iconSprite = gMonIconTable[species];
-    if(species >= 65530 && species <= 65533)
+    if(species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
     {
         iconSprite = (const u8*)gMonIconTable[SPECIES_DEOXYS];
     }
-    if (extra == TRUE && (species >= 65530 && species <= 65533))
+    if (extra == TRUE && (SPECIES_PART_INCLUDING_DEOXYS(species)) == SPECIES_DEOXYS)
     {
-        //iconSprite = (const u8*)(0x400 + (u32)iconSprite); // use the specific Deoxys form icon (Speed in this case)
         switch(species)
         {   //Normal Forme is already loaded and overwritten here
-            case 65531: //Attack Forme
+            case SPECIES_DEOXYS_ATTACK_FORME: 
                 iconSprite = (const u8*)(0x400 + (u32)iconSprite);
                 break;
-            case 65532: //Defense Forme
+            case SPECIES_DEOXYS_DEFENSE_FORME: 
                 iconSprite = (const u8*)((0x400 * 2) + (u32)iconSprite);
                 break;
-            case 65533: //Speed Forme
+            case SPECIES_DEOXYS_SPEED_FORME: 
                 iconSprite = (const u8*)((0x400 * 3) + (u32)iconSprite);
                 break;
         }
