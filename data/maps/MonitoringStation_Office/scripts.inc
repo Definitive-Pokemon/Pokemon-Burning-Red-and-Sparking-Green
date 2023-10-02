@@ -132,7 +132,6 @@ MonitoringStation_Office_EventScript_Welcome::
 	waitmovement 0
 	special RemoveCameraObject
 	clearflag FLAG_HIDE_OFFICE_ADMIN
-	setflag FLAG_HIDE_KANGA
 	setvar VAR_GOT_RED_KEY, 1
 	releaseall
 	end

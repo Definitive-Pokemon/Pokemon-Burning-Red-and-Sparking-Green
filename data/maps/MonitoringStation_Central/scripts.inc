@@ -165,7 +165,6 @@ MonitoringStation_Central_EventScript_Kanga::
 MonitoringStation_Central_EventScript_KangaHappy::
 	playmoncry SPECIES_KANGASKHAN, 0
 	msgbox MonitoringStation_Central_Text_Kanga
-	closemessage
 	waitmoncry
 	msgbox MonitoringStation_Central_Text_KangaHappy
 	closemessage
