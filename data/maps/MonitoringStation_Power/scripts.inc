@@ -108,6 +108,7 @@ MonitoringStation_Power_EventScript_Restore_Power::
 	end
 	
 MonitoringStation_Power_EventScript_Absolute::
+	playbgm MUS_DUMMY, 0
 	playmoncry SPECIES_KABUTOPS, 4
 	waitmoncry
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
