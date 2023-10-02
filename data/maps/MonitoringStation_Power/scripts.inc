@@ -113,8 +113,8 @@ MonitoringStation_Power_EventScript_Absolute::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Power_Movement_Jump
 	delay 20
 	fadescreen FADE_TO_BLACK
-	warp MAP_POKE_CENTER, 255, 8, 5
 	fadeinbgm 2
+	warp MAP_POKE_CENTER, 255, 8, 5
 	release
 	end
 	
