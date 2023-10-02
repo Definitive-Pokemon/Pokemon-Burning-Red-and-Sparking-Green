@@ -21,7 +21,6 @@ MonitoringStation_EventScript_OnLoad::
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	call_if_set FLAG_RED_DOOR_SHORTCUT, MonitoringStation_EventScript_RedDoorShortShadows
 	call_if_set FLAG_HORROR_POWER_RESTORED, MonitoringStation_EventScript_Restore_Power
-	call MonitoringStation_EventScript_CheckBrokenElevator
 	end
 	
 MonitoringStation_OnFrame::
