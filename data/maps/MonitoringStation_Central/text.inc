@@ -19,7 +19,7 @@ MonitoringStation_Central_Text_KangaHappy::
 	.string "KANGASKHAN is happy to see you!$"
 	
 MonitoringStation_Central_Text_QuartetKanga::
-	.string "Did you manage to free the POKéMON\p"
+	.string "Did you manage to free the POKéMON\n"
 	.string "I asked for?$"
 	
 MonitoringStation_Central_Text_QuartetKangaNo::
