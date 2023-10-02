@@ -310,7 +310,6 @@ MonitoringStation_Central_Movement_Backwards::
 	step_end
 	
 MonitoringStation_Central_Movement_Kanga::
-	walk_left
 	walk_up
 	walk_in_place_right
 	step_end
