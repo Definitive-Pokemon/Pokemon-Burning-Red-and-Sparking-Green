@@ -7190,7 +7190,7 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
         }
         else
         {
-            species = GetMonData(mon, MON_DATA_FORM_SPECIES, null);
+            species = GetMonData(mon, MON_DATA_FORM_SPECIES, NULL);
             species = GetFormIndex(species);
             for (i = 0; i < 20; i++)
             {
@@ -7598,7 +7598,7 @@ void PlayMapChosenOrBattleBGM(u16 songId)
 
 u16 GetFormSpeciesSpriteIndex(u16 species)
 {
-    return FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
+    return GetFormIndex(species) + NUM_NON_FORM_MON_SPRITES;
 }
 
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
