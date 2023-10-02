@@ -7195,7 +7195,7 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
             for (i = 0; i < 20; i++)
             {
                 u16 moveLevel;
-                if (gFormLevelUpLearnsets[][i] == LEVEL_UP_END)
+                if (gFormLevelUpLearnsets[species][i] == LEVEL_UP_END)
                     break;
 
                 moveLevel = gFormLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_LV;
@@ -7616,7 +7616,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
     u32 shinyValue;
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
 
-    if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
+    if (species >= (u16) DEOXYS_START_FORME_NUM && species <= (u16) DEOXYS_LAST_FORME_NUM)
     {
         if(shinyValue < 8)
             return gMonShinyPaletteTable[SPECIES_DEOXYS].data;
