@@ -34,8 +34,7 @@ MonitoringStation_Central_Text_QuartetKangaYes::
 	.string "Wait here.$"
 
 MonitoringStation_Central_Text_Quartet::
-	.string "Watch this KANGASKHAN do its work.\n"
-	.string "Move out of the way, kid!$"
+	.string "Watch this KANGASKHAN do its work.$"
 	
 MonitoringStation_Central_Text_Quartet2::
 	.string "KANGASKHAN! Use STRENGTH!!$"

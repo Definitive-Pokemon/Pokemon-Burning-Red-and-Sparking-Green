@@ -64,8 +64,6 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	fadescreen FADE_TO_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_OutOfWay
 	waitmovement 0
-	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Left
-	waitmovement 0
 	lockall
 	addobject LOCALID_KANGASKHAN
 	clearflag FLAG_HIDE_KANGA
@@ -73,7 +71,6 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	delay 20
 	msgbox MonitoringStation_Central_Text_Quartet
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Backwards
 	delay 40
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
 	waitmovement 0
@@ -109,12 +106,8 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	end
 	
 MonitoringStation_Central_Movement_OutOfWay::
-	walk_fast_left
-	walk_in_place_right
-	step_end
-	
-MonitoringStation_Central_Movement_Left::
-	face_player
+	walk_fast_down
+	walk_in_place_up
 	step_end
 	
 MonitoringStation_Central_Movement_QuartetRock::
@@ -275,11 +268,6 @@ MonitoringStation_Central_Eventscript_BoulderPostScare::
 	release
 	end
 	
-MonitoringStation_Central_Movement_Backwards::
-	walk_down
-	walk_in_place_up
-	step_end
-	
 MonitoringStation_Central_Movement_Kanga::
 	walk_up
 	walk_in_place_right
@@ -290,18 +278,14 @@ MonitoringStation_Central_Movement_KangaBoulder::
 	step_end
 	
 MonitoringStation_Central_Movement_Quartet::
-	walk_left
-	walk_in_place_right
+	walk_in_place_up
 	step_end
 	
 MonitoringStation_Central_Movement_Quartet2::
-	face_player
+	walk_in_place_down
 	step_end
 	
 MonitoringStation_Central_Movement_Quartet3::
-	walk_down
-	walk_right
-	walk_right
 	walk_up
 	walk_up
 	walk_in_place_up
