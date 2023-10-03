@@ -57,8 +57,8 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	warp MAP_MONITORING_STATION_CENTRAL, 255, 13, 3
 	addobject LOCALID_KANGASKHAN
 	clearflag FLAG_HIDE_KANGA
-	applymovement OBJ_EVENT_ID_PLAYER MonitoringStation_Central_Movement_Right
-	applymovement LOCALID_ROCKET_M2 MonitoringStation_Central_Movement_Left
+	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Right
+	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Left
 	waitmovement 0
 	fadescreen FADE_FROM_BLACK
 	delay 20
