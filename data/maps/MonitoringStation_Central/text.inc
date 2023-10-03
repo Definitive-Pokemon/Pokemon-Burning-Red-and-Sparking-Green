@@ -2,7 +2,7 @@ MonitoringStation_Central_Text_QuartetRock::
 	.string "… A boulder is blocking the way to\n"
 	.string "the entrance hallway.\p"
 	.string "Someone has used a POKéMON to push\n"
-	.string "it in front of the entrance hall.\p"
+	.string "it in front of the doorway.\p"
 	.string "We will need a strong POKéMON to\n"
 	.string "take care of it.\p"
 	.string "Since your POKéMON are too afraid\n"
