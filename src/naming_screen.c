@@ -12,7 +12,6 @@
 #include "help_system.h"
 #include "menu.h"
 #include "overworld.h"
-#include "forms.h"
 #include "naming_screen.h"
 #include "new_menu_helpers.h"
 #include "pokemon_icon.h"
@@ -22,6 +21,7 @@
 #include "text_window.h"
 #include "trig.h"
 #include "constants/help_system.h"
+#include "constants/forms.h"
 #include "constants/songs.h"
 #include "constants/event_objects.h"
 
