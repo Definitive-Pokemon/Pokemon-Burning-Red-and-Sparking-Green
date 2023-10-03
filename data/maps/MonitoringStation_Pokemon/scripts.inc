@@ -31,19 +31,36 @@ MonitoringStation_Pokemon_EventScript_AddCage::
 	setvar VAR_ADD_CAGE, 2
 	end
 	
-MonitoringStation_Pokemon_EventScript_Cage::
+MonitoringStation_Pokemon_EventScript_Cage1::
 	lockall
 	textcolor 2
 	msgbox MonitoringStation_Pokemon_Text_PutYourselfInCage, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq MonitoringStation_Pokemon_EventScript_GoInCage
+	goto_if_eq MonitoringStation_Pokemon_EventScript_GoInCage1
 	releaseall
 	end
 	
-MonitoringStation_Pokemon_EventScript_GoInCage::
+MonitoringStation_Pokemon_EventScript_Cage2::
+	lockall
+	textcolor 2
+	msgbox MonitoringStation_Pokemon_Text_PutYourselfInCage, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq MonitoringStation_Pokemon_EventScript_GoInCage2
+	releaseall
+	end
+	
+MonitoringStation_Pokemon_EventScript_GoInCage1::
 	msgbox MonitoringStation_Pokemon_Text_StepInCage
 	closemessage
 	warp MAP_SPECIAL, 255, 0, 0
+	waitstate
+	releaseall
+	end
+	
+MonitoringStation_Pokemon_EventScript_GoInCage2::
+	msgbox MonitoringStation_Pokemon_Text_StepInCage
+	closemessage
+	warp MAP_SPECIAL, 255, 1, 0
 	waitstate
 	releaseall
 	end

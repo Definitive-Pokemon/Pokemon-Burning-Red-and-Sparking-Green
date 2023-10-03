@@ -1,5 +1,10 @@
 Special_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Special_OnWarp
 	.byte 0
+
+Special_OnWarp::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	end
 
 Special_EventScript_Cage::
 	lockall
