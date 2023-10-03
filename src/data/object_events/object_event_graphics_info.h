@@ -272,8 +272,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel =
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Petrel, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dusclops = 
-{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 
-12, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
+{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_DUSCLOPS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 
+10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
 &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Dusclops, gDummySpriteAffineAnimTable};
 
