@@ -63,6 +63,7 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_OutOfWay
+	waitmovement 0
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Left
 	waitmovement 0
 	lockall
@@ -109,7 +110,7 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	
 MonitoringStation_Central_Movement_OutOfWay::
 	walk_fast_left
-	face_right
+	walk_in_place_right
 	step_end
 	
 MonitoringStation_Central_Movement_Left::
