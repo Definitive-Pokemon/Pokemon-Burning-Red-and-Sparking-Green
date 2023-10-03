@@ -963,10 +963,10 @@
 #define FLAG_GOT_RED_KEY               0x3A9
 #define FLAG_FINAL_NPCS               0x3AA
 #define FLAG_HIDE_KANGA               0x3AB
+#define FLAG_HIDE_KABUTOPS               0x3AC
+#define FLAG_KABUTOPS_FLED               0x3AD
 
 // Unused?
-#define FLAG_0x3AC               0x3AC
-#define FLAG_0x3AD               0x3AD
 #define FLAG_0x3AE               0x3AE
 #define FLAG_0x3AF               0x3AF
 #define FLAG_0x3B0               0x3B0
