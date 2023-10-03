@@ -54,8 +54,12 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	msgbox MonitoringStation_Central_Text_QuartetKangaYes
 	closemessage
 	fadescreen FADE_TO_BLACK
+	warp MAP_MONITORING_STATION_CENTRAL, 255, 13, 3
 	addobject LOCALID_KANGASKHAN
 	clearflag FLAG_HIDE_KANGA
+	applymovement OBJ_EVENT_ID_PLAYER MonitoringStation_Central_Movement_Right
+	applymovement LOCALID_ROCKET_M2 MonitoringStation_Central_Movement_Left
+	waitmovement 0
 	fadescreen FADE_FROM_BLACK
 	delay 20
 	msgbox MonitoringStation_Central_Text_Quartet
@@ -94,13 +98,21 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	clearflag FLAG_HIDE_BOULDER4
 	releaseall
 	end
+	
+MonitoringStation_Central_Movement_Right::
+	face_right
+	step_end
+	
+MonitoringStation_Central_Movement_left::
+	face_player
+	step_end
 
 MonitoringStation_Central_Movement_LookAtYou::
-	walk_in_place_right
+	walk_in_place_up
 	step_end
 	
 MonitoringStation_Central_Movement_QuartetRock::
-	walk_in_place_left
+	walk_in_place_down
 	step_end
 	
 MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
