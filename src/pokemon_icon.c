@@ -1024,7 +1024,7 @@ static u8 IconPaletteIndex(u16 species)
         }
         else if (FORM_PART(species))
         {
-            result = gMonIconPaletteIndices[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species)];
+            result = gMonIconPaletteIndices[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))];
         }
     }
     else   
