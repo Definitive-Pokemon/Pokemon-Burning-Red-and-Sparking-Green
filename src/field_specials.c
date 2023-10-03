@@ -1750,7 +1750,7 @@ void ChangeBoxPokemonNickname(void)
 
     GetBoxMonData(pokemon, MON_DATA_NICKNAME, gStringVar3);
     GetBoxMonData(pokemon, MON_DATA_NICKNAME, gStringVar2);
-    species = GetBoxMonData(pokemon, MON_DATA_SPECIES, NULL);
+    species = GetBoxMonData(pokemon, MON_DATA_FORM_SPECIES, NULL);
     gender = GetBoxMonGender(pokemon);
     personality = GetBoxMonData(pokemon, MON_DATA_PERSONALITY, NULL);
     DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar2, species, gender, personality, ChangeBoxPokemonNickname_CB);
@@ -1770,7 +1770,7 @@ void ChangePokemonNickname(void)
 
     GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar3);
     GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
-    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FORM_SPECIES, NULL);
     gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
     personality = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY, NULL);
     DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar2, species, gender, personality, ChangePokemonNickname_CB);

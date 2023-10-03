@@ -19,6 +19,7 @@ struct MonIconSpriteTemplate
 
 static u8 CreateMonIconSprite(const struct MonIconSpriteTemplate * template, s16 x, s16 y, u8 subpriority);
 static void DestroyMonIconInternal(struct Sprite * sprite);
+static u8 IconPaletteIndex(u16 species);
 
 const u16 gMonIconPalettes[][16] = {
     INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_0.gbapal"),
@@ -1012,6 +1013,26 @@ static const u16 sSpriteImageSizes[][4] = {
     },
 };
 
+static u8 IconPaletteIndex(u16 species)
+{
+    u8 result = 0;
+    if (species > NUM_SPECIES)
+    {
+        if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
+        {
+            result = gMonIconPaletteIndices[SPECIES_DEOXYS];
+        }
+        else if (FORM_PART(species))
+        {
+            result = gMonIconPaletteIndices[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species)];
+        }
+    }
+    else   
+        result = gMonIconPaletteIndices[species];
+
+    return result;
+}
+
 u8 CreateMonIcon(u16 species, SpriteCallback callback, s16 x, s16 y, u8 subpriority, u32 personality, bool32 extra)
 {
     u8 spriteId;
@@ -1022,11 +1043,8 @@ u8 CreateMonIcon(u16 species, SpriteCallback callback, s16 x, s16 y, u8 subprior
             .anims = sMonIconAnims,
             .affineAnims = sMonIconAffineAnims,
             .callback = callback,
-            .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[species],
+            .paletteTag = POKE_ICON_BASE_PAL_TAG + IconPaletteIndex(species),
         };
-
-    if (species > NUM_SPECIES)
-        iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG;
 
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
 
@@ -1045,7 +1063,7 @@ u8 CreateMonIcon_HandleDeoxys(u16 species, SpriteCallback callback, s16 x, s16 y
             .anims = sMonIconAnims,
             .affineAnims = sMonIconAffineAnims,
             .callback = callback,
-            .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[species],
+            .paletteTag = POKE_ICON_BASE_PAL_TAG + IconPaletteIndex(species),
         };
 
     iconTemplate.image = GetMonIconTiles(species, extra);

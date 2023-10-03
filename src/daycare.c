@@ -2181,7 +2181,7 @@ static void CB2_EggHatch_1(void)
         if(gSaveBlock1Ptr->keyFlags.nuzlocke == 1)
         {
             DayCare_GetMonNickname(&gPlayerParty[sEggHatchData->eggPartyID], gStringVar3);
-            species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_SPECIES);
+            species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_FORM_SPECIES);
             gender = GetMonGender(&gPlayerParty[sEggHatchData->eggPartyID]);
             personality = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_PERSONALITY, 0);
             DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar3, species, gender, personality, EggHatchSetMonNickname);
@@ -2207,7 +2207,7 @@ static void CB2_EggHatch_1(void)
         {
         case 0:
             DayCare_GetMonNickname(&gPlayerParty[sEggHatchData->eggPartyID], gStringVar3);
-            species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_SPECIES);
+            species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_FORM_SPECIES);
             gender = GetMonGender(&gPlayerParty[sEggHatchData->eggPartyID]);
             personality = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_PERSONALITY, 0);
             DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar3, species, gender, personality, EggHatchSetMonNickname);

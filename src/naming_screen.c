@@ -12,6 +12,7 @@
 #include "help_system.h"
 #include "menu.h"
 #include "overworld.h"
+#include "forms.h"
 #include "naming_screen.h"
 #include "new_menu_helpers.h"
 #include "pokemon_icon.h"
@@ -1615,7 +1616,7 @@ static void PrintTitleFunction_WithMon(void)
 {
     u8 buffer[0x20];
 
-    StringCopy(buffer, gSpeciesNames[sNamingScreenData->monSpecies]);
+    StringCopy(buffer, gSpeciesNames[SPECIES_PART_INCLUDING_DEOXYS(sNamingScreenData->monSpecies)]);
     StringAppendN(buffer, sNamingScreenData->template->title, 15);
     FillWindowPixelBuffer(sNamingScreenData->windows[3], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreenData->windows[3], 1, buffer, 1, 1, 0, NULL);
