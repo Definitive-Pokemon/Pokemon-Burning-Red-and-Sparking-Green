@@ -58,21 +58,26 @@ bool16 ResetAllPicSprites(void)
 
 static bool16 DecompressPic(u16 species, u32 personality, bool8 isFrontPic, u8 *dest, bool8 isTrainer, bool8 ignoreDeoxys)
 {
+    u16 spriteSpecies = species;
     if (!isTrainer)
     {
+        if (FORM_PART(species))
+        {
+            spriteSpecies = FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
+        }
         if (isFrontPic)
         {
             if (!ignoreDeoxys)
-                LoadSpecialPokePic(&gMonFrontPicTable[species], dest, species, personality, isFrontPic);
+                LoadSpecialPokePic(&gMonFrontPicTable[spriteSpecies], dest, species, personality, isFrontPic);
             else
-                LoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species], dest, species, personality, isFrontPic);
+                LoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[spriteSpecies], dest, species, personality, isFrontPic);
         }
         else
         {
             if (!ignoreDeoxys)
-                LoadSpecialPokePic(&gMonBackPicTable[species], dest, species, personality, isFrontPic);
+                LoadSpecialPokePic(&gMonBackPicTable[spriteSpecies], dest, species, personality, isFrontPic);
             else
-                LoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[species], dest, species, personality, isFrontPic);
+                LoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[spriteSpecies], dest, species, personality, isFrontPic);
         }
     }
     else

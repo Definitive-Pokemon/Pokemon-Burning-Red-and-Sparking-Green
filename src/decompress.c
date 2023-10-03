@@ -62,18 +62,18 @@ void LoadCompressedSpritePaletteOverrideBuffer(const struct CompressedSpritePale
 
 void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void* buffer, s32 species)
 {
-    if (species > NUM_SPECIES)
-        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
-    else
+    if (species < NUM_SPECIES || FORM_PART_INCLUDING_DEOXYS(species))
         LZ77UnCompWram(src->data, buffer);
+    else
+        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
     DuplicateDeoxysTiles(buffer, species);
 }
 
 void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality)
 {
     bool8 isFrontPic;
-
-    if (src == &gMonFrontPicTable[species])
+    u16 spriteSpecies = FORM_SPECIES_SPRITE_INDEX(GetFormIndex((u16)species));
+    if (src == &gMonFrontPicTable[spriteSpecies])
         isFrontPic = TRUE; // frontPic
     else
         isFrontPic = FALSE; // backPic
@@ -96,37 +96,17 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         else
             LZ77UnCompWram(gMonFrontPicTable[i].data, dest);
     }
-    else if(species == SPECIES_DEOXYS || (species >= 65530 && species <= 65533))
+    else if(species == SPECIES_DEOXYS || (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM))
     {
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[SPECIES_DEOXYS].data, dest);
         else
             LZ77UnCompWram(gMonFrontPicTable[SPECIES_DEOXYS].data, dest);
-
-        if(!(species >= 65530 && species <= 65533))
-        {
-            switch(personality) //pid was hijacked to hold Deoxys forms
-            {   //setting result to arbitrarily high numbers
-                //picked highest ones to not interfere with
-                //Pokemon expansion.
-                case 1: //Attack Forme
-                    species = 65531;
-                    break;
-                case 2:
-                    species = 65532;
-                    break;
-                case 3:
-                    species = 65533;
-                    break;
-                default: //Normal Forme
-                    species = 65530;
-            }
-        }
     }
-    else if (species > NUM_SPECIES) // is species unknown? draw the ? icon
-        LZ77UnCompWram(gMonFrontPicTable[0].data, dest);
-    else
+    else if (species < NUM_SPECIES || FORM_PART_INCLUDING_DEOXYS(species))
         LZ77UnCompWram(src->data, dest);
+    else // is species unknown? draw the ? icon
+        LZ77UnCompWram(gMonFrontPicTable[0].data, dest);
 
     DuplicateDeoxysTiles(dest, species);
     DrawSpindaSpots(species, personality, dest, isFrontPic);
@@ -137,13 +117,13 @@ static void DuplicateDeoxysTiles(void *pointer, s32 species)
     u8 skipImage;
     switch(species)
     {
-        case 65531: //Attack
+        case SPECIES_DEOXYS_ATTACK_FORME: 
             skipImage = 1;
             break;
-        case 65532: //Defense
+        case SPECIES_DEOXYS_DEFENSE_FORME: 
             skipImage = 2;
             break;
-        case 65533: //Speed
+        case SPECIES_DEOXYS_SPEED_FORME: 
             skipImage = 3;
             break;
         default: //Normal and all other Pokemon
@@ -350,17 +330,18 @@ u32 GetDecompressedDataSize(const u8 *ptr)
 
 void DecompressPicFromTable_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void* buffer, s32 species)
 {
-    if (species > NUM_SPECIES)
-        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
-    else
+    if (species < NUM_SPECIES || FORM_PART(species))
         LZ77UnCompWram(src->data, buffer);
+    else // is species unknown? draw the ? icon
+        LZ77UnCompWram(gMonFrontPicTable[0].data, buffer);
 }
 
 void HandleLoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality)
 {
     bool8 isFrontPic;
 
-    if (src == &gMonFrontPicTable[species])
+    u16 spriteSpecies = FORM_SPECIES_SPRITE_INDEX(GetFormIndex((u16)species));
+    if (src == &gMonFrontPicTable[spriteSpecies])
         isFrontPic = TRUE; // frontPic
     else
         isFrontPic = FALSE; // backPic
@@ -383,13 +364,14 @@ void LoadSpecialPokePic_DontHandleDeoxys(const struct CompressedSpriteSheet *src
         else
             LZ77UnCompWram(gMonFrontPicTable[i].data, dest);
     }
-    else if (species > NUM_SPECIES) // is species unknown? draw the ? icon
+    else if (species < NUM_SPECIES || FORM_PART(species))
     {
-        LZ77UnCompWram(gMonFrontPicTable[0].data, dest);
+        LZ77UnCompWram(src->data, dest);
     }
     else
     {
-        LZ77UnCompWram(src->data, dest);
+        // is species unknown? draw the ? icon
+        LZ77UnCompWram(gMonFrontPicTable[0].data, dest);
     }
     DrawSpindaSpots(species, personality, dest, isFrontPic);
 }
