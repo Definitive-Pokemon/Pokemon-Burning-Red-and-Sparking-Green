@@ -4,7 +4,7 @@ Special_MapScripts::
 
 Special_OnWarp::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	end
+	.2byte 0
 
 Special_EventScript_Cage::
 	lockall
