@@ -40,7 +40,7 @@ MonitoringStation_Storage_Text_RedKeyAdmin::
 	.string "have her locked up inside her room.\p"
 	.string "That means you will have to restore\n"
 	.string "the power by reactivating the\p"
-	.string "machine located inside the\n"
+	.string "machine located at the end of the\n"
 	.string "mechanical room.\p"
 	.string "Honestly, you don't have much choice\n"
 	.string "other than to help us.\p"

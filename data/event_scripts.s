@@ -1418,3 +1418,6 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/FakePallet2/scripts.inc"
 	.include "data/maps/FakePallet2/text.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+	.include "data/maps/NewMap1/text.inc"

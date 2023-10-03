@@ -4917,7 +4917,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/MonitoringStation_RegisteelPuzzle/border.bin",
       "blockdata_filepath": "data/layouts/MonitoringStation_RegisteelPuzzle/map.bin"
     },
@@ -5057,11 +5057,11 @@
       "id": "LAYOUT_MONITORING_STATION_EMERALD_ROOM",
       "name": "MonitoringStation_EmeraldRoom_Layout",
       "width": 16,
-      "height": 15,
+      "height": 17,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/MonitoringStation_EmeraldRoom/border.bin",
       "blockdata_filepath": "data/layouts/MonitoringStation_EmeraldRoom/map.bin"
     },
@@ -5073,7 +5073,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/MonitoringStation_Lair/border.bin",
       "blockdata_filepath": "data/layouts/MonitoringStation_Lair/map.bin"
     },
@@ -5124,6 +5124,18 @@
       "secondary_tileset": "gTileset_RockTunnel",
       "border_filepath": "data/layouts/FakePallet2/border.bin",
       "blockdata_filepath": "data/layouts/FakePallet2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 7,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SilphCo",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
     }
   ]
 }

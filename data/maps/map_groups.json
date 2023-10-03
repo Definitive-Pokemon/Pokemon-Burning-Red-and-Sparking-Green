@@ -281,7 +281,8 @@
     "PokeCenter",
     "Special",
     "FakePallet1",
-    "FakePallet2"
+    "FakePallet2",
+    "NewMap1"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",
