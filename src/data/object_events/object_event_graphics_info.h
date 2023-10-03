@@ -242,8 +242,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mudkip =
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Mudkip, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock = 
-{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_PLAYER_RED, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
-0, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
+5, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Regirock, gDummySpriteAffineAnimTable};
 
@@ -255,7 +255,7 @@ gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Regice, gDummySpriteAf
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_BLUE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
-2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
+5, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Registeel, gDummySpriteAffineAnimTable};
 
@@ -272,8 +272,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel =
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Petrel, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dusclops = 
-{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_DUSCLOPS, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 
-10, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
+{SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_WHITE, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 
+5, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, 
 &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Dusclops, gDummySpriteAffineAnimTable};
 
