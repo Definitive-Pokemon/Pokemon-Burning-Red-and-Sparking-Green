@@ -103,7 +103,7 @@ MonitoringStation_Central_Movement_Right::
 	face_right
 	step_end
 	
-MonitoringStation_Central_Movement_left::
+MonitoringStation_Central_Movement_Left::
 	face_player
 	step_end
 
