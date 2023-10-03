@@ -109,9 +109,9 @@ MonitoringStation_Office_EventScript_Welcome::
 	applymovement LOCALID_KABUTOPS_SHADOW, MonitoringStation_Office_Movement_KabutopsLook
 	playse SE_M_VITAL_THROW2
 	waitse
-	playmoncry SPECIES_KABUTOPS, 1
+	playmoncry SPECIES_KABUTOPS, 11
 	waitmoncry
-	delay 40
+	delay 100
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_KABUTOPS_SHADOW
 	fadescreen FADE_FROM_BLACK
