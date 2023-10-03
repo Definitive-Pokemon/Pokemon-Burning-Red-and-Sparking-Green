@@ -965,9 +965,9 @@
 #define FLAG_HIDE_KANGA               0x3AB
 #define FLAG_HIDE_KABUTOPS               0x3AC
 #define FLAG_KABUTOPS_FLED               0x3AD
+#define FLAG_FOUGHT_KABUTOPS               0x3AE
 
 // Unused?
-#define FLAG_0x3AE               0x3AE
 #define FLAG_0x3AF               0x3AF
 #define FLAG_0x3B0               0x3B0
 #define FLAG_0x3B1               0x3B1
