@@ -639,32 +639,13 @@ void PSA_CreateMonSpriteAtCloseness(u8 closeness)
 {
     struct PokemonSpecialAnimScene * scene = PSA_GetSceneWork();
     struct Pokemon * pokemon = PSA_GetPokemon();
-    u16 species = GetMonData(pokemon, MON_DATA_SPECIES);
+    u16 species = GetMonData(pokemon, MON_DATA_FORM_SPECIES);
     u32 personality = GetMonData(pokemon, MON_DATA_PERSONALITY);
     u8 r1 = Menu2_GetMonSpriteAnchorCoord(species, personality, 2);
     void * r6;
     void * r9;
     void * r4;
     u8 spriteId;
-
-    if(species == SPECIES_DEOXYS)
-    {
-        switch(GetMonData(pokemon, MON_DATA_FORME))
-        {
-            case 1: //Attack Forme
-                species = 65531;
-                break;
-            case 2: //Defense Forme
-                species = 65532;
-                break;
-            case 3: //Speed Forme
-                species = 65533;
-                break;
-            default: //Normal Forme
-                species = 65530;
-                break;
-        }
-    }
 
     if (r1 != 0xFF)
     {
@@ -682,7 +663,7 @@ void PSA_CreateMonSpriteAtCloseness(u8 closeness)
     r4 = Alloc(0x100);
     if (r6 != NULL && r9 != NULL && r4 != NULL)
     {
-        HandleLoadSpecialPokePic(&gMonFrontPicTable[species], r6, species, personality);
+        HandleLoadSpecialPokePic(&gMonFrontPicTable[FORM_SPECIES_SPRITE_INDEX(species)], r6, species, personality);
         LZ77UnCompWram(GetMonFrontSpritePal(pokemon), r4);
         LoadMonSpriteGraphics(r6, r4);
         spriteId = CreateSprite(&sSpriteTemplate_MonSprite, 120, scene->monSpriteY1, 4);

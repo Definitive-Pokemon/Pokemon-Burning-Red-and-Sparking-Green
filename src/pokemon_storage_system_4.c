@@ -556,31 +556,8 @@ static void SetBoxSpeciesAndPersonalities(u8 boxId)
             gPSSData->boxSpecies[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_SPECIES2);
             if (gPSSData->boxSpecies[boxPosition] != SPECIES_NONE)
             {
-                if(gPSSData->boxSpecies[boxPosition] == SPECIES_DEOXYS)
-                {
-
-                    gPSSData->boxPersonalities[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_FORME);
-                    switch(gPSSData->boxPersonalities[boxPosition]) //pid was hijacked to hold Deoxys forms
-                    {   //setting result to arbitrarily high numbers
-                        //picked highest ones to not interfere with
-                        //Pokemon expansion.
-                        case 1: //Attack Forme
-                            gPSSData->boxSpecies[boxPosition] = 65531;
-                            break;
-                        case 2: //Defense Forme
-                            gPSSData->boxSpecies[boxPosition] = 65532;
-                            break;
-                        case 3: //Speed Forme
-                            gPSSData->boxSpecies[boxPosition] = 65533;
-                            break;
-                        default: //Normal Forme
-                            gPSSData->boxSpecies[boxPosition] = 65530;
-                    }
-                }
-                else
-                {
-                    gPSSData->boxPersonalities[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_PERSONALITY);
-                }
+                gPSSData->boxSpecies[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_FORM_SPECIES);
+                gPSSData->boxPersonalities[boxPosition] = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_PERSONALITY);
             }
             boxPosition++;
         }
@@ -1001,15 +978,19 @@ static void sub_8091290(u16 species)
 struct Sprite *CreateMonIconSprite(u16 species, u32 personality, s16 x, s16 y, u8 oamPriority, u8 subpriority)
 {
     u16 tileNum;
+    u16 spriteSpeciesIndex;
     u8 spriteId;
     struct SpriteTemplate template = gUnknown_83CEBF0;
 
+    if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
+        spriteSpeciesIndex = SPECIES_DEOXYS;
+    else if (FORM_PART(species))
+        spriteSpeciesIndex = FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
+    else
+        spriteSpeciesIndex = species;
+
     species = GetIconSpecies(species, personality);
-    template.paletteTag = 0xDAC0 + gMonIconPaletteIndices[species];
-    if(species >= 65530 && species <= 65533)
-    {
-        template.paletteTag = 0xDAC0 + gMonIconPaletteIndices[SPECIES_DEOXYS];
-    }
+    template.paletteTag = 0xDAC0 + gMonIconPaletteIndices[spriteSpeciesIndex];
     tileNum = sub_80911D4(species);
     if (tileNum == 0xFFFF)
         return NULL;
