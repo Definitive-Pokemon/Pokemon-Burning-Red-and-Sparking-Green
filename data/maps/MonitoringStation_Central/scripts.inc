@@ -7,9 +7,18 @@
 .set LOCALID_KANGASKHAN, 12
 
 MonitoringStation_Central_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, MonitoringStation_Central_OnWarp
 	map_script MAP_SCRIPT_ON_LOAD, MonitoringStation_Central_EventScript_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MonitoringStation_Central_EventScript_OnFrame
 	.byte 0
+
+MonitoringStation_Central_OnWarp::
+	map_script_2 VAR_MAP_SCENE_MONITORING_STATION_CENTRAL, 1, MonitoringStation_Central_EventScript_TurnPlayerNorth
+	.2byte 0
+
+MonitoringStation_Central_EventScript_TurnPlayerNorth::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	end
 	
 MonitoringStation_Central_EventScript_OnLoad::
 	call_if_set FLAG_GOT_YELLOW_KEY, MonitoringStation_Central_EventScript_SetNewPeople
@@ -29,14 +38,13 @@ MonitoringStation_Central_EventScript_OnFrame::
 MonitoringStation_Central_EventScript_QuartetRock::
 	lockall
 	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_LookAtYou
-	waitmovement 0
 	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_QuartetRock
 	waitmovement 0
 	textcolor 0
 	msgbox MonitoringStation_Central_Text_QuartetRock
 	closemessage
 	setvar VAR_MONITORING_STATION_QUARTET, 2
+	setvar VAR_MAP_SCENE_MONITORING_STATION_CENTRAL, 2
 	releaseall
 	end
 	
@@ -107,10 +115,6 @@ MonitoringStation_Central_Movement_OutOfWay::
 MonitoringStation_Central_Movement_Left::
 	face_player
 	step_end
-
-MonitoringStation_Central_Movement_LookAtYou::
-	walk_in_place_up
-	step_end
 	
 MonitoringStation_Central_Movement_QuartetRock::
 	walk_in_place_down
@@ -123,46 +127,6 @@ MonitoringStation_Central_EventScript_GreyDoorAdminShadows::
 	setweather WEATHER_NONE
 	doweather
 	return
-	
-MonitoringStation_Central_EventScript_Quartet::
-	lock
-	faceplayer
-	msgbox MonitoringStation_Central_Text_Quartet
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Backwards
-	delay 40
-	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet
-	waitmovement 0
-	msgbox MonitoringStation_Central_Text_Quartet2
-	closemessage
-	playmoncry SPECIES_KANGASKHAN, 0
-	textcolor 2
-	msgbox MonitoringStation_Central_Text_Kanga
-	closemessage
-	waitmoncry
-	applymovement LOCALID_KANGASKHAN, MonitoringStation_Central_Movement_Kanga
-	waitmovement 0
-	playmoncry SPECIES_KANGASKHAN, 2
-	waitmoncry
-	applymovement LOCALID_PUSHABLE_BOULDER3, MonitoringStation_Central_Movement_KangaBoulder
-	playse SE_M_STRENGTH
-	waitse
-	waitmovement 0
-	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet2
-	waitmovement 0
-	textcolor 0
-	msgbox MonitoringStation_Central_Text_Quartet3
-	closemessage
-	applymovement LOCALID_ROCKET_M2, MonitoringStation_Central_Movement_Quartet3
-	waitmovement 0
-	removeobject LOCALID_ROCKET_M2
-	playse SE_EXIT
-	waitse
-	setflag FLAG_HIDE_CHONKDUO
-	setflag FLAG_HIDE_BOULDER3
-	clearflag FLAG_HIDE_BOULDER4
-	release
-	end
 	
 MonitoringStation_Central_EventScript_Kanga::
 	lock

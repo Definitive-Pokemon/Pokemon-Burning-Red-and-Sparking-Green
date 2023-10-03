@@ -27,6 +27,7 @@ MonitoringStation_Quarters_EventScript_RocketM2::
 MonitoringStation_Quarters_EventScript_RocketM3::
 	lock
 	faceplayer
+	setvar VAR_MAP_SCENE_MONITORING_STATION_CENTRAL, 1
 	msgbox MonitoringStation_Quarters_Text_RocketM3
 	closemessage
 	setvar VAR_MONITORING_STATION_QUARTET, 1

@@ -91,6 +91,7 @@ TrainerTower_Elevator_EventScript_StartHorror::
 	delay 100
 	fadescreen FADE_FROM_BLACK
 	delay 200
+	setvar VAR_MAP_SCENE_MONITORING_STATION_CENTRAL, 0
 	setflag FLAG_HIDE_DUSCLOPS
 	setflag FLAG_HIDE_ENTRANCE_PEOPLE
 	setflag FLAG_HIDE_BOULDER3
