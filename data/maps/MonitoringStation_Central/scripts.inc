@@ -41,13 +41,13 @@ MonitoringStation_Central_EventScript_QuartetRock::
 	end
 	
 MonitoringStation_Central_EventScript_QuartetKanga::
-	lockall
+	lock
 	faceplayer
 	msgbox MonitoringStation_Central_Text_QuartetKanga
 	goto_if_set FLAG_HIDE_MOM, MonitoringStation_Central_EventScript_QuartetKangaYes
 	msgbox MonitoringStation_Central_Text_QuartetKangaNo
 	closemessage
-	releaseall
+	release
 	end
 	
 MonitoringStation_Central_EventScript_QuartetKangaYes::
@@ -55,6 +55,7 @@ MonitoringStation_Central_EventScript_QuartetKangaYes::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	warp MAP_MONITORING_STATION_CENTRAL, 255, 13, 3
+	lockall
 	addobject LOCALID_KANGASKHAN
 	clearflag FLAG_HIDE_KANGA
 	applymovement OBJ_EVENT_ID_PLAYER, MonitoringStation_Central_Movement_Right
