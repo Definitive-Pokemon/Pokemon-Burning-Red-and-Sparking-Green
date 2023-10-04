@@ -28,6 +28,7 @@ MonitoringStation_Central_EventScript_OnLoad::
 	
 MonitoringStation_Central_EventScript_SetNewPeople::
 	clearflag FLAG_ENDGAME
+	clearflag FLAG_GOT_YELLOW_KEY
 	return
 	
 MonitoringStation_Central_EventScript_OnFrame::
