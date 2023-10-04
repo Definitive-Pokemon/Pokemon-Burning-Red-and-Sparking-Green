@@ -130,3 +130,8 @@ TrainerTower_Lobby_Text_Lore::
     .string "underneath the building site.\p"
     .string "I wonder if they were right in\n"
     .string "just taking it like that.$"
+	
+TrainerTower_Lobby_Text_Guard::
+	.string "I'm terribly sorry.\n"
+	.string "No trespassing!\p"
+	.string "Scram!$"

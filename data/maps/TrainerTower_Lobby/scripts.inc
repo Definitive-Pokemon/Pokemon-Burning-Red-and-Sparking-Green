@@ -234,3 +234,7 @@ TrainerTower_Lobby_EventScript_BaldingMan:: @ 8164AEF
 TrainerTower_Lobby_EventScript_Camper::
 	msgbox TrainerTower_Lobby_Text_Lore, MSGBOX_NPC
 	end
+	
+TrainerTower_Lobby_EventScript_Guard::
+	msgbox TrainerTower_Lobby_Text_Guard, MSGBOX_NPC
+	end
