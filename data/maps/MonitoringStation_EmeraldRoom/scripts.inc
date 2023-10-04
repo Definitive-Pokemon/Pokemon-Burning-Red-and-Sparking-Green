@@ -35,7 +35,7 @@ MonitoringStation_EmeraldRoom_EventScript_BrailleMessage::
 	waitbuttonpress
 	releaseall
 	end
-	
+
 MonitoringStation_EmeraldRoom_EventScript_Text::
 	msgbox Monitoring_Station_EmeraldRoom_Text_Text, MSGBOX_SIGN
 	end

@@ -184,35 +184,67 @@ Braille_Text_Shape::
 Braille_Text_Passion::
 	.braille "BY PASSION.$"
 	
-Braille_Text_Continue:
+Braille_Text_Continue::
 	.braille "CONTINUE$"
 	
-Braille_Text_Legacy:
+Braille_Text_Legacy::
 	.braille "THE LEGACY.$"
 	
-Braille_Text_Create:
+Braille_Text_Create::
 	.braille "CREATE$"
 	
-Braille_Text_Worlds:
+Braille_Text_Worlds::
 	.braille "NEW WORLDS$"
 	
 Braille_Text_Show:
 	.braille "AND SHOW$"
 	
-Braille_Text_New:
+Braille_Text_New::
 	.braille "A NEW$"
 	
-Braille_Text_Generation:
+Braille_Text_Generation::
 	.braille "GENERATION$"
 	
-Braille_Text_Meaning:
+Braille_Text_Meaning::
 	.braille "THE MEANING$"
 	
-Braille_Text_Adventure:
+Braille_Text_Adventure::
 	.braille "OF ADVENTURE$"
 	
-Braille_Text_Discovery:
+Braille_Text_Discovery::
 	.braille "DISCOVERY$"
 	
-Braille_Text_Joy:
-	.braille "AND JOY.$"
+Braille_Text_Joy::
+	.braille "AND JOY.$"	
+	
+Braille_Text_Pokemon::
+	.braille "IN THREE\p"
+	.braille "CAVERNS\p"
+	.braille "WE SEALED\p"
+	.braille "AWAY THE\p"
+	.braille "POKEMON.$"
+	
+Braille_Text_Feared::
+	.braille "FOR WE\p"
+	.braille "FEARED THEM.$"
+	
+Braille_Text_Peace::
+	.braille "OUR TWO\p"
+	.braille "PROTECTORS\p"
+	.braille "WATCH OVER\p"
+	.braille "THEM\p"
+	.braille "IN PEACE.$"
+	
+Braille_Text_Guardian::
+	.braille "YOU WHO\p"
+	.braille "DISRUPTED\p"
+	.braille "THE PEACE\p"
+	.braille "AND BESTED\p"
+	.braille "GUARDIAN,$"
+	
+Braille_Text_Awaits::
+	.braille "A DOOR\p"
+	.braille "OPENS\p"
+	.braille "AN ETERNAL\p"
+	.braille "POKEMON\p"
+	.braille "WAITS.$"

@@ -64,3 +64,40 @@ MonitoringStation_Lair_EventScript_RanFromKabutops::
 	setvar VAR_0x8004, SPECIES_KABUTOPS
 	goto EventScript_MonFlewAway
 	end
+	
+MonitoringStation_Lair_EventScript_FinalBraille::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_Pokemon
+	braillemessage_wait Braille_Text_Feared
+	braillemessage_wait Braille_Text_Peace
+	braillemessage_wait Braille_Text_Guardian
+	braillemessage Braille_Text_Awaits
+	waitbuttonpress
+	call_if_unset FLAG_REGISTEEL_DOOR_OPENED, MonitoringStation_Lair_EventScript_Registeel_Open
+	releaseall
+	end
+	
+MonitoringStation_Lair_EventScript_Registeel_Open::
+	fadeoutbgm 0
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	delay 60
+	setvar VAR_0x8004, 3
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 2
+	special ShakeScreen
+	delay 60
+	playse SE_LAVARIDGE_FALL_WARP
+	waitse
+	playse SE_DOOR
+	waitse
+	msgbox MtEmberRegirockPuzzle_Text_SomethingHappened, MSGBOX_DEFAULT
+	closemessage
+	fadeinbgm 0
+	setflag FLAG_REGISTEEL_DOOR_OPENED
+	return
