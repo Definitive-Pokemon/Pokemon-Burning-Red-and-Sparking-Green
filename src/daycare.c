@@ -884,26 +884,53 @@ static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
 
     numEggMoves = 0;
     eggMoveIdx = 0;
-    species = GetMonData(pokemon, MON_DATA_SPECIES);
-    for (i = 0; i < NELEMS(gEggMoves) - 1; i++)
+    if (GetMonData(pokemon, MON_DATA_FORME))
     {
-        if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+        species = GetFormIndex(GetMonData(pokemon, MON_DATA_FORM_SPECIES));
+        for (i = 0; i < NELEMS(gFormEggMoves) - 1; i++)
         {
-            eggMoveIdx = i + 1;
-            break;
+            if (gFormEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+            {
+                eggMoveIdx = i + 1;
+                break;
+            }
+        }
+
+        for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+        {
+            if (gFormEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
+            {
+                // TODO: the curly braces around this if statement are required for a matching build.
+                break;
+            }
+
+            eggMoves[i] = gEggMoves[eggMoveIdx + i];
+            numEggMoves++;
         }
     }
-
-    for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+    else
     {
-        if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
+        species = GetMonData(pokemon, MON_DATA_SPECIES);
+        for (i = 0; i < NELEMS(gEggMoves) - 1; i++)
         {
-            // TODO: the curly braces around this if statement are required for a matching build.
-            break;
+            if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+            {
+                eggMoveIdx = i + 1;
+                break;
+            }
         }
 
-        eggMoves[i] = gEggMoves[eggMoveIdx + i];
-        numEggMoves++;
+        for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+        {
+            if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
+            {
+                // TODO: the curly braces around this if statement are required for a matching build.
+                break;
+            }
+
+            eggMoves[i] = gEggMoves[eggMoveIdx + i];
+            numEggMoves++;
+        }
     }
 
     return numEggMoves;
@@ -928,7 +955,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
     for (i = 0; i < EGG_LVL_UP_MOVES_ARRAY_COUNT; i++)
         sHatchedEggLevelUpMoves[i] = MOVE_NONE;
 
-    numLevelUpMoves = GetLevelUpMovesBySpecies(GetMonData(egg, MON_DATA_SPECIES), sHatchedEggLevelUpMoves);
+    numLevelUpMoves = GetLevelUpMovesBySpecies(GetMonData(egg, MON_DATA_FORM_SPECIES), sHatchedEggLevelUpMoves);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         sHatchedEggFatherMoves[i] = GetBoxMonData(father, MON_DATA_MOVE1 + i);
