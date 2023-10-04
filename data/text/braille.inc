@@ -221,67 +221,67 @@ Braille_Text_Three::
 	.braille "IN THREE$"
 	
 Braille_Text_Caverns::
-	.braille "CAVERNS\p"
+	.braille "CAVERNS$"
 	
 Braille_Text_Sealed::
-	.braille "WE SEALED\p"
+	.braille "WE SEALED$"
 	
 Braille_Text_Away::
-	.braille "AWAY THE\p"
+	.braille "AWAY THE$"
 	
 Braille_Text_Pokemon::
 	.braille "POKEMON.$"
 	
 Braille_Text_ForWe::
-	.braille "FOR WE\p"
+	.braille "FOR WE$"
 	
 Braille_Text_Feared::
 	.braille "FEARED THEM.$"
 	
 Braille_Text_Two::
-	.braille "OUR TWO\p"
+	.braille "OUR TWO$"
 	
 Braille_Text_Protectors::
-	.braille "PROTECTORS\p"
+	.braille "PROTECTORS$"
 	
 Braille_Text_Watch::
-	.braille "WATCH OVER\p"
+	.braille "WATCH OVER$"
 	
 Braille_Text_Them::
-	.braille "THEM\p"
+	.braille "THEM$"
 	
 Braille_Text_Peace::
 	.braille "IN PEACE.$"
 	
 Braille_Text_You::
-	.braille "YOU WHO\p"
+	.braille "YOU WHO$"
 	
 Braille_Text_Disrupted::
-	.braille "DISRUPTED\p"
+	.braille "DISRUPTED$"
 	
 Braille_Text_ThePeace::
-	.braille "THE PEACE\p"
+	.braille "THE PEACE$"
 	
 Braille_Text_Bested::
-	.braille "AND BESTED\p"
+	.braille "AND BESTED$"
 	
 Braille_Text_OneOf::
-	.braille "ONE OF THE\p"
+	.braille "ONE OF THE$"
 	
 Braille_Text_Guardians::
 	.braille "GUARDIANS.$"
 	
 Braille_Text_Door::
-	.braille "A DOOR\p"
+	.braille "A DOOR$"
 	
 Braille_Text_Opens::
-	.braille "OPENS\p"
+	.braille "OPENS$"
 	
 Braille_Text_Eternal::
-	.braille "AN ETERNAL\p"
+	.braille "AN ETERNAL$"
 	
 Braille_Text_Pokemon2::
-	.braille "POKEMON\p"
+	.braille "POKEMON$"
 	
 Braille_Text_Waits::
 	.braille "WAITS.$"
