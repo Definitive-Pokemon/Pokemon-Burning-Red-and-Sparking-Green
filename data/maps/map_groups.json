@@ -353,7 +353,9 @@
     "SevenIsland_TanobyRuins",
     "Route20_Underwater",
     "ThreeIsland_BondBridge_Underwater",
-    "FourIsland_Base"
+    "FourIsland_Base",
+    "KyogreDen",
+    "CinnabarVolcano"
   ],
   "gMapGroup_IndoorPallet": [
     "PalletTown_PlayersHouse_1F",

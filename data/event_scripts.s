@@ -1421,3 +1421,9 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/NewMap1/scripts.inc"
 	.include "data/maps/NewMap1/text.inc"
+
+	.include "data/maps/KyogreDen/scripts.inc"
+	.include "data/maps/KyogreDen/text.inc"
+
+	.include "data/maps/CinnabarVolcano/scripts.inc"
+	.include "data/maps/CinnabarVolcano/text.inc"
