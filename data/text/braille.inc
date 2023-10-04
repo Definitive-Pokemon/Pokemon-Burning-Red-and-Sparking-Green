@@ -132,3 +132,87 @@ Braille_Text_For::
 	
 Braille_Text_Enough::
 	.braille "LONG ENOUGH.$"
+	
+Braille_Text_Give::
+	.braille "TO GIVE$"
+	
+Braille_Text_Life::
+	.braille "LIFE TO$"
+	
+Braille_Text_Idea::
+	.braille "AN IDEA IS$"
+	
+Braille_Text_Achieve::
+	.braille "TO ACHIEVE$"
+	
+Braille_Text_Highest::
+	.braille "THE HIGHEST$"
+	
+Braille_Text_Purpose::
+	.braille "PURPOSE.$"
+	
+Braille_Text_Memories::
+	.braille "MEMORIES OF$"
+	
+Braille_Text_Past2::
+	.braille "PAST$"
+	
+Braille_Text_Rekindled::
+	.braille "REKINDLED$"
+	
+Braille_Text_Buried::
+	.braille "BURIED$"
+	
+Braille_Text_Concepts::
+	.braille "CONCEPTS$"
+	
+Braille_Text_Reused::
+	.braille "REUSED.$"
+	
+Braille_Text_Community::
+	.braille "BY COMMUNITY$"
+	
+Braille_Text_Reunited::
+	.braille "REUNITED.$"
+	
+Braille_Text_Given::
+	.braille "AND GIVEN$"
+	
+Braille_Text_Shape::
+	.braille "SHAPE$"
+	
+Braille_Text_Passion::
+	.braille "BY PASSION.$"
+	
+Braille_Text_Continue:
+	.braille "CONTINUE$"
+	
+Braille_Text_Legacy:
+	.braille "THE LEGACY.$"
+	
+Braille_Text_Create:
+	.braille "CREATE$"
+	
+Braille_Text_Worlds:
+	.braille "NEW WORLDS$"
+	
+Braille_Text_Show:
+	.braille "AND SHOW$"
+	
+Braille_Text_New:
+	.braille "A NEW$"
+	
+Braille_Text_Generation:
+	.braille "GENERATION$"
+	
+Braille_Text_Meaning:
+	.braille "THE MEANING$"
+	
+Braille_Text_Adventure:
+	.braille "OF ADVENTURE$"
+	
+Braille_Text_Discovery:
+	.braille "DISCOVERY$"
+	
+Braille_Text_Joy:
+	.braille "AND JOY.$"

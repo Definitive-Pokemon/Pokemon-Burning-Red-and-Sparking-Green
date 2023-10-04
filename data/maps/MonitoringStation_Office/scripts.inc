@@ -214,7 +214,7 @@ MonitoringStation_Office_Movement_KabutopsLook::
 	
 MonitoringStation_Office_EventScript_BrailleMessage1::
 	setvar VAR_0x8005, 130
-	braillemessage_wait Braille_Text_Welcome
+	braillemessage Braille_Text_Welcome
 	closemessage
 	return
 	
@@ -223,7 +223,7 @@ MonitoringStation_Office_EventScript_BrailleMessage2::
 	braillemessage_wait Braille_Text_Journey
 	braillemessage_wait Braille_Text_Gone
 	braillemessage_wait Braille_Text_For
-	braillemessage_wait Braille_Text_Enough
+	braillemessage Braille_Text_Enough
 	closemessage
 	return
 	
