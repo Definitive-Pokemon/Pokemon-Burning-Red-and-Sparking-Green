@@ -256,7 +256,7 @@ static void GenerateWildMon(u16 species, u8 level, u8 slot)
 
     checkCuteCharm = TRUE;
 
-    switch (gBaseStats[species].genderRatio)
+    switch (GetBaseStats(species)->genderRatio)
     {
     case MON_MALE:
     case MON_FEMALE:
@@ -272,7 +272,7 @@ static void GenerateWildMon(u16 species, u8 level, u8 slot)
         && GetMonAbility(&gPlayerParty[0]) == ABILITY_CUTE_CHARM
         && Random() % 3 != 0)
         {
-            u16 leadingMonSpecies = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES);
+            u16 leadingMonSpecies = GetMonData(&gPlayerParty[0], MON_DATA_FORM_SPECIES);
             u32 leadingMonPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
             u8 gender = GetGenderFromSpeciesAndPersonality(leadingMonSpecies, leadingMonPersonality);
 

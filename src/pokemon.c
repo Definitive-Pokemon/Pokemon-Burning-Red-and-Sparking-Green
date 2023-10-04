@@ -2933,8 +2933,18 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     checksum = CalculateBoxMonChecksum(boxMon);
     SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &checksum);
     EncryptBoxMon(boxMon);
-    form = (u8) FORM_PART(species);
-    SetBoxMonData(boxMon, MON_DATA_FORME, &form);
+    if (SPECIES_PART_INCLUDING_DEOXYS(species) == SPECIES_DEOXYS)
+    {
+        form = (u8) FORM_PART_INCLUDING_DEOXYS(species);
+        SetBoxMonData(boxMon, MON_DATA_FORME, &form);
+        species = SPECIES_DEOXYS;
+    }
+    else
+    {
+        form = (u8) FORM_PART(species);
+        SetBoxMonData(boxMon, MON_DATA_FORME, &form);
+        species = SPECIES_PART(species);
+    }
     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[GetBaseStats(species)->growthRate][level]);
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &GetBaseStats(species)->friendship);
     if (GetBaseStats(species)->abilities[1])
@@ -2942,7 +2952,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
-    species = SPECIES_PART(species);
+    
     GetSpeciesName(speciesName, species);
     SetBoxMonData(boxMon, MON_DATA_NICKNAME, speciesName);
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
@@ -4116,7 +4126,11 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
     u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
     u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY, NULL);
     u8 form = GetBoxMonData(boxMon, MON_DATA_FORME, NULL);
-    if (form)
+    if (species == SPECIES_DEOXYS)
+    {
+        return GetGenderFromGenderRatioAndPersonality(gBaseStats[SPECIES_DEOXYS].genderRatio, personality);
+    }
+    else if (form)
     {
         species = species | FORM_FLAG_VALUE(form);
         // misusing vars
@@ -4128,6 +4142,19 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
 
 u8 GetGenderFromSpeciesAndPersonality(u16 species, u32 personality)
 {
+    u8 form = FORM_PART(species);
+    species = SPECIES_PART_INCLUDING_DEOXYS(species);
+    if (species == SPECIES_DEOXYS)
+    {
+        return GetGenderFromGenderRatioAndPersonality(gBaseStats[SPECIES_DEOXYS].genderRatio, personality);
+    }
+    else if (form)
+    {
+        species = species | FORM_FLAG_VALUE(form);
+        // misusing vars
+        form = GetFormIndex(species);
+        return GetGenderFromGenderRatioAndPersonality((u8)gFormBaseStats[form].genderRatio, personality);
+    }
     return GetGenderFromGenderRatioAndPersonality(gBaseStats[species].genderRatio, personality);
 }
 

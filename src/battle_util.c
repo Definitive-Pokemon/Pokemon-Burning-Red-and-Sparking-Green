@@ -1596,9 +1596,9 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
         pokeDef = &gPlayerParty[gBattlerPartyIndexes[gBattlerTarget]];
     else
         pokeDef = &gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]];
-    speciesAtk = GetMonData(pokeAtk, MON_DATA_SPECIES);
+    speciesAtk = GetMonData(pokeAtk, MON_DATA_FORM_SPECIES);
     pidAtk = GetMonData(pokeAtk, MON_DATA_PERSONALITY);
-    speciesDef = GetMonData(pokeDef, MON_DATA_SPECIES);
+    speciesDef = GetMonData(pokeDef, MON_DATA_FORM_SPECIES);
     pidDef = GetMonData(pokeDef, MON_DATA_PERSONALITY);
     if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI)) // Why isn't that check done at the beginning?
     {
