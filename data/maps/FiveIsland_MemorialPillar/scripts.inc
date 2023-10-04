@@ -1,6 +1,7 @@
 .set LOCALID_MEMORIAL_MAN, 1
 
 FiveIsland_MemorialPillar_MapScripts:: @ 81689D2
+	map_script MAP_SCRIPT_ON_LOAD, FiveIsland_MemorialPillar_EventScript_OnLoad
 	.byte 0
 
 FiveIsland_MemorialPillar_EventScript_MemorialMan:: @ 81689D3
@@ -18,6 +19,14 @@ FiveIsland_MemorialPillar_EventScript_MemorialMan:: @ 81689D3
 	msgbox FiveIsland_MemorialPillar_Text_ThisIsWhereIBuriedMyOnix
 	release
 	end
+	
+FiveIsland_MemorialPillar_EventScript_OnLoad::
+	goto_if_unset FLAG_REGISTEEL_DOOR_OPENED, FiveIsland_MemorialPillar_EventScript_RegiDoorClosed
+	end
+	
+FiveIsland_MemorialPillar_EventScript_RegiDoorClosed::
+	setmetatile 9, 62, METATILE_General_CaveWall, 1
+	return
 
 FiveIsland_MemorialPillar_EventScript_AlreadyGotTM42:: @ 8168A18
 	msgbox FiveIsland_MemorialPillar_Text_ScrubScrubTectonix
