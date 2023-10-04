@@ -167,7 +167,7 @@ FakePallet2_EventScript_Mom3::
 	
 FakePallet2_EventScript_BrailleMessage::
 	setvar VAR_0x8005, 130
-	braillemessage Braille_Text_Submit
+	braillemessage_wait Braille_Text_Submit
 	closemessage
 	return
 	
