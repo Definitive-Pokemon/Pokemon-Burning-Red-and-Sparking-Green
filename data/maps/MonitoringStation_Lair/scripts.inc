@@ -65,14 +65,72 @@ MonitoringStation_Lair_EventScript_RanFromKabutops::
 	goto EventScript_MonFlewAway
 	end
 	
+MonitoringStation_Lair_EventScript_Braille1::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_Three
+	braillemessage_wait Braille_Text_Caverns
+	braillemessage_wait Braille_Text_Sealed
+	braillemessage_wait Braille_Text_Away
+	braillemessage Braille_Text_Pokemon
+	waitbuttonpress
+	releaseall
+	end
+	
+MonitoringStation_Lair_EventScript_Braille2::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_ForWe
+	braillemessage Braille_Text_Feared
+	waitbuttonpress
+	releaseall
+	end
+	
+MonitoringStation_Lair_EventScript_Braille3::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_Two
+	braillemessage_wait Braille_Text_Protectors
+	braillemessage_wait Braille_Text_Watch
+	braillemessage_wait Braille_Text_Them
+	braillemessage Braille_Text_Peace
+	waitbuttonpress
+	releaseall
+	end
+	
+MonitoringStation_Lair_EventScript_Braille4::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_You
+	braillemessage_wait Braille_Text_Disrupted
+	braillemessage_wait Braille_Text_ThePeace
+	braillemessage_wait Braille_Text_Bested
+	braillemessage_wait Braille_Text_OneOf
+	braillemessage Braille_Text_Guardians
+	waitbuttonpress
+	releaseall
+	end
+	
+MonitoringStation_Lair_EventScript_Braille5::
+	lockall
+	setvar VAR_0x8005, 130
+	braillemessage_wait Braille_Text_Door
+	braillemessage_wait Braille_Text_Opens
+	braillemessage_wait Braille_Text_Eternal
+	braillemessage_wait Braille_Text_Pokemon2
+	braillemessage Braille_Text_Waits
+	waitbuttonpress
+	releaseall
+	end
+	
 MonitoringStation_Lair_EventScript_FinalBraille::
 	lockall
 	setvar VAR_0x8005, 130
-	braillemessage_wait Braille_Text_Pokemon
-	braillemessage_wait Braille_Text_Feared
-	braillemessage_wait Braille_Text_Peace
-	braillemessage_wait Braille_Text_Guardian
-	braillemessage Braille_Text_Awaits
+	braillemessage_wait Braille_Text_Door
+	braillemessage_wait Braille_Text_Opens
+	braillemessage_wait Braille_Text_Eternal
+	braillemessage_wait Braille_Text_Pokemon2
+	braillemessage Braille_Text_Waits
 	waitbuttonpress
 	call_if_unset FLAG_REGISTEEL_DOOR_OPENED, MonitoringStation_Lair_EventScript_Registeel_Open
 	releaseall
