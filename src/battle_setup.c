@@ -451,6 +451,9 @@ void StartLegendaryBattle(void)
     case SPECIES_CYNDAQUIL:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_WILD);
         break;
+	case SPECIES_KABUTOPS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_WILD);
+        break;
 	default:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
         break;
