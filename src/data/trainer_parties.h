@@ -9318,7 +9318,7 @@ static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt48[
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sTrainerMons_ExecutiveAriana[] = {
+static const struct TrainerMonNoItemCustomMoves sTrainerMons_TeamRocketAdmin[] = {
     {
         .iv = 255,
         .lvl = 62,
@@ -9357,7 +9357,7 @@ static const struct TrainerMonNoItemCustomMoves sTrainerMons_ExecutiveAriana[] =
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sTrainerMons_ExecutiveArcher[] = {
+static const struct TrainerMonNoItemCustomMoves sTrainerMons_TeamRocketAdmin2[] = {
     {
         .iv = 255,
         .lvl = 65,
