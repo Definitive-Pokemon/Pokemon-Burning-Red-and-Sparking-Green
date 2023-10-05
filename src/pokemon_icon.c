@@ -1174,18 +1174,14 @@ void LoadMonIconPalettes(void)
 
 void SafeLoadMonIconPalette(u16 species)
 {
-    u8 palIndex;
-    if (species > NUM_SPECIES)
-        species = SPECIES_NONE;
-    palIndex = gMonIconPaletteIndices[species];
+    u8 palIndex = GetValidMonIconPalIndex(species);
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
 }
 
 void LoadMonIconPalette(u16 species)
 {
-    u8 palIndex;
-    palIndex = gMonIconPaletteIndices[species];
+    u8 palIndex = GetMonIconPaletteIndexFromSpecies(species);
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
 }
@@ -1199,17 +1195,13 @@ void FreeMonIconPalettes(void)
 
 void SafeFreeMonIconPalette(u16 species)
 {
-    u8 palIndex;
-    if (species > NUM_SPECIES)
-        species = SPECIES_NONE;
-    palIndex = gMonIconPaletteIndices[species];
+    u8 palIndex = GetValidMonIconPalIndex(species);
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
 }
 
 void FreeMonIconPalette(u16 species)
 {
-    u8 palIndex;
-    palIndex = gMonIconPaletteIndices[species];
+    u8 palIndex = GetMonIconPaletteIndexFromSpecies(species);
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
 }
 
@@ -1233,20 +1225,27 @@ void LoadMonIconPalettesAt(u16 offset)
 
 const u16 *GetValidMonIconPalettePtr(u16 species)
 {
-    if (species > NUM_SPECIES)
-        species = SPECIES_NONE;
-    return gMonIconPaletteTable[gMonIconPaletteIndices[species]].data;
+    return gMonIconPaletteTable[GetValidMonIconPalIndex(species)].data;
 }
 
 u8 GetValidMonIconPalIndex(u16 species)
 {
-    if (species > NUM_SPECIES)
-        species = SPECIES_NONE;
-    return gMonIconPaletteIndices[species];
+    if (SPECIES_PART_INCLUDING_DEOXYS(species) == SPECIES_DEOXYS)
+        return gMonIconPaletteIndices[SPECIES_DEOXYS];
+    else if (FORM_PART(species))
+        return gMonIconPaletteIndices[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))];
+    else if (species <= NUM_SPECIES)
+        return gMonIconPaletteIndices[species];
+    return gMonIconPaletteIndices[SPECIES_NONE];
 }
 
 u8 GetMonIconPaletteIndexFromSpecies(u16 species)
 {
+    if (SPECIES_PART_INCLUDING_DEOXYS(species) == SPECIES_DEOXYS)
+        return gMonIconPaletteIndices[SPECIES_DEOXYS];
+    else if (FORM_PART(species))
+        return gMonIconPaletteIndices[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))];
+
     return gMonIconPaletteIndices[species];
 }
 

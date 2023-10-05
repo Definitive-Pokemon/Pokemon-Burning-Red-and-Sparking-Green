@@ -241,10 +241,12 @@ static u8 GetBattlerElevation(u8 battlerId, u16 species)
     {
         if (species == SPECIES_CASTFORM)
             ret = sCastformElevations[gBattleMonForms[battlerId]];
-        else if (species > NUM_SPECIES)
+        else if (FORM_PART(species))
+            ret = gEnemyFormMonElevation[GetFormIndex(species)];
+        else if (SPECIES_PART_INCLUDING_DEOXYS(species) <= NUM_SPECIES)
+            ret = gEnemyMonElevation[SPECIES_PART_INCLUDING_DEOXYS(species)];
+        else 
             ret = gEnemyMonElevation[0];
-        else
-            ret = gEnemyMonElevation[species];
     }
     return ret;
 }

@@ -2570,7 +2570,6 @@ u32 FldEff_FieldMoveShowMonInit(void)
 {
     u32 r6 = gFieldEffectArguments[0] & 0x80000000;
     u8 partyIdx = gFieldEffectArguments[0];
-    // TODO:FORME found out where this species is read
     gFieldEffectArguments[0] = GetMonData(&gPlayerParty[partyIdx], MON_DATA_FORM_SPECIES);
     gFieldEffectArguments[1] = GetMonData(&gPlayerParty[partyIdx], MON_DATA_OT_ID);
     gFieldEffectArguments[2] = GetMonData(&gPlayerParty[partyIdx], MON_DATA_PERSONALITY);

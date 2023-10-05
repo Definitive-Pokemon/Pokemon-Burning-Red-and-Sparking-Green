@@ -397,12 +397,9 @@ static void sub_80956A4(u8 x, u8 y)
     u8 position = x + (IN_BOX_ROWS * y);
     u16 species = GetCurrentBoxMonData(position, MON_DATA_SPECIES2);
     u32 personality = GetCurrentBoxMonData(position, MON_DATA_PERSONALITY);
-    if(species == SPECIES_DEOXYS)
-    {
-        personality = GetCurrentBoxMonData(position, MON_DATA_FORME);
-    }
     if (species != SPECIES_NONE)
     {
+        species = GetCurrentBoxMonData(position, MON_DATA_FORM_SPECIES);
         const u8 *iconGfx = GetMonIconPtr(species, personality, 1);
         u8 index = GetValidMonIconPalIndex(species) + 8;
 

@@ -4234,26 +4234,7 @@ static void PokeSum_CreateMonPicSprite(void)
 
     sMonPicBounceState = AllocZeroed(sizeof(struct MonPicBounceState));
 
-    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES2);
-    personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
-    if(species == SPECIES_DEOXYS)
-    {
-        switch(GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_FORME))
-        {
-            case 1: //Attack Forme
-                species = 65531;
-                break;
-            case 2:
-                species = 65532;
-                break;
-            case 3:
-                species = 65533;
-                break;
-            default:
-                species = 65530;
-                break;
-        }
-    }
+    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_FORM_SPECIES);
     trainerId = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_OT_ID);
 
     if (sMonSummaryScreen->savedCallback == CB2_ReturnToTradeMenuFromSummary)
@@ -4379,28 +4360,8 @@ static void PokeSum_CreateMonIconSprite(void)
     u16 species;
     u32 personality;
 
-    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES2);
+    species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_FORM_SPECIES);
     personality = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PERSONALITY);
-    if(species == SPECIES_DEOXYS)
-    {
-        switch(GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_FORME))
-        {
-            case 1: //Attack Forme
-                species = 65531;
-                break;
-            case 2:
-                species = 65532;
-                break;
-            case 3:
-                species = 65533;
-                break;
-            default:
-                species = 65530;
-                break;
-        }
-    }
-
-    
 
     SafeLoadMonIconPalette(species);
 
