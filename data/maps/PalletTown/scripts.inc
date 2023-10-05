@@ -27,6 +27,20 @@ PalletTown_EventScript_TryReadySignLady:: @ 8165488
 	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
 	return
 
+PalletTown_EventScript_DebugGive::
+	lock
+	givemon SPECIES_FOSSILIZED_KABUTOPS, 5, ITEM_NONE
+	release
+	end
+
+PalletTown_EventScript_DebugBattle::
+	lock
+	setwildbattle SPECIES_FOSSILIZED_KABUTOPS, 3, ITEM_NONE
+	delay 40
+	dowildbattle
+	release
+	end
+
 PalletTown_EventScript_SetSignLadyDone:: @ 81654A2
 	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 2
 	return
