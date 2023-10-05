@@ -148,8 +148,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 18,
-      "y": 3,
+      "x": 7,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CinnabarIsland_EventScript_IslandSign"
