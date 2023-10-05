@@ -1184,7 +1184,7 @@ bool8 ScriptMenu_ShowPokemonPic(u16 species, u8 x, u8 y)
     taskId = CreateTask(Task_ScriptShowMonPic, 80);
     gTasks[taskId].data[5] = CreateWindowFromRect(x, y, 8, 8);
     gTasks[taskId].data[0] = 0;
-    gTasks[taskId].data[1] = species;
+    gTasks[taskId].data[1] = species; // never used?
     gTasks[taskId].data[2] = spriteId;
     gSprites[spriteId].callback = SpriteCallbackDummy;
     gSprites[spriteId].oam.priority = 0;

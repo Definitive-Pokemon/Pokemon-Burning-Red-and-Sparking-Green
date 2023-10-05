@@ -1525,7 +1525,7 @@ bool8 ScrCmd_showmonpic(struct ScriptContext * ctx)
     u8 y = ScriptReadByte(ctx);
 
     ScriptMenu_ShowPokemonPic(species, x, y);
-    PlayCry7(species, 0);
+    PlayCry7(SPECIES_PART_INCLUDING_DEOXYS(species), 0);
     return FALSE;
 }
 
