@@ -3102,18 +3102,11 @@ void AnimTask_RolePlaySilhouette(u8 taskId)
             if (GetBattlerSide(gBattleAnimTarget) == B_SIDE_PLAYER)
             {
                 species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattleAnimTarget]], MON_DATA_FORM_SPECIES);
-                if(species == SPECIES_DEOXYS)
-                {
-                    personality = GetMonData(&gPlayerParty[gBattlerPartyIndexes[gBattleAnimTarget]], MON_DATA_FORME);
-                }
             }
             else
             {
-                species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattleAnimTarget]], MON_DATA_SPECIES);
-                if(species == SPECIES_DEOXYS)
-                {
-                    personality = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattleAnimTarget]], MON_DATA_FORME);
-                }
+                species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattleAnimTarget]], MON_DATA_FORM_SPECIES);
+
             } 
         }
         else
