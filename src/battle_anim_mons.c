@@ -227,7 +227,7 @@ static u8 GetBattlerYDelta(u8 battlerId, u16 species)
         }
         else
         {
-            ret = &gMonFrontPicCoords[0].y_offset;
+            ret = gMonFrontPicCoords[0].y_offset;
         }
     }
     return ret;

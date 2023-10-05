@@ -3614,13 +3614,28 @@ static void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon)
         {
             u16 moveLevel;
             u16 move;
-
             moveLevel = (sDeoxysLevelUpLearnsets[deoxysForme][i] & 0xFE00);
-
             if (moveLevel > (level << 9))
                 break;
 
             move = (sDeoxysLevelUpLearnsets[deoxysForme][i] & 0x1FF);
+            if (GiveMoveToBoxMon(boxMon, move) == MON_HAS_MAX_MOVES)
+                DeleteFirstMoveAndGiveMoveToBoxMon(boxMon, move);
+        }
+    }
+    else if (GetBoxMonData(boxMon, MON_DATA_FORME, NULL))
+    {
+        u8 formIndex = GetFormIndex(GetBoxMonData(boxMon, MON_DATA_FORM_SPECIES, NULL));
+        for (i = 0; gFormLevelUpLearnsets[formIndex][i] != LEVEL_UP_END; i++)
+        {
+            u16 moveLevel;
+            u16 move;
+            moveLevel = (gFormLevelUpLearnsets[formIndex][i] & 0xFE00);
+            if (moveLevel > (level << 9))
+                break;
+
+            move = (gFormLevelUpLearnsets[formIndex][i] & 0x1FF);
+
             if (GiveMoveToBoxMon(boxMon, move) == MON_HAS_MAX_MOVES)
                 DeleteFirstMoveAndGiveMoveToBoxMon(boxMon, move);
         }
@@ -3674,27 +3689,52 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
     }
     else
     {
-        // since you can learn more than one move per level
-        // the game needs to know whether you decided to
-        // learn it or keep the old set to avoid asking
-        // you to learn the same move over and over again
-        if (firstMove)
+        if (GetMonData(mon, MON_DATA_FORME, NULL))
         {
-            sLearningMoveTableID = 0;
-
-            while ((gLevelUpLearnsets[species][sLearningMoveTableID] & 0xFE00) != (level << 9))
+            u8 formIndex = GetFormIndex(GetMonData(mon, MON_DATA_FORM_SPECIES, NULL));
+            if (firstMove)
             {
+                sLearningMoveTableID = 0;
+
+                while ((gFormLevelUpLearnsets[formIndex][sLearningMoveTableID] & 0xFE00) != (level << 9))
+                {
+                    sLearningMoveTableID++;
+                    if (gFormLevelUpLearnsets[formIndex][sLearningMoveTableID] == LEVEL_UP_END)
+                        return 0;
+                }
+            }
+
+            if ((gFormLevelUpLearnsets[formIndex][sLearningMoveTableID] & 0xFE00) == (level << 9))
+            {
+                gMoveToLearn = (gFormLevelUpLearnsets[formIndex][sLearningMoveTableID] & 0x1FF);
                 sLearningMoveTableID++;
-                if (gLevelUpLearnsets[species][sLearningMoveTableID] == LEVEL_UP_END)
-                    return 0;
+                retVal = GiveMoveToMon(mon, gMoveToLearn);
             }
         }
-
-        if ((gLevelUpLearnsets[species][sLearningMoveTableID] & 0xFE00) == (level << 9))
+        else
         {
-            gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & 0x1FF);
-            sLearningMoveTableID++;
-            retVal = GiveMoveToMon(mon, gMoveToLearn);
+            // since you can learn more than one move per level
+            // the game needs to know whether you decided to
+            // learn it or keep the old set to avoid asking
+            // you to learn the same move over and over again
+            if (firstMove)
+            {
+                sLearningMoveTableID = 0;
+
+                while ((gLevelUpLearnsets[species][sLearningMoveTableID] & 0xFE00) != (level << 9))
+                {
+                    sLearningMoveTableID++;
+                    if (gLevelUpLearnsets[species][sLearningMoveTableID] == LEVEL_UP_END)
+                        return 0;
+                }
+            }
+
+            if ((gLevelUpLearnsets[species][sLearningMoveTableID] & 0xFE00) == (level << 9))
+            {
+                gMoveToLearn = (gLevelUpLearnsets[species][sLearningMoveTableID] & 0x1FF);
+                sLearningMoveTableID++;
+                retVal = GiveMoveToMon(mon, gMoveToLearn);
+            }
         }
     }
 
@@ -5386,6 +5426,7 @@ static void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex)
     gBattleMons[battlerId].isEgg = GetMonData(&gPlayerParty[partyIndex], MON_DATA_IS_EGG, NULL);
     gBattleMons[battlerId].abilityNum = GetMonData(&gPlayerParty[partyIndex], MON_DATA_ABILITY_NUM, NULL);
     gBattleMons[battlerId].otId = GetMonData(&gPlayerParty[partyIndex], MON_DATA_OT_ID, NULL);
+    gBattleMons[battlerId].form = GetMonData(&gPlayerParty[partyIndex], MON_DATA_FORME, NULL);
     gBattleMons[battlerId].type1 = gBaseStats[gBattleMons[battlerId].species].type1;
     gBattleMons[battlerId].type2 = gBaseStats[gBattleMons[battlerId].species].type2;
     gBattleMons[battlerId].ability = GetAbilityBySpecies(gBattleMons[battlerId].species, gBattleMons[battlerId].abilityNum);
@@ -8336,7 +8377,11 @@ u16 GetFormAndSpeciesFromMon(struct Pokemon *mon)
 struct BaseStats *GetBaseStats(u16 species)
 {
     struct BaseStats * result;
-    if (FORM_PART(species))
+    if (SPECIES_PART_INCLUDING_DEOXYS(species) == SPECIES_DEOXYS)
+    {
+        result = (struct BaseStats *) &gDeoxysFormeBaseStats[FORM_PART_INCLUDING_DEOXYS(species)];
+    }
+    else if (FORM_PART(species))
     {
         u8 formIndex = GetFormIndex(species);
         result = (struct BaseStats *) &gFormBaseStats[formIndex];
