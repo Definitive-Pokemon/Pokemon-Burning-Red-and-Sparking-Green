@@ -5554,12 +5554,12 @@ static const struct TrainerMonItemCustomMoves sTrainerMons_LeaderGiovanni[] = {
 static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt[] = {
     {
         .iv = 0,
-        .lvl = 15,
+        .lvl = 13,
         .species = SPECIES_GULPIN,
     },
     {
         .iv = 0,
-        .lvl = 15,
+        .lvl = 13,
         .species = SPECIES_DUNSPARCE,
     },
 };
@@ -5822,12 +5822,12 @@ static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt17[
 static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt18[] = {
     {
         .iv = 0,
-        .lvl = 29,
+        .lvl = 27,
         .species = SPECIES_KOFFING,
     },
     {
         .iv = 0,
-        .lvl = 32,
+        .lvl = 30,
         .species = SPECIES_WEEZING,
     },
 };
@@ -6192,17 +6192,17 @@ static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt40[
 static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt41[] = {
     {
         .iv = 0,
-        .lvl = 42,
+        .lvl = 40,
         .species = SPECIES_SLUGMA,
     },
     {
         .iv = 0,
-        .lvl = 43,
+        .lvl = 41,
         .species = SPECIES_MAROWAK,
     },
     {
         .iv = 0,
-        .lvl = 46,
+        .lvl = 44,
         .species = SPECIES_MAGCARGO,
     },
 };
@@ -8886,12 +8886,12 @@ static const struct TrainerMonNoItemDefaultMoves sTrainerMons_PlayerLeaf[] = {
 static const struct TrainerMonNoItemDefaultMoves sTrainerMons_TeamRocketGrunt42[] = {
     {
         .iv = 0,
-        .lvl = 65,
+        .lvl = 63,
         .species = SPECIES_VILEPLUME,
     },
     {
         .iv = 0,
-        .lvl = 65,
+        .lvl = 63,
         .species = SPECIES_HOUNDOOM,
     },
 };
