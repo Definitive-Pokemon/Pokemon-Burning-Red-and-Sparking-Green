@@ -292,8 +292,8 @@ const union AnimCmd *const gSpriteAnimTable_82349BC[] =
 #define SPECIES_SHINY_PAL(species, pal) [SPECIES_##species] = {pal, SPECIES_##species + SPECIES_SHINY_TAG}
 
 
-#define FORM_SPECIES_PAL(species, pal) [FORM_##species] = {pal, FORM_##species}
-#define FORM_SPECIES_SHINY_PAL(species, pal) [FORM_##species] = {pal, FORM_##species + SPECIES_SHINY_TAG}
+#define FORM_SPECIES_PAL(formSpecies, pal) [FORM_SPECIES_SPRITE_INDEX(formSpecies)] = {pal, formSpecies}
+#define FORM_SPECIES_SHINY_PAL(formSpecies, pal) [FORM_SPECIES_SPRITE_INDEX(formSpecies)] = {pal, formSpecies + SPECIES_SHINY_TAG}
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
