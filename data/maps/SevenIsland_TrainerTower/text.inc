@@ -30,4 +30,10 @@ SevenIsland_TrainerTower_Text_TrainerTowerSign:: @ 818C338
 SevenIsland_TrainerTower_Text_TrainerTowerAhead:: @ 818C370
     .string "TRAINER TOWER AHEAD$"
 
-
+SevenIsland_TrainerTower_Text_Renovations::
+	.string "You seem to be a strong TRAINER.\p"
+	.string "Unfortunately, TRAINER TOWER is\n"
+	.string "currently undergoing some minor\p"
+	.string "renovations.\p"
+	.string "Be sure to check back later.\n"
+	.string "Wahahah!$"
