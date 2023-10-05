@@ -12194,6 +12194,6 @@ const struct BaseStats gDeoxysFormeBaseStats[] =
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
     },
-}
+};
 
 #endif //GUARD_BASE_STATS_H
