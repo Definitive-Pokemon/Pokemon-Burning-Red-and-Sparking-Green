@@ -6515,29 +6515,29 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sTrainerMons_TeamRocketGrunt48),
         .party = {.NoItemDefaultMoves = sTrainerMons_TeamRocketGrunt48}
     },
-    [TRAINER_TEAM_ROCKET_ADMIN] = {
+    [TRAINER_EXECUTIVE_ARIANA] = {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = CLASS_TEAM_ROCKET,
+        .trainerClass = CLASS_EXECUTIVE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F,
-        .trainerName = _("ADMIN"),
+        .trainerName = _("ARIANA"),
         .items = {ITEM_HYPER_POTION},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = NELEMS(sTrainerMons_TeamRocketAdmin),
-        .party = {.NoItemCustomMoves = sTrainerMons_TeamRocketAdmin}
+        .partySize = NELEMS(sTrainerMons_ExecutiveAriana),
+        .party = {.NoItemCustomMoves = sTrainerMons_ExecutiveAriana}
     },
-    [TRAINER_TEAM_ROCKET_ADMIN_2] = {
+    [TRAINER_EXECUTIVE_ARCHER] = {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = CLASS_TEAM_ROCKET,
+        .trainerClass = CLASS_EXECUTIVE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        .trainerName = _("ADMIN"),
+        .trainerName = _("ARCHER"),
         .items = {ITEM_HYPER_POTION},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = NELEMS(sTrainerMons_TeamRocketAdmin2),
-        .party = {.NoItemCustomMoves = sTrainerMons_TeamRocketAdmin2}
+        .partySize = NELEMS(sTrainerMons_ExecutiveArcher),
+        .party = {.NoItemCustomMoves = sTrainerMons_ExecutiveArcher}
     },
     [TRAINER_SCIENTIST_GIDEON] = {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM,
