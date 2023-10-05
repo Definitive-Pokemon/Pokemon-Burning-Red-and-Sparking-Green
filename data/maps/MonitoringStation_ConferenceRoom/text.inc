@@ -18,7 +18,7 @@ MonitoringStation_ConferenceRoom_Text_RocketM3::
 	.string "this place?\p"
 	.string "Hm. You might want to look for a way\n"
 	.string "to get inside the personal office\p"
-	.string "of our EXECUTIVE.\p"
+	.string "of our UNDERBOSS.\p"
 	.string "You will need a YELLOW KEY\n"
 	.string "for that.\p"
 	.string "I don't have a YELLOW KEY,\n"
@@ -32,7 +32,7 @@ MonitoringStation_ConferenceRoom_Text_ObtainedBlueKey::
 
 MonitoringStation_ConferenceRoom_Text_RocketM32::
 	.string "I hope you manage to reach the\n"
-	.string "EXECUTIVE without running into\p"
+	.string "UNDERBOSS without running into\p"
 	.string "trouble.$"
 
 MonitoringStation_ConferenceRoom_Text_RocketF1::
@@ -77,7 +77,7 @@ MonitoringStation_ConferenceRoom_Text_Text::
 	.string "It was clear the readings came\n"
 	.string "from this particular stone.\p"
 	.string "Despite some skepticism among the\n"
-	.string "research team, our EXECUTIVE\p"
+	.string "research team, our UNDERBOSS\p"
 	.string "ordered the stone to be taken and\n"
 	.string "subjected to rigorous testing.\p"
 	.string "Unfortunately, initial tests failed\n"

@@ -28,7 +28,7 @@ MonitoringStation_Text_StorageFinal::
 	.string "capture POKéMON from our visitors,\p"
 	.string "many TRAINERS have been enjoying\n"
 	.string "this facility.\p"
-	.string "So the EXECUTIVE decided to leave\n"
+	.string "So the UNDERBOSS decided to leave\n"
 	.string "it to the employees upstairs.\p"
 	.string "Oh, and yeah…\p"
 	.string "… Thanks for your help.$"
@@ -42,7 +42,7 @@ MonitoringStation_Text_StorageGrunt::
 	.string "Without the key, I need to override\n"
 	.string "the lock manually.\p"
 	.string "You could have just helped that kid\n"
-	.string "get to the EXECUTIVE by giving him\p"
+	.string "get to the UNDERBOSS by giving him\p"
 	.string "that YELLOW KEY…$"
 	
 MonitoringStation_Text_Quartet::
@@ -53,11 +53,11 @@ MonitoringStation_Text_Admin2::
 	.string "And who are you to order\n"
 	.string "me around?\p"
 	.string "I will report your misbehavior to\n"
-	.string "the EXECUTIVE.\p"
+	.string "the UNDERBOSS.\p"
 	.string "You can explain it to…$"
 	
 MonitoringStation_Text_Executive::
-	.string "I AM the EXECUTIVE, you nitwit!\p"
+	.string "I AM the UNDERBOSS, you nitwit!\p"
 	.string "I've been undercover as a GRUNT for\n"
 	.string "a while now, in order to uncover\p"
 	.string "your scheme to overthrow me.$"
@@ -72,7 +72,7 @@ MonitoringStation_Text_Executive2::
 	
 MonitoringStation_Text_Admin3::
 	.string "Alright then. I wanted to be the\n"
-	.string "EXECUTIVE. So what?$"
+	.string "UNDERBOSS. So what?$"
 	
 MonitoringStation_Text_Executive3::
 	.string "It's not just that…\p"
@@ -83,10 +83,10 @@ MonitoringStation_Text_Executive3::
 	.string "what you want.\p"
 	.string "You aren't worthy of the rank of\n"
 	.string "ADMIN, let alone the rank of\p"
-	.string "EXECUTIVE.$"
+	.string "UNDERBOSS.$"
 	
 MonitoringStation_Text_TookYellowKey::
-	.string "The EXECUTIVE took the YELLOW KEY\n"
+	.string "The UNDERBOSS took the YELLOW KEY\n"
 	.string "from the ADMIN.$"
 	
 MonitoringStation_Text_Executive4::
@@ -95,7 +95,7 @@ MonitoringStation_Text_Executive4::
 	
 MonitoringStation_Text_ObtainedYellowKey::
 	.string "{PLAYER} received a YELLOW KEY\n"
-	.string "from the EXECUTIVE!$"
+	.string "from the UNDERBOSS!$"
 	
 MonitoringStation_Text_Executive5::
 	.string "The ADMIN had this key all along.\n"

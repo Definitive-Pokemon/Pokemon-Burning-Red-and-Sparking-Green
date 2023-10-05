@@ -77,12 +77,12 @@ MonitoringStation_Central_Text_Admin::
 	.string "It was taken from me by the ghost\n"
 	.string "you have probably seen wandering\p"
 	.string "around.\p"
-	.string "Our EXECUTIVE has the other key,\n"
+	.string "Our UNDERBOSS has the other key,\n"
 	.string "so you should go look for him.\p"
 	.string "The alternative would be to\n"
 	.string "challenge that monster…\p"
 	.string "I suggest you search for a way to\n"
-	.string "get into the EXECUTIVE's office.$"
+	.string "get into the UNDERBOSS' office.$"
 
 MonitoringStation_Central_Text_Admin2::
 	.string "Well, what are you waiting for?$"

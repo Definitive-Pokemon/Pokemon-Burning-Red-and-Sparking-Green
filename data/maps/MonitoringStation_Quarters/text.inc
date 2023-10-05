@@ -16,7 +16,7 @@ MonitoringStation_Quarters_Text_RocketM2::
 	
 MonitoringStation_Quarters_Text_RocketM3::
 	.string "You're looking for a YELLOW KEY?\p"
-	.string "The EXECUTIVE is still hiding away,\n"
+	.string "The UNDERBOSS is still hiding away,\n"
 	.string "so you should go find our ADMIN.\p"
 	.string "You must have ran into our her\n"
 	.string "somewhere along the way.\p"
@@ -43,5 +43,5 @@ MonitoringStation_Quarters_Text_RocketF1::
 MonitoringStation_Quarters_Text_RocketF2::
 	.string "Some people claim that our ADMIN\n"
 	.string "has been plotting to take over\p"
-	.string "the position of SEVII's EXECUTIVE.$"
+	.string "the position of SEVII's UNDERBOSS.$"
 	
