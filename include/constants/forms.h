@@ -5,14 +5,14 @@
 
 #define FORM_FLAG_SHIFT 14
 // zero form is simply the 'normal' Gen 3 pokemon!
-#define FORM_FLAG_VALUE(form) ((u16) form << FORM_FLAG_SHIFT)
+#define FORM_FLAG_VALUE(form) ((form) << FORM_FLAG_SHIFT)
 #define FIRST_FORM FORM_FLAG_VALUE(1)
 #define SECOND_FORM FORM_FLAG_VALUE(2)
 #define THIRD_FORM FORM_FLAG_VALUE(3)
 #define FORM_SPECIES_MASK (FIRST_FORM - 1)
-#define FORM_PART(formSpecies) (formSpecies >> FORM_FLAG_SHIFT)
-#define SPECIES_PART(species) (species & ((u16) FORM_SPECIES_MASK))
-#define FORM_SPECIES_NUMBER(form, species) (species | form)
+#define FORM_PART(formSpecies) ((formSpecies) >> FORM_FLAG_SHIFT)
+#define SPECIES_PART(species) ((species) & ((u16) FORM_SPECIES_MASK))
+#define FORM_SPECIES_NUMBER(form, species) ((species) | (form))
 
 // this is the exact order pokemon forms appear in ROM pokemon data tables
 // These definitions should only be used inside data files
@@ -40,7 +40,7 @@
 #define DEOXYS_START_FORME_NUM SPECIES_DEOXYS_ATTACK_FORME
 #define DEOXYS_LAST_FORME_NUM SPECIES_DEOXYS_SPEED_FORME
 
-#define SPECIES_PART_INCLUDING_DEOXYS(formSpecies) (formSpecies & ((u16) (1 << (FORM_FLAG_SHIFT - FORM_NUM_BITS)) - 1))
-#define FORM_PART_INCLUDING_DEOXYS(formSpecies) (formSpecies >> (FORM_FLAG_SHIFT - FORM_NUM_BITS))
+#define SPECIES_PART_INCLUDING_DEOXYS(formSpecies) ((formSpecies) & ((u16) (1 << (FORM_FLAG_SHIFT - FORM_NUM_BITS)) - 1))
+#define FORM_PART_INCLUDING_DEOXYS(formSpecies) ((formSpecies) >> (FORM_FLAG_SHIFT - FORM_NUM_BITS))
 
 #endif // GUARD_CONSTANTS_FORMS_H
