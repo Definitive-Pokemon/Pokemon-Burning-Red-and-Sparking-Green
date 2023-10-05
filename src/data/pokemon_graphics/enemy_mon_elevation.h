@@ -66,5 +66,5 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
 
 const u8 gEnemyFormMonElevation[NUM_TOTAL_VARIANTS] =
 {
-    [0] = [0], // filler
+    [0] = 0, // filler
 }
