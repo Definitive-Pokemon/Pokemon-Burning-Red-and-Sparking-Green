@@ -64,7 +64,7 @@ FiveIsland_RocketWarehouse_Text_MadeItSoYouCanComeBackThrough:: @ 817B7FA
     .string "in through there.\p"
     .string "Why don't you go get rested and\n"
     .string "refreshed for what lies ahead?\p"
-    .string "The ADMIN after me outranks me\n"
+    .string "The EXECUTIVE after me outranks me\n"
     .string "thoroughly as a TRAINER.\p"
     .string "You'd better steel yourself for one\n"
     .string "harsh challenge.$"
