@@ -7730,12 +7730,10 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, NULL);
-    if (species != SPECIES_NONE && species != SPECIES_EGG)
-    {
-        species = GetMonData(mon, MON_DATA_FORM_SPECIES, NULL);
-    }
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+    if (species != SPECIES_NONE && species != SPECIES_EGG)
+        species = GetMonData(mon, MON_DATA_FORM_SPECIES, NULL);
     return GetMonSpritePalStructFromOtIdPersonality(species, otId, personality);
 }
 
