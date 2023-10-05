@@ -2899,13 +2899,14 @@ static u8 sub_8086860(u32 species, u32 otId, u32 personality)
     u8 monSprite;
     struct Sprite * sprite;
     u32 speciesForCry = SPECIES_PART_INCLUDING_DEOXYS(species);
+    // something going wrong here affecting palettes?
     playCry = (speciesForCry & 0x80000000) >> 16;
     species &= 0x7fffffff;
     monSprite = CreateMonSprite_FieldMove(species, otId, personality, 0x140, 0x50, 0);
     sprite = &gSprites[monSprite];
     sprite->callback = SpriteCallbackDummy;
     sprite->oam.priority = 0;
-    sprite->data[0] = speciesForCry;
+    sprite->data[0] = species;
     sprite->data[6] = playCry;
     return monSprite;
 }
