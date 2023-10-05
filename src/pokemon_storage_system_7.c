@@ -399,9 +399,9 @@ static void sub_80956A4(u8 x, u8 y)
     u32 personality = GetCurrentBoxMonData(position, MON_DATA_PERSONALITY);
     if (species != SPECIES_NONE)
     {
-        species = GetCurrentBoxMonData(position, MON_DATA_FORM_SPECIES);
         const u8 *iconGfx = GetMonIconPtr(species, personality, 1);
         u8 index = GetValidMonIconPalIndex(species) + 8;
+        species = GetCurrentBoxMonData(position, MON_DATA_FORM_SPECIES);
 
         BlitBitmapRectToWindow4BitTo8Bit(gPSSData->field_2200,
                                          iconGfx,
