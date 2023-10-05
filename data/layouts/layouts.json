@@ -820,8 +820,8 @@
     {
       "id": "LAYOUT_CINNABAR_ISLAND",
       "name": "CinnabarIsland_Layout",
-      "width": 24,
-      "height": 20,
+      "width": 34,
+      "height": 30,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -1085,7 +1085,7 @@
       "id": "LAYOUT_ROUTE20",
       "name": "Route20_Layout",
       "width": 120,
-      "height": 20,
+      "height": 30,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -2404,7 +2404,7 @@
     {
       "id": "LAYOUT_ROUTE21_SOUTH",
       "name": "Route21_South_Layout",
-      "width": 24,
+      "width": 34,
       "height": 50,
       "border_width": 2,
       "border_height": 2,

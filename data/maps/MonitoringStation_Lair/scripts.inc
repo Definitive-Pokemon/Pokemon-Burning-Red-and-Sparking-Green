@@ -31,7 +31,7 @@ MonitoringStation_Lair_EventScript_Kabutops::
 	special QuestLog_CutRecording
 	lock
 	faceplayer
-	setwildbattle SPECIES_KABUTOPS, 60, ITEM_NONE
+	setwildbattle SPECIES_KABUTOPS, 70, ITEM_NONE
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
 	msgbox MonitoringStation_Lair_Text_Kabutops
