@@ -178,19 +178,19 @@ static u8 GetBattlerYDelta(u8 battlerId, u16 species)
         }
         else if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
         {
-            ret = &gMonBackPicCoords[SPECIES_DEOXYS].y_offset;
+            ret = gMonBackPicCoords[SPECIES_DEOXYS].y_offset;
         }
         else if (FORM_PART(species))
         {
-            ret = &gMonBackPicCoords[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))].y_offset;
+            ret = gMonBackPicCoords[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))].y_offset;
         }
         else if (species <= NUM_SPECIES)
         {
-            ret = &gMonBackPicCoords[species].y_offset;
+            ret = gMonBackPicCoords[species].y_offset;
         }
         else
         {
-            ret = &gMonFrontPicCoords[0].y_offset;
+            ret = gMonFrontPicCoords[0].y_offset;
         }
     }
     else
@@ -215,15 +215,15 @@ static u8 GetBattlerYDelta(u8 battlerId, u16 species)
         }
         else if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
         {
-            ret = &gMonFrontPicCoords[SPECIES_DEOXYS].y_offset;
+            ret = gMonFrontPicCoords[SPECIES_DEOXYS].y_offset;
         }
         else if (FORM_PART(species))
         {
-            ret = &gMonFrontPicCoords[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))].y_offset;
+            ret = gMonFrontPicCoords[FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species))].y_offset;
         }
         else if (species <= NUM_SPECIES)
         {
-            ret = &gMonFrontPicCoords[species].y_offset;
+            ret = gMonFrontPicCoords[species].y_offset;
         }
         else
         {

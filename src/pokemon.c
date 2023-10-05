@@ -7148,7 +7148,13 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
     {
         return 0;
     }
-    learnableMoves = gTMHMLearnsets[species];
+    if (species != SPECIES_DEOXYS && GetMonData(mon, MON_DATA_FORME, NULL))
+    {
+        learnableMoves = gFormTMHMLearnsets[GetFormIndex(GetMonData(mon, MON_DATA_FORM_SPECIES, NULL))];
+    }
+    else 
+        learnableMoves = gTMHMLearnsets[species];
+
     while (*learnableMoves != 0xFF)
     {
         if (*learnableMoves == tm)
@@ -7456,6 +7462,18 @@ u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves)
     u8 numMoves = 0;
     int i;
 
+    if (SPECIES_PART_INCLUDING_DEOXYS(species) == SPECIES_DEOXYS)
+    {
+        species = SPECIES_DEOXYS;
+    }
+    else if(FORM_PART(species))
+    {
+        u8 formIndex = GetFormIndex(species);
+        for (i = 0; i < 20 && gFormLevelUpLearnsets[formIndex][i] != 0xFFFF; i++)
+            moves[numMoves++] = gFormLevelUpLearnsets[formIndex][i] & 0x1FF;
+        return numMoves;
+    }
+
     for (i = 0; i < 20 && gLevelUpLearnsets[species][i] != 0xFFFF; i++)
          moves[numMoves++] = gLevelUpLearnsets[species][i] & 0x1FF;
 
@@ -7671,6 +7689,10 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
 const struct CompressedSpritePalette *GetMonSpritePalStruct(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, NULL);
+    if (species != SPECIES_NONE && species != SPECIES_EGG)
+    {
+        species = GetMonData(mon, MON_DATA_FORM_SPECIES, NULL);
+    }
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
     return GetMonSpritePalStructFromOtIdPersonality(species, otId, personality);
@@ -7681,12 +7703,16 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
     u32 shinyValue;
 
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
-    if (species >= 65530 && species <= 65533) //Deoxys
+    if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM) 
     {
         if(shinyValue < 8)
             return &gMonShinyPaletteTable[SPECIES_DEOXYS];
         else
             return &gMonPaletteTable[SPECIES_DEOXYS];
+    }
+    if (FORM_PART(species))
+    {
+        species = FORM_SPECIES_SPRITE_INDEX(GetFormIndex(species));
     }
     if (shinyValue < 8)
         return &gMonShinyPaletteTable[species];

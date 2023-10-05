@@ -1922,7 +1922,7 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
         {
         } while (0);
     }
-    else if (CanLearnTutorMove(GetMonData(mon, MON_DATA_SPECIES), tutor) == FALSE)
+    else if (CanLearnTutorMove(GetMonData(mon, MON_DATA_FORM_SPECIES), tutor) == FALSE)
     {
         return CANNOT_LEARN_MOVE;
     }
@@ -1971,9 +1971,23 @@ static bool8 CanLearnTutorMove(u16 species, u8 tutor)
         else
             return FALSE;
     default:
+        if (species >= DEOXYS_START_FORME_NUM && species <= DEOXYS_LAST_FORME_NUM)
+        {
+            if (sTutorLearnsets[SPECIES_DEOXYS] & ((u64) 1 << tutor))
+                return TRUE;
+            else 
+                return FALSE;
+        }
+        else if (FORM_PART(species))
+        {
+            if (sFormTutorLearnsets[GetFormIndex(species)] & ((u64) 1 << tutor))
+                return TRUE;
+            else 
+                return FALSE;
+        }
         if (sTutorLearnsets[species] & ((u64) 1 << tutor))
             return TRUE;
-        else
+        else 
             return FALSE;
     }
 }
@@ -2701,22 +2715,17 @@ static void CreatePartyMonIconSprite(struct Pokemon *mon, struct PartyMenuBox *m
     if (IsMultiBattle() == TRUE && gMain.inBattle)
         handleDeoxys = (sMultiBattlePartnersPartyMask[slot] ^ handleDeoxys) ? TRUE : FALSE;
     species2 = GetMonData(mon, MON_DATA_SPECIES2);
-    if(species2 == SPECIES_DEOXYS && handleDeoxys)
-    {
-        personality = GetMonData(mon, MON_DATA_FORME);
-    }
 
-    CreatePartyMonIconSpriteParameterized(species2, personality, menuBox, 1, handleDeoxys);
+    if (species2 != SPECIES_NONE)
+        CreatePartyMonIconSpriteParameterized(GetMonData(mon, MON_DATA_FORM_SPECIES), personality, menuBox, 1, handleDeoxys);
+
     UpdatePartyMonHPBar(menuBox->monSpriteId, mon);
 }
 
 static void CreatePartyMonIconSpriteParameterized(u16 species, u32 pid, struct PartyMenuBox *menuBox, u8 priority, bool32 handleDeoxys)
 {
-    if (species != SPECIES_NONE)
-    {
-        menuBox->monSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, menuBox->spriteCoords[0], menuBox->spriteCoords[1], 4, pid, handleDeoxys);
-        gSprites[menuBox->monSpriteId].oam.priority = priority;
-    }
+    menuBox->monSpriteId = CreateMonIcon(species, SpriteCB_MonIcon, menuBox->spriteCoords[0], menuBox->spriteCoords[1], 4, pid, handleDeoxys);
+    gSprites[menuBox->monSpriteId].oam.priority = priority;
 }
 
 static void UpdateHPBar(u8 spriteId, u16 hp, u16 maxhp)
