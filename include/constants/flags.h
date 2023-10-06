@@ -967,9 +967,9 @@
 #define FLAG_KABUTOPS_FLED               0x3AD
 #define FLAG_FOUGHT_KABUTOPS               0x3AE
 #define FLAG_GET_JAR               0x3AF
+#define FLAG_GOT_LUM_BERRY               0x3B0
 
 // Unused?
-#define FLAG_0x3B0               0x3B0
 #define FLAG_0x3B1               0x3B1
 #define FLAG_0x3B2               0x3B2
 #define FLAG_0x3B3               0x3B3

@@ -1,4 +1,4 @@
-CeruleanCity_House1_Text_Farm::
+CinnabarIsland_BerryFarm_Text_Farm::
 	.string "Hello there!\n"
 	.string "I'm terribly sorry, but our BERRIES\n"
 	.string "are specifically grown for folks\p"
@@ -6,7 +6,7 @@ CeruleanCity_House1_Text_Farm::
 	.string "However, I could tell you about the\n"
 	.string "history of our farm if you like.$"
 	
-CeruleanCity_House1_Text_FarmExplain::
+CinnabarIsland_BerryFarm_Text_FarmExplain::
 	.string "This farm was built by our ancestors,\n"
 	.string "who were the first to settle on what\p"
 	.string "is now known as CINNABAR ISLAND.\p"
