@@ -415,6 +415,7 @@
 #define SPECIES_JIRACHI 409
 #define SPECIES_DEOXYS 410
 #define SPECIES_CHIMECHO 411
+// This is where you would add new pokemon (species)
 #define SPECIES_EGG 412
 
 #define SPECIES_UNOWN_B 413
@@ -445,10 +446,19 @@
 #define SPECIES_UNOWN_EMARK 438
 #define SPECIES_UNOWN_QMARK 439
 
+// Or add new pokemon here, but change the marker of NUM_SPECIES
+// always needs to be updated if a new species is to be added. Final sprited mon num + 1
+#define NUM_NON_FORM_MON_SPRITES 440 
+// deprecate this
+// add new form/variant mons here
+#define SPECIES_FOSSILIZED_KABUTOPS 440
+
 #define SPECIES_OLD_UNOWN_EMARK 412
 #define SPECIES_OLD_UNOWN_QMARK 413
 
 #define NUM_SPECIES SPECIES_EGG
+//#define NUM_TOTAL_WITH_FORMS 440
+#define NUM_DEX_ENTRIES_WITH_FORMS (NUM_SPECIES + 1)
 
 // National Dex Index Defines
 
