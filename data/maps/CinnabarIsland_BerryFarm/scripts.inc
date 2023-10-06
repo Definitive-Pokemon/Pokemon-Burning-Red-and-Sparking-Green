@@ -22,6 +22,7 @@ CinnabarIsland_BerryFarm_EventScript_FarmExplain::
 	msgbox CinnabarIsland_BerryFarm_Text_FarmExplain
 	giveitem_msg CinnabarIsland_BerryFarm_Text_ObtainedLumBerry, ITEM_LUM_BERRY
 	msgbox CinnabarIsland_BerryFarm_Text_Thanks
+	setflag FLAG_GOT_LUM_BERRY
 	release
 	end
 	
@@ -34,8 +35,6 @@ CinnabarIsland_BerryFarm_EventScript_Man::
 	lock
 	faceplayer
 	goto_if_unset FLAG_GET_JAR, CinnabarIsland_BerryFarm_EventScript_ManGiveJar
-	compare VAR_RESULT, FALSE
-	goto_if_eq CinnabarIsland_BerryFarm_EventScript_ManGiveJar
 	msgbox CinnabarIsland_BerryFarm_Text_Farmer
 	release
 	end
