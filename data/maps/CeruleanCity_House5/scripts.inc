@@ -23,7 +23,7 @@ CeruleanCity_House5_EventScript_RRBerryPowderMan::
 	checkitem ITEM_POWDER_JAR, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq CeruleanCity_House5_EventScript_RRGiveJar
-	CeruleanCity_House5_Text_RRNeedBerryPowder
+	msgbox CeruleanCity_House5_Text_RRNeedBerryPowder
 	release
 	end
 	
