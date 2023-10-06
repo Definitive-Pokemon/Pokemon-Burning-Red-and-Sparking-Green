@@ -706,7 +706,7 @@ static bool32 IsWonderCardSpeciesValid(const u16 * data)
         return FALSE;
     if (data[0] == SPECIES_NONE)
         return FALSE;
-    if (data[0] >= NUM_SPECIES)
+    if (data[0] >= NUM_SPECIES_WITH_FORMS)
         return FALSE;
     return TRUE;
 }

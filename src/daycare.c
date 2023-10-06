@@ -676,7 +676,7 @@ static u16 GetEggSpecies(u16 species)
     for (i = 0; i < EVOS_PER_MON; i++)
     {
         found = FALSE;
-        for (j = 1; j < NUM_SPECIES; j++)
+        for (j = 1; j < NUM_SPECIES_WITH_FORMS; j++)
         {
             for (k = 0; k < EVOS_PER_MON; k++)
             {
