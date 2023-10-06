@@ -54,7 +54,6 @@ CeruleanCity_House1_Text_RRShop::
 CeruleanCity_House1_Text_Thanks::
 	.string "Come again.$"
 	
-	
 CeruleanCity_House1_Text_RRShop::
 	.string "Hello there.\n"
 	.string "What do you need?$"
