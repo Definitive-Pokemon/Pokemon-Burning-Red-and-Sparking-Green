@@ -1,10 +1,11 @@
 CinnabarIsland_BerryFarm_Text_Farm::
 	.string "Hello there!\n"
-	.string "I'm terribly sorry, but our BERRIES\n"
+	.string "I'm terribly sorry, but our BERRIES\p"
 	.string "are specifically grown for folks\p"
 	.string "who live on CINNABAR ISLAND.\p"
 	.string "However, I could tell you about the\n"
-	.string "history of our farm if you like.$"
+	.string "history of our farm if you like.\p"
+	.string "Do you want to hear it?$"
 	
 CinnabarIsland_BerryFarm_Text_FarmExplain::
 	.string "This farm was built by our ancestors,\n"
