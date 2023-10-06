@@ -2200,5 +2200,10 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x47,
         .y_offset = 0x06,
     },
+    [SPECIES_FOSSILIZED_KABUTOPS] =
+    {
+        .size = 0x47,
+        .y_offset = 0x06,
+    },
 };
 
