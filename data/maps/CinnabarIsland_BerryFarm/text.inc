@@ -39,7 +39,7 @@ CinnabarIsland_BerryFarm_Text_Hello::
 	.string "CINNABAR BERRY FARM.\p"
 	.string "Feel free to look around.$"
 	
-CinnabarIsland_BerryFarm_Text_Farm::
+CinnabarIsland_BerryFarm_Text_Farmer::
 	.string "Hey there!\n"
 	.string "I work the land, growing\n"
 	.string "BERRY TREES and picking\p"

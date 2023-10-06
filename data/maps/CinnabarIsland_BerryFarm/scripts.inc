@@ -35,7 +35,7 @@ CinnabarIsland_BerryFarm_EventScript_Man::
 	goto_if_unset FLAG_GET_JAR, CinnabarIsland_BerryFarm_EventScript_ManGiveJar
 	compare VAR_RESULT, FALSE
 	goto_if_eq CinnabarIsland_BerryFarm_EventScript_ManGiveJar
-	msgbox CinnabarIsland_BerryFarm_Text_Farm
+	msgbox CinnabarIsland_BerryFarm_Text_Farmer
 	release
 	end
 
