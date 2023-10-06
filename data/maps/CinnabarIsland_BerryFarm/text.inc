@@ -3,8 +3,8 @@ CeruleanCity_House1_Text_Farm::
 	.string "I'm terribly sorry, but our BERRIES\n"
 	.string "are specifically grown for folks\p"
 	.string "who live on CINNABAR ISLAND.\p"
-	.string "However, I could tell you about\n"
-	.string "the history of our farm if you like.$"
+	.string "However, I could tell you about the\n"
+	.string "history of our farm if you like.$"
 	
 CeruleanCity_House1_Text_FarmExplain::
 	.string "This farm was built by our ancestors,\n"
@@ -70,3 +70,7 @@ CinnabarIsland_BerryFarm_Text_Enjoy::
 	.string "You can then use BERRY POWDER to\n"
 	.string "concote all sorts of medicine.\p"
 	.string "Bet you didn't know that, huh?$"
+	
+CinnabarIsland_BerryFarm_Text_Woman::
+	.string "I wonder what BERRIES we should\n"
+	.string "eat for breakfast tomorrow.$"

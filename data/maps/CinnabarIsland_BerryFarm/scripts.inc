@@ -1,5 +1,9 @@
 CinnabarIsland_BerryFarm_MapScripts::
 	.byte 0
+	
+CinnabarIsland_BerryFarm_EventScript_Woman::
+	msgbox CinnabarIsland_BerryFarm_Text_Woman, MSGBOX_NPC
+	end	
 
 CinnabarIsland_BerryFarm_EventScript_Gentleman::
 	lock
