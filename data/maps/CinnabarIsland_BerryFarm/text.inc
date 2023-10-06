@@ -43,9 +43,8 @@ CinnabarIsland_BerryFarm_Text_Thanks::
 	.string "on CINNABAR ISLAND.$"
 	
 CinnabarIsland_BerryFarm_Text_Hello::
-	.string "Hello, welcome to the\n"
-	.string "CINNABAR BERRY FARM.\p"
-	.string "Feel free to look around.$"
+	.string "Hello, and welcome to the\n"
+	.string "CINNABAR BERRY FARM.$"
 	
 CinnabarIsland_BerryFarm_Text_Farmer::
 	.string "Hey there!\p"
