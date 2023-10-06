@@ -1,5 +1,9 @@
 CinnabarIsland_Text_DoorIsLocked:: @ 8180B20
     .string "The door is locked…$"
+	
+CinnabarIsland_Text_BerrySign::
+    .string "CINNABAR BERRY FARM\n"
+    .string "Providing food for all islanders!$"
 
 CinnabarIsland_Text_FatMan::
 	.string "That there, my friend, is the\n"

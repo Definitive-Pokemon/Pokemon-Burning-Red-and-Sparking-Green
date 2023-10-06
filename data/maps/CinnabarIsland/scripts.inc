@@ -382,3 +382,7 @@ CinnabarIsland_EventScript_GymSign:: @ 8167223
 	msgbox CinnabarIsland_Text_GymSign
 	releaseall
 	end
+
+CinnabarIsland_EventScript_BerrySign::
+	msgbox CinnabarIsland_Text_BerrySign, MSGBOX_SIGN
+	end
