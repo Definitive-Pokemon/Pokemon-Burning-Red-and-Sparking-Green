@@ -107,7 +107,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CinnabarIsland_EventScript_BaldingMan",
       "flag": "0"
     },
     {
@@ -121,7 +121,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CinnabarIsland_EventScript_FatMan",
       "flag": "0"
     }
   ],
@@ -172,14 +172,14 @@
       "x": 7,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_CINNABAR_ISLAND",
+      "dest_map": "MAP_CINNABAR_ISLAND_BERRY_FARM",
       "dest_warp_id": 0
     },
     {
       "x": 11,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_CINNABAR_ISLAND",
+      "dest_map": "MAP_CINNABAR_ISLAND_HOUSE",
       "dest_warp_id": 0
     }
   ],
@@ -232,8 +232,8 @@
       "x": 13,
       "y": 8,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1",
+      "item": "ITEM_LUM_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_CINNABAR_BERRY",
       "quantity": 1,
       "underfoot": false
     },
@@ -242,8 +242,8 @@
       "x": 13,
       "y": 15,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1",
+      "item": "ITEM_SUN_STONE",
+      "flag": "FLAG_0xHIDDEN_ITEM_CINNABAR_FIRE_STONE",
       "quantity": 1,
       "underfoot": false
     },

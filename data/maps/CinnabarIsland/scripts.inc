@@ -30,6 +30,14 @@ CinnabarIsland_MapScript_SetMasterTrainerMovementTypes::
 CinnabarIsland_MapScript_ExeggutorMasterMovementType::
 	setobjectmovementtype LOCALID_EXEGGUTOR_MASTER, MOVEMENT_TYPE_VS_SEEKER_4D
 	return
+	
+CinnabarIsland_EventScript_FatMan::
+	msgbox CinnabarIsland_Text_FatMan, MSGBOX_NPC
+	end
+
+CinnabarIsland_EventScript_BaldingMan::
+	msgbox CinnabarIsland_Text_BaldingMan, MSGBOX_NPC
+	end
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIslandFromPokeCenter:: @ 8166F0B
 	savebgm MUS_FOLLOW_ME

@@ -5160,6 +5160,30 @@
       "secondary_tileset": "gTileset_MtEmber",
       "border_filepath": "data/layouts/CinnabarVolcano/border.bin",
       "blockdata_filepath": "data/layouts/CinnabarVolcano/map.bin"
+    },
+    {
+      "id": "LAYOUT_CINNABAR_ISLAND_HOUSE",
+      "name": "CinnabarIsland_House_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/CinnabarIsland_House/border.bin",
+      "blockdata_filepath": "data/layouts/CinnabarIsland_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_CINNABAR_ISLAND_BERRY_FARM",
+      "name": "CinnabarIsland_BerryFarm_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GameCorner",
+      "border_filepath": "data/layouts/CinnabarIsland_BerryFarm/border.bin",
+      "blockdata_filepath": "data/layouts/CinnabarIsland_BerryFarm/map.bin"
     }
   ]
 }
