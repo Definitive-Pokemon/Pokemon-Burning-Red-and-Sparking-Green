@@ -1,4 +1,4 @@
-CeruleanCity_House1_Text_RRNeedBerryPowder::
+CeruleanCity_House5_Text_RRNeedBerryPowder::
 	.string "I concoct a variety of medicine\n"
     .string "from BERRY POWDER.\p"
     .string "Using good BERRY POWDER, I can\n"
@@ -14,7 +14,7 @@ CeruleanCity_House1_Text_RRNeedBerryPowder::
 	.string "It's quite taxing for my body\n"
 	.string "at my age, however…$"
 	
-CeruleanCity_House1_Text_RRGotJar::
+CeruleanCity_House5_Text_RRGotJar::
 	.string "I concoct a variety of medicine\n"
     .string "from BERRY POWDER.\p"
     .string "Using good BERRY POWDER, I can\n"
@@ -28,12 +28,12 @@ CeruleanCity_House1_Text_RRGotJar::
 	.string "producing medicine again.\p"
 	.string "Could you give me that BERRY POWDER?$"
 	
-CeruleanCity_House1_Text_RRTooBad::
+CeruleanCity_House5_Text_RRTooBad::
 	.string "That's too bad…\n"
 	.string "But it's your BERRY POWDER.\p"
 	.string "Do with it whatever you like.$"
 	
-CeruleanCity_House1_Text_RRGiveJar::
+CeruleanCity_House5_Text_RRGiveJar::
 	.string "I thank you.\n"
 	.string "Now I can finally reopen my shop.$"
 	
@@ -41,22 +41,18 @@ CeruleanCity_House5_Text_RRDeliverJar::
 	.string "{PLAYER} gave the BERRY POWDER\n"
 	.string "to the BERRY POWDER MAN!$"
 
-CeruleanCity_House1_Text_Buy::
+CeruleanCity_House5_Text_Buy::
     .string "This is fine BERRY POWDER indeed.\n"
     .string "It will make excellent medicine.\p"
 	.string "Be sure to visit whenever\n"
 	.string "you need some medicine.$"
 	
-CeruleanCity_House1_Text_RRShop::
+CeruleanCity_House5_Text_RRShop::
 	.string "Hello there.\n"
 	.string "What do you need?$"
 	
-CeruleanCity_House1_Text_Thanks::
+CeruleanCity_House5_Text_Thanks::
 	.string "Come again.$"
-	
-CeruleanCity_House1_Text_RRShop::
-	.string "Hello there.\n"
-	.string "What do you need?$"
 
 CeruleanCity_House1_Text_AnyInterestInBerries:: @ 8192F67
     .string "I concoct a variety of medicine\n"

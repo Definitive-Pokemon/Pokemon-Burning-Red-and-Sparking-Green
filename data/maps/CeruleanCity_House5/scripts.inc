@@ -23,15 +23,15 @@ CeruleanCity_House5_EventScript_RRBerryPowderMan::
 	checkitem ITEM_POWDER_JAR, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq CeruleanCity_House5_EventScript_RRGiveJar
-	CeruleanCity_House1_Text_RRNeedBerryPowder
+	CeruleanCity_House5_Text_RRNeedBerryPowder
 	release
 	end
 	
 CeruleanCity_House5_EventScript_RRGiveJar::
-	msgbox CeruleanCity_House1_Text_RRGotJar, MSGBOX_YESNO
+	msgbox CeruleanCity_House5_Text_RRGotJar, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq CeruleanCity_House5_EventScript_RRTooBad
-	msgbox CeruleanCity_House1_Text_RRGiveJar
+	msgbox CeruleanCity_House5_Text_RRGiveJar
 	removeitem ITEM_POWDER_JAR, 1
 	setflag FLAG_GOT_POWDER_JAR
 	textcolor 3
@@ -40,20 +40,20 @@ CeruleanCity_House5_EventScript_RRGiveJar::
 	waitmessage
 	waitfanfare
 	call EventScript_RestorePrevTextColor
-	msgbox CeruleanCity_House1_Text_Buy
+	msgbox CeruleanCity_House5_Text_Buy
 	release
 	end
 	
 CeruleanCity_House5_EventScript_RRTooBad::
-	msgbox CeruleanCity_House1_Text_RRTooBad
+	msgbox CeruleanCity_House5_Text_RRTooBad
 	release
 	end
 	
 CeruleanCity_House5_EventScript_RRBerryPowderShop::
-	message CeruleanCity_House1_Text_RRShop
+	message CeruleanCity_House5_Text_RRShop
 	waitmessage
 	pokemart CeruleanCity_Herbs_Items
-	msgbox CeruleanCity_House1_Text_Thanks
+	msgbox CeruleanCity_House5_Text_Thanks
 	release
 	end
 	
