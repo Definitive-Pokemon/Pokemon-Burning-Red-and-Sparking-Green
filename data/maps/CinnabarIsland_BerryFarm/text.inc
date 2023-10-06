@@ -49,17 +49,15 @@ CinnabarIsland_BerryFarm_Text_Hello::
 	
 CinnabarIsland_BerryFarm_Text_Farmer::
 	.string "Hey there!\p"
-	.string "I work the land, growing\n"
-	.string "BERRY TREES and picking\p"
-	.string "up the BERRIES that grow on them\n"
-	.string "after they have dropped down.$"
+	.string "I work the land, growing our trees\n"
+	.string "and picking berries once they've\p"
+	.string "ripened enough.$"
 
 CinnabarIsland_BerryFarm_Text_GiveJar::
 	.string "Hey there!\p"
-	.string "I work the land, growing\n"
-	.string "BERRY TREES and picking\p"
-	.string "up the BERRIES that grow on them\n"
-	.string "after they have dropped down.\p"
+	.string "I work the land, growing our trees\n"
+	.string "and picking berries once they've\p"
+	.string "ripened enough.$"
 	.string "To give people a taste of what you\n"
 	.string "can do with BERRIES, we are giving\p"
 	.string "away jars filled with BERRY POWDER\n"
