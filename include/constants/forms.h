@@ -5,12 +5,12 @@
 
 #define FORM_FLAG_SHIFT 14
 // zero form is simply the 'normal' Gen 3 pokemon!
-#define FORM_FLAG_VALUE(form) ((form) << FORM_FLAG_SHIFT)
+#define FORM_FLAG_VALUE(form) ((u16)(form) << FORM_FLAG_SHIFT)
 #define FIRST_FORM FORM_FLAG_VALUE(1)
 #define SECOND_FORM FORM_FLAG_VALUE(2)
 #define THIRD_FORM FORM_FLAG_VALUE(3)
 #define FORM_SPECIES_MASK (FIRST_FORM - 1)
-#define FORM_PART(formSpecies) ((formSpecies) >> FORM_FLAG_SHIFT)
+#define FORM_PART(formSpecies) ((u16)(formSpecies) >>> FORM_FLAG_SHIFT)
 #define SPECIES_PART(species) ((species) & ((u16) FORM_SPECIES_MASK))
 #define FORM_SPECIES_NUMBER(form, species) ((species) | (form))
 
