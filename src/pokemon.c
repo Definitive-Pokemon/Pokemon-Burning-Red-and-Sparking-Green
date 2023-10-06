@@ -6657,7 +6657,7 @@ u16 SpeciesToCryId(u16 species)
     if (species <= NUM_NON_FORM_MON_SPRITES)
         return sHoennSpeciesIdToCryId[species - ((SPECIES_OLD_UNOWN_Z + 1) - 1)];
     
-    return sFormSpeciesIdToCryId[species - NUM_NON_FORM_MON_SPRITES]
+    return sFormSpeciesIdToCryId[species - NUM_NON_FORM_MON_SPRITES];
 }
 
 #define DRAW_SPINDA_SPOTS                                                       \
