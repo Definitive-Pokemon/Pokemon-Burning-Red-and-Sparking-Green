@@ -14,6 +14,7 @@ CinnabarIsland_BerryFarm_EventScript_Gentleman::
 	msgbox CinnabarIsland_BerryFarm_Text_Farm, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq CinnabarIsland_BerryFarm_EventScript_FarmExplain
+	msgbox CinnabarIsland_BerryFarm_Text_Okay
 	release
 	end
 

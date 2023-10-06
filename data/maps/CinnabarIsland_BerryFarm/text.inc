@@ -7,6 +7,11 @@ CinnabarIsland_BerryFarm_Text_Farm::
 	.string "history of our farm if you like.\p"
 	.string "Do you want to hear it?$"
 	
+CinnabarIsland_BerryFarm_Text_Okay::
+	.string "Aw…\n"
+	.string "I love telling people our story.\p"
+	.string "Oh well. Come again!$"
+	
 CinnabarIsland_BerryFarm_Text_FarmExplain::
 	.string "This farm was built by our ancestors,\n"
 	.string "who were the first to settle on what\p"
