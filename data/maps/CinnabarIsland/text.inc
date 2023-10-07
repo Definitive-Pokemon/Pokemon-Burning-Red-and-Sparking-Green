@@ -63,7 +63,7 @@ CinnabarIsland_Text_ComeWithMeToOneIsland:: @ 8180CAA
     .string "A friend invited me, so I'm on my\n"
     .string "way out there.\p"
     .string "How about it?\n"
-    .string "Do you feel like coming with me?$"
+    .string "Do you feel like coming with me?\p"
     .string "I'll be waiting at the POKéMON\n"
     .string "CENTER over there.\p"
     .string "Come see me when you feel you're\n"

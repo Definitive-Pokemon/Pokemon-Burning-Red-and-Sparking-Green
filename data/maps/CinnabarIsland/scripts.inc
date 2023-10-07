@@ -42,9 +42,9 @@ CinnabarIsland_EventScript_BaldingMan::
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIslandFromPokeCenter:: @ 8166F0B
 	savebgm MUS_FOLLOW_ME
 	setflag FLAG_TEMP_2
-	setobjectxyperm LOCALID_BILL, 15, 12
+	setobjectxyperm LOCALID_BILL, 17, 21
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_SEAGALLOP, 30, 12
+	setobjectxyperm LOCALID_SEAGALLOP, 32, 21
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIsland:: @ 8166F24
@@ -197,11 +197,11 @@ CinnabarIsland_EventScript_BillReturnToPokeCenter:: @ 81670B3
 	applymovement OBJ_EVENT_ID_PLAYER, CinnabarIsland_Movement_PlayerWatchBillExit
 	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachDoor
 	waitmovement 0
-	opendoor 14, 11
+	opendoor 16, 20
 	waitdooranim
 	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillReEnterPokeCenter
 	waitmovement 0
-	closedoor 14, 11
+	closedoor 16, 20
 	waitdooranim
 	return
 
