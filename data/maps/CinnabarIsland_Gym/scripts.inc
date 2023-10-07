@@ -70,7 +70,7 @@ CinnabarIsland_Gym_OnLoadOpenDoor6:: @ 816D9CE
 	return
 	
 CinnabarIsland_Gym_EventScript_Celio::
-	trainerbattle_single TRAINER_LEADER_CELIO, CinnabarIsland_Gym_Text_CelioIntro, CinnabarIsland_Gym_Text_CelioDefeat, CinnabarIsland_Gym_EventScript_DefeatedCelio, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_BLAINE, CinnabarIsland_Gym_Text_CelioIntro, CinnabarIsland_Gym_Text_CelioDefeat, CinnabarIsland_Gym_EventScript_DefeatedCelio, NO_MUSIC
 	settrainerflag TRAINER_LEADER_BLAINE_CHALLENGE
 	goto_if_unset FLAG_GOT_TM38_FROM_BLAINE, CinnabarIsland_Gym_EventScript_GiveTM38
 	msgbox CinnabarIsland_Gym_Text_BlainePostBattle
