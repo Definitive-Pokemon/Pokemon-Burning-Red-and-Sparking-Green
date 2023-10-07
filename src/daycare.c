@@ -692,7 +692,7 @@ static u16 GetEggSpecies(u16 species)
                 break;
         }
 
-        if (j == NUM_SPECIES)
+        if (j == NUM_SPECIES) // this should just be SPECIES_EGG, no?
             break;
     }
 

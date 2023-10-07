@@ -410,6 +410,5 @@ const u8 gSpeciesNames[][11] = {
     _("LATIOS"),
     _("JIRACHI"),
     _("DEOXYS"),
-    _("CHIMECHO"),
-    _("KABUTOPS")
+    _("CHIMECHO")
 };

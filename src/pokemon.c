@@ -5275,8 +5275,7 @@ void GetSpeciesName(u8 *name, u16 species)
         if (species > NUM_SPECIES_WITH_FORMS)
             name[i] = gSpeciesNames[0][i];
         else
-            name[i] = gSpeciesNames[species][i];
-
+            name[i] = gSpeciesNames[StripFormToSpecies(species)][i];
         if (name[i] == EOS)
             break;
     }
@@ -6648,16 +6647,17 @@ u16 ExtendedToNationalOrder(u16 extendedNum)
 
 u16 SpeciesToCryId(u16 species)
 {
+    u16 formSpecies = OriginalSpeciesOfForm(species);
+    if (formSpecies != SPECIES_NONE)
+        return formSpecies;
+
     if (species < SPECIES_OLD_UNOWN_B - 1)
         return species;
 
     if (species <= SPECIES_OLD_UNOWN_Z - 1)
         return SPECIES_UNOWN - 1;
 
-    if (species < NUM_NON_FORM_MON_SPRITES)
-        return sHoennSpeciesIdToCryId[species - ((SPECIES_OLD_UNOWN_Z + 1) - 1)];
-    
-    return sFormSpeciesIdToCryId[species - NUM_NON_FORM_MON_SPRITES];
+    return sHoennSpeciesIdToCryId[species - ((SPECIES_OLD_UNOWN_Z + 1) - 1)];
 }
 
 #define DRAW_SPINDA_SPOTS                                                       \
@@ -8196,4 +8196,23 @@ void SetFirstDeoxysForm(void)
             break;
         }
     }
+}
+
+//TODO:FORME ALWAYS ADD NEW FORM TO THIS LIST
+u16 OriginalSpeciesOfForm(u16 species)
+{
+    u16 result = SPECIES_NONE;
+    if (species == SPECIES_FOSSILIZED_KABUTOPS)
+        result = SPECIES_KABUTOPS;
+    return result;
+}
+
+// no need to update this, it simply ensures that a given species will return proper name or cry
+u16 StripFormToSpecies(u16 species)
+{
+    u16 result = species;
+    species = OriginalSpeciesOfForm(species);
+    if (species != SPECIES_NONE)
+        result = species;
+    return result;
 }
