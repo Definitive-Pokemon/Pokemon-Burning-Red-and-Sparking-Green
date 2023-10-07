@@ -133,6 +133,7 @@ static void ItemPrintFunc_DexModeSelect(u8 windowId, s32 itemId, u8 y);
 static void ItemPrintFunc_OrderedListMenu(u8 windowId, s32 itemId, u8 y);
 static void Task_DexScreen_RegisterNonKantoMonBeforeNationalDex(u8 taskId);
 static void Task_DexScreen_RegisterMonToPokedex(u8 taskId);
+static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies);
 
 #include "data/pokemon_graphics/footprint_table.h"
 
@@ -2708,7 +2709,7 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
 }
 
 
-s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies)
+static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies)
 {
     u8 index;
     u8 bit;
