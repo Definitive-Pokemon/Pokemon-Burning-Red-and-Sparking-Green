@@ -62,7 +62,7 @@ CinnabarIsland_EventScript_MoveSeagallopDown:: @ 8166F4A
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsReturnFromSeviiIslands:: @ 8166F52
-	setobjectxyperm LOCALID_BILL, 21, 8
+	setobjectxyperm LOCALID_BILL, 17, 24
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -106,12 +106,17 @@ CinnabarIsland_EventScript_ReturnFromSeviiIslands:: @ 8166FA0
 	end
 
 CinnabarIsland_Movement_BillExit:: @ 8166FC6
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_right
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 CinnabarIsland_EventScript_BillScene:: @ 8166FCD
