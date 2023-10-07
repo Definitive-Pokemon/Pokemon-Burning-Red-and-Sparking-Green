@@ -76,7 +76,7 @@ CinnabarIsland_EventScript_UnlockGym:: @ 8166F68
 
 CinnabarIsland_OnFrame:: @ 8166F6E
 	map_script_2 VAR_MAP_SCENE_CINNABAR_ISLAND_2, 1, CinnabarIsland_EventScript_ExitPokeCenterForOneIsland
-	map_script_2 VAR_MAP_SCENE_CINNABAR_ISLAND, 1, CinnabarIsland_EventScript_BillScene
+	map_script_2 VAR_MAP_SCENE_CINNABAR_ISLAND, 2, CinnabarIsland_EventScript_BillScene
 	map_script_2 VAR_MAP_SCENE_CINNABAR_ISLAND, 3, CinnabarIsland_EventScript_ReturnFromSeviiIslands
 	.2byte 0
 

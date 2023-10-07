@@ -68,6 +68,41 @@ CinnabarIsland_Gym_OnLoadOpenDoor5:: @ 816D9C8
 CinnabarIsland_Gym_OnLoadOpenDoor6:: @ 816D9CE
 	call CinnabarIsland_Gym_EventScript_OpenDoor6
 	return
+	
+CinnabarIsland_Gym_EventScript_Celio::
+	trainerbattle_single TRAINER_LEADER_CELIO, CinnabarIsland_Gym_Text_CelioIntro, CinnabarIsland_Gym_Text_CelioDefeat, CinnabarIsland_Gym_EventScript_DefeatedCelio, NO_MUSIC
+	settrainerflag TRAINER_LEADER_BLAINE_CHALLENGE
+	goto_if_unset FLAG_GOT_TM38_FROM_BLAINE, CinnabarIsland_Gym_EventScript_GiveTM38
+	msgbox CinnabarIsland_Gym_Text_BlainePostBattle
+	release
+	end
+	
+CinnabarIsland_Gym_EventScript_DefeatedCelio::
+	famechecker FAMECHECKER_BLAINE, 1
+	setflag FLAG_DEFEATED_BLAINE
+	setflag FLAG_BADGE07_GET
+	setrespawn SPAWN_CINNABAR_ISLAND
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 1
+	clearflag FLAG_HIDE_CINNABAR_BILL
+	set_gym_trainers 7
+	goto CinnabarIsland_Gym_EventScript_CelioGiveTM38
+	end
+
+CinnabarIsland_Gym_EventScript_CelioGiveTM38::
+	msgbox CinnabarIsland_Gym_Text_CelioExplainVolcanoBadge
+	checkitemspace ITEM_TM38, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq CinnabarIsland_Gym_EventScript_CelioNoRoomForTM38
+	giveitem_msg CinnabarIsland_Gym_Text_ReceivedTM38FromCelio, ITEM_TM38
+	setflag FLAG_GOT_TM38_FROM_BLAINE
+	msgbox CinnabarIsland_Gym_Text_CelioFireBlastIsUltimateFireMove
+	release
+	end
+
+CinnabarIsland_Gym_EventScript_CelioNoRoomForTM38::
+	msgbox CinnabarIsland_Gym_Text_CelioMakeSpaceForThis
+	release
+	end
 
 CinnabarIsland_Gym_EventScript_Blaine:: @ 816D9D4
 	famechecker FAMECHECKER_BLAINE, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005

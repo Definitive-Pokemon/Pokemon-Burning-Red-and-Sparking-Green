@@ -36,7 +36,8 @@ CinnabarIsland_Text_ScientistsExperimentInMansion:: @ 8180BA0
 
 CinnabarIsland_Text_IslandSign:: @ 8180C0D
     .string "CINNABAR ISLAND\n"
-    .string "The Fiery Town of Burning Desire$"
+    .string "Passion and discipline\1"
+	.string "have worked the land.$"
 
 CinnabarIsland_Text_PokemonLab:: @ 8180C3E
     .string "POKéMON LAB$"
