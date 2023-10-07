@@ -462,6 +462,9 @@
 #define NUM_SPECIES_WITH_FORMS (NUM_NON_FORM_MON_SPRITES + NUM_FORMS)
 #define NUM_DEX_ENTRIES_WITH_FORMS (NUM_SPECIES + NUM_FORMS)
 
+// arbitrary limit
+#define MAX_NUM_OF_FORMS 4
+
 // National Dex Index Defines
 
 #define NATIONAL_DEX_NONE 0

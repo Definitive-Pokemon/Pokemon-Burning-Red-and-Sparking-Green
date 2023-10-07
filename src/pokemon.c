@@ -2802,7 +2802,7 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
 };
 
 //TODO:FORME update for every new one
-static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][4] = 
+static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][MAX_NUM_OF_FORMS] = 
 {
     [SPECIES_KABUTOPS] = {SPECIES_FOSSILIZED_KABUTOPS},
 };
@@ -6554,10 +6554,13 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
 
     species = 0;
 
-    while (species < NUM_SPECIES - 1 && sSpeciesToNationalPokedexNum[species] != nationalNum)
+    while (species < NUM_SPECIES_WITH_FORMS - 1 && sSpeciesToNationalPokedexNum[species] != nationalNum)
         species++;
 
     if (species == NUM_SPECIES - 1)
+        return 0;
+    
+    if (species == NUM_SPECIES_WITH_FORMS)
         return 0;
 
     return species + 1;
@@ -8011,7 +8014,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
                     break;
                 }
             }
-            for(i = 0; i < 4; i++)
+            for(i = 0; i < MAX_NUM_OF_FORMS; i++)
             {
                 if (*(forms + i) == formSpecies)
                 {

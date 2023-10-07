@@ -1626,8 +1626,8 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
             for (i = 0; i < KANTO_DEX_COUNT; i++)
             {
                 ndex_num = i + 1;
-                seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, 0);
-                caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, 0);
+                seen = DexScreen_GetSetPokedexFlagIncludingForms(ndex_num, FLAG_GET_SEEN, 0);
+                caught = DexScreen_GetSetPokedexFlagIncludingForms(ndex_num, FLAG_GET_CAUGHT, 0);
                 if (seen)
                 {
                     sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
@@ -2697,6 +2697,78 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
                 retVal = 1;
         }
         break;
+    case FLAG_SET_SEEN:
+        gSaveBlock2Ptr->pokedex.seen[index] |= mask;
+        break;
+    case FLAG_SET_CAUGHT:
+        gSaveBlock2Ptr->pokedex.owned[index] |= mask;
+        break;
+    }
+    return retVal;
+}
+
+
+s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies)
+{
+    u8 index;
+    u8 bit;
+    u8 mask;
+    s8 retVal;
+    u16 *possibleForms;
+
+    if (indexIsSpecies)
+    {
+        possibleForms = FormsOfSpecies(nationalDexNo);
+        nationalDexNo = SpeciesToNationalPokedexNum(nationalDexNo);
+    }
+    else
+    {
+        possibleForms = FormsOfSpecies(NationalPokedexNumToSpecies(nationalDexNo));
+    }
+
+    nationalDexNo--;
+    index = nationalDexNo / 8;
+    bit = nationalDexNo % 8;
+    mask = 1 << bit;
+    retVal = 0;
+    switch (caseId)
+    {
+    case FLAG_GET_SEEN:
+        if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+        {
+            retVal = 1;
+        }
+        else if (possibleForms != NULL)
+        {
+            u32 i;
+            for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+            {
+                retVal = DexScreen_GetSetPokedexFlag(
+                    *(possibleForms + i), FLAG_GET_SEEN, 1);
+                if (retVal)
+                    break;
+            }
+        }
+        break;
+    case FLAG_GET_CAUGHT:
+        if (gSaveBlock2Ptr->pokedex.owned[index] & mask)
+        {
+            if ((gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock2Ptr->pokedex.seen[index] & mask))
+                retVal = 1;
+        }
+        else if (possibleForms != NULL)
+        {
+            u32 i;
+            for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+            {
+                retVal = DexScreen_GetSetPokedexFlag(
+                    *(possibleForms + i), FLAG_GET_CAUGHT, 1);
+                if (retVal)
+                    break;
+            }
+        }
+        break;
+    // this is duplication
     case FLAG_SET_SEEN:
         gSaveBlock2Ptr->pokedex.seen[index] |= mask;
         break;
