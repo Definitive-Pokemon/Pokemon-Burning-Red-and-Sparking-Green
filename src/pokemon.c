@@ -7999,7 +7999,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         {
             u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
             u16 originalSpecies = StripFormToSpecies(formSpecies);
-            u16 forms[] = (u16[]) FormsOfSpecies(originalSpecies);
+            u16 *forms = FormsOfSpecies(originalSpecies);
             u8 originalIndex = 0;
             u8 form = 1; // cannot be zero anyway
             u32 i;
@@ -8013,7 +8013,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
             }
             for(i = 0; i < 4; i++)
             {
-                if (sFormOriginalSpeciesTable[i] == formSpecies)
+                if (*(forms + i) == formSpecies)
                 {
                     form = (u8) i;
                     break;
@@ -8272,7 +8272,7 @@ u16 StripFormToSpecies(u16 species)
 
 u16 *FormsOfSpecies(u16 species)
 {
-    u16[] result = NULL;
+    u16 *result = NULL;
     if (sFormOriginalSpeciesTable[species] != NULL)
     {
         result = sFormOriginalSpeciesTable[species];
