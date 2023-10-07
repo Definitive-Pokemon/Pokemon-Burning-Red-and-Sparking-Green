@@ -25,6 +25,10 @@ CinnabarIsland_Gym_OnTransition::
 CinnabarIsland_Gym_EventScript_HideBlaine::
 	setflag FLAG_TEMP_1
 	return
+	
+CinnabarIsland_Gym_EventScript_SetMapVar1::
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 1
+	end
 
 CinnabarIsland_Gym_OnLoad:: @ 816D951
 	goto_if_set FLAG_DEFEATED_BLAINE, CinnabarIsland_Gym_OnLoadOpenAllDoors
