@@ -44,7 +44,7 @@ CinnabarIsland_EventScript_ReadyObjectsSailToOneIslandFromPokeCenter:: @ 8166F0B
 	setflag FLAG_TEMP_2
 	setobjectxyperm LOCALID_BILL, 17, 21
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_SEAGALLOP, 32, 21
+	setobjectxyperm LOCALID_SEAGALLOP, 21, 25
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIsland:: @ 8166F24
@@ -313,7 +313,6 @@ CinnabarIsland_Movement_ApproachShore:: @ 81671AF
 	step_end
 
 CinnabarIsland_Movement_BillBoardBoatFromShore:: @ 81671B6
-	walk_down
 	delay_4
 	set_invisible
 	step_end
@@ -331,9 +330,6 @@ CinnabarIsland_Movement_PlayerBoardBoat:: @ 81671BA
 	step_end
 
 CinnabarIsland_Movement_PlayerBoardBoatFromShore:: @ 81671C4
-	walk_down
-	delay_4
-	walk_down
 	delay_4
 	set_invisible
 	step_end

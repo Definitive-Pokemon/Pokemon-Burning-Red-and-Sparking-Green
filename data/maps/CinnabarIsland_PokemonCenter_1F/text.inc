@@ -30,7 +30,7 @@ CinnabarIsland_PokemonCenter_1F_Text_ReadyToSailToOneIsland:: @ 819A725
     .string "Ready to set sail to ONE ISLAND?$"
 
 CinnabarIsland_PokemonCenter_1F_Text_OhNotDoneYet:: @ 819A766
-    .string "Oh, you're still not done yet?$"
+    .string "Oh, you're not done yet?$"
 
 CinnabarIsland_PokemonCenter_1F_Text_LetsGo:: @ 819A785
     .string "Well, that's it.\n"

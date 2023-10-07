@@ -66,8 +66,8 @@ CinnabarIsland_Text_ComeWithMeToOneIsland:: @ 8180CAA
     .string "Do you feel like coming with me?\p"
     .string "I'll be waiting at the POKéMON\n"
     .string "CENTER over there.\p"
-    .string "Come see me when you feel you're\n"
-    .string "ready to go.$"
+    .string "Come see me if you want to go\n"
+    .string "with me.$"
 
 CinnabarIsland_Text_AllRightLetsGo:: @ 8180DDD
     .string "All right, then.\n"
