@@ -320,6 +320,7 @@ CinnabarIsland_Movement_ApproachShore:: @ 81671AF
 
 CinnabarIsland_Movement_BillBoardBoatFromShore:: @ 81671B6
 	delay_4
+	walk_in_place_down
 	set_invisible
 	step_end
 
@@ -337,6 +338,7 @@ CinnabarIsland_Movement_PlayerBoardBoat:: @ 81671BA
 
 CinnabarIsland_Movement_PlayerBoardBoatFromShore:: @ 81671C4
 	delay_4
+	walk_in_place_down
 	set_invisible
 	step_end
 
