@@ -183,14 +183,14 @@ CinnabarIsland_EventScript_BillExitToPokeCenter:: @ 81670A0
 	return
 
 CinnabarIsland_Movement_BillExitToPokeCenter:: @ 81670AB
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 CinnabarIsland_EventScript_BillReturnToPokeCenter:: @ 81670B3
