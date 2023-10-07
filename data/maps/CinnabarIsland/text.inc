@@ -36,7 +36,7 @@ CinnabarIsland_Text_ScientistsExperimentInMansion:: @ 8180BA0
 
 CinnabarIsland_Text_IslandSign:: @ 8180C0D
     .string "CINNABAR ISLAND\n"
-    .string "Passion and discipline\1"
+    .string "Passion and discipline\l"
 	.string "have worked the land.$"
 
 CinnabarIsland_Text_PokemonLab:: @ 8180C3E
