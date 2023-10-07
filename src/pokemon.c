@@ -6649,7 +6649,7 @@ u16 SpeciesToCryId(u16 species)
 {
     u16 formSpecies = OriginalSpeciesOfForm(species + 1);
     if (formSpecies != SPECIES_NONE)
-        return formSpecies;
+        return formSpecies - 1;
 
     if (species < SPECIES_OLD_UNOWN_B - 1)
         return species;
