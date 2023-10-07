@@ -28,6 +28,7 @@ CinnabarIsland_Gym_EventScript_HideBlaine::
 	
 CinnabarIsland_Gym_EventScript_SetMapVar1::
 	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 1
+	clearflag FLAG_HIDE_CINNABAR_BILL
 	end
 
 CinnabarIsland_Gym_OnLoad:: @ 816D951
