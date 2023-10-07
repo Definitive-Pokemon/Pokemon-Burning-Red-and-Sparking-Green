@@ -8275,7 +8275,7 @@ u16 *FormsOfSpecies(u16 species)
     u16 *result = NULL;
     if (sFormOriginalSpeciesTable[species] != NULL)
     {
-        result = sFormOriginalSpeciesTable[species];
+        result = &sFormOriginalSpeciesTable[species];
     }
     return result;
 }
