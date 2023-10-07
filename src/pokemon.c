@@ -938,6 +938,7 @@ static const u16 sSpeciesToNationalPokedexNum[] = // Assigns all species to the 
     SPECIES_TO_NATIONAL(JIRACHI),
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
+    SPECIES_TO_NATIONAL(FOSSILIZED_KABUTOPS),
 };
 
 static const u16 sSpeciesToExtendedPokedexNum[] = // Assigns all species to the Extended Dex Index (Summary No. for Extended Dex)
@@ -2798,6 +2799,17 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
         LEVEL_UP_MOVE(50, MOVE_EXTREME_SPEED),
         LEVEL_UP_END
     }
+};
+
+//TODO:FORME update for every new one
+static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][4] = 
+{
+    [SPECIES_KABUTOPS] = {SPECIES_FOSSILIZED_KABUTOPS},
+};
+
+static const u8 sEncounterOrderViaOriginalSpecies[NUM_ORIGINAL_SPECIES_WITH_FORMS] = 
+{
+    [0] = SPECIES_KABUTOPS,
 };
 
 const u16 gLinkPlayerFacilityClasses[] = 
@@ -7968,6 +7980,47 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
             gSaveBlock2Ptr->pokedex.unownPersonality = personality;
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_SPINDA)
             gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
+        if (FormsOfSpecies(NationalPokedexNumToSpecies(nationalNum)) != NULL)
+        {
+            u16 species = NationalPokedexNumToSpecies(nationalNum);
+            u8 originalIndex = 0;
+            u32 i;
+            for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
+            {
+                if (sEncounterOrderViaOriginalSpecies[i] == species)
+                {
+                    originalIndex = (u8) i;
+                    break;
+                }
+            }
+            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = 0; // original form is zero
+        }
+        else if (StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum)) != NationalPokedexNumToSpecies(nationalNum))
+        {
+            u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
+            u16 originalSpecies = StripFormToSpecies(formSpecies);
+            u16 forms[] = (u16[]) FormsOfSpecies(originalSpecies);
+            u8 originalIndex = 0;
+            u8 form = 1; // cannot be zero anyway
+            u32 i;
+            for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
+            {
+                if (sEncounterOrderViaOriginalSpecies[i] == originalSpecies)
+                {
+                    originalIndex = (u8) i;
+                    break;
+                }
+            }
+            for(i = 0; i < 4; i++)
+            {
+                if (sFormOriginalSpeciesTable[i] == formSpecies)
+                {
+                    form = (u8) i;
+                    break;
+                }
+            }
+            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = form;
+        }
     }
 }
 
@@ -8214,5 +8267,15 @@ u16 StripFormToSpecies(u16 species)
     species = OriginalSpeciesOfForm(species);
     if (species != SPECIES_NONE)
         result = species;
+    return result;
+}
+
+u16 *FormsOfSpecies(u16 species)
+{
+    u16[] result = NULL;
+    if (sFormOriginalSpeciesTable[species] != NULL)
+    {
+        result = sFormOriginalSpeciesTable[species];
+    }
     return result;
 }

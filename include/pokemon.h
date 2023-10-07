@@ -474,5 +474,6 @@ u16 NationalToExtendedOrder(u16 nationalNum);
 u16 SpeciesToExtendedPokedexNum(u16 species);
 u16 OriginalSpeciesOfForm(u16 species);
 u16 StripFormToSpecies(u16 species);
+u16 *FormsOfSpecies(u16 species);
 
 #endif // GUARD_POKEMON_H

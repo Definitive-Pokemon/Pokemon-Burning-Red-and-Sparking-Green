@@ -54,5 +54,7 @@ bool16 HasNationalMon(void);
 u8 DexScreen_RegisterMonToPokedex(u16 species);
 bool16 HasAllKantoMonsNew(void);
 bool16 HasAllMonsNew(void);
+bool16 HasAllForms(void);
+bool16 HasAllMonsIncludingForms(void);
 
 #endif // GUARD_POKEDEX_H

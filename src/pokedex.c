@@ -193,3 +193,13 @@ bool16 HasAllMonsNew(void)
             return FALSE;
     return TRUE;
 }
+
+bool16 HasAllForms(void)
+{   
+    return FALSE;
+}
+
+bool16 HasAllMonsIncludingForms(void)
+{   
+    return FALSE;
+}
