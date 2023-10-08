@@ -73,6 +73,7 @@ struct PokedexScreenData
     u16 numOwnedKanto;
     u16 numSeenNational;
     u16 numOwnedNational;
+    bool8 dexSpeciesHasSeenForms;
 };
 
 struct PokedexScreenWindowGfx
@@ -134,6 +135,7 @@ static void ItemPrintFunc_OrderedListMenu(u8 windowId, s32 itemId, u8 y);
 static void Task_DexScreen_RegisterNonKantoMonBeforeNationalDex(u8 taskId);
 static void Task_DexScreen_RegisterMonToPokedex(u8 taskId);
 static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies);
+static void UpdateDexSpeciesSeenForm(u16 species);
 
 #include "data/pokemon_graphics/footprint_table.h"
 
@@ -1176,9 +1178,13 @@ static void Task_PokedexScreen(u8 taskId)
         }
         if ((JOY_NEW(SELECT_BUTTON)))
         {
+            u16 species = gSaveBlock1Ptr->lastViewedPokedexEntry;
             RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
             BeginNormalPaletteFade(0xFFFF7FFF, 0, 0, 16, RGB_WHITEALPHA);
-            sPokedexScreenData->dexSpecies = gSaveBlock1Ptr->lastViewedPokedexEntry; //species for entry
+            sPokedexScreenData->dexSpecies = species; //species for entry
+            // because we circumvent normal access for a dex entry, ensure calculation of forms:
+            UpdateDexSpeciesSeenForm(species);
+
             //Below commented out code adjusts the cursor position that the last Pokedex entry backs out to.
             //It works IF the Pokemon is in the Kanto Dex and is not in the last position possible.
             //I could not get it to work. Instead, the cursor defaults to position 0 of the Kanto Dex.
@@ -1427,7 +1433,9 @@ static void Task_DexScreen_NumericalOrder(u8 taskId)
         {
             if ((sPokedexScreenData->characteristicMenuInput >> 16) & 1)
             {
-                sPokedexScreenData->dexSpecies = sPokedexScreenData->characteristicMenuInput;
+                u16 species = sPokedexScreenData->characteristicMenuInput
+                sPokedexScreenData->dexSpecies = species;
+                UpdateDexSpeciesSeenForm(species);
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
                 BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
                 sPokedexScreenData->state = 7;
@@ -2042,7 +2050,9 @@ static void Task_DexScreen_CategorySubmenu(u8 taskId) // habitat pages
         }
         break;
     case 12:
-        sPokedexScreenData->dexSpecies = sPokedexScreenData->pageSpecies[sPokedexScreenData->categoryCursorPosInPage];
+        u16 species = sPokedexScreenData->pageSpecies[sPokedexScreenData->categoryCursorPosInPage];
+        sPokedexScreenData->dexSpecies = species;
+        UpdateDexSpeciesSeenForm(species);
         PlaySE(SE_SELECT);
         sPokedexScreenData->state = 14;
         break;
@@ -2304,6 +2314,7 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
         HideBg(2);
         HideBg(1);
         sPokedexScreenData->dexSpecies = sPokedexScreenData->characteristicMenuInput;
+        UpdateDexSpeciesSeenForm(sPokedexScreenData->dexSpecies);
         sPokedexScreenData->state = 2;
         break;
     case 7:
@@ -3482,7 +3493,10 @@ static u8 DexScreen_DrawMonDexPage(bool8 justRegistered)
     if (justRegistered == FALSE)
     {
         DexScreen_AddTextPrinterParameterized(1, 0, gText_Cry, 8, 2, 4);
-        DexScreen_PrintControlInfo(gText_NextDataCancel);
+        if (sPokedexScreenData->dexSpeciesHasSeenForms)
+            DexScreen_PrintControlInfo(gText_ViewFormsNextDataCancel);
+        else
+            DexScreen_PrintControlInfo(gText_NextDataCancel);
     }
     else
         // Just registered
@@ -3967,4 +3981,48 @@ void DexScreen_PrintStringWithAlignment(const u8 * str, s32 mode)
     }
 
     DexScreen_AddTextPrinterParameterized(0, 2, str, x, 2, 4);
+}
+
+static void UpdateDexSpeciesSeenForm(u16 species)
+{
+    u16 *forms;
+    bool8 result = FALSE;
+    u16 originalSpecies = StripFormToSpecies(species);
+    if (species == originalSpecies)
+    {
+        u32 i;
+        forms = FormsOfSpecies(species);
+        for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+        {
+            result = DexScreen_GetSetPokedexFlag(
+                *(forms + i), FLAG_GET_SEEN, 1);
+            if (result)
+                break;
+        }
+    }
+    else
+    {
+        forms = FormsOfSpecies(originalSpecies);
+        if(forms != NULL)
+        {
+            result = DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1));
+            if (!result)
+            {
+                u32 i;
+                u16 currentForm;
+                for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+                {
+                    currentForm = *(forms + i);
+                    if (currentForm != species)
+                    {
+                        result = DexScreen_GetSetPokedexFlag(
+                            currentForm, FLAG_GET_SEEN, 1);
+                        if (result)
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    sPokedexScreenData-->dexSpeciesHasSeenForms = result;
 }
