@@ -1433,7 +1433,7 @@ static void Task_DexScreen_NumericalOrder(u8 taskId)
         {
             if ((sPokedexScreenData->characteristicMenuInput >> 16) & 1)
             {
-                u16 species = sPokedexScreenData->characteristicMenuInput
+                u16 species = sPokedexScreenData->characteristicMenuInput;
                 sPokedexScreenData->dexSpecies = species;
                 UpdateDexSpeciesSeenForm(species);
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
@@ -2050,9 +2050,8 @@ static void Task_DexScreen_CategorySubmenu(u8 taskId) // habitat pages
         }
         break;
     case 12:
-        u16 species = sPokedexScreenData->pageSpecies[sPokedexScreenData->categoryCursorPosInPage];
-        sPokedexScreenData->dexSpecies = species;
-        UpdateDexSpeciesSeenForm(species);
+        sPokedexScreenData->dexSpecies = sPokedexScreenData->pageSpecies[sPokedexScreenData->categoryCursorPosInPage];
+        UpdateDexSpeciesSeenForm(sPokedexScreenData->pageSpecies[sPokedexScreenData->categoryCursorPosInPage]);
         PlaySE(SE_SELECT);
         sPokedexScreenData->state = 14;
         break;
@@ -4005,7 +4004,7 @@ static void UpdateDexSpeciesSeenForm(u16 species)
         forms = FormsOfSpecies(originalSpecies);
         if(forms != NULL)
         {
-            result = DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1));
+            result = DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1);
             if (!result)
             {
                 u32 i;
@@ -4024,5 +4023,5 @@ static void UpdateDexSpeciesSeenForm(u16 species)
             }
         }
     }
-    sPokedexScreenData-->dexSpeciesHasSeenForms = result;
+    sPokedexScreenData->dexSpeciesHasSeenForms = result;
 }
