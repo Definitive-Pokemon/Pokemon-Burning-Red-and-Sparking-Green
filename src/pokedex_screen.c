@@ -105,6 +105,7 @@ static u8 DexScreen_CreateCategoryMenuScrollArrows(void);
 static int DexScreen_InputHandler_GetShoulderInput(void);
 static void Task_DexScreen_ShowMonPage(u8 taskId);
 static bool32 DexScreen_TryScrollMonsVertical(u8 direction);
+static bool32 DexScreen_TryViewOtherMonForm(u8 direction);
 static void DexScreen_RemoveWindow(u8 *windowId_p);
 static void DexScreen_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 colorIdx);
 static void DexScreen_PrintNum3RightAlign(u8 windowId, u8 fontId, u16 num, u8 x, u8 y, u8 colorIdx);
@@ -2619,7 +2620,7 @@ static u32 DexScreen_GetDefaultPersonality(int species)
 static u32 DexScreen_GetDefaultSpecies(int species)
 {
     u16 *forms = FormsOfSpecies(species);
-    if (forms != null)
+    if (forms != NULL)
     {
         u8 index = IndexInFormTableOfOriginSpecies(species);
         index = gSaveBlock2Ptr->pokedex.firstFormEncounter[index]; //misusing variable
@@ -2627,7 +2628,7 @@ static u32 DexScreen_GetDefaultSpecies(int species)
             return species;
         else
         {
-            return *(possibleForms + index);
+            return *(forms + index);
         }
     }
     else
