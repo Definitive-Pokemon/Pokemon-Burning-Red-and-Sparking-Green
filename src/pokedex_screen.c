@@ -2304,6 +2304,18 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
             BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
             sPokedexScreenData->state = 6;
         }
+        else if (JOY_NEW(DPAD_RIGHT) && DexScreen_TryViewOtherMonForm(1))
+        {
+            RemoveDexPageWindows();
+            BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
+            sPokedexScreenData->state = 6;
+        }
+        else if (JOY_NEW(DPAD_LEFT) && DexScreen_TryViewOtherMonForm(0))
+        {
+            RemoveDexPageWindows();
+            BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
+            sPokedexScreenData->state = 6;
+        }
         else
         {
             DexScreen_InputHandler_StartToCry();
@@ -2462,6 +2474,63 @@ static bool32 DexScreen_TryScrollMonsVertical(u8 direction)
     return TRUE;
 }
 
+static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
+{
+    if (sPokedexScreenData->dexSpeciesHasSeenForms)
+    {
+        u16 currentFormSpecies = sPokedexScreenData->dexSpecies;
+        u16 originSpecies = StripFormToSpecies(currentFormSpecies);
+        u16 *forms = FormsOfSpecies(originSpecies);
+        u8 formIndex = MAX_NUM_OF_FORMS; 
+        u32 i;
+        for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+        {
+            if (*(forms + i) == currentFormSpecies)
+            {
+                formIndex = (u8) i;
+                break;
+            }
+        }
+        if (direction) // Next form
+        {
+            do {
+                if (formIndex == MAX_NUM_OF_FORMS)
+                    formIndex = 0;
+                else
+                    formIndex++;
+
+                if (formIndex == MAX_NUM_OF_FORMS)
+                    currentFormSpecies = originSpecies;
+                else 
+                    currentFormSpecies = *(forms + formIndex);
+            }
+            while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
+        }
+        else // Previous form
+        {
+            do {
+                if (formIndex == 0)
+                    formIndex = MAX_NUM_OF_FORMS;
+                else
+                    formIndex--;
+                
+                if (formIndex == MAX_NUM_OF_FORMS)
+                    currentFormSpecies = originSpecies;
+                else 
+                    currentFormSpecies = *(forms + formIndex);
+            }
+            while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
+        }
+        if (formIndex == MAX_NUM_OF_FORMS)
+            sPokedexScreenData->characteristicMenuInput = originSpecies;
+        else
+            sPokedexScreenData->characteristicMenuInput = currentFormSpecies;
+        return TRUE;
+    }
+    
+    return FALSE;
+}
+
 static void DexScreen_RemoveWindow(u8 *windowId_p)
 {
     if (*windowId_p != 0xFF)
@@ -2545,9 +2614,31 @@ static u32 DexScreen_GetDefaultPersonality(int species)
     }
 }
 
+//NOTE: we only care about ORIGINAL forms being overwritten.
+// it's senseless if the player is searching for a form but sees the original
+static u32 DexScreen_GetDefaultSpecies(int species)
+{
+    u16 *forms = FormsOfSpecies(species);
+    if (forms != null)
+    {
+        u8 index = IndexInFormTableOfOriginSpecies(species);
+        index = gSaveBlock2Ptr->pokedex.firstFormEncounter[index]; //misusing variable
+        if (index == 0)
+            return species;
+        else
+        {
+            return *(possibleForms + index);
+        }
+    }
+    else
+    {
+        return species;
+    }
+}
+
 static void DexScreen_LoadMonPicInWindow(u8 windowId, u16 species, u16 paletteOffset)
 {
-    LoadMonPicInWindow(species, 8, DexScreen_GetDefaultPersonality(species), TRUE, paletteOffset >> 4, windowId);
+    LoadMonPicInWindow(DexScreen_GetDefaultSpecies(species), 8, DexScreen_GetDefaultPersonality(species), TRUE, paletteOffset >> 4, windowId);
 }
 
 static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u8 y)
@@ -3639,7 +3730,8 @@ u8 DexScreen_DrawMonAreaPage(void)
 
     if (monIsCaught)
     {
-        sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(species, 8, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
+        // TODO:FORME
+        sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(DexScreen_GetDefaultSpecies(species), 8, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
         gSprites[sPokedexScreenData->windowIds[14]].oam.paletteNum = 2;
         gSprites[sPokedexScreenData->windowIds[14]].oam.affineMode = 1;
         gSprites[sPokedexScreenData->windowIds[14]].oam.matrixNum = 2;

@@ -7986,16 +7986,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         if (FormsOfSpecies(NationalPokedexNumToSpecies(nationalNum)) != NULL)
         {
             u16 species = NationalPokedexNumToSpecies(nationalNum);
-            u8 originalIndex = 0;
-            u32 i;
-            for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
-            {
-                if (sEncounterOrderViaOriginalSpecies[i] == species)
-                {
-                    originalIndex = (u8) i;
-                    break;
-                }
-            }
+            u8 originalIndex = IndexInFormTableOfOriginSpecies(species);
             gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = 0; // original form is zero
         }
         else if (StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum)) != NationalPokedexNumToSpecies(nationalNum))
@@ -8003,17 +7994,9 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
             u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
             u16 originalSpecies = StripFormToSpecies(formSpecies);
             u16 *forms = FormsOfSpecies(originalSpecies);
-            u8 originalIndex = 0;
+            u8 originalIndex = IndexInFormTableOfOriginSpecies(originalSpecies);
             u8 form = 1; // cannot be zero anyway
             u32 i;
-            for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
-            {
-                if (sEncounterOrderViaOriginalSpecies[i] == originalSpecies)
-                {
-                    originalIndex = (u8) i;
-                    break;
-                }
-            }
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
             {
                 if (*(forms + i) == formSpecies)
@@ -8281,4 +8264,17 @@ u16 *FormsOfSpecies(u16 species)
         result = (u16*) sFormOriginalSpeciesTable[species];
     }
     return result;
+}
+
+u8 IndexInFormTableOfOriginSpecies(u16 originSpecies)
+{
+    u32 i;
+    for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
+    {
+        if (sEncounterOrderViaOriginalSpecies[i] == originSpecies)
+        {
+            return (u8) i;
+        }
+    }
+    return 0xFF; // completely invalid value
 }

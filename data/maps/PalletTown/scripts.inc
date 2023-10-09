@@ -53,6 +53,7 @@ PalletTown_EventScript_DebugGive::
 	givemon SPECIES_FOSSILIZED_KABUTOPS, 5, ITEM_NONE
 	release
 	end
+
 PalletTown_EventScript_DebugBattle::
 	lock
 	setwildbattle SPECIES_FOSSILIZED_KABUTOPS, 3, ITEM_NONE
