@@ -136,7 +136,33 @@ static void ItemPrintFunc_OrderedListMenu(u8 windowId, s32 itemId, u8 y);
 static void Task_DexScreen_RegisterNonKantoMonBeforeNationalDex(u8 taskId);
 static void Task_DexScreen_RegisterMonToPokedex(u8 taskId);
 static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies);
+static u16 DexScreen_GetPokedexListFlags(u16 species);
 static void UpdateDexSpeciesSeenForm(u16 species);
+
+#define SEEN_FLAG_SHIFT 16
+#define CAUGHT_FLAG_SHIFT 17
+#define INDEX_IS_SEEN(label) (((label) >> SEEN_FLAG_SHIFT) & 1)
+#define INDEX_IS_CAUGHT(label) (((label) >> CAUGHT_FLAG_SHIFT) & 1)
+
+/*
+Some explanation:
+The list index is 32 bits.
+the least significant ones are species.
+0x????SSSS
+0b0000.0000.OOOH.FECS.[lower 16]
+S = Seen flag
+C = caught flag
+FE = First Encounter form, where 00 is original
+H = has forms or not
+OOO = Obtained entry bits. For now just supporting a small number of forms.
+it works like this 2-1-0, so the least significant bit marks origin, the one after that first form etc. 
+*/
+#define FIRST_ENCOUNTER_NUMBER_SHIFT 18
+#define FORM_FLAG_SHIFT 20
+#define FORMS_SEEN_BITS_SHIFT 21
+#define INDEX_HAS_FORMS(label) (((label) >> FORM_FLAG_SHIFT) & 1)
+#define INDEX_FIRST_ENCOUNTER(label) ((((label) >> FIRST_ENCOUNTER_NUMBER_SHIFT) & 3))
+#define INDEX_FORMS_SEEN_BITS(label) (((label) >> FORMS_SEEN_BITS_SHIFT) & 7)
 
 #include "data/pokemon_graphics/footprint_table.h"
 
@@ -1432,7 +1458,7 @@ static void Task_DexScreen_NumericalOrder(u8 taskId)
         ListMenuGetScrollAndRow(sPokedexScreenData->modeSelectListMenuId, &sPokedexScreenData->modeSelectCursorPosBak, NULL);
         if (JOY_NEW(A_BUTTON))
         {
-            if ((sPokedexScreenData->characteristicMenuInput >> 16) & 1)
+            if (INDEX_IS_SEEN(sPokedexScreenData->characteristicMenuInput))
             {
                 u16 species = sPokedexScreenData->characteristicMenuInput;
                 sPokedexScreenData->dexSpecies = species;
@@ -1554,7 +1580,8 @@ static void Task_DexScreen_CharacteristicOrder(u8 taskId)
         ListMenuGetScrollAndRow(sPokedexScreenData->modeSelectListMenuId, &sPokedexScreenData->modeSelectCursorPosBak, NULL);
         if (JOY_NEW(A_BUTTON))
         {
-            if (((sPokedexScreenData->characteristicMenuInput >> 16) & 1) && !DexScreen_LookUpCategoryBySpecies(sPokedexScreenData->characteristicMenuInput))
+            if (INDEX_IS_SEEN(sPokedexScreenData->characteristicMenuInput)
+                && !DexScreen_LookUpCategoryBySpecies(sPokedexScreenData->characteristicMenuInput))
             {
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
                 BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
@@ -1633,12 +1660,13 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
     case DEX_ORDER_NUMERICAL_KANTO: //regular kanto dex list populator
         if(!IsNationalPokedexEnabled() || !FlagGet(FLAG_SYS_EXTENDED_DEX_TOGGLE))
         {
+            u16 indexFlags;
             for (i = 0; i < KANTO_DEX_COUNT; i++)
             {
                 ndex_num = i + 1;
-                seen = DexScreen_GetSetPokedexFlagIncludingForms(ndex_num, FLAG_GET_SEEN, 0);
-                caught = DexScreen_GetSetPokedexFlagIncludingForms(ndex_num, FLAG_GET_CAUGHT, 0);
-                if (seen)
+                indexFlags = DexScreen_GetPokedexListFlags(ndex_num);
+                sPokedexScreenData->listItems[i].index = (indexFlags << 16) + NationalPokedexNumToSpecies(ndex_num);
+                if (INDEX_IS_SEEN(sPokedexScreenData->listItems[i].index))
                 {
                     sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
                     ret = ndex_num;
@@ -1647,7 +1675,6 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
                 {
                     sPokedexScreenData->listItems[i].label = gText_5Dashes;
                 }
-                sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
             }
             break;
         }
@@ -1881,8 +1908,7 @@ struct PokedexListItem
 static void ItemPrintFunc_OrderedListMenu(u8 windowId, s32 itemId, u8 y)
 {
     u16 species = (u32)itemId;
-    bool8 seen = ((u32)itemId >> 16) & 1;  // not used but required to match
-    bool8 caught = ((u32)itemId >> 17) & 1;
+    bool8 caught = INDEX_IS_CAUGHT((u32)itemId);
     u8 type1;
     DexScreen_PrintMonDexNo(sPokedexScreenData->numericalOrderWindowId, 0, species, 12, y); //controls Pokedex num on scrolling lists
     if (caught)
@@ -2416,7 +2442,7 @@ static bool32 DexScreen_TryScrollMonsVertical(u8 direction)
         selectedIndex--;
         while (selectedIndex >= 0) //Should be while (--selectedIndex >= 0) without the selectedIndex-- in the body or before the while at all, but this is needed to match.
         {
-            if ((sPokedexScreenData->listItems[selectedIndex].index >> 16) & 1)
+            if (INDEX_IS_SEEN(sPokedexScreenData->listItems[selectedIndex].index))
             {
                 break;
             }
@@ -2438,7 +2464,7 @@ static bool32 DexScreen_TryScrollMonsVertical(u8 direction)
         selectedIndex++;
         while (selectedIndex < sPokedexScreenData->orderedDexCount) //Should be while (++selectedIndex < sPokedexScreenData->orderedDexCount) without the selectedIndex++ in the body or before the while at all, but this is needed to match.
         {
-            if ((sPokedexScreenData->listItems[selectedIndex].index >> 16) & 1)
+            if (INDEX_IS_SEEN(sPokedexScreenData->listItems[selectedIndex].index))
                 break;
             selectedIndex++;
         }
@@ -2880,6 +2906,45 @@ static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId
         break;
     }
     return retVal;
+}
+
+// Again this one is only really meant for Origin species
+static u16 DexScreen_GetPokedexListFlags(u16 species)
+{
+    u8 index;
+    u8 result = 0;
+    u16 originSpecies = StripFormToSpecies(species);
+    u16 *possibleForms = FormsOfSpecies(originSpecies);
+
+    if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_SEEN, TRUE))
+    {
+        result = 1;
+    }
+    if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_CAUGHT, TRUE))
+    {
+        result |= (CAUGHT_FLAG_SHIFT - 16) << 1;
+    }
+
+    if (possibleForms != NULL)
+    {
+        u32 i;
+        u16 firstEncounteredForm = DexScreen_GetDefaultSpecies(originSpecies);
+        if (result & 1)
+            result |= (FORMS_SEEN_BITS_SHIFT - 16) << 1;
+        // One could argue that, yes we need to set the First Encounter bits here, but they would be 00 anyway
+
+        for (i = 0; i < 3; i++) //should be MAX_NUM_OF_FORMS, but found it necessary to do an arbitrary limit
+        {
+            if(DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
+            {
+                result |= (FORMS_SEEN_BITS_SHIFT - 16 + (i + 1)) << 1;
+                if (firstEncounteredForm == *(possibleForms + i))
+                    result |= (FIRST_ENCOUNTER_NUMBER_SHIFT - 16) << (i + 1);
+            }
+        }
+        result |= (FORM_FLAG_SHIFT - 16) << 1;
+    }
+    return result;
 }
 
 static u16 DexScreen_GetDexCount(u8 caseId, u8 whichDex)
@@ -3565,11 +3630,11 @@ static u8 DexScreen_DrawMonDexPage(bool8 justRegistered)
     // Species stats
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[1], PIXEL_FILL(0));
     DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[1], 0, sPokedexScreenData->dexSpecies, 0, 8);
-    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], 2, gSpeciesNames[sPokedexScreenData->dexSpecies], 28, 8, 0);
+    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], 2, gSpeciesNames[StripFormToSpecies(sPokedexScreenData->dexSpecies)], 28, 8, 0);
     DexScreen_PrintMonCategory(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 24);
     DexScreen_PrintMonHeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 36);
     DexScreen_PrintMonWeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 48);
-    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 88, 40);
+    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], StripFormToSpecies(sPokedexScreenData->dexSpecies), 88, 40);
     PutWindowTilemap(sPokedexScreenData->windowIds[1]);
     CopyWindowToVram(sPokedexScreenData->windowIds[1], COPYWIN_GFX);
 
