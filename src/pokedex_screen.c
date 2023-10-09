@@ -2617,7 +2617,7 @@ static u32 DexScreen_GetDefaultPersonality(int species)
 
 //NOTE: we only care about ORIGINAL forms being overwritten.
 // it's senseless if the player is searching for a form but sees the original
-static u32 DexScreen_GetDefaultSpecies(int species)
+static u32 DexScreen_GetDefaultSpecies(u16 species)
 {
     u16 *forms = FormsOfSpecies(species);
     if (forms != NULL)

@@ -2708,3 +2708,6 @@ const u8 gDeoxysPokedexText_FR[] = _(
     "altering its appearance.");
 
 const u8 gDeoxysPokedexTextUnused_FR[] = _("");
+
+const u8 gFossilizedKabutopsPokedexText_FR[] = _(
+    "Lorem ipsum.");
