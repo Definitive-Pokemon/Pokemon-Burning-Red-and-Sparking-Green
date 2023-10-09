@@ -3984,44 +3984,23 @@ void DexScreen_PrintStringWithAlignment(const u8 * str, s32 mode)
 
 static void UpdateDexSpeciesSeenForm(u16 species)
 {
-    u16 *forms;
     bool8 result = FALSE;
     u16 originalSpecies = StripFormToSpecies(species);
-    if (species == originalSpecies)
+    u8 seenForms = 0;
+    u16 *forms = FormsOfSpecies(originalSpecies);
+    u32 i;
+
+    if (DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1))
+        seenForms++;
+
+    for (i = 0; i < MAX_NUM_OF_FORMS; i++)
     {
-        u32 i;
-        forms = FormsOfSpecies(species);
-        for (i = 0; i < MAX_NUM_OF_FORMS; i++)
-        {
-            result = DexScreen_GetSetPokedexFlag(
-                *(forms + i), FLAG_GET_SEEN, 1);
-            if (result)
-                break;
-        }
+        if (DexScreen_GetSetPokedexFlag(*(forms + i), FLAG_GET_SEEN, 1))
+            seenForms++;
     }
-    else
-    {
-        forms = FormsOfSpecies(originalSpecies);
-        if(forms != NULL)
-        {
-            result = DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1);
-            if (!result)
-            {
-                u32 i;
-                u16 currentForm;
-                for (i = 0; i < MAX_NUM_OF_FORMS; i++)
-                {
-                    currentForm = *(forms + i);
-                    if (currentForm != species)
-                    {
-                        result = DexScreen_GetSetPokedexFlag(
-                            currentForm, FLAG_GET_SEEN, 1);
-                        if (result)
-                            break;
-                    }
-                }
-            }
-        }
-    }
+
+    if (seenForms > 1)
+        result = TRUE;
+
     sPokedexScreenData->dexSpeciesHasSeenForms = result;
 }
