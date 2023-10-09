@@ -1661,14 +1661,16 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         if(!IsNationalPokedexEnabled() || !FlagGet(FLAG_SYS_EXTENDED_DEX_TOGGLE))
         {
             u16 indexFlags;
+            u16 regularSpeciesNumber;
             for (i = 0; i < KANTO_DEX_COUNT; i++)
             {
                 ndex_num = i + 1;
-                indexFlags = DexScreen_GetPokedexListFlags(ndex_num);
-                sPokedexScreenData->listItems[i].index = (indexFlags << 16) + NationalPokedexNumToSpecies(ndex_num);
+                regularSpeciesNumber = NationalPokedexNumToSpecies(ndex_num);
+                indexFlags = DexScreen_GetPokedexListFlags(regularSpeciesNumber);
+                sPokedexScreenData->listItems[i].index = (indexFlags << 16) + regularSpeciesNumber;
                 if (INDEX_IS_SEEN(sPokedexScreenData->listItems[i].index))
                 {
-                    sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
+                    sPokedexScreenData->listItems[i].label = gSpeciesNames[regularSpeciesNumber];
                     ret = ndex_num;
                 }
                 else
@@ -2912,8 +2914,8 @@ static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId
 static u16 DexScreen_GetPokedexListFlags(u16 species)
 {
     u8 index;
-    u8 result = 0;
-    u16 originSpecies = StripFormToSpecies(species);
+    u16 result = 0;
+    u16 originSpecies = StripFormToSpecies(species); //sanity check?
     u16 *possibleForms = FormsOfSpecies(originSpecies);
 
     if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_SEEN, TRUE))
