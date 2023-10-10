@@ -138,6 +138,7 @@ static void Task_DexScreen_RegisterMonToPokedex(u8 taskId);
 static s8 DexScreen_GetSetPokedexFlagIncludingForms(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies);
 static u16 DexScreen_GetPokedexListFlags(u16 species);
 static void UpdateDexSpeciesSeenForm(u16 species);
+static u16 GetSpeciesFromIndex(u32 index);
 
 #define SEEN_FLAG_SHIFT 16
 #define CAUGHT_FLAG_SHIFT 17
@@ -1460,7 +1461,7 @@ static void Task_DexScreen_NumericalOrder(u8 taskId)
         {
             if (INDEX_IS_SEEN(sPokedexScreenData->characteristicMenuInput))
             {
-                u16 species = sPokedexScreenData->characteristicMenuInput;
+                u16 species = GetSpeciesFromIndex((u32)sPokedexScreenData->characteristicMenuInput);
                 sPokedexScreenData->dexSpecies = species;
                 UpdateDexSpeciesSeenForm(species);
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
@@ -1910,17 +1911,17 @@ struct PokedexListItem
 static void ItemPrintFunc_OrderedListMenu(u8 windowId, s32 itemId, u8 y)
 {
     u16 species = (u32)itemId;
-    bool8 caught = INDEX_IS_CAUGHT((u32)itemId);
-    u8 type1;
-    DexScreen_PrintMonDexNo(sPokedexScreenData->numericalOrderWindowId, 0, species, 12, y); //controls Pokedex num on scrolling lists
-    if (caught)
+    if (INDEX_IS_CAUGHT((u32)itemId))
     {
+        u8 type1;
+        species = GetSpeciesFromIndex((u32)itemId);
         BlitMoveInfoIcon(sPokedexScreenData->numericalOrderWindowId, 0, 0x28, y);
         type1 = gBaseStats[species].type1;
         BlitMoveInfoIcon(sPokedexScreenData->numericalOrderWindowId, type1 + 1, 0x78, y);
         if (type1 != gBaseStats[species].type2)
             BlitMoveInfoIcon(sPokedexScreenData->numericalOrderWindowId, gBaseStats[species].type2 + 1, 0x98, y);
     }
+    DexScreen_PrintMonDexNo(sPokedexScreenData->numericalOrderWindowId, 0, species, 12, y); //controls Pokedex num on scrolling lists
 }
 
 static void Task_DexScreen_CategorySubmenu(u8 taskId) // habitat pages
@@ -4167,4 +4168,17 @@ static void UpdateDexSpeciesSeenForm(u16 species)
         result = TRUE;
 
     sPokedexScreenData->dexSpeciesHasSeenForms = result;
+}
+
+static u16 GetSpeciesFromIndex(u32 index)
+{
+    u16 species = INDEX_FIRST_ENCOUNTER(index);
+    // variable hackery
+    if(INDEX_HAS_FORMS(index) &&
+        (species > 0))
+    {
+        u16 *forms = FormsOfSpecies((u16)index);
+        return  *(forms + (species - 1));
+    }
+    return (u16)index;
 }
