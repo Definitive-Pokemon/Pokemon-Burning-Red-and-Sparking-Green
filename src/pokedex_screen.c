@@ -1667,7 +1667,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
                 ndex_num = i + 1;
                 regularSpeciesNumber = NationalPokedexNumToSpecies(ndex_num);
                 indexFlags = DexScreen_GetPokedexListFlags(regularSpeciesNumber);
-                sPokedexScreenData->listItems[i].index = (indexFlags << 16) + regularSpeciesNumber;
+                sPokedexScreenData->listItems[i].index = (indexFlags << SEEN_FLAG_SHIFT) + regularSpeciesNumber;
                 if (INDEX_IS_SEEN(sPokedexScreenData->listItems[i].index))
                 {
                     sPokedexScreenData->listItems[i].label = gSpeciesNames[regularSpeciesNumber];
@@ -2924,7 +2924,7 @@ static u16 DexScreen_GetPokedexListFlags(u16 species)
     }
     if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_CAUGHT, TRUE))
     {
-        result |= (CAUGHT_FLAG_SHIFT - 16) << 1;
+        result |= ((CAUGHT_FLAG_SHIFT - 16) << 1);
     }
 
     if (possibleForms != NULL)
@@ -2932,16 +2932,16 @@ static u16 DexScreen_GetPokedexListFlags(u16 species)
         u32 i;
         u16 firstEncounteredForm = DexScreen_GetDefaultSpecies(originSpecies);
         if (result & 1)
-            result |= (FORMS_SEEN_BITS_SHIFT - 16) << 1;
+            result |= ((FORMS_SEEN_BITS_SHIFT - 16) << 1);
         // One could argue that, yes we need to set the First Encounter bits here, but they would be 00 anyway
 
         for (i = 0; i < 3; i++) //should be MAX_NUM_OF_FORMS, but found it necessary to do an arbitrary limit
         {
             if(DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
             {
-                result |= (FORMS_SEEN_BITS_SHIFT - 16 + (i + 1)) << 1;
+                result |= ((FORMS_SEEN_BITS_SHIFT - 16 + (i + 1)) << 1);
                 if (firstEncounteredForm == *(possibleForms + i))
-                    result |= (FIRST_ENCOUNTER_NUMBER_SHIFT - 16) << (i + 1);
+                    result |= ((FIRST_ENCOUNTER_NUMBER_SHIFT - 16) << (i + 1));
             }
         }
         result |= (FORM_FLAG_SHIFT - 16) << 1;
