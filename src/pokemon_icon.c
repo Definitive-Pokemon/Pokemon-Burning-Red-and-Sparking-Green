@@ -910,7 +910,7 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_Z]     = 0,
     [SPECIES_UNOWN_EMARK] = 0,
     [SPECIES_UNOWN_QMARK] = 0,
-    [SPECIES_FOSSILIZED_KABUTOPS] = 1
+    [SPECIES_FOSSILIZED_KABUTOPS] = 2
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {
