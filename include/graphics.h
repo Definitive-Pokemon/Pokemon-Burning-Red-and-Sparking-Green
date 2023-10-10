@@ -2430,6 +2430,11 @@ extern const u8 gMonIcon_UnownExclamationMark[];
 extern const u32 gMonFrontPic_UnownQuestionMark[];
 extern const u32 gMonBackPic_UnownQuestionMark[];
 extern const u8 gMonIcon_UnownQuestionMark[];
+extern const u32 gMonFrontPic_FossilizedKabutops[];
+extern const u32 gMonPalette_FossilizedKabutops[];
+extern const u32 gMonBackPic_FossilizedKabutops[];
+extern const u32 gMonShinyPalette_FossilizedKabutops[];
+extern const u8 gMonIcon_FossilizedKabutops[];
 
 extern const u32 gMonFrontPic_CircledQuestionMark[];
 extern const u32 gMonBackPic_CircledQuestionMark[];
@@ -4866,6 +4871,7 @@ extern const u8 gMonIcon_Unown_Z[];
 extern const u8 gMonIcon_Unown_ExclamationMark[];
 extern const u8 gMonIcon_Unown_QuestionMark[];
 extern const u8 gMonIcon_QuestionMark[];
+extern const u8 gMonIcon_FossilizedKabutops[];
 
 // trade
 extern const u16 gTradeMenu_Pal[];
