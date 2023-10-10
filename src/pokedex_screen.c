@@ -2937,11 +2937,15 @@ static u16 DexScreen_GetPokedexListFlags(u16 species)
 
         for (i = 0; i < 3; i++) //should be MAX_NUM_OF_FORMS, but found it necessary to do an arbitrary limit
         {
-            if(DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
+            if (DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
             {
+                result |= 1; // set seen bit! We have seen at least one form of this origin species!
                 result |= (1 << (FORMS_SEEN_BITS_SHIFT - 16 + (i + 1)));
                 if (firstEncounteredForm == *(possibleForms + i))
                     result |= ((i + 1) << (FIRST_ENCOUNTER_NUMBER_SHIFT - 16));
+                
+                if (DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_CAUGHT, 1))
+                    result |= (1 << (CAUGHT_FLAG_SHIFT - 16));
             }
         }
         result |= 1 << (FORM_FLAG_SHIFT - 16);
