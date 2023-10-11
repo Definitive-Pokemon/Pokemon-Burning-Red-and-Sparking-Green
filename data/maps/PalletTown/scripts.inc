@@ -70,7 +70,7 @@ PalletTown_EventScript_DebugGiveNormal::
 
 PalletTown_EventScript_DebugGiveIndex::
 	lock
-	givemon SPECIES_CHIMECO, 5, ITEM_NONE
+	givemon SPECIES_CHIMECHO, 5, ITEM_NONE
 	release
 	end
 
