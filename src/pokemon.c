@@ -7978,11 +7978,10 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
     u16 originSpecies = StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum));
     bool8 originCaseCheck = GetSetPokedexFlag(nationalNum, getFlagCaseId);
     u16 *possibleForms = FormsOfSpecies(originSpecies);
+    bool8 isOneFormSeen = FALSE;
+    u32 i;
     if (possibleForms != NULL)
     {
-        u16 speciesNum = NationalPokedexNumToSpecies(nationalNum);
-        bool8 isOneFormSeen = FALSE;
-        u32 i;
         for(i = 0; i < MAX_NUM_OF_FORMS; i++)
         {
             if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(*(forms + i)), FLAG_GET_SEEN)
