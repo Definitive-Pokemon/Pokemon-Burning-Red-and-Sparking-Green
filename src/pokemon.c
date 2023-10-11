@@ -7975,38 +7975,47 @@ void CreateEventLegalEnemyMon(void)
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
 {
     u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT;
-    
-    if (!GetSetPokedexFlag(nationalNum, getFlagCaseId))
+    u16 originSpecies = StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum));
+    bool8 originCaseCheck = GetSetPokedexFlag(nationalNum, getFlagCaseId);
+    u16 *possibleForms = FormsOfSpecies(originSpecies);
+    if (possibleForms != NULL)
+    {
+        u16 speciesNum = NationalPokedexNumToSpecies(nationalNum);
+        bool8 isOneFormSeen = FALSE;
+        u32 i;
+        for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+        {
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(*(forms + i)), FLAG_GET_SEEN)
+            {
+                isOneFormSeen = TRUE;
+                break;
+            }
+        }
+        if (!isOneFormSeen)
+        {
+            //set current form as first.
+            u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
+            u8 originalIndex = IndexInFormTableOfOriginSpecies(originSpecies);
+            u8 form = 0; 
+            for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+            {
+                // if there is no match, form will be 0, which is origin
+                if (*(forms + i) == formSpecies)
+                {
+                    form = (u8) (i + 1);
+                    break;
+                }
+            }
+            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = form;
+        }
+    }
+    if (!originCaseCheck)
     {
         GetSetPokedexFlag(nationalNum, caseId);
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_UNOWN)
             gSaveBlock2Ptr->pokedex.unownPersonality = personality;
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_SPINDA)
             gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
-        if (FormsOfSpecies(NationalPokedexNumToSpecies(nationalNum)) != NULL)
-        {
-            u16 species = NationalPokedexNumToSpecies(nationalNum);
-            u8 originalIndex = IndexInFormTableOfOriginSpecies(species);
-            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = 0; // original form is zero
-        }
-        else if (StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum)) != NationalPokedexNumToSpecies(nationalNum))
-        {
-            u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
-            u16 originalSpecies = StripFormToSpecies(formSpecies);
-            u16 *forms = FormsOfSpecies(originalSpecies);
-            u8 originalIndex = IndexInFormTableOfOriginSpecies(originalSpecies);
-            u8 form = 1; // cannot be zero anyway
-            u32 i;
-            for(i = 0; i < MAX_NUM_OF_FORMS; i++)
-            {
-                if (*(forms + i) == formSpecies)
-                {
-                    form = (u8) i;
-                    break;
-                }
-            }
-            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = form;
-        }
     }
 }
 
