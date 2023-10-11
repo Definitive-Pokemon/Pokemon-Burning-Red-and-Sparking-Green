@@ -7984,7 +7984,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
     {
         for(i = 0; i < MAX_NUM_OF_FORMS; i++)
         {
-            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(*(forms + i)), FLAG_GET_SEEN)
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(*(possibleForms + i)), FLAG_GET_SEEN)
             {
                 isOneFormSeen = TRUE;
                 break;
