@@ -2657,7 +2657,7 @@ static u32 DexScreen_GetDefaultSpecies(u16 species)
             return species;
         else
         {
-            return *(forms + index);
+            return *(forms + (index - 1));
         }
     }
     else
