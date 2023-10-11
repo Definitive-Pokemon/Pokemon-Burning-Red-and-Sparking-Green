@@ -68,6 +68,12 @@ PalletTown_EventScript_DebugGiveNormal::
 	release
 	end
 
+PalletTown_EventScript_DebugGiveIndex::
+	lock
+	givemon SPECIES_CHIMECO, 5, ITEM_NONE
+	release
+	end
+
 PalletTown_OnFrame:: @ 81654CE
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 2, PalletTown_EventScript_OakRatingScene
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 3, PalletTown_EventScript_MasterTrainerYoungster
