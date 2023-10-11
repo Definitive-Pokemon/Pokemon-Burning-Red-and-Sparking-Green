@@ -7999,7 +7999,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
             {
                 // if there is no match, form will be 0, which is origin
-                if (*(forms + i) == formSpecies)
+                if (*(possibleForms + i) == formSpecies)
                 {
                     form = (u8) (i + 1);
                     break;
