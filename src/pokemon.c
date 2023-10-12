@@ -2807,7 +2807,7 @@ static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][MAX_NUM_OF_FORMS] =
     [SPECIES_KABUTOPS] = {SPECIES_FOSSILIZED_KABUTOPS},
 };
 
-static const u8 sEncounterOrderViaOriginalSpecies[NUM_ORIGINAL_SPECIES_WITH_FORMS] = 
+static const u16 sEncounterOrderViaOriginalSpecies[NUM_ORIGINAL_SPECIES_WITH_FORMS] = 
 {
     [0] = SPECIES_KABUTOPS,
 };
@@ -7999,7 +7999,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
             {
                 // if there is no match, form will be 0, which is origin
-                if (*(possibleForms + i) == formSpecies)
+                if ((*(possibleForms + i)) == formSpecies)
                 {
                     form = (u8) (i + 1);
                     break;
