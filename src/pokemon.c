@@ -6554,10 +6554,10 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
 
     species = 0;
 
-    while (species < NUM_SPECIES_WITH_FORMS - 1 && sSpeciesToNationalPokedexNum[species] != nationalNum)
+    while (species < NUM_SPECIES_WITH_FORMS && sSpeciesToNationalPokedexNum[species] != nationalNum)
         species++;
 
-    if (species == NUM_SPECIES - 1)
+    if (species == NUM_SPECIES)
         return 0;
     
     if (species == NUM_SPECIES_WITH_FORMS)
