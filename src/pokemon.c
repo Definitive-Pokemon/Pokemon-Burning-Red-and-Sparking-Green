@@ -6559,9 +6559,6 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
 
     if (species == NUM_SPECIES)
         return 0;
-    
-    if (species == NUM_SPECIES_WITH_FORMS)
-        return 0;
 
     return species + 1;
 }
@@ -7990,12 +7987,13 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
                 break;
             }
         }
+        gSaveBlock2Ptr->pokedex.firstFormEncounter[1] = 22; //debug value (0x16)
         if (!isOneFormSeen)
         {
             //set current form as first.
             u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
             u8 originalIndex = IndexInFormTableOfOriginSpecies(originSpecies);
-            u8 form = 0; 
+            u8 form = 3; 
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
             {
                 // if there is no match, form will be 0, which is origin
