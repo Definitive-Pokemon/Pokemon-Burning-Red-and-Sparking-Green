@@ -7990,11 +7990,11 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
                 break;
             }
         }
-        gSaveBlock2Ptr->pokedex.firstFormEncounter[1] = 22; //debug value (0x16)
         if (!isOneFormSeen)
         {
             //set current form as first.
             u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
+            //440
             u8 originalIndex = IndexInFormTableOfOriginSpecies(originSpecies);
             u8 form = 3; 
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
