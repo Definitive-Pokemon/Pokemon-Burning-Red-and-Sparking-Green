@@ -6560,6 +6560,9 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
     if (species == NUM_SPECIES)
         return 0;
 
+    if (species == NUM_SPECIES_WITH_FORMS)
+        return 0;
+
     return species + 1;
 }
 
