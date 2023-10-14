@@ -8262,7 +8262,7 @@ u16 StripFormToSpecies(u16 species)
 {
     u16 result = species;
     species = OriginalSpeciesOfForm(species);
-    if (species == SPECIES_NONE)
+    if (species != SPECIES_NONE)
         result = species;
     return result;
 }
