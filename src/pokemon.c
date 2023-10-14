@@ -7995,6 +7995,9 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
                 break;
             }
         }
+        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(originSpecies), FLAG_GET_SEEN))
+            isOneFormSeen = TRUE;
+        
         if (!isOneFormSeen)
         {
             //set current form as first.
