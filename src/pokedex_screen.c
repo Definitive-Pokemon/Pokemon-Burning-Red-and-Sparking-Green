@@ -138,6 +138,7 @@ static void Task_DexScreen_RegisterMonToPokedex(u8 taskId);
 static u16 DexScreen_GetPokedexListFlags(u16 species);
 static void UpdateDexSpeciesSeenForm(u16 species);
 static u16 GetSpeciesFromIndex(u32 index);
+static u32 DexScreen_GetDefaultSpecies(u16 species);
 
 #define SEEN_FLAG_SHIFT 16
 #define CAUGHT_FLAG_SHIFT 17
