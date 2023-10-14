@@ -6561,7 +6561,7 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
         PlaySE(SE_BANG);
     
     if (species == SPECIES_FOSSILIZED_KABUTOPS - 1)
-        PlaySE(SE_SUCCESS);s
+        PlaySE(SE_SUCCESS);
 
     if (species == NUM_SPECIES)
         return 0;
