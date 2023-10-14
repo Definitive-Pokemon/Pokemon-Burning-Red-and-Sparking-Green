@@ -2663,7 +2663,7 @@ static u32 DexScreen_GetDefaultSpecies(u16 species)
 
 static void DexScreen_LoadMonPicInWindow(u8 windowId, u16 species, u16 paletteOffset)
 {
-    LoadMonPicInWindow(DexScreen_GetDefaultSpecies(species), 8, DexScreen_GetDefaultPersonality(species), TRUE, paletteOffset >> 4, windowId);
+    LoadMonPicInWindow(species, 8, DexScreen_GetDefaultPersonality(species), TRUE, paletteOffset >> 4, windowId);
 }
 
 static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u8 y)
@@ -3799,7 +3799,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     if (monIsCaught)
     {
         // TODO:FORME
-        sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(DexScreen_GetDefaultSpecies(species), 8, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
+        sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(species, 8, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
         gSprites[sPokedexScreenData->windowIds[14]].oam.paletteNum = 2;
         gSprites[sPokedexScreenData->windowIds[14]].oam.affineMode = 1;
         gSprites[sPokedexScreenData->windowIds[14]].oam.matrixNum = 2;
