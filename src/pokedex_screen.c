@@ -2552,10 +2552,7 @@ static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
             }
             while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
         }
-        if (formIndex == MAX_NUM_OF_FORMS)
-            sPokedexScreenData->characteristicMenuInput = originSpecies;
-        else
-            sPokedexScreenData->characteristicMenuInput = currentFormSpecies;
+        sPokedexScreenData->characteristicMenuInput = currentFormSpecies;
         return TRUE;
     }
     
@@ -4074,20 +4071,22 @@ void DexScreen_PrintStringWithAlignment(const u8 * str, s32 mode)
 static void UpdateDexSpeciesSeenForm(u16 species)
 {
     bool8 result = FALSE;
-    u16 originalSpecies = StripFormToSpecies(species);
+    u16 originSpecies = StripFormToSpecies(species);
     u8 seenForms = 0;
-    u16 *forms = FormsOfSpecies(originalSpecies);
+    u16 *possibleForms = FormsOfSpecies(originSpecies);
     u32 i;
 
-    if (DexScreen_GetSetPokedexFlag(originalSpecies, FLAG_GET_SEEN, 1))
+    if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_SEEN, 1))
         seenForms++;
 
-    for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+    if (possibleForms != NULL)
     {
-        if (DexScreen_GetSetPokedexFlag(*(forms + i), FLAG_GET_SEEN, 1))
-            seenForms++;
+        for (i = 0; i < MAX_NUM_OF_FORMS; i++)
+        {
+            if (DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
+                seenForms++;
+        }
     }
-
     if (seenForms > 1)
         result = TRUE;
 
