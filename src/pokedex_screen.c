@@ -2644,26 +2644,21 @@ static u32 DexScreen_GetDefaultPersonality(int species)
     }
 }
 
-//NOTE: we only care about ORIGINAL forms being overwritten.
-// it's senseless if the player is searching for a form but sees the original
+// reworked to support both original forms and novel forms
 static u32 DexScreen_GetDefaultSpecies(u16 species)
 {
-    u16 *forms = FormsOfSpecies(species);
-    if (forms != NULL)
+    if (species < NUM_SPECIES)
     {
-        u8 index = IndexInFormTableOfOriginSpecies(species);
-        index = gSaveBlock2Ptr->pokedex.firstFormEncounter[index]; //misusing variable
-        if (index == 0)
-            return species;
-        else
+        u16 *forms = FormsOfSpecies(species);
+        if (forms != NULL)
         {
-            return *(forms + (index - 1));
+            u8 index = IndexInFormTableOfOriginSpecies(species);
+            index = gSaveBlock2Ptr->pokedex.firstFormEncounter[index]; //misusing variable
+            if (index != 0)
+                return *(forms + (index - 1));
         }
     }
-    else
-    {
-        return species;
-    }
+    return species;
 }
 
 static void DexScreen_LoadMonPicInWindow(u8 windowId, u16 species, u16 paletteOffset)
