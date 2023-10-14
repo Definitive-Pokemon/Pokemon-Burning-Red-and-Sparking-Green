@@ -6552,6 +6552,12 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
     if (!nationalNum)
         return 0;
 
+    if (nationalNum == NATIONAL_DEX_FOSSILIZED_KABUTOPS)
+    {
+        PlaySE(SE_EXP);
+        return SPECIES_FOSSILIZED_KABUTOPS;
+    }
+
     species = 0;
 
     while (species < NUM_SPECIES_WITH_FORMS && sSpeciesToNationalPokedexNum[species] != nationalNum)
