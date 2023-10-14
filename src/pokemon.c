@@ -6558,10 +6558,18 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
         species++;
 
     if (species == NUM_SPECIES)
+    {
+        PlaySE(SE_BANG);
         return 0;
+    }
+        
 
     if (species == NUM_SPECIES_WITH_FORMS)
+    {
+        PlaySE(SE_BANG);
         return 0;
+    }
+        
 
     return species + 1;
 }
@@ -8271,7 +8279,6 @@ u16 *FormsOfSpecies(u16 species)
     if (sFormOriginalSpeciesTable[species][0] != 0)
     {
         result = (u16*) sFormOriginalSpeciesTable[species];
-        PlaySE(SE_BANG);
     }
     return result;
 }
