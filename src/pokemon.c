@@ -8271,6 +8271,7 @@ u16 *FormsOfSpecies(u16 species)
     if (sFormOriginalSpeciesTable[species][0] != 0)
     {
         result = (u16*) sFormOriginalSpeciesTable[species];
+        PlaySE(SE_BANG);
     }
     return result;
 }
