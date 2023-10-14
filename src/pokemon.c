@@ -8268,10 +8268,17 @@ u16 StripFormToSpecies(u16 species)
 u16 *FormsOfSpecies(u16 species)
 {
     u16 *result = NULL;
-    gSaveBlock2Ptr->pokedex.firstFormEncounter[4] = (u8) (u16*) sFormOriginalSpeciesTable[species];
-    gSaveBlock2Ptr->pokedex.firstFormEncounter[3] = (u8) (u16*) (sFormOriginalSpeciesTable[species] >> 8);
-    gSaveBlock2Ptr->pokedex.firstFormEncounter[2] = (u8) (u16*) (sFormOriginalSpeciesTable[species] >> 16);
-    gSaveBlock2Ptr->pokedex.firstFormEncounter[1] = (u8) (u16*) (sFormOriginalSpeciesTable[species] >> 24);
+    u32 ptr = (u32) sFormOriginalSpeciesTable[species];
+    gSaveBlock2Ptr->pokedex.firstFormEncounter[4] = (u8) ptr;
+    ptr = (u32) sFormOriginalSpeciesTable[species];
+    ptr = ptr >> 8;
+    gSaveBlock2Ptr->pokedex.firstFormEncounter[3] = (u8) ptr;
+    ptr = (u32) sFormOriginalSpeciesTable[species];
+    ptr = ptr >> 16;
+    gSaveBlock2Ptr->pokedex.firstFormEncounter[2] = (u8) ptr;
+    ptr = (u32) sFormOriginalSpeciesTable[species];
+    ptr = ptr >> 24;
+    gSaveBlock2Ptr->pokedex.firstFormEncounter[1] = (u8) ptr;
     if (sFormOriginalSpeciesTable[species] != NULL)
     {
         result = (u16*) sFormOriginalSpeciesTable[species];
