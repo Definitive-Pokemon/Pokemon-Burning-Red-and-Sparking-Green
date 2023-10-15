@@ -2357,7 +2357,7 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
         HideBg(2);
         HideBg(1);
         sPokedexScreenData->dexSpecies = sPokedexScreenData->characteristicMenuInput;
-        if (SKIP_DEFAULT_FORM(sPokedexScreenData->characteristicMenuInput))
+        if (!SKIP_DEFAULT_FORM(sPokedexScreenData->characteristicMenuInput))
             sPokedexScreenData->dexSpecies = DexScreen_GetDefaultSpecies(sPokedexScreenData->dexSpecies);
         
         UpdateDexSpeciesSeenForm(sPokedexScreenData->dexSpecies);
