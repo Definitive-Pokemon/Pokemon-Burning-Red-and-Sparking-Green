@@ -161,9 +161,11 @@ it works like this 2-1-0, so the least significant bit marks origin, the one aft
 #define FIRST_ENCOUNTER_NUMBER_SHIFT 18
 #define FORM_FLAG_SHIFT 20
 #define FORMS_SEEN_BITS_SHIFT 21
+#define SKIP_DEFAULT_FORM_SHIFT 26
 #define INDEX_HAS_FORMS(label) (((label) >> FORM_FLAG_SHIFT) & 1)
 #define INDEX_FIRST_ENCOUNTER(label) ((((label) >> FIRST_ENCOUNTER_NUMBER_SHIFT) & 3))
 #define INDEX_FORMS_SEEN_BITS(label) (((label) >> FORMS_SEEN_BITS_SHIFT) & 7)
+#define SKIP_DEFAULT_FORM(input) (((input) >> SKIP_DEFAULT_FORM_SHIFT) & 1)
 
 #include "data/pokemon_graphics/footprint_table.h"
 
@@ -2355,7 +2357,9 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
         HideBg(2);
         HideBg(1);
         sPokedexScreenData->dexSpecies = sPokedexScreenData->characteristicMenuInput;
-        sPokedexScreenData->dexSpecies = DexScreen_GetDefaultSpecies(sPokedexScreenData->dexSpecies);
+        if (SKIP_DEFAULT_FORM(sPokedexScreenData->characteristicMenuInput))
+            sPokedexScreenData->dexSpecies = DexScreen_GetDefaultSpecies(sPokedexScreenData->dexSpecies);
+        
         UpdateDexSpeciesSeenForm(sPokedexScreenData->dexSpecies);
         sPokedexScreenData->state = 2;
         break;
@@ -2552,7 +2556,7 @@ static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
             }
             while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
         }
-        sPokedexScreenData->characteristicMenuInput = currentFormSpecies;
+        sPokedexScreenData->characteristicMenuInput = currentFormSpecies + (1 << SKIP_DEFAULT_FORM_SHIFT);
         return TRUE;
     }
     
