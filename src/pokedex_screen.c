@@ -2357,9 +2357,6 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
         HideBg(2);
         HideBg(1);
         sPokedexScreenData->dexSpecies = GetSpeciesFromIndex((u32)sPokedexScreenData->characteristicMenuInput);
-        if (!SKIP_DEFAULT_FORM(sPokedexScreenData->characteristicMenuInput))
-            sPokedexScreenData->dexSpecies = DexScreen_GetDefaultSpecies(sPokedexScreenData->dexSpecies);
-        
         UpdateDexSpeciesSeenForm(sPokedexScreenData->dexSpecies);
         sPokedexScreenData->state = 2;
         break;
@@ -2539,7 +2536,8 @@ static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
                 else 
                     currentFormSpecies = *(forms + formIndex);
             }
-            while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
+            while(!(DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1) &&
+                    currentFormSpecies != 0));
         }
         else // Previous form
         {
@@ -2554,11 +2552,12 @@ static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
                 else 
                     currentFormSpecies = *(forms + formIndex);
             }
-            while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
+            while(!(DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1) &&
+                    currentFormSpecies != 0));
         }
         sPokedexScreenData->characteristicMenuInput = 
-            (DexScreen_GetPokedexListFlags(currentFormSpecies) << SEEN_FLAG_SHIFT) +
-            currentFormSpecies + (1 << SKIP_DEFAULT_FORM_SHIFT);
+            (DexScreen_GetPokedexListFlags(currentFormSpecies) << SEEN_FLAG_SHIFT) |
+            currentFormSpecies | (1 << SKIP_DEFAULT_FORM_SHIFT);
         return TRUE;
     }
     
@@ -4101,13 +4100,16 @@ static void UpdateDexSpeciesSeenForm(u16 species)
 
 static u16 GetSpeciesFromIndex(u32 index)
 {
-    u16 species = INDEX_FIRST_ENCOUNTER(index);
-    // variable hackery
-    if(INDEX_HAS_FORMS(index) &&
-        (species > 0))
+    if(!SKIP_DEFAULT_FORM(index))
     {
-        u16 *forms = FormsOfSpecies((u16)index);
-        return  *(forms + (species - 1));
+        u16 species = INDEX_FIRST_ENCOUNTER(index);
+        // variable hackery
+        if(INDEX_HAS_FORMS(index) &&
+            (species > 0))
+        {
+            u16 *forms = FormsOfSpecies((u16)index);
+            return  *(forms + (species - 1));
+        }
     }
     return (u16)index;
 }
