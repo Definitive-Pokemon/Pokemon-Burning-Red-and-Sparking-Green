@@ -2356,7 +2356,7 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
     case 6:
         HideBg(2);
         HideBg(1);
-        sPokedexScreenData->dexSpecies = sPokedexScreenData->characteristicMenuInput;
+        sPokedexScreenData->dexSpecies = GetSpeciesFromIndex((u32)sPokedexScreenData->characteristicMenuInput);
         if (!SKIP_DEFAULT_FORM(sPokedexScreenData->characteristicMenuInput))
             sPokedexScreenData->dexSpecies = DexScreen_GetDefaultSpecies(sPokedexScreenData->dexSpecies);
         
@@ -2556,7 +2556,9 @@ static bool32 DexScreen_TryViewOtherMonForm(u8 direction)
             }
             while(!DexScreen_GetSetPokedexFlag(currentFormSpecies, FLAG_GET_SEEN, 1));
         }
-        sPokedexScreenData->characteristicMenuInput = currentFormSpecies + (1 << SKIP_DEFAULT_FORM_SHIFT);
+        sPokedexScreenData->characteristicMenuInput = 
+            (DexScreen_GetPokedexListFlags(currentFormSpecies) << SEEN_FLAG_SHIFT) +
+            currentFormSpecies + (1 << SKIP_DEFAULT_FORM_SHIFT);
         return TRUE;
     }
     
