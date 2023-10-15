@@ -30,13 +30,21 @@ CinnabarIsland_MapScript_SetMasterTrainerMovementTypes::
 CinnabarIsland_MapScript_ExeggutorMasterMovementType::
 	setobjectmovementtype LOCALID_EXEGGUTOR_MASTER, MOVEMENT_TYPE_VS_SEEKER_4D
 	return
+	
+CinnabarIsland_EventScript_FatMan::
+	msgbox CinnabarIsland_Text_FatMan, MSGBOX_NPC
+	end
+
+CinnabarIsland_EventScript_BaldingMan::
+	msgbox CinnabarIsland_Text_BaldingMan, MSGBOX_NPC
+	end
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIslandFromPokeCenter:: @ 8166F0B
 	savebgm MUS_FOLLOW_ME
 	setflag FLAG_TEMP_2
-	setobjectxyperm LOCALID_BILL, 15, 12
+	setobjectxyperm LOCALID_BILL, 17, 21
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_SEAGALLOP, 30, 12
+	setobjectxyperm LOCALID_SEAGALLOP, 26, 26
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsSailToOneIsland:: @ 8166F24
@@ -54,7 +62,7 @@ CinnabarIsland_EventScript_MoveSeagallopDown:: @ 8166F4A
 	return
 
 CinnabarIsland_EventScript_ReadyObjectsReturnFromSeviiIslands:: @ 8166F52
-	setobjectxyperm LOCALID_BILL, 21, 8
+	setobjectxyperm LOCALID_BILL, 17, 24
 	setobjectmovementtype LOCALID_BILL, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -98,12 +106,17 @@ CinnabarIsland_EventScript_ReturnFromSeviiIslands:: @ 8166FA0
 	end
 
 CinnabarIsland_Movement_BillExit:: @ 8166FC6
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_right
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 CinnabarIsland_EventScript_BillScene:: @ 8166FCD
@@ -119,11 +132,14 @@ CinnabarIsland_EventScript_BillScene:: @ 8166FCD
 	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer1
 	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillApproachPlayer2
 	msgbox CinnabarIsland_Text_HeyIfItIsntPlayer
-	msgbox CinnabarIsland_Text_ComeWithMeToOneIsland, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq CinnabarIsland_EventScript_AgreeSailToOneIsland
-	compare VAR_RESULT, NO
-	goto_if_eq CinnabarIsland_EventScript_DeclineSailToOneIsland
+	msgbox CinnabarIsland_Text_ComeWithMeToOneIsland
+	closemessage
+	call_if_unset FLAG_TEMP_2, CinnabarIsland_EventScript_BillExitToPokeCenter
+	call_if_set FLAG_TEMP_2, CinnabarIsland_EventScript_BillReturnToPokeCenter
+	removeobject LOCALID_BILL
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 2
+	clearflag FLAG_HIDE_CINNABAR_POKECENTER_BILL
+	releaseall
 	end
 
 CinnabarIsland_EventScript_BillFacePlayer1:: @ 8167032
@@ -172,25 +188,25 @@ CinnabarIsland_EventScript_BillExitToPokeCenter:: @ 81670A0
 	return
 
 CinnabarIsland_Movement_BillExitToPokeCenter:: @ 81670AB
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 CinnabarIsland_EventScript_BillReturnToPokeCenter:: @ 81670B3
 	applymovement OBJ_EVENT_ID_PLAYER, CinnabarIsland_Movement_PlayerWatchBillExit
 	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillApproachDoor
 	waitmovement 0
-	opendoor 14, 11
+	opendoor 16, 20
 	waitdooranim
 	applymovement LOCALID_BILL, CinnabarIsland_Movement_BillReEnterPokeCenter
 	waitmovement 0
-	closedoor 14, 11
+	closedoor 16, 20
 	waitdooranim
 	return
 
@@ -265,6 +281,11 @@ CinnabarIsland_Movement_BoatArrive:: @ 8167195
 	delay_16
 	walk_fast_left
 	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
 	walk_left
 	walk_slowest_left
 	walk_slowest_left
@@ -297,17 +318,14 @@ CinnabarIsland_Movement_BillFaceBoat:: @ 81671AA
 	step_end
 
 CinnabarIsland_Movement_ApproachShore:: @ 81671AF
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 CinnabarIsland_Movement_BillBoardBoatFromShore:: @ 81671B6
-	walk_right
 	delay_4
+	walk_in_place_down
 	set_invisible
 	step_end
 
@@ -324,10 +342,8 @@ CinnabarIsland_Movement_PlayerBoardBoat:: @ 81671BA
 	step_end
 
 CinnabarIsland_Movement_PlayerBoardBoatFromShore:: @ 81671C4
-	walk_right
 	delay_4
-	walk_right
-	delay_4
+	walk_in_place_down
 	set_invisible
 	step_end
 
@@ -373,4 +389,8 @@ CinnabarIsland_EventScript_GymSign:: @ 8167223
 	famechecker FAMECHECKER_BLAINE, 0
 	msgbox CinnabarIsland_Text_GymSign
 	releaseall
+	end
+
+CinnabarIsland_EventScript_BerrySign::
+	msgbox CinnabarIsland_Text_BerrySign, MSGBOX_SIGN
 	end

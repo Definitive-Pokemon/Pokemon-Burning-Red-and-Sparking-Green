@@ -966,10 +966,10 @@
 #define FLAG_HIDE_KABUTOPS               0x3AC
 #define FLAG_KABUTOPS_FLED               0x3AD
 #define FLAG_FOUGHT_KABUTOPS               0x3AE
+#define FLAG_GET_JAR               0x3AF
+#define FLAG_GOT_LUM_BERRY               0x3B0
 
 // Unused?
-#define FLAG_0x3AF               0x3AF
-#define FLAG_0x3B0               0x3B0
 #define FLAG_0x3B1               0x3B1
 #define FLAG_0x3B2               0x3B2
 #define FLAG_0x3B3               0x3B3
@@ -1249,8 +1249,8 @@
 
 // Unused?
 #define HIDDEN_ITEM_CAPE_BRINK_BIG_PEARL                              213 //continued from above numbering because of how these are set by GetHiddenItemAttr
-#define FLAG_0x4BE               0x4BE
-#define FLAG_0x4BF               0x4BF
+#define FLAG_HIDDEN_ITEM_CINNABAR_BERRY               214
+#define FLAG_0xHIDDEN_ITEM_CINNABAR_FIRE_STONE               215
 #define FLAG_0x4C0               0x4C0
 #define FLAG_0x4C1               0x4C1
 #define FLAG_0x4C2               0x4C2

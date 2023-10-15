@@ -6011,17 +6011,17 @@
       "secondaryId": 0
     },
     {
-      "english": "POWDER JAR",
+      "english": "BERRY POWDER",
       "itemId": "ITEM_POWDER_JAR",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "A jar for storing BERRY POWDER\\nmade using a BERRY CRUSHER.",
+      "description_english": "A jar containing BERRY POWDER\\nmade by crushing BERRIES.",
       "importance": 1,
       "exitsBagOnUse": 1,
       "pocket": "POCKET_KEY_ITEMS",
       "type": 4,
-      "fieldUseFunc": "FieldUseFunc_PowderJar",
+      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0

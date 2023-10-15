@@ -1427,3 +1427,9 @@ EventScript_NoMoreRoomForPokemon:: @ 81A927C
 
 	.include "data/maps/CinnabarVolcano/scripts.inc"
 	.include "data/maps/CinnabarVolcano/text.inc"
+
+	.include "data/maps/CinnabarIsland_House/scripts.inc"
+	.include "data/maps/CinnabarIsland_House/text.inc"
+
+	.include "data/maps/CinnabarIsland_BerryFarm/scripts.inc"
+	.include "data/maps/CinnabarIsland_BerryFarm/text.inc"
