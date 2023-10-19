@@ -1814,11 +1814,11 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
 
 static void NumericalOrderPokemonAddition(u16 species, s32 index, u16 *highestIndex)
 {
-    u16 indexFlags = DexScreen_GetPokedexListFlags(regularSpeciesNumber);
-    sPokedexScreenData->listItems[index].index = (indexFlags << SEEN_FLAG_SHIFT) | regularSpeciesNumber;
+    u16 indexFlags = DexScreen_GetPokedexListFlags(species);
+    sPokedexScreenData->listItems[index].index = (indexFlags << SEEN_FLAG_SHIFT) | species;
     if (INDEX_IS_SEEN(sPokedexScreenData->listItems[index].index))
     {
-        sPokedexScreenData->listItems[index].label = gSpeciesNames[regularSpeciesNumber];
+        sPokedexScreenData->listItems[index].label = gSpeciesNames[species];
         *highestIndex = ((u16)index) + 1;
     }
     else
