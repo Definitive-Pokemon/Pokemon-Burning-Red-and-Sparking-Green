@@ -70,7 +70,6 @@ Metal_Tomb_EventScript_RegisteelFled::
     fadescreenswapbuffers FADE_TO_BLACK
     removeobject VAR_LAST_TALKED
     fadescreenswapbuffers FADE_FROM_BLACK
-    message Metal_Tomb_Text_RegisteelFled
-	waitbuttonpress
+    msgbox Metal_Tomb_Text_RegisteelFled
     release
     end

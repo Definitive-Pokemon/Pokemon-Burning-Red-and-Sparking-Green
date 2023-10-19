@@ -70,7 +70,6 @@ Icy_Tomb_EventScript_RegiceFled::
     fadescreenswapbuffers FADE_TO_BLACK
     removeobject VAR_LAST_TALKED
     fadescreenswapbuffers FADE_FROM_BLACK
-    message Icy_Tomb_Text_RegiceFled
-	waitbuttonpress
+    msgbox Icy_Tomb_Text_RegiceFled
     release
     end

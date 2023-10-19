@@ -70,7 +70,6 @@ Fiery_Passage_EventScript_CyndaquilFled::
     fadescreenswapbuffers FADE_TO_BLACK
     removeobject VAR_LAST_TALKED
     fadescreenswapbuffers FADE_FROM_BLACK
-    message Fiery_Passage_Text_CyndaquilFled
-	waitbuttonpress
+    msgbox Fiery_Passage_Text_CyndaquilFled
     release
     end
