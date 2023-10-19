@@ -2784,7 +2784,7 @@ static s8 GetPokedexAnyFormFlag(u16 *forms, u8 caseId)
         {
             speciesDexNumber = SpeciesToNationalPokedexNum(*(forms + i));
             index = speciesDexNumber / 8;
-            mask = 1 << (speciesDexNumber % 8));
+            mask = 1 << (speciesDexNumber % 8);
             if (caseId == FLAG_GET_SEEN)
             {
                 if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
@@ -2799,7 +2799,7 @@ static s8 GetPokedexAnyFormFlag(u16 *forms, u8 caseId)
                 {
                     if ((gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock2Ptr->pokedex.seen[index] & mask))
                     {
-                        retVal = 1;
+                        result = 1;
                         break;
                     }
                 }
@@ -2859,7 +2859,7 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
             possibleForms = FormsOfSpecies(nationalDexNo);
             if(possibleForms != NULL)
             {
-                retval = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_SEEN);
+                retVal = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_SEEN);
             }
         }
         break;
