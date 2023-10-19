@@ -2877,7 +2877,7 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
             possibleForms = FormsOfSpecies(nationalDexNo);
             if(possibleForms != NULL)
             {
-                retval = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_CAUGHT);
+                retVal = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_CAUGHT);
             }
         }
         break;
