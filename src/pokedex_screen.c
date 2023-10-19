@@ -2782,7 +2782,7 @@ static s8 GetPokedexAnyFormFlag(u16 *forms, u8 caseId)
     {
         if (*(forms + i) != 0)
         {
-            speciesDexNumber = SpeciesToNationalPokedexNum(*(forms + i));
+            speciesDexNumber = SpeciesToNationalPokedexNum(*(forms + i)) - 1;
             index = speciesDexNumber / 8;
             mask = 1 << (speciesDexNumber % 8);
             if (caseId == FLAG_GET_SEEN)
