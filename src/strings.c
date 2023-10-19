@@ -73,6 +73,7 @@ const u8 gText_PokedexQuotationMark[] = _("”"); // Unused
 const u8 gText_Lbs[] = _("lbs.");
 const u8 gText_Cry[] = _("{START_BUTTON}CRY");
 const u8 gText_NextDataCancel[] = _("{A_BUTTON}NEXT DATA {B_BUTTON}CANCEL");
+const u8 gText_ViewFormsNextDataCancel[] = _("{DPAD_LEFTRIGHT}FORMS {A_BUTTON}NEXT DATA {B_BUTTON}CANCEL");
 const u8 gText_Next[] = _("{A_BUTTON}NEXT");
 const u8 gText_CancelPreviousData[] = _("{A_BUTTON}CANCEL {B_BUTTON}PREVIOUS DATA");
 const u8 gText_Area[] = _("AREA");

@@ -750,6 +750,8 @@ struct Pokedex
     /*0x0C*/ u32 unknown3;
     /*0x10*/ u8 owned[DEX_FLAGS_NO];
     /*0x44*/ u8 seen[DEX_FLAGS_NO];
+    //u8 firstFormEncounter[NUM_ORIGINAL_SPECIES_WITH_FORMS];
+    //TODO:FORME what even is the berry fix
 };
 
 struct BattleTowerTrainer

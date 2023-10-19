@@ -5030,4 +5030,17 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 337,
         .trainerOffset = 2,
     },
+
+    [NATIONAL_DEX_FOSSILIZED_KABUTOPS] =
+    {
+        .categoryName = _("TEST"),
+        .height = 13,
+        .weight = 3,
+        .description_FR = gFossilizedKabutopsPokedexText_FR,
+        .description_LG = gDeoxysPokedexText_LG,
+        .pokemonScale = 293,
+        .pokemonOffset = 0,
+        .trainerScale = 337,
+        .trainerOffset = 2,
+    },
 };

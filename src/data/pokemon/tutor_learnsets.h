@@ -5898,5 +5898,5 @@ static const u64 sTutorLearnsets[] =
                                 | TUTOR(MOVE_DEFENSE_CURL)
                                 | TUTOR(MOVE_NIGHTMARE)),
 
+    [SPECIES_FOSSILIZED_KABUTOPS]        = (TUTOR(MOVE_SWORDS_DANCE)),
 };
-

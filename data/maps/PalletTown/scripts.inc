@@ -48,6 +48,32 @@ PalletTown_EventScript_PlaceMasterYoungsterOutsideLab::
 	setobjectmovementtype LOCALID_MASTER_YOUNGSTER, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
+PalletTown_EventScript_DebugGive::
+	lock
+	givemon SPECIES_FOSSILIZED_KABUTOPS, 5, ITEM_NONE
+	release
+	end
+
+PalletTown_EventScript_DebugBattle::
+	lock
+	setwildbattle SPECIES_FOSSILIZED_KABUTOPS, 3, ITEM_NONE
+	delay 40
+	dowildbattle
+	release
+	end
+
+PalletTown_EventScript_DebugGiveNormal::
+	lock
+	givemon SPECIES_KABUTOPS, 5, ITEM_NONE
+	release
+	end
+
+PalletTown_EventScript_DebugGiveIndex::
+	lock
+	givemon SPECIES_CHIMECHO, 5, ITEM_NONE
+	release
+	end
+
 PalletTown_OnFrame:: @ 81654CE
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 2, PalletTown_EventScript_OakRatingScene
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 3, PalletTown_EventScript_MasterTrainerYoungster

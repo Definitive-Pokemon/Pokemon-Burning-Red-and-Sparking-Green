@@ -138,3 +138,9 @@ static const u16 sHoennSpeciesIdToCryId[] =
     [SPECIES_DEOXYS - HOENN_MON_SPECIES_START] = CRY_DEOXYS,
     [SPECIES_CHIMECHO - HOENN_MON_SPECIES_START] = CRY_CHIMECHO,
 };
+
+// count the actual index to link cry
+static const u16 sFormSpeciesIdToCryId[] =
+{
+    [SPECIES_FOSSILIZED_KABUTOPS - NUM_NON_FORM_MON_SPRITES] = 140,
+};

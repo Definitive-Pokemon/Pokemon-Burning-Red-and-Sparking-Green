@@ -465,7 +465,8 @@ const u8 *const gMonIconTable[] = {
     [SPECIES_UNOWN_Y]     = gMonIcon_UnownY,
     [SPECIES_UNOWN_Z]     = gMonIcon_UnownZ,
     [SPECIES_UNOWN_EMARK] = gMonIcon_UnownExclamationMark,
-    [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark
+    [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
+    [SPECIES_FOSSILIZED_KABUTOPS] = gMonIcon_FossilizedKabutops
 };
 
 const u8 gMonIconPaletteIndices[] = {
@@ -908,7 +909,8 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_Y]     = 0,
     [SPECIES_UNOWN_Z]     = 0,
     [SPECIES_UNOWN_EMARK] = 0,
-    [SPECIES_UNOWN_QMARK] = 0
+    [SPECIES_UNOWN_QMARK] = 0,
+    [SPECIES_FOSSILIZED_KABUTOPS] = 2
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {
@@ -1022,7 +1024,7 @@ u8 CreateMonIcon(u16 species, SpriteCallback callback, s16 x, s16 y, u8 subprior
             .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[species],
         };
 
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES_WITH_FORMS)
         iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG;
 
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
@@ -1091,7 +1093,7 @@ u16 GetIconSpecies(u16 species, u32 personality)
     }
     else
     {
-        if (species > NUM_SPECIES)
+        if (species > NUM_SPECIES_WITH_FORMS)
             result = SPECIES_NONE;
         else
             result = species;
@@ -1174,7 +1176,7 @@ void LoadMonIconPalettes(void)
 void SafeLoadMonIconPalette(u16 species)
 {
     u8 palIndex;
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES_WITH_FORMS)
         species = SPECIES_NONE;
     palIndex = gMonIconPaletteIndices[species];
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
@@ -1199,7 +1201,7 @@ void FreeMonIconPalettes(void)
 void SafeFreeMonIconPalette(u16 species)
 {
     u8 palIndex;
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES_WITH_FORMS)
         species = SPECIES_NONE;
     palIndex = gMonIconPaletteIndices[species];
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
@@ -1232,14 +1234,14 @@ void LoadMonIconPalettesAt(u16 offset)
 
 const u16 *GetValidMonIconPalettePtr(u16 species)
 {
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES_WITH_FORMS)
         species = SPECIES_NONE;
     return gMonIconPaletteTable[gMonIconPaletteIndices[species]].data;
 }
 
 u8 GetValidMonIconPalIndex(u16 species)
 {
-    if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES_WITH_FORMS)
         species = SPECIES_NONE;
     return gMonIconPaletteIndices[species];
 }

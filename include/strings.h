@@ -1002,6 +1002,7 @@ extern const u8 gText_PokemonListNoColor[];
 extern const u8 gText_SearchNoColor[];
 extern const u8 gText_5Dashes[];
 extern const u8 gText_PickFlipPageCheckCancel[];
+extern const u8 gText_ViewFormsNextDataCancel[];
 extern const u8 gText_PokedexNo[];
 extern const u8 gText_Page[];
 extern const u8 gText_DexCategory_GrasslandPkmn[];

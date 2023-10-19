@@ -11286,5 +11286,6 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_LATIOS] = sLatiosTMHMLearnset,
     [SPECIES_JIRACHI] = sJirachiTMHMLearnset,
     [SPECIES_DEOXYS] = sDeoxysTMHMLearnset,
-    [SPECIES_CHIMECHO] = sChimechoTMHMLearnset
+    [SPECIES_CHIMECHO] = sChimechoTMHMLearnset,
+    [SPECIES_FOSSILIZED_KABUTOPS] = sKabutopsTMHMLearnset
 };

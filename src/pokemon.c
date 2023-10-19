@@ -938,6 +938,7 @@ static const u16 sSpeciesToNationalPokedexNum[] = // Assigns all species to the 
     SPECIES_TO_NATIONAL(JIRACHI),
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
+    SPECIES_TO_NATIONAL(FOSSILIZED_KABUTOPS),
 };
 
 static const u16 sSpeciesToExtendedPokedexNum[] = // Assigns all species to the Extended Dex Index (Summary No. for Extended Dex)
@@ -2798,6 +2799,17 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
         LEVEL_UP_MOVE(50, MOVE_EXTREME_SPEED),
         LEVEL_UP_END
     }
+};
+
+//TODO:FORME update for every new one
+static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][MAX_NUM_OF_FORMS] = 
+{
+    [SPECIES_KABUTOPS] = {SPECIES_FOSSILIZED_KABUTOPS},
+};
+
+static const u16 sEncounterOrderViaOriginalSpecies[NUM_ORIGINAL_SPECIES_WITH_FORMS] = 
+{
+    [0] = SPECIES_KABUTOPS,
 };
 
 const u16 gLinkPlayerFacilityClasses[] = 
@@ -5272,11 +5284,10 @@ void GetSpeciesName(u8 *name, u16 species)
     // Hmm? FRLG has < while Ruby/Emerald has <=
     for (i = 0; i < POKEMON_NAME_LENGTH; i++)
     {
-        if (species > NUM_SPECIES)
+        if (species > NUM_SPECIES_WITH_FORMS)
             name[i] = gSpeciesNames[0][i];
         else
-            name[i] = gSpeciesNames[species][i];
-
+            name[i] = gSpeciesNames[StripFormToSpecies(species)][i];
         if (name[i] == EOS)
             break;
     }
@@ -6541,13 +6552,21 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
     if (!nationalNum)
         return 0;
 
+    if (nationalNum == NATIONAL_DEX_FOSSILIZED_KABUTOPS)
+        return SPECIES_FOSSILIZED_KABUTOPS;
+
     species = 0;
 
-    while (species < NUM_SPECIES - 1 && sSpeciesToNationalPokedexNum[species] != nationalNum)
+    while (species < NUM_SPECIES_WITH_FORMS && sSpeciesToNationalPokedexNum[species] != nationalNum)
         species++;
 
-    if (species == NUM_SPECIES - 1)
+    if (species == NUM_SPECIES)
         return 0;
+        
+
+    if (species == NUM_SPECIES_WITH_FORMS)
+        return 0;
+        
 
     return species + 1;
 }
@@ -6648,6 +6667,10 @@ u16 ExtendedToNationalOrder(u16 extendedNum)
 
 u16 SpeciesToCryId(u16 species)
 {
+    u16 formSpecies = OriginalSpeciesOfForm(species + 1);
+    if (formSpecies != SPECIES_NONE)
+        return formSpecies - 1;
+
     if (species < SPECIES_OLD_UNOWN_B - 1)
         return species;
 
@@ -7568,7 +7591,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
             return gMonPaletteTable[SPECIES_DEOXYS].data;
     }
 
-    if (species > SPECIES_EGG)
+    if (species > NUM_SPECIES_WITH_FORMS)
         return gMonPaletteTable[0].data;
 
     if (shinyValue < 8)
@@ -7957,8 +7980,44 @@ void CreateEventLegalEnemyMon(void)
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
 {
     u8 getFlagCaseId = (caseId == FLAG_SET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT;
-    
-    if (!GetSetPokedexFlag(nationalNum, getFlagCaseId))
+    u16 originSpecies = StripFormToSpecies(NationalPokedexNumToSpecies(nationalNum));
+    bool8 originCaseCheck = GetSetPokedexFlag(nationalNum, getFlagCaseId);
+    u16 *possibleForms = FormsOfSpecies(originSpecies);
+    bool8 isOneFormSeen = FALSE;
+    u32 i;
+    if (possibleForms != NULL)
+    {
+        for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+        {
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(*(possibleForms + i)), FLAG_GET_SEEN))
+            {
+                isOneFormSeen = TRUE;
+                break;
+            }
+        }
+        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(originSpecies), FLAG_GET_SEEN))
+            isOneFormSeen = TRUE;
+        
+        if (!isOneFormSeen)
+        {
+            //set current form as first.
+            u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
+            //440
+            u8 originalIndex = IndexInFormTableOfOriginSpecies(originSpecies);
+            u8 form = 3; 
+            for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+            {
+                // if there is no match, form will be 0, which is origin
+                if ((*(possibleForms + i)) == formSpecies)
+                {
+                    form = (u8) (i + 1);
+                    break;
+                }
+            }
+            gSaveBlock2Ptr->pokedex.firstFormEncounter[originalIndex] = form;
+        }
+    }
+    if (!originCaseCheck)
     {
         GetSetPokedexFlag(nationalNum, caseId);
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_UNOWN)
@@ -8193,4 +8252,46 @@ void SetFirstDeoxysForm(void)
             break;
         }
     }
+}
+
+//TODO:FORME ALWAYS ADD NEW FORM TO THIS LIST
+u16 OriginalSpeciesOfForm(u16 species)
+{
+    u16 result = SPECIES_NONE;
+    if (species == SPECIES_FOSSILIZED_KABUTOPS)
+        result = SPECIES_KABUTOPS;
+    return result;
+}
+
+// no need to update this, it simply ensures that a given species will return proper name or cry
+u16 StripFormToSpecies(u16 species)
+{
+    u16 result = species;
+    species = OriginalSpeciesOfForm(species);
+    if (species != SPECIES_NONE)
+        result = species;
+    return result;
+}
+
+u16 *FormsOfSpecies(u16 species)
+{
+    u16 *result = NULL;
+    if (sFormOriginalSpeciesTable[species][0] != 0)
+    {
+        result = (u16*) sFormOriginalSpeciesTable[species];
+    }
+    return result;
+}
+
+u8 IndexInFormTableOfOriginSpecies(u16 originSpecies)
+{
+    u32 i;
+    for(i = 0; i < NUM_ORIGINAL_SPECIES_WITH_FORMS; i++)
+    {
+        if (sEncounterOrderViaOriginalSpecies[i] == originSpecies)
+        {
+            return (u8) i;
+        }
+    }
+    return 0xFF; // completely invalid value
 }

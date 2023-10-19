@@ -1584,8 +1584,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonNoItemDefaultMoves *partyData = sTrainers[trainerNum].party.NoItemDefaultMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    for (j = 0; gSpeciesNames[StripFormToSpecies(partyData[i].species)][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[StripFormToSpecies(partyData[i].species)][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1598,8 +1598,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonNoItemCustomMoves *partyData = sTrainers[trainerNum].party.NoItemCustomMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    for (j = 0; gSpeciesNames[StripFormToSpecies(partyData[i].species)][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[StripFormToSpecies(partyData[i].species)][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1617,8 +1617,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonItemDefaultMoves *partyData = sTrainers[trainerNum].party.ItemDefaultMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    for (j = 0; gSpeciesNames[StripFormToSpecies(partyData[i].species)][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[StripFormToSpecies(partyData[i].species)][j];
                     personalityValue += nameHash << 8;
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1633,8 +1633,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 {
                     const struct TrainerMonItemCustomMoves *partyData = sTrainers[trainerNum].party.ItemCustomMoves;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    for (j = 0; gSpeciesNames[StripFormToSpecies(partyData[i].species)][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[StripFormToSpecies(partyData[i].species)][j];
                     personalityValue += ((nameHash << 8) - partyData[i].abilityNum);
                     if(ivCalcMode == IV_CALC_PERFECT)
                         fixedIV = 31;
@@ -1667,8 +1667,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                     u8 gender;
                     u8 friendship = 255;
 
-                    for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; ++j)
-                        nameHash += gSpeciesNames[partyData[i].species][j];
+                    for (j = 0; gSpeciesNames[StripFormToSpecies(partyData[i].species)][j] != EOS; ++j)
+                        nameHash += gSpeciesNames[StripFormToSpecies(partyData[i].species)][j];
                     if (sTrainers[trainerNum].encounterMusic_gender & 0x80)
                         gender = MON_FEMALE;
                     else
@@ -2053,7 +2053,7 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
     {
         yOffset = gCastformFrontSpriteCoords[gBattleMonForms[battler]].y_offset;
     }
-    else if (species > NUM_SPECIES)
+    else if (species > NUM_SPECIES_WITH_FORMS)
     {
         yOffset = gMonFrontPicCoords[SPECIES_NONE].y_offset;
     }

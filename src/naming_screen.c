@@ -1615,7 +1615,7 @@ static void PrintTitleFunction_WithMon(void)
 {
     u8 buffer[0x20];
 
-    StringCopy(buffer, gSpeciesNames[sNamingScreenData->monSpecies]);
+    StringCopy(buffer, gSpeciesNames[StripFormToSpecies(sNamingScreenData->monSpecies)]);
     StringAppendN(buffer, sNamingScreenData->template->title, 15);
     FillWindowPixelBuffer(sNamingScreenData->windows[3], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreenData->windows[3], 1, buffer, 1, 1, 0, NULL);
