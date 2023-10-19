@@ -41,6 +41,6 @@ ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons:: @ 817B029
     .string "Beware of wild, BERRY-loving\n"
     .string "POKéMON!$"
 
- ThreeIsland_BerryForest_Text_Flew
+ThreeIsland_BerryForest_Text_Flew::
     .string "The mysterious POKéMON disappeared\n"
     .string "in the blink of an eye!$"
