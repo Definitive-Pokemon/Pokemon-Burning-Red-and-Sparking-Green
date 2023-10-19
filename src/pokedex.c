@@ -35,11 +35,11 @@ u16 GetNationalPokedexCount(u8 caseID)
         switch (caseID)
         {
         case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
+            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN_ANY_FORM))
                 count++;
             break;
         case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
                 count++;
             break;
         }
@@ -57,11 +57,11 @@ u16 GetKantoPokedexCount(u8 caseID)
         switch (caseID)
         {
         case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN))
+            if (GetSetPokedexFlag(i + 1, FLAG_GET_SEEN_ANY_FORM))
                 count++;
             break;
         case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
                 count++;
             break;
         }
@@ -79,11 +79,11 @@ u16 GetExtendedPokedexCount(u8 caseID)
         switch (caseID)
         {
         case FLAG_GET_SEEN:
-            if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_SEEN))
+            if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_SEEN_ANY_FORM))
                 count++;
             break;
         case FLAG_GET_CAUGHT:
-            if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+            if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT_ANY_FORM))
                 count++;
             break;
         }
@@ -97,7 +97,7 @@ bool16 HasAllHoennMons(void)
 
     for (i = 0; i < HOENN_DEX_COUNT - 2; i++)
     {
-        if (!GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     return TRUE;
@@ -109,7 +109,7 @@ bool16 HasAllExtendedMons(void)
 
     for (i = 0; i < EXTENDED_DEX_COUNT - 2; i++)
     {
-        if (!GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     return TRUE;
@@ -121,7 +121,7 @@ bool16 HasAllKantoMons(void)
 
     for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
     {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     return TRUE;
@@ -133,17 +133,17 @@ bool16 HasAllMons(void)
 
     for (i = 0; i < NATIONAL_DEX_MEWTWO; i++)
     {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     for (i = NATIONAL_DEX_MEW; i < NATIONAL_DEX_TYRANITAR; i++)
     {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     for (i = NATIONAL_DEX_CELEBI; i < NATIONAL_DEX_RAYQUAZA; i++)
     {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     return TRUE;
@@ -155,7 +155,7 @@ bool16 HasNationalMon(void)
 
     for (i = EXTENDED_DEX_COUNT + 1; i < NATIONAL_DEX_COUNT; i++)
     {
-        if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+        if (GetSetPokedexFlag(ExtendedToNationalOrder(i + 1), FLAG_GET_CAUGHT_ANY_FORM))
             return TRUE;
     }
     return FALSE;
@@ -168,7 +168,7 @@ bool16 HasAllKantoMonsNew(void)
 
     for (i = 0; i < KANTO_DEX_COUNT; i++)
     {
-        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT_ANY_FORM))
             return FALSE;
     }
     return TRUE;
@@ -192,14 +192,4 @@ bool16 HasAllMonsNew(void)
     if (!GetSetPokedexFlag(NATIONAL_DEX_DEOXYS, FLAG_GET_CAUGHT))
             return FALSE;
     return TRUE;
-}
-
-bool16 HasAllForms(void)
-{   
-    return FALSE;
-}
-
-bool16 HasAllMonsIncludingForms(void)
-{   
-    return FALSE;
 }

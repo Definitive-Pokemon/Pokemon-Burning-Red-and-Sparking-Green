@@ -17,7 +17,9 @@ enum
     FLAG_GET_SEEN,
     FLAG_GET_CAUGHT,
     FLAG_SET_SEEN,
-    FLAG_SET_CAUGHT
+    FLAG_SET_CAUGHT,
+    FLAG_GET_SEEN_ANY_FORM,
+    FLAG_GET_CAUGHT_ANY_FORM
 };
 
 struct PokedexEntry
@@ -54,7 +56,5 @@ bool16 HasNationalMon(void);
 u8 DexScreen_RegisterMonToPokedex(u16 species);
 bool16 HasAllKantoMonsNew(void);
 bool16 HasAllMonsNew(void);
-bool16 HasAllForms(void);
-bool16 HasAllMonsIncludingForms(void);
 
 #endif // GUARD_POKEDEX_H
