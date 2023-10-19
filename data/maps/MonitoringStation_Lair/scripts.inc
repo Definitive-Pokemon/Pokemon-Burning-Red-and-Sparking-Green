@@ -34,7 +34,7 @@ MonitoringStation_Lair_EventScript_Kabutops::
 	setwildbattle SPECIES_KABUTOPS, 70, ITEM_NONE
 	waitse
 	playmoncry SPECIES_KABUTOPS, 2
-	msgbox MonitoringStation_Lair_Text_Kabutops
+	message MonitoringStation_Lair_Text_Kabutops
 	waitmessage
 	waitmoncry
 	delay 10
