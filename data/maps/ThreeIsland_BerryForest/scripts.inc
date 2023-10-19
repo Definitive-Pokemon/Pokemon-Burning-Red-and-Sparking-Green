@@ -80,3 +80,5 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	removeobject LOCALID_LATIAS
 	fadescreen FADE_FROM_BLACK
 	msgbox ThreeIsland_BerryForest_Text_Flew
+	releaseall
+	end
