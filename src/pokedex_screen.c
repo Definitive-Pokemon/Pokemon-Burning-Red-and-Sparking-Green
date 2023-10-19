@@ -2864,9 +2864,10 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
         }
         break;
     case FLAG_GET_CAUGHT_ANY_FORM:
-        if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+        if (gSaveBlock2Ptr->pokedex.owned[index] & mask)
         {
-            retVal = 1;
+            if ((gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock2Ptr->pokedex.seen[index] & mask))
+                retVal = 1;
         }
         if (!retVal)
         {
