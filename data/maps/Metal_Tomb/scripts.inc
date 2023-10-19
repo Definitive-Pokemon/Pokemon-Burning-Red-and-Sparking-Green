@@ -58,10 +58,18 @@ Metal_Tomb_EventScript_Registeel::
 Metal_Tomb_EventScript_DefeatedRegisteel::
 	setflag FLAG_REGISTEEL_FLED
 	setvar VAR_0x8004, SPECIES_REGISTEEL
-	goto EventScript_MonFlewAway
+	goto Metal_Tomb_EventScript_RegisteelFled
 	end
 
 Metal_Tomb_EventScript_RanFromRegisteel::
 	setvar VAR_0x8004, SPECIES_REGISTEEL
-	goto EventScript_MonFlewAway
+	goto Metal_Tomb_EventScript_RegisteelFled
 	end
+	
+Metal_Tomb_EventScript_RegisteelFled::
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject VAR_LAST_TALKED
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox Metal_Tomb_Text_RegisteelFled
+    release
+    end

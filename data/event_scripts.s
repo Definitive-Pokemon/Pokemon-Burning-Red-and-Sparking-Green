@@ -898,7 +898,7 @@ Text_TheDoorIsOpen:: @ 81A5CDF
 	.include "data/text/poke_mart.inc"
 
 Text_MonFlewAway:: @ 81A63C4
-	.string "The {STR_VAR_1} fled!$"
+	.string "The {STR_VAR_1} flew away!$"
 
 
 Text_FoundTMHMContainsMove:: @ 81A63E8

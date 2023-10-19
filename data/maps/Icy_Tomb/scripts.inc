@@ -58,10 +58,18 @@ Icy_Tomb_EventScript_Regice::
 Icy_Tomb_EventScript_DefeatedRegice::
 	setflag FLAG_REGICE_FLED
 	setvar VAR_0x8004, SPECIES_REGICE
-	goto EventScript_MonFlewAway
+	goto Icy_Tomb_EventScript_RegiceFled
 	end
 
 Icy_Tomb_EventScript_RanFromRegice::
 	setvar VAR_0x8004, SPECIES_REGICE
-	goto EventScript_MonFlewAway
+	goto Icy_Tomb_EventScript_RegiceFled
 	end
+	
+Icy_Tomb_EventScript_RegiceFled::
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject VAR_LAST_TALKED
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox Icy_Tomb_Text_RegiceFled
+    release
+    end

@@ -57,13 +57,21 @@ MonitoringStation_Lair_EventScript_Kabutops::
 MonitoringStation_Lair_EventScript_DefeatedKabutops::
 	setflag FLAG_KABUTOPS_FLED
 	setvar VAR_0x8004, SPECIES_KABUTOPS
-	goto EventScript_MonFlewAway
+	goto MonitoringStation_Lair_EventScript_KabutopsFled
 	end
 
 MonitoringStation_Lair_EventScript_RanFromKabutops::
 	setvar VAR_0x8004, SPECIES_KABUTOPS
-	goto EventScript_MonFlewAway
+	goto MonitoringStation_Lair_EventScript_KabutopsFled
 	end
+	
+MonitoringStation_Lair_EventScript_KabutopsFled::
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject VAR_LAST_TALKED
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox MonitoringStation_Lair_Text_KabutopsFled
+    release
+    end
 	
 MonitoringStation_Lair_EventScript_Braille1::
 	lockall

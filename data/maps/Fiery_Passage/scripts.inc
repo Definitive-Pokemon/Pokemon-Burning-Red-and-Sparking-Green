@@ -58,10 +58,18 @@ Fiery_Passage_EventScript_Cyndaquil::
 Fiery_Passage_EventScript_DefeatedCyndaquil::
 	setflag FLAG_CYNDAQUIL_FLED
 	setvar VAR_0x8004, SPECIES_CYNDAQUIL
-	goto EventScript_MonFlewAway
+	goto Fiery_Passage_EventScript_CyndaquilFled
 	end
 
 Fiery_Passage_EventScript_RanFromCyndaquil::
 	setvar VAR_0x8004, SPECIES_CYNDAQUIL
-	goto EventScript_MonFlewAway
+	goto Fiery_Passage_EventScript_CyndaquilFled
 	end
+	
+Fiery_Passage_EventScript_CyndaquilFled::
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject VAR_LAST_TALKED
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox Fiery_Passage_Text_CyndaquilFled
+    release
+    end

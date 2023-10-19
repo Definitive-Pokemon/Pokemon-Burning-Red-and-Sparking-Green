@@ -58,10 +58,18 @@ Stone_Tomb_EventScript_Regirock::
 Stone_Tomb_EventScript_DefeatedRegirock::
 	setflag FLAG_REGIROCK_FLED
 	setvar VAR_0x8004, SPECIES_REGIROCK
-	goto EventScript_MonFlewAway
+	goto Stone_Tomb_EventScript_RegirockFled
 	end
 
 Stone_Tomb_EventScript_RanFromRegirock::
 	setvar VAR_0x8004, SPECIES_REGIROCK
-	goto EventScript_MonFlewAway
+	goto Stone_Tomb_EventScript_RegirockFled
 	end
+	
+Stone_Tomb_EventScript_RegirockFled::
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject VAR_LAST_TALKED
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox Stone_Tomb_Text_RegirockFled
+    release
+    end
