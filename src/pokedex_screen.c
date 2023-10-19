@@ -2771,6 +2771,44 @@ static void HabitatNameTagNumPrinter(u8 windowId, u8 fontId, u16 species, u8 x, 
     }
 }
 
+static s8 GetPokedexAnyFormFlag(u16 *forms, u8 caseId)
+{
+    s8 result = 0;
+    u8 index;
+    u8 mask;
+    u32 i;
+    u16 speciesDexNumber;
+    for(i = 0; i < MAX_NUM_OF_FORMS; i++)
+    {
+        if (*(forms + i) != 0)
+        {
+            speciesDexNumber = SpeciesToNationalPokedexNum(*(forms + i));
+            index = speciesDexNumber / 8;
+            mask = 1 << (speciesDexNumber % 8));
+            if (caseId == FLAG_GET_SEEN)
+            {
+                if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+                {
+                    result = 1;
+                    break;
+                }
+            }
+            else
+            {// caught
+                if (gSaveBlock2Ptr->pokedex.owned[index] & mask)
+                {
+                    if ((gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock2Ptr->pokedex.seen[index] & mask))
+                    {
+                        retVal = 1;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
+
 s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecies)
 {
     u8 index;
@@ -2806,6 +2844,42 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
         break;
     case FLAG_SET_CAUGHT:
         gSaveBlock2Ptr->pokedex.owned[index] |= mask;
+        break;
+    case FLAG_GET_SEEN_ANY_FORM:
+        if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+        {
+            retVal = 1;
+        }
+        if (!retVal)
+        {
+            u16 *possibleForms;
+            nationalDexNo++;
+            // variable misuse
+            nationalDexNo = NationalPokedexNumToSpecies(nationalDexNo);
+            possibleForms = FormsOfSpecies(nationalDexNo);
+            if(possibleForms != NULL)
+            {
+                retval = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_SEEN);
+            }
+        }
+        break;
+    case FLAG_GET_CAUGHT_ANY_FORM:
+        if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+        {
+            retVal = 1;
+        }
+        if (!retVal)
+        {
+            u16 *possibleForms;
+            nationalDexNo++;
+            // variable misuse
+            nationalDexNo = NationalPokedexNumToSpecies(nationalDexNo);
+            possibleForms = FormsOfSpecies(nationalDexNo);
+            if(possibleForms != NULL)
+            {
+                retval = GetPokedexAnyFormFlag(possibleForms, FLAG_GET_CAUGHT);
+            }
+        }
         break;
     }
     return retVal;
