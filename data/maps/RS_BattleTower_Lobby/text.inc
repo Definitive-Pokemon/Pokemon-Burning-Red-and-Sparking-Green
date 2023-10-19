@@ -156,7 +156,7 @@ BattleTower_Lobby_Text_19A946:: @ 819A946
 BattleTower_Lobby_Text_Scott28Wins::
 	.string "SCOTT: I heard about you!\n"
 	.string "How you ruled the BATTLE TOWER!\l"
-	.string "You beat 28 TRAINERS in a row?\p"
+	.string "You beat 21 TRAINERS in a row?\p"
 	.string "That's fantastic!\n"
 	.string "I want you to have this!$"
 
@@ -173,7 +173,7 @@ BattleTower_Lobby_Text_ScottExplainAuroraTicket::
 BattleTower_Lobby_Text_Scott56Wins::
 	.string "SCOTT: Oh my! I heard about you!\n"
 	.string "How you crushed the BATTLE TOWER!\p"
-	.string "You beat 56 TRAINERS in a row?\p"
+	.string "You beat 42 TRAINERS in a row?\p"
 	.string "That's ridiculously spectacular!\n"
 	.string "You've got to have this!$"
 
