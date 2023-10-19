@@ -1,4 +1,6 @@
 .set LOCALID_LOSTELLE, 1
+.set LOCALID_LATIAS, 15
+.set LOCALID_ANABEL, 16
 
 ThreeIsland_BerryForest_MapScripts:: @ 8163C71
 	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_BerryForest_OnTransition
@@ -70,3 +72,11 @@ ThreeIsland_BerryForest_EventScript_WelcomeSign:: @ 8163D28
 ThreeIsland_BerryForest_EventScript_BewareSign:: @ 8163D31
 	msgbox ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons, MSGBOX_SIGN
 	end
+
+ThreeIsland_BerryForest_EventScript_Latias::
+	lockall
+	playmoncry SPECIES_LATIAS, 2
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LATIAS
+	fadescreen FADE_FROM_BLACK
+	msgbox ThreeIsland_BerryForest_Text_Flew

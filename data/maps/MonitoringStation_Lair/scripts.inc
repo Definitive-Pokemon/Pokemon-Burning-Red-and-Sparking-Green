@@ -69,7 +69,8 @@ MonitoringStation_Lair_EventScript_KabutopsFled::
     fadescreenswapbuffers FADE_TO_BLACK
     removeobject VAR_LAST_TALKED
     fadescreenswapbuffers FADE_FROM_BLACK
-    msgbox MonitoringStation_Lair_Text_KabutopsFled
+    message MonitoringStation_Lair_Text_KabutopsFled
+	waitbuttonpress
     release
     end
 	

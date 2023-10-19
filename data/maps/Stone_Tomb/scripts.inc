@@ -70,6 +70,7 @@ Stone_Tomb_EventScript_RegirockFled::
     fadescreenswapbuffers FADE_TO_BLACK
     removeobject VAR_LAST_TALKED
     fadescreenswapbuffers FADE_FROM_BLACK
-    msgbox Stone_Tomb_Text_RegirockFled
+    message Stone_Tomb_Text_RegirockFled
+	waitbuttonpress
     release
     end
