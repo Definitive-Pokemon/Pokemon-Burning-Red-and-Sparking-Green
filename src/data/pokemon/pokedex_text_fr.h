@@ -2710,4 +2710,6 @@ const u8 gDeoxysPokedexText_FR[] = _(
 const u8 gDeoxysPokedexTextUnused_FR[] = _("");
 
 const u8 gFossilizedKabutopsPokedexText_FR[] = _(
-    "Lorem ipsum.");
+    "This KABUTOPS fossil is being inhabited\n"
+    "by an ancient spirit, tasked with the\n"
+    "guarding of dangerous secrets.");
