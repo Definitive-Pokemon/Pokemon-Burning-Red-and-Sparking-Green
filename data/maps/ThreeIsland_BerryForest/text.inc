@@ -105,3 +105,6 @@ ThreeIsland_BerryForest_Text_AnabelDefeat::
 ThreeIsland_BerryForest_Text_AnabelVictory::
 	.string "You are strong…\n"
 	.string "But not strong enough…$"
+	
+ThreeIsland_BerryForest_Text_AnabelIntro::
+	.string "Tubbies$"
