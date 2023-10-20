@@ -1,4 +1,6 @@
 Fiery_Passage_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Fiery_Passage_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Fiery_Passage_OnResume
 	.byte 0
 
 Fiery_Passage_OnResume::

@@ -1,4 +1,6 @@
 MonitoringStation_Lair_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MonitoringStation_Lair_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, MonitoringStation_Lair_OnResume
 	.byte 0
 
 MonitoringStation_Lair_OnResume::

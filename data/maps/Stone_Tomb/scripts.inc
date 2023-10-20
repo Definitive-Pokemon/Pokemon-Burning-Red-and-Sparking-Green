@@ -1,4 +1,6 @@
 Stone_Tomb_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Stone_Tomb_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Stone_Tomb_OnResume
 	.byte 0
 
 Stone_Tomb_OnResume::

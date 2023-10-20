@@ -1,4 +1,6 @@
 Icy_Tomb_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Icy_Tomb_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Icy_Tomb_OnResume
 	.byte 0
 
 Icy_Tomb_OnResume::

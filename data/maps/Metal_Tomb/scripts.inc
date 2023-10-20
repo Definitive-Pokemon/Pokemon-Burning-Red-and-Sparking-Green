@@ -1,4 +1,6 @@
 Metal_Tomb_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Metal_Tomb_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Metal_Tomb_OnResume
 	.byte 0
 
 Metal_Tomb_OnResume::
