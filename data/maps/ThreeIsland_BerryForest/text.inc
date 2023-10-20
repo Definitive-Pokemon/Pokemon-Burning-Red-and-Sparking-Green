@@ -50,7 +50,7 @@ ThreeIsland_BerryForest_Text_AnabelTalk::
 	.string "named LATIAS…\p"
     .string "LATIAS flies so fast, you could not\n"
 	.string "even see it take off…\p"
-	.string "I am its guardian, ANABEL…\p"
+	.string "I am ANABEL, a TRAINER like you…\p"
 	.string "Since you have managed to come here,\n"
 	.string "we should test your potential…$"
 	
