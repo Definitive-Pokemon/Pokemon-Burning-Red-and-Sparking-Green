@@ -30,7 +30,7 @@
 #define TRAINER_LEADER_GIOVANNI_REMATCH           26
 #define TRAINER_TEAM_ROCKET_JUNGLE                27
 #define TRAINER_BLACK_BELT_KOICHI2                28
-#define TRAINER_EXPERT_CARR                       29
+#define TRAINER_MYSTERY_GIRL_ANABEL               29
 #define TRAINER_SCHOOL_KID_1                      30
 #define TRAINER_SCHOOL_KID_2                      31
 #define TRAINER_SR_AND_JR_1                       32
