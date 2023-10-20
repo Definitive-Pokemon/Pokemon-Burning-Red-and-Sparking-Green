@@ -82,6 +82,7 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	removeobject LOCALID_LATIAS
 	fadescreen FADE_FROM_BLACK
 	msgbox ThreeIsland_BerryForest_Text_Flew
+	closemessage
 	addobject LOCALID_ANABEL
 	clearflag FLAG_HIDE_ANABEL_FIRST
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelArrive
@@ -110,6 +111,8 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	end
 	
 ThreeIsland_BerryForest_Movement_AnabelArrive::
+	walk_up
+	walk_right
 	walk_right
 	walk_right
 	walk_right
