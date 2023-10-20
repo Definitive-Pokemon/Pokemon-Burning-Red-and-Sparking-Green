@@ -971,6 +971,7 @@ const struct CursorStruct sCursorStruct_CategoryPage = {
 };
 
 #include "data/pokemon/pokedex_categories.h"
+#include "data/pokemon/pokedex_form_origin.h"
 
 void VBlankCB(void)
 {
@@ -2647,6 +2648,7 @@ static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u
 {
     u8 state;
     u8 numToPrint;
+    const u8 *symbol = gText_PokedexNo;
     if(IsNationalPokedexEnabled())
         state = 3;
     else if(FlagGet(FLAG_SYS_RECEIVED_EXTENDED_DEX) && !IsNationalPokedexEnabled())
@@ -2680,17 +2682,21 @@ static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u
             break;
     }
 
+    if (species > NUM_SPECIES)
+    {
+        symbol = gRegionalSymbols[gFormMonOriginRegion[species - NUM_NON_FORM_MON_SPRITES]];
+    }
     if(!numToPrint)
     {   // use national numbering
-        u16 dexNum = SpeciesToNationalPokedexNum(species);
-        DexScreen_AddTextPrinterParameterized(windowId, fontId, gText_PokedexNo, x, y, 0);
+        u16 dexNum = SpeciesToNationalPokedexNum(StripFormToSpecies(species));
+        DexScreen_AddTextPrinterParameterized(windowId, fontId, symbol, x, y, 0);
         DexScreen_PrintNum3LeadingZeroes(windowId, fontId, dexNum, x + 9, y, 0);
         return;
     }
     else
     {   // use extended numbering
-        u16 dexNum = SpeciesToExtendedPokedexNum(species);
-        DexScreen_AddTextPrinterParameterized(windowId, fontId, gText_PokedexNo, x, y, 0);
+        u16 dexNum = SpeciesToExtendedPokedexNum(StripFormToSpecies(species));
+        DexScreen_AddTextPrinterParameterized(windowId, fontId, symbol, x, y, 0);
         DexScreen_PrintNum3LeadingZeroes(windowId, fontId, dexNum, x + 9, y, 0);
         return;
     }
@@ -3754,8 +3760,8 @@ u8 DexScreen_DrawMonAreaPage(void)
 
     // Print species name
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[8], PIXEL_FILL(0));
-    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[8], 0, species, 0, 0);
-    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[8], 2, gSpeciesNames[species], 3, 12, 0);
+    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[8], 0, StripFormToSpecies(species), 0, 0);
+    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[8], 2, gSpeciesNames[StripFormToSpecies(species)], 3, 12, 0);
     PutWindowTilemap(sPokedexScreenData->windowIds[8]);
     CopyWindowToVram(sPokedexScreenData->windowIds[8], COPYWIN_GFX);
 
@@ -3926,6 +3932,7 @@ static u8 DexScreen_LookUpCategoryBySpecies(u16 species)
 {
     int i, j, k, categoryCount, categoryPageCount, posInPage;
     u16 dexSpecies;
+    species = StripFormToSpecies(species);
 
     for (i = 0; i < NELEMS(gDexCategories); i++)
     {

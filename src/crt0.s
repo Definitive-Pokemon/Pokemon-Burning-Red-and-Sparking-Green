@@ -78,7 +78,7 @@ CartIdent:
 	.4byte  0xC121006
 	.4byte  0x8010B0F
 	.4byte        0xC
-	.4byte      0xF24 @ sizeof(struct SaveBlock2)
+	.4byte      0xF25 @ sizeof(struct SaveBlock2) TODO:FORME update for every form
 	.4byte     0x3D68 @ sizeof(struct SaveBlock1)
 	.4byte       0x34 @ offsetof(struct SaveBlock1, playerPartyCount)
 	.4byte       0x38 @ offsetof(struct SaveBlock1, playerParty)
