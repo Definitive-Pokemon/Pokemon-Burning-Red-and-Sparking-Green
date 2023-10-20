@@ -94,7 +94,7 @@ ThreeIsland_BerryForest_Text_AnabelTalk4::
 	.string "and a beach full of people…\p"
 	.string "Yes, this is what I saw.\n"
 	.string "Does this sound familiar to you?\p"
-	.string "… I see…\p"
+	.string "… … I see…\p"
 	.string "Then I will go to that place.\n"
 	.string "Feel free to meet me there…$"
 	

@@ -92,31 +92,33 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	textcolor 1
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk
 	closemessage
-	trainerbattle_single TRAINER_MYSTERY_GIRL_ANABEL, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_Text_AnabelVictory
-	compare VAR_RESULT, FALSE
-	goto_if_eq ThreeIsland_BerryForest_EventScript_Win
-	compare VAR_RESULT, TRUE
-	goto_if_eq ThreeIsland_BerryForest_EventScript_Win
+	trainerbattle_earlyrival TRAINER_MYSTERY_GIRL_ANABEL, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_Text_AnabelVictory
+	goto ThreeIsland_BerryForest_EventScript_Win
 	end
 
 ThreeIsland_BerryForest_EventScript_Win::
 	lockall
 	callnative HealPlayerPartyOak
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk2
+	closemessage
 	delay 50
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelTalk
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk3
-	delay 50
+	closemessage
+	delay 500
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelConcentrate
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk4
+	closemessage
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelGo
 	waitmovement 0
 	removeobject LOCALID_ANABEL
+	delay 100
 	setflag FLAG_HIDE_ANABEL_FIRST
 	setflag FLAG_HIDE_LATIAS_FIRST
 	releaseall
+	setvar VAR_LATIAS_FIRST, 1
 	end
 	
 ThreeIsland_BerryForest_Movement_AnabelArrive::
@@ -163,4 +165,6 @@ ThreeIsland_BerryForest_Movement_AnabelGo::
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	walk_down
 	step_end
