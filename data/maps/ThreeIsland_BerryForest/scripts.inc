@@ -92,7 +92,7 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	textcolor 1
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk
 	closemessage
-	trainerbattle_earlyrival TRAINER_MYSTERY_GIRL_ANABEL, RIVAL_BATTLE_TUTORIAL, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_AnabelVictory
+	trainerbattle_earlyrival TRAINER_MYSTERY_GIRL_ANABEL, RIVAL_BATTLE_TUTORIAL, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_Text_AnabelVictory
 	callnative HealPlayerPartyOak
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk2
 	delay 50
