@@ -98,3 +98,10 @@ ThreeIsland_BerryForest_Text_AnabelTalk4::
 	.string "Then I will go to that place.\n"
 	.string "Feel free to meet me there…$"
 	
+ThreeIsland_BerryForest_Text_AnabelDefeat::
+	.string "You are talented indeed…$"
+
+
+ThreeIsland_BerryForest_Text_AnabelVictory::
+	.string "You are strong…\n"
+	.string "But not strong enough…$"
