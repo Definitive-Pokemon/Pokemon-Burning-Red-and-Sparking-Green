@@ -5033,7 +5033,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_FOSSILIZED_KABUTOPS] =
     {
-        .categoryName = _("TEST"),
+        .categoryName = _("HAUNTED"),
         .height = 13,
         .weight = 3,
         .description_FR = gFossilizedKabutopsPokedexText_FR,
