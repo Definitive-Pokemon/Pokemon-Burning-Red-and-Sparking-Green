@@ -77,8 +77,78 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	lockall
 	playmoncry SPECIES_LATIAS, 2
 	fadescreen FADE_TO_BLACK
+	playse SE_M_FLY
+	waitse
 	removeobject LOCALID_LATIAS
 	fadescreen FADE_FROM_BLACK
 	msgbox ThreeIsland_BerryForest_Text_Flew
+	addobject LOCALID_ANABEL
+	clearflag FLAG_HIDE_ANABEL
+	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelArrive
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_BerryForest_Movement_PlayerTurn
+	waitmovement 0
+	msgbox ThreeIsland_BerryForest_Text_AnabelTalk
+	closemessage
+	trainerbattle_earlyrival TRAINER_MYSTERY_GIRL_ANABEL, RIVAL_BATTLE_TUTORIAL, PalletTown_ProfessorOaksLab_Text_RivalDefeat, Text_RivalVictory
+	callnative HealPlayerPartyOak
+	msgbox ThreeIsland_BerryForest_Text_AnabelTalk2
+	delay 50
+	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelTalk
+	waitmovement 0
+	msgbox ThreeIsland_BerryForest_Text_AnabelTalk3
+	delay 50
+	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelConcentrate
+	waitmovement 0
+	msgbox ThreeIsland_BerryForest_Text_AnabelTalk4
+	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelGo
+	waitmovement 0
+	removeobject LOCALID_ANABEL
+	setflag FLAG_HIDE_ANABEL
+	setflag FLAG_HIDE_LATIAS_FIRST
 	releaseall
 	end
+	
+ThreeIsland_BerryForest_Movement_AnabelArrive::
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+	
+ThreeIsland_BerryForest_Movement_PlayerTurn::
+	walk_in_place_down
+	step_end
+	
+ThreeIsland_BerryForest_Movement_AnabelTalk::
+	walk_in_place_up
+	step_end
+	
+ThreeIsland_BerryForest_Movement_AnabelConcentrate::
+	walk_in_place_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_in_place_up
+	step_end
+	
+ThreeIsland_BerryForest_Movement_AnabelGo::
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end

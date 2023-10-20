@@ -1104,13 +1104,27 @@ static const struct TrainerMonItemCustomMoves sTrainerMons_BlackBeltKoichi2[] = 
     },
 };
 
-static const struct TrainerMonItemCustomMoves sTrainerMons_ExpertCarr[] = {
+static const struct TrainerMonItemCustomMoves sTrainerMons_EonGuardianAnabel[] = {
     {
-        .iv = 0,
-        .lvl = 5,
-        .species = SPECIES_EKANS,
-		.heldItem = ITEM_BLACK_BELT,
-        .moves = {MOVE_BULK_UP, MOVE_HI_JUMP_KICK, MOVE_EARTHQUAKE, MOVE_BRICK_BREAK},
+        .iv = 255,
+        .lvl = 68,
+        .species = SPECIES_ALAKAZAM,
+		.heldItem = ITEM_BRIGHT_POWDER,
+        .moves = {MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH},
+    },
+	{
+        .iv = 255,
+        .lvl = 68,
+        .species = SPECIES_ENTEI,
+		.heldItem = ITEM_LUM_BERRY,
+        .moves = {MOVE_SUNNY_DAY, MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_CALM_MIND},
+    },
+	{
+        .iv = 255,
+        .lvl = 68,
+        .species = SPECIES_SNORLAX,
+		.heldItem = ITEM_QUICK_CLAW,
+        .moves = {MOVE_EARTHQUAKE, MOVE_REST, MOVE_BODY_SLAM, MOVE_CURSE},
     },
 };
 

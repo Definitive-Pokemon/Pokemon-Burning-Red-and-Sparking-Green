@@ -36,6 +36,13 @@ OneIsland_EventScript_EnterOneIslandFirstTime:: @ 816749D
 	waitstate
 	releaseall
 	end
+	
+OneIsland_EventScript_DiveGiver::
+	lock
+	giveitem ITEM_HM08, 1
+	release
+	end
+	
 
 	.macro walk_to_pokecenter
 	walk_up

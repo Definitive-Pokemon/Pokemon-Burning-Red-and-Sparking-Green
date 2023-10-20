@@ -968,10 +968,10 @@
 #define FLAG_FOUGHT_KABUTOPS               0x3AE
 #define FLAG_GET_JAR               0x3AF
 #define FLAG_GOT_LUM_BERRY               0x3B0
+#define FLAG_HIDE_ANABEL_FIRST               0x3B1
+#define FLAG_HIDE_LATIAS_FIRST               0x3B2
 
 // Unused?
-#define FLAG_0x3B1               0x3B1
-#define FLAG_0x3B2               0x3B2
 #define FLAG_0x3B3               0x3B3
 #define FLAG_0x3B4               0x3B4
 #define FLAG_0x3B5               0x3B5
