@@ -5035,7 +5035,7 @@ const struct PokedexEntry gPokedexEntries[] =
     {
         .categoryName = _("HAUNTED"),
         .height = 13,
-        .weight = 3,
+        .weight = 405,
         .description_FR = gFossilizedKabutopsPokedexText_FR,
         .description_LG = gDeoxysPokedexText_LG,
         .pokemonScale = 293,

@@ -89,6 +89,7 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_BerryForest_Movement_PlayerTurn
 	waitmovement 0
+	textcolor 1
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk
 	closemessage
 	trainerbattle_earlyrival TRAINER_MYSTERY_GIRL_ANABEL, RIVAL_BATTLE_TUTORIAL, PalletTown_ProfessorOaksLab_Text_RivalDefeat, Text_RivalVictory

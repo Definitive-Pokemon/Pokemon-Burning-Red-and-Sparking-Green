@@ -1307,7 +1307,7 @@ const u16 gEggMoves[] = {
               MOVE_DREAM_EATER),
     
     egg_moves(FOSSILIZED_KABUTOPS,
-              MOVE_BUBBLE_BEAM,
+              MOVE_ASTONISH,
               MOVE_RAPID_SPIN,
               MOVE_DIG,
               MOVE_FLAIL,
