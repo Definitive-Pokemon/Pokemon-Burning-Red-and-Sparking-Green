@@ -46,7 +46,8 @@ ThreeIsland_BerryForest_Text_Flew::
     .string "in the blink of an eye!$"
 
 ThreeIsland_BerryForest_Text_AnabelTalk::
-    .string "That was the POKéMON named LATIAS…\p"
+    .string "That was the POKéMON\n"
+	.string "named LATIAS…\p"
     .string "LATIAS flies so fast, you could not\n"
 	.string "even see it take off…\p"
 	.string "I am its guardian, ANABEL…\p"
