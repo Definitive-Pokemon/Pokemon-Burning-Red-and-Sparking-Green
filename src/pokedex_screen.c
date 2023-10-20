@@ -3926,6 +3926,7 @@ static u8 DexScreen_LookUpCategoryBySpecies(u16 species)
 {
     int i, j, k, categoryCount, categoryPageCount, posInPage;
     u16 dexSpecies;
+    species = StripFormToSpecies(species);
 
     for (i = 0; i < NELEMS(gDexCategories); i++)
     {
