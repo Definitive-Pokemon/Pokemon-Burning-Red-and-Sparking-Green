@@ -1108,6 +1108,24 @@ static void CB2_EndTrainerBattle(void)
         }
 
     }
+    else if (sTrainerBattleMode == TRAINER_BATTLE_NO_FAINT)
+    {
+        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            gSpecialVar_Result = TRUE;
+            //heal?
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainerFlag();
+            QuestLogEvents_HandleEndTrainerBattle();
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainerFlag();
+            QuestLogEvents_HandleEndTrainerBattle();
+        }
+    }
     else
     {
         if(FlagGet(FLAG_MASTER_TRAINER_BATTLE))

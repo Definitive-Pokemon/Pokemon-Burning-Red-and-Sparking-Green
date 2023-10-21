@@ -655,6 +655,9 @@
 		.elseif \type == TRAINER_BATTLE_EARLY_RIVAL
 			.4byte \pointer1 @ text
 			.4byte \pointer2 @ text
+		.elseif \type == TRAINER_BATTLE_NO_FAINT
+			.4byte \pointer1 @ text
+			.4byte \pointer2 @ text
 		.endif
 	.endm
 
@@ -703,6 +706,12 @@
 	.macro trainerbattle_earlyrival trainer:req, flags:req, defeat_text:req, victory_text:req
 	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, \trainer, \flags, \defeat_text, \victory_text
 	.endm
+
+	@ Starts a trainer battle which doesn't faint the player if lost
+	.macro trainerbattle_nofainting trainer:req, flags:req, defeat_text:req, victory_text:req
+	trainerbattle TRAINER_BATTLE_NO_FAINT, \trainer, \flags, \defeat_text, \victory_text
+	.endm
+	TRAINER_BATTLE_NO_FAINT
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by trainerbattle, which actually calls this command behind-the-scenes), and blocks script execution until the battle finishes.
 	.macro battlebegin
