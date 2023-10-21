@@ -708,8 +708,8 @@
 	.endm
 
 	@ Starts a trainer battle which doesn't faint the player if lost
-	.macro trainerbattle_nofainting trainer:req, flags:req, defeat_text:req, victory_text:req
-	trainerbattle TRAINER_BATTLE_NO_FAINT, \trainer, \flags, \defeat_text, \victory_text
+	.macro trainerbattle_nofainting trainer:req, defeat_text:req, victory_text:req
+	trainerbattle TRAINER_BATTLE_NO_FAINT, \trainer, 0, \defeat_text, \victory_text
 	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by trainerbattle, which actually calls this command behind-the-scenes), and blocks script execution until the battle finishes.
