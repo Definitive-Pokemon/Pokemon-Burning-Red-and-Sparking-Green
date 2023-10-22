@@ -989,7 +989,7 @@ static const struct PokedexCategoryPage sDexCategory_RarePkmn[] = {
     DEX_CATEGORY(RarePkmn_Page8),
 };
 
-static const struct PokedexCategoryPage sDexCategory_RarePkmn[] = {
+static const struct PokedexCategoryPage sDexCategory_SeviiPkmn[] = {
     DEX_CATEGORY(SeviiPkmn_Page1),
 };
 
