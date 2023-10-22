@@ -159,7 +159,7 @@ static const struct TrainerBattleParameter sEarlyRivalBattleParams[] =
     {&sTrainerBattleEndScript,      TRAINER_PARAM_LOAD_SCRIPT_RET_ADDR},
 };
 
-static const struct TrainerBattleParameter sNoFaintBattleParams[] =
+static const struct TrainerBattleParameter sNoWhiteoutBattleParams[] =
 {
     {&sTrainerBattleMode,           TRAINER_PARAM_LOAD_VAL_8BIT},
     {&gTrainerBattleOpponent_A,     TRAINER_PARAM_LOAD_VAL_16BIT},
@@ -993,8 +993,8 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     case TRAINER_BATTLE_EARLY_RIVAL:
         TrainerBattleLoadArgs(sEarlyRivalBattleParams, data);
         return EventScript_DoNoIntroTrainerBattle;
-    case TRAINER_BATTLE_NO_FAINT:
-        TrainerBattleLoadArgs(sNoFaintBattleParams, data);
+    case TRAINER_BATTLE_NO_WHITEOUT:
+        TrainerBattleLoadArgs(sNoWhiteoutBattleParams, data);
         return EventScript_DoNoIntroTrainerBattle;
     default:
         TrainerBattleLoadArgs(sOrdinaryBattleParams, data);
@@ -1124,8 +1124,9 @@ static void CB2_EndTrainerBattle(void)
         }
 
     }
-    else if (sTrainerBattleMode == TRAINER_BATTLE_NO_FAINT)
+    else if (sTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT)
     {
+        PlaySE(SE_BANG);
         if (IsPlayerDefeated(gBattleOutcome) == TRUE)
         {
             gSpecialVar_Result = TRUE;

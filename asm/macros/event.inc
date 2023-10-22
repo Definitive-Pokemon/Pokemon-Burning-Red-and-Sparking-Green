@@ -655,7 +655,7 @@
 		.elseif \type == TRAINER_BATTLE_EARLY_RIVAL
 			.4byte \pointer1 @ text
 			.4byte \pointer2 @ text
-		.elseif \type == TRAINER_BATTLE_NO_FAINT
+		.elseif \type == TRAINER_BATTLE_NO_WHITEOUT
 			.4byte \pointer1 @ text
 			.4byte \pointer2 @ text
 		.endif
@@ -707,9 +707,15 @@
 	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, \trainer, \flags, \defeat_text, \victory_text
 	.endm
 
-	@ Starts a trainer battle which doesn't faint the player if lost
-	.macro trainerbattle_nofainting trainer:req, defeat_text:req, victory_text:req
-	trainerbattle TRAINER_BATTLE_NO_FAINT, \trainer, 0, \defeat_text, \victory_text
+	@ Same as single, but no whiteout happens on loss and introtext is skipped
+	.macro trainerbattle_single_nowhiteout trainer:req, defeat_text:req, victory_text:req, event_script=FALSE, music=TRUE
+	.if \event_script == FALSE
+	trainerbattle TRAINER_BATTLE_NO_WHITEOUT, \trainer, 0, \defeat_text, \victory_text
+	.elseif \music == TRUE
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, \trainer, 0, \defeat_text, \victory_text, \event_script
+	.else
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC, \trainer, 0, \defeat_text, \victory_text, \event_script
+	.endif
 	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by trainerbattle, which actually calls this command behind-the-scenes), and blocks script execution until the battle finishes.
