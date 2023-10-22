@@ -1014,6 +1014,7 @@ extern const u8 gText_DexCategory_MountainPkmn[];
 extern const u8 gText_DexCategory_RoughTerrainPkmn[];
 extern const u8 gText_DexCategory_UrbanPkmn[];
 extern const u8 gText_DexCategory_RarePkmn[];
+extern const u8 gText_DexCategory_SeviiPkmn[];
 extern const u8 gText_PokemonList[];
 extern const u8 gText_NumericalMode[];
 extern const u8 gText_PokemonHabitats[];

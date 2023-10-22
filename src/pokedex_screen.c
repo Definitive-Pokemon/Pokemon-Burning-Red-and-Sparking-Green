@@ -929,6 +929,7 @@ static const u8 * const sDexCategoryNamePtrs[] = {
     gText_DexCategory_RoughTerrainPkmn,
     gText_DexCategory_UrbanPkmn,
     gText_DexCategory_RarePkmn,
+    gText_DexCategory_SeviiPkmn,
 };
 
 const u16 sPalette_Silhouette[] = INCBIN_U16("graphics/pokedex/silhouette_sprite_pal.gbapal");
@@ -1638,9 +1639,15 @@ static int DexScreen_CanShowMonInDex(u16 species)
         return TRUE;
     if (SpeciesToNationalPokedexNum(species) <= KANTO_DEX_COUNT)
         return TRUE;
+    if (species == SPECIES_FOSSILIZED_KABUTOPS)
+    {
+        PlaySE(SE_BANG);
+        return TRUE;
+    }
     return FALSE;
 }
 
+// TODO:FORME, now original and form will both be counted. Is this desirable?
 static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
 {
     s32 max_n;
