@@ -1585,7 +1585,7 @@ static void Task_DexScreen_CharacteristicOrder(u8 taskId)
         if (JOY_NEW(A_BUTTON))
         {
             if (INDEX_IS_SEEN(sPokedexScreenData->characteristicMenuInput)
-                && !DexScreen_LookUpCategoryBySpecies(sPokedexScreenData->characteristicMenuInput))
+                && !DexScreen_LookUpCategoryBySpecies(StripFormToSpecies(sPokedexScreenData->characteristicMenuInput)))
             {
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
                 BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
@@ -3931,7 +3931,6 @@ static u8 DexScreen_LookUpCategoryBySpecies(u16 species)
 {
     int i, j, k, categoryCount, categoryPageCount, posInPage;
     u16 dexSpecies;
-    species = StripFormToSpecies(species);
 
     for (i = 0; i < NELEMS(gDexCategories); i++)
     {
