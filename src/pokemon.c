@@ -2459,6 +2459,7 @@ static const s8 sNatureStatTable[][5] =
 #include "data/pokemon/level_up_learnsets.h"
 #include "data/pokemon/evolution.h"
 #include "data/pokemon/level_up_learnset_pointers.h"
+#include "data/pokemon/pokedex_form_origin.h"
 
 static const s8 sPokeblockFlavorCompatibilityTable[] =
 {
@@ -8294,4 +8295,10 @@ u8 IndexInFormTableOfOriginSpecies(u16 originSpecies)
         }
     }
     return 0xFF; // completely invalid value
+}
+
+// will return garbage for any non-form species
+const u8 *GetFormSymbolBySpecies(u16 formSpecies)
+{
+    return gRegionalSymbols[gFormMonOriginRegion[FORM_SPECIES_INDEX(formSpecies)]];
 }

@@ -476,5 +476,6 @@ u16 OriginalSpeciesOfForm(u16 species);
 u16 StripFormToSpecies(u16 species);
 u16 *FormsOfSpecies(u16 species);
 u8 IndexInFormTableOfOriginSpecies(u16 originSpecies);
+const u8 *GetFormSymbolBySpecies(u16 formSpecies);
 
 #endif // GUARD_POKEMON_H

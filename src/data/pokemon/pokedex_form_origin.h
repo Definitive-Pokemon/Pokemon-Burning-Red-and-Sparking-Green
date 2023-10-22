@@ -5,8 +5,10 @@ const u8 *gRegionalSymbols[] =
     [SEVIIAN_FORM] = gText_SeviiFormSymbol
 };
 
-// normally you'd use a macro here, careful
+#define FORM_SPECIES_INDEX(formSpecies) ((formSpecies) - NUM_NON_FORM_MON_SPRITES)
+#define ORIGIN_REGION(formSpecies, regionalForm) [FORM_SPECIES_INDEX(formSpecies)] = (regionalForm)
+
 const u8 gFormMonOriginRegion[NUM_FORMS] =
 {
-    [SPECIES_FOSSILIZED_KABUTOPS - NUM_NON_FORM_MON_SPRITES] = SEVIIAN_FORM
+    ORIGIN_REGION(SPECIES_FOSSILIZED_KABUTOPS, SEVIIAN_FORM)
 };

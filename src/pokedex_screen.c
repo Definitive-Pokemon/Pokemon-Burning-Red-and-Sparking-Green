@@ -971,7 +971,6 @@ const struct CursorStruct sCursorStruct_CategoryPage = {
 };
 
 #include "data/pokemon/pokedex_categories.h"
-#include "data/pokemon/pokedex_form_origin.h"
 
 void VBlankCB(void)
 {
@@ -2684,7 +2683,7 @@ static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u
 
     if (species > NUM_SPECIES)
     {
-        symbol = gRegionalSymbols[gFormMonOriginRegion[species - NUM_NON_FORM_MON_SPRITES]];
+        symbol = GetFormSymbolBySpecies(species);
     }
     if(!numToPrint)
     {   // use national numbering
@@ -3760,7 +3759,7 @@ u8 DexScreen_DrawMonAreaPage(void)
 
     // Print species name
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[8], PIXEL_FILL(0));
-    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[8], 0, StripFormToSpecies(species), 0, 0);
+    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[8], 0, species, 0, 0);
     DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[8], 2, gSpeciesNames[StripFormToSpecies(species)], 3, 12, 0);
     PutWindowTilemap(sPokedexScreenData->windowIds[8]);
     CopyWindowToVram(sPokedexScreenData->windowIds[8], COPYWIN_GFX);
