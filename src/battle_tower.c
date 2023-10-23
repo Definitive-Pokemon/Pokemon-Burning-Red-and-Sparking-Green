@@ -386,6 +386,13 @@ static bool8 ChooseSpecialBattleTowerTrainer(void)
     }
     else
     {
+        if (winStreak == 42 || winStreak == 21)
+        {
+            // return true and set special trainer value to brain
+            gSaveBlock2Ptr->battleTower.battleTowerTrainerId = 0xFF;
+            gSpecialVar_Result = 1;
+            retVal = TRUE;
+        }
         // Check if one of the battle tower trainers from record mixing should be the next trainer.
         for (recordIndex = 0; recordIndex < 5; recordIndex++)
         {
@@ -428,7 +435,7 @@ void ChooseNextBattleTowerTrainer(void)
     int i;
     u16 trainerId;
     bool8 levelType;
-
+    gSpecialVar_Result = 0;
     levelType = gSaveBlock2Ptr->battleTower.battleTowerLevelType;
     if (ChooseSpecialBattleTowerTrainer())
     {
@@ -497,7 +504,12 @@ static void SetBattleTowerTrainerGfxId(u8 trainerClass)
             break;
     }
 
-    if (i != NELEMS(sSingleBattleTrainerInfo))
+    if (trainerClass == 0xFF) //Brain exception
+    {
+        trainerGfx1 = OBJ_EVENT_GFX_ANABEL;
+        gSpecialVar_LastTalked = FEMALE;
+    }
+    else if (i != NELEMS(sSingleBattleTrainerInfo))
     {
         trainerGfx1 = sSingleBattleTrainerInfo[i].objGfx;
         gSpecialVar_LastTalked = sSingleBattleTrainerInfo[i].gender;
