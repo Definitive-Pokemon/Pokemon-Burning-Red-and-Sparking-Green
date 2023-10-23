@@ -1126,7 +1126,6 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (sTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT)
     {
-        PlaySE(SE_BANG);
         if (IsPlayerDefeated(gBattleOutcome) == TRUE)
         {
             gSpecialVar_Result = TRUE;

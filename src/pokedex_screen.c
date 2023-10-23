@@ -1639,11 +1639,6 @@ static int DexScreen_CanShowMonInDex(u16 species)
         return TRUE;
     if (SpeciesToNationalPokedexNum(species) <= KANTO_DEX_COUNT)
         return TRUE;
-    if (species == SPECIES_FOSSILIZED_KABUTOPS)
-    {
-        PlaySE(SE_BANG);
-        return TRUE;
-    }
     return FALSE;
 }
 
@@ -4140,13 +4135,14 @@ static void UpdateDexSpeciesSeenForm(u16 species)
     u16 originSpecies = StripFormToSpecies(species);
     u8 seenForms = 0;
     u16 *possibleForms = FormsOfSpecies(originSpecies);
-    u32 i;
+
 
     if (DexScreen_GetSetPokedexFlag(originSpecies, FLAG_GET_SEEN, 1))
         seenForms++;
 
     if (possibleForms != NULL)
     {
+        u32 i;
         for (i = 0; i < MAX_NUM_OF_FORMS; i++)
         {
             if (DexScreen_GetSetPokedexFlag(*(possibleForms + i), FLAG_GET_SEEN, 1))
