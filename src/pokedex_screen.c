@@ -1642,7 +1642,6 @@ static int DexScreen_CanShowMonInDex(u16 species)
     return FALSE;
 }
 
-// TODO:FORME, now original and form will both be counted. Is this desirable?
 static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
 {
     s32 max_n;
@@ -3006,7 +3005,7 @@ bool8 DexScreen_DrawMonPicInCategoryPage(u16 species, u8 slot, u8 numSlots)
             template.baseBlock = slot * 40 + 0x108;
             sPokedexScreenData->categoryMonInfoWindowIds[slot] = AddWindow(&template);
             CopyToWindowPixelBuffer(sPokedexScreenData->categoryMonInfoWindowIds[slot], sCategoryMonInfoBgTiles, 0, 0);
-            HabitatNameTagNumPrinter(sPokedexScreenData->categoryMonInfoWindowIds[slot], 0, species, 12, 0); //prints Pokedex num on habitat tags
+            HabitatNameTagNumPrinter(sPokedexScreenData->categoryMonInfoWindowIds[slot], 0, StripFormToSpecies(species), 12, 0); //prints Pokedex num on habitat tags
             DexScreen_AddTextPrinterParameterized(sPokedexScreenData->categoryMonInfoWindowIds[slot], 2, gSpeciesNames[StripFormToSpecies(species)], 2, 13, 0);
             if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE))
                 BlitBitmapRectToWindow(sPokedexScreenData->categoryMonInfoWindowIds[slot], sDexScreen_CaughtIcon, 0, 0, 8, 8, 2, 3, 8, 8);

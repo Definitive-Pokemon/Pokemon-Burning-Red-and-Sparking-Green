@@ -13,6 +13,8 @@ BattleTower_BattleRoom_EventScript_1608EB:: @ 81608EB
 
 BattleTower_BattleRoom_EventScript_1608FA:: @ 81608FA
 	special ChooseNextBattleTowerTrainer
+	compare VAR_RESULT, TRUE
+	goto_if_eq BattleTower_BattleRoom_EventScript_BeginBrainEntry
 	addobject 1
 	applymovement 1, BattleTower_BattleRoom_Movement_160AC0
 	waitmovement 0
@@ -122,6 +124,10 @@ BattleTower_BattleRoom_EventScript_160A94:: @ 8160A94
 	playse SE_SAVE
 	waitse
 	msgbox BattleTower_BattleRoom_Text_1C6D05, MSGBOX_DEFAULT
+
+BattleTower_BattleRoom_EventScript_BeginBrainEntry::
+	addobject 1 @ add brain sprite
+	end
 
 BattleTower_BattleRoom_EventScript_160AB1:: @ 8160AB1
 	fadescreen FADE_TO_BLACK
