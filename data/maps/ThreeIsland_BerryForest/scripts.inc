@@ -106,7 +106,6 @@ ThreeIsland_BerryForest_EventScript_Win::
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk3
 	closemessage
-	delay 500
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelConcentrate
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk4
@@ -146,6 +145,26 @@ ThreeIsland_BerryForest_Movement_AnabelTalk::
 	
 ThreeIsland_BerryForest_Movement_AnabelConcentrate::
 	walk_in_place_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
