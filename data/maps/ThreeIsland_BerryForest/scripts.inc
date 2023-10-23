@@ -92,7 +92,7 @@ ThreeIsland_BerryForest_EventScript_Latias::
 	textcolor 1
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk
 	closemessage
-	trainerbattle_single_nowhiteout TRAINER_MYSTERY_GIRL_ANABEL, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_Text_AnabelVictory
+	trainerbattle_single_nowhiteout TRAINER_YOUNGSTER_JOEY, ThreeIsland_BerryForest_Text_AnabelDefeat, ThreeIsland_BerryForest_Text_AnabelVictory
 	goto ThreeIsland_BerryForest_EventScript_Win
 	end
 

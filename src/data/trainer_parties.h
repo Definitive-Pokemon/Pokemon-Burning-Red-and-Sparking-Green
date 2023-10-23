@@ -1104,6 +1104,16 @@ static const struct TrainerMonItemCustomMoves sTrainerMons_BlackBeltKoichi2[] = 
     },
 };
 
+static const struct TrainerMonItemCustomMoves sTrainerMons_ExpertCarr[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_EKANS,
+		.heldItem = ITEM_BLACK_BELT,
+        .moves = {MOVE_BULK_UP, MOVE_HI_JUMP_KICK, MOVE_EARTHQUAKE, MOVE_BRICK_BREAK},
+    },
+};
+
 static const struct TrainerMonItemCustomMoves sTrainerMons_MysteryGirlAnabel[] = {
     {
         .iv = 255,

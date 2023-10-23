@@ -347,17 +347,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sTrainerMons_BlackBeltKoichi2),
         .party = {.ItemCustomMoves = sTrainerMons_BlackBeltKoichi2}
     },
-    [TRAINER_MYSTERY_GIRL_ANABEL] = {
+    [TRAINER_EXPERT_CARR] = {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM,
-        .trainerClass = CLASS_MYSTERY_GIRL,
+        .trainerClass = CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_ANABEL,
-        .trainerName = _("ANABEL"),
+        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerName = _("CARR"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = NELEMS(sTrainerMons_MysteryGirlAnabel),
-        .party = {.ItemCustomMoves = sTrainerMons_MysteryGirlAnabel}
+        .partySize = NELEMS(sTrainerMons_ExpertCarr),
+        .party = {.ItemCustomMoves = sTrainerMons_ExpertCarr}
     },
     [TRAINER_SCHOOL_KID_1] = {
         .partyFlags = 0,
