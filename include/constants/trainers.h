@@ -19,7 +19,7 @@
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
 
-#define TRAINER_PIC_AQUA_LEADER_ARCHIE      0
+#define TRAINER_PIC_AQUA_LEADER             0
 #define TRAINER_PIC_AQUA_GRUNT_M            1
 #define TRAINER_PIC_AQUA_GRUNT_F            2
 #define TRAINER_PIC_RS_AROMA_LADY           3
