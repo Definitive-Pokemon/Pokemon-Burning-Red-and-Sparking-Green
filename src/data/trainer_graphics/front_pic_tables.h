@@ -165,7 +165,6 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 
 const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 {
-    TRAINER_SPRITE(ANABEL, gTrainerFrontPic_Anabel, 0x800),
     TRAINER_SPRITE(AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, 0x800),
     TRAINER_SPRITE(AQUA_GRUNT_F, gTrainerFrontPic_AquaGruntF, 0x800),
     TRAINER_SPRITE(RS_AROMA_LADY, gTrainerFrontPic_RSAromaLady, 0x800),
@@ -299,6 +298,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(SIS_AND_BRO, gTrainerFrontPic_SisAndBro, 0x800),
     TRAINER_SPRITE(PROFESSOR_OAK, gTrainerFrontPic_ProfessorOak, 0x800),
     TRAINER_SPRITE(DAISY, gTrainerFrontPic_Daisy, 0x800),
+    TRAINER_SPRITE(ANABEL, gTrainerFrontPic_Anabel, 0x800),
     TRAINER_SPRITE(RS_BRENDAN_2, gTrainerFrontPic_RSBrendan2, 0x800),
     TRAINER_SPRITE(RS_MAY_2, gTrainerFrontPic_RSMay2, 0x800),
     TRAINER_SPRITE(RED, gTrainerFrontPic_Red, 0x800),
