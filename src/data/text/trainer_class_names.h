@@ -106,4 +106,5 @@ const u8 gTrainerClassNames[][13] = {
     _("RUIN MANIAC"),
     _("LADY"),
     _("PAINTER"),
+    _("MYSTERY GIRL"),
 };

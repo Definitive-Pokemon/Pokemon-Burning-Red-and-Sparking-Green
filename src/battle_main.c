@@ -554,8 +554,9 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     { CLASS_SIS_AND_BRO, 3 },
     { CLASS_OLD_COUPLE, 10 },
     { CLASS_AQUA_ADMIN, 10 },
-    { CLASS_MYSTERY_GIRL, 20 },
+    { CLASS_AQUA_LEADER, 20 },
     { CLASS_BOSS, 25 },
+    { CLASS_MYSTERY_GIRL, 25 },
     { 0xFF, 5 },
 };
 

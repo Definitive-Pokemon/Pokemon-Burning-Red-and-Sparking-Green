@@ -105,3 +105,4 @@
 	.string "RUIN MANIAC$", 13
 	.string "LADY$", 13
 	.string "PAINTER$", 13
+	.string "MYSTERY GIRL$", 13
