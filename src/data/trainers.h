@@ -356,8 +356,8 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = NELEMS(sTrainerMons_EonGuardianAnabel),
-        .party = {.ItemCustomMoves = sTrainerMons_EonGuardianAnabel}
+        .partySize = NELEMS(sTrainerMons_MysteryGirlAnabel),
+        .party = {.ItemCustomMoves = sTrainerMons_MysteryGirlAnabel}
     },
     [TRAINER_SCHOOL_KID_1] = {
         .partyFlags = 0,

@@ -1104,7 +1104,7 @@ static const struct TrainerMonItemCustomMoves sTrainerMons_BlackBeltKoichi2[] = 
     },
 };
 
-static const struct TrainerMonItemCustomMoves sTrainerMons_EonGuardianAnabel[] = {
+static const struct TrainerMonItemCustomMoves sTrainerMons_MysteryGirlAnabel[] = {
     {
         .iv = 255,
         .lvl = 68,
