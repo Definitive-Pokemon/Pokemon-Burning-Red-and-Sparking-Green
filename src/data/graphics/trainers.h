@@ -283,8 +283,8 @@ const u32 gTrainerPalette_Engineer[] = INCBIN_U32("graphics/trainers/palettes/en
 const u32 gTrainerFrontPic_Fisherman[] = INCBIN_U32("graphics/trainers/front_pics/fisherman_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Fisherman[] = INCBIN_U32("graphics/trainers/palettes/fisherman.gbapal.lz");
 
-const u32 gTrainerFrontPic_SwimmerM[] = INCBIN_U32("graphics/trainers/front_pics/swimmer_m_front_pic.4bpp.lz");
-const u32 gTrainerPalette_SwimmerM[] = INCBIN_U32("graphics/trainers/palettes/swimmer_m.gbapal.lz");
+const u32 gTrainerFrontPic_SwimmerM[] = INCBIN_U32("graphics/trainers/front_pics/test.4bpp.lz");
+const u32 gTrainerPalette_SwimmerM[] = INCBIN_U32("graphics/trainers/palettes/test.gbapal.lz");
 
 const u32 gTrainerFrontPic_CueBall[] = INCBIN_U32("graphics/trainers/front_pics/cue_ball_front_pic.4bpp.lz");
 const u32 gTrainerPalette_CueBall[] = INCBIN_U32("graphics/trainers/palettes/cue_ball.gbapal.lz");
