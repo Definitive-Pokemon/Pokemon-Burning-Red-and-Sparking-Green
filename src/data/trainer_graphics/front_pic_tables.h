@@ -165,6 +165,7 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 
 const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 {
+    TRAINER_SPRITE(AQUA_LEADER_ARCHIE, gTrainerFrontPic_AquaLeaderArchie, 0x800),
     TRAINER_SPRITE(AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, 0x800),
     TRAINER_SPRITE(AQUA_GRUNT_F, gTrainerFrontPic_AquaGruntF, 0x800),
     TRAINER_SPRITE(RS_AROMA_LADY, gTrainerFrontPic_RSAromaLady, 0x800),
@@ -331,7 +332,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 
 const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
 {
-    TRAINER_PAL(ANABEL, gTrainerPalette_Anabel),
+    TRAINER_PAL(AQUA_LEADER_ARCHIE, gTrainerPalette_AquaLeaderArchie),
     TRAINER_PAL(AQUA_GRUNT_M, gTrainerPalette_AquaGruntM),
     TRAINER_PAL(AQUA_GRUNT_F, gTrainerPalette_AquaGruntF),
     TRAINER_PAL(RS_AROMA_LADY, gTrainerPalette_RSAromaLady),
@@ -465,6 +466,7 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(SIS_AND_BRO, gTrainerPalette_SisAndBro),
     TRAINER_PAL(PROFESSOR_OAK, gTrainerPalette_ProfessorOak),
     TRAINER_PAL(DAISY, gTrainerPalette_Daisy),
+    TRAINER_PAL(ANABEL, gTrainerPalette_Anabel),
     TRAINER_PAL(RS_BRENDAN_2, gTrainerPalette_RSBrendan2),
     TRAINER_PAL(RS_MAY_2, gTrainerPalette_RSMay2),
     TRAINER_PAL(RED, gTrainerPalette_Red),
