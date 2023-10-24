@@ -498,3 +498,6 @@ const u32 gTrainerPalette_RedBackPic[] = INCBIN_U32("graphics/trainers/palettes/
 const u32 gTrainerPalette_LeafBackPic[] = INCBIN_U32("graphics/trainers/palettes/red_back_pic.gbapal.lz");
 const u32 gTrainerPalette_PokedudeBackPic[] = INCBIN_U32("graphics/trainers/palettes/pokedude_back_pic.gbapal.lz");
 const u32 gTrainerPalette_OldManBackPic[] = INCBIN_U32("graphics/trainers/palettes/old_man_back_pic.gbapal.lz");
+
+const u32 gTrainerFrontPic_Anabel[] = INCBIN_U32("graphics/trainers/front_pics/anabel_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Anabel[] = INCBIN_U32("graphics/trainers/palettes/anabel.gbapal.lz");
