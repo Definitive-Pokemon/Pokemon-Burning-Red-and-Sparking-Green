@@ -182,6 +182,7 @@
 #define TRAINER_PIC_MASTER_SWIMMER        160
 #define TRAINER_PIC_DAISY                 161
 #define TRAINER_PIC_ANABEL                162
+#define TRAINER_PIC_TEST                  163
 
 // Leftover from R/S
 #define TRAINER_SECRET_BASE                 1024

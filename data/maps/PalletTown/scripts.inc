@@ -54,11 +54,12 @@ PalletTown_EventScript_DebugGive::
 	release
 	end
 
+LekkerTemp:: @ 817947B
+    .string "Bub$"
+
 PalletTown_EventScript_DebugBattle::
 	lock
-	setwildbattle SPECIES_FOSSILIZED_KABUTOPS, 3, ITEM_NONE
-	delay 40
-	dowildbattle
+	trainerbattle_single TRAINER_BUG_CATCHER_RICK, LekkerTemp, LekkerTemp
 	release
 	end
 

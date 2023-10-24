@@ -2611,6 +2611,7 @@ extern const u32 gTrainerFrontPic_MasterPsychicM[];
 extern const u32 gTrainerFrontPic_MasterScientist[];
 extern const u32 gTrainerFrontPic_MasterYoungster[];
 extern const u32 gTrainerFrontPic_MasterSwimmer[];
+extern const u32 gTrainerFrontPic_Test[];
 
 extern const u32 gTrainerPalette_AquaLeaderArchie[];
 extern const u32 gTrainerPalette_AquaGruntM[];
@@ -2779,6 +2780,7 @@ extern const u32 gTrainerPalette_MasterPsychicM[];
 extern const u32 gTrainerPalette_MasterScientist[];
 extern const u32 gTrainerPalette_MasterYoungster[];
 extern const u32 gTrainerPalette_MasterSwimmer[];
+extern const u32 gTrainerPalette_Test[];
 
 extern const u8 gFireRedMenuElements_Gfx[];
 extern const u16 gFireRedMenuElements1_Pal[];
