@@ -110,6 +110,12 @@ ThreeIsland_BerryForest_EventScript_Win::
 	waitmovement 0
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk4
 	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_BerryForest_Movement_PlayerTell
+	waitmovement 0
+	msgbox ThreeIsland_BerryForest_Text_PlayerRelay
+	closemessage
+	msgbox ThreeIsland_BerryForest_Text_AnabelTalk5
+	closemessage
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelGo
 	waitmovement 0
 	removeobject LOCALID_ANABEL
@@ -136,6 +142,10 @@ ThreeIsland_BerryForest_Movement_AnabelArrive::
 	step_end
 	
 ThreeIsland_BerryForest_Movement_PlayerTurn::
+	walk_in_place_down
+	step_end
+	
+ThreeIsland_BerryForest_Movement_PlayerTell::
 	walk_in_place_down
 	step_end
 	

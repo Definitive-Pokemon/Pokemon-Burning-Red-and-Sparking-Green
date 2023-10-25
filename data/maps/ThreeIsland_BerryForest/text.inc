@@ -93,7 +93,13 @@ ThreeIsland_BerryForest_Text_AnabelTalk4::
 	.string "A busy marketplace…\n"
 	.string "and a beach full of people…\p"
 	.string "Yes, this is what I saw.\n"
-	.string "Does this sound familiar to you?\p"
+	.string "Does this sound familiar to you?$"
+	
+ThreeIsland_BerryForest_Text_PlayerRelay::
+	.string "{PLAYER} told ANABEL about the name\n"
+	.string "of the place she perceived.$"
+	
+ThreeIsland_BerryForest_Text_AnabelTalk5::
 	.string "… … I see…\p"
 	.string "Then I will go to that place.\n"
 	.string "Feel free to meet me there…$"
@@ -101,10 +107,6 @@ ThreeIsland_BerryForest_Text_AnabelTalk4::
 ThreeIsland_BerryForest_Text_AnabelDefeat::
 	.string "You are talented indeed…$"
 
-
 ThreeIsland_BerryForest_Text_AnabelVictory::
 	.string "You are strong…\n"
 	.string "But not strong enough…$"
-	
-ThreeIsland_BerryForest_Text_AnabelIntro::
-	.string "Tubbies$"
