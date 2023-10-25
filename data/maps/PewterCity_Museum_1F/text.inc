@@ -1,6 +1,6 @@
 PewterCity_Museum_1F_Text_Escaped::
-    .string "You might not know it, but we were\n"
-    .string "once in the possession ofa POKéMON\p"
+    .string "You might have heard this before,\n"
+    .string "but we once possessed a POKéMON\p"
 	.string "that no one has ever seen in a\n"
 	.string "living state before.\p"
 	.string "Unfortunately, it escaped, fleeing\n"
