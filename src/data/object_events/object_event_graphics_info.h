@@ -283,7 +283,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FossilizedKabutops
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
 gObjectEventImageAnimTable_Standard, gObjectEventPicTable_FossilizedKabutops, gDummySpriteAffineAnimTable};
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LatiasHurt
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LatiasHurt = 
 {SPRITE_INVALID_TAG, OBJ_EVENT_PAL_TAG_NPC_BLUE, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 
 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT,
 &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, 
