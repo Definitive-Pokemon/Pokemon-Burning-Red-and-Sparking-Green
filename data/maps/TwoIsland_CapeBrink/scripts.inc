@@ -64,6 +64,10 @@ CapeBrink_Text_Anabel4::
 CapeBrink_Movement_AnaLookUp::
 	walk_in_place_up
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_in_place_down
 	step_end
 	
