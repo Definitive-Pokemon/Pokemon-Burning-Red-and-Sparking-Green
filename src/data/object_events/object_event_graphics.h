@@ -122,6 +122,7 @@ const u16 gObjectEventPic_Petrel[] = INCBIN_U16("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Petrel[] = INCBIN_U16("graphics/object_events/palettes/petrel.gbapal");
 const u16 gObjectEventPic_FossilizedKabutops[] = INCBIN_U16("graphics/object_events/pics/pokemon/s-kabutops.4bpp");
 const u16 gObjectEventPal_FossilizedKabutops[] = INCBIN_U16("graphics/object_events/palettes/s_kabutops.gbapal");
+const u16 gObjectEventPic_LatiasHurt[] = INCBIN_U16("graphics/object_events/pics/pokemon/latias - ouch.4bpp");
 const u16 gObjectEventPic_Celio[] = INCBIN_U16("graphics/object_events/pics/people/celio.4bpp");
 const u16 gObjectEventPic_Lapras[] = INCBIN_U16("graphics/object_events/pics/pokemon/lapras.4bpp");
 const u16 gObjectEventPic_Zapdos[] = INCBIN_U16("graphics/object_events/pics/pokemon/zapdos.4bpp");
