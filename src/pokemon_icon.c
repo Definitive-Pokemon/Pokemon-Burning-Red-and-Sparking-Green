@@ -22,7 +22,8 @@ static void DestroyMonIconInternal(struct Sprite * sprite);
 const u16 gMonIconPalettes[][16] = {
     INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_0.gbapal"),
     INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_1.gbapal"),
-    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_2.gbapal")
+    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_2.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_3.gbapal")
 };
 
 const u8 *const gMonIconTable[] = {
@@ -910,7 +911,7 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_Z]     = 0,
     [SPECIES_UNOWN_EMARK] = 0,
     [SPECIES_UNOWN_QMARK] = 0,
-    [SPECIES_FOSSILIZED_KABUTOPS] = 2
+    [SPECIES_FOSSILIZED_KABUTOPS] = 3
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {

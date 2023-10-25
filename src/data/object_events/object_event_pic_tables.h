@@ -2343,6 +2343,18 @@ const struct SpriteFrameImage gObjectEventPicTable_FossilizedKabutops[] = {
     overworld_frame(gObjectEventPic_FossilizedKabutops, 4, 4, 0),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_LatiasHurt[] = {
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+    overworld_frame(gObjectEventPic_LatiasHurt, 4, 4, 0),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Abra[] = {
     overworld_frame(gObjectEventPic_Abra, 2, 2, 0),
     overworld_frame(gObjectEventPic_Abra, 2, 2, 1),
