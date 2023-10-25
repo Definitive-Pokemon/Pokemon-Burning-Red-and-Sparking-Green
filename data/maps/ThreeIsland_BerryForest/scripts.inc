@@ -127,7 +127,7 @@ ThreeIsland_BerryForest_EventScript_Win::
 	setflag FLAG_HIDE_ANABEL_FIRST
 	setflag FLAG_HIDE_LATIAS_FIRST
 	setvar VAR_LATIAS_FIRST, 1
-	removeflag FLAG_HIDE_ANABEL_SECOND
+	clearflag FLAG_HIDE_ANABEL_SECOND
 	releaseall
 	end
 	
