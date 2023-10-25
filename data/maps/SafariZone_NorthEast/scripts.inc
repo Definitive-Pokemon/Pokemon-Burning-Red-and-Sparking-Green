@@ -27,4 +27,7 @@ SafariZone_NorthEast_EventScript_Anabel::
 SafariZone_NorthEast_Text_Anabel::
 	.string "Once again, we were too late…\n"
 	.string "LATIAS is gone…\p"
-	.string "LATIAS is gone…\p"
+	.string "At this rate, we will keep\n"
+	.string "running after it without\p"
+	.string "yielding any results…\p"
+	
