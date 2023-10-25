@@ -30,6 +30,7 @@ CapeBrink_EventScript_Anabel::
 	removeobject LOCALID_ANABEL
 	setflag FLAG_HIDE_ANABEL_SECOND
 	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_HIDE_ANABEL_THIRD
 	release
 	end
 	
@@ -44,9 +45,10 @@ CapeBrink_Text_Anabel2::
 	.string "flee every subsequent encounter?\p"
 	.string "Normally, I understand everything\n"
 	.string "that happens to and around me.\p"
-	.string "But I have never understood LATIAS…\p"
+	.string "But I have never understood\n"
+	.string "LATIAS…\p"
 	.string "Oh well…\p"
-	.string "I will just reveal LATIAS' new\n"
+	.string "I will just reveal LATIAS' current\n"
 	.string "hiding place to you…$"
 	
 CapeBrink_Text_Anabel3::
