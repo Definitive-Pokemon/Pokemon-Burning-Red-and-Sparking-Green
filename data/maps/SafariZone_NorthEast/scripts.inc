@@ -16,3 +16,15 @@ SafariZone_NorthEast_Text_RoughTerrainSign::
 	.string "NOTICE!\p"
 	.string "Rough terrain ahead!\n"
 	.string "Exercise caution while exploring!$"
+	
+SafariZone_NorthEast_EventScript_Anabel::
+	lock
+	faceplayer
+	msgbox SafariZone_NorthEast_Text_Anabel
+	closemessage
+	
+
+SafariZone_NorthEast_Text_Anabel::
+	.string "Once again, we were too late…\n"
+	.string "LATIAS is gone…\p"
+	.string "LATIAS is gone…\p"

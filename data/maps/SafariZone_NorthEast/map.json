@@ -142,12 +142,12 @@
       "flag": "FLAG_HIDE_SAFARI_ZONE_NORTHEAST_MAX_REVIVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LATIAS",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
       "in_connection": false,
-      "x": 42,
-      "y": 12,
+      "x": 32,
+      "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",

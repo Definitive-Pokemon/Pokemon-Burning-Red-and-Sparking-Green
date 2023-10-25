@@ -17,6 +17,14 @@ PewterCity_Museum_1F_MapScript_SetMasterTrainerMovementTypes::
 PewterCity_Museum_1F_MapScript_AerodactylMasterMovementType::
 	setobjectmovementtype LOCALID_AERODACTYL_MASTER, MOVEMENT_TYPE_VS_SEEKER_4D
 	return
+	
+PewterCity_Museum_1F_EventScript_ScientistEscape::
+	lock
+	faceplayer
+	msgbox PewterCity_Museum_1F_Text_Escaped
+	release
+	end
+	
 
 PewterCity_Museum_1F_EventScript_Scientist1:: @ 816A31B
 	lock

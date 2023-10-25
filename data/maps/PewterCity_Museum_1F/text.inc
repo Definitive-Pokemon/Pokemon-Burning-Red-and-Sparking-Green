@@ -1,3 +1,12 @@
+PewterCity_Museum_1F_Text_Escaped::
+    .string "You might not know it, but we were\n"
+    .string "once in the possession ofa POKéMON\p"
+	.string "that no one has ever seen in a\n"
+	.string "living state before.\p"
+	.string "Unfortunately, it escaped, fleeing\n"
+    .string "in the direction of MT. MOON…$"
+	
+
 PewterCity_Museum_1F_Text_Its50YForChildsTicket:: @ 81904B5
     .string "Yes, yes.\n"
     .string "It's ¥50 for a child's ticket.\p"
