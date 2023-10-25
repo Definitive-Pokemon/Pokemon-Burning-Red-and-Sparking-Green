@@ -96,8 +96,8 @@ ThreeIsland_BerryForest_Text_AnabelTalk4::
 	.string "Does this sound familiar to you?$"
 	
 ThreeIsland_BerryForest_Text_PlayerRelay::
-	.string "{PLAYER} told ANABEL about the name\n"
-	.string "of the place she perceived.$"
+	.string "{PLAYER} revealed the name of the\n"
+	.string "perceived location to ANABEL.$"
 	
 ThreeIsland_BerryForest_Text_AnabelTalk5::
 	.string "… … I see…\p"

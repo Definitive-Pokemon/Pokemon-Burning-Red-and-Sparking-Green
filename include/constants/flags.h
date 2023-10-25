@@ -970,12 +970,12 @@
 #define FLAG_GOT_LUM_BERRY               0x3B0
 #define FLAG_HIDE_ANABEL_FIRST               0x3B1
 #define FLAG_HIDE_LATIAS_FIRST               0x3B2
+#define FLAG_HIDE_ANABEL_SECOND               0x3B3
+#define FLAG_HIDE_ANABEL_THIRD               0x3B4
+#define FLAG_HIDE_ANABEL_FOURTH               0x3B5
+#define FLAG_HIDE_LATIAS_FOURTH               0x3B6
 
 // Unused?
-#define FLAG_0x3B3               0x3B3
-#define FLAG_0x3B4               0x3B4
-#define FLAG_0x3B5               0x3B5
-#define FLAG_0x3B6               0x3B6
 #define FLAG_0x3B7               0x3B7
 #define FLAG_0x3B8               0x3B8
 #define FLAG_0x3B9               0x3B9

@@ -112,8 +112,12 @@ ThreeIsland_BerryForest_EventScript_Win::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_BerryForest_Movement_PlayerTell
 	waitmovement 0
+	textcolor 2
 	msgbox ThreeIsland_BerryForest_Text_PlayerRelay
 	closemessage
+	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelTalkBack
+	waitmovement 0
+	textcolor 1
 	msgbox ThreeIsland_BerryForest_Text_AnabelTalk5
 	closemessage
 	applymovement LOCALID_ANABEL, ThreeIsland_BerryForest_Movement_AnabelGo
@@ -122,8 +126,9 @@ ThreeIsland_BerryForest_EventScript_Win::
 	delay 100
 	setflag FLAG_HIDE_ANABEL_FIRST
 	setflag FLAG_HIDE_LATIAS_FIRST
-	releaseall
 	setvar VAR_LATIAS_FIRST, 1
+	removeflag FLAG_HIDE_ANABEL_SECOND
+	releaseall
 	end
 	
 ThreeIsland_BerryForest_Movement_AnabelArrive::
@@ -180,6 +185,10 @@ ThreeIsland_BerryForest_Movement_AnabelConcentrate::
 	delay_16
 	delay_16
 	delay_16
+	walk_in_place_up
+	step_end
+	
+ThreeIsland_BerryForest_Movement_AnabelTalkBack::
 	walk_in_place_up
 	step_end
 	
