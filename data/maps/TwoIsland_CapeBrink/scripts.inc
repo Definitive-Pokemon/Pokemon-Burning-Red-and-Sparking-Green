@@ -24,7 +24,7 @@ CapeBrink_EventScript_Anabel::
 	applymovement LOCALID_ANABEL, CapeBrink_Movement_AnabelTalkBack
 	waitmovement 0
 	textcolor 1
-	msgbox CapeBrink_Text_AnabelTalk4
+	msgbox CapeBrink_Text_Anabel4
 	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ANABEL
