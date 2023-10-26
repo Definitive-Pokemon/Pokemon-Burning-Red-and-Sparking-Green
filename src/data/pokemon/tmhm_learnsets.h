@@ -3950,7 +3950,7 @@ static const u8 sSeviianAerodactylTMHMLearnset[] =
 {
     TMHM(HM04_STRENGTH),
     0xFF,
-}
+};
 
 static const u8 sSnorlaxTMHMLearnset[] = 
 {
