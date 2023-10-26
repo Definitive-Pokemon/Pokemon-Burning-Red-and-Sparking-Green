@@ -2713,3 +2713,6 @@ const u8 gFossilizedKabutopsPokedexText_FR[] = _(
     "This KABUTOPS fossil is being inhabited\n"
     "by an ancient spirit, tasked with the\n"
     "guarding of dangerous secrets.");
+
+const u8 gSeviianAerodactylPokedexText_FR[] = _(
+    "Lorum Ipsy");

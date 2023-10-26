@@ -413,4 +413,5 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES_WITH_FORMS] =
     [SPECIES_DEOXYS] = sDeoxysLevelUpLearnset,
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
     [SPECIES_FOSSILIZED_KABUTOPS] = sFossilKabutopsLevelUpLearnset,
+    [SPECIES_SEVIIAN_AERODACTYL] = sSeviianAerodactylLevelUpLearnset,
 };

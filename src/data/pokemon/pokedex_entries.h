@@ -5043,4 +5043,17 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 337,
         .trainerOffset = 2,
     },
+
+    [NATIONAL_DEX_SEVIIAN_AERODACTYL] =
+    {
+        .categoryName = _("FOSSIL"),
+        .height = 18,
+        .weight = 590,
+        .description_FR = gSeviianAerodactylPokedexText_FR,
+        .description_LG = gAerodactylPokedexText_LG,
+        .pokemonScale = 275,
+        .pokemonOffset = -1,
+        .trainerScale = 317,
+        .trainerOffset = 2,
+    },
 };
