@@ -2205,5 +2205,10 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x47,
         .y_offset = 0x06,
     },
+    [SPECIES_SEVIIAN_AERODACTYL] = 
+    {
+        .size = 0x86,
+        .y_offset = 0x08,
+    },
 };
 

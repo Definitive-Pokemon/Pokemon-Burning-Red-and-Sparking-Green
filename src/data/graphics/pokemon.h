@@ -2826,3 +2826,9 @@ const u32 gMonPalette_FossilizedKabutops[] = INCBIN_U32("graphics/pokemon/s_kabu
 const u32 gMonBackPic_FossilizedKabutops[] = INCBIN_U32("graphics/pokemon/s_kabutops/back.4bpp.lz");
 const u32 gMonShinyPalette_FossilizedKabutops[] = INCBIN_U32("graphics/pokemon/s_kabutops/shiny.gbapal.lz");
 const u8 gMonIcon_FossilizedKabutops[] = INCBIN_U8("graphics/pokemon/s_kabutops/icon.4bpp");
+
+const u32 gMonFrontPic_SeviianAerodactyl[] = INCBIN_U32("graphics/pokemon/s_aerodactyl/front.4bpp.lz");
+const u32 gMonPalette_SeviianAerodactyl[] = INCBIN_U32("graphics/pokemon/s_aerodactyl/normal.gbapal.lz");
+const u32 gMonBackPic_SeviianAerodactyl[] = INCBIN_U32("graphics/pokemon/s_aerodactyl/back.4bpp.lz");
+const u32 gMonShinyPalette_SeviianAerodactyl[] = INCBIN_U32("graphics/pokemon/s_aerodactyl/shiny.gbapal.lz");
+const u8 gMonIcon_SeviianAerodactyl[] = INCBIN_U8("graphics/pokemon/s_aerodactyl/icon.4bpp");

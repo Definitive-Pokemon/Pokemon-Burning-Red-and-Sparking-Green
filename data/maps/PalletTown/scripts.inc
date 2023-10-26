@@ -50,13 +50,13 @@ PalletTown_EventScript_PlaceMasterYoungsterOutsideLab::
 
 PalletTown_EventScript_DebugGive::
 	lock
-	givemon SPECIES_FOSSILIZED_KABUTOPS, 5, ITEM_NONE
+	givemon SPECIES_SEVIIAN_AERODACTYL , 5, ITEM_NONE
 	release
 	end
 
 PalletTown_EventScript_DebugBattle::
 	lock
-	setwildbattle SPECIES_FOSSILIZED_KABUTOPS, 3, ITEM_NONE
+	setwildbattle SPECIES_SEVIIAN_AERODACTYL, 3, ITEM_NONE
 	delay 40
 	dowildbattle
 	release
@@ -64,7 +64,7 @@ PalletTown_EventScript_DebugBattle::
 
 PalletTown_EventScript_DebugGiveNormal::
 	lock
-	givemon SPECIES_KABUTOPS, 5, ITEM_NONE
+	givemon SPECIES_AERODACTYL, 5, ITEM_NONE
 	release
 	end
 

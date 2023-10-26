@@ -441,4 +441,5 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(UNOWN_EMARK, gMonPalette_Unown),
     SPECIES_PAL(UNOWN_QMARK, gMonPalette_Unown),
     SPECIES_PAL(FOSSILIZED_KABUTOPS, gMonPalette_FossilizedKabutops),
+    SPECIES_PAL(SEVIIAN_AERODACTYL, gMonPalette_SeviianAerodactyl),
 };

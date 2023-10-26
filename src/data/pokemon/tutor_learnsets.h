@@ -5914,4 +5914,6 @@ static const u64 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_NIGHTMARE)
                                 | TUTOR(MOVE_FURY_CUTTER)),
+    [SPECIES_SEVIIAN_AERODACTYL]        = (TUTOR(MOVE_BODY_SLAM)
+                                | TUTOR(MOVE_ROCK_SLIDE)),
 };
