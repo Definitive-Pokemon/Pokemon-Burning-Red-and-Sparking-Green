@@ -2057,6 +2057,19 @@ static const u16 sAerodactylLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+// do change!
+static const u16 sSeviianAerodactylLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_WING_ATTACK),
+    LEVEL_UP_MOVE(8, MOVE_AGILITY),
+    LEVEL_UP_MOVE(15, MOVE_BITE),
+    LEVEL_UP_MOVE(22, MOVE_SUPERSONIC),
+    LEVEL_UP_MOVE(29, MOVE_ANCIENT_POWER),
+    LEVEL_UP_MOVE(36, MOVE_SCARY_FACE),
+    LEVEL_UP_MOVE(43, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(50, MOVE_HYPER_BEAM),
+    LEVEL_UP_END
+};
+
 static const u16 sSnorlaxLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(5, MOVE_AMNESIA),

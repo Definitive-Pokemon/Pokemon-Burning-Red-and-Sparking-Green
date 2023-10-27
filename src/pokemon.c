@@ -939,6 +939,7 @@ static const u16 sSpeciesToNationalPokedexNum[] = // Assigns all species to the 
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
     SPECIES_TO_NATIONAL(FOSSILIZED_KABUTOPS),
+    SPECIES_TO_NATIONAL(SEVIIAN_AERODACTYL),
 };
 
 static const u16 sSpeciesToExtendedPokedexNum[] = // Assigns all species to the Extended Dex Index (Summary No. for Extended Dex)
@@ -2806,11 +2807,13 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
 static const u16 sFormOriginalSpeciesTable[NUM_SPECIES][MAX_NUM_OF_FORMS] = 
 {
     [SPECIES_KABUTOPS] = {SPECIES_FOSSILIZED_KABUTOPS},
+    [SPECIES_AERODACTYL] = {SPECIES_SEVIIAN_AERODACTYL},
 };
 
 static const u16 sEncounterOrderViaOriginalSpecies[NUM_ORIGINAL_SPECIES_WITH_FORMS] = 
 {
     [0] = SPECIES_KABUTOPS,
+    [1] = SPECIES_AERODACTYL,
 };
 
 const u16 gLinkPlayerFacilityClasses[] = 
@@ -6553,8 +6556,12 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
     if (!nationalNum)
         return 0;
 
+//TODO:FORME
     if (nationalNum == NATIONAL_DEX_FOSSILIZED_KABUTOPS)
         return SPECIES_FOSSILIZED_KABUTOPS;
+    
+    if (nationalNum == NATIONAL_DEX_SEVIIAN_AERODACTYL)
+        return SPECIES_SEVIIAN_AERODACTYL;
 
     species = 0;
 
@@ -8003,7 +8010,6 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         {
             //set current form as first.
             u16 formSpecies = NationalPokedexNumToSpecies(nationalNum);
-            //440
             u8 originalIndex = IndexInFormTableOfOriginSpecies(originSpecies);
             u8 form = 3; 
             for(i = 0; i < MAX_NUM_OF_FORMS; i++)
@@ -8261,6 +8267,8 @@ u16 OriginalSpeciesOfForm(u16 species)
     u16 result = SPECIES_NONE;
     if (species == SPECIES_FOSSILIZED_KABUTOPS)
         result = SPECIES_KABUTOPS;
+    else if (species == SPECIES_SEVIIAN_AERODACTYL)
+        result = SPECIES_AERODACTYL;
     return result;
 }
 

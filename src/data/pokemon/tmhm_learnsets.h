@@ -3945,6 +3945,13 @@ static const u8 sAerodactylTMHMLearnset[] =
     0xFF,
 };
 
+//Do change!
+static const u8 sSeviianAerodactylTMHMLearnset[] = 
+{
+    TMHM(HM04_STRENGTH),
+    0xFF,
+};
+
 static const u8 sSnorlaxTMHMLearnset[] = 
 {
     TMHM(TM01_FOCUS_PUNCH),
@@ -11320,5 +11327,6 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_JIRACHI] = sJirachiTMHMLearnset,
     [SPECIES_DEOXYS] = sDeoxysTMHMLearnset,
     [SPECIES_CHIMECHO] = sChimechoTMHMLearnset,
-    [SPECIES_FOSSILIZED_KABUTOPS] = sFossilKabutopsTMHMLearnset
+    [SPECIES_FOSSILIZED_KABUTOPS] = sFossilKabutopsTMHMLearnset,
+    [SPECIES_SEVIIAN_AERODACTYL] = sSeviianAerodactylTMHMLearnset
 };

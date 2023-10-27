@@ -467,7 +467,8 @@ const u8 *const gMonIconTable[] = {
     [SPECIES_UNOWN_Z]     = gMonIcon_UnownZ,
     [SPECIES_UNOWN_EMARK] = gMonIcon_UnownExclamationMark,
     [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
-    [SPECIES_FOSSILIZED_KABUTOPS] = gMonIcon_FossilizedKabutops
+    [SPECIES_FOSSILIZED_KABUTOPS] = gMonIcon_FossilizedKabutops,
+    [SPECIES_SEVIIAN_AERODACTYL] = gMonIcon_SeviianAerodactyl
 };
 
 const u8 gMonIconPaletteIndices[] = {
@@ -911,7 +912,8 @@ const u8 gMonIconPaletteIndices[] = {
     [SPECIES_UNOWN_Z]     = 0,
     [SPECIES_UNOWN_EMARK] = 0,
     [SPECIES_UNOWN_QMARK] = 0,
-    [SPECIES_FOSSILIZED_KABUTOPS] = 3
+    [SPECIES_FOSSILIZED_KABUTOPS] = 3,
+    [SPECIES_SEVIIAN_AERODACTYL] = 3
 };
 
 const struct SpritePalette gMonIconPaletteTable[] = {

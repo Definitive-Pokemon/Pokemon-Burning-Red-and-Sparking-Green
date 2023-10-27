@@ -143,4 +143,6 @@ static const u16 sHoennSpeciesIdToCryId[] =
 static const u16 sFormSpeciesIdToCryId[] =
 {
     [SPECIES_FOSSILIZED_KABUTOPS - NUM_NON_FORM_MON_SPRITES] = 140,
+    [SPECIES_SEVIIAN_AERODACTYL - NUM_NON_FORM_MON_SPRITES] = 141,
+    
 };

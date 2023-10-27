@@ -1313,6 +1313,8 @@ const u16 gEggMoves[] = {
               MOVE_FLAIL,
               MOVE_KNOCK_OFF,
               MOVE_CONFUSE_RAY),
-
+    egg_moves(SEVIIAN_AERODACTYL,
+              MOVE_EXPLOSION),
+    // do change!! 
     EGG_MOVES_TERMINATOR
 };
