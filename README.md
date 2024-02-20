@@ -1,6 +1,5 @@
-# Pokémon Rekindled Red (Under construction)
-
-# Pokémon FireRed and LeafGreen+
+# Pokémon Rekindled Red (deprecated)
+THIS IS THE UNFININSHED OLD VERSION, [GO HERE FOR THE NEW VERSION](https://github.com/Definitive-Pokemon/Pokemon-Rekindled-Red)
 
 This is the repository for the Pokémon FireRed and LeafGreen+ hack, based on [pret's decompilation of Pokémon FireRed and LeafGreen](https://github.com/pret/pokefirered).
 * [**View the FAQ**](https://github.com/Deokishisu/FRLG-Plus/blob/master/FAQ.md)
